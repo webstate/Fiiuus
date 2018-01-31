@@ -1555,7 +1555,7 @@
                                     </li>
                                     <li>
                                         <p class="copyright-text">
-                                            Copyright &copy 2017 Fii Restaurant
+                                            Copyright &copy 2018 Fii Restaurant
                                         </p>
                                     </li>
                                 </ul>
@@ -1603,6 +1603,7 @@
                             </p>
                             <div class="col-md-12">
                                 <p style="color:white;font-family:spaceMono;color:#a94442" ng-show="errorMsg">We're sorry, restaurant is fully booked on this time. Please change the details.</p>
+                                <p class="error-message" ng-if="errorMsg2">Please select another date. We are closed on that day.</p>
                                 <p class="error-message" ng-if="dropDownPeopleEngError || dropDownTimeEngError || dateEngError ">Please make selection on all fields.</p>
                             </div>
                             <div class="col-md-4">
@@ -1639,6 +1640,7 @@
                             </p>
                             <div class="col-md-12">
                                 <p style="color:white;font-family:spaceMono;color:#a94442" ng-show="errorMsg">Kahjuks on kogu restoran sellel kellaajal broneeritud. Palun muutke kellaaega või kuupäeva.</p>
+                                <p class="error-message" ng-if="errorMsg2">Palun valige teine kuupäev. Oleme sel päeval suletud.</p>
                                 <p class="error-message" ng-if="dropDownPeopleEstError || dropDownTimeEstError || dateEstError ">Kõik väljad peavad olema täidetud</p>
                             </div>
                             <div class="col-md-4">
@@ -1680,6 +1682,7 @@
                             </p>
                             <div class="col-md-12">
                                 <p style="color:white;font-family:spaceMono;color:#a94442" ng-show="errorMsg">Valitettavasti ravintolamme on valitsemmallasi ajankohtalla varattu. Muuta kellonaika tai päivämäärä.</p>
+                                <p class="error-message" ng-if="errorMsg2">Valitse toinen päivämäärä. Olemme suljettuina sinä päivänä.</p>
                                 <p class="error-message" ng-if="dropDownPeopleFinError || dropDownTimeFinError || dateFinError ">Kaikki kentät on lisättävä</p>
                             </div>
                             <div class="col-md-4">
@@ -1717,6 +1720,7 @@
                             </p>
                             <div class="col-md-12">
                                 <p style="color:white;font-family:Roboto;color:#a94442" ng-show="errorMsg">К сожалению весь ресторан забронирован в то время. Пожалуйста измените время или дату.</p>
+                                <p class="error-message" ng-if="errorMsg2">Пожалуйста выберите другую дату. В этот день мы закрыты.</p>
                                 <p class="error-message" style="font-family:Roboto;" ng-if="dropDownPeopleRusError || dropDownTimeRusError || dateRusError ">Все поля должны быть выбраны</p>
                             </div>
                             <div class="col-md-4">
@@ -1856,10 +1860,10 @@
                         <div class="container">
                             <div class="col-md-12">
 
-                                <button  ng-if="$root.lang ==='fi'" style="font-family:Roboto;" class="bron-btn btn-second" ng-click="bookFin()">Varaa pöytä {{validPeople}} henkilölle {{displayDateFin}} klo {{validTime}}.<img class="booking-modal-arrow booking-modal-arrow-mobile-second" src="css/img/arrow.png" /></button>
-                                <button  ng-if="$root.lang ==='ee'" class="bron-btn btn-second" ng-click="bookEst()">Reserveeri laud {{displayDate}} kell {{validTime}}<img class="booking-modal-arrow booking-modal-arrow-mobile-second" src="css/img/arrow.png" /></button>
-                                <button  ng-if="$root.lang ==='en'" class="bron-btn btn-second" ng-click="bookEng()">Book a Table on {{validDate}} at {{validTime}} for {{validPeople}}<img class="booking-modal-arrow booking-modal-arrow-mobile-second" src="css/img/arrow.png" /></button>
-                                <button  ng-if="$root.lang ==='ru'" style="font-family:Roboto;" class="bron-btn btn-second" ng-click="bookRus()">Забронироваите столик для {{validPeople}} людей по {{displayDateRus}} в {{validTime}}.<img class="booking-modal-arrow booking-modal-arrow-mobile-second" src="css/img/arrow.png" /></button>
+                                <button  ng-if="$root.lang ==='fi'" style="font-family:Roboto;" class="bron-btn btn-second" ng-click="bookFin()">Varaa pöytä {{displayDateFin}}, klo {{validTime}}, {{validPeople}}.<img class="booking-modal-arrow booking-modal-arrow-mobile-second" src="css/img/arrow.png" /></button>
+                                <button  ng-if="$root.lang ==='ee'" class="bron-btn btn-second" ng-click="bookEst()">Reserveeri laud {{displayDate}}, kell {{validTime}}, {{validPeople}}.<img class="booking-modal-arrow booking-modal-arrow-mobile-second" src="css/img/arrow.png" /></button>
+                                <button  ng-if="$root.lang ==='en'" class="bron-btn btn-second" ng-click="bookEng()">Book a Table on {{validDate}}, at {{validTime}}, for {{validPeople}}.<img class="booking-modal-arrow booking-modal-arrow-mobile-second" src="css/img/arrow.png" /></button>
+                                <button  ng-if="$root.lang ==='ru'" style="font-family:Roboto;" class="bron-btn btn-second" ng-click="bookRus()">Забронироваите столик к {{displayDateRus}},  в {{validTime}}, для {{validPeople}}.<img class="booking-modal-arrow booking-modal-arrow-mobile-second" src="css/img/arrow.png" /></button>
                             </div>
                         </div>
                     </div>
