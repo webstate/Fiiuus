@@ -277,6 +277,7 @@ bronCtrl.controller('bronCtrl', function($rootScope, $scope, bookingService){
                     $scope.errorMsg = true;
                     $scope.errorMsg = true;
                     $scope.errorMsg2 = true;
+
                 }else{
                     $scope.bronFirst = false;
                     $scope.bronSecond = true;
