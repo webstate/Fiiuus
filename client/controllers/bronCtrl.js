@@ -132,6 +132,7 @@ bronCtrl.controller('bronCtrl', function($rootScope, $scope, bookingService){
 
     }
 
+
     $scope.changeTimeEst = function(item){
         $scope.form.showDropDownTime = false;
         $scope.dropDownTimeEst = item;
