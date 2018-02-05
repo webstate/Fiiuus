@@ -889,7 +889,7 @@ textarea:focus, input:focus{
     padding: 5px;
     height: 200px;
     overflow-y: scroll;
-    visability: visible;
+    visibility: visible;
     opacity: 1;
     display: block;
     transition: visibility 0s, opacity 0.5s linear;
