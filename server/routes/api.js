@@ -7,8 +7,8 @@ var passport = require('passport');
 var mongoose = require('mongoose');
 var moment = require('moment-timezone');
 
-var api_key = "";
-var domain = "";
+var api_key = "www";
+var domain = "www";
 var mailgun = require('mailgun-js')({apiKey: api_key, domain: domain});
 
 var storage = multer.diskStorage({

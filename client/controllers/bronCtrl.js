@@ -405,6 +405,8 @@ bronCtrl.controller('bronCtrl', function($rootScope, $scope, bookingService){
         $scope.bronSecond = false;
     }
     $scope.bookEst = function(){
+        $('body').css('overflow', 'scroll');
+
         var addInfoText = $scope.addInfo;
         $scope.nameEstError = false;
         $scope.emailEstError = false;
