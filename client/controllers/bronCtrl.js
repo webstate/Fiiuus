@@ -445,6 +445,7 @@ bronCtrl.controller('bronCtrl', function($rootScope, $scope, bookingService){
         }
     }
     $scope.bookEng = function(){
+        $('body').css('overflow', 'scroll');
         $scope.nameEngError = false;
         $scope.emailEngError = false;
         $scope.phoneEngError = false;
@@ -478,6 +479,7 @@ bronCtrl.controller('bronCtrl', function($rootScope, $scope, bookingService){
         }
     }
     $scope.bookRus = function(){
+        $('body').css('overflow', 'scroll');
         $scope.nameRusError = false;
         $scope.emailRusError = false;
         $scope.phoneRusError = false;
@@ -511,6 +513,7 @@ bronCtrl.controller('bronCtrl', function($rootScope, $scope, bookingService){
         }
     }
     $scope.bookFin = function(){
+        $('body').css('overflow', 'scroll');
         $scope.nameFinError = false;
         $scope.emailFinError = false;
         $scope.phoneFinError = false;
