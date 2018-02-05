@@ -668,41 +668,114 @@ th{
     margin-top: 75px;
     text-align: left;
 }
-.events-headline{
+.events-headline {
     font-size: 62px;
     font-family: Play;
     margin-top: 50px;
 }
-.booking-title{
+
+.booking-title {
     font-size: 62px;
     font-family: Play;
     margin-top: 50px;
 }
-.event{
+
+.event {
     margin-top: 60px;
 }
-.event-title{
+
+.slick-container {
+    margin: 0 auto !important;
+    padding: 30px !important;
+    width: 100% !important;
+    color: #333 !important;
+    background: #FFFFFF !important;
+    display: contents!important;
+}
+
+.slick-next:before, .slick-prev:before {
+    font-size: 25px !important;
+    line-height: 1 !important;
+    opacity: 1 !important;
+    color: #000000 !important;
+}
+
+.slick-slide {
+    text-align: left !important;
+    color: #000000 !important;
+    padding: 10px !important;
+    background: white !important;
+}
+
+.slick-prev:before {
+    content: url('img/back.png') !important;
+    position: static !important;
+
+}
+
+[dir=rtl] .slick-prev:before {
+    content: url('img/back.png') !important;
+    position: static !important;
+}
+
+.slick-next:before {
+    content: url('img/next.png') !important;
+    position: static !important;
+}
+
+[dir=rtl] .slick-next:before {
+    content: url('img/next.png') !important;
+    position: static !important;
+}
+
+.slick-next, .slick-prev {
+    font-size: 0;
+    line-height: 0;
+    position: absolute;
+    top: 285px!important;
+    display: block;
+    width: 20px;
+    height: 20px;
+    padding: 0;
+    -webkit-transform: translate(0, -50%);
+    -ms-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+    cursor: pointer;
+    color: transparent;
+    border: none;
+    outline: 0;
+    background: 0 0
+}
+
+.event-title {
     font-family: spaceMono-Bold;
     font-size: 18px;
+    width: 100%;
 }
-.event-time{
+
+.event-time {
     font-size: 14px;
     font-family: spaceMono;
     margin-top: -10px;
-    color: #CCCCCC;
+    color: #8d8f8e;
 }
-.event-description{
+
+.event-description {
     font-size: 14px;
     font-family: spaceMono;
     margin-top: 50px;
-}
-.event-picture{
-    background-image: url(img/mockup-worker.png);
-    height: 350px;
-    margin-top: 80px;
     width: 100%;
+}
+.event-picture {
+    /*background-image: url(img/mockup-worker.png);*/
+    margin-top: 80px;;
     background-size: cover;
+    max-width:100%;
+    max-height:300px;
+    padding-left: 15px;
     background-repeat: no-repeat;
+    display: block;
+    /*width: 100%;*/
 }
 .menu-pic-second-mockup{
     width: 100%;
@@ -889,7 +962,7 @@ textarea:focus, input:focus{
     padding: 5px;
     height: 200px;
     overflow-y: scroll;
-    visability: visible;
+    visibility: visible;
     opacity: 1;
     display: block;
     transition: visibility 0s, opacity 0.5s linear;
