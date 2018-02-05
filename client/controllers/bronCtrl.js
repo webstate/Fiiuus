@@ -120,6 +120,9 @@ bronCtrl.controller('bronCtrl', function($rootScope, $scope, bookingService){
         $scope.form.showDropDownPeopleFin = true;
     }
 
+
+
+
     $scope.times = ["12:00", "12:30", "13:00", "13:30", "14:00", "14:30","15:00", "15:30", "16:00", "16:30", "17:00", "17:30", "18:00", "18:30", "19:00", "19:30","20:00", "20:30", "21:00", "21:30"];
     $scope.people = ["1 people", "2 people", "3 people", "4 people", "5 people", "6 people", "7 people", "8 people"];
     $scope.peopleEst = ["1 inimene", "2 inimest", "3 inimest", "4 inimest", "5 inimest", "6 inimest", "7 inimest", "8 inimest"];
@@ -161,7 +164,20 @@ bronCtrl.controller('bronCtrl', function($rootScope, $scope, bookingService){
         $scope.form.showDropDownTimeFin = false;
         $scope.dropDownTimeFin = item;
     }
+    var date=new Date();
+        function formatDate(date) {
+            var d = new Date(date),
+                month = '' + (d.getMonth() + 1),
+                day = '' + d.getDate()-0,
+                year = d.getFullYear();
 
+                if (month.length < 2) month = '0' + month;
+                if (day.length < 2) day = '0' + day;
+
+                return [year, month, day].join('-');
+        }
+
+    $scope.pastdate =formatDate(date);
     $scope.validateDateEst = function(){
         $scope.dropDownPeopleEstError = false;
         $scope.dropDownTimeEstError = false;
@@ -259,7 +275,6 @@ bronCtrl.controller('bronCtrl', function($rootScope, $scope, bookingService){
             $scope.errorMsg2 = true;
         }
 
-
         if($scope.dropDownPeople === "Number of people"){
             $scope.dropDownPeopleEngError = true;
         }
@@ -303,7 +318,6 @@ bronCtrl.controller('bronCtrl', function($rootScope, $scope, bookingService){
             $scope.errorMsg2 = true;
         }
 
-
         if($scope.dropDownPeopleFin === "Valitse joukko ihmisiä"){
             $scope.dropDownPeopleFinError = true;
         }
@@ -332,37 +346,37 @@ bronCtrl.controller('bronCtrl', function($rootScope, $scope, bookingService){
                         $scope.displayDateFin = $scope.dateFin.substring(0,1) + "." + " tammikuu," + $scope.dateFin.split(',')[1];
                     }
                     if($scope.dateFin.includes('February')){
-                        $scope.displayDateFin = $scope.dateFin.substring(0,1) + " helmikuu," + $scope.dateFin.split(',')[1];
+                        $scope.displayDateFin = $scope.dateFin.substring(0,1) + "." + " helmikuu," + $scope.dateFin.split(',')[1];
                     }
                     if($scope.dateFin.includes('March')){
-                        $scope.displayDateFin = $scope.dateFin.substring(0,1) + " maaliskuu," + $scope.dateFin.split(',')[1];
+                        $scope.displayDateFin = $scope.dateFin.substring(0,1) + "." + " maaliskuu," + $scope.dateFin.split(',')[1];
                     }
                     if($scope.dateFin.includes('April')){
-                        $scope.displayDateFin = $scope.dateFin.substring(0,1) + " huhtikuu," + $scope.dateFin.split(',')[1];
+                        $scope.displayDateFin = $scope.dateFin.substring(0,1) + "." + " huhtikuu," + $scope.dateFin.split(',')[1];
                     }
                     if($scope.dateFin.includes('May')){
-                        $scope.displayDateFin = $scope.dateFin.substring(0,1) + " toukokuu," + $scope.dateFin.split(',')[1];
+                        $scope.displayDateFin = $scope.dateFin.substring(0,1) + "." + " toukokuu," + $scope.dateFin.split(',')[1];
                     }
                     if($scope.dateFin.includes('June')){
-                        $scope.displayDateFin = $scope.dateFin.substring(0,1) + " kesäkuu," + $scope.dateFin.split(',')[1];
+                        $scope.displayDateFin = $scope.dateFin.substring(0,1) + "." + " kesäkuu," + $scope.dateFin.split(',')[1];
                     }
                     if($scope.dateFin.includes('July')){
-                        $scope.displayDateFin = $scope.dateFin.substring(0,1) + " heinäkuu," + $scope.dateFin.split(',')[1];
+                        $scope.displayDateFin = $scope.dateFin.substring(0,1) + "." + " heinäkuu," + $scope.dateFin.split(',')[1];
                     }
                     if($scope.dateFin.includes('August')){
-                        $scope.displayDateFin = $scope.dateFin.substring(0,1) + " elokuu," + $scope.dateFin.split(',')[1];
+                        $scope.displayDateFin = $scope.dateFin.substring(0,1) + "." + " elokuu," + $scope.dateFin.split(',')[1];
                     }
                     if($scope.dateFin.includes('September')){
-                        $scope.displayDateFin = $scope.dateFin.substring(0,1) + " syyskuu," + $scope.dateFin.split(',')[1];
+                        $scope.displayDateFin = $scope.dateFin.substring(0,1) + "." + " syyskuu," + $scope.dateFin.split(',')[1];
                     }
                     if($scope.dateFin.includes('November')){
-                        $scope.displayDateFin = $scope.dateFin.substring(0,1) + " marraskuu," + $scope.dateFin.split(',')[1];
+                        $scope.displayDateFin = $scope.dateFin.substring(0,1) + "." + " marraskuu," + $scope.dateFin.split(',')[1];
                     }
                     if($scope.dateFin.includes('October')){
-                        $scope.displayDateFin = $scope.dateFin.substring(0,1) + " lokakuu," + $scope.dateFin.split(',')[1];
+                        $scope.displayDateFin = $scope.dateFin.substring(0,1) + "." + " lokakuu," + $scope.dateFin.split(',')[1];
                     }
                     if($scope.dateFin.includes('December')){
-                        $scope.displayDateFin = $scope.dateFin.substring(0,1) + " joulukuu," + $scope.dateFin.split(',')[1];
+                        $scope.displayDateFin = $scope.dateFin.substring(0,1) + "." + " joulukuu," + $scope.dateFin.split(',')[1];
                     }
                 }
             })
@@ -381,7 +395,6 @@ bronCtrl.controller('bronCtrl', function($rootScope, $scope, bookingService){
 
             $scope.errorMsg2 = true;
         }
-
 
         if($scope.dropDownPeopleRus === "Выберите количество людей"){
             $scope.dropDownPeopleRusError = true;
@@ -434,16 +447,16 @@ bronCtrl.controller('bronCtrl', function($rootScope, $scope, bookingService){
                         $scope.displayDateRus = $scope.dateRus.substring(0,1) + "." +" августа," + $scope.dateRus.split(',')[1];
                     }
                     if($scope.dateRus.includes('September')){
-                        $scope.displayDateRus = $scope.dateRus.substring(0,2) + "." +" сентября," + $scope.dateRus.split(',')[1];
+                        $scope.displayDateRus = $scope.dateRus.substring(0,1) + "." +" сентября," + $scope.dateRus.split(',')[1];
                     }
                     if($scope.dateRus.includes('November')){
-                        $scope.displayDateRus = $scope.dateRus.substring(0,2) + "." + " октября," + $scope.dateRus.split(',')[1];
+                        $scope.displayDateRus = $scope.dateRus.substring(0,1) + "." + " октября," + $scope.dateRus.split(',')[1];
                     }
                     if($scope.dateRus.includes('October')){
-                        $scope.displayDateRus = $scope.dateRus.substring(0,2) + "." + " ноября," + $scope.dateRus.split(',')[1];
+                        $scope.displayDateRus = $scope.dateRus.substring(0,1) + "." + " ноября," + $scope.dateRus.split(',')[1];
                     }
                     if($scope.dateRus.includes('December')){
-                        $scope.displayDateRus = $scope.dateRus.substring(0,2) + "." + " декабря," + $scope.dateRus.split(',')[1];
+                        $scope.displayDateRus = $scope.dateRus.substring(0,1) + "." + " декабря," + $scope.dateRus.split(',')[1];
                     }
                 }
             })
@@ -459,8 +472,6 @@ bronCtrl.controller('bronCtrl', function($rootScope, $scope, bookingService){
         $scope.emailEstError = false;
         $scope.phoneEstError = false;
 
-
-
         if(typeof($rootScope.nameEst) === 'undefined'){
             $scope.nameEstError = true;
         }
@@ -473,7 +484,6 @@ bronCtrl.controller('bronCtrl', function($rootScope, $scope, bookingService){
         if(typeof($scope.addInfo) === 'undefined'){
             addInfoText = "";
         }
-
 
         if(!$scope.nameEstError && !$scope.emailEstError && !$scope.phoneEstError){
             bookingService.addBooking($scope.validPeople, $scope.validTime,
