@@ -6,6 +6,7 @@ var path = require('path');
 var passport = require('passport');
 var mongoose = require('mongoose');
 var moment = require('moment-timezone');
+
 var api_key = "key";
 var domain = "domain";
 var mailgun = require('mailgun-js')({apiKey: api_key, domain: domain});
@@ -723,10 +724,10 @@ router.get('/event/get', function(req, res){
             perma.descFin = element.descFin;
             perma.nameRus = element.nameRus;
             perma.descRus = element.descRus;
-            perma.image = response.image;
-            perma.imageEng = response.imageEng;
-            perma.imageFin = response.imageFin;
-            perma.imageRus = response.imageRus;
+            perma.image = element.image;
+            perma.imageEng = element.imageEng;
+            perma.imageFin = element.imageFin;
+            perma.imageRus = element.imageRus;
             response.push(perma);
         })
 
