@@ -36,7 +36,8 @@ var myApp = angular.module('myApp', [
     'menuItem',
     'modalDemoCtrl',
     'angularTrix',
-    'ngSanitize'
+    'ngSanitize',
+    'slick'
 ]);
 
 myApp.config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
@@ -65,7 +66,7 @@ myApp.config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
       url:'/register',
       templateUrl: 'partials/register.html',
       controller: 'registerController',
-      access: {restricted: true}
+      access: {restricted: false}
     })
     .state('admin', {
         url: '/admin',

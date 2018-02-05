@@ -717,13 +717,17 @@ router.get('/event/get', function(req, res){
             perma.id = element._id;
             perma.name = element.name;
             perma.description = element.description;
-            perma.date = moment.tz(element.date, "YYYY-MM-DD HH:mm:ssZ", "Europe/Tallinn").format("YYYY-MM-DD");
+            perma.date = moment.tz(element.date, "YYYY-MM-DD HH:mm:ssZ", "Europe/Tallinn").format("YYYY-MM-DD HH:mm");
             perma.nameEng = element.nameEng;
             perma.descEng = element.descEng;
             perma.nameFin = element.nameFin;
             perma.descFin = element.descFin;
             perma.nameRus = element.nameRus;
             perma.descRus = element.descRus;
+            perma.image = response.image;
+            perma.imageEng = response.imageEng;
+            perma.imageFin = response.imageFin;
+            perma.imageRus = response.imageRus;
             response.push(perma);
         })
 
