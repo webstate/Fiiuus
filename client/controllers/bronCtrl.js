@@ -474,7 +474,7 @@ bronCtrl.controller('bronCtrl', function($rootScope, $scope, bookingService){
         $scope.emailEstError = false;
         $scope.phoneEstError = false;
 
-        if(typeof($rootScope.nameEst) === 'undefined'){
+        if(typeof($rootScope.nameEst) === 'undefined' || !(/^.{3,}$/.test($scope.nameEst))){
             $scope.nameEstError = true;
         }
         if(typeof($rootScope.emailEst) === 'undefined' || !(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test($scope.emailEst))){
@@ -510,7 +510,7 @@ bronCtrl.controller('bronCtrl', function($rootScope, $scope, bookingService){
         $scope.emailEngError = false;
         $scope.phoneEngError = false;
 
-        if(typeof($rootScope.nameEng) === 'undefined'){
+        if(typeof($rootScope.nameEng) === 'undefined' || !(/^.{3,}$/.test($scope.nameEng))){
             console.log("nime pole");
             $scope.nameEngError = true;
         }
@@ -545,7 +545,7 @@ bronCtrl.controller('bronCtrl', function($rootScope, $scope, bookingService){
         $scope.phoneRusError = false;
 
 
-        if(typeof($rootScope.nameRus) === 'undefined'){
+        if(typeof($rootScope.nameRus) === 'undefined' || !(/^.{3,}$/.test($scope.nameRus))){
             console.log("nime pole");
             $scope.nameRusError = true;
         }
@@ -580,7 +580,7 @@ bronCtrl.controller('bronCtrl', function($rootScope, $scope, bookingService){
         $scope.phoneFinError = false;
 
 
-        if(typeof($rootScope.nameFin) === 'undefined'){
+        if(typeof($rootScope.nameFin) === 'undefined' || !(/^.{3,}$/.test($scope.nameFin))){
             console.log("nime pole");
             $scope.nameFinError = true;
         }
