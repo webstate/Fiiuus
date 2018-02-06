@@ -691,6 +691,11 @@ th{
     color: #333 !important;
     background: #FFFFFF !important;
     display: contents!important;
+    visibility: hidden;
+}
+
+.slick-container.slick-initialized {
+    visibility: visible;
 }
 
 .slick-next:before, .slick-prev:before {

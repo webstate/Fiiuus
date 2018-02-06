@@ -1112,7 +1112,7 @@
                             </div>
 
                             <div class="row" style="padding-bottom: 100px; border-bottom: 1px solid #CCCCCC;">
-                                <div class="slick-container" ng-controller="eventCtrl">
+                                <div class="slick-container slick-initialized" ng-controller="eventCtrl">
                                     <slick
                                             adaptive-height="true"
                                             arrows="true"
@@ -1121,11 +1121,12 @@
                                             autoplay="true"
                                             autoplay-speed="5000"
                                             infinite="true"
+                                            data="limit"
                                             init-onload="true"
-                                            data="events"
+
                                     >
                                         <div ng-repeat="event in events | filter: filterDate | orderBy: '-date' | limitTo: limit">
-                                            <div class="event">
+                                            <div class="event" >
                                                 <table>
                                                     <tbody>
                                                     <tr>

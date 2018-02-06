@@ -42,9 +42,15 @@ eventCtrl.controller('eventCtrl', function($scope, eventService, $rootScope){
                 return n + (desc.description !== '');
             }, 0);
             if (counting >= 5){
-                $scope.limit = 5;
+                // setTimeout(function() {
+                    $scope.limit = counting;
+                // },1500);
+
             }else{
-                $scope.limit = counting;
+                // setTimeout(function() {
+                    $scope.limit = counting;
+                // },1500);
+
             }
         }
         if ($rootScope.lang === "en") {
@@ -59,9 +65,14 @@ eventCtrl.controller('eventCtrl', function($scope, eventService, $rootScope){
                 return n + (desc.descEng !== '');
             }, 0);
             if (counting >= 5){
-                $scope.limit = 5;
+                // setTimeout(function() {
+                    $scope.limit = counting;
+                // },1500)
             }else{
-                $scope.limit = counting;
+                // setTimeout(function() {
+                    $scope.limit = counting;
+                // },1500)
+
             }
         }
         if ($rootScope.lang === "fi") {
@@ -76,9 +87,14 @@ eventCtrl.controller('eventCtrl', function($scope, eventService, $rootScope){
                 return n + (desc.descFin !== '');
             }, 0);
             if (counting >= 5){
-                $scope.limit = 5;
+                // setTimeout(function() {
+                    $scope.limit = counting;
+                // },1500)
             }else{
-                $scope.limit = counting;
+                // setTimeout(function() {
+                    $scope.limit = counting;
+                // },1500)
+
             }
         }
         if ($rootScope.lang === "ru") {
@@ -93,9 +109,14 @@ eventCtrl.controller('eventCtrl', function($scope, eventService, $rootScope){
                 return n + (desc.descRus !== '');
             }, 0);
             if (counting >= 5){
-                $scope.limit = 5;
+                // setTimeout(function() {
+                    $scope.limit = counting;
+                // },1500)
             }else{
-                $scope.limit = counting;
+                // setTimeout(function() {
+                    $scope.limit = counting;
+                // },1500)
+
             }
         }
     }, function(err){
