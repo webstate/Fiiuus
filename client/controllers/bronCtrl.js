@@ -41,7 +41,6 @@ bronCtrl.controller('bronCtrl', function($rootScope, $scope, bookingService){
         $scope.dropDownTimeFin = "Valitse aika";
 
 
-
         $scope.dropDownPeopleEst = "Vali inimeste arv";
         $scope.dropDownPeopleRus = "Выберите количество людей";
         $scope.dropDownPeopleFin = "Valitse joukko ihmisiä";
