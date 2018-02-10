@@ -164,20 +164,9 @@ bronCtrl.controller('bronCtrl', function($rootScope, $scope, bookingService){
         $scope.form.showDropDownTimeFin = false;
         $scope.dropDownTimeFin = item;
     }
-    var date=new Date();
-        function formatDate(date) {
-            var d = new Date(date),
-                month = '' + (d.getMonth() + 1),
-                day = '' + d.getDate()-0,
-                year = d.getFullYear();
+ 
 
-                if (month.length < 2) month = '0' + month;
-                if (day.length < 2) day = '0' + day;
-
-                return [year, month, day].join('-');
-        }
-
-    $scope.pastdate =formatDate(date);
+    
     $scope.validateDateEst = function(){
         $scope.dropDownPeopleEstError = false;
         $scope.dropDownTimeEstError = false;
@@ -219,40 +208,40 @@ bronCtrl.controller('bronCtrl', function($rootScope, $scope, bookingService){
                     $scope.validPeople = $scope.dropDownPeopleEst;
                     console.log($scope.dateEst.split(','));
                     if($scope.dateEst.includes('January')){
-                        $scope.displayDate = $scope.dateEst.substring(0,1) +"." + " jaanuariks," + $scope.dateEst.split(',')[1];
+                        $scope.displayDate = $scope.dateEst.substring(0,2) +"." + " jaanuariks," + $scope.dateEst.split(',')[1];
                     }
                     if($scope.dateEst.includes('February')){
-                        $scope.displayDate = $scope.dateEst.substring(0,1) +"." + " veebruariks," + $scope.dateEst.split(',')[1];
+                        $scope.displayDate = $scope.dateEst.substring(0,2) +"." + " veebruariks," + $scope.dateEst.split(',')[1];
                     }
                     if($scope.dateEst.includes('March')){
-                        $scope.displayDate = $scope.dateEst.substring(0,1) +"." + " märtsiks," + $scope.dateEst.split(',')[1];
+                        $scope.displayDate = $scope.dateEst.substring(0,2) +"." + " märtsiks," + $scope.dateEst.split(',')[1];
                     }
                     if($scope.dateEst.includes('April')){
-                        $scope.displayDate = $scope.dateEst.substring(0,1) +"." + " aprilliks," + $scope.dateEst.split(',')[1];
+                        $scope.displayDate = $scope.dateEst.substring(0,2) +"." + " aprilliks," + $scope.dateEst.split(',')[1];
                     }
                     if($scope.dateEst.includes('May')){
-                        $scope.displayDate = $scope.dateEst.substring(0,1) +"." + " maiks," + $scope.dateEst.split(',')[1];
+                        $scope.displayDate = $scope.dateEst.substring(0,2) +"." + " maiks," + $scope.dateEst.split(',')[1];
                     }
                     if($scope.dateEst.includes('June')){
-                        $scope.displayDate = $scope.dateEst.substring(0,1) +"." + " juuniks," + $scope.dateEst.split(',')[1];
+                        $scope.displayDate = $scope.dateEst.substring(0,2) +"." + " juuniks," + $scope.dateEst.split(',')[1];
                     }
                     if($scope.dateEst.includes('July')){
-                        $scope.displayDate = $scope.dateEst.substring(0,1) +"." + " juuliks," + $scope.dateEst.split(',')[1];
+                        $scope.displayDate = $scope.dateEst.substring(0,2) +"." + " juuliks," + $scope.dateEst.split(',')[1];
                     }
                     if($scope.dateEst.includes('August')){
-                        $scope.displayDate = $scope.dateEst.substring(0,1) +"." + " augustiks," + $scope.dateEst.split(',')[1];
+                        $scope.displayDate = $scope.dateEst.substring(0,2) +"." + " augustiks," + $scope.dateEst.split(',')[1];
                     }
                     if($scope.dateEst.includes('September')){
-                        $scope.displayDate = $scope.dateEst.substring(0,1) +"." + " septembriks," + $scope.dateEst.split(',')[1];
+                        $scope.displayDate = $scope.dateEst.substring(0,2) +"." + " septembriks," + $scope.dateEst.split(',')[1];
                     }
                     if($scope.dateEst.includes('November')){
-                        $scope.displayDate = $scope.dateEst.substring(0,1) +"." + " novembriks," + $scope.dateEst.split(',')[1];
+                        $scope.displayDate = $scope.dateEst.substring(0,2) +"." + " novembriks," + $scope.dateEst.split(',')[1];
                     }
                     if($scope.dateEst.includes('October')){
-                        $scope.displayDate = $scope.dateEst.substring(0,1) +"." + " oktoobriks," + $scope.dateEst.split(',')[1];
+                        $scope.displayDate = $scope.dateEst.substring(0,2) +"." + " oktoobriks," + $scope.dateEst.split(',')[1];
                     }
                     if($scope.dateEst.includes('December')){
-                        $scope.displayDate = $scope.dateEst.substring(0,1) +"." + " detsembriks," + $scope.dateEst.split(',')[1];
+                        $scope.displayDate = $scope.dateEst.substring(0,2) +"." + " detsembriks," + $scope.dateEst.split(',')[1];
 
                     }
                 }
@@ -343,40 +332,40 @@ bronCtrl.controller('bronCtrl', function($rootScope, $scope, bookingService){
                     $scope.validPeople = $scope.dropDownPeopleFin;
 
                     if($scope.dateFin.includes('January')){
-                        $scope.displayDateFin = $scope.dateFin.substring(0,1) + "." + " tammikuu," + $scope.dateFin.split(',')[1];
+                        $scope.displayDateFin = $scope.dateFin.substring(0,2) + "." + " tammikuu," + $scope.dateFin.split(',')[1];
                     }
                     if($scope.dateFin.includes('February')){
-                        $scope.displayDateFin = $scope.dateFin.substring(0,1) + "." + " helmikuu," + $scope.dateFin.split(',')[1];
+                        $scope.displayDateFin = $scope.dateFin.substring(0,2) + "." + " helmikuu," + $scope.dateFin.split(',')[1];
                     }
                     if($scope.dateFin.includes('March')){
-                        $scope.displayDateFin = $scope.dateFin.substring(0,1) + "." + " maaliskuu," + $scope.dateFin.split(',')[1];
+                        $scope.displayDateFin = $scope.dateFin.substring(0,2) + "." + " maaliskuu," + $scope.dateFin.split(',')[1];
                     }
                     if($scope.dateFin.includes('April')){
-                        $scope.displayDateFin = $scope.dateFin.substring(0,1) + "." + " huhtikuu," + $scope.dateFin.split(',')[1];
+                        $scope.displayDateFin = $scope.dateFin.substring(0,2) + "." + " huhtikuu," + $scope.dateFin.split(',')[1];
                     }
                     if($scope.dateFin.includes('May')){
-                        $scope.displayDateFin = $scope.dateFin.substring(0,1) + "." + " toukokuu," + $scope.dateFin.split(',')[1];
+                        $scope.displayDateFin = $scope.dateFin.substring(0,2) + "." + " toukokuu," + $scope.dateFin.split(',')[1];
                     }
                     if($scope.dateFin.includes('June')){
-                        $scope.displayDateFin = $scope.dateFin.substring(0,1) + "." + " kesäkuu," + $scope.dateFin.split(',')[1];
+                        $scope.displayDateFin = $scope.dateFin.substring(0,2) + "." + " kesäkuu," + $scope.dateFin.split(',')[1];
                     }
                     if($scope.dateFin.includes('July')){
-                        $scope.displayDateFin = $scope.dateFin.substring(0,1) + "." + " heinäkuu," + $scope.dateFin.split(',')[1];
+                        $scope.displayDateFin = $scope.dateFin.substring(0,2) + "." + " heinäkuu," + $scope.dateFin.split(',')[1];
                     }
                     if($scope.dateFin.includes('August')){
-                        $scope.displayDateFin = $scope.dateFin.substring(0,1) + "." + " elokuu," + $scope.dateFin.split(',')[1];
+                        $scope.displayDateFin = $scope.dateFin.substring(0,2) + "." + " elokuu," + $scope.dateFin.split(',')[1];
                     }
                     if($scope.dateFin.includes('September')){
-                        $scope.displayDateFin = $scope.dateFin.substring(0,1) + "." + " syyskuu," + $scope.dateFin.split(',')[1];
+                        $scope.displayDateFin = $scope.dateFin.substring(0,2) + "." + " syyskuu," + $scope.dateFin.split(',')[1];
                     }
                     if($scope.dateFin.includes('November')){
-                        $scope.displayDateFin = $scope.dateFin.substring(0,1) + "." + " marraskuu," + $scope.dateFin.split(',')[1];
+                        $scope.displayDateFin = $scope.dateFin.substring(0,2) + "." + " marraskuu," + $scope.dateFin.split(',')[1];
                     }
                     if($scope.dateFin.includes('October')){
-                        $scope.displayDateFin = $scope.dateFin.substring(0,1) + "." + " lokakuu," + $scope.dateFin.split(',')[1];
+                        $scope.displayDateFin = $scope.dateFin.substring(0,2) + "." + " lokakuu," + $scope.dateFin.split(',')[1];
                     }
                     if($scope.dateFin.includes('December')){
-                        $scope.displayDateFin = $scope.dateFin.substring(0,1) + "." + " joulukuu," + $scope.dateFin.split(',')[1];
+                        $scope.displayDateFin = $scope.dateFin.substring(0,2) + "." + " joulukuu," + $scope.dateFin.split(',')[1];
                     }
                 }
             })
@@ -423,40 +412,40 @@ bronCtrl.controller('bronCtrl', function($rootScope, $scope, bookingService){
                     console.log($scope.validDate);
                     console.log($scope.validPeople);
                     if($scope.dateRus.includes('January')){
-                        $scope.displayDateRus = $scope.dateRus.substring(0,1) + "." + " января," + $scope.dateRus.split(',')[1];
+                        $scope.displayDateRus = $scope.dateRus.substring(0,2) + "." + " января," + $scope.dateRus.split(',')[1];
                     }
                     if($scope.dateRus.includes('February')){
-                        $scope.displayDateRus = $scope.dateRus.substring(0,1) + "." + " февраля," + $scope.dateRus.split(',')[1];
+                        $scope.displayDateRus = $scope.dateRus.substring(0,2) + "." + " февраля," + $scope.dateRus.split(',')[1];
                     }
                     if($scope.dateRus.includes('March')){
-                        $scope.displayDateRus = $scope.dateRus.substring(0,1) + "." + " марта," + $scope.dateRus.split(',')[1];
+                        $scope.displayDateRus = $scope.dateRus.substring(0,2) + "." + " марта," + $scope.dateRus.split(',')[1];
                     }
                     if($scope.dateRus.includes('April')){
-                        $scope.displayDateRus = $scope.dateRus.substring(0,1) + "." + " апреля," + $scope.dateRus.split(',')[1];
+                        $scope.displayDateRus = $scope.dateRus.substring(0,2) + "." + " апреля," + $scope.dateRus.split(',')[1];
                     }
                     if($scope.dateRus.includes('May')){
-                        $scope.displayDateRus = $scope.dateRus.substring(0,1) + "." + " мая," + $scope.dateRus.split(',')[1];
+                        $scope.displayDateRus = $scope.dateRus.substring(0,2) + "." + " мая," + $scope.dateRus.split(',')[1];
                     }
                     if($scope.dateRus.includes('June')){
-                        $scope.displayDateRus = $scope.dateRus.substring(0,1) + "." + " июня," + $scope.dateRus.split(',')[1];
+                        $scope.displayDateRus = $scope.dateRus.substring(0,2) + "." + " июня," + $scope.dateRus.split(',')[1];
                     }
                     if($scope.dateRus.includes('July')){
-                        $scope.displayDateRus = $scope.dateRus.substring(0,1) + "." +" июля," + $scope.dateRus.split(',')[1];
+                        $scope.displayDateRus = $scope.dateRus.substring(0,2) + "." +" июля," + $scope.dateRus.split(',')[1];
                     }
                     if($scope.dateRus.includes('August')){
-                        $scope.displayDateRus = $scope.dateRus.substring(0,1) + "." +" августа," + $scope.dateRus.split(',')[1];
+                        $scope.displayDateRus = $scope.dateRus.substring(0,2) + "." +" августа," + $scope.dateRus.split(',')[1];
                     }
                     if($scope.dateRus.includes('September')){
-                        $scope.displayDateRus = $scope.dateRus.substring(0,1) + "." +" сентября," + $scope.dateRus.split(',')[1];
+                        $scope.displayDateRus = $scope.dateRus.substring(0,2) + "." +" сентября," + $scope.dateRus.split(',')[1];
                     }
                     if($scope.dateRus.includes('November')){
-                        $scope.displayDateRus = $scope.dateRus.substring(0,1) + "." + " октября," + $scope.dateRus.split(',')[1];
+                        $scope.displayDateRus = $scope.dateRus.substring(0,2) + "." + " октября," + $scope.dateRus.split(',')[1];
                     }
                     if($scope.dateRus.includes('October')){
-                        $scope.displayDateRus = $scope.dateRus.substring(0,1) + "." + " ноября," + $scope.dateRus.split(',')[1];
+                        $scope.displayDateRus = $scope.dateRus.substring(0,2) + "." + " ноября," + $scope.dateRus.split(',')[1];
                     }
                     if($scope.dateRus.includes('December')){
-                        $scope.displayDateRus = $scope.dateRus.substring(0,1) + "." + " декабря," + $scope.dateRus.split(',')[1];
+                        $scope.displayDateRus = $scope.dateRus.substring(0,2) + "." + " декабря," + $scope.dateRus.split(',')[1];
                     }
                 }
             })
@@ -467,18 +456,20 @@ bronCtrl.controller('bronCtrl', function($rootScope, $scope, bookingService){
         $scope.bronSecond = false;
     }
     $scope.bookEst = function(){
+        $('body').css('overflow', 'scroll');
+
         var addInfoText = $scope.addInfo;
         $scope.nameEstError = false;
         $scope.emailEstError = false;
         $scope.phoneEstError = false;
 
-        if(typeof($rootScope.nameEst) === 'undefined'){
+        if(typeof($rootScope.nameEst) === 'undefined' || !(/^.{3,}$/.test($scope.nameEst))){
             $scope.nameEstError = true;
         }
-        if(typeof($rootScope.emailEst) === 'undefined'){
+        if(typeof($rootScope.emailEst) === 'undefined' || !(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test($scope.emailEst))){
             $scope.emailEstError = true;
         }
-        if(typeof($rootScope.phoneEst) === 'undefined'){
+        if(typeof($rootScope.phoneEst) === 'undefined' || !(/^[\+\d]?(?:[\d-.\s()]*)$/.test($scope.phoneEst))){
             $scope.phoneEstError = true;
         }
         if(typeof($scope.addInfo) === 'undefined'){
@@ -503,19 +494,20 @@ bronCtrl.controller('bronCtrl', function($rootScope, $scope, bookingService){
         }
     }
     $scope.bookEng = function(){
+        $('body').css('overflow', 'scroll');
         $scope.nameEngError = false;
         $scope.emailEngError = false;
         $scope.phoneEngError = false;
 
-        if(typeof($rootScope.nameEng) === 'undefined'){
+        if(typeof($rootScope.nameEng) === 'undefined' || !(/^.{3,}$/.test($scope.nameEng))){
             console.log("nime pole");
             $scope.nameEngError = true;
         }
-        if(typeof($rootScope.emailEng) === 'undefined'){
+        if(typeof($rootScope.emailEng) === 'undefined' || !(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test($scope.emailEng))){
             console.log("emaili pole");
             $scope.emailEngError = true;
         }
-        if(typeof($rootScope.phoneEng) === 'undefined'){
+        if(typeof($rootScope.phoneEng) === 'undefined' || !(/^[\+\d]?(?:[\d-.\s()]*)$/.test($scope.phoneEng))){
             console.log("telefoni pole");
             $scope.phoneEngError = true;
         }
@@ -536,20 +528,21 @@ bronCtrl.controller('bronCtrl', function($rootScope, $scope, bookingService){
         }
     }
     $scope.bookRus = function(){
+        $('body').css('overflow', 'scroll');
         $scope.nameRusError = false;
         $scope.emailRusError = false;
         $scope.phoneRusError = false;
 
 
-        if(typeof($rootScope.nameRus) === 'undefined'){
+        if(typeof($rootScope.nameRus) === 'undefined' || !(/^.{3,}$/.test($scope.nameRus))){
             console.log("nime pole");
             $scope.nameRusError = true;
         }
-        if(typeof($rootScope.emailRus) === 'undefined'){
+        if(typeof($rootScope.emailRus) === 'undefined' || !(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test($scope.emailRus))){
             console.log("emaili pole");
             $scope.emailRusError = true;
         }
-        if(typeof($rootScope.phoneRus) === 'undefined'){
+        if(typeof($rootScope.phoneRus) === 'undefined' || !(/^[\+\d]?(?:[\d-.\s()]*)$/.test($scope.phoneRus))){
             console.log("telefoni pole");
             $scope.phoneRusError = true;
         }
@@ -570,20 +563,21 @@ bronCtrl.controller('bronCtrl', function($rootScope, $scope, bookingService){
         }
     }
     $scope.bookFin = function(){
+        $('body').css('overflow', 'scroll');
         $scope.nameFinError = false;
         $scope.emailFinError = false;
         $scope.phoneFinError = false;
 
 
-        if(typeof($rootScope.nameFin) === 'undefined'){
+        if(typeof($rootScope.nameFin) === 'undefined' || !(/^.{3,}$/.test($scope.nameFin))){
             console.log("nime pole");
             $scope.nameFinError = true;
         }
-        if(typeof($rootScope.emailFin) === 'undefined'){
+        if(typeof($rootScope.emailFin) === 'undefined' || !(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test($scope.emailFin))){
             console.log("emaili pole");
             $scope.emailFinError = true;
         }
-        if(typeof($rootScope.phoneFin) === 'undefined'){
+        if(typeof($rootScope.phoneFin) === 'undefined' || !(/^[\+\d]?(?:[\d-.\s()]*)$/.test($scope.phoneFin))){
             console.log("telefoni pole");
             $scope.phoneFinError = true;
         }
