@@ -1606,7 +1606,7 @@
                             </div>
                             <div class="col-md-4">
                                 <label style="color:white;">When?</label>
-                                <datepicker date-format="d MMMM, yyyy" date-min-limit="{{pastdate}}">
+                                <datepicker date-format="d MMMM, yyyy">
                                     <input ng-class="{true:'error-bron', false:'nonerror-bron'}[dateEngError===true]" readonly="true" class="bron-date" ng-model="$root.dateEng" type="text" placeholder="Pick a date"/>
                                 </datepicker>
                             </div>
@@ -1645,7 +1645,7 @@
 
                             <div class="col-md-4">
                                 <label style="color:white;">Kuupäev?</label>
-                                <datepicker date-format="d MMMM, yyyy" date-min-limit="{{pastdate}}">
+                                <datepicker date-format="d MMMM, yyyy">
                                     <input ng-class="{true: 'error-bron', false:'nonerror-bron'}[dateEstError===true]" readonly="true" class="bron-date" ng-model="$root.dateEst" type="text" placeholder="Vali kuupäev"/>
                                 </datepicker>
                                 <!--<datepicker ng-if="$root.lang ==='en'" date-format="d MMMM, yyyy">
@@ -1686,7 +1686,7 @@
                             </div>
                             <div class="col-md-4">
                                 <label style="color:white;">Päivämäärä?</label>
-                                <datepicker date-format="d MMMM, yyyy" date-min-limit="{{pastdate}}">
+                                <datepicker date-format="d MMMM, yyyy">
                                     <input ng-class="{true: 'error-bron', false:'nonerror-bron'}[dateFinError===true]" readonly="true" class="bron-date" ng-model="$root.dateFin" type="text" placeholder="Valitse päivämäärä"/>
                                 </datepicker>
 
@@ -1724,7 +1724,7 @@
                             </div>
                             <div class="col-md-4">
                                 <label style="color:white;font-family:Roboto;">Дата?</label>
-                                <datepicker date-format="d MMMM, yyyy" date-min-limit="{{pastdate}}">
+                                <datepicker date-format="d MMMM, yyyy">
                                     <input style="font-family:Roboto;" ng-class="{true: 'error-bron', false:'nonerror-bron'}[dateRusError===true]" readonly="true" class="bron-date" ng-model="$root.dateRus" type="text" placeholder="Выберите дату"/>
                                 </datepicker>
 
