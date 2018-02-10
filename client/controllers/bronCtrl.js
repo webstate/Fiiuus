@@ -510,6 +510,7 @@ bronCtrl.controller('bronCtrl', function($rootScope, $scope, bookingService){
             $scope.phoneEngError = true;
         }
         if(!$scope.nameEngError && !$scope.emailEngError && !$scope.phoneEngError){
+            
             bookingService.addBooking($scope.validPeople, $scope.validTime,
                 $scope.validDate, $rootScope.nameEng, $rootScope.emailEng, $rootScope.phoneEng, "en").then(function(data){
                 $rootScope.bookingModal = false;
