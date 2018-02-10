@@ -164,20 +164,10 @@ bronCtrl.controller('bronCtrl', function($rootScope, $scope, bookingService){
         $scope.form.showDropDownTimeFin = false;
         $scope.dropDownTimeFin = item;
     }
-    var date=new Date();
-        function formatDate(date) {
-            var d = new Date(date),
-                month = '' + (d.getMonth() + 1),
-                day = '' + d.getDate()-0,
-                year = d.getFullYear();
-
-                if (month.length < 2) month = '0' + month;
-                if (day.length < 2) day = '0' + day;
-
-                return [year, month, day].join('-');
-        }
-
-    $scope.pastdate =formatDate(date);
+    
+    
+    
+    
     $scope.validateDateEst = function(){
         $scope.dropDownPeopleEstError = false;
         $scope.dropDownTimeEstError = false;
