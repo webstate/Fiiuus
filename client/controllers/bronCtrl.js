@@ -122,7 +122,6 @@ bronCtrl.controller('bronCtrl', function($rootScope, $scope, bookingService){
 
 
 
-
     $scope.times = ["12:00", "12:30", "13:00", "13:30", "14:00", "14:30","15:00", "15:30", "16:00", "16:30", "17:00", "17:30", "18:00", "18:30", "19:00", "19:30","20:00", "20:30", "21:00", "21:30"];
     $scope.people = ["1 people", "2 people", "3 people", "4 people", "5 people", "6 people", "7 people", "8 people"];
     $scope.peopleEst = ["1 inimene", "2 inimest", "3 inimest", "4 inimest", "5 inimest", "6 inimest", "7 inimest", "8 inimest"];
