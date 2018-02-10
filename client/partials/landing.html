@@ -1121,8 +1121,13 @@
                                             autoplay="true"
                                             autoplay-speed="5000"
                                             infinite="true"
+<<<<<<< HEAD
                                             data="limit"
                                             init-onload="true"
+=======
+                                            init-onload="true"
+                                            data="events"
+>>>>>>> ac2b0a5a274a0c0045131e295da6d1de571503c0
 
                                     >
                                         <div ng-repeat="event in events | filter: filterDate | orderBy: '-date' | limitTo: limit">
@@ -1842,7 +1847,6 @@
                     <div class="row">
                         <div class="container">
                             <div class="col-md-12">
-
                                 <button  ng-if="$root.lang ==='fi'" class="bron-btn btn-second" ng-click="bookFin()">Varaa pöytä {{displayDateFin}}, klo {{validTime}}, {{validPeople}}.<img class="booking-modal-arrow booking-modal-arrow-mobile-second" src="css/img/arrow.png" /></button>
                                 <button  ng-if="$root.lang ==='ee'" class="bron-btn btn-second" ng-click="bookEst()">Reserveeri laud {{displayDate}}, kell {{validTime}}, {{validPeople}}.<img class="booking-modal-arrow booking-modal-arrow-mobile-second" src="css/img/arrow.png" /></button>
                                 <button  ng-if="$root.lang ==='en'" class="bron-btn btn-second" ng-click="bookEng()">Book a Table on {{validDate}}, at {{validTime}}, for {{validPeople}}.<img class="booking-modal-arrow booking-modal-arrow-mobile-second" src="css/img/arrow.png" /></button>
