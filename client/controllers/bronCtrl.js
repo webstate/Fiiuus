@@ -165,7 +165,6 @@ bronCtrl.controller('bronCtrl', function($rootScope, $scope, bookingService){
     
     
     
-    
     $scope.validateDateEst = function(){
         $scope.dropDownPeopleEstError = false;
         $scope.dropDownTimeEstError = false;
