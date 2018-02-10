@@ -1,5 +1,5 @@
 server/node_modules
 client/uploads
-server2/email
-server2/
+server/email
+server/
 .idea/
