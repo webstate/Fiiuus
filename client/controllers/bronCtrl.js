@@ -162,14 +162,9 @@ bronCtrl.controller('bronCtrl', function($rootScope, $scope, bookingService){
         $scope.form.showDropDownTimeFin = false;
         $scope.dropDownTimeFin = item;
     }
-<<<<<<< HEAD
  
-
-=======
-    
-    
->>>>>>> ac2b0a5a274a0c0045131e295da6d1de571503c0
-    
+    $scope.minDate = new Date().toDateString();
+ 
     $scope.validateDateEst = function(){
         $scope.dropDownPeopleEstError = false;
         $scope.dropDownTimeEstError = false;
