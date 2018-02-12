@@ -15,9 +15,11 @@ workerService.factory('workerService', function($q, $timeout, $http){
             infoRus: infoRus,
             occupationRus: occupationRus,
         }
-        ).success(function(data){
+        ).then(function(response){
+            var data = response.data;
             d.resolve(data);
-        }).error(function(err){
+        }).catch(function(response){
+            var err = response.data;
             d.reject(err);
         })
         return d.promise;
@@ -25,9 +27,11 @@ workerService.factory('workerService', function($q, $timeout, $http){
     function getWorkers(){
         var d = $q.defer();
         $http.get('worker/all')
-        .success(function(data){
+        .then(function(response){
+            var data = response.data;
             d.resolve(data);
-        }).error(function(err){
+        }).catch(function(response){
+            var err = response.data;
             d.reject(err);
         })
         return d.promise;
@@ -35,9 +39,11 @@ workerService.factory('workerService', function($q, $timeout, $http){
     function removeWorker(id){
         var d = $q.defer();
         $http.get('worker/worker/remove/'+id)
-        .success(function(data){
+        .then(function(response){
+            var data = response.data;
             d.resolve(data);
-        }).error(function(err){
+        }).catch(function(response){
+            var err = response.data;
             d.reject(err);
         })
         return d.promise;
@@ -45,9 +51,11 @@ workerService.factory('workerService', function($q, $timeout, $http){
     function getWorkerById(id){
         var d = $q.defer();
         $http.post('worker/worker/getbyid', {id:id})
-        .success(function(data){
+        .then(function(response){
+            var data = response.data;
             d.resolve(data);
-        }).error(function(err){
+        }).catch(function(response){
+            var err = response.data;
             d.reject(err);
         })
         return d.promise;
@@ -66,9 +74,11 @@ workerService.factory('workerService', function($q, $timeout, $http){
             rusPosition:rusPosition,
             rusInfo:rusInfo
         }
-        ).success(function(data){
+        ).then(function(response){
+            var data = response.data;
             d.resolve(data);
-        }).error(function(err){
+        }).catch(function(response){
+            var data = response.data;
             d.reject(err);
         })
         return d.promise;

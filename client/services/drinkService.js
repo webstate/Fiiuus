@@ -17,9 +17,11 @@ drinkService.factory('drinkService', function($q, $http){
     function getWine(){
         var d = $q.defer();
         $http.get('drink/drink/wine')
-        .success(function(data){
+        .then(function(response){
+            var data = response.data;
             d.resolve(data);
-        }).error(function(err){
+        }).catch(function(response){
+            var err = response.data;
             d.reject(err);
         })
         return d.promise;
@@ -27,9 +29,11 @@ drinkService.factory('drinkService', function($q, $http){
     function getBeer(){
         var d = $q.defer();
         $http.get('drink/drink/beer')
-        .success(function(data){
+        .then(function(response){
+            var data = response.data;
             d.resolve(data);
-        }).error(function(err){
+        }).catch(function(response){
+            var err = response.data;
             d.reject(err);
         })
         return d.promise;
@@ -37,9 +41,11 @@ drinkService.factory('drinkService', function($q, $http){
     function getCokctails(){
         var d = $q.defer();
         $http.get('drink/drink/cocktail')
-        .success(function(data){
+        .then(function(response){
+            var data = response.data;
             d.resolve(data);
-        }).error(function(err){
+        }).catch(function(response){
+            var err = response.data;
             d.reject(err);
         })
         return d.promise;
@@ -47,9 +53,11 @@ drinkService.factory('drinkService', function($q, $http){
     function getNonAlco(){
         var d = $q.defer();
         $http.get('drink/drink/nonalco')
-        .success(function(data){
+        .then(function(response){
+            var data = response.data;
             d.resolve(data);
-        }).error(function(err){
+        }).catch(function(response){
+            var err = response.data;
             d.reject(err);
         })
         return d.promise;
@@ -57,9 +65,11 @@ drinkService.factory('drinkService', function($q, $http){
     function getHot(){
         var d = $q.defer();
         $http.get('drink/drink/hot')
-        .success(function(data){
+        .then(function(response){
+            var data = response.data;
             d.resolve(data);
-        }).error(function(err){
+        }).catch(function(response){
+            var err = response.data;
             d.reject(err);
         })
         return d.promise;
@@ -67,9 +77,11 @@ drinkService.factory('drinkService', function($q, $http){
     function getHard(){
         var d = $q.defer();
         $http.get('drink/drink/hardalco')
-        .success(function(data){
+        .then(function(response){
+            var data = response.data;
             d.resolve(data);
-        }).error(function(err){
+        }).catch(function(response){
+            var err = response.data;
             d.reject(err);
         })
         return d.promise;
@@ -89,9 +101,11 @@ drinkService.factory('drinkService', function($q, $http){
             nameRus: nameRus,
             descRus: descRus
         })
-        .success(function(data){
+        .then(function(response){
+            var data = response.data;
             d.resolve(data);
-        }).error(function(err){
+        }).catch(function(response){
+            var err = response.data;
             d.reject(err);
         })
         return d.promise;
@@ -99,9 +113,11 @@ drinkService.factory('drinkService', function($q, $http){
     function getDrink(){
         var d = $q.defer();
         $http.get('drink/drink/all')
-        .success(function(data){
+        .then(function(response){
+            var data = response.data;
             d.resolve(data);
-        }).error(function(err){
+        }).catch(function(response){
+            var err = response.data;
             d.reject(err);
         })
         return d.promise;
@@ -109,9 +125,11 @@ drinkService.factory('drinkService', function($q, $http){
     function getDrinkById(id){
         var d = $q.defer();
         $http.post('drink/drink/byid', {id:id})
-        .success(function(data){
+        .then(function(response){
+            var data = response.data;
             d.resolve(data);
-        }).error(function(err){
+        }).catch(function(response){
+            var err = response.data;
             d.reject(err);
         })
         return d.promise;
@@ -133,9 +151,11 @@ drinkService.factory('drinkService', function($q, $http){
              descRus: rusDesc
 
          })
-        .success(function(data){
+        .then(function(response){
+            var data = response.data;
             d.resolve(data);
-        }).error(function(err){
+        }).catch(function(response){
+            var err = response.data;
             d.reject(err);
         })
         return d.promise;
@@ -143,9 +163,11 @@ drinkService.factory('drinkService', function($q, $http){
     function removeDrink(id){
         var d = $q.defer();
         $http.get('drink/drink/remove/'+id)
-        .success(function(data){
+        .then(function(response){
+            var data  =response.data;
             d.resolve(data);
-        }).error(function(err){
+        }).catch(function(response){
+            var err = response.data;
             d.reject(err);
         })
         return d.promise;
