@@ -1846,3 +1846,12 @@ datepicker.backend-date > input{
     cursor: pointer;
     background: #CCCCCC;
 }
+
+.input--textfield {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;  
+}
