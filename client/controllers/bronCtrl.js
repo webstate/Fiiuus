@@ -45,15 +45,16 @@ bronCtrl.controller('bronCtrl', function($rootScope, $scope, bookingService){
         $scope.dropDownPeopleRus = "Выберите количество людей";
         $scope.dropDownPeopleFin = "Valitse joukko ihmisiä";
         $scope.dropDownPeople = "Number of people";
-
+        //EE
         $rootScope.nameEst = "";
         $rootScope.emailEst = "";
         $rootScope.phoneEst = "";
+        $rootScope.dateEst = "";
+        //EN
         $rootScope.nameEng = "";
         $rootScope.emailEng = "";
         $rootScope.phoneEng = "";
         $rootScope.dateEng = "";
-        $rootScope.dateEst = "";
 
     }
     $scope.showRusTime = function(){
