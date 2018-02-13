@@ -6,9 +6,11 @@ pictureService.factory('pictureService', function($q, $timeout, $http){
         $http.post('user/picture/add', fd, {
             transformRequest: angular.identity,
             headers: {'Content-type': undefined}
-        }).success(function(data){
+        }).then(function(response){
+            var data = response.data;
             d.resolve(data);
-        }).error(function(err){
+        }).catch(function(response){
+            var err=response.data;
             d.reject(err);
         })
         return d.promise;
@@ -16,9 +18,11 @@ pictureService.factory('pictureService', function($q, $timeout, $http){
     function addBannerPicture(path){
         var d = $q.defer();
         $http.post('user/bannerpicture/add', {picturePath: path}
-        ).success(function(data){
+        ).then(function(response){
+            var data = response.data;
             d.resolve(data);
-        }).error(function(err){
+        }).catch(function(response){
+            var err = response.data;
             d.reject(err);
         })
         return d.promise;
@@ -26,9 +30,11 @@ pictureService.factory('pictureService', function($q, $timeout, $http){
     function getBannerPicture(){
         var d = $q.defer();
         $http.get('user/bannerpicture/get'
-        ).success(function(data){
+        ).then(function(response){
+            var data = response.data;
             d.resolve(data);
-        }).error(function(err){
+        }).catch(function(response){
+            var err = response.data;
             d.reject(err);
         })
         return d.promise;
@@ -36,9 +42,11 @@ pictureService.factory('pictureService', function($q, $timeout, $http){
     function addMenuPicture(menuPosition, path){
         var d = $q.defer();
         $http.post('user/design/add', {menuPosition:menuPosition, path: path})
-        .success(function(data){
+        .then(function(response){
+            var data = response.data;
             d.resolve(data);
-        }).error(function(err){
+        }).catch(function(response){
+            var err = response.data;
             d.reject(err);
         })
         return d.promise;
@@ -46,9 +54,11 @@ pictureService.factory('pictureService', function($q, $timeout, $http){
     function getMenuPicture(menuPosition){
         var d = $q.defer();
         $http.post('user/design/get', {menuPosition:menuPosition})
-        .success(function(data){
+        .then(function(response){
+            var data = response.data;
             d.resolve(data);
-        }).error(function(err){
+        }).catch(function(response){
+            var err = response.data;
             d.reject(err);
         })
         return d.promise;

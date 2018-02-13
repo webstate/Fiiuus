@@ -7,8 +7,8 @@ var passport = require('passport');
 var mongoose = require('mongoose');
 var moment = require('moment-timezone');
 
-var api_key = "key";
-var domain = "domain";
+var api_key = "test1";
+var domain = "test2";
 var mailgun = require('mailgun-js')({apiKey: api_key, domain: domain});
 
 var storage = multer.diskStorage({
@@ -284,7 +284,7 @@ router.post('/times/validate', function(req, res){
             if(moment(date).isSame(closedDate)){
                 console.log("sama kuupäev");
                 if(bookingTime < closedTimeEnd){
-                    if(bookingTime > closedTimeStart || 
+                    if(bookingTime > closedTimeStart ||
                         bookingTime.getHours().toString() + bookingTime.getMinutes().toString() === closedTimeStart.getHours().toString() + closedTimeStart.getMinutes().toString()){
                         console.log("See aeg on restorani sulgemise ajal");
                         counter ++;
@@ -323,10 +323,10 @@ router.post('/booking/delete', function(req, res){
 router.post('/booking/add', function(req, res){
     if(req.body.lang === "ee"){
         var testData = {
-              from: 'Fii restoran <info@fiiresto.ee>',
-              to: req.body.email,
-              subject: 'Broneeringu kinnitus',
-              html: '<!DOCTYPE html> \
+            from: 'Fii restoran <info@fiiresto.ee>',
+            to: req.body.email,
+            subject: 'Broneeringu kinnitus',
+            html: '<!DOCTYPE html> \
                       <html>\
                        <head>\
                         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />\
@@ -353,10 +353,10 @@ router.post('/booking/add', function(req, res){
     }
     if(req.body.lang ==="en"){
         var testData = {
-              from: 'Fii restaurant <info@fiiresto.ee>',
-              to: req.body.email ,
-              subject: 'Booking confirmation',
-              html: '<!DOCTYPE html> \
+            from: 'Fii restaurant <info@fiiresto.ee>',
+            to: req.body.email ,
+            subject: 'Booking confirmation',
+            html: '<!DOCTYPE html> \
                       <html>\
                        <head>\
                         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />\
@@ -383,10 +383,10 @@ router.post('/booking/add', function(req, res){
     }
     if(req.body.lang ==="ru"){
         var testData = {
-              from: 'Fii restaurant <info@fiiresto.ee>',
-              to: req.body.email ,
-              subject: 'Booking confirmation',
-              html: '<!DOCTYPE html> \
+            from: 'Fii restaurant <info@fiiresto.ee>',
+            to: req.body.email ,
+            subject: 'Booking confirmation',
+            html: '<!DOCTYPE html> \
                       <html>\
                        <head>\
                         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />\
@@ -413,10 +413,10 @@ router.post('/booking/add', function(req, res){
     }
     if(req.body.lang ==="fi"){
         var testData = {
-              from: 'Fii restaurant <info@fiiresto.ee>',
-              to: req.body.email ,
-              subject: 'Varausvahvistus',
-              html: '<!DOCTYPE html> \
+            from: 'Fii restaurant <info@fiiresto.ee>',
+            to: req.body.email ,
+            subject: 'Varausvahvistus',
+            html: '<!DOCTYPE html> \
                       <html>\
                        <head>\
                         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />\
@@ -473,7 +473,7 @@ router.post('/booking/add', function(req, res){
     }
 
     mailgun.messages().send(testData, function (error, body) {
-      console.log(body);
+        console.log(body);
     });
     mailgun.messages().send(infoToResto, function(error, body){
         console.log(body);
@@ -1141,60 +1141,60 @@ router.get('/worker/remove/:id', function(req, res){
 // Login routes ----------------------
 router.post('/register', function(req, res) {
     console.log("We are here");
-  User.register(new User({ username: req.body.username }),
-    req.body.password, function(err, account) {
-    if (err) {
-      return res.status(500).json({
-        err: err
-      });
-    }
-    passport.authenticate('local')(req, res, function () {
-      return res.status(200).json({
-        status: 'Registration successful!'
-      });
-    });
-  });
+    User.register(new User({ username: req.body.username }),
+        req.body.password, function(err, account) {
+            if (err) {
+                return res.status(500).json({
+                    err: err
+                });
+            }
+            passport.authenticate('local')(req, res, function () {
+                return res.status(200).json({
+                    status: 'Registration successful!'
+                });
+            });
+        });
 });
 
 router.post('/login', function(req, res, next) {
-  passport.authenticate('local', function(err, user, info) {
-    if (err) {
-      return next(err);
-    }
-    if (!user) {
-      return res.status(401).json({
-        err: info
-      });
-    }
-    req.logIn(user, function(err) {
-      if (err) {
-        return res.status(500).json({
-          err: 'Could not log in user'
+    passport.authenticate('local', function(err, user, info) {
+        if (err) {
+            return next(err);
+        }
+        if (!user) {
+            return res.status(401).json({
+                err: info
+            });
+        }
+        req.logIn(user, function(err) {
+            if (err) {
+                return res.status(500).json({
+                    err: 'Could not log in user'
+                });
+            }
+            res.status(200).json({
+                status: 'Login successful!'
+            });
         });
-      }
-      res.status(200).json({
-        status: 'Login successful!'
-      });
-    });
-  })(req, res, next);
+    })(req, res, next);
 });
 
 router.get('/logout', function(req, res) {
-  req.logout();
-  res.status(200).json({
-    status: 'Bye!'
-  });
+    req.logout();
+    res.status(200).json({
+        status: 'Bye!'
+    });
 });
 
 router.get('/status', function(req, res) {
-  if (!req.isAuthenticated()) {
-    return res.status(200).json({
-      status: false
+    if (!req.isAuthenticated()) {
+        return res.status(200).json({
+            status: false
+        });
+    }
+    res.status(200).json({
+        status: true
     });
-  }
-  res.status(200).json({
-    status: true
-  });
 });
 
 
