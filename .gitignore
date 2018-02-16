@@ -3,3 +3,4 @@ client/uploads
 server/email
 server/
 .idea/
+server/routes
