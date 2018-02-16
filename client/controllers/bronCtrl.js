@@ -188,7 +188,7 @@ bronCtrl.controller('bronCtrl', function($rootScope, $scope, bookingService){
         }
         if(typeof($scope.dateEst) === 'undefined' ){
             $scope.dateEstError = true;
-            $scope.errorMsg2 = true;
+            
         }
         if(!$scope.dropDownTimeEstError && !$scope.dropDownTimeEstError && !$scope.dateEstError && !$scope.errorMsg2){
             console.log("tulen siisa");
@@ -271,7 +271,7 @@ bronCtrl.controller('bronCtrl', function($rootScope, $scope, bookingService){
         }
         if(typeof($scope.dateEng) === 'undefined' ){
             $scope.dateEngError = true;
-            $scope.errorMsg2 = true;
+            
         }
         if(!$scope.dropDownPeopleEngError && !$scope.dropDownTimeEngError && !$scope.dateEngError && !$scope.errorMsg2){
             bookingService.validateBooking($scope.dropDownTime, $scope.dateEng).then(function(data){
