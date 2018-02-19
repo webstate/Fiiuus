@@ -2,6 +2,7 @@ var eventCtrl = angular.module('eventCtrl', []);
 
 eventCtrl.controller('eventCtrl', function($scope, eventService, $rootScope){
     eventService.getEvents().then(function(data){
+        $scope.eventloaded = false;
         console.log(data);
         $scope.events = data;
         if(data.length === 0){
@@ -101,6 +102,7 @@ eventCtrl.controller('eventCtrl', function($scope, eventService, $rootScope){
                     $scope.limit = counting;
             }
         }
+        $scope.eventloaded = true;
     }, function(err){
         console.log(err);
     })

@@ -1114,6 +1114,7 @@
                             <div class="row" style="padding-bottom: 100px; border-bottom: 1px solid #CCCCCC;">
                                 <div class="slick-container slick-initialized" ng-controller="eventCtrl">
                                     <slick
+                                            ng-if="eventloaded"
                                             init-onload="true"
                                             data="events"
                                             adaptive-height="true"
@@ -1124,10 +1125,10 @@
                                             autoplay-speed="5000"
                                             infinite="true"
                                     >
-                                        <div data-ng-repeat="event in events | filter: filterDate | orderBy: '-date' | limitTo: limit">
+                                        <div ng-repeat="event in events | filter: filterDate | orderBy: '-date' | limitTo: limit">
                                             <div class="col-md-6">
                                                 <div class="event" >
-                                                    <div valign="top" style="width: 50%";>
+                                                    <div valign="top" style="width: 100%";>
                                                         <div>
                                                             <p ng-if="$root.lang==='ee'" class="event-title">
                                                                 {{event.name}}
@@ -1162,7 +1163,7 @@
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
-                                                <div style="vertical-align: top; max-width: 50%">
+                                                <div style="vertical-align: top; max-width: 100%">
                                                     <div ng-if="$root.lang === 'ee'" style="background-image: none;" ng-click="openModal(event.image)" data-toggle="modal" data-target="#myModal">
                                                         <img class="event-picture" src="{{event.image}}" alt=""> <!--src="{{event.image}}"-->
                                                     </div>
