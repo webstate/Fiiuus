@@ -37,7 +37,7 @@
                         Varaa pöytä
                     </div>
                     <div style="font-family:Roboto"  ng-click="bronModal()" ng-class="{true: 'russian-font'}[$root.lang === 'ru']" ng-if="$root.lang ==='ru'" class="bron-btn-modal">
-                        Заказать столик
+                        Заказать столик
                     </div>
                     <!--<div class="sidenav-phone-number">
                            <p class="sideNavNumber">+372 5885 5200</p><img style="margin-left:200px;" class="booking-arrow" src="css/img/phone.png" />
@@ -157,7 +157,7 @@
                                     </div>
                                     <div ng-if="$root.lang === 'ru'" ng-click="bronModal()" class="book-table-btn">
                                         <p style="font-family: Roboto"class="landing-nav-btn">
-                                            Заказать столик
+                                            Заказать столик
                                         </p>
                                         <img class="booking-arrow" src="css/img/arrow.png" />
                                     </div>
@@ -1048,7 +1048,7 @@
                         top: 0px;
                         left: 90px;
                         font-family: Roboto;">
-                                    Mеню группы 
+                                    Mеню группы 
                                 </p>
                             </div>
                         </div>
@@ -1124,6 +1124,11 @@
                                             autoplay="true"
                                             autoplay-speed="5000"
                                             infinite="true"
+
+
+                                            init-onload="true"
+                                            data="events"
+
                                     >
                                         <div ng-repeat="event in events | filter: filterDate | orderBy: '-date' | limitTo: limit">
                                             <div class="col-md-6">
@@ -1280,7 +1285,7 @@
                             <button ng-if="$root.lang==='en'" ng-click="bronModal()" class="booking-btn">Book a table<img class="contact-menu-arrow" src="css/img/arrow.png" /></button>
                             <button ng-if="$root.lang==='ee'" ng-click="bronModal()" class="booking-btn">Broneeri laud<img class="contact-menu-arrow" src="css/img/arrow.png" /></button>
                             <button ng-if="$root.lang==='fi'" ng-click="bronModal()" class="booking-btn">Varaa pöytä<img class="contact-menu-arrow" src="css/img/arrow.png" /></button>
-                            <button ng-if="$root.lang==='ru'" style="letter-spacing: 0.09em;" ng-click="bronModal()" class="booking-btn fp">Заказать столик<img class="contact-menu-arrow" src="css/img/arrow.png" /></button>
+                            <button ng-if="$root.lang==='ru'" style="letter-spacing: 0.09em;" ng-click="bronModal()" class="booking-btn fp">Заказать столик<img class="contact-menu-arrow" src="css/img/arrow.png" /></button>
                         </div>
                     </div>
                 </div>
@@ -1570,7 +1575,7 @@
                             Varaa pöytä
                         </p>
                         <p style="font-family:Roboto;" ng-if="$root.lang ==='ru'" class="bron-modal-title bron-rus-title">
-                            Заказать столик
+                            Заказать столик
                         </p>
                         <!--<p ng-if="$root.lang ==='ee'" ng-show="bronSecond" ng-click="backToFirst()" class="bron-back">
                             Tagasi
@@ -1604,8 +1609,8 @@
                             </div>
                             <div class="col-md-4">
                                 <label style="color:white;">When?</label>
-                                <datepicker date-format="d MMMM, yyyy" date-min-limit="{{pastdate}}">
-                                    <input ng-class="{true:'error-bron', false:'nonerror-bron'}[dateEngError===true]" readonly="true" class="bron-date" ng-model="$root.dateEng" type="text" placeholder="Pick a date"/>
+                                <datepicker date-format="d MMMM, yyyy" date-min-limit = "{{minDate}}">
+                                    <input ng-class="{true:'error-bron', false:'nonerror-bron'}[dateEngError===true]" readonly="true" class="bron-date input--textfield" ng-model="$root.dateEng" type="text" placeholder="Pick a date"/>
                                 </datepicker>
                             </div>
                             <div class="col-md-4 col-xs-12">
@@ -1643,8 +1648,8 @@
 
                             <div class="col-md-4">
                                 <label style="color:white;">Kuupäev?</label>
-                                <datepicker date-format="d MMMM, yyyy" date-min-limit="{{pastdate}}">
-                                    <input ng-class="{true: 'error-bron', false:'nonerror-bron'}[dateEstError===true]" readonly="true" class="bron-date" ng-model="$root.dateEst" type="text" placeholder="Vali kuupäev"/>
+                                <datepicker date-format="d MMMM, yyyy" date-min-limit = "{{minDate}}">
+                                    <input ng-class="{true: 'error-bron', false:'nonerror-bron'}[dateEstError===true]" readonly="true" class="bron-date input--textfield" ng-model="$root.dateEst" type="text" placeholder="Vali kuupäev"/>
                                 </datepicker>
                                 <!--<datepicker ng-if="$root.lang ==='en'" date-format="d MMMM, yyyy">
                                   <input class="bron-date" ng-model="date" type="text" placeholder="Pick a date"/>
@@ -1684,8 +1689,8 @@
                             </div>
                             <div class="col-md-4">
                                 <label style="color:white;">Päivämäärä?</label>
-                                <datepicker date-format="d MMMM, yyyy" date-min-limit="{{pastdate}}">
-                                    <input ng-class="{true: 'error-bron', false:'nonerror-bron'}[dateFinError===true]" readonly="true" class="bron-date" ng-model="$root.dateFin" type="text" placeholder="Valitse päivämäärä"/>
+                                <datepicker date-format="d MMMM, yyyy" date-min-limit = "{{minDate}}">
+                                    <input ng-class="{true: 'error-bron', false:'nonerror-bron'}[dateFinError===true]" readonly="true" class="bron-date input--textfield" ng-model="$root.dateFin" type="text" placeholder="Valitse päivämäärä"/>
                                 </datepicker>
 
                             </div>
@@ -1722,8 +1727,8 @@
                             </div>
                             <div class="col-md-4">
                                 <label style="color:white;font-family:Roboto;">Дата?</label>
-                                <datepicker date-format="d MMMM, yyyy" date-min-limit="{{pastdate}}">
-                                    <input style="font-family:Roboto;" ng-class="{true: 'error-bron', false:'nonerror-bron'}[dateRusError===true]" readonly="true" class="bron-date" ng-model="$root.dateRus" type="text" placeholder="Выберите дату"/>
+                                <datepicker date-format="d MMMM, yyyy" date-min-limit = "{{minDate}}">
+                                    <input style="font-family:Roboto;" ng-class="{true: 'error-bron', false:'nonerror-bron'}[dateRusError===true]" readonly="true" class="bron-date input--textfield" ng-model="$root.dateRus" type="text" placeholder="Выберите дату"/>
                                 </datepicker>
 
                             </div>
@@ -1746,7 +1751,7 @@
                                 <button ng-if="$root.lang ==='ee'" class="bron-btn" ng-click="validateDateEst()">Reserveeri laud <img class="booking-modal-arrow" src="css/img/arrow.png" /></button>
                                 <button ng-if="$root.lang ==='en'" class="bron-btn" ng-click="validateDateEng()">Book a table <img class="booking-modal-arrow" src="css/img/arrow.png" /></button>
                                 <button ng-if="$root.lang ==='fi'" class="bron-btn" ng-click="validateDateFin()">Varaa pöytä<img class="booking-modal-arrow" src="css/img/arrow.png" /></button>
-                                <button style="font-family:Roboto; letter-spacing:0.09em;" ng-if="$root.lang ==='ru'" class="bron-btn" ng-click="validateDateRus()">Заказать столик<img class="booking-modal-arrow" src="css/img/arrow.png" /></button>
+                                <button style="font-family:Roboto; letter-spacing:0.09em;" ng-if="$root.lang ==='ru'" class="bron-btn" ng-click="validateDateRus()">Заказать столик<img class="booking-modal-arrow" src="css/img/arrow.png" /></button>
                             </div>
                         </div>
                     </div>
@@ -1791,23 +1796,23 @@
                             </div>
                             <div class="col-md-4">
                                 <label style="color:white" ng-if="$root.lang ==='en'">Email address</label>
-                                <input ng-class="{true:'error-bron', false:'nonerror-bron'}[emailEngError===true]" ng-if="$root.lang ==='en'" type="email" maxlength="40" required class="bron-input" ng-pattern="/^[a-z]+[a-z0-9._]+@[a-z]+\.[a-z.]{2,5}$/" placeholder="E-mail" ng-model="$root.emailEng"/>
+                                <input ng-class="{true:'error-bron', false:'nonerror-bron'}[emailEngError===true]" ng-if="$root.lang ==='en'" type="text" maxlength="40" class="bron-input" placeholder="E-mail" ng-model="$root.emailEng"/>
                                 <label style="color:white" ng-if="$root.lang ==='ee'">Emaili aadress</label>
-                                <input ng-class="{true:'error-bron', false:'nonerror-bron'}[emailEstError===true]" ng-if="$root.lang ==='ee'" type="email" maxlength="40"  required class="bron-input" ng-pattern="/^[a-z]+[a-z0-9._]+@[a-z]+\.[a-z.]{2,5}$/" placeholder="Email" ng-model="$root.emailEst"/>
+                                <input ng-class="{true:'error-bron', false:'nonerror-bron'}[emailEstError===true]" ng-if="$root.lang ==='ee'" type="text" maxlength="40"  class="bron-input" placeholder="Email" ng-model="$root.emailEst"/>
                                 <label style="color:white" ng-if="$root.lang ==='fi'">Sähköposti</label>
-                                <input ng-class="{true:'error-bron', false:'nonerror-bron'}[emailFinError===true]" ng-if="$root.lang ==='fi'" type="email" maxlength="40"  required class="bron-input" ng-pattern="/^[a-z]+[a-z0-9._]+@[a-z]+\.[a-z.]{2,5}$/" placeholder="Sähköposti" ng-model="$root.emailFin"/>
+                                <input ng-class="{true:'error-bron', false:'nonerror-bron'}[emailFinError===true]" ng-if="$root.lang ==='fi'" type="text" maxlength="40"  class="bron-input" placeholder="Sähköposti" ng-model="$root.emailFin"/>
                                 <label style="color:white; font-family:Roboto;" ng-if="$root.lang ==='ru'">Электронная почта</label>
-                                <input style="font-family:Roboto;" ng-class="{true:'error-bron', false:'nonerror-bron'}[emailRusError===true]" ng-if="$root.lang ==='ru'" maxlength="40" required type="email" class="bron-input"  ng-pattern="/^[a-z]+[a-z0-9._]+@[a-z]+\.[a-z.]{2,5}$/" placeholder="Электронная почта" ng-model="$root.emailRus"/>
+                                <input style="font-family:Roboto;" ng-class="{true:'error-bron', false:'nonerror-bron'}[emailRusError===true]" ng-if="$root.lang ==='ru'" maxlength="40" type="text" class="bron-input" placeholder="Электронная почта" ng-model="$root.emailRus"/>
                             </div>
                             <div class="col-md-4">
                                 <label style="color:white" ng-if="$root.lang ==='en'">Phone number</label>
-                                <input ng-class="{true:'error-bron', false:'nonerror-bron'}[phoneEngError===true]" ng-if="$root.lang ==='en'" type="text" maxlength="40" class="bron-input" placeholder="Phone number" ng-model="$root.phoneEng"/>
+                                <input ng-class="{true:'error-bron', false:'nonerror-bron'}[phoneEngError===true]" ng-if="$root.lang ==='en'" type="text" maxlength="15" class="bron-input" placeholder="Phone number" ng-model="$root.phoneEng"/>
                                 <label style="color:white" ng-if="$root.lang ==='ee'">Telefoninumber</label>
-                                <input ng-class="{true:'error-bron', false:'nonerror-bron'}[phoneEstError===true]" ng-if="$root.lang ==='ee'" type="text" maxlength="40" class="bron-input" placeholder="Telefoninumber" ng-model="$root.phoneEst"/>
+                                <input ng-class="{true:'error-bron', false:'nonerror-bron'}[phoneEstError===true]" ng-if="$root.lang ==='ee'" type="text" maxlength="15" class="bron-input" placeholder="Telefoninumber" ng-model="$root.phoneEst"/>
                                 <label style="color:white" ng-if="$root.lang ==='fi'">Puhelinnumero</label>
-                                <input ng-class="{true:'error-bron', false:'nonerror-bron'}[phoneFinError===true]" ng-if="$root.lang ==='fi'" type="text" maxlength="40" class="bron-input" placeholder="Puhelinnumero" ng-model="$root.phoneFin"/>
+                                <input ng-class="{true:'error-bron', false:'nonerror-bron'}[phoneFinError===true]" ng-if="$root.lang ==='fi'" type="text" maxlength="15" class="bron-input" placeholder="Puhelinnumero" ng-model="$root.phoneFin"/>
                                 <label style="color:white; font-family:Roboto;" ng-if="$root.lang ==='ru'">Телефон</label>
-                                <input style="font-family:Roboto;" ng-class="{true:'error-bron', false:'nonerror-bron'}[phoneRusError===true]" ng-if="$root.lang ==='ru'" maxlength="40" type="text" class="bron-input" placeholder="Телефон" ng-model="$root.phoneRus"/>
+                                <input style="font-family:Roboto;" ng-class="{true:'error-bron', false:'nonerror-bron'}[phoneRusError===true]" ng-if="$root.lang ==='ru'" type="text" maxlength="15" class="bron-input" placeholder="Телефон" ng-model="$root.phoneRus"/>
                             </div>
                         </div>
                     </div>
@@ -1840,7 +1845,6 @@
                     <div class="row">
                         <div class="container">
                             <div class="col-md-12">
-
                                 <button  ng-if="$root.lang ==='fi'" class="bron-btn btn-second" ng-click="bookFin()">Varaa pöytä {{displayDateFin}}, klo {{validTime}}, {{validPeople}}.<img class="booking-modal-arrow booking-modal-arrow-mobile-second" src="css/img/arrow.png" /></button>
                                 <button  ng-if="$root.lang ==='ee'" class="bron-btn btn-second" ng-click="bookEst()">Reserveeri laud {{displayDate}}, kell {{validTime}}, {{validPeople}}.<img class="booking-modal-arrow booking-modal-arrow-mobile-second" src="css/img/arrow.png" /></button>
                                 <button  ng-if="$root.lang ==='en'" class="bron-btn btn-second" ng-click="bookEng()">Book a Table on {{validDate}}, at {{validTime}}, for {{validPeople}}.<img class="booking-modal-arrow booking-modal-arrow-mobile-second" src="css/img/arrow.png" /></button>

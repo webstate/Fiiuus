@@ -25,7 +25,8 @@ angular.module('myApp').factory('AuthService',
     function getUserStatus() {
       return $http.get('/user/status')
       // handle success
-      .success(function (data) {
+      .then(function (response) {
+        var data = response.data;
         if(data.status){
           user = true;
         } else {
@@ -33,7 +34,8 @@ angular.module('myApp').factory('AuthService',
         }
       })
       // handle error
-      .error(function (data) {
+      .catch(function (response) {
+        var data = response.data;
         user = false;
       });
     }
@@ -47,7 +49,9 @@ angular.module('myApp').factory('AuthService',
       $http.post('/user/login',
         {username: username, password: password})
         // handle success
-        .success(function (data, status) {
+        .then(function (response) {
+          var status = response.status;
+          var data = response.data;
           if(status === 200 && data.status){
             user = true;
             deferred.resolve();
@@ -57,7 +61,8 @@ angular.module('myApp').factory('AuthService',
           }
         })
         // handle error
-        .error(function (data) {
+        .catch(function (response) {
+          var data = response.data;
           user = false;
           deferred.reject();
         });
@@ -75,12 +80,14 @@ angular.module('myApp').factory('AuthService',
       // send a get request to the server
       $http.get('/user/logout')
         // handle success
-        .success(function (data) {
+        .then(function (response) {
+          var data = response.data;
           user = false;
           deferred.resolve();
         })
         // handle error
-        .error(function (data) {
+        .catch(function (response) {
+          var data = response.data;
           user = false;
           deferred.reject();
         });
@@ -99,7 +106,9 @@ angular.module('myApp').factory('AuthService',
       $http.post('/user/register',
         {username: username, password: password})
         // handle success
-        .success(function (data, status) {
+        .then(function (response) {
+          var data = response.data;
+          var status= response.status;
           if(status === 200 && data.status){
             deferred.resolve();
           } else {
@@ -107,7 +116,8 @@ angular.module('myApp').factory('AuthService',
           }
         })
         // handle error
-        .error(function (data) {
+        .catch(function (response) {
+          var data = response.data;
           deferred.reject();
         });
 
