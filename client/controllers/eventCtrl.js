@@ -1,113 +1,78 @@
 var eventCtrl = angular.module('eventCtrl', []);
 
-eventCtrl.controller('eventCtrl', function($scope, eventService, $rootScope){
-    eventService.getEvents().then(function(data){
-        $scope.eventloaded = false;
-        console.log(data);
-        $scope.events = data;
-        if(data.length === 0){
-            $scope.eventNavbar = true;
-            $scope.eventContainer = true;
-        }else{
-            $scope.eventNavbar = false;
-            $scope.eventContainer = false;
-        }
-        var tday = new Date();
-        var day = new Date().setDate(tday.getDate()-1);
-        var dateTime = new Date(day);
-        var dateTime1 = new Date(data[0]['date']);
-        if (dateTime1 > dateTime){
-            $scope.eventNavbar = false;
-            $scope.eventContainer = false;
-        }else{
-            $scope.eventDialog = true;
-            $scope.eventContainer = true;
-        }
-        angular.forEach($scope.events, function(value) {
-            value.date = new Date(value.date);
-        });
-        $scope.filterDate = function(events) {
-            var today = new Date();
-            var today_plus_one_day = new Date().setDate(today.getDate()-1);
-            return events.date >= today_plus_one_day;
-        };
-        if ($rootScope.lang === "ee") {
-            if (((data[0]['description'].length)&&(data[0]['name'].length)) === 0){
+eventCtrl.controller('eventCtrl', function ($scope, eventService, $rootScope) {
+    eventService.getEvents().then(function (data) {
+            console.log(data);
+            $scope.events = data;
+            if (data.length === 0) {
                 $scope.eventNavbar = true;
                 $scope.eventContainer = true;
-            }else{
+            } else {
                 $scope.eventNavbar = false;
                 $scope.eventContainer = false;
             }
-            var counting = data.reduce(function (n, desc) {
-                return n + (desc.description !== '');
-            }, 0);
-            if (counting >= 5){
-                // setTimeout(function() {
-                    $scope.limit = counting;
-                // },1500);
+            var tday = new Date();
+            var day = new Date().setDate(tday.getDate() - 1);
+            var dateTime = new Date(day);
+            var dateTime1 = new Date(data[0]['date']);
+            if (dateTime1 > dateTime) {
+                $scope.eventNavbar = false;
+                $scope.eventContainer = false;
+            } else {
+                $scope.eventDialog = true;
+                $scope.eventContainer = true;
+            }
+            angular.forEach($scope.events, function (value) {
+                value.date = new Date(value.date);
+            });
+            $scope.filterDate = function (events) {
+                var today = new Date();
+                var today_plus_one_day = new Date().setDate(today.getDate() - 1);
+                return (events.date >= today_plus_one_day);
+            };
+            $scope.limit = 5;
+            if ($rootScope.lang === "ee") {
+                for (var i in data) {
+                    if (data[i].description === null || data[i].description === undefined || data[i].description.length <= 0) {
+                        delete data[i];
+                    }
+                }
+            }
+            if ($rootScope.lang === "en") {
+                for (var i in data) {
+                    if (data[i].descEng === null || data[i].descEng === undefined || data[i].descEng.length <= 0) {
+                        delete data[i];
+                    }
+                }
+            }
+            if ($rootScope.lang === "fi") {
+                for (var i in data) {
+                    if (data[i].descFin === null || data[i].descFin === undefined || data[i].descFin.length <= 0) {
+                        delete data[i];
+                    }
+                }
+            }
+            if ($rootScope.lang === "ru") {
+                for (var i in data) {
+                    if (data[i].descRus === null || data[i].descRus === undefined || data[i].descRus.length <= 0) {
+                        delete data[i];
+                    }
+                }
+            }
+            for (step = 0; step < 20; step++) {
+                if (data[step] === null || data[step] === undefined || data[step].length <= 0) {
+                    $scope.eventNavbar = true;
+                    $scope.eventContainer = true;
+                } else {
+                    $scope.eventNavbar = false;
+                    $scope.eventContainer = false;
+                    break;
+                }
+            }
+        },
 
-            }else{
-                    $scope.limit = counting;
-            }
+        function (err) {
+            console.log(err);
         }
-        if ($rootScope.lang === "en") {
-            if (((data[0]['descEng'].length)&&(data[0]['nameEng'].length)) === 0){
-                $scope.eventNavbar = true;
-                $scope.eventContainer = true;
-            }else{
-                $scope.eventNavbar = false;
-                $scope.eventContainer = false;
-            }
-            var counting = data.reduce(function (n, desc) {
-                return n + (desc.descEng !== '');
-            }, 0);
-            if (counting >= 5){
-                    $scope.limit = counting;
-            }else{
-                    $scope.limit = counting;
-            }
-        }
-        if ($rootScope.lang === "fi") {
-            if (((data[0]['descFin'].length)&&(data[0]['nameFin'].length)) === 0){
-                $scope.eventNavbar = true;
-                $scope.eventContainer = true;
-            }else{
-                $scope.eventNavbar = false;
-                $scope.eventContainer = false;
-            }
-            var counting = data.reduce(function (n, desc) {
-                return n + (desc.descFin !== '');
-            }, 0);
-            if (counting >= 5){
-                    $scope.limit = counting;
-            }else{
-                    $scope.limit = counting;
-            }
-        }
-        if ($rootScope.lang === "ru") {
-            if (((data[0]['descRus'].length)&&(data[0]['nameRus'].length)) === 0){
-                $scope.eventNavbar = true;
-                $scope.eventContainer = true;
-            }else{
-                $scope.eventNavbar = false;
-                $scope.eventContainer = false;
-            }
-            var counting = data.reduce(function (n, desc) {
-                return n + (desc.descRus !== '');
-            }, 0);
-            if (counting >= 5){
-                    $scope.limit = counting;
-            }else{
-                    $scope.limit = counting;
-            }
-        }
-        $scope.eventloaded = true;
-    }, function(err){
-        console.log(err);
-    })
-    $scope.activeEventImg = '';
-    $scope.openModal = function(path){
-        $scope.activeEventImg = path;
-    }
+    )
 })

@@ -1112,28 +1112,16 @@
                             </div>
 
                             <div class="row" style="padding-bottom: 100px; border-bottom: 1px solid #CCCCCC;">
-                                <div class="slick-container slick-initialized" ng-controller="eventCtrl">
-                                    <slick
-                                            ng-if="eventloaded"
-                                            init-onload="true"
-                                            data="events"
-                                            adaptive-height="true"
-                                            arrows="true"
-                                            slides-to-show="1"
-                                            dots="true"
-                                            autoplay="true"
-                                            autoplay-speed="5000"
-                                            infinite="true"
-                                    >
+                                <div ng-controller="eventCtrl">
+                                    <div class="slickinit">
                                         <div ng-repeat="event in events | filter: filterDate | orderBy: '-date' | limitTo: limit">
                                             <div class="col-md-6">
-                                                <div class="event" >
+                                                <div class="event">
                                                     <div valign="top" style="width: 100%";>
                                                         <div>
                                                             <p ng-if="$root.lang==='ee'" class="event-title">
                                                                 {{event.name}}
                                                             </p>
-
                                                         </div>
                                                         <div>
                                                             <p ng-if="$root.lang==='en'" class="event-title">
@@ -1162,39 +1150,40 @@
                                                     </div>
                                                 </div>
                                             </div>
+                                            <script>
+                                                $(function() {
+                                                    $('.pop').on('click', function() {
+                                                        $('.imagepreview').attr('src', $(this).find('img').attr('src'));
+                                                        $('#imagemodal').modal('show');
+                                                    });
+                                                });
+                                            </script>
                                             <div class="col-md-6">
                                                 <div style="vertical-align: top; max-width: 100%">
-                                                    <div ng-if="$root.lang === 'ee'" style="background-image: none;" ng-click="openModal(event.image)" data-toggle="modal" data-target="#myModal">
-                                                        <img class="event-picture" src="{{event.image}}" alt=""> <!--src="{{event.image}}"-->
-                                                    </div>
-                                                    <div ng-if="$root.lang === 'en'" style="background-image: none;" ng-click="openModal(event.imageEng)" data-toggle="modal" data-target="#myModal">
-                                                        <img class="event-picture" src="{{event.imageEng}}" alt="">
-                                                    </div>
-                                                    <div ng-if="$root.lang === 'fi'" style="background-image: none;" ng-click="openModal(event.imageFin)" data-toggle="modal" data-target="#myModal">
-                                                        <img class="event-picture" src="{{event.imageFin}}" alt="">
-                                                    </div>
-                                                    <div ng-if="$root.lang === 'ru'" style="background-image: none;" ng-click="openModal(event.imageRus)" data-toggle="modal" data-target="#myModal">
-                                                        <img class="event-picture" src="{{event.imageRus}}" alt="">
-                                                    </div>
+                                                    <div href="#" ng-if="$root.lang === 'ee'" class="pop" data-toggle="modal" data-target="#myModal"><img class="event-picture" src="{{event.image}}"></div>
+                                                    <div href="#" ng-if="$root.lang === 'en'" class="pop" data-toggle="modal" data-target="#myModal"><img class="event-picture" src="{{event.imageEng}}"></div>
+                                                    <div href="#" ng-if="$root.lang === 'fi'" class="pop" data-toggle="modal" data-target="#myModal"><img class="event-picture" src="{{event.imageFin}}"></div>
+                                                    <div href="#" ng-if="$root.lang === 'ru'" class="pop" data-toggle="modal" data-target="#myModal"><img class="event-picture" src="{{event.imageRus}}"></div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </slick>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-                <div class="modal fade" tabindex="-1" role="dialog" id="myModal">
-                    <div class="modal-dialog modal-lg" role="document">
+                <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
                         <div class="modal-content">
-                            <div class="modal-body" style="text-align: center;">
-                                <img src="{{activeEventImg}}" style=" max-height: 85vh; width: auto; max-width: 100%">
+                            <div class="modal-body">
+                                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                                <img src="" class="imagepreview" style="width: 100%;" >
                             </div>
-                        </div><!-- /.modal-content -->
-                    </div><!-- /.modal-dialog -->
-                </div><!-- /.modal -->
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
             <div class="row" scroll-bookmark="contact">
