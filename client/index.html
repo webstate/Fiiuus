@@ -94,41 +94,6 @@
   <script src="./directives/menu.js"></script>
   <script src="./directives/menuItem.js"></script>
   <script src="./controllers/modalDemoCtrl.js"></script>
-  <!--<script>-->
-    <!--$(document).ready(function(){-->
-        <!--alert("1");-->
-        <!--setTimeout(function () {-->
-          <!--if ($('#visible-event-description').visibilityChanged(function(element, visible)){-->
-              <!--setTimeout(function(){-->
-                  <!--$('.slickok').slick({-->
-                      <!--slidesToShow: 1,-->
-                      <!--adaptiveHeight: true,-->
-                      <!--arrows: true,-->
-                      <!--dots: true,-->
-                      <!--autoplay: true,-->
-                      <!--autoplaySpeed: 5000,-->
-                      <!--infinite: true-->
-                  <!--});-->
-              <!--},500);-->
-          <!--}-->
-        <!--}, 500)-->
-    <!--});-->
-  <!--</script>-->
-  <!--<script>-->
-      <!--$(document).ready(function(){-->
-          <!--window.addEventListener('scroll', function() {isInViewport('#visible_event_description');});-->
-      <!--});-->
-      <!--function isInViewport(element) {-->
-          <!--var rect = element.getBoundingClientRect();-->
-          <!--var html = document.documentElement;-->
-          <!--return (-->
-              <!--rect.top >= 0 &&-->
-              <!--rect.left >= 0 &&-->
-              <!--rect.bottom <= (window.innerHeight || html.clientHeight) &&-->
-              <!--rect.right <= (window.innerWidth || html.clientWidth)-->
-          <!--);-->
-      <!--}-->
-  <!--</script>-->
   <script>
       $.fn.isFullyInViewport = function() {
           var elementTop = $(this).offset().top;
@@ -165,79 +130,6 @@
       document.addEventListener("DOMContentLoaded", function(event) {
           console.log("DOM fully loaded and parsed");
       });
-      //
-      // for(var i=0; i<500000000; i++)
-      // {} // this synchronous script is going to delay parsing of the DOM. So the DOMContentLoaded event is going to launch later.
   </script>
-  <!--<script>-->
-      <!--if($('#visible-event-description').is(':visible'))-->
-      <!--{-->
-          <!--setTimeout(function(){-->
-              <!--$('.slickok').slick({-->
-                  <!--slidesToShow: 1,-->
-                  <!--adaptiveHeight: true,-->
-                  <!--arrows: true,-->
-                  <!--dots: true,-->
-                  <!--autoplay: true,-->
-                  <!--autoplaySpeed: 5000,-->
-                  <!--infinite: true-->
-              <!--});-->
-
-          <!--},1000);-->
-      <!--}-->
-  <!--</script>-->
-  <!--<script>-->
-    <!--alert("1");-->
-      <!--$(document).ready(function(){-->
-          <!--alert("2");-->
-          <!--if(($("#visible-event-description").length) > (0))-->
-          <!--{-->
-              <!--setTimeout(function(){-->
-                  <!--alert("3");-->
-                  <!--$('.slickok').slick({-->
-                      <!--slidesToShow: 1,-->
-                      <!--adaptiveHeight: true,-->
-                      <!--arrows: true,-->
-                      <!--dots: true,-->
-                      <!--autoplay: true,-->
-                      <!--autoplaySpeed: 5000,-->
-                      <!--infinite: true-->
-                  <!--});-->
-
-              <!--},1000);-->
-          <!--}-->
-      <!--});-->
-  <!--</script>-->
-  <!--<script>-->
-      <!--$(window).load(function() {-->
-          <!--if (document.readyState === "complete") {-->
-              <!--setTimeout(function(){-->
-              <!--$('.slickok').slick({-->
-                  <!--slidesToShow: 1,-->
-                  <!--adaptiveHeight: true,-->
-                  <!--arrows: true,-->
-                  <!--dots: true,-->
-                  <!--autoplay: true,-->
-                  <!--autoplaySpeed: 5000,-->
-                  <!--infinite: true-->
-              <!--});-->
-          <!--},4000)};-->
-      <!--});-->
-  <!--</script>-->
-  <!--<script>-->
-      <!--$(window).load(function() {-->
-          <!--setTimeout(function () {-->
-              <!--$('.slickok').slick({-->
-                  <!--slidesToShow: 1,-->
-                  <!--adaptiveHeight: true,-->
-                  <!--arrows: true,-->
-                  <!--dots: true,-->
-                  <!--autoplay: true,-->
-                  <!--autoplaySpeed: 5000,-->
-                  <!--infinite: true-->
-              <!--}, 1000);-->
-          <!--})-->
-      <!--});-->
-  <!--</script>-->
 </body>
 </html>
