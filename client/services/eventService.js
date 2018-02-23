@@ -70,7 +70,23 @@ eventService.factory('eventService', function($q, $http){
         }).error(function(err){
             d.reject(err);
         })
+            .then(function () {
+                setTimeout(function(){
+                    $('.slickinit').slick({
+                        slidesToShow: 1,
+                        adaptiveHeight: true,
+                        arrows: true,
+                        dots: true,
+                        autoplay: true,
+                        autoplaySpeed: 5000,
+                        infinite: true,
+                        accessibility:true
+                    });
+
+                },300);
+            })
         return d.promise;
+
     }
     function getNextEvents(){
         var d = $q.defer();

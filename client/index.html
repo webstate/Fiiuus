@@ -50,13 +50,13 @@
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBlAMX_L5qge4gAQCmykycZbBf9_EV_Bmg"
     async defer></script>
 
-  <!--<script>-->
-      <!--$(document).ready(function(){-->
-          <!--setTimeout(function(){-->
-              <!--$('.slickok').slick('unslick');-->
-          <!--},500);-->
-      <!--});-->
-  <!--</script>-->
+  <script>
+      $(document).ready(function(){
+          setTimeout(function(){
+              $('.slickok').slick('unslick');
+          },10);
+      });
+  </script>
   <script src="./main.js"></script>
   <script src="./services.js"></script>
   <script src="./controllers.js"></script>
@@ -94,42 +94,6 @@
   <script src="./directives/menu.js"></script>
   <script src="./directives/menuItem.js"></script>
   <script src="./controllers/modalDemoCtrl.js"></script>
-  <script>
-      $.fn.isFullyInViewport = function() {
-          var elementTop = $(this).offset().top;
-          var elementBottom = elementTop + $(this).outerHeight();
 
-          var viewportTop = $(window).scrollTop();
-          var viewportBottom = viewportTop + $(window).height();
-
-          return elementTop >= viewportTop && elementBottom <= viewportBottom;
-      };
-
-      $(window).on('resize scroll', function() {
-          $('.menu-section-text').each(function() {
-              if ($(this).isFullyInViewport()) {
-                  setTimeout(function(){
-                      $('.slickinit').slick({
-                          slidesToShow: 1,
-                          adaptiveHeight: true,
-                          arrows: true,
-                          dots: true,
-                          autoplay: true,
-                          autoplaySpeed: 5000,
-                          infinite: true,
-                          accessibility:true
-                      });
-
-                  },50);
-                  $(window).off('resize scroll');
-              }
-          });
-      });
-  </script>
-  <script>
-      document.addEventListener("DOMContentLoaded", function(event) {
-          console.log("DOM fully loaded and parsed");
-      });
-  </script>
 </body>
 </html>
