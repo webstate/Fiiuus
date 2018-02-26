@@ -190,7 +190,7 @@ bronCtrl.controller('bronCtrl', function($rootScope, $scope, bookingService){
             $scope.dateEstError = true;
             
         }
-        if(!$scope.dropDownTimeEstError && !$scope.dropDownTimeEstError && !$scope.dateEstError){
+        if(!$scope.dropDownPeopleEstError && !$scope.dropDownTimeEstError && !$scope.dateEstError){
             console.log("tulen siisa");
             bookingService.validateBooking($scope.dropDownTimeEst, $scope.dateEst).then(function(data){
                 if(data.error){
