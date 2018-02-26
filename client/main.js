@@ -36,7 +36,8 @@ var myApp = angular.module('myApp', [
     'menuItem',
     'modalDemoCtrl',
     'angularTrix',
-    'ngSanitize'
+    'ngSanitize',
+    'slick'
 ]);
 
 myApp.config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
@@ -59,7 +60,7 @@ myApp.config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
     })
     .state('logout', {
       controller: 'logoutController',
-      access: {restricted: true}
+      access: {restricted: false}
     })
     .state('register', {
       url:'/register',
