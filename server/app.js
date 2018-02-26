@@ -11,7 +11,7 @@ var passport = require('passport');
 var localStrategy = require('passport-local' ).Strategy;
 
 // mongoose
-mongoose.connect('mongodb://localhost/fiiuus', {useMongoClient: true});
+mongoose.connect('mongodb://localhost/fii');
 
 // user schema/model
 var User = require('./models/user.js');
@@ -58,22 +58,22 @@ app.use('/services', express.static(__dirname + '../client/services'));
 app.use('/uploads', express.static(__dirname + '../client/uploads'));
 
 app.get('/*', function(req, res) {
-  res.sendFile(path.join(__dirname, '../client', 'index.html'));
+    res.sendFile(path.join(__dirname, '../client', 'index.html'));
 });
 
 // error hndlers
 app.use(function(req, res, next) {
-  var err = new Error('Not Found');
-  err.status = 404;
-  next(err);
+    var err = new Error('Not Found');
+    err.status = 404;
+    next(err);
 });
 
 app.use(function(err, req, res) {
-  res.status(err.status || 500);
-  res.end(JSON.stringify({
-    message: err.message,
-    error: {}
-  }));
+    res.status(err.status || 500);
+    res.end(JSON.stringify({
+        message: err.message,
+        error: {}
+    }));
 });
 
 module.exports = app;

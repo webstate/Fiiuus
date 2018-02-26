@@ -6,15 +6,19 @@ emailService.factory('emailService', function($q, $http){
     }
     function sendFeedBack(email, name, message, lang){
         var d = $q.defer();
-        $http.post('drink/email/feedback', {
+        $http.get('drink/email/feedback', {
             name: name,
             email: email,
             message: message,
             lang: lang
         })
-        .success(function(data){
+        .then(function(response){
+            var data = response.data;
+            console.log(data);
             d.resolve(data);
-        }).error(function(err){
+        }).catch(function(response){
+            var err = response.data;
+            console.log(err);
             d.reject(err);
         })
         return d.promise;

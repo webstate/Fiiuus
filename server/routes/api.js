@@ -166,10 +166,8 @@ router.post('/email/feedback', function(req, res){
                 </html>'
     }
     mailgun.messages().send(feedbackToCustomer, function(err, body){
-        console.log(body);
     })
     mailgun.messages().send(feedbackToResto, function(err, body){
-        console.log(body);
         if(err) {
             res.json({
                 msg: "there was error sending mail"
@@ -255,8 +253,8 @@ router.post('/times/validate', function(req, res){
             //var test2 = parseInt(moment(element.start).format('HH'))+offset;
 
             //for server
-            var test = parseInt(moment(element.end).format('HH'))+offset;
-            var test2 = parseInt(moment(element.start).format('HH'))+offset;
+            var test = parseInt(moment(element.end).format('HH'));
+            var test2 = parseInt(moment(element.start).format('HH'));
 
             var bookingTime = new Date();
             bookingTime.setHours(parseInt(moment(dateTime).format('HH')));
@@ -724,10 +722,10 @@ router.get('/event/get', function(req, res){
             perma.descFin = element.descFin;
             perma.nameRus = element.nameRus;
             perma.descRus = element.descRus;
-            perma.image = response.image;
-            perma.imageEng = response.imageEng;
-            perma.imageFin = response.imageFin;
-            perma.imageRus = response.imageRus;
+            perma.image = element.image;
+            perma.imageEng = element.imageEng;
+            perma.imageFin = element.imageFin;
+            perma.imageRus = element.imageRus;
             response.push(perma);
         })
 
@@ -819,7 +817,7 @@ router.post('/texts/update', function(req, res){
 // Picture routes ---------------------
 router.post('/picture/add', upload.single('file'),function(req, res){
     var str = req.file.path;
-    var correctPath = str.replace(/\/Users\/Oskar\/Desktop\/Projektid\/Fii\/client\//, '../');
+    var correctPath = str.replace(/\/opt\/bitnami\/apps\/Fii\/client\//, '../');
     Picture.create({
         picture:correctPath
     }, function(err){
