@@ -34,7 +34,7 @@
                 '<option ng-repeat="item in months" ng-selected="item === month" ng-disabled=\'!isSelectableMaxDate($index + 1 + " " + day + ", " + year) || !isSelectableMinDate($index + 1 + " " + day + ", " + year)\' ng-value="$index + 1" value="$index + 1">',
                   '{{ item }}',
                 '</option>',
-              '</seleccdt>',
+              '</select>',
             '</div>',
           '</div>',
           '<div class="_720kb-datepicker-calendar-header">',

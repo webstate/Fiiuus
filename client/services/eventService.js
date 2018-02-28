@@ -8,6 +8,7 @@ eventService.factory('eventService', function($q, $http){
         getNextEvents:getNextEvents,
         findByIdEvent:findByIdEvent,
         updateEvent: updateEvent
+
     })
     function addEvent(name, description, image, date, time, nameEng, descEng, imageEng, nameFin, descFin, imageFin, nameRus, descRus, imageRus){
         var d = $q.defer();
@@ -75,8 +76,24 @@ eventService.factory('eventService', function($q, $http){
         }).catch(function(response){
             var err = response.data;
             d.reject(err);
+        })// initializes slick and its properties
+            .then(function () {
+            setTimeout(function(){
+                $('.slickinit').slick({
+                    slidesToShow: 1,
+                    adaptiveHeight: true,
+                    arrows: true,
+                    dots: true,
+                    autoplay: true,
+                    autoplaySpeed: 5000,
+                    infinite: true,
+                    accessibility:true
+                });
+
+            },10);
         })
         return d.promise;
+
     }
     function getNextEvents(){
         var d = $q.defer();

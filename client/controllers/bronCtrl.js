@@ -234,15 +234,15 @@ bronCtrl.controller('bronCtrl', function($rootScope, $scope, bookingService){
             $scope.dateEstError = true;
             
         }
-        if(!$scope.dropDownTimeEstError && !$scope.dropDownTimeEstError && !$scope.dateEstError && !$scope.errorMsg2){
+        if(!$scope.dropDownPeopleEstError && !$scope.dropDownTimeEstError && !$scope.dateEstError && !$scope.errorMsg2){
             console.log("tulen siisa");
             bookingService.validateBooking($scope.dropDownTimeEst, $scope.dateEst).then(function(data){
                 if(data.error){
                     $scope.bronFrist = true;
                     $scope.bronSecond = false;
                     $scope.errorMsg = true;
-                    $scope.errorMsg = true;
-                    $scope.errorMsg2 = true;
+                 
+                    
                 }else{
                     $scope.bronFirst = false;
                     $scope.bronSecond = true;
@@ -323,8 +323,7 @@ bronCtrl.controller('bronCtrl', function($rootScope, $scope, bookingService){
                     $scope.bronFrist = true;
                     $scope.bronSecond = false;
                     $scope.errorMsg = true;
-                    $scope.errorMsg = true;
-                    $scope.errorMsg2 = true;
+                    
 
                 }else{
                     $scope.bronFirst = false;
@@ -364,9 +363,8 @@ bronCtrl.controller('bronCtrl', function($rootScope, $scope, bookingService){
                 if(data.error){
                     $scope.bronFrist = true;
                     $scope.bronSecond = false;
-                    $scope.errorMsg2 = true;
                     $scope.errorMsg = true;
-                    $scope.errorMsg = true;
+                    
                 }else{
                     $scope.bronFirst = false;
                     $scope.bronSecond = true;
@@ -443,8 +441,8 @@ bronCtrl.controller('bronCtrl', function($rootScope, $scope, bookingService){
                     $scope.bronFrist = true;
                     $scope.bronSecond = false;
                     $scope.errorMsg = true;
-                    $scope.errorMsg = true;
-                    $scope.errorMsg2 = true;
+                   
+                    
                 }else{
                     $scope.bronFirst = false;
                     $scope.bronSecond = true;
