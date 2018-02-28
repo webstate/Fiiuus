@@ -822,7 +822,7 @@ router.post('/texts/update', function(req, res){
 // Picture routes ---------------------
 router.post('/picture/add', upload.single('file'),function(req, res){
     var str = req.file.path;
-    var correctPath = str.replace(/\/Users\/Oskar\/Desktop\/Projektid\/Fii\/client\//, '../');
+    var correctPath = str.replace(/\/opt\/bitnami\/apps\/Fii\/client\//, '../');
     Picture.create({
         picture:correctPath
     }, function(err){
