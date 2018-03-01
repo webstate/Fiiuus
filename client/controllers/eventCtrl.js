@@ -12,9 +12,14 @@ eventCtrl.controller('eventCtrl', function ($scope, eventService, $rootScope) {
                 $scope.eventNavbar = false;
                 $scope.eventContainer = false;
             }
-            //all the objects in array are ordered by date, and if the highest date which is first in the array is smaller than the current date, it hides the navbar and events container
+            // angular.forEach($scope.events, function (value) {
+            //     value.date = new Date(value.date);
+            // });
+
+
+            //if the highest date which is first in the array is smaller than the current date, it hides the navbar and events container
             var tday = new Date();
-            var day = new Date().setDate(tday.getDate() - 1);
+            var day = new Date().setDate(tday.getDate() + 1);
             var dateTime = new Date(day);
             var dateTime1 = new Date(data[0]['date']);
             if (dateTime1 > dateTime) {
@@ -24,43 +29,63 @@ eventCtrl.controller('eventCtrl', function ($scope, eventService, $rootScope) {
                 $scope.eventDialog = true;
                 $scope.eventContainer = true;
             }
-            angular.forEach($scope.events, function (value) {
-                value.date = new Date(value.date);
-            });
-            //checks all the dates and returns only the ones that are higher than current date
-            $scope.filterDate = function (events) {
-                var today = new Date();
-                var today_plus_one_day = new Date().setDate(today.getDate() - 1);
-                return (events.date >= today_plus_one_day);
-            };
-            //set the max slides on the page
             $scope.limit = 5;
-            //removes array objects if the value of property is empty
+            var today = new Date();
+            var today_plus_one_day = new Date().setDate(today.getDate() - 1);
+            today_plus_one_day = new Date(today_plus_one_day);
             if ($rootScope.lang === "ee") {
-                for (var i in data) {
-                    if (data[i].description === null || data[i].description === undefined || data[i].description.length <= 0) {
-                        delete data[i];
+                for (var ee in data) {
+                    var time_data = (data[ee]['date'])
+                    var replace_data = time_data.replace(/-/g,"/")
+                    var slice_data = replace_data.slice(0, 10)
+                    var eventdate = new Date(slice_data)
+                    if (data[ee].description === null || data[ee].description === undefined || data[ee].description.length <= 0) {
+                        delete data[ee]
+                    }
+                    if (eventdate <= today_plus_one_day){
+                        delete data[ee]
                     }
                 }
             }
             if ($rootScope.lang === "en") {
-                for (var i in data) {
-                    if (data[i].descEng === null || data[i].descEng === undefined || data[i].descEng.length <= 0) {
-                        delete data[i];
+                for (var en in data) {
+                    var time_data = (data[en]['date'])
+                    var replace_data = time_data.replace(/-/g,"/")
+                    var slice_data = replace_data.slice(0, 10)
+                    var eventdate = new Date(slice_data)
+                    if (data[en].descEng === null || data[en].descEng === undefined || data[en].descEng.length <= 0) {
+                        delete data[en]
+                    }
+                    if (eventdate < today_plus_one_day) {
+                        delete data[en]
                     }
                 }
             }
             if ($rootScope.lang === "fi") {
-                for (var i in data) {
-                    if (data[i].descFin === null || data[i].descFin === undefined || data[i].descFin.length <= 0) {
-                        delete data[i];
+                for (var fi in data) {
+                    var time_data = (data[fi]['date'])
+                    var replace_data = time_data.replace(/-/g,"/")
+                    var slice_data = replace_data.slice(0, 10)
+                    var eventdate = new Date(slice_data)
+                    if (data[fi].descFin === null || data[fi].descFin === undefined || data[fi].descFin.length <= 0) {
+                        delete data[fi];
+                    }
+                    if (eventdate < today_plus_one_day) {
+                        delete data[fi]
                     }
                 }
             }
             if ($rootScope.lang === "ru") {
-                for (var i in data) {
-                    if (data[i].descRus === null || data[i].descRus === undefined || data[i].descRus.length <= 0) {
-                        delete data[i];
+                for (var ru in data) {
+                    var time_data = (data[ru]['date'])
+                    var replace_data = time_data.replace(/-/g,"/")
+                    var slice_data = replace_data.slice(0, 10)
+                    var eventdate = new Date(slice_data)
+                    if (data[ru].descRus === null || data[ru].descRus === undefined || data[ru].descRus.length <= 0) {
+                        delete data[ru];
+                    }
+                    if (eventdate < today_plus_one_day) {
+                        delete data[ru]
                     }
                 }
             }
@@ -74,10 +99,29 @@ eventCtrl.controller('eventCtrl', function ($scope, eventService, $rootScope) {
                     break;
                 }
             }
+            data.sort(function(a,b){
+                return (b.date < a.date) ? 1 : (b.date > a.date) ? -1 : 0;
+            });
         },
 
         function (err) {
             console.log(err);
         }
     )
-})
+});
+eventCtrl.filter('unique', function() {
+    return function(collection, keyname) {
+        var output = [],
+            keys = [];
+
+        angular.forEach(collection, function(item) {
+            var key = item[keyname];
+            if(keys.indexOf(key) === -1) {
+                keys.push(key);
+                output.push(item);
+            }
+        });
+        return output;
+    };
+});
+

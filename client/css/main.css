@@ -703,6 +703,7 @@ th{
     line-height: 1 !important;
     opacity: 1 !important;
     color: #000000 !important;
+    margin-bottom: 50px !important;
 }
 
 .slick-slide {
@@ -714,6 +715,7 @@ th{
 
 .slick-prev:before {
     content: url('img/back.png') !important;
+    margin-bottom: 50px !important;
     position: static !important;
 
 }
@@ -739,8 +741,8 @@ th{
     position: absolute;
     top: 285px!important;
     display: block;
-    width: 20px;
-    height: 20px;
+    width: 24px !important;
+    height: 24px !important;
     padding: 0;
     -webkit-transform: translate(0, -50%);
     -ms-transform: translate(0, -50%);
@@ -772,7 +774,7 @@ th{
     width: 100%;
 }
 .event-picture {
-    /*background-image: url(img/mockup-worker.png);*/
+    /*background-image: url('img/mockup-worker.png');*/
     margin-top: 80px;;
     background-size: cover;
     max-width:100%;
