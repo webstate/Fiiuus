@@ -37,9 +37,9 @@ var ClosedTimes = require('../models/closedTimes.js');
 router.post('/event/add', function(req, res){
     console.log(req.body);
     var date = moment(req.body.date, 'YYYY-MM-DD HH:mm:ss').format('YYYY-MM-DD');
-    var time1 = req.body.time;
-    var time2= parseInt(time1.split(":")[0])-3;
-    var time3= time2+":"+time1.split(":")[1];
+    //var time1 = req.body.time;
+    //var time2= parseInt(time1.split(":")[0])-3;
+    //var time3= time2+":"+time1.split(":")[1];
     var time = moment(req.body.time, 'HH:mm:ss').format('HH:mm:ss');
     console.log("This is the moment converted date: " + date);
     console.log("This is the moment converted time: " +time);
