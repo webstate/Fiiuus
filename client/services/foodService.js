@@ -14,10 +14,12 @@ foodService.factory('foodService', function($q, $http){
     function getFoodById(id){
         var d = $q.defer();
         $http.get('food/food/byid/'+id)
-        .success(function(data){
+        .then(function(response){
+            var data = response.data;
             d.resolve(data);
         })
-        .error(function(err){
+        .catch(function(response){
+            var err= response.data;
             d.reject(err);
         })
         return d.promise;
@@ -25,9 +27,11 @@ foodService.factory('foodService', function($q, $http){
     function getStarters(){
         var d = $q.defer();
         $http.get('food/food/starters')
-        .success(function(data){
+        .then(function(response){
+            var data = response.data;
             d.resolve(data);
-        }).error(function(err){
+        }).catch(function(response){
+            var err = response.data;
             d.reject(err);
         })
         return d.promise;
@@ -35,9 +39,11 @@ foodService.factory('foodService', function($q, $http){
     function getMain(){
         var d = $q.defer();
         $http.get('food/food/main')
-        .success(function(data){
+        .then(function(response){
+            var data = response.data;
             d.resolve(data);
-        }).error(function(err){
+        }).catch(function(response){
+            var err = response.data;
             d.reject(err);
         })
         return d.promise;
@@ -45,9 +51,11 @@ foodService.factory('foodService', function($q, $http){
     function getDessert(){
         var d = $q.defer();
         $http.get('food/food/dessert')
-        .success(function(data){
+        .then(function(response){
+            var data = response.data;
             d.resolve(data);
-        }).error(function(err){
+        }).catch(function(response){
+            var err = response.data;
             d.reject(err);
         })
         return d.promise;
@@ -66,9 +74,11 @@ foodService.factory('foodService', function($q, $http){
             nameRus: nameRus,
             descRus: descRus
         })
-        .success(function(data){
+        .then(function(response){
+            var data = response.data;
             d.resolve(data);
-        }).error(function(err){
+        }).catch(function(response){
+            var err = response.data;
             d.reject(err);
         })
         return d.promise;
@@ -88,9 +98,11 @@ foodService.factory('foodService', function($q, $http){
             nameRus: nameRus,
             descRus: descRus
         })
-        .success(function(data){
+        .then(function(response){
+            var data = response.data;
             d.resolve(data);
-        }).error(function(err){
+        }).catch(function(response){
+            var err= response.data;
             d.reject(err);
         })
         return d.promise;
@@ -98,9 +110,11 @@ foodService.factory('foodService', function($q, $http){
     function getFood(){
         var d = $q.defer();
         $http.get('food/food/all')
-        .success(function(data){
+        .then(function(response){
+            var data = response.data;
             d.resolve(data);
-        }).error(function(err){
+        }).catch(function(response){
+            var err = response.data;
             d.reject(err);
         })
         return d.promise;
@@ -109,9 +123,11 @@ foodService.factory('foodService', function($q, $http){
     function removeFood(id){
         var d = $q.defer();
         $http.get('food/food/remove/'+id)
-        .success(function(data){
+        .then(function(response){
+            var data = response.data;
             d.resolve(data);
-        }).error(function(err){
+        }).catch(function(response){
+            var err = response.data;
             d.reject(err);
         })
         return d.promise;

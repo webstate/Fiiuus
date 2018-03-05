@@ -28,9 +28,11 @@ eventService.factory('eventService', function($q, $http){
             nameRus: nameRus,
             imageRus: imageRus
         })
-        .success(function(data){
+        .then(function(response){
+            var data = response.data;
             d.resolve(data);
-        }).error(function(err){
+        }).catch(function(response){
+            var err = response.data;
             d.reject(err);
         })
         return d.promise;
@@ -55,9 +57,11 @@ eventService.factory('eventService', function($q, $http){
             nameRus: nameRus,
             imageRus: imageRus
         })
-        .success(function(data){
+        .then(function(response){
+            var data = response.data;
             d.resolve(data);
-        }).error(function(err){
+        }).catch(function(response){
+            var err = response.data;
             d.reject(err);
         })
         return d.promise;
@@ -66,9 +70,11 @@ eventService.factory('eventService', function($q, $http){
     function getEvents(){
         var d = $q.defer();
         $http.get('food/event/get')
-        .success(function(data){
+        .then(function(response){
+            var data = response.data;
             d.resolve(data);
-        }).error(function(err){
+        }).catch(function(response){
+            var err = response.data;
             d.reject(err);
         })// initializes slick and its properties
             .then(function () {
@@ -92,9 +98,11 @@ eventService.factory('eventService', function($q, $http){
     function getNextEvents(){
         var d = $q.defer();
         $http.get('food/event/getnext')
-        .success(function(data){
+        .then(function(response){
+            var data = response.data;
             d.resolve(data);
-        }).error(function(err){
+        }).catch(function(response){
+            var err = response.data;
             d.reject(err);
         })
         return d.promise;
@@ -102,9 +110,11 @@ eventService.factory('eventService', function($q, $http){
     function findByIdEvent(id){
         var d = $q.defer();
         $http.post('food/event/findbyid', {id:id})
-        .success(function(data){
+        .then(function(response){
+            var data = response.data;
             d.resolve(data);
-        }).error(function(err){
+        }).catch(function(response){
+            var err = response.data;
             d.reject(err);
         })
         return d.promise;
@@ -112,9 +122,11 @@ eventService.factory('eventService', function($q, $http){
     function deleteEvent(id){
         var d = $q.defer();
         $http.get('food/event/delete/'+id)
-        .success(function(data){
+        .then(function(response){
+            var data  = response.data;
             d.resolve(data);
-        }).error(function(err){
+        }).catch(function(response){
+            var err = response.data;
             d.reject(err);
         })
         return d.promise;

@@ -60,13 +60,13 @@ myApp.config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
     })
     .state('logout', {
       controller: 'logoutController',
-      access: {restricted: true}
+      access: {restricted: false}
     })
     .state('register', {
       url:'/register',
       templateUrl: 'partials/register.html',
       controller: 'registerController',
-      access: {restricted: false}
+      access: {restricted: true}
     })
     .state('admin', {
         url: '/admin',

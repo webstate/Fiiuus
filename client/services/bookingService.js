@@ -15,9 +15,11 @@ bookingService.factory('bookingService', function($q, $http){
         $http.post('booking/booking/delete', {
             id:id
         })
-        .success(function(data){
-            d.resolve(data);
-        }).error(function(err){
+            .then(function(response){
+                var data = response.data;
+                d.resolve(data);
+            }).catch(function(response){
+            var err = response.data;
             d.reject(err);
         })
         return d.promise;
@@ -27,9 +29,11 @@ bookingService.factory('bookingService', function($q, $http){
         $http.post('times/times/delete', {
             id:id
         })
-        .success(function(data){
-            d.resolve(data);
-        }).error(function(err){
+            .then(function(response){
+                var data = response.data;
+                d.resolve(data);
+            }).catch(function(response){
+            var err = response.data;
             d.reject(err);
         })
         return d.promise;
@@ -47,9 +51,11 @@ bookingService.factory('bookingService', function($q, $http){
             info: info,
             newsletter: newsletter
         })
-        .success(function(data){
-            d.resolve(data);
-        }).error(function(err){
+            .then(function(response){
+                var data = response.data;
+                d.resolve(data);
+            }).catch(function(response){
+            var err = response.data;
             d.reject(err);
         })
         return d.promise;
@@ -58,9 +64,11 @@ bookingService.factory('bookingService', function($q, $http){
     function getBookings(){
         var d = $q.defer();
         $http.get('booking/booking/getall')
-        .success(function(data){
-            d.resolve(data);
-        }).error(function(err){
+            .then(function(response){
+                var data = response.data;
+                d.resolve(data);
+            }).catch(function(response){
+            var err = response.data;
             d.reject(err);
         })
         return d.promise;
@@ -73,9 +81,11 @@ bookingService.factory('bookingService', function($q, $http){
             end: end,
             reason: reason
         })
-        .success(function(data){
-            d.resolve(data);
-        }).error(function(err){
+            .then(function(response){
+                var data = response.data;
+                d.resolve(data);
+            }).catch(function(response){
+            var err = response.data;
             d.reject(err);
         })
         return d.promise;
@@ -83,9 +93,11 @@ bookingService.factory('bookingService', function($q, $http){
     function getClosedTimes(){
         var d = $q.defer();
         $http.get('times/times/get')
-        .success(function(data){
-            d.resolve(data);
-        }).error(function(err){
+            .then(function(response){
+                var data = response.data;
+                d.resolve(data);
+            }).catch(function(response){
+            var err = response.data;
             d.reject(err);
         })
         return d.promise;
@@ -93,9 +105,11 @@ bookingService.factory('bookingService', function($q, $http){
     function validateBooking(time,date){
         var d = $q.defer();
         $http.post('times/times/validate', {time: time, date:date})
-        .success(function(data){
-            d.resolve(data);
-        }).error(function(err){
+            .then(function(response){
+                var data = response.data;
+                d.resolve(data);
+            }).catch(function(response){
+            var data = response.data;
             d.reject(err);
         })
         return d.promise;
