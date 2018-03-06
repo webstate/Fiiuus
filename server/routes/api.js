@@ -264,6 +264,7 @@ router.post('/times/validate', function(req, res){
             bookingTime.setSeconds(0);
 
             var closedTimeEnd = new Date();
+            closedTimeEnd.setHours(test);
             closedTimeEnd.setMinutes(parseInt(moment(element.end).format('mm')));
             closedTimeEnd.setSeconds(0);
 
