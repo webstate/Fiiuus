@@ -65,10 +65,15 @@ router.post('/event/add', function(req, res){
     })
 
 })
+
 router.post('/event/update', function(req, res){
-    var date = moment(req.body.date, 'YYYY-MM-DD HH:mm:ss').format('YYYY-MM-DD');
-    var time = moment(req.body.time, 'HH:mm:ss').format('HH:mm:ss');
-    var dateTime = date +"T" + time;
+    var date = moment(req.body.dateedited, 'YYYY-MM-DD HH:mm:ss').format('YYYY-MM-DD');
+    var time = moment(req.body.timeedited, 'YYYY-MM-DD HH:mm:ss');
+    var timeadd = moment(time).add(0, 'hours').format('HH:mm:ss');
+    console.log("This is the moment converted date: " + date);
+    console.log("This is the moment converted time: " + timeadd);
+    var dateTime = date +"T" + timeadd;
+    console.log("This is the datetime: " + dateTime);
     Event.findOne({
         _id: req.body.id
     }, function(err, response){
@@ -77,7 +82,7 @@ router.post('/event/update', function(req, res){
             name: req.body.name,
             description: req.body.description,
             image: req.body.image,
-            date: dateTime,
+            date: moment(dateTime),
             descEng: req.body.descEng,
             nameEng: req.body.nameEng,
             imageEng: req.body.imageEng,
@@ -791,185 +796,6 @@ router.post('/design/get', function(req, res){
     }, function(err, picture){
         if(err) res.send(err);
         res.json(picture);
-    })
-})
-
-// Event page routes ------------------
-router.post('/event/add', function(req, res){
-    console.log(req.body);
-    var date = moment(req.body.date, 'YYYY-MM-DD HH:mm:ss').format('YYYY-MM-DD');
-    var time = moment(req.body.time, 'HH:mm:ss').format('HH:mm:ss');
-    console.log("This is the moment converted date: " + date);
-    console.log("This is the moment converted time: " +time);
-    var dateTime = date +"T" + time;
-    console.log("This is the datetime: " + dateTime);
-    Event.create({
-        name: req.body.name,
-        description: req.body.description,
-        image: req.body.image,
-        date: moment(dateTime),
-        descEng: req.body.descEng,
-        nameEng: req.body.nameEng,
-        imageEng: req.body.imageEng,
-        descFin: req.body.descFin,
-        nameFin: req.body.nameFin,
-        imageFin: req.body.imageFin,
-        descRus: req.body.descRus,
-        nameRus: req.body.nameRus,
-        imageRus: req.body.imageRus
-    }, function(err, ev){
-        if(err) res.send(err);
-        res.json(ev);
-    })
-
-})
-router.post('/event/update', function(req, res){
-    var date = moment(req.body.date, 'YYYY-MM-DD HH:mm:ss').format('YYYY-MM-DD');
-    var time = moment(req.body.time, 'HH:mm:ss').format('HH:mm:ss');
-    var dateTime = date +"T" + time;
-    Event.findOne({
-        _id: req.body.id
-    }, function(err, response){
-        if(err) res.send(err);
-        response.update({
-            name: req.body.name,
-            description: req.body.description,
-            image: req.body.image,
-            date: dateTime,
-            descEng: req.body.descEng,
-            nameEng: req.body.nameEng,
-            imageEng: req.body.imageEng,
-            descFin: req.body.descFin,
-            nameFin: req.body.nameFin,
-            imageFin: req.body.imageFin,
-            descRus: req.body.descRus,
-            nameRus: req.body.nameRus,
-            imageRus: req.body.imageRus
-
-        }, function(err){
-            if(err)res.send(err);
-            res.json({
-                msg: "event was updated"
-            })
-        })
-    })
-})
-
-router.get('/event/delete/:id', function(req, res){
-    Event.remove({
-        _id:req.params.id
-    }, function(err){
-        if(err) res.send(err);
-        res.json({
-            msg: "event was removed"
-        })
-    })
-})
-router.post('/event/findbyid', function(req, res){
-    Event.findOne({
-        _id: req.body.id
-    }, function(err, response){
-        if(err)res.send(err);
-        console.log(response.date);
-        var perma = {};
-        perma.id = response._id;
-        perma.name = response.name;
-        perma.description = response.description;
-        perma.nameEng = response.nameEng;
-        perma.descEng = response.descEng;
-        perma.nameFin = response.nameFin;
-        perma.descFin = response.descFin;
-        perma.nameRus = response.nameRus;
-        perma.descRus = response.descRus;
-        perma.image = response.image;
-        perma.imageEng = response.imageEng;
-        perma.imageFin = response.imageFin;
-        perma.imageRus = response.imageRus;
-        perma.date = moment.tz(response.date, "YYYY-MM-DD HH:mm:ssZ", "Europe/Tallinn").format("YYYY-MM-DD");
-        perma.time = moment.tz(response.date, "YYYY-MM-DD HH:mm:ssZ", "Europe/Tallinn").format("YYYY-MM-DDTHH:mm:ss");
-        res.json(perma);
-    })
-})
-
-router.get('/event/get', function(req, res){
-    Event.find(function(err, events){
-        if(err) res.send(err);
-        var perma = {}
-        var response = [];
-        events.forEach(function(element){
-            perma = {};
-            perma.id = element._id;
-            perma.name = element.name;
-            perma.description = element.description;
-            perma.date = moment.tz(element.date, "YYYY-MM-DD HH:mm:ssZ", "Europe/Tallinn").format("YYYY-MM-DD HH:mm");
-            perma.nameEng = element.nameEng;
-            perma.descEng = element.descEng;
-            perma.nameFin = element.nameFin;
-            perma.descFin = element.descFin;
-            perma.nameRus = element.nameRus;
-            perma.descRus = element.descRus;
-            perma.image = element.image;
-            perma.imageEng = element.imageEng;
-            perma.imageFin = element.imageFin;
-            perma.imageRus = element.imageRus;
-            response.push(perma);
-        })
-
-        res.send(response.reverse());
-    })
-})
-router.get('/event/getnext', function(req, res){
-    Event.find(function(err, events){
-        if(err) res.send(err);
-        var perma = {}
-        var response = [];
-        events.forEach(function(element){
-            perma = {};
-            if(moment(element.date).isBetween(moment(), moment().add('7', 'days'))){
-                perma.id = element._id;
-                perma.name = element.name;
-                perma.description = element.description;
-                perma.descEng = element.descEng;
-                perma.nameEng = element.nameEng;
-                perma.nameFin = element.nameFin;
-                perma.descFin = element.descFin;
-                perma.nameRus = element.nameRus;
-                perma.descRus = element.descRus;
-                perma.image = element.image;
-                perma.imageEng = element.imageEng;
-                perma.imageRus = element.imageRus;
-                perma.imageFin = element.imageFin;
-                perma.date = moment.tz(element.date, "YYYY-MM-DD HH:mm:ssZ", "Europe/Tallinn").format("DD-MM-YYYY HH:mm");
-                response.push(perma);
-            }else{
-                return;
-            }
-        })
-        res.send(response);
-    })
-})
-router.get('/event/delete', function(req, res){
-    Event.find(function(err, events){
-        if(err) res.send(err);
-        var perma = {}
-        var response = [];
-        events.forEach(function(element){
-            perma = {};
-            console.log(moment(element.date).isBefore(moment().subtract('7', 'days')));
-            if(moment(element.date).isBefore(moment().subtract('7', 'days'))){
-                Event.remove({
-                    _id: element._id
-                }, function(err){
-                    if(err) res.send(err);
-                    console.log("event was removed");
-                    res.json({
-                        msg: "event was removed"
-                    })
-                })
-            }else{
-                return;
-            }
-        })
     })
 })
 

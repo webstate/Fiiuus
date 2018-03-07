@@ -210,6 +210,9 @@ eventAdminCtrl.controller('eventAdminCtrl', function($scope, eventService, pictu
         rusDesc = $scope.editDescRus;
         rusImage = $scope.editImageRus;
 
+        dateEdited = $scope.dateEdit;
+        timeEdited = $scope.timeEdit;
+
         console.log(estName);
         console.log(estDesc);
         console.log(engName);
@@ -218,6 +221,8 @@ eventAdminCtrl.controller('eventAdminCtrl', function($scope, eventService, pictu
         console.log(finDesc);
         console.log(rusName);
         console.log(rusDesc);
+        console.log(timeEdited);
+        console.log(dateEdited);
 
         if($scope.editNameEst === "{{nameEstEdit}}"){
             estName = $scope.nameEstEdit;
@@ -240,9 +245,7 @@ eventAdminCtrl.controller('eventAdminCtrl', function($scope, eventService, pictu
         if($scope.editNameRus ==="{{nameRusEdit}}"){
             rusName = $scope.nameRusEdit;
         }
-        if($scope.editDescRus === "{{descRusEdit}}"){
-            rusDesc = $scope.descRusEdit;
-        }
+
         console.dir("Est image: " + estImage);
         eventService.updateEvent($scope.eventId,
         estName, estDesc, estImage,
