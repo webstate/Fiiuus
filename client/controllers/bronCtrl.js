@@ -100,6 +100,8 @@ bronCtrl.controller('bronCtrl', function($rootScope, $scope, bookingService){
         $rootScope.phoneRus = "";
         $rootScope.dateRus = "";
 
+        $scope.errorMsg = false;
+
     }
     $scope.showRusTime = function(){
         $scope.form.showDropDownTimeRus = true;
