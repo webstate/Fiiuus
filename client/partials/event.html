@@ -186,7 +186,7 @@
                 </td>
                 <td>
                     <ul style="list-style: none;" class="lang-bar">
-                        <li ng-class="{true: 'red', false: 'green'}[item.name.length == 0]">
+                        <li ng-class="{true: 'red', false: 'green'}[item.name.length == 0 || item.description.length == 0]">
                             EE
                         </li>
                         <li ng-class="{true: 'red', false: 'green'}[item.nameEng.length == 0 || item.descEng.length == 0]">
