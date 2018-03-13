@@ -407,7 +407,7 @@ router.get('/times/get', function(req, res){
             var temp = {};
             temp._id = element._id;
             temp.start = moment(element.start).utcOffset(moment().tz('Europe/Tallinn').format('Z')).format('HH:mm DD-MM-YYYY');
-            temp.end = moment(element.end).format('HH:mm DD-MM-YYYY');
+            temp.end = moment(element.end).utcOffset(moment().tz('Europe/Tallinn').format('Z')).format('HH:mm DD-MM-YYYY');
             temp.reason = element.reason;
             response.push(temp);
 
@@ -439,8 +439,9 @@ router.post('/times/validate', function(req, res){
             //var test2 = parseInt(moment(element.start).format('HH'))+offset;
 
             //for server
-            var test = parseInt(moment(element.end).format('HH'));
-            var test2 = parseInt(moment(element.start).format('HH'));
+            var test = parseInt(moment(element.end).format('HH'))+offset;
+            var test2 = parseInt(moment(element.start).format('HH')+offset);
+            console.log(offset);
             console.log(test);
             console.log(test2);
 
