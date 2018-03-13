@@ -44,9 +44,7 @@ designViewController.controller('designViewController', function($scope, picture
 
     landingTextService.getLandingText("workerTitle", "ee").then(function(data){
         if(data.text == null){
-            $scope.workerTitle = {
-                title: "There is nothing yet inserted"
-            }
+            $scope.workerTitle = "There is nothing yet inserted";
 
         }else{
             $scope.workerTitle = {
@@ -62,9 +60,7 @@ designViewController.controller('designViewController', function($scope, picture
 
     landingTextService.getLandingText("workerText", "ee").then(function(data){
         if(data.text == null){
-            $scope.worker = {
-                text: "There is nothint yet inserted"
-            }
+            $scope.worker = "There is nothint yet inserted";
         }else{
             $scope.worker = {
                 text: data.text
@@ -79,9 +75,7 @@ designViewController.controller('designViewController', function($scope, picture
 
     landingTextService.getLandingText("menuTitle", "ee").then(function(data){
         if(data.text == null){
-            $scope.menuTitle = {
-                title: "There is nothint yet inserted"
-            }
+            $scope.menuTitle = "There is nothint yet inserted";
         }else{
             $scope.menuTitle = {
                 title: data.text
@@ -96,9 +90,7 @@ designViewController.controller('designViewController', function($scope, picture
 
     landingTextService.getLandingText("menuText", "ee").then(function(data){
         if(data.text == null){
-            $scope.menuText = {
-                text: "There is nothint yet inserted"
-            }
+            $scope.menuText = "There is nothint yet inserted";
         }else{
             $scope.menuText = {
                 text: data.text
@@ -113,9 +105,7 @@ designViewController.controller('designViewController', function($scope, picture
 
     landingTextService.getLandingText("tastingText", "ee").then(function(data){
         if(data.text == null){
-            $scope.tastingText = {
-                text: "There is nothint yet inserted"
-            }
+            $scope.tastingText = "There is nothint yet inserted";
         }else{
             $scope.tastingText = {
                 text: data.text
@@ -130,9 +120,7 @@ designViewController.controller('designViewController', function($scope, picture
 
     landingTextService.getLandingText("eventTitle", "ee").then(function(data){
         if(data.text == null){
-            $scope.eventTitle = {
-                title: "There is nothint yet inserted"
-            }
+            $scope.eventTitle = "There is nothint yet inserted";
         }else{
             $scope.eventTitle = {
                 title: data.text
@@ -147,9 +135,7 @@ designViewController.controller('designViewController', function($scope, picture
 
     landingTextService.getLandingText("contactCall", "ee").then(function(data){
         if(data.text == null){
-            $scope.contactCall = {
-                text: "There is nothint yet inserted"
-            }
+            $scope.contactCall = "There is nothint yet inserted";
         }else{
             $scope.contactCall = {
                 text: data.text
@@ -168,9 +154,7 @@ designViewController.controller('designViewController', function($scope, picture
 
     landingTextService.getLandingText("contactVisitEst", "ee").then(function(data){
         if(data.text == null){
-            $scope.contactVisitEst = {
-                text: "There is nothint yet inserted"
-            }
+            $scope.contactVisitEst = "There is nothint yet inserted";
         }else{
             $scope.contactVisitEst = {
                 text: data.text
@@ -185,9 +169,7 @@ designViewController.controller('designViewController', function($scope, picture
 
     landingTextService.getLandingText("contactEmailEst", "ee").then(function(data){
         if(data.text == null){
-            $scope.contactEmailEst = {
-                text: "There is nothint yet inserted"
-            }
+            $scope.contactEmailEst = "There is nothint yet inserted";
         }else{
             $scope.contactEmailEst = {
                 text: data.text
@@ -251,9 +233,7 @@ designViewController.controller('designViewController', function($scope, picture
 
     landingTextService.getLandingText("workerTitleEng", "ee").then(function(data){
         if(data.text == null){
-            $scope.workerTitleEng = {
-                title: "There is nothing yet inserted"
-            }
+            $scope.workerTitleEng = "There is nothing yet inserted";
 
         }else{
             $scope.workerTitleEng = {
@@ -269,9 +249,7 @@ designViewController.controller('designViewController', function($scope, picture
 
     landingTextService.getLandingText("workerTextEng", "ee").then(function(data){
         if(data.text == null){
-            $scope.workerEng = {
-                text: "There is nothint yet inserted"
-            }
+            $scope.workerEng = "There is nothint yet inserted";
         }else{
             $scope.workerEng = {
                 text: data.text
@@ -286,9 +264,7 @@ designViewController.controller('designViewController', function($scope, picture
 
     landingTextService.getLandingText("menuTitleEng", "ee").then(function(data){
         if(data.text == null){
-            $scope.menuTitleEng = {
-                title: "There is nothint yet inserted"
-            }
+            $scope.menuTitleEng = "There is nothint yet inserted";
         }else{
             $scope.menuTitleEng = {
                 title: data.text
@@ -303,9 +279,7 @@ designViewController.controller('designViewController', function($scope, picture
 
     landingTextService.getLandingText("menuTextEng", "ee").then(function(data){
         if(data.text == null){
-            $scope.menuTextEng = {
-                text: "There is nothint yet inserted"
-            }
+            $scope.menuTextEng = "There is nothint yet inserted";
         }else{
             $scope.menuTextEng = {
                 text: data.text
@@ -320,9 +294,7 @@ designViewController.controller('designViewController', function($scope, picture
 
     landingTextService.getLandingText("tastingTextEng", "ee").then(function(data){
         if(data.text == null){
-            $scope.tastingTextEng = {
-                text: "There is nothint yet inserted"
-            }
+            $scope.tastingTextEng = "There is nothint yet inserted";
         }else{
             $scope.tastingTextEng = {
                 text: data.text
@@ -337,9 +309,7 @@ designViewController.controller('designViewController', function($scope, picture
 
     landingTextService.getLandingText("eventTitleEng", "ee").then(function(data){
         if(data.text == null){
-            $scope.eventTitleEng = {
-                title: "There is nothint yet inserted"
-            }
+            $scope.eventTitleEng = "There is nothint yet inserted";
         }else{
             $scope.eventTitleEng = {
                 title: data.text
@@ -354,9 +324,7 @@ designViewController.controller('designViewController', function($scope, picture
 
     landingTextService.getLandingText("contactCallEst", "ee").then(function(data){
         if(data.text == null){
-            $scope.contactCallEst = {
-                text: "There is nothint yet inserted"
-            }
+            $scope.contactCallEst = "There is nothint yet inserted";
         }else{
             $scope.contactCallEst = {
                 text: data.text
@@ -368,9 +336,7 @@ designViewController.controller('designViewController', function($scope, picture
 
     landingTextService.getLandingText("contactCallEng", "ee").then(function(data){
         if(data.text == null){
-            $scope.contactCallEng = {
-                text: "There is nothint yet inserted"
-            }
+            $scope.contactCallEng = "There is nothint yet inserted";
         }else{
             $scope.contactCallEng = {
                 text: data.text
@@ -385,9 +351,7 @@ designViewController.controller('designViewController', function($scope, picture
 
     landingTextService.getLandingText("contactVisitEng", "ee").then(function(data){
         if(data.text == null){
-            $scope.contactVisitEng = {
-                text: "There is nothint yet inserted"
-            }
+            $scope.contactVisitEng = "There is nothint yet inserted";
         }else{
             $scope.contactVisitEng = {
                 text: data.text
@@ -403,9 +367,7 @@ designViewController.controller('designViewController', function($scope, picture
 
     landingTextService.getLandingText("contactEmailEng", "ee").then(function(data){
         if(data.text == null){
-            $scope.contactEmailEng = {
-                text: "There is nothint yet inserted"
-            }
+            $scope.contactEmailEng = "There is nothint yet inserted";
         }else{
             $scope.contactEmailEng = {
                 text: data.text
@@ -469,9 +431,7 @@ designViewController.controller('designViewController', function($scope, picture
 
     landingTextService.getLandingText("workerTitleFin", "ee").then(function(data){
         if(data.text == null){
-            $scope.workerTitleFin = {
-                title: "There is nothing yet inserted"
-            }
+            $scope.workerTitleFin = "There is nothing yet inserted";
 
         }else{
             $scope.workerTitleFin = {
@@ -487,9 +447,7 @@ designViewController.controller('designViewController', function($scope, picture
 
     landingTextService.getLandingText("workerTextFin", "ee").then(function(data){
         if(data.text == null){
-            $scope.workerFin = {
-                text: "There is nothint yet inserted"
-            }
+            $scope.workerFin = "There is nothint yet inserted";
         }else{
             $scope.workerFin = {
                 text: data.text
@@ -504,9 +462,7 @@ designViewController.controller('designViewController', function($scope, picture
 
     landingTextService.getLandingText("menuTitleFin", "ee").then(function(data){
         if(data.text == null){
-            $scope.menuTitleFin = {
-                title: "There is nothint yet inserted"
-            }
+            $scope.menuTitleFin = "There is nothint yet inserted";
         }else{
             $scope.menuTitleFin = {
                 title: data.text
@@ -521,9 +477,7 @@ designViewController.controller('designViewController', function($scope, picture
 
     landingTextService.getLandingText("menuTextFin", "ee").then(function(data){
         if(data.text == null){
-            $scope.menuTextFin = {
-                text: "There is nothint yet inserted"
-            }
+            $scope.menuTextFin = "There is nothint yet inserted";
         }else{
             $scope.menuTextFin = {
                 text: data.text
@@ -538,9 +492,7 @@ designViewController.controller('designViewController', function($scope, picture
 
     landingTextService.getLandingText("tastingTextFin", "ee").then(function(data){
         if(data.text == null){
-            $scope.tastingTextFin = {
-                text: "There is nothint yet inserted"
-            }
+            $scope.tastingTextFin = "There is nothint yet inserted";
         }else{
             $scope.tastingTextFin = {
                 text: data.text
@@ -555,9 +507,7 @@ designViewController.controller('designViewController', function($scope, picture
 
     landingTextService.getLandingText("eventTitleFin", "ee").then(function(data){
         if(data.text == null){
-            $scope.eventTitleFin = {
-                title: "There is nothint yet inserted"
-            }
+            $scope.eventTitleFin = "There is nothint yet inserted";
         }else{
             $scope.eventTitleFin = {
                 title: data.text
@@ -572,9 +522,7 @@ designViewController.controller('designViewController', function($scope, picture
 
     landingTextService.getLandingText("contactCallFin", "ee").then(function(data){
         if(data.text == null){
-            $scope.contactCallFin = {
-                text: "There is nothint yet inserted"
-            }
+            $scope.contactCallFin = "There is nothint yet inserted";
         }else{
             $scope.contactCallFin = {
                 text: data.text
@@ -589,9 +537,7 @@ designViewController.controller('designViewController', function($scope, picture
 
     landingTextService.getLandingText("contactVisitFin", "ee").then(function(data){
         if(data.text == null){
-            $scope.contactVisitFin = {
-                text: "There is nothint yet inserted"
-            }
+            $scope.contactVisitFin = "There is nothint yet inserted";
         }else{
             $scope.contactVisitFin = {
                 text: data.text
@@ -607,9 +553,7 @@ designViewController.controller('designViewController', function($scope, picture
 
     landingTextService.getLandingText("contactEmailFin", "ee").then(function(data){
         if(data.text == null){
-            $scope.contactEmailFin = {
-                text: "There is nothint yet inserted"
-            }
+            $scope.contactEmailFin = "There is nothint yet inserted";
         }else{
             $scope.contactEmailFin = {
                 text: data.text
@@ -674,9 +618,7 @@ designViewController.controller('designViewController', function($scope, picture
 
     landingTextService.getLandingText("workerTitleRus", "ee").then(function(data){
         if(data.text == null){
-            $scope.workerTitleRus = {
-                title: "There is nothing yet inserted"
-            }
+            $scope.workerTitleRus = "There is nothing yet inserted";
 
         }else{
             $scope.workerTitleRus = {
@@ -692,9 +634,7 @@ designViewController.controller('designViewController', function($scope, picture
 
     landingTextService.getLandingText("workerTextRus", "ee").then(function(data){
         if(data.text == null){
-            $scope.workerRus = {
-                text: "There is nothint yet inserted"
-            }
+            $scope.workerRus = "There is nothint yet inserted";
         }else{
             $scope.workerRus = {
                 text: data.text
@@ -709,9 +649,7 @@ designViewController.controller('designViewController', function($scope, picture
 
     landingTextService.getLandingText("menuTitleRus", "ee").then(function(data){
         if(data.text == null){
-            $scope.menuTitleRus = {
-                title: "There is nothint yet inserted"
-            }
+            $scope.menuTitleRus = "There is nothint yet inserted";
         }else{
             $scope.menuTitleRus = {
                 title: data.text
@@ -726,9 +664,7 @@ designViewController.controller('designViewController', function($scope, picture
 
     landingTextService.getLandingText("menuTextRus", "ee").then(function(data){
         if(data.text == null){
-            $scope.menuTextRus = {
-                text: "There is nothint yet inserted"
-            }
+            $scope.menuTextRus = "There is nothint yet inserted";
         }else{
             $scope.menuTextRus = {
                 text: data.text
@@ -743,9 +679,7 @@ designViewController.controller('designViewController', function($scope, picture
 
     landingTextService.getLandingText("tastingTextRus", "ee").then(function(data){
         if(data.text == null){
-            $scope.tastingTextRus = {
-                text: "There is nothint yet inserted"
-            }
+            $scope.tastingTextRus = "There is nothint yet inserted";
         }else{
             $scope.tastingTextRus = {
                 text: data.text
@@ -760,9 +694,7 @@ designViewController.controller('designViewController', function($scope, picture
 
     landingTextService.getLandingText("eventTitleRus", "ee").then(function(data){
         if(data.text == null){
-            $scope.eventTitleRus = {
-                title: "There is nothint yet inserted"
-            }
+            $scope.eventTitleRus = "There is nothint yet inserted";
         }else{
             $scope.eventTitleRus = {
                 title: data.text
@@ -777,9 +709,7 @@ designViewController.controller('designViewController', function($scope, picture
 
     landingTextService.getLandingText("contactCallRus", "ee").then(function(data){
         if(data.text == null){
-            $scope.contactCallRus = {
-                text: "There is nothint yet inserted"
-            }
+            $scope.contactCallRus = "There is nothint yet inserted";
         }else{
             $scope.contactCallRus = {
                 text: data.text
@@ -794,9 +724,7 @@ designViewController.controller('designViewController', function($scope, picture
 
     landingTextService.getLandingText("contactVisitRus", "ee").then(function(data){
         if(data.text == null){
-            $scope.contactVisitRus = {
-                text: "There is nothint yet inserted"
-            }
+            $scope.contactVisitRus = "There is nothint yet inserted";
         }else{
             $scope.contactVisitRus = {
                 text: data.text
@@ -812,9 +740,7 @@ designViewController.controller('designViewController', function($scope, picture
 
     landingTextService.getLandingText("contactEmailRus", "ee").then(function(data){
         if(data.text == null){
-            $scope.contactEmailRus = {
-                text: "There is nothint yet inserted"
-            }
+            $scope.contactEmailRus = "There is nothint yet inserted";
         }else{
             $scope.contactEmailRus = {
                 text: data.text
