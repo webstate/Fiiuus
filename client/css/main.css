@@ -16,6 +16,19 @@
     padding: 15px;
     width: 380px;
 }
+.TextField{
+    margin-top: 30px;
+    margin-left: 20px;
+    padding: 15px;
+    width: 75%;
+}
+.Btn {
+    background: white;
+    border: 1px solid black;
+    margin-top:30px;
+    padding:15px;
+}
+
 .landing-nav-btn{
     font-family: spaceMono;
     font-size: 16px;
