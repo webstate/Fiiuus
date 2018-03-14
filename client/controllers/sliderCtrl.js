@@ -33,7 +33,6 @@ sliderCtrl.controller('sliderCtrl', function($location,$rootScope, $scope, landi
     };
 
     $scope.openLangMenuMobile = function(){
-        console.log("this was clicked");
         $scope.langmenuMobile.status = true;
     }
 
@@ -228,22 +227,46 @@ sliderCtrl.controller('sliderCtrl', function($location,$rootScope, $scope, landi
 
 
     pictureService.getMenuPicture('event').then(function(data){
-        $scope.eventPicture = data.picturePath;
+        if(data == null){
+            $scope.eventPicturePath = "";
+        }else {
+            $scope.eventPicture = data.picturePath;
+        }
     })
     pictureService.getMenuPicture('map').then(function(data){
-        $scope.mapPicture = data.picturePath;
+        if(data == null){
+            $scope.mapPicturePath = "";
+        }else {
+            $scope.mapPicture = data.picturePath;
+        }
     })
     pictureService.getMenuPicture('eventEst').then(function(data){
-        $scope.eventPicturePathEst = data.picturePath;
+        if(data == null){
+            $scope.eventPicturePathEst = "";
+        }else {
+            $scope.eventPicturePathEst = data.picturePath;
+        }
     })
     pictureService.getMenuPicture('eventFin').then(function(data){
-        $scope.eventPicturePathFin = data.picturePath;
+        if(data == null){
+            $scope.eventPicturePathFin = "";
+        }else {
+            $scope.eventPicturePathFin = data.picturePath;
+        }
     })
     pictureService.getMenuPicture('eventEng').then(function(data){
-        $scope.eventPicturePathEng = data.picturePath;
+        if(data == null){
+            $scope.eventPicturePathEng = "";
+        }else {
+            $scope.eventPicturePathEng = data.picturePath;
+        }
     })
     pictureService.getMenuPicture('eventRus').then(function(data){
-        $scope.eventPicturePathRus = data.picturePath;
+        if(data == null){
+            $scope.eventPicturePathRus = "";
+        }else {
+            $scope.eventPicturePathRus = data.picturePath;
+        }
     })
     $scope.bronModal = function(){
         $rootScope.bookingModal = true;

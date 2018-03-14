@@ -333,7 +333,7 @@ bronCtrl.controller('bronCtrl', function($rootScope, $scope, bookingService){
                     $scope.validTime = $scope.dropDownTime;
                     $scope.validDate = $scope.dateEng;
                     $scope.validPeople = $scope.dropDownPeople;
-                }cd
+                }
             })
         }
     }

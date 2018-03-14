@@ -58,14 +58,19 @@
             </div>
             <div class="row" style="margin-top: 30px;">
                 <div class="col-md-6">
-                    <p editable-text="workerTitle.title" class="worker-section-title-mockup">
+                    <input class="TextField" value="{{editWorkerTitle}}" type="text" ng-model="workerTitle" ng-initial/>
+                    <button class="Btn" ng-click="insertWorkerTitle()"><i class="fa fa-check" aria-hidden="true"></i></button>
+                    <!-- <p editable-text="workerTitle.title" class="worker-section-title-mockup">
                         {{workerTitle.title}}
                     </p>
+                    -->
                 </div>
                 <div class="col-md-6">
-                    <p editable-text="worker.text" class="worker-section-text-mockup" style="margin-left: 20px;">
+                    <input class="TextField" value="{{editWorkerText}}" type="text" ng-model="workerText" ng-initial/>
+                    <button class="Btn" ng-click="insertWorkerText()"><i class="fa fa-check" aria-hidden="true"></i></button>
+                    <!-- <p editable-text="worker.text" class="worker-section-text-mockup" style="margin-left: 20px;">
                         {{worker.text}}
-                    </p>
+                    </p> -->
                 </div>
             </div>
             <div class="row" style="margin-top: 60px;">
@@ -100,14 +105,21 @@
         </div>
         <div class="row" style="margin-top: 30px;">
             <div class="col-md-6">
-                <p editable-text="menuTitle.title" class="menu-section-title-mockup">
+                <input class="TextField" value="{{editMenuTitle}}" type="text" ng-model="menuTitle" ng-initial/>
+                <button class="Btn" ng-click="insertMenuTitle()"><i class="fa fa-check" aria-hidden="true"></i></button>
+                <!-- <p editable-text="menuTitle.title" class="menu-section-title-mockup">
                     {{menuTitle.title}}
                 </p>
+                -->
             </div>
             <div class="col-md-6" style="margin-bottom: 50px;">
+                <input class="TextField" value="{{editMenuText}}" type="text" ng-model="menuText" ng-initial/>
+                <button class="Btn" ng-click="insertMenuText()"><i class="fa fa-check" aria-hidden="true"></i></button>
+                <!--
                 <p editable-text="menuText.text" class="menu-section-text-mockup" style="margin-left: 20px;">
                     {{menuText.text}}
                 </p>
+                -->
             </div>
         </div>
         <div class="col-md-6" style="margin-top: 50px;">
@@ -185,9 +197,12 @@
                 </div>
             </div>
             <div class="col-md-6" style="margin-top: 50px">
+                <input class="TextField" value="{{editTastingText}}" type="text" ng-model="tastingText" ng-initial/>
+                <button class="Btn" ng-click="insertTastingText()"><i class="fa fa-check" aria-hidden="true"></i></button>
+                <!--
                 <p editable-text="tastingText.text" class="menu-section-text-mockup" style="margin-left: 20px;">
                     {{tastingText.text}}
-                </p>
+                </p>-->
             </div>
             <div class="col-md-6" style="margin-top: 40px;">
                 <div class="tasting-menu-btn-mockup"></div>
@@ -202,9 +217,12 @@
         </div>
         <div class="row" style="margin-top: 50px;">
             <div class="col-md-6">
+                <input class="TextField" value="{{editEventTitle}}" type="text" ng-model="eventTitle" ng-initial/>
+                <button class="Btn" ng-click="insertEventTitle()"><i class="fa fa-check" aria-hidden="true"></i></button>
+                <!--
                 <p editable-text="eventTitle.title" class="event-section-title-mockup">
                     {{eventTitle.title}}
-                </p>
+                </p> -->
                 <div class="event-title-mockup"></div>
                 <div class="event-date-mockup"></div>
                 <div class="event-detail-mockup"></div>
@@ -242,20 +260,31 @@
         </div>
         <div class="row" style="margin-top: 50px;margin-bottom: 100px;">
                 <div class="col-md-6">
-                    <p class="contact-title-mockup">
+                    <div class="row">
+                        <p class="contact-title-mockup">
                         Helista meile
                     </p>
-                    <p editable-text="contactCallEst.text" class="contact-info-mockup">
-                        {{contactCallEst.text}}
-                    </p>
+                        <input value="{{editContactCallEst}}" type="text" ng-model="contactCallEst" ng-initial/>
+                        <button class="timeBtn" ng-click="insertContactCallEst()"><i class="fa fa-check" aria-hidden="true"></i></button>
+                        <!--
+                        <p editable-text="contactCallEst.text" class="contact-info-mockup">
+                            {{contactCallEst.text}}
+                        </p>-->
+                    </div>
                 </div>
                 <div class="col-md-6" >
-                    <p class="contact-title-mockup">
-                        Külasta meid
-                    </p>
-                    <p editable-text="contactVisitEst.text" class="contact-info-mockup">
-                        {{contactVisitEst.text}}
-                    </p>
+                    <div class="row">
+                        <p class="contact-title-mockup">
+                            Külasta meid
+                        </p>
+                        <input value="{{editContactVisitEst}}" type="text" ng-model="contactVisitEst" ng-initial/>
+                        <button class="timeBtn" ng-click="insertContactVisitEst()"><i class="fa fa-check" aria-hidden="true"></i></button>
+
+                        <!-- <p editable-text="contactVisitEst.text" class="contact-info-mockup">
+                            {{contactVisitEst.text}}
+                        </p>
+                        -->
+                    </div>
                 </div>
                 <div class="col-md-6" style="margin-top: 30px;">
                     <div class="row">
@@ -277,12 +306,18 @@
                     </div>
                 </div>
                 <div class="col-md-6" style="margin-top: 30px;">
-                    <p class="contact-title-mockup">
-                        Kirjuta meile
-                    </p>
-                    <p editable-text="contactEmailEst.text" class="contact-info-mockup">
+                    <div class="row">
+                        <p class="contact-title-mockup">
+                            Kirjuta meile
+                        </p>
+                        <input value="{{editContactEmailEst}}" type="text" ng-model="contactEmailEst" ng-initial/>
+                        <button class="timeBtn" ng-click="insertContactEmailEst()"><i class="fa fa-check" aria-hidden="true"></i></button>
+
+                        <!--
+                        <p editable-text="contactEmailEst.text" class="contact-info-mockup">
                         {{contactEmailEst.text}}
-                    </p>
+                        </p>-->
+                    </div>
                 </div>
         </div>
     </div>
@@ -323,14 +358,20 @@
             </div>
             <div class="row" style="margin-top: 30px;">
                 <div class="col-md-6">
+                    <input class="TextField" value="{{editWorkerTitleEng}}" type="text" ng-model="workerTitleEng" ng-initial/>
+                    <button class="Btn" ng-click="insertWorkerTitleEng()"><i class="fa fa-check" aria-hidden="true"></i></button>
+                    <!--
                     <p editable-text="workerTitleEng.title" class="worker-section-title-mockup">
                         {{workerTitleEng.title}}
-                    </p>
+                    </p>-->
                 </div>
                 <div class="col-md-6">
+                    <input class="TextField" value="{{editWorkerTextEng}}" type="text" ng-model="workerTextEng" ng-initial/>
+                    <button class="Btn" ng-click="insertWorkerTextEng()"><i class="fa fa-check" aria-hidden="true"></i></button>
+                    <!--
                     <p editable-text="workerEng.text" class="worker-section-text-mockup" style="margin-left: 20px;">
                         {{workerEng.text}}
-                    </p>
+                    </p>-->
                 </div>
             </div>
             <div class="row" style="margin-top: 60px;">
@@ -365,14 +406,20 @@
         </div>
         <div class="row" style="margin-top: 30px;">
             <div class="col-md-6">
+                <input class="TextField" value="{{editMenuTitleEng}}" type="text" ng-model="menuTitleEng" ng-initial/>
+                <button class="Btn" ng-click="insertMenuTitleEng()"><i class="fa fa-check" aria-hidden="true"></i></button>
+                <!--
                 <p editable-text="menuTitleEng.title" class="menu-section-title-mockup">
                     {{menuTitleEng.title}}
-                </p>
+                </p>-->
             </div>
             <div class="col-md-6" style="margin-bottom: 50px;">
+                <input class="TextField" value="{{editMenuTextEng}}" type="text" ng-model="menuTextEng" ng-initial/>
+                <button class="Btn" ng-click="insertMenuTextEng()"><i class="fa fa-check" aria-hidden="true"></i></button>
+                <!--
                 <p editable-text="menuTextEng.text" class="menu-section-text-mockup" style="margin-left: 20px;">
                     {{menuTextEng.text}}
-                </p>
+                </p>-->
             </div>
         </div>
         <div class="col-md-6" style="margin-top: 50px;">
@@ -450,9 +497,12 @@
                 </div>
             </div>
             <div class="col-md-6" style="margin-top: 50px">
+                <input class="TextField" value="{{editTastingTextEng}}" type="text" ng-model="tastingTextEng" ng-initial/>
+                <button class="Btn" ng-click="insertTastingTextEng()"><i class="fa fa-check" aria-hidden="true"></i></button>
+                <!--
                 <p editable-text="tastingTextEng.text" class="menu-section-text-mockup" style="margin-left: 20px;">
                     {{tastingTextEng.text}}
-                </p>
+                </p>-->
             </div>
             <div class="col-md-6" style="margin-top: 40px;">
                 <div class="tasting-menu-btn-mockup"></div>
@@ -467,9 +517,12 @@
         </div>
         <div class="row" style="margin-top: 50px;">
             <div class="col-md-6">
+                <input class="TextField" value="{{editEventTitleEng}}" type="text" ng-model="eventTitleEng" ng-initial/>
+                <button class="Btn" ng-click="insertEventTitleEng()"><i class="fa fa-check" aria-hidden="true"></i></button>
+                <!--
                 <p editable-text="eventTitleEng.title" class="event-section-title-mockup">
                     {{eventTitleEng.title}}
-                </p>
+                </p>-->
                 <div class="event-title-mockup"></div>
                 <div class="event-date-mockup"></div>
                 <div class="event-detail-mockup"></div>
@@ -508,20 +561,30 @@
 
         <div class="row" style="margin-top: 50px;margin-bottom: 100px;">
                 <div class="col-md-6">
-                    <p class="contact-title-mockup">
-                        Call us
-                    </p>
+                    <div class="row">
+                        <p class="contact-title-mockup">
+                            Call us
+                        </p>
+                        <input value="{{editContactCallEng}}" type="text" ng-model="contactCallEng" ng-initial/>
+                        <button class="timeBtn" ng-click="insertContactCallEng()"><i class="fa fa-check" aria-hidden="true"></i></button>
+                    </div>
+                    <!--
                     <p editable-text="contactCallEng.text" class="contact-info-mockup">
                         {{contactCallEng.text}}
-                    </p>
+                    </p>-->
                 </div>
                 <div class="col-md-6" >
-                    <p class="contact-title-mockup">
-                        Visit us
-                    </p>
+                    <div class="row">
+                        <p class="contact-title-mockup">
+                            Visit us
+                        </p>
+                        <input value="{{editContactVisitEng}}" type="text" ng-model="contactVisitEng" ng-initial/>
+                        <button class="timeBtn" ng-click="insertContactVisitEng()"><i class="fa fa-check" aria-hidden="true"></i></button>
+                    </div>
+                    <!--
                     <p editable-text="contactVisitEng.text" class="contact-info-mockup">
                         {{contactVisitEng.text}}
-                    </p>
+                    </p>-->
                 </div>
                 <div class="col-md-6" style="margin-top: 30px;">
                     <div class="row">
@@ -543,12 +606,18 @@
                     </div>
                 </div>
                 <div class="col-md-6" style="margin-top: 30px;">
+                    <div class="row">
                     <p class="contact-title-mockup">
                         Write us
                     </p>
+                    <input value="{{editContactEmailEng}}" type="text" ng-model="contactEmailEng" ng-initial/>
+                    <button class="timeBtn" ng-click="insertContactEmailEng()"><i class="fa fa-check" aria-hidden="true"></i></button>
+                    <!--
                     <p editable-text="contactEmailEng.text" class="contact-info-mockup">
                         {{contactEmailEng.text}}
                     </p>
+                    -->
+                    </div>
                 </div>
         </div>
     </div>
@@ -589,14 +658,20 @@
             </div>
             <div class="row" style="margin-top: 30px;">
                 <div class="col-md-6">
+                    <input class="TextField" value="{{editWorkerTitleFin}}" type="text" ng-model="workerTitleFin" ng-initial/>
+                    <button class="Btn" ng-click="insertWorkerTitleFin()"><i class="fa fa-check" aria-hidden="true"></i></button>
+                    <!--
                     <p editable-text="workerTitleFin.title" class="worker-section-title-mockup">
                         {{workerTitleFin.title}}
-                    </p>
+                    </p>-->
                 </div>
                 <div class="col-md-6">
+                    <input class="TextField" value="{{editWorkerTextFin}}" type="text" ng-model="workerTextFin" ng-initial/>
+                    <button class="Btn" ng-click="insertWorkerTextFin()"><i class="fa fa-check" aria-hidden="true"></i></button>
+                    <!--
                     <p editable-text="workerFin.text" class="worker-section-text-mockup" style="margin-left: 20px;">
                         {{workerFin.text}}
-                    </p>
+                    </p>-->
                 </div>
             </div>
             <div class="row" style="margin-top: 60px;">
@@ -631,14 +706,20 @@
         </div>
         <div class="row" style="margin-top: 30px;">
             <div class="col-md-6">
+                <input class="TextField" value="{{editMenuTitleFin}}" type="text" ng-model="menuTitleFin" ng-initial/>
+                <button class="Btn" ng-click="insertMenuTitleFin()"><i class="fa fa-check" aria-hidden="true"></i></button>
+                <!--
                 <p editable-text="menuTitleFin.title" class="menu-section-title-mockup">
                     {{menuTitleFin.title}}
-                </p>
+                </p>-->
             </div>
             <div class="col-md-6" style="margin-bottom: 50px;">
+                <input class="TextField" value="{{editMenuTextFin}}" type="text" ng-model="menuTextFin" ng-initial/>
+                <button class="Btn" ng-click="insertMenuTextFin()"><i class="fa fa-check" aria-hidden="true"></i></button>
+                <!--
                 <p editable-text="menuTextFin.text" class="menu-section-text-mockup" style="margin-left: 20px;">
                     {{menuTextFin.text}}
-                </p>
+                </p>-->
             </div>
         </div>
         <div class="col-md-6" style="margin-top: 50px;">
@@ -716,9 +797,12 @@
                 </div>
             </div>
             <div class="col-md-6" style="margin-top: 50px">
+                <input class="TextField" value="{{editTastingTextFin}}" type="text" ng-model="tastingTextFin" ng-initial/>
+                <button class="Btn" ng-click="insertTastingTextFin()"><i class="fa fa-check" aria-hidden="true"></i></button>
+                <!--
                 <p editable-text="tastingTextFin.text" class="menu-section-text-mockup" style="margin-left: 20px;">
                     {{tastingTextFin.text}}
-                </p>
+                </p>-->
             </div>
             <div class="col-md-6" style="margin-top: 40px;">
                 <div class="tasting-menu-btn-mockup"></div>
@@ -733,9 +817,12 @@
         </div>
         <div class="row" style="margin-top: 50px;">
             <div class="col-md-6">
+                <input class="TextField" value="{{editEventTitleFin}}" type="text" ng-model="eventTitleFin" ng-initial/>
+                <button class="Btn" ng-click="insertEventTitleFin()"><i class="fa fa-check" aria-hidden="true"></i></button>
+                <!--
                 <p editable-text="eventTitleFin.title" class="event-section-title-mockup">
                     {{eventTitleFin.title}}
-                </p>
+                </p>-->
                 <div class="event-title-mockup"></div>
                 <div class="event-date-mockup"></div>
                 <div class="event-detail-mockup"></div>
@@ -773,20 +860,30 @@
         </div>
         <div class="row" style="margin-top: 50px;margin-bottom: 100px;">
                 <div class="col-md-6">
+                    <div class="row">
                     <p class="contact-title-mockup">
                         Helista meile
                     </p>
+                    <input value="{{editContactCallFin}}" type="text" ng-model="contactCallFin" ng-initial/>
+                    <button class="timeBtn" ng-click="insertContactCallFin()"><i class="fa fa-check" aria-hidden="true"></i></button>
+                    <!--
                     <p editable-text="contactCallFin.text" class="contact-info-mockup">
                         {{contactCallFin.text}}
-                    </p>
+                    </p>-->
+                    </div>
                 </div>
                 <div class="col-md-6" >
+                    <div class="row">
                     <p class="contact-title-mockup">
                         Külasta meid
                     </p>
+                    <input value="{{editContactVisitFin}}" type="text" ng-model="contactVisitFin" ng-initial/>
+                    <button class="timeBtn" ng-click="insertContactVisitFin()"><i class="fa fa-check" aria-hidden="true"></i></button>
+                    <!--
                     <p editable-text="contactVisitFin.text" class="contact-info-mockup">
                         {{contactVisitFin.text}}
-                    </p>
+                    </p>-->
+                    </div>
                 </div>
                 <div class="col-md-6" style="margin-top: 30px;">
                     <div class="row">
@@ -808,12 +905,17 @@
                     </div>
                 </div>
                 <div class="col-md-6" style="margin-top: 30px;">
+                    <div class="row">
                     <p class="contact-title-mockup">
                         Kirjuta meile
                     </p>
+                        <input value="{{editContactEmailFin}}" type="text" ng-model="contactEmailFin" ng-initial/>
+                        <button class="timeBtn" ng-click="insertContactEmailFin()"><i class="fa fa-check" aria-hidden="true"></i></button>
+                        <!--
                     <p editable-text="contactEmailFin.text" class="contact-info-mockup">
                         {{contactEmailFin.text}}
-                    </p>
+                    </p>-->
+                    </div>
                 </div>
         </div>
     </div>
@@ -854,14 +956,20 @@
             </div>
             <div class="row" style="margin-top: 30px;">
                 <div class="col-md-6">
+                    <input class="TextField" value="{{editWorkerTitleRus}}" type="text" ng-model="workerTitleRus" ng-initial/>
+                    <button class="Btn" ng-click="insertWorkerTitleRus()"><i class="fa fa-check" aria-hidden="true"></i></button>
+                    <!--
                     <p editable-text="workerTitleRus.title" class="worker-section-title-mockup">
                         {{workerTitleRus.title}}
-                    </p>
+                    </p>-->
                 </div>
                 <div class="col-md-6">
+                    <input class="TextField" value="{{editWorkerTextRus}}" type="text" ng-model="workerTextRus" ng-initial/>
+                    <button class="Btn" ng-click="insertWorkerTextRus()"><i class="fa fa-check" aria-hidden="true"></i></button>
+                    <!--
                     <p editable-text="workerRus.text" class="worker-section-text-mockup" style="margin-left: 20px;">
                         {{workerRus.text}}
-                    </p>
+                    </p>-->
                 </div>
             </div>
             <div class="row" style="margin-top: 60px;">
@@ -896,14 +1004,20 @@
         </div>
         <div class="row" style="margin-top: 30px;">
             <div class="col-md-6">
+                <input class="TextField" value="{{editMenuTitleRus}}" type="text" ng-model="menuTitleRus" ng-initial/>
+                <button class="Btn" ng-click="insertMenuTitleRus()"><i class="fa fa-check" aria-hidden="true"></i></button>
+                <!--
                 <p editable-text="menuTitleRus.title" class="menu-section-title-mockup">
                     {{menuTitleRus.title}}
-                </p>
+                </p>-->
             </div>
             <div class="col-md-6" style="margin-bottom: 50px;">
+                <input class="TextField" value="{{editMenuTextRus}}" type="text" ng-model="menuTextRus" ng-initial/>
+                <button class="Btn" ng-click="insertMenuTextRus()"><i class="fa fa-check" aria-hidden="true"></i></button>
+                <!--
                 <p editable-text="menuTextRus.text" class="menu-section-text-mockup" style="margin-left: 20px;">
                     {{menuTextRus.text}}
-                </p>
+                </p>-->
             </div>
         </div>
         <div class="col-md-6" style="margin-top: 50px;">
@@ -981,9 +1095,12 @@
                 </div>
             </div>
             <div class="col-md-6" style="margin-top: 50px">
+                <input class="TextField" value="{{editTastingTextRus}}" type="text" ng-model="tastingTextRus" ng-initial/>
+                <button class="Btn" ng-click="insertTastingTextRus()"><i class="fa fa-check" aria-hidden="true"></i></button>
+                <!--
                 <p editable-text="tastingTextRus.text" class="menu-section-text-mockup" style="margin-left: 20px;">
                     {{tastingTextRus.text}}
-                </p>
+                </p>-->
             </div>
             <div class="col-md-6" style="margin-top: 40px;">
                 <div class="tasting-menu-btn-mockup"></div>
@@ -998,9 +1115,12 @@
         </div>
         <div class="row" style="margin-top: 50px;">
             <div class="col-md-6">
+                <input class="TextField" value="{{editEventTitleRus}}" type="text" ng-model="eventTitleRus" ng-initial/>
+                <button class="Btn" ng-click="insertEventTitleRus()"><i class="fa fa-check" aria-hidden="true"></i></button>
+                <!--
                 <p editable-text="eventTitleRus.title" class="event-section-title-mockup">
                     {{eventTitleRus.title}}
-                </p>
+                </p>-->
                 <div class="event-title-mockup"></div>
                 <div class="event-date-mockup"></div>
                 <div class="event-detail-mockup"></div>
@@ -1038,20 +1158,30 @@
         </div>
         <div class="row" style="margin-top: 50px;margin-bottom: 100px;">
                 <div class="col-md-6">
+                    <div class="row">
                     <p class="contact-title-mockup">
                         Helista meile
                     </p>
+                    <input value="{{editContactCallRus}}" type="text" ng-model="contactCallRus" ng-initial/>
+                    <button class="timeBtn" ng-click="insertContactCallRus()"><i class="fa fa-check" aria-hidden="true"></i></button>
+                    <!--
                     <p editable-text="contactCallRus.text" class="contact-info-mockup">
                         {{contactCallRus.text}}
-                    </p>
+                    </p>-->
+                    </div>
                 </div>
                 <div class="col-md-6" >
+                    <div class="row">
                     <p class="contact-title-mockup">
                         Külasta meid
                     </p>
+                    <input value="{{editContactVisitRus}}" type="text" ng-model="contactVisitRus" ng-initial/>
+                    <button class="timeBtn" ng-click="insertContactVisitRus()"><i class="fa fa-check" aria-hidden="true"></i></button>
+                    <!--
                     <p editable-text="contactVisitRus.text" class="contact-info-mockup">
                         {{contactVisitRus.text}}
-                    </p>
+                    </p>-->
+                    </div>
                 </div>
                 <div class="col-md-6" style="margin-top: 30px;">
                     <div class="row">
@@ -1073,12 +1203,17 @@
                     </div>
                 </div>
                 <div class="col-md-6" style="margin-top: 30px;">
+                    <div class="row">
                     <p class="contact-title-mockup">
                         Kirjuta meile
                     </p>
+                    <input value="{{editContactEmailRus}}" type="text" ng-model="contactEmailRus" ng-initial/>
+                    <button class="timeBtn" ng-click="insertContactEmailRus()"><i class="fa fa-check" aria-hidden="true"></i></button>
+                    <!--
                     <p editable-text="contactEmailRus.text" class="contact-info-mockup">
                         {{contactEmailRus.text}}
-                    </p>
+                    </p>-->
+                    </div>
                 </div>
         </div>
     </div>
