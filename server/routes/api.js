@@ -35,16 +35,13 @@ var Booking = require('../models/booking.js');
 var ClosedTimes = require('../models/closedTimes.js');
 // Event page routes ------------------
 router.post('/event/add', function(req, res){
-    console.log(req.body);
+    console.log(req.body, "see on sisi body kuskilt");
     var date = moment(req.body.date, 'YYYY-MM-DD HH:mm:ss').format('YYYY-MM-DD');
-    //var time1 = req.body.time;
-    //var time2= parseInt(time1.split(":")[0])-3;
-    //var time3= time2+":"+time1.split(":")[1];
     var time = moment(req.body.time, 'HH:mm:ss').format('HH:mm:ss');
     console.log("This is the moment converted date: " + date);
     console.log("This is the moment converted time: " +time);
     var dateTime = date +"T" + time;
-    console.log("This is the datetime: " + dateTime);
+    console.log("This is the datetime: " , dateTime);
     Event.create({
         name: req.body.name,
         description: req.body.description,
@@ -158,7 +155,8 @@ router.get('/event/get', function(req, res){
             perma.imageEng = element.imageEng;
             perma.imageFin = element.imageFin;
             perma.imageRus = element.imageRus;
-            perma.date = moment.tz(element.date, "YYYY-MM-DD HH:mm:ssZ", "Europe/Tallinn").format("YYYY-MM-DD HH:mm");
+            //perma.date = moment.tz(element.date, "YYYY-MM-DD HH:mm:ssZ", "Europe/Tallinn").format("YYYY-MM-DD HH:mm");
+            perma.date=moment(element.date).utcOffset(moment().tz('Europe/Tallinn').format('Z')).format('DD-MM-YYYY HH:mm');
             response.push(perma);
         })
 
@@ -186,7 +184,8 @@ router.get('/event/getnext', function(req, res){
                 perma.imageEng = element.imageEng;
                 perma.imageRus = element.imageRus;
                 perma.imageFin = element.imageFin;
-                perma.date = moment.tz(element.date, "YYYY-MM-DD HH:mm:ssZ", "Europe/Tallinn").format("DD-MM-YYYY HH:mm");
+                //perma.date = moment.tz(element.date, "YYYY-MM-DD HH:mm:ssZ", "Europe/Tallinn").format("DD-MM-YYYY HH:mm");
+                perma.date = moment(element.date).utcOffset(moment().tz('Europe/Tallinn').format('Z')).format('DD-MM-YYYY HH:mm');
                 response.push(perma);
             }else{
                 return;
