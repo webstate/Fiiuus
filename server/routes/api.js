@@ -35,7 +35,6 @@ var Booking = require('../models/booking.js');
 var ClosedTimes = require('../models/closedTimes.js');
 // Event page routes ------------------
 router.post('/event/add', function(req, res){
-    console.log(req.body, "see on sisi body kuskilt");
     var date = moment(req.body.date, 'YYYY-MM-DD HH:mm:ss').format('YYYY-MM-DD');
     var time = moment(req.body.time, 'HH:mm:ss').format('HH:mm:ss');
     console.log("This is the moment converted date: " + date);
@@ -99,7 +98,7 @@ router.post('/event/update', function(req, res){
     })
 })
 
-router.get('/event/delete/:id', function(req, res){
+router.post('/event/delete/:id', function(req, res){
     Event.remove({
         _id:req.params.id
     }, function(err){
@@ -114,7 +113,6 @@ router.post('/event/findbyid', function(req, res){
         _id: req.body.id
     }, function(err, response){
         if(err)res.send(err);
-        console.log(response.date);
         var perma = {};
         perma.id = response._id;
         perma.name = response.name;
@@ -135,7 +133,7 @@ router.post('/event/findbyid', function(req, res){
     })
 })
 
-router.get('/event/get', function(req, res){
+router.post('/event/get', function(req, res){
     Event.find(function(err, events){
         if(err) res.send(err);
         var perma = {}
@@ -163,7 +161,7 @@ router.get('/event/get', function(req, res){
         res.send(response.reverse());
     })
 })
-router.get('/event/getnext', function(req, res){
+router.post('/event/getnext', function(req, res){
     Event.find(function(err, events){
         if(err) res.send(err);
         var perma = {}
@@ -194,7 +192,7 @@ router.get('/event/getnext', function(req, res){
         res.send(response);
     })
 })
-router.get('/event/delete', function(req, res){
+router.post('/event/delete', function(req, res){
     Event.find(function(err, events){
         if(err) res.send(err);
         var perma = {}
@@ -377,17 +375,12 @@ router.post('/times/delete', function(req, res){
 })
 router.post('/times/add', function(req, res){
     var startDate = moment(req.body.date).format('YYYY-MM-DD');
-    console.log(startDate);
     var startTime = moment(req.body.start, 'HH:mm:ss').format('HH:mm:ss');
     var startDateTime = startDate+"T"+startTime;
 
     var endDate = moment(req.body.date).format('YYYY-MM-DD');
-    console.log(endDate);
     var endTime = moment(req.body.end, 'HH:mm:ss').format('HH:mm:ss');
     var endDateTime = endDate+"T"+endTime;
-
-    console.log(moment(startDateTime));
-    console.log(moment(endDateTime));
 
     ClosedTimes.create({
         start:  moment(startDateTime),
@@ -398,7 +391,7 @@ router.post('/times/add', function(req, res){
         res.json(response);
     })
 })
-router.get('/times/get', function(req, res){
+router.post('/times/get', function(req, res){
     ClosedTimes.find(function(err, times){
         if(err)res.send(err);
         var response = [];
@@ -674,7 +667,7 @@ router.post('/booking/add', function(req, res){
     })
 
 })
-router.get('/booking/getall', function(req, res){
+router.post('/booking/getall', function(req, res){
     Booking.find(function(err, bookings){
         if(err)res.send(err);
         var perma = {}
@@ -847,7 +840,7 @@ router.get('/bannerpicture/get', function(req, res){
     });
 })
 // Food routes -----------------------
-router.get('/food/starters', function(req, res){
+router.post('/food/starters', function(req, res){
     Food.find({
         course: "Eelroog"
     }, function(err, foods){
@@ -880,7 +873,7 @@ router.post('/food/update', function(req, res){
     })
 })
 
-router.get('/food/byid/:id', function(req, res){
+router.post('/food/byid/:id', function(req, res){
     Food.findOne({
         _id: req.params.id
     }, function(err, food){
@@ -888,7 +881,7 @@ router.get('/food/byid/:id', function(req, res){
         res.json(food);
     })
 })
-router.get('/food/main', function(req, res){
+router.post('/food/main', function(req, res){
     Food.find({
         course: "Pearoog"
     }, function(err, foods){
@@ -896,7 +889,7 @@ router.get('/food/main', function(req, res){
         res.json(foods);
     })
 })
-router.get('/food/dessert', function(req, res){
+router.post('/food/dessert', function(req, res){
     Food.find({
         course: "Magustoit"
     }, function(err, foods){
@@ -921,13 +914,13 @@ router.post('/food/add', function(req, res){
         res.json(food);
     });
 })
-router.get('/food/all', function(req, res){
+router.post('/food/all', function(req, res){
     Food.find(function(err, foods){
         if(err)res.send(err);
         res.json(foods);
     }).sort({_id:-1});
 })
-router.get('/food/remove/:id', function(req, res){
+router.post('/food/remove/:id', function(req, res){
     Food.remove({
         _id: req.params.id
     }, function(err){
@@ -937,7 +930,7 @@ router.get('/food/remove/:id', function(req, res){
         })
     })
 })
-router.get('/food/:id', function(req, res){
+router.post('/food/:id', function(req, res){
     Food.findOne({
         _id: req.params.id
     }, function(err, food){
@@ -1000,13 +993,13 @@ router.post('/drink/byid', function(req, res){
     })
 })
 
-router.get('/drink/all', function(req, res){
+router.post('/drink/all', function(req, res){
     Drink.find(function(err, drinks){
         if(err)res.send(err);
         res.json(drinks);
     }).sort({_id:-1});
 })
-router.get('/drink/wine', function(req, res){
+router.post('/drink/wine', function(req, res){
     Drink.find({
         type:"Vein ja mull"
     }, function(err, drinks){
@@ -1014,7 +1007,7 @@ router.get('/drink/wine', function(req, res){
         res.json(drinks);
     })
 })
-router.get('/drink/beer', function(req, res){
+router.post('/drink/beer', function(req, res){
     Drink.find({
         type: "Lahja alkohol"
     }, function(err, drinks){
@@ -1022,7 +1015,7 @@ router.get('/drink/beer', function(req, res){
         res.json(drinks);
     })
 })
-router.get('/drink/cocktail', function(req, res){
+router.post('/drink/cocktail', function(req, res){
     Drink.find({
         type:"Kokteilid"
     },function(err, drinks){
@@ -1030,7 +1023,7 @@ router.get('/drink/cocktail', function(req, res){
         res.json(drinks);
     })
 })
-router.get('/drink/nonalco', function(req, res){
+router.post('/drink/nonalco', function(req, res){
     Drink.find({
         type:"Alkoholivabad joogid"
     },function(err, drinks){
@@ -1038,7 +1031,7 @@ router.get('/drink/nonalco', function(req, res){
         res.json(drinks);
     })
 })
-router.get('/drink/hot', function(req, res){
+router.post('/drink/hot', function(req, res){
     Drink.find({
         type:"Kuumad joogid"
     },function(err, drinks){
@@ -1046,7 +1039,7 @@ router.get('/drink/hot', function(req, res){
         res.json(drinks);
     })
 })
-router.get('/drink/hardalco', function(req, res){
+router.post('/drink/hardalco', function(req, res){
     Drink.find({
         type:"Kange alkohol"
     },function(err, drinks){
@@ -1055,7 +1048,7 @@ router.get('/drink/hardalco', function(req, res){
     })
 })
 
-router.get('/drink/remove/:id', function(req, res){
+router.post('/drink/remove/:id', function(req, res){
     Drink.remove({
         _id: req.params.id
     }, function(err){
@@ -1065,7 +1058,7 @@ router.get('/drink/remove/:id', function(req, res){
         })
     })
 })
-router.get('/drink/:id', function(req, res){
+router.post('/drink/:id', function(req, res){
     Drink.findOne({
         _id: req.params.id
     }, function(err, drink){
@@ -1123,13 +1116,13 @@ router.post('/worker/update', function(req, res){
         })
     })
 })
-router.get('/all', function(req, res){
+router.post('/all', function(req, res){
     Worker.find(function(err, workers){
         if(err)res.send(err);
         res.json(workers);
     })
 })
-router.get('/worker/remove/:id', function(req, res){
+router.post('/worker/remove/:id', function(req, res){
     Worker.remove({
         _id: req.params.id
     }, function(err){

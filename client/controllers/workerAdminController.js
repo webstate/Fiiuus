@@ -158,7 +158,6 @@ workerAdminController.controller('workerAdminController', function($scope, worke
         finInfo = $scope.editInfoFin;
         rusOccupation = $scope.editOccupationRus;
         rusInfo = $scope.editInfoRus;
-        console.log(engInfo);
 
         if($scope.editNameEst === "{{nameEditEst}}"){
             estName = $scope.nameEditEst;
@@ -187,15 +186,6 @@ workerAdminController.controller('workerAdminController', function($scope, worke
         if($scope.editInfoRus === "{{infoEditRus}}"){
             rusInfo = $scope.infoEditRus;
         }
-        console.log(estName);
-        console.log(estOccupation);
-        console.log(estInfo);
-        console.log(engOccupation);
-        console.log(engInfo);
-        console.log(finOccupation);
-        console.log(finInfo);
-        console.log(rusOccupation);
-        console.log(rusInfo);
 
         workerService.updateWorker($scope.workerId, estName, estOccupation, estInfo,
             engOccupation, engInfo, finOccupation, finInfo, rusOccupation, rusInfo).then(function(data){
