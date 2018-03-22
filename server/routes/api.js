@@ -33,6 +33,189 @@ var DesignPicture = require('../models/designPics.js');
 var LandingText = require('../models/landingText.js');
 var Booking = require('../models/booking.js');
 var ClosedTimes = require('../models/closedTimes.js');
+// Event page routes ------------------
+router.post('/event/add', function(req, res){
+    var date = moment(req.body.date, 'YYYY-MM-DD HH:mm:ss').format('YYYY-MM-DD');
+    var time = moment(req.body.time, 'HH:mm:ss').format('HH:mm:ss');
+    console.log("This is the moment converted date: " + date);
+    console.log("This is the moment converted time: " +time);
+    var dateTime = date +"T" + time;
+    console.log("This is the datetime: " , dateTime);
+    Event.create({
+        name: req.body.name,
+        description: req.body.description,
+        image: req.body.image,
+        date: moment(dateTime),
+        descEng: req.body.descEng,
+        nameEng: req.body.nameEng,
+        imageEng: req.body.imageEng,
+        descFin: req.body.descFin,
+        nameFin: req.body.nameFin,
+        imageFin: req.body.imageFin,
+        descRus: req.body.descRus,
+        nameRus: req.body.nameRus,
+        imageRus: req.body.imageRus
+    }, function(err, ev){
+        if(err) res.send(err);
+        res.json(ev);
+    })
+
+})
+
+router.post('/event/update', function(req, res){
+    var date = moment(req.body.dateedited, 'YYYY-MM-DD HH:mm:ss').format('YYYY-MM-DD');
+    var time = moment(req.body.timeedited, 'YYYY-MM-DD HH:mm:ss');
+    var timeadd = moment(time).add(0, 'hours').format('HH:mm:ss');
+    console.log("This is the moment converted date: " + date);
+    console.log("This is the moment converted time: " + timeadd);
+    var dateTime = date +"T" + timeadd;
+    console.log("This is the datetime: " + dateTime);
+    Event.findOne({
+        _id: req.body.id
+    }, function(err, response){
+        if(err) res.send(err);
+        response.update({
+            name: req.body.name,
+            description: req.body.description,
+            image: req.body.image,
+            date: moment(dateTime),
+            descEng: req.body.descEng,
+            nameEng: req.body.nameEng,
+            imageEng: req.body.imageEng,
+            descFin: req.body.descFin,
+            nameFin: req.body.nameFin,
+            imageFin: req.body.imageFin,
+            descRus: req.body.descRus,
+            nameRus: req.body.nameRus,
+            imageRus: req.body.imageRus
+
+        }, function(err){
+            if(err)res.send(err);
+            res.json({
+                msg: "event was updated"
+            })
+        })
+    })
+})
+
+router.post('/event/delete/:id', function(req, res){
+    Event.remove({
+        _id:req.params.id
+    }, function(err){
+        if(err) res.send(err);
+        res.json({
+            msg: "event was removed"
+        })
+    })
+})
+router.get('/event/findbyid', function(req, res){
+    Event.findOne({
+        _id: req.body.id
+    }, function(err, response){
+        if(err)res.send(err);
+        var perma = {};
+        perma.id = response._id;
+        perma.name = response.name;
+        perma.description = response.description;
+        perma.nameEng = response.nameEng;
+        perma.descEng = response.descEng;
+        perma.nameFin = response.nameFin;
+        perma.descFin = response.descFin;
+        perma.nameRus = response.nameRus;
+        perma.descRus = response.descRus;
+        perma.image = response.image;
+        perma.imageEng = response.imageEng;
+        perma.imageFin = response.imageFin;
+        perma.imageRus = response.imageRus;
+        perma.date = moment.tz(response.date, "YYYY-MM-DD HH:mm:ssZ", "Europe/Tallinn").format("YYYY-MM-DD");
+        perma.time = moment.tz(response.date, "YYYY-MM-DD HH:mm:ssZ", "Europe/Tallinn").format("YYYY-MM-DDTHH:mm:ss");
+        res.json(perma);
+    })
+})
+
+router.get('/event/get', function(req, res){
+    Event.find(function(err, events){
+        if(err) res.send(err);
+        var perma = {}
+        var response = [];
+        events.forEach(function(element){
+            perma = {};
+            perma.id = element._id;
+            perma.name = element.name;
+            perma.description = element.description;
+            perma.nameEng = element.nameEng;
+            perma.descEng = element.descEng;
+            perma.nameFin = element.nameFin;
+            perma.descFin = element.descFin;
+            perma.nameRus = element.nameRus;
+            perma.descRus = element.descRus;
+            perma.image = element.image;
+            perma.imageEng = element.imageEng;
+            perma.imageFin = element.imageFin;
+            perma.imageRus = element.imageRus;
+            //perma.date = moment.tz(element.date, "YYYY-MM-DD HH:mm:ssZ", "Europe/Tallinn").format("YYYY-MM-DD HH:mm");
+            perma.date=moment(element.date).utcOffset(moment().tz('Europe/Tallinn').format('Z')).format('DD-MM-YYYY HH:mm');
+            response.push(perma);
+        })
+
+        res.send(response.reverse());
+    })
+})
+router.get('/event/getnext', function(req, res){
+    Event.find(function(err, events){
+        if(err) res.send(err);
+        var perma = {}
+        var response = [];
+        events.forEach(function(element){
+            perma = {};
+            if(moment(element.date).isBetween(moment(), moment().add('7', 'days'))){
+                perma.id = element._id;
+                perma.name = element.name;
+                perma.description = element.description;
+                perma.descEng = element.descEng;
+                perma.nameEng = element.nameEng;
+                perma.nameFin = element.nameFin;
+                perma.descFin = element.descFin;
+                perma.nameRus = element.nameRus;
+                perma.descRus = element.descRus;
+                perma.image = element.image;
+                perma.imageEng = element.imageEng;
+                perma.imageRus = element.imageRus;
+                perma.imageFin = element.imageFin;
+                //perma.date = moment.tz(element.date, "YYYY-MM-DD HH:mm:ssZ", "Europe/Tallinn").format("DD-MM-YYYY HH:mm");
+                perma.date = moment(element.date).utcOffset(moment().tz('Europe/Tallinn').format('Z')).format('DD-MM-YYYY HH:mm');
+                response.push(perma);
+            }else{
+                return;
+            }
+        })
+        res.send(response);
+    })
+})
+router.post('/event/delete', function(req, res){
+    Event.find(function(err, events){
+        if(err) res.send(err);
+        var perma = {}
+        var response = [];
+        events.forEach(function(element){
+            perma = {};
+            console.log(moment(element.date).isBefore(moment().subtract('7', 'days')));
+            if(moment(element.date).isBefore(moment().subtract('7', 'days'))){
+                Event.remove({
+                    _id: element._id
+                }, function(err){
+                    if(err) res.send(err);
+                    console.log("event was removed");
+                    res.json({
+                        msg: "event was removed"
+                    })
+                })
+            }else{
+                return;
+            }
+        })
+    })
+})
 //email sending
 
 router.post('/email/feedback', function(req, res){
@@ -192,17 +375,12 @@ router.post('/times/delete', function(req, res){
 })
 router.post('/times/add', function(req, res){
     var startDate = moment(req.body.date).format('YYYY-MM-DD');
-    console.log(startDate);
     var startTime = moment(req.body.start, 'HH:mm:ss').format('HH:mm:ss');
     var startDateTime = startDate+"T"+startTime;
 
     var endDate = moment(req.body.date).format('YYYY-MM-DD');
-    console.log(endDate);
     var endTime = moment(req.body.end, 'HH:mm:ss').format('HH:mm:ss');
     var endDateTime = endDate+"T"+endTime;
-
-    console.log(moment(startDateTime));
-    console.log(moment(endDateTime));
 
     ClosedTimes.create({
         start:  moment(startDateTime),
@@ -221,7 +399,7 @@ router.get('/times/get', function(req, res){
             var temp = {};
             temp._id = element._id;
             temp.start = moment(element.start).utcOffset(moment().tz('Europe/Tallinn').format('Z')).format('HH:mm DD-MM-YYYY');
-            temp.end = moment(element.end).format('HH:mm DD-MM-YYYY');
+            temp.end = moment(element.end).utcOffset(moment().tz('Europe/Tallinn').format('Z')).format('HH:mm DD-MM-YYYY');
             temp.reason = element.reason;
             response.push(temp);
 
@@ -234,7 +412,7 @@ router.post('/times/validate', function(req, res){
     var date = moment(req.body.date, 'DD MMMM, YYYY').format('YYYY-MM-DD');
     var time = moment(req.body.time, 'HH:mm').format('HH:mm');
     var dateTime = moment(date+"T"+time);
-    console.log(dateTime);
+    console.log(dateTime," See on broneeringu aeg");
 
     ClosedTimes.find(function(err, times){
         if(err) res.send(err);
@@ -253,10 +431,8 @@ router.post('/times/validate', function(req, res){
             //var test2 = parseInt(moment(element.start).format('HH'))+offset;
 
             //for server
-            var test = parseInt(moment(element.end).format('HH'));
-            var test2 = parseInt(moment(element.start).format('HH'));
-            console.log(test);
-            console.log(test2);
+            var test = parseInt(moment(element.end).format('HH'))+offset;
+            var test2 = parseInt(moment(element.start).format('HH'))+offset;
 
             var bookingTime = new Date();
             bookingTime.setHours(parseInt(moment(dateTime).format('HH')));
@@ -264,6 +440,7 @@ router.post('/times/validate', function(req, res){
             bookingTime.setSeconds(0);
 
             var closedTimeEnd = new Date();
+            closedTimeEnd.setHours(test);
             closedTimeEnd.setMinutes(parseInt(moment(element.end).format('mm')));
             closedTimeEnd.setSeconds(0);
 
@@ -272,20 +449,13 @@ router.post('/times/validate', function(req, res){
             closedTimeStart.setMinutes(parseInt(moment(element.start).format('mm')));
             closedTimeStart.setSeconds(0);
 
-            console.log(date);
-            console.log(closedDate);
-            console.log(bookingTime);
-            console.log(closedTimeEnd);
-            console.log(closedTimeStart);
-
-            console.log(bookingTime.getHours().toString() + bookingTime.getMinutes().toString());
 
             if(moment(date).isSame(closedDate)){
                 console.log("sama kuupäev");
                 if(bookingTime < closedTimeEnd){
-                    if(bookingTime > closedTimeStart || 
+                    console.log("broneerimisaeg on suletud aja sees");
+                    if(bookingTime > closedTimeStart ||
                         bookingTime.getHours().toString() + bookingTime.getMinutes().toString() === closedTimeStart.getHours().toString() + closedTimeStart.getMinutes().toString()){
-                        console.log("See aeg on restorani sulgemise ajal");
                         counter ++;
                     }else{
                         console.log("Selle ajaga on kõik korras");
@@ -322,10 +492,10 @@ router.post('/booking/delete', function(req, res){
 router.post('/booking/add', function(req, res){
     if(req.body.lang === "ee"){
         var testData = {
-              from: 'Fii restoran <info@fiiresto.ee>',
-              to: req.body.email,
-              subject: 'Broneeringu kinnitus',
-              html: '<!DOCTYPE html> \
+            from: 'Fii restoran <info@fiiresto.ee>',
+            to: req.body.email,
+            subject: 'Broneeringu kinnitus',
+            html: '<!DOCTYPE html> \
                       <html>\
                        <head>\
                         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />\
@@ -352,10 +522,10 @@ router.post('/booking/add', function(req, res){
     }
     if(req.body.lang ==="en"){
         var testData = {
-              from: 'Fii restaurant <info@fiiresto.ee>',
-              to: req.body.email ,
-              subject: 'Booking confirmation',
-              html: '<!DOCTYPE html> \
+            from: 'Fii restaurant <info@fiiresto.ee>',
+            to: req.body.email ,
+            subject: 'Booking confirmation',
+            html: '<!DOCTYPE html> \
                       <html>\
                        <head>\
                         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />\
@@ -382,10 +552,10 @@ router.post('/booking/add', function(req, res){
     }
     if(req.body.lang ==="ru"){
         var testData = {
-              from: 'Fii restaurant <info@fiiresto.ee>',
-              to: req.body.email ,
-              subject: 'Booking confirmation',
-              html: '<!DOCTYPE html> \
+            from: 'Fii restaurant <info@fiiresto.ee>',
+            to: req.body.email ,
+            subject: 'Booking confirmation',
+            html: '<!DOCTYPE html> \
                       <html>\
                        <head>\
                         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />\
@@ -412,10 +582,10 @@ router.post('/booking/add', function(req, res){
     }
     if(req.body.lang ==="fi"){
         var testData = {
-              from: 'Fii restaurant <info@fiiresto.ee>',
-              to: req.body.email ,
-              subject: 'Varausvahvistus',
-              html: '<!DOCTYPE html> \
+            from: 'Fii restaurant <info@fiiresto.ee>',
+            to: req.body.email ,
+            subject: 'Varausvahvistus',
+            html: '<!DOCTYPE html> \
                       <html>\
                        <head>\
                         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />\
@@ -472,7 +642,7 @@ router.post('/booking/add', function(req, res){
     }
 
     mailgun.messages().send(testData, function (error, body) {
-      console.log(body);
+        console.log(body);
     });
     mailgun.messages().send(infoToResto, function(error, body){
         console.log(body);
@@ -548,7 +718,7 @@ router.post('/landingtext/add', function(req, res){
         }
     })
 })
-router.post('/landingText/get', function(req, res){
+router.get('/landingText/get', function(req, res){
     LandingText.count({
         place: req.body.place,
         lan: req.body.lan
@@ -613,184 +783,6 @@ router.post('/design/get', function(req, res){
     })
 })
 
-// Event page routes ------------------
-router.post('/event/add', function(req, res){
-    console.log(req.body);
-    var date = moment(req.body.date, 'YYYY-MM-DD HH:mm:ss').format('YYYY-MM-DD');
-    var time = moment(req.body.time, 'HH:mm:ss').format('HH:mm:ss');
-    console.log("This is the moment converted date: " + date);
-    console.log("This is the moment converted time: " +time);
-    var dateTime = date +"T" + time;
-    console.log("This is the datetime: " + dateTime);
-    Event.create({
-        name: req.body.name,
-        description: req.body.description,
-        image: req.body.image,
-        date: moment(dateTime),
-        descEng: req.body.descEng,
-        nameEng: req.body.nameEng,
-        imageEng: req.body.imageEng,
-        descFin: req.body.descFin,
-        nameFin: req.body.nameFin,
-        imageFin: req.body.imageFin,
-        descRus: req.body.descRus,
-        nameRus: req.body.nameRus,
-        imageRus: req.body.imageRus
-    }, function(err, ev){
-        if(err) res.send(err);
-        res.json(ev);
-    })
-
-})
-router.post('/event/update', function(req, res){
-    var date = moment(req.body.date, 'YYYY-MM-DD HH:mm:ss').format('YYYY-MM-DD');
-    var time = moment(req.body.time, 'HH:mm:ss').format('HH:mm:ss');
-    var dateTime = date +"T" + time;
-    Event.findOne({
-        _id: req.body.id
-    }, function(err, response){
-        if(err) res.send(err);
-        response.update({
-            name: req.body.name,
-            description: req.body.description,
-            image: req.body.image,
-            date: dateTime,
-            descEng: req.body.descEng,
-            nameEng: req.body.nameEng,
-            imageEng: req.body.imageEng,
-            descFin: req.body.descFin,
-            nameFin: req.body.nameFin,
-            imageFin: req.body.imageFin,
-            descRus: req.body.descRus,
-            nameRus: req.body.nameRus,
-            imageRus: req.body.imageRus
-
-        }, function(err){
-            if(err)res.send(err);
-            res.json({
-                msg: "event was updated"
-            })
-        })
-    })
-})
-
-router.get('/event/delete/:id', function(req, res){
-    Event.remove({
-        _id:req.params.id
-    }, function(err){
-        if(err) res.send(err);
-        res.json({
-            msg: "event was removed"
-        })
-    })
-})
-router.post('/event/findbyid', function(req, res){
-    Event.findOne({
-        _id: req.body.id
-    }, function(err, response){
-        if(err)res.send(err);
-        console.log(response.date);
-        var perma = {};
-        perma.id = response._id;
-        perma.name = response.name;
-        perma.description = response.description;
-        perma.nameEng = response.nameEng;
-        perma.descEng = response.descEng;
-        perma.nameFin = response.nameFin;
-        perma.descFin = response.descFin;
-        perma.nameRus = response.nameRus;
-        perma.descRus = response.descRus;
-        perma.image = response.image;
-        perma.imageEng = response.imageEng;
-        perma.imageFin = response.imageFin;
-        perma.imageRus = response.imageRus;
-        perma.date = moment.tz(response.date, "YYYY-MM-DD HH:mm:ssZ", "Europe/Tallinn").format("YYYY-MM-DD");
-        perma.time = moment.tz(response.date, "YYYY-MM-DD HH:mm:ssZ", "Europe/Tallinn").format("YYYY-MM-DDTHH:mm:ss");
-        res.json(perma);
-    })
-})
-
-router.get('/event/get', function(req, res){
-    Event.find(function(err, events){
-        if(err) res.send(err);
-        var perma = {}
-        var response = [];
-        events.forEach(function(element){
-            perma = {};
-            perma.id = element._id;
-            perma.name = element.name;
-            perma.description = element.description;
-            perma.date = moment.tz(element.date, "YYYY-MM-DD HH:mm:ssZ", "Europe/Tallinn").format("YYYY-MM-DD HH:mm");
-            perma.nameEng = element.nameEng;
-            perma.descEng = element.descEng;
-            perma.nameFin = element.nameFin;
-            perma.descFin = element.descFin;
-            perma.nameRus = element.nameRus;
-            perma.descRus = element.descRus;
-            perma.image = element.image;
-            perma.imageEng = element.imageEng;
-            perma.imageFin = element.imageFin;
-            perma.imageRus = element.imageRus;
-            response.push(perma);
-        })
-
-        res.send(response.reverse());
-    })
-})
-router.get('/event/getnext', function(req, res){
-    Event.find(function(err, events){
-        if(err) res.send(err);
-        var perma = {}
-        var response = [];
-        events.forEach(function(element){
-            perma = {};
-            if(moment(element.date).isBetween(moment(), moment().add('7', 'days'))){
-                perma.id = element._id;
-                perma.name = element.name;
-                perma.description = element.description;
-                perma.descEng = element.descEng;
-                perma.nameEng = element.nameEng;
-                perma.nameFin = element.nameFin;
-                perma.descFin = element.descFin;
-                perma.nameRus = element.nameRus;
-                perma.descRus = element.descRus;
-                perma.image = element.image;
-                perma.imageEng = element.imageEng;
-                perma.imageRus = element.imageRus;
-                perma.imageFin = element.imageFin;
-                perma.date = moment.tz(element.date, "YYYY-MM-DD HH:mm:ssZ", "Europe/Tallinn").format("DD-MM-YYYY HH:mm");
-                response.push(perma);
-            }else{
-                return;
-            }
-        })
-        res.send(response);
-    })
-})
-router.get('/event/delete', function(req, res){
-    Event.find(function(err, events){
-        if(err) res.send(err);
-        var perma = {}
-        var response = [];
-        events.forEach(function(element){
-            perma = {};
-            console.log(moment(element.date).isBefore(moment().subtract('7', 'days')));
-            if(moment(element.date).isBefore(moment().subtract('7', 'days'))){
-                Event.remove({
-                    _id: element._id
-                }, function(err){
-                    if(err) res.send(err);
-                    console.log("event was removed");
-                    res.json({
-                        msg: "event was removed"
-                    })
-                })
-            }else{
-                return;
-            }
-        })
-    })
-})
 // Landing page text routes ------------------------
 router.post('/texts/add', function(req, res){
     Texts.create({
@@ -928,7 +920,7 @@ router.get('/food/all', function(req, res){
         res.json(foods);
     }).sort({_id:-1});
 })
-router.get('/food/remove/:id', function(req, res){
+router.post('/food/remove/:id', function(req, res){
     Food.remove({
         _id: req.params.id
     }, function(err){
@@ -992,7 +984,7 @@ router.post('/drink/update', function(req, res){
     })
 })
 
-router.post('/drink/byid', function(req, res){
+router.get('/drink/byid', function(req, res){
     Drink.findOne({
         _id:req.body.id
     }, function(err, drink){
@@ -1056,7 +1048,7 @@ router.get('/drink/hardalco', function(req, res){
     })
 })
 
-router.get('/drink/remove/:id', function(req, res){
+router.post('/drink/remove/:id', function(req, res){
     Drink.remove({
         _id: req.params.id
     }, function(err){
@@ -1093,7 +1085,7 @@ router.post('/add', function(req, res){
         res.json(worker);
     })
 })
-router.post('/worker/getbyid', function(req, res){
+router.get('/worker/getbyid', function(req, res){
     Worker.findOne({
         _id: req.body.id
     }, function(err, response){
@@ -1130,7 +1122,7 @@ router.get('/all', function(req, res){
         res.json(workers);
     })
 })
-router.get('/worker/remove/:id', function(req, res){
+router.post('/worker/remove/:id', function(req, res){
     Worker.remove({
         _id: req.params.id
     }, function(err){
@@ -1144,60 +1136,60 @@ router.get('/worker/remove/:id', function(req, res){
 // Login routes ----------------------
 router.post('/register', function(req, res) {
     console.log("We are here");
-  User.register(new User({ username: req.body.username }),
-    req.body.password, function(err, account) {
-    if (err) {
-      return res.status(500).json({
-        err: err
-      });
-    }
-    passport.authenticate('local')(req, res, function () {
-      return res.status(200).json({
-        status: 'Registration successful!'
-      });
-    });
-  });
+    User.register(new User({ username: req.body.username }),
+        req.body.password, function(err, account) {
+            if (err) {
+                return res.status(500).json({
+                    err: err
+                });
+            }
+            passport.authenticate('local')(req, res, function () {
+                return res.status(200).json({
+                    status: 'Registration successful!'
+                });
+            });
+        });
 });
 
 router.post('/login', function(req, res, next) {
-  passport.authenticate('local', function(err, user, info) {
-    if (err) {
-      return next(err);
-    }
-    if (!user) {
-      return res.status(401).json({
-        err: info
-      });
-    }
-    req.logIn(user, function(err) {
-      if (err) {
-        return res.status(500).json({
-          err: 'Could not log in user'
+    passport.authenticate('local', function(err, user, info) {
+        if (err) {
+            return next(err);
+        }
+        if (!user) {
+            return res.status(401).json({
+                err: info
+            });
+        }
+        req.logIn(user, function(err) {
+            if (err) {
+                return res.status(500).json({
+                    err: 'Could not log in user'
+                });
+            }
+            res.status(200).json({
+                status: 'Login successful!'
+            });
         });
-      }
-      res.status(200).json({
-        status: 'Login successful!'
-      });
-    });
-  })(req, res, next);
+    })(req, res, next);
 });
 
 router.get('/logout', function(req, res) {
-  req.logout();
-  res.status(200).json({
-    status: 'Bye!'
-  });
+    req.logout();
+    res.status(200).json({
+        status: 'Bye!'
+    });
 });
 
 router.get('/status', function(req, res) {
-  if (!req.isAuthenticated()) {
-    return res.status(200).json({
-      status: false
+    if (!req.isAuthenticated()) {
+        return res.status(200).json({
+            status: false
+        });
+    }
+    res.status(200).json({
+        status: true
     });
-  }
-  res.status(200).json({
-    status: true
-  });
 });
 
 

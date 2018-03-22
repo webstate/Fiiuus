@@ -3,22 +3,18 @@ var sliderCtrl = angular.module('sliderCtrl', []);
 sliderCtrl.controller('sliderCtrl', function($location,$rootScope, $scope, landingTextService, pictureService, eventService, bookingService, emailService, $window){
 
     if($location.url() === "/"){
-        console.log("eesti keel");
         $rootScope.lang = "ee";
         $rootScope.bookingModal = false;
     }
     if($location.url() === "/en"){
-        console.log("inglise keel");
         $rootScope.lang = "en";
         $rootScope.bookingModal = false;
     }
     if($location.url() === "/fi"){
-        console.log("inglise keel");
         $rootScope.lang = "fi";
         $rootScope.bookingModal = false;
     }
     if($location.url() === "/ru"){
-        console.log("inglise keel");
         $rootScope.lang = "ru";
         $rootScope.bookingModal = false;
     }
@@ -33,12 +29,10 @@ sliderCtrl.controller('sliderCtrl', function($location,$rootScope, $scope, landi
     };
 
     $scope.openLangMenuMobile = function(){
-        console.log("this was clicked");
         $scope.langmenuMobile.status = true;
     }
 
     eventService.getNextEvents().then(function(data){
-        console.log(data[0]);
         $scope.eventBanner = data[0];
     }, function(err){
         console.log(err);
@@ -228,22 +222,46 @@ sliderCtrl.controller('sliderCtrl', function($location,$rootScope, $scope, landi
 
 
     pictureService.getMenuPicture('event').then(function(data){
-        $scope.eventPicture = data.picturePath;
+        if(data == null){
+            $scope.eventPicturePath = "";
+        }else {
+            $scope.eventPicture = data.picturePath;
+        }
     })
     pictureService.getMenuPicture('map').then(function(data){
-        $scope.mapPicture = data.picturePath;
+        if(data == null){
+            $scope.mapPicturePath = "";
+        }else {
+            $scope.mapPicture = data.picturePath;
+        }
     })
     pictureService.getMenuPicture('eventEst').then(function(data){
-        $scope.eventPicturePathEst = data.picturePath;
+        if(data == null){
+            $scope.eventPicturePathEst = "";
+        }else {
+            $scope.eventPicturePathEst = data.picturePath;
+        }
     })
     pictureService.getMenuPicture('eventFin').then(function(data){
-        $scope.eventPicturePathFin = data.picturePath;
+        if(data == null){
+            $scope.eventPicturePathFin = "";
+        }else {
+            $scope.eventPicturePathFin = data.picturePath;
+        }
     })
     pictureService.getMenuPicture('eventEng').then(function(data){
-        $scope.eventPicturePathEng = data.picturePath;
+        if(data == null){
+            $scope.eventPicturePathEng = "";
+        }else {
+            $scope.eventPicturePathEng = data.picturePath;
+        }
     })
     pictureService.getMenuPicture('eventRus').then(function(data){
-        $scope.eventPicturePathRus = data.picturePath;
+        if(data == null){
+            $scope.eventPicturePathRus = "";
+        }else {
+            $scope.eventPicturePathRus = data.picturePath;
+        }
     })
     $scope.bronModal = function(){
         $rootScope.bookingModal = true;
@@ -251,25 +269,17 @@ sliderCtrl.controller('sliderCtrl', function($location,$rootScope, $scope, landi
     }
 
     $scope.sendEmailEng = function(){
-            console.log($scope.nameEng);
-            console.log($scope.emailEng);
-            console.log($scope.messageEng);
             emailService.sendFeedBack($scope.emailEng, $scope.nameEng, $scope.messageEng, "en").then(function(data){
                 $rootScope.nameEng = "";
                 $rootScope.emailEng = "";
                 $rootScope.messageEng = "";
-                console.log(data);
             })
     }
     $scope.sendEmailEst = function(){
-            console.log($scope.nameEst);
-            console.log($scope.emailEst);
-            console.log($scope.messageEst);
             emailService.sendFeedBack($scope.emailEst, $scope.nameEst, $scope.messageEst, "ee").then(function(data){
                 $rootScope.nameEst = "";
                 $rootScope.emailEst = "";
                 $rootScope.messageEst = "";
-                console.log(data);
             })
     }
     $scope.sendEmailFin = function(){
@@ -277,7 +287,6 @@ sliderCtrl.controller('sliderCtrl', function($location,$rootScope, $scope, landi
                 $rootScope.nameFin = "";
                 $rootScope.emailFin = "";
                 $rootScope.messageFin = "";
-                console.log(data);
             })
     }
     $scope.sendEmailRus = function(){
@@ -285,7 +294,6 @@ sliderCtrl.controller('sliderCtrl', function($location,$rootScope, $scope, landi
                 $rootScope.nameRus = "";
                 $rootScope.emailRus = "";
                 $rootScope.messageRus = "";
-                console.log(data);
             })
     }
 });

@@ -45,8 +45,8 @@ eventService.factory('eventService', function($q, $http){
             name: name,
             description: description,
             image: image,
-            date: date,
-            time: time,
+            dateedited: date,
+            timeedited: time,
             descEng: descEng,
             nameEng: nameEng,
             imageEng: imageEng,
@@ -85,12 +85,12 @@ eventService.factory('eventService', function($q, $http){
                     arrows: true,
                     dots: true,
                     autoplay: true,
-                    autoplaySpeed: 5000,
+                    autoplaySpeed: 10000,
                     infinite: true,
                     accessibility:true
                 });
 
-            },10);
+            },500);
         })
         return d.promise;
 
@@ -131,4 +131,5 @@ eventService.factory('eventService', function($q, $http){
         })
         return d.promise;
     }
-})
+});
+

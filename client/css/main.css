@@ -16,6 +16,42 @@
     padding: 15px;
     width: 380px;
 }
+.TextField{
+    margin-top: 30px;
+    margin-left: 20px;
+    padding: 15px;
+    width: 75%;
+}
+.Btn {
+    background: white;
+    border: 1px solid black;
+    margin-top:10px;
+    margin-left:10px;
+    padding:15px;
+}
+.TextArea {
+    margin-top:30px;
+    margin-left: 10px;
+    padding: 10px;
+    width: 90%;
+    height: 10px;
+}
+.TasteEventBtn {
+    background: white;
+    border: 1px solid black;
+    margin-top:30px;
+    margin-left:10px;
+    padding:15px;
+    display:inline-block;
+}
+.TasteEventTextArea {
+    margin-top:30px;
+    margin-left: 10px;
+    padding: 10px;
+    width: 75%;
+    height: 10px;
+}
+
 .landing-nav-btn{
     font-family: spaceMono;
     font-size: 16px;
@@ -702,6 +738,7 @@ th{
     line-height: 1 !important;
     opacity: 1 !important;
     color: #000000 !important;
+    margin-bottom: 50px !important;
 }
 
 .slick-slide {
@@ -713,6 +750,7 @@ th{
 
 .slick-prev:before {
     content: url('img/back.png') !important;
+    margin-bottom: 50px !important;
     position: static !important;
 
 }
@@ -738,8 +776,8 @@ th{
     position: absolute;
     top: 285px!important;
     display: block;
-    width: 20px;
-    height: 20px;
+    width: 24px !important;
+    height: 24px !important;
     padding: 0;
     -webkit-transform: translate(0, -50%);
     -ms-transform: translate(0, -50%);
@@ -771,7 +809,7 @@ th{
     width: 100%;
 }
 .event-picture {
-    /*background-image: url(img/mockup-worker.png);*/
+    /*background-image: url('img/mockup-worker.png');*/
     margin-top: 80px;;
     background-size: cover;
     max-width:100%;

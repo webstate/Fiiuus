@@ -5,12 +5,10 @@ bookingAdminCtrl.controller('bookingAdminCtrl', function($scope, bookingService)
         showStartTime: false,
         showEndTime: false
     }
-    $scope.startTimes = ["12:00", "12:30", "13:00", "13:30",
-        "14:00", "14:30","15:00", "15:30", "16:00", "16:30", "17:00", "17:30", "18:00", "18:30", "19:00", "19:30","20:00", "20:30", "21:00", "21:30"];;
+    $scope.startTimes = ["12:00", "12:30", "13:00", "13:30", "14:00", "14:30","15:00", "15:30", "16:00", "16:30", "17:00", "17:30", "18:00", "18:30", "19:00", "19:30","20:00", "20:30", "21:00", "21:30"];
     $scope.startTime = $scope.startTimes[0];
 
-    $scope.endTimes = ["12:00", "12:30", "13:00", "13:30",
-        "14:00", "14:30","15:00", "15:30", "16:00", "16:30", "17:00", "17:30", "18:00", "18:30", "19:00", "19:30","20:00", "20:30", "21:00", "21:30"];;
+    $scope.endTimes = ["12:00", "12:30", "13:00", "13:30", "14:00", "14:30","15:00", "15:30", "16:00", "16:30", "17:00", "17:30", "18:00", "18:30", "19:00", "19:30","20:00", "20:30", "21:00", "21:30"];
     $scope.endTime = $scope.endTimes[0];
 
     $scope.showStartTime = function(){
@@ -76,15 +74,12 @@ bookingAdminCtrl.controller('bookingAdminCtrl', function($scope, bookingService)
         console.log($scope.event.date);
         console.log("START: " + $scope.startTime + ":00");
         console.log("END: " + $scope.endTime + ":00");
-        var officialdate = new Date($scope.event.date.split("-")[2], parseInt($scope.event.date.split("-")[1])-1, parseInt($scope.event.date.split("-")[0])+1);
-        console.log($scope.event.date.split("-"));
-        console.log((parseInt($scope.startTime.split(":")[0])).toString() + ":"+$scope.startTime.split(":")[1] + ":00");
-        console.log((parseInt($scope.endTime.split(":")[0])).toString() + ":"+$scope.endTime.split(":")[1] + ":00");
+        var officialdate = new Date(parseInt($scope.event.date.split("-")[2]), parseInt($scope.event.date.split("-")[1])-1, parseInt($scope.event.date.split("-")[0]),12);
         console.log(officialdate);
+        console.log($scope.event.date);
         bookingService.addClosedTime(officialdate, (parseInt($scope.startTime.split(":")[0])+offset).toString() + ":" + $scope.startTime.split(":")[1] + ":00",
-            (parseInt($scope.endTime.split(":")[0])).toString() + ":"+$scope.endTime.split(":")[1] + ":00", $scope.event.reason)
+            (parseInt($scope.endTime.split(":")[0])+offset).toString() + ":"+$scope.endTime.split(":")[1] + ":00", $scope.event.reason)
             .then(function(data){
-                console.log(data);
                 bookingService.getClosedTimes().then(function(data){
                     console.log(data);
                     $scope.closedTimes = data;

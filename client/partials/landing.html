@@ -1116,55 +1116,57 @@
                                     <!--slickinit class is located in eventService.js-->
                                     <div class="slickinit">
                                         <!--events, filter and limitTo are in eventCtrl.js-->
-                                        <div ng-repeat="event in events | filter: filterDate | orderBy: '-date' | limitTo: limit">
-                                            <div class="col-md-6">
-                                                <div class="event">
-                                                    <div valign="top" style="width: 100%";>
-                                                        <div>
-                                                            <p ng-if="$root.lang==='ee'" class="event-title">
-                                                                {{event.name}}
-                                                            </p>
-                                                        </div>
-                                                        <div>
-                                                            <p ng-if="$root.lang==='en'" class="event-title">
-                                                                {{event.nameEng}}
-                                                            </p>
-                                                        </div>
-                                                        <div>
-                                                            <p ng-if="$root.lang==='fi'" class="event-title">
-                                                                {{event.nameFin}}
-                                                            </p>
-                                                        </div>
-                                                        <div>
-                                                            <p style="font-family:Roboto;" ng-if="$root.lang==='ru'" class="event-title">
-                                                                {{event.nameRus}}
-                                                            </p>
-                                                        </div>
-                                                        <p class="event-time">
-                                                            {{event.date | date:'dd-MM-yyyy HH:mm' }}
-                                                        </p>
-                                                        <div>
-                                                            <p ng-if="$root.lang==='ee'" class="event-description" ng-bind-html="event.description"></p>
-                                                            <p ng-if="$root.lang==='en'" class="event-description" ng-bind-html="event.descEng"></p>
-                                                            <p ng-if="$root.lang==='fi'" class="event-description" ng-bind-html="event.descFin"></p>
-                                                            <p style="font-family:Roboto;" ng-if="$root.lang==='ru'" class="event-description" ng-bind-html="event.descRus"></p>
-                                                        </div>
-                                                        <script>
-                                                            $(function() {
-                                                                $('.pop').on('click', function() {
-                                                                    $('.imagepreview').attr('src', $(this).find('img').attr('src'));
-                                                                    $('#imagemodal').modal('show');
-                                                                });
-                                                            });
-                                                        </script>
-                                                        <div class="col-md-6">
-                                                            <div style="vertical-align: top; max-width: 100%">
-                                                                <div href="#" ng-if="$root.lang === 'ee'" class="pop" data-toggle="modal" data-target="#myModal"><img class="event-picture" src="{{event.image}}" alt=""></div>
-                                                                <div href="#" ng-if="$root.lang === 'en'" class="pop" data-toggle="modal" data-target="#myModal"><img class="event-picture" src="{{event.imageEng}}" alt=""></div>
-                                                                <div href="#" ng-if="$root.lang === 'fi'" class="pop" data-toggle="modal" data-target="#myModal"><img class="event-picture" src="{{event.imageFin}}" alt=""></div>
-                                                                <div href="#" ng-if="$root.lang === 'ru'" class="pop" data-toggle="modal" data-target="#myModal"><img class="event-picture" src="{{event.imageRus}}" alt=""></div>
+                                        <div ng-repeat="event in events | unique:'date'">
+                                            <div>
+                                                <div class="col-md-6">
+                                                    <div class="event">
+                                                        <div valign="top" style="width: 100%";>
+                                                            <div>
+                                                                <p ng-if="$root.lang==='ee'" class="event-title">
+                                                                    {{event.name}}
+                                                                </p>
                                                             </div>
+                                                            <div>
+                                                                <p ng-if="$root.lang==='en'" class="event-title">
+                                                                    {{event.nameEng}}
+                                                                </p>
+                                                            </div>
+                                                            <div>
+                                                                <p ng-if="$root.lang==='fi'" class="event-title">
+                                                                    {{event.nameFin}}
+                                                                </p>
+                                                            </div>
+                                                            <div>
+                                                                <p style="font-family:Roboto;" ng-if="$root.lang==='ru'" class="event-title">
+                                                                    {{event.nameRus}}
+                                                                </p>
+                                                            </div>
+                                                            <p class="event-time">
+                                                                {{event.date | date:'dd-MM-yyyy HH:mm' }}
+                                                            </p>
+                                                            <div>
+                                                                <p ng-if="$root.lang==='ee'" class="event-description" ng-bind-html="event.description"></p>
+                                                                <p ng-if="$root.lang==='en'" class="event-description" ng-bind-html="event.descEng"></p>
+                                                                <p ng-if="$root.lang==='fi'" class="event-description" ng-bind-html="event.descFin"></p>
+                                                                <p style="font-family:Roboto;" ng-if="$root.lang==='ru'" class="event-description" ng-bind-html="event.descRus"></p>
+                                                            </div>
+                                                            <script>
+                                                                $(function() {
+                                                                    $('.pop').on('click', function() {
+                                                                        $('.imagepreview').attr('src', $(this).find('img').attr('src'));
+                                                                        $('#imagemodal').modal('show');
+                                                                    });
+                                                                });
+                                                            </script>
                                                         </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div style="vertical-align: top; max-width: 100%">
+                                                        <div href="#" ng-if="$root.lang === 'ee'" class="pop" data-toggle="modal" data-target="#myModal"><img class="event-picture" src="http://via.placeholder.com/1600x900" alt=""></div> <!--{{event.image}}--><!--src="http://via.placeholder.com/1920x1080"--><!--{{event.image}}-->
+                                                        <div href="#" ng-if="$root.lang === 'en'" class="pop" data-toggle="modal" data-target="#myModal"><img class="event-picture" src="{{event.imageEng}}" alt=""></div>
+                                                        <div href="#" ng-if="$root.lang === 'fi'" class="pop" data-toggle="modal" data-target="#myModal"><img class="event-picture" src="{{event.imageFin}}" alt=""></div>
+                                                        <div href="#" ng-if="$root.lang === 'ru'" class="pop" data-toggle="modal" data-target="#myModal"><img class="event-picture" src="{{event.imageRus}}" alt=""></div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -1255,16 +1257,16 @@
                     <div class="row">
                         <div class="col-md-6">
                             <p ng-if="$root.lang==='en'" class="booking-title" style="color:black;">
-                                Come to visit us
+                                {{eventTitleEng}}
                             </p>
                             <p ng-if="$root.lang==='ee'" class="booking-title" style="color:black;">
-                                Tule meile külla
+                                {{eventTitle}}
                             </p>
                             <p ng-if="$root.lang==='fi'" class="booking-title" style="color:black;">
-                                Tervetuloa
+                                {{eventTitleFin}}
                             </p>
                             <p ng-if="$root.lang==='ru'" class="booking-title" style="color:black;font-family:Play">
-                                Приходите к нам
+                                {{eventTitleRus}}
                             </p>
                         </div>
                         <div class="col-md-6">

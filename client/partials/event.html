@@ -25,6 +25,10 @@
         <div class="col-md-6" ng-show="engModal">
             <label>Ürituse nimi EN</label>
             <input class="form-control" type="text" ng-model="event.nameEng" />
+            <label>Kuupäev</label>
+            <input class="form-control" type="date" ng-model="event.date" />
+            <label>Kellaeg</label>
+            <input class="form-control" type="time" ng-model="event.time" />
             <label>Kirjeldus EN</label>
             <!-- <input class="form-control" type="text" ng-model="event.descEng" /> -->
             <trix-editor angular-trix ng-model="event.descEng"></trix-editor>
@@ -38,6 +42,10 @@
         <div class="col-md-6" ng-show="finModal">
             <label>Ürituse nimi FI</label>
             <input class="form-control" type="text" ng-model="event.nameFin" />
+            <label>Kuupäev</label>
+            <input class="form-control" type="date" ng-model="event.date" />
+            <label>Kellaeg</label>
+            <input class="form-control" type="time" ng-model="event.time" />
             <label>Kirjeldus FI</label>
             <!-- <input class="form-control" type="text" ng-model="event.descFin" /> -->
             <trix-editor angular-trix ng-model="event.descFin"></trix-editor>
@@ -51,6 +59,10 @@
         <div class="col-md-6" ng-show="rusModal">
             <label>Ürituse nimi RU</label>
             <input class="form-control" type="text" ng-model="event.nameRus" />
+            <label>Kuupäev</label>
+            <input class="form-control" type="date" ng-model="event.date" />
+            <label>Kellaeg</label>
+            <input class="form-control" type="time" ng-model="event.time" />
             <label>Kirjeldus RU</label>
             <!-- <input class="form-control" type="text" ng-model="event.descRus" /> -->
             <trix-editor angular-trix ng-model="event.descRus"></trix-editor>
@@ -60,7 +72,6 @@
                 <input type="file" name="image" id="image-ru" class="inputfile" onchange="angular.element(this).scope().imageChanged(this, 'rus')" />
                 <label for="image-ru" style="width: 100%; height: 100%"><i class="fa fa-pencil" style="color: black; position: absolute; bottom: 0;" aria-hidden="true"></i></label>
             </div>
-
         </div>
         <div class="col-md-6">
             <i class="fa fa-times" aria-hidden="true" style="position: absolute;right: 20px;cursor:pointer;" ng-click="hideModal()"></i>
@@ -175,7 +186,7 @@
                 </td>
                 <td>
                     <ul style="list-style: none;" class="lang-bar">
-                        <li ng-class="{true: 'red', false: 'green'}[item.name.length == 0]">
+                        <li ng-class="{true: 'red', false: 'green'}[item.name.length == 0 || item.description.length == 0]">
                             EE
                         </li>
                         <li ng-class="{true: 'red', false: 'green'}[item.nameEng.length == 0 || item.descEng.length == 0]">
