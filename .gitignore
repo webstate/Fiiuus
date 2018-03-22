@@ -4,3 +4,5 @@ server/email
 server/
 .idea/
 server/routes
+server/server.js
+server/app.js
