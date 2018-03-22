@@ -26,6 +26,7 @@ bookingAdminCtrl.controller('bookingAdminCtrl', function($scope, bookingService)
         $scope.form.showEndTime = false;
     }
     bookingService.getClosedTimes().then(function(data){
+        console.log(data);
         $scope.closedTimes = data;
     })
     bookingService.getBookings().then(function(data){
@@ -46,6 +47,7 @@ bookingAdminCtrl.controller('bookingAdminCtrl', function($scope, bookingService)
     }
     $scope.deleteClosedTime = function(id){
         bookingService.deleteTime(id).then(function(data){
+            console.log(data);
             bookingService.getClosedTimes().then(function(data){
                 $scope.closedTimes = data;
             })
@@ -69,11 +71,17 @@ bookingAdminCtrl.controller('bookingAdminCtrl', function($scope, bookingService)
             console.log("me here");
             endMinutes = "0" + $scope.event.endTime.getMinutes();
         }*/
+        console.log($scope.event.date);
+        console.log("START: " + $scope.startTime + ":00");
+        console.log("END: " + $scope.endTime + ":00");
         var officialdate = new Date(parseInt($scope.event.date.split("-")[2]), parseInt($scope.event.date.split("-")[1])-1, parseInt($scope.event.date.split("-")[0]),12);
+        console.log(officialdate);
+        console.log($scope.event.date);
         bookingService.addClosedTime(officialdate, (parseInt($scope.startTime.split(":")[0])+offset).toString() + ":" + $scope.startTime.split(":")[1] + ":00",
             (parseInt($scope.endTime.split(":")[0])+offset).toString() + ":"+$scope.endTime.split(":")[1] + ":00", $scope.event.reason)
             .then(function(data){
                 bookingService.getClosedTimes().then(function(data){
+                    console.log(data);
                     $scope.closedTimes = data;
                 })
             })
