@@ -128,14 +128,19 @@ eventAdminCtrl.controller('eventAdminCtrl', function($scope, eventService, pictu
     $scope.submitEvent = function(){
         var date = new Date();
         var hours = $scope.event.time.getHours();
+        console.log(hours, "hours");
+        var utchours = $scope.event.time.getUTCHours();
+        console.log(utchours, "utchours");
         var minutes = $scope.event.time.getMinutes();
         var offset = date.getTimezoneOffset() / 60;
         if(minutes.toString().length == 1){
             console.log("me here");
             minutes = "0" + $scope.event.time.getMinutes();
         }
-
-        eventService.addEvent($scope.event.name, $scope.event.description, $scope.event.image, $scope.event.date, hours+offset+":"+minutes+":00",
+        console.log($scope.event.time, "event time");
+        console.log(offset, "offset");
+        var newdate=$scope.event.date.setHours(12);
+        eventService.addEvent($scope.event.name, $scope.event.description, $scope.event.image, $scope.event.date, utchours+":"+minutes+":00",
         $scope.event.nameEng, $scope.event.descEng, $scope.event.imageEng,
         $scope.event.nameFin, $scope.event.descFin, $scope.event.imageFin,
         $scope.event.nameRus, $scope.event.descRus, $scope.event.imageRus).then(function(){
