@@ -58,7 +58,6 @@ designViewController.controller('designViewController', function($scope, picture
         if($scope.workerTitle === "{{editWorkerTitle}}"){
             update = $scope.editWorkerTitle;
         }
-        console.log(update);
         landingTextService.addOrUpdateLandingText("workerTitle", update, "ee").then(function(data){
             landingTextService.getLandingText("workerTitle", "ee").then(function(data){
                 if(data.text == null){
@@ -89,7 +88,6 @@ designViewController.controller('designViewController', function($scope, picture
         if($scope.workerText === "{{editWorkerText}}"){
             update = $scope.editWorkerText;
         }
-        console.log(update);
         landingTextService.addOrUpdateLandingText("workerText", update, "ee").then(function(data){
             landingTextService.getLandingText("workerText", "ee").then(function(data){
                 if(data.text == null){
@@ -121,7 +119,6 @@ designViewController.controller('designViewController', function($scope, picture
         if($scope.menuTitle === "{{editMenuTitle}}"){
             update = $scope.editMenuTitle;
         }
-        console.log(update);
         landingTextService.addOrUpdateLandingText("menuTitle", update, "ee").then(function(data){
             landingTextService.getLandingText("menuTitle", "ee").then(function(data){
                 if(data.text == null){
@@ -151,7 +148,6 @@ designViewController.controller('designViewController', function($scope, picture
         if($scope.menuText === "{{editMenuText}}"){
             update = $scope.editMenuText;
         }
-        console.log(update);
         landingTextService.addOrUpdateLandingText("menuText", update, "ee").then(function(data){
             landingTextService.getLandingText("menuText", "ee").then(function(data){
                 if(data.text == null){
@@ -182,7 +178,6 @@ designViewController.controller('designViewController', function($scope, picture
         if($scope.tastingText === "{{editTastingText}}"){
             update = $scope.editTastingText;
         }
-        console.log(update);
         landingTextService.addOrUpdateLandingText("tastingText", update, "ee").then(function(data){
             landingTextService.getLandingText("tastingText", "ee").then(function(data){
                 if(data.text == null){
@@ -213,7 +208,6 @@ designViewController.controller('designViewController', function($scope, picture
         if($scope.eventTitle === "{{editEventTitle}}"){
             update = $scope.editEventTitle;
         }
-        console.log(update);
         landingTextService.addOrUpdateLandingText("eventTitle", update, "ee").then(function(data){
             landingTextService.getLandingText("eventTitle", "ee").then(function(data){
                 if(data.text == null){
@@ -256,7 +250,6 @@ designViewController.controller('designViewController', function($scope, picture
         if($scope.contactCallEst === "{{editContactCallEst}}"){
             update = $scope.editContactCallEst;
         }
-        console.log(update);
         landingTextService.addOrUpdateLandingText("contactCallEst", update, "ee").then(function(data){
             landingTextService.getLandingText("contactCallEst", "ee").then(function(data){
                 if(data.text == null){
@@ -292,7 +285,6 @@ designViewController.controller('designViewController', function($scope, picture
         if($scope.contactVisitEst === "{{editContactVisitEst}}"){
             update = $scope.editContactVisitEst;
         }
-        console.log(update);
         landingTextService.addOrUpdateLandingText("contactVisitEst", update, "ee").then(function(data){
             landingTextService.getLandingText("contactVisitEst", "ee").then(function(data){
                 if(data.text == null){
@@ -323,7 +315,6 @@ designViewController.controller('designViewController', function($scope, picture
         if($scope.contactEmailEst === "{{editContactEmailEst}}"){
             update = $scope.editContactEmailEst;
         }
-        console.log(update);
         landingTextService.addOrUpdateLandingText("contactEmailEst", update, "ee").then(function(data){
             landingTextService.getLandingText("contactEmailEst", "ee").then(function(data){
                 if(data.text == null){
@@ -351,7 +342,6 @@ designViewController.controller('designViewController', function($scope, picture
         if($scope.workWeekTime === "{{editWorkWeekTime}}"){
             update = $scope.editWorkWeekTime;
         }
-        console.log(update);
         landingTextService.addOrUpdateLandingText("contactTimeWorkWeek", update, "ee").then(function(data){
             landingTextService.getLandingText("contactTimeWorkWeek", "ee").then(function(data){
                 if(data.text == null){
@@ -374,7 +364,6 @@ designViewController.controller('designViewController', function($scope, picture
         if($scope.weekendTime === "{{editWeekendTime}}"){
             update = $scope.editWeekendTime;
         }
-        console.log(update);
         landingTextService.addOrUpdateLandingText("contactTimeWeekend", update, "ee").then(function(data){
             landingTextService.getLandingText("contactTimeWeekend", "ee").then(function(data){
                 if(data.text == null){
@@ -405,7 +394,6 @@ designViewController.controller('designViewController', function($scope, picture
         if($scope.workerTitleEng === "{{editWorkerTitleEng}}"){
             update = $scope.editWorkerTitleEng;
         }
-        console.log(update);
         landingTextService.addOrUpdateLandingText("workerTitleEng", update, "ee").then(function(data){
             landingTextService.getLandingText("workerTitleEng", "ee").then(function(data){
                 if(data.text == null){
@@ -435,7 +423,6 @@ designViewController.controller('designViewController', function($scope, picture
         if($scope.workerTextEng === "{{editWorkerTextEng}}"){
             update = $scope.editWorkerTextEng;
         }
-        console.log(update);
         landingTextService.addOrUpdateLandingText("workerTextEng", update, "ee").then(function(data){
             landingTextService.getLandingText("workerTextEng", "ee").then(function(data){
                 if(data.text == null){
@@ -465,7 +452,6 @@ designViewController.controller('designViewController', function($scope, picture
         if($scope.menuTitleEng === "{{editMenuTitleEng}}"){
             update = $scope.editMenuTitleEng;
         }
-        console.log(update);
         landingTextService.addOrUpdateLandingText("menuTitleEng", update, "ee").then(function(data){
             landingTextService.getLandingText("menuTitleEng", "ee").then(function(data){
                 if(data.text == null){
@@ -494,7 +480,6 @@ designViewController.controller('designViewController', function($scope, picture
         if($scope.menuTextEng === "{{editMenuTextEng}}"){
             update = $scope.editMenuTextEng;
         }
-        console.log(update);
         landingTextService.addOrUpdateLandingText("menuTextEng", update, "ee").then(function(data){
             landingTextService.getLandingText("menuTextEng", "ee").then(function(data){
                 if(data.text == null){
@@ -524,7 +509,6 @@ designViewController.controller('designViewController', function($scope, picture
         if($scope.tastingTextEng === "{{editTastingTextEng}}"){
             update = $scope.editTastingTextEng;
         }
-        console.log(update);
         landingTextService.addOrUpdateLandingText("tastingTextEng", update, "ee").then(function(data){
             landingTextService.getLandingText("tastingTextEng", "ee").then(function(data){
                 if(data.text == null){
@@ -554,7 +538,6 @@ designViewController.controller('designViewController', function($scope, picture
         if($scope.eventTitleEng === "{{editEventTitleEng}}"){
             update = $scope.editEventTitleEng;
         }
-        console.log(update);
         landingTextService.addOrUpdateLandingText("eventTitleEng", update, "ee").then(function(data){
             landingTextService.getLandingText("eventTitleEng", "ee").then(function(data){
                 if(data.text == null){
@@ -584,7 +567,6 @@ designViewController.controller('designViewController', function($scope, picture
         if($scope.contactCallEng === "{{editContactCallEng}}"){
             update = $scope.editContactCallEng;
         }
-        console.log(update);
         landingTextService.addOrUpdateLandingText("contactCallEng", update, "ee").then(function(data){
             landingTextService.getLandingText("contactCallEng", "ee").then(function(data){
                 if(data.text == null){
@@ -614,7 +596,6 @@ designViewController.controller('designViewController', function($scope, picture
         if($scope.contactVisitEng === "{{editContactVisitEng}}"){
             update = $scope.editContactVisitEng;
         }
-        console.log(update);
         landingTextService.addOrUpdateLandingText("contactVisitEng", update, "ee").then(function(data){
             landingTextService.getLandingText("contactVisitEng", "ee").then(function(data){
                 if(data.text == null){
@@ -644,7 +625,6 @@ designViewController.controller('designViewController', function($scope, picture
         if($scope.contactEmailEst === "{{editContactEmailEng}}"){
             update = $scope.editContactEmailEng;
         }
-        console.log(update);
         landingTextService.addOrUpdateLandingText("contactEmailEng", update, "ee").then(function(data){
             landingTextService.getLandingText("contactEmailEng", "ee").then(function(data){
                 if(data.text == null){
@@ -671,7 +651,6 @@ designViewController.controller('designViewController', function($scope, picture
         if($scope.weekendTimeEng === "{{editWeekendTimeEng}}"){
             update = $scope.editWeekendTimeEng;
         }
-        console.log(update);
         landingTextService.addOrUpdateLandingText("contactTimeWeekendEng", update, "ee").then(function(data){
             landingTextService.getLandingText("contactTimeWeekendEng", "ee").then(function(data){
                 if(data.text == null){
@@ -694,7 +673,6 @@ designViewController.controller('designViewController', function($scope, picture
         if($scope.workWeekTimeEng === "{{editWorkWeekTimeEng}}"){
             update = $scope.editWorkWeekTimeEng;
         }
-        console.log(update);
         landingTextService.addOrUpdateLandingText("contactTimeWorkWeekEng", update, "ee").then(function(data){
             landingTextService.getLandingText("contactTimeWorkWeekEng", "ee").then(function(data){
                 if(data.text == null){
@@ -723,7 +701,6 @@ designViewController.controller('designViewController', function($scope, picture
         if($scope.workerTitleFin === "{{editWorkerTitleFin}}"){
             update = $scope.editWorkerTitleFin;
         }
-        console.log(update);
         landingTextService.addOrUpdateLandingText("workerTitleFin", update, "ee").then(function(data){
             landingTextService.getLandingText("workerTitleFin", "ee").then(function(data){
                 if(data.text == null){
@@ -754,7 +731,6 @@ designViewController.controller('designViewController', function($scope, picture
         if($scope.workerTextFin === "{{editWorkerTextFin}}"){
             update = $scope.editWorkerTextFin;
         }
-        console.log(update);
         landingTextService.addOrUpdateLandingText("workerTextFin", update, "ee").then(function(data){
             landingTextService.getLandingText("workerTextFin", "ee").then(function(data){
                 if(data.text == null){
@@ -784,7 +760,6 @@ designViewController.controller('designViewController', function($scope, picture
         if($scope.menuTitleFin === "{{editMenuTitleFin}}"){
             update = $scope.editMenuTitleFin;
         }
-        console.log(update);
         landingTextService.addOrUpdateLandingText("menuTitleFin", update, "ee").then(function(data){
             landingTextService.getLandingText("menuTitleFin", "ee").then(function(data){
                 if(data.text == null){
@@ -814,7 +789,6 @@ designViewController.controller('designViewController', function($scope, picture
         if($scope.menuTextFin === "{{editMenuTextFin}}"){
             update = $scope.editMenuTextFin;
         }
-        console.log(update);
         landingTextService.addOrUpdateLandingText("menuTextFin", update, "ee").then(function(data){
             landingTextService.getLandingText("menuTextFin", "ee").then(function(data){
                 if(data.text == null){
@@ -844,7 +818,6 @@ designViewController.controller('designViewController', function($scope, picture
         if($scope.tastingTextFin === "{{editTastingTextFin}}"){
             update = $scope.editTastingTextFin;
         }
-        console.log(update);
         landingTextService.addOrUpdateLandingText("tastingTextFin", update, "ee").then(function(data){
             landingTextService.getLandingText("tastingTextFin", "ee").then(function(data){
                 if(data.text == null){
@@ -874,7 +847,6 @@ designViewController.controller('designViewController', function($scope, picture
         if($scope.eventTitleFin === "{{editEventTitleFin}}"){
             update = $scope.editEventTitleFin;
         }
-        console.log(update);
         landingTextService.addOrUpdateLandingText("eventTitleFin", update, "ee").then(function(data){
             landingTextService.getLandingText("eventTitleFin", "ee").then(function(data){
                 if(data.text == null){
@@ -904,7 +876,6 @@ designViewController.controller('designViewController', function($scope, picture
         if($scope.contactCallFin === "{{editContactCallFin}}"){
             update = $scope.editContactCallFin;
         }
-        console.log(update);
         landingTextService.addOrUpdateLandingText("contactCallFin", update, "ee").then(function(data){
             landingTextService.getLandingText("contactCallFin", "ee").then(function(data){
                 if(data.text == null){
@@ -934,7 +905,6 @@ designViewController.controller('designViewController', function($scope, picture
         if($scope.contactVisitFin === "{{editContactVisitFin}}"){
             update = $scope.editContactVisitFin;
         }
-        console.log(update);
         landingTextService.addOrUpdateLandingText("contactVisitFin", update, "ee").then(function(data){
             landingTextService.getLandingText("contactVisitFin", "ee").then(function(data){
                 if(data.text == null){
@@ -965,7 +935,6 @@ designViewController.controller('designViewController', function($scope, picture
         if($scope.contactEmailFin === "{{editContactEmailFin}}"){
             update = $scope.editContactEmailFin;
         }
-        console.log(update);
         landingTextService.addOrUpdateLandingText("contactEmailFin", update, "ee").then(function(data){
             landingTextService.getLandingText("contactEmailFin", "ee").then(function(data){
                 if(data.text == null){
@@ -993,7 +962,6 @@ designViewController.controller('designViewController', function($scope, picture
         if($scope.workWeekTimeFin === "{{editWorkWeekTimeFin}}"){
             update = $scope.editWorkWeekTimeFin;
         }
-        console.log(update);
         landingTextService.addOrUpdateLandingText("contactTimeWorkWeekFin", update, "ee").then(function(data){
             landingTextService.getLandingText("contactTimeWorkWeekFin", "ee").then(function(data){
                 if(data.text == null){
@@ -1016,7 +984,6 @@ designViewController.controller('designViewController', function($scope, picture
         if($scope.weekendTimeFin === "{{editWeekendTimeFin}}"){
             update = $scope.editWeekendTimeFin;
         }
-        console.log(update);
         landingTextService.addOrUpdateLandingText("contactTimeWeekendFin", update, "ee").then(function(data){
             landingTextService.getLandingText("contactTimeWeekendFin", "ee").then(function(data){
                 if(data.text == null){
@@ -1047,7 +1014,6 @@ designViewController.controller('designViewController', function($scope, picture
         if($scope.workerTitleRus === "{{editWorkerTitleRus}}"){
             update = $scope.editWorkerTitleRus;
         }
-        console.log(update);
         landingTextService.addOrUpdateLandingText("workerTitleRus", update, "ee").then(function(data){
             landingTextService.getLandingText("workerTitleRus", "ee").then(function(data){
                 if(data.text == null){
@@ -1077,7 +1043,6 @@ designViewController.controller('designViewController', function($scope, picture
         if($scope.workerTextRus === "{{editWorkerTextRus}}"){
             update = $scope.editWorkerTextRus;
         }
-        console.log(update);
         landingTextService.addOrUpdateLandingText("workerTextRus", update, "ee").then(function(data){
             landingTextService.getLandingText("workerTextRus", "ee").then(function(data){
                 if(data.text == null){
@@ -1107,7 +1072,6 @@ designViewController.controller('designViewController', function($scope, picture
         if($scope.menuTitleRus === "{{editMenuTitleRus}}"){
             update = $scope.editMenuTitleRus;
         }
-        console.log(update);
         landingTextService.addOrUpdateLandingText("menuTitleRus", update, "ee").then(function(data){
             landingTextService.getLandingText("menuTitleRus", "ee").then(function(data){
                 if(data.text == null){
@@ -1137,7 +1101,6 @@ designViewController.controller('designViewController', function($scope, picture
         if($scope.menuTextRus === "{{editMenuTextRus}}"){
             update = $scope.editMenuTextRus;
         }
-        console.log(update);
         landingTextService.addOrUpdateLandingText("menuTextRus", update, "ee").then(function(data){
             landingTextService.getLandingText("menuTextRus", "ee").then(function(data){
                 if(data.text == null){
@@ -1167,7 +1130,6 @@ designViewController.controller('designViewController', function($scope, picture
         if($scope.tastingTextRus === "{{editTastingTextRus}}"){
             update = $scope.editTastingTextRus;
         }
-        console.log(update);
         landingTextService.addOrUpdateLandingText("tastingTextRus", update, "ee").then(function(data){
             landingTextService.getLandingText("tastingTextRus", "ee").then(function(data){
                 if(data.text == null){
@@ -1197,7 +1159,6 @@ designViewController.controller('designViewController', function($scope, picture
         if($scope.eventTitleRus === "{{editEventTitleRus}}"){
             update = $scope.editEventTitleRus;
         }
-        console.log(update);
         landingTextService.addOrUpdateLandingText("eventTitleRus", update, "ee").then(function(data){
             landingTextService.getLandingText("eventTitleRus", "ee").then(function(data){
                 if(data.text == null){
@@ -1227,7 +1188,6 @@ designViewController.controller('designViewController', function($scope, picture
         if($scope.contactCallRus === "{{editContactCallRus}}"){
             update = $scope.editContactCallRus;
         }
-        console.log(update);
         landingTextService.addOrUpdateLandingText("contactCallRus", update, "ee").then(function(data){
             landingTextService.getLandingText("contactCallRus", "ee").then(function(data){
                 if(data.text == null){
@@ -1257,7 +1217,6 @@ designViewController.controller('designViewController', function($scope, picture
         if($scope.contactVisitRus === "{{editContactVisitRus}}"){
             update = $scope.editContactVisitRus;
         }
-        console.log(update);
         landingTextService.addOrUpdateLandingText("contactVisitRus", update, "ee").then(function(data){
             landingTextService.getLandingText("contactVisitRus", "ee").then(function(data){
                 if(data.text == null){
@@ -1288,7 +1247,6 @@ designViewController.controller('designViewController', function($scope, picture
         if($scope.contactEmailRus === "{{editContactEmailRus}}"){
             update = $scope.editContactEmailRus;
         }
-        console.log(update);
         landingTextService.addOrUpdateLandingText("contactEmailRus", update, "ee").then(function(data){
             landingTextService.getLandingText("contactEmailRus", "ee").then(function(data){
                 if(data.text == null){
@@ -1316,7 +1274,6 @@ designViewController.controller('designViewController', function($scope, picture
         if($scope.workWeekTimeRus === "{{editWorkWeekTimeRus}}"){
             update = $scope.editWorkWeekTimeRus;
         }
-        console.log(update);
         landingTextService.addOrUpdateLandingText("contactTimeWorkWeekRus", update, "ee").then(function(data){
             landingTextService.getLandingText("contactTimeWorkWeekRus", "ee").then(function(data){
                 if(data.text == null){
@@ -1339,7 +1296,6 @@ designViewController.controller('designViewController', function($scope, picture
         if($scope.weekendTimeRus === "{{editWeekendTimeRus}}"){
             update = $scope.editWeekendTimeRus;
         }
-        console.log(update);
         landingTextService.addOrUpdateLandingText("contactTimeWeekendRus", update, "ee").then(function(data){
             landingTextService.getLandingText("contactTimeWeekendRus", "ee").then(function(data){
                 if(data.text == null){
@@ -1352,12 +1308,9 @@ designViewController.controller('designViewController', function($scope, picture
 
 
     landingTextService.getLandingText("bannerTitleEst", "ee").then(function(data){
-        console.log(data);
         if(data.text == null){
-            console.log("data.text on nulll: " + data.text);
             $scope.bannerTitleEst = "Nothing here";
         }
-        console.log("data.text niisama: " + data.text);
         $scope.bannerTitleEst = data.text;
     })
 
@@ -1367,7 +1320,6 @@ designViewController.controller('designViewController', function($scope, picture
         if($scope.bannerTitleEst === "{{editBannerTitleEst}}"){
             update = $scope.editBannerTitleEst;
         }
-        console.log(update);
         landingTextService.addOrUpdateLandingText("bannerTitleEst", update, "ee").then(function(data){
             landingTextService.getLandingText("bannerTitleEst", "ee").then(function(data){
                 if(data.text == null){
@@ -1381,12 +1333,9 @@ designViewController.controller('designViewController', function($scope, picture
 
 
     landingTextService.getLandingText("bannerTitleEng", "ee").then(function(data){
-        console.log(data);
         if(data.text == null){
-            console.log("data.text on nulll: " + data.text);
             $scope.bannerTitleEng = "Nothing here";
         }
-        console.log("data.text niisama: " + data.text);
         $scope.bannerTitleEng = data.text;
     })
 
@@ -1396,7 +1345,6 @@ designViewController.controller('designViewController', function($scope, picture
         if($scope.bannerTitleEng === "{{editBannerTitleEng}}"){
             update = $scope.editBannerTitleEng;
         }
-        console.log(update);
         landingTextService.addOrUpdateLandingText("bannerTitleEng", update, "ee").then(function(data){
             landingTextService.getLandingText("bannerTitleEng", "ee").then(function(data){
                 if(data.text == null){
@@ -1408,12 +1356,9 @@ designViewController.controller('designViewController', function($scope, picture
     }
 
     landingTextService.getLandingText("bannerTitleFin", "ee").then(function(data){
-        console.log(data);
         if(data.text == null){
-            console.log("data.text on nulll: " + data.text);
             $scope.bannerTitleFin = "Nothing here";
         }
-        console.log("data.text niisama: " + data.text);
         $scope.bannerTitleFin = data.text;
     })
 
@@ -1423,7 +1368,6 @@ designViewController.controller('designViewController', function($scope, picture
         if($scope.bannerTitleFin === "{{editBannerTitleFin}}"){
             update = $scope.editBannerTitleFin;
         }
-        console.log(update);
         landingTextService.addOrUpdateLandingText("bannerTitleFin", update, "ee").then(function(data){
             landingTextService.getLandingText("bannerTitleFin", "ee").then(function(data){
                 if(data.text == null){
@@ -1447,7 +1391,6 @@ designViewController.controller('designViewController', function($scope, picture
         if($scope.bannerTitleFin === "{{editBannerTitleRus}}"){
             update = $scope.editBannerTitleRus;
         }
-        console.log(update);
         landingTextService.addOrUpdateLandingText("bannerTitleRus", update, "ee").then(function(data){
             landingTextService.getLandingText("bannerTitleRus", "ee").then(function(data){
                 if(data.text == null){
@@ -1528,7 +1471,6 @@ designViewController.controller('designViewController', function($scope, picture
         name: 'awesome user'
     };
     $scope.$watch('user.name', function(val){
-        console.log(val);
     })
     pictureService.getBannerPicture().then(function(data){
         var item = data.length-1;
@@ -1537,7 +1479,6 @@ designViewController.controller('designViewController', function($scope, picture
         console.log(err);
     })
     $scope.filesChanged = function(elm){
-        console.log("tulen siia");
         var fd = new FormData();
         $scope.files = elm.files;
         angular.forEach($scope.files, function(file){
@@ -1555,7 +1496,6 @@ designViewController.controller('designViewController', function($scope, picture
         })
     }
     $scope.menuPicChanged = function(elm, type){
-        console.log(elm, type);
         var fd = new FormData();
         $scope.files = elm.files;
         angular.forEach($scope.files, function(file){
@@ -1584,7 +1524,6 @@ designViewController.controller('designViewController', function($scope, picture
                 $scope.eventPicturePathRus = file;
             }
             pictureService.addMenuPicture(type, file).then(function(data){
-                console.log(elm.parentNode);
                 elm.parentNode.style.backgroundImage = "url("+data+")";
             }, function(err){
                 console.log(err);
@@ -1636,7 +1575,6 @@ designViewController.controller('designViewController', function($scope, picture
             fd.append('file', file);
         })
         pictureService.saveImage(fd).then(function(file){
-            console.log(type);
             if(type==="map"){
                 $scope.mapPicturePath = file;
             }
