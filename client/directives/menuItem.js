@@ -9,7 +9,6 @@ menuItem.directive("menuItem", function() {
              hash: "@"
          },
          link: function($scope) {
-             console.log("coolbeans");
          }
      }
 });
