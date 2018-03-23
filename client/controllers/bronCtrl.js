@@ -220,6 +220,7 @@ bronCtrl.controller('bronCtrl', function($rootScope, $scope, bookingService){
 
         var selectedDateEst = new Date ($scope.dateEst);
         var SundayEst = selectedDateEst.getDay();
+        console.log(SundayEst);
         if(SundayEst === 0) {
 
             $scope.errorMsg2 = true;
@@ -236,6 +237,7 @@ bronCtrl.controller('bronCtrl', function($rootScope, $scope, bookingService){
             
         }
         if(!$scope.dropDownPeopleEstError && !$scope.dropDownTimeEstError && !$scope.dateEstError && !$scope.errorMsg2){
+            console.log("tulen siisa");
             bookingService.validateBooking($scope.dropDownTimeEst, $scope.dateEst).then(function(data){
                 if(data.error){
                     $scope.bronFrist = true;
@@ -249,6 +251,7 @@ bronCtrl.controller('bronCtrl', function($rootScope, $scope, bookingService){
                     $scope.validTime = $scope.dropDownTimeEst;
                     $scope.validDate = $scope.dateEst;
                     $scope.validPeople = $scope.dropDownPeopleEst;
+                    console.log($scope.dateEst.split(','));
                     if($scope.dateEst.includes('January')){
                         $scope.displayDate = $scope.dateEst.substring(0,2) +"." + " jaanuariks," + $scope.dateEst.split(',')[1];
                     }
@@ -448,6 +451,9 @@ bronCtrl.controller('bronCtrl', function($rootScope, $scope, bookingService){
                     $scope.validTime = $scope.dropDownTimeRus;
                     $scope.validDate = $scope.dateRus;
                     $scope.validPeople = $scope.dropDownPeopleRus;
+                    console.log($scope.validTime);
+                    console.log($scope.validDate);
+                    console.log($scope.validPeople);
                     if($scope.dateRus.includes('January')){
                         $scope.displayDateRus = $scope.dateRus.substring(0,2) + "." + " января," + $scope.dateRus.split(',')[1];
                     }
@@ -537,12 +543,15 @@ bronCtrl.controller('bronCtrl', function($rootScope, $scope, bookingService){
         $scope.phoneEngError = false;
 
         if(typeof($rootScope.nameEng) === 'undefined' || !(/^.{3,}$/.test($scope.nameEng))){
+            console.log("nime pole");
             $scope.nameEngError = true;
         }
         if(typeof($rootScope.emailEng) === 'undefined' || !(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test($scope.emailEng))){
+            console.log("emaili pole");
             $scope.emailEngError = true;
         }
         if(typeof($rootScope.phoneEng) === 'undefined' || !(/^[\+\d]?(?:[\d-.\s()]*)$/.test($scope.phoneEng)) || ($rootScope.phoneEng === "")){
+            console.log("telefoni pole");
             $scope.phoneEngError = true;
         }
         if(!$scope.nameEngError && !$scope.emailEngError && !$scope.phoneEngError){
@@ -568,12 +577,15 @@ bronCtrl.controller('bronCtrl', function($rootScope, $scope, bookingService){
 
 
         if(typeof($rootScope.nameRus) === 'undefined' || !(/^.{3,}$/.test($scope.nameRus))){
+            console.log("nime pole");
             $scope.nameRusError = true;
         }
         if(typeof($rootScope.emailRus) === 'undefined' || !(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test($scope.emailRus))){
+            console.log("emaili pole");
             $scope.emailRusError = true;
         }
         if(typeof($rootScope.phoneRus) === 'undefined' || !(/^[\+\d]?(?:[\d-.\s()]*)$/.test($scope.phoneRus)) || ($rootScope.phoneRus === "") ){
+            console.log("telefoni pole");
             $scope.phoneRusError = true;
         }
         if(!$scope.nameRusError && !$scope.emailRusError && !$scope.phoneRusError){
@@ -600,12 +612,15 @@ bronCtrl.controller('bronCtrl', function($rootScope, $scope, bookingService){
 
 
         if(typeof($rootScope.nameFin) === 'undefined' || !(/^.{3,}$/.test($scope.nameFin))){
+            console.log("nime pole");
             $scope.nameFinError = true;
         }
         if(typeof($rootScope.emailFin) === 'undefined' || !(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test($scope.emailFin))){
+            console.log("emaili pole");
             $scope.emailFinError = true;
         }
         if(typeof($rootScope.phoneFin) === 'undefined' || !(/^[\+\d]?(?:[\d-.\s()]*)$/.test($scope.phoneFin)) || ($rootScope.phoneFin === "") ){
+            console.log("telefoni pole");
             $scope.phoneFinError = true;
         }
         if(!$scope.nameFinError && !$scope.emailFinError && !$scope.phoneFinError){

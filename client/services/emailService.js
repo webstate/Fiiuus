@@ -14,6 +14,7 @@ emailService.factory('emailService', function($q, $http){
         })
         .then(function(response){
             var data = response.data;
+            console.log(data);
             d.resolve(data);
         }).catch(function(response){
             var err = response.data;

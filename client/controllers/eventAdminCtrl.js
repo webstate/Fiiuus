@@ -120,6 +120,7 @@ eventAdminCtrl.controller('eventAdminCtrl', function($scope, eventService, pictu
         $scope.estEditModal = false;
     }
     eventService.getEvents().then(function(data){
+        console.log(data);
         $scope.events = data;
     }, function(err){
         console.log(err);
@@ -127,13 +128,17 @@ eventAdminCtrl.controller('eventAdminCtrl', function($scope, eventService, pictu
     $scope.submitEvent = function(){
         var date = new Date();
         var hours = $scope.event.time.getHours();
+        console.log(hours, "hours");
         var utchours = $scope.event.time.getUTCHours();
+        console.log(utchours, "utchours");
         var minutes = $scope.event.time.getMinutes();
         var offset = date.getTimezoneOffset() / 60;
         if(minutes.toString().length == 1){
+            console.log("me here");
             minutes = "0" + $scope.event.time.getMinutes();
         }
-
+        console.log($scope.event.time, "event time");
+        console.log(offset, "offset");
         var newdate=$scope.event.date.setHours(12);
         eventService.addEvent($scope.event.name, $scope.event.description, $scope.event.image, $scope.event.date, utchours+":"+minutes+":00",
         $scope.event.nameEng, $scope.event.descEng, $scope.event.imageEng,
@@ -165,6 +170,7 @@ eventAdminCtrl.controller('eventAdminCtrl', function($scope, eventService, pictu
         $scope.changeEventModal = true;
         $scope.event = {};
         eventService.findByIdEvent(id).then(function(data){
+            console.log(data);
             $scope.dateEdit = new Date(data.date);
             $scope.timeEdit = new Date(data.time);
             $scope.editNameEst = data.name;
@@ -212,6 +218,16 @@ eventAdminCtrl.controller('eventAdminCtrl', function($scope, eventService, pictu
         dateEdited = $scope.dateEdit;
         timeEdited = $scope.timeEdit;
 
+        console.log(estName);
+        console.log(estDesc);
+        console.log(engName);
+        console.log(engDesc);
+        console.log(finName);
+        console.log(finDesc);
+        console.log(rusName);
+        console.log(rusDesc);
+        console.log(timeEdited);
+        console.log(dateEdited);
 
         if($scope.editNameEst === "{{nameEstEdit}}"){
             estName = $scope.nameEstEdit;
@@ -242,6 +258,7 @@ eventAdminCtrl.controller('eventAdminCtrl', function($scope, eventService, pictu
         engName, engDesc, engImage,
         finName, finDesc, finImage,
         rusName, rusDesc, rusImage).then(function(data){
+            console.log(data);
             $scope.changeEventModal = false;
             eventService.getEvents().then(function(data){
                 $scope.events = data;
