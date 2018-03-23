@@ -11,7 +11,7 @@ var passport = require('passport');
 var localStrategy = require('passport-local' ).Strategy;
 
 // mongoose
-mongoose.connect('mongodb://adminuser:useradmin@mycluster-shard-00-00-3ljzk.mongodb.net:27017,mycluster-shard-00-01-3ljzk.mongodb.net:27017,mycluster-shard-00-02-3ljzk.mongodb.net:27017/test?ssl=true&replicaSet=Mycluster-shard-0&authSource=admin');
+-mongoose.connect('mongodb://localhost/fii');
 
 // user schema/model
 var User = require('./models/user.js');
