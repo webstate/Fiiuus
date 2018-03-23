@@ -2,6 +2,7 @@ var eventCtrl = angular.module('eventCtrl', []);
 
 eventCtrl.controller('eventCtrl', function ($scope, eventService, $rootScope) {
     eventService.getEvents().then(function (data) {
+            console.log(data);
             $scope.events = data;
             //checks if database contains any events, if not it hides events from navbar and the whole events container by using ng-hide in landing.html
             if (data.length === 0) {

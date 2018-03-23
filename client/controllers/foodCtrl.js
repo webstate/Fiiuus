@@ -14,6 +14,7 @@ foodCtrl.controller('foodCtrl', function($scope, foodService){
     })
     foodService.getDessert().then(function(data){
         $scope.dessert = data;
+        console.log($scope.dessert.length);
     }, function(err){
         console.log(err);
     })
