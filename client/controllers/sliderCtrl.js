@@ -3,22 +3,18 @@ var sliderCtrl = angular.module('sliderCtrl', []);
 sliderCtrl.controller('sliderCtrl', function($location,$rootScope, $scope, landingTextService, pictureService, eventService, bookingService, emailService, $window){
 
     if($location.url() === "/"){
-        console.log("eesti keel");
         $rootScope.lang = "ee";
         $rootScope.bookingModal = false;
     }
     if($location.url() === "/en"){
-        console.log("inglise keel");
         $rootScope.lang = "en";
         $rootScope.bookingModal = false;
     }
     if($location.url() === "/fi"){
-        console.log("inglise keel");
         $rootScope.lang = "fi";
         $rootScope.bookingModal = false;
     }
     if($location.url() === "/ru"){
-        console.log("inglise keel");
         $rootScope.lang = "ru";
         $rootScope.bookingModal = false;
     }
@@ -37,7 +33,6 @@ sliderCtrl.controller('sliderCtrl', function($location,$rootScope, $scope, landi
     }
 
     eventService.getNextEvents().then(function(data){
-        console.log(data[0]);
         $scope.eventBanner = data[0];
     }, function(err){
         console.log(err);
