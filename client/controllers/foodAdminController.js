@@ -87,7 +87,6 @@ foodAdminController.controller('foodAdminController', function($scope, $rootScop
     $scope.selected = $scope.courses[0];
 
     foodService.getFood().then(function(data){
-        console.log(data);
         $scope.foodList = data;
     }, function(err){
         console.log(err);
@@ -181,15 +180,6 @@ foodAdminController.controller('foodAdminController', function($scope, $rootScop
         if($scope.descriptionRus === "{{descriptionRusEdit}}"){
             rusDesc = $scope.descriptionRusEdit;
         }
-        console.log(estName);
-        console.log(editPrice);
-        console.log(estDesc);
-        console.log(engName);
-        console.log(engDesc);
-        console.log(finName);
-        console.log(finDesc);
-        console.log(rusName);
-        console.log(rusDesc);
 
         foodService.updateFood($scope.foodId, estName, $scope.selected, editPrice, estDesc,
             engName, engDesc,

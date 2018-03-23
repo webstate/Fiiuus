@@ -26,7 +26,6 @@ bookingAdminCtrl.controller('bookingAdminCtrl', function($scope, bookingService)
         $scope.form.showEndTime = false;
     }
     bookingService.getClosedTimes().then(function(data){
-        console.log(data);
         $scope.closedTimes = data;
     })
     bookingService.getBookings().then(function(data){
