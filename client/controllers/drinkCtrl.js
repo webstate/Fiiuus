@@ -195,6 +195,7 @@ drinkCtrl.controller('drinkCtrl', function($scope, drinkService, $rootScope){
     $scope.sortBySubSpirit = function(sub){
         drinkService.getHard().then(function(data){
             var holder2 = data;
+            console.log(holder2);
             var test2 = [];
             if(sub ==="conac"){
                 $rootScope.activeSubTabSpirit = "conac";
@@ -317,6 +318,7 @@ drinkCtrl.controller('drinkCtrl', function($scope, drinkService, $rootScope){
                     }
                 })
                 $scope.drinks = test;
+                console.log($scope.drinks);
             }
             if(sub === "red"){
                 $rootScope.activeSubTab = "red";
@@ -329,6 +331,7 @@ drinkCtrl.controller('drinkCtrl', function($scope, drinkService, $rootScope){
             }
             if(sub === "rose"){
                 $rootScope.activeSubTab = "rose";
+                console.log(holder);
                 angular.forEach(holder, function(value, key){
                     if(value.subCategory === "Roosa"){
                         test.push(value);
@@ -373,6 +376,7 @@ drinkCtrl.controller('drinkCtrl', function($scope, drinkService, $rootScope){
         if(type === "beer"){
             drinkService.getBeer().then(function(data){
                 $rootScope.activeDrinkTab = "beer";
+                console.log(data);
                 $scope.drinks = data;
             })
         }
@@ -392,12 +396,14 @@ drinkCtrl.controller('drinkCtrl', function($scope, drinkService, $rootScope){
         if(type === "cocktail"){
             drinkService.getCocktails().then(function(data){
                 $rootScope.activeDrinkTab = "cocktail";
+                console.log(data);
                 $scope.drinks = data;
             })
         }
         if(type === "nonalco"){
             drinkService.getNonAlco().then(function(data){
                 $rootScope.activeDrinkTab = "nonalco";
+                console.log(data);
                 $scope.drinks = data;
             })
         }
@@ -418,6 +424,7 @@ drinkCtrl.controller('drinkCtrl', function($scope, drinkService, $rootScope){
         if(type === "hotdrink"){
             drinkService.getHot().then(function(data){
                 $rootScope.activeDrinkTab = "hotdrink";
+                console.log(data);
                 $scope.drinks = data;
             })
         }

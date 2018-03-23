@@ -37,8 +37,7 @@ var myApp = angular.module('myApp', [
     'modalDemoCtrl',
     'angularTrix',
     'ngSanitize',
-    'slick',
-    'monospaced.elastic'
+    'slick'
 ]);
 
 myApp.config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
