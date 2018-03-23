@@ -1352,12 +1352,9 @@ designViewController.controller('designViewController', function($scope, picture
 
 
     landingTextService.getLandingText("bannerTitleEst", "ee").then(function(data){
-        console.log(data);
         if(data.text == null){
-            console.log("data.text on nulll: " + data.text);
             $scope.bannerTitleEst = "Nothing here";
         }
-        console.log("data.text niisama: " + data.text);
         $scope.bannerTitleEst = data.text;
     })
 
@@ -1383,10 +1380,8 @@ designViewController.controller('designViewController', function($scope, picture
     landingTextService.getLandingText("bannerTitleEng", "ee").then(function(data){
         console.log(data);
         if(data.text == null){
-            console.log("data.text on nulll: " + data.text);
             $scope.bannerTitleEng = "Nothing here";
         }
-        console.log("data.text niisama: " + data.text);
         $scope.bannerTitleEng = data.text;
     })
 
@@ -1410,10 +1405,8 @@ designViewController.controller('designViewController', function($scope, picture
     landingTextService.getLandingText("bannerTitleFin", "ee").then(function(data){
         console.log(data);
         if(data.text == null){
-            console.log("data.text on nulll: " + data.text);
             $scope.bannerTitleFin = "Nothing here";
         }
-        console.log("data.text niisama: " + data.text);
         $scope.bannerTitleFin = data.text;
     })
 
@@ -1528,7 +1521,6 @@ designViewController.controller('designViewController', function($scope, picture
         name: 'awesome user'
     };
     $scope.$watch('user.name', function(val){
-        console.log(val);
     })
     pictureService.getBannerPicture().then(function(data){
         var item = data.length-1;
