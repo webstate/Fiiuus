@@ -133,7 +133,7 @@ router.post('/event/findbyid', function(req, res){
     })
 })
 
-router.get('/event/get', function(req, res){
+router.post('/event/get', function(req, res){
     Event.find(function(err, events){
         if(err) res.send(err);
         var perma = {}
@@ -161,7 +161,7 @@ router.get('/event/get', function(req, res){
         res.send(response.reverse());
     })
 })
-router.get('/event/getnext', function(req, res){
+router.post('/event/getnext', function(req, res){
     Event.find(function(err, events){
         if(err) res.send(err);
         var perma = {}
@@ -391,7 +391,7 @@ router.post('/times/add', function(req, res){
         res.json(response);
     })
 })
-router.get('/times/get', function(req, res){
+router.post('/times/get', function(req, res){
     ClosedTimes.find(function(err, times){
         if(err)res.send(err);
         var response = [];
@@ -667,7 +667,7 @@ router.post('/booking/add', function(req, res){
     })
 
 })
-router.get('/booking/getall', function(req, res){
+router.post('/booking/getall', function(req, res){
     Booking.find(function(err, bookings){
         if(err)res.send(err);
         var perma = {}
@@ -718,7 +718,7 @@ router.post('/landingtext/add', function(req, res){
         }
     })
 })
-router.get('/landingText/get', function(req, res){
+router.post('/landingText/get', function(req, res){
     LandingText.count({
         place: req.body.place,
         lan: req.body.lan
@@ -840,7 +840,7 @@ router.get('/bannerpicture/get', function(req, res){
     });
 })
 // Food routes -----------------------
-router.get('/food/starters', function(req, res){
+router.post('/food/starters', function(req, res){
     Food.find({
         course: "Eelroog"
     }, function(err, foods){
@@ -873,7 +873,7 @@ router.post('/food/update', function(req, res){
     })
 })
 
-router.get('/food/byid/:id', function(req, res){
+router.post('/food/byid/:id', function(req, res){
     Food.findOne({
         _id: req.params.id
     }, function(err, food){
@@ -881,7 +881,7 @@ router.get('/food/byid/:id', function(req, res){
         res.json(food);
     })
 })
-router.get('/food/main', function(req, res){
+router.post('/food/main', function(req, res){
     Food.find({
         course: "Pearoog"
     }, function(err, foods){
@@ -889,7 +889,7 @@ router.get('/food/main', function(req, res){
         res.json(foods);
     })
 })
-router.get('/food/dessert', function(req, res){
+router.post('/food/dessert', function(req, res){
     Food.find({
         course: "Magustoit"
     }, function(err, foods){
@@ -914,7 +914,7 @@ router.post('/food/add', function(req, res){
         res.json(food);
     });
 })
-router.get('/food/all', function(req, res){
+router.post('/food/all', function(req, res){
     Food.find(function(err, foods){
         if(err)res.send(err);
         res.json(foods);
@@ -930,7 +930,7 @@ router.post('/food/remove/:id', function(req, res){
         })
     })
 })
-router.get('/food/:id', function(req, res){
+router.post('/food/:id', function(req, res){
     Food.findOne({
         _id: req.params.id
     }, function(err, food){
@@ -984,7 +984,7 @@ router.post('/drink/update', function(req, res){
     })
 })
 
-router.get('/drink/byid', function(req, res){
+router.post('/drink/byid', function(req, res){
     Drink.findOne({
         _id:req.body.id
     }, function(err, drink){
@@ -993,13 +993,13 @@ router.get('/drink/byid', function(req, res){
     })
 })
 
-router.get('/drink/all', function(req, res){
+router.post('/drink/all', function(req, res){
     Drink.find(function(err, drinks){
         if(err)res.send(err);
         res.json(drinks);
     }).sort({_id:-1});
 })
-router.get('/drink/wine', function(req, res){
+router.post('/drink/wine', function(req, res){
     Drink.find({
         type:"Vein ja mull"
     }, function(err, drinks){
@@ -1007,7 +1007,7 @@ router.get('/drink/wine', function(req, res){
         res.json(drinks);
     })
 })
-router.get('/drink/beer', function(req, res){
+router.post('/drink/beer', function(req, res){
     Drink.find({
         type: "Lahja alkohol"
     }, function(err, drinks){
@@ -1015,7 +1015,7 @@ router.get('/drink/beer', function(req, res){
         res.json(drinks);
     })
 })
-router.get('/drink/cocktail', function(req, res){
+router.post('/drink/cocktail', function(req, res){
     Drink.find({
         type:"Kokteilid"
     },function(err, drinks){
@@ -1023,7 +1023,7 @@ router.get('/drink/cocktail', function(req, res){
         res.json(drinks);
     })
 })
-router.get('/drink/nonalco', function(req, res){
+router.post('/drink/nonalco', function(req, res){
     Drink.find({
         type:"Alkoholivabad joogid"
     },function(err, drinks){
@@ -1031,7 +1031,7 @@ router.get('/drink/nonalco', function(req, res){
         res.json(drinks);
     })
 })
-router.get('/drink/hot', function(req, res){
+router.post('/drink/hot', function(req, res){
     Drink.find({
         type:"Kuumad joogid"
     },function(err, drinks){
@@ -1039,7 +1039,7 @@ router.get('/drink/hot', function(req, res){
         res.json(drinks);
     })
 })
-router.get('/drink/hardalco', function(req, res){
+router.post('/drink/hardalco', function(req, res){
     Drink.find({
         type:"Kange alkohol"
     },function(err, drinks){
@@ -1058,7 +1058,7 @@ router.post('/drink/remove/:id', function(req, res){
         })
     })
 })
-router.get('/drink/:id', function(req, res){
+router.post('/drink/:id', function(req, res){
     Drink.findOne({
         _id: req.params.id
     }, function(err, drink){
@@ -1085,7 +1085,7 @@ router.post('/add', function(req, res){
         res.json(worker);
     })
 })
-router.get('/worker/getbyid', function(req, res){
+router.post('/worker/getbyid', function(req, res){
     Worker.findOne({
         _id: req.body.id
     }, function(err, response){
@@ -1116,7 +1116,7 @@ router.post('/worker/update', function(req, res){
         })
     })
 })
-router.get('/all', function(req, res){
+router.post('/all', function(req, res){
     Worker.find(function(err, workers){
         if(err)res.send(err);
         res.json(workers);
