@@ -269,25 +269,17 @@ sliderCtrl.controller('sliderCtrl', function($location,$rootScope, $scope, landi
     }
 
     $scope.sendEmailEng = function(){
-            console.log($scope.nameEng);
-            console.log($scope.emailEng);
-            console.log($scope.messageEng);
             emailService.sendFeedBack($scope.emailEng, $scope.nameEng, $scope.messageEng, "en").then(function(data){
                 $rootScope.nameEng = "";
                 $rootScope.emailEng = "";
                 $rootScope.messageEng = "";
-                console.log(data);
             })
     }
     $scope.sendEmailEst = function(){
-            console.log($scope.nameEst);
-            console.log($scope.emailEst);
-            console.log($scope.messageEst);
             emailService.sendFeedBack($scope.emailEst, $scope.nameEst, $scope.messageEst, "ee").then(function(data){
                 $rootScope.nameEst = "";
                 $rootScope.emailEst = "";
                 $rootScope.messageEst = "";
-                console.log(data);
             })
     }
     $scope.sendEmailFin = function(){
@@ -295,7 +287,6 @@ sliderCtrl.controller('sliderCtrl', function($location,$rootScope, $scope, landi
                 $rootScope.nameFin = "";
                 $rootScope.emailFin = "";
                 $rootScope.messageFin = "";
-                console.log(data);
             })
     }
     $scope.sendEmailRus = function(){
@@ -303,7 +294,6 @@ sliderCtrl.controller('sliderCtrl', function($location,$rootScope, $scope, landi
                 $rootScope.nameRus = "";
                 $rootScope.emailRus = "";
                 $rootScope.messageRus = "";
-                console.log(data);
             })
     }
 });
