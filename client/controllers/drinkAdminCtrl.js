@@ -79,16 +79,13 @@ drinkAdminCtrl.controller('drinkAdminCtrl', function($scope, drinkService){
     }
     $scope.$watch('selected', function(){
         if($scope.selected ==="Vein ja mull"){
-            console.log("vein selected");
             $scope.subDrinkWineShow = true;
             $scope.subDrinkSpiritShow = false;
         }
         else if($scope.selected ==="Kange alkohol"){
-            console.log("kange selected");
             $scope.subDrinkSpiritShow = true;
             $scope.subDrinkWineShow = false;
         }else{
-            console.log("else selected");
             $scope.subDrinkWineShow = false;
             $scope.subDrinkSpiritShow = false;
         }
@@ -104,7 +101,6 @@ drinkAdminCtrl.controller('drinkAdminCtrl', function($scope, drinkService){
         $scope.addDrinkModal = false;
     }
     drinkService.getDrink().then(function(data){
-        console.log(data);
         $scope.drinks = data;
     }, function(err){
         console.log(err);
@@ -176,9 +172,7 @@ drinkAdminCtrl.controller('drinkAdminCtrl', function($scope, drinkService){
 
     $scope.removeDrink = function(id){
         drinkService.removeDrink(id).then(function(data){
-            console.log(data);
             drinkService.getDrink().then(function(data){
-                console.log(data);
                 $scope.drinks = data;
             }, function(err){
                 console.log(err);
@@ -226,16 +220,6 @@ drinkAdminCtrl.controller('drinkAdminCtrl', function($scope, drinkService){
         rusName = $scope.nameEditRus;
         rusDesc = $scope.descEditRus;
 
-        console.log(estName); 
-        console.log(editPrice); 
-        console.log(estDesc); 
-        console.log(engName); 
-        console.log(engDesc); 
-        console.log(finName); 
-        console.log(finDesc); 
-        console.log(rusName); 
-        console.log(rusDesc); 
-
         if($scope.nameEditEst === "{{nameEstEdit}}"){
             estName = $scope.nameEstEdit;
         }
@@ -266,7 +250,6 @@ drinkAdminCtrl.controller('drinkAdminCtrl', function($scope, drinkService){
 
         drinkService.updateDrink($scope.drinkId, estName, estDesc, editPrice,
         $scope.selected, engName, engDesc, finName, finDesc, rusName, rusDesc).then(function(data){
-            console.log(data);
             $scope.changeDrinkModal = false;
             drinkService.getDrink().then(function(data){
                 $scope.drinks = data;
