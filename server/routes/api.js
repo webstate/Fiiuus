@@ -108,7 +108,7 @@ router.post('/event/delete/:id', function(req, res){
         })
     })
 })
-router.get('/event/findbyid', function(req, res){
+router.post('/event/findbyid', function(req, res){
     Event.findOne({
         _id: req.body.id
     }, function(err, response){
