@@ -22,7 +22,7 @@ eventCtrl.controller('eventCtrl', function ($scope, eventService, $rootScope) {
             var dateTime = new Date(day);
             var dategetter = data[0]['date'].toString().split(" ")[0];
             var timegetter = data[0]['date'].toString().split(" ")[1];
-            var dateTime1 = new Date(dategetter.split("-")[2],dategetter.split("-")[1],dategetter.split("-")[0],timegetter.split(":")[0],timegetter.split(":")[0]);
+            var dateTime1 = new Date(dategetter.split("-")[2],parseInt(dategetter.split("-")[1])-1,dategetter.split("-")[0],timegetter.split(":")[0],timegetter.split(":")[0]);
             console.log(dateTime1);
             console.log(dateTime);
 
