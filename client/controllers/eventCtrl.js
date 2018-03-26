@@ -20,7 +20,12 @@ eventCtrl.controller('eventCtrl', function ($scope, eventService, $rootScope) {
             var tday = new Date();
             var day = new Date().setDate(tday.getDate() + 1);
             var dateTime = new Date(day);
-            var dateTime1 = new Date(data[0]['date']);
+            var dategetter = data[0]['date'].toString().split(" ")[0];
+            var timegetter = data[0]['date'].toString().split(" ")[1];
+            var dateTime1 = new Date(dategetter.split("-")[2],dategetter.split("-")[1],dategetter.split("-")[0],timegetter.split(":")[0],timegetter.split(":")[0]);
+            console.log(dateTime1);
+            console.log(dateTime);
+
             if (dateTime1 > dateTime) {
                 $scope.eventNavbar = false;
                 $scope.eventContainer = false;
