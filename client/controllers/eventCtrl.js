@@ -4,8 +4,6 @@ eventCtrl.controller('eventCtrl', function ($scope, eventService, $rootScope) {
     eventService.getEvents().then(function (data) {
             $scope.events = data;
             //checks if database contains any events, if not it hides events from navbar and the whole events container by using ng-hide in landing.html
-            $scope.eventNavbar = true;
-            $scope.eventContainer = true;
             if (data.length === 0) {
                 $scope.eventNavbar = true;
                 $scope.eventContainer = true;
@@ -28,11 +26,12 @@ eventCtrl.controller('eventCtrl', function ($scope, eventService, $rootScope) {
             console.log(dateTime1);
             console.log(dateTime);
             console.log(dateTime1 > dateTime);
-            if (dateTime1 > dateTime) {
+            if (dateTime1 < dateTime) {
                 $scope.eventNavbar = false;
                 $scope.eventContainer = false;
             } else {
                 $scope.eventDialog = true;
+                $scope.eventNavbar=true;
                 $scope.eventContainer = true;
             }
             $scope.limit = 5;
