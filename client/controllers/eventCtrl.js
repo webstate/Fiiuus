@@ -26,12 +26,12 @@ eventCtrl.controller('eventCtrl', function ($scope, eventService, $rootScope) {
             console.log(dateTime1);
             console.log(dateTime);
             console.log(dateTime1 > dateTime);
-            if (dateTime1 < dateTime) {
+            if (dateTime1 > dateTime) {
                 $scope.eventNavbar = false;
                 $scope.eventContainer = false;
             } else {
-                $scope.eventDialog = true;
-                $scope.eventNavbar=true;
+                //$scope.eventDialog = true;
+                $scope.eventNavbar= true;
                 $scope.eventContainer = true;
             }
             $scope.limit = 5;
