@@ -4,6 +4,13 @@ eventCtrl.controller('eventCtrl', function ($scope, eventService, $rootScope) {
     eventService.getEvents().then(function (data) {
             $scope.events = data;
             //checks if database contains any events, if not it hides events from navbar and the whole events container by using ng-hide in landing.html
+            if(data.length === 0){
+                $scope.eventContainer = true;
+                $scope.eventNavbar = true;
+            }else {
+                $scope.eventContainer = false;
+                $scope.eventNavbar = false;
+            }
             //if the highest date which is first in the array is smaller than the current date, it hides the navbar and events container
             var tday = new Date();
             var day = new Date().setDate(tday.getDate() + 1);
@@ -13,13 +20,14 @@ eventCtrl.controller('eventCtrl', function ($scope, eventService, $rootScope) {
             //var timegetter = data[0]['date'].toString().split(" ")[1];
             //var eventdateTime = new Date(dategetter.split("-")[0],parseInt(dategetter.split("-")[1])-1,dategetter.split("-")[2],timegetter.split(":")[0],timegetter.split(":")[0]);
 
-            if (eventdateTime > nowdateTime || data.length === 0) {
-                $scope.eventContainer = true;
-                $scope.eventNavbar = true;
+            if (eventdateTime > nowdateTime ) {
+                $scope.eventContainer = false;
+                $scope.eventNavbar = false;
 
             } else {
-                $scope.eventContainer = false;
-                $scope.eventNavbar= false;
+                $scope.eventContainer = true;
+                $scope.eventNavbar= true;
+                $scope.eventDialog = true;
 
             }
             $scope.limit = 5;
