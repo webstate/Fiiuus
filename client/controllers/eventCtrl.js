@@ -7,9 +7,11 @@ eventCtrl.controller('eventCtrl', function ($scope, eventService, $rootScope) {
             if(data.length === 0){
                 $scope.eventContainer = true;
                 $scope.eventNavbar = true;
+                $scope.eventDialog = true;
             }else {
                 $scope.eventContainer = false;
                 $scope.eventNavbar = false;
+                $scope.eventDialog = false;
             }
             //if the highest date which is first in the array is smaller than the current date, it hides the navbar and events container
             var tday = new Date();
@@ -23,6 +25,7 @@ eventCtrl.controller('eventCtrl', function ($scope, eventService, $rootScope) {
             if (eventdateTime > nowdateTime ) {
                 $scope.eventContainer = false;
                 $scope.eventNavbar = false;
+                $scope.eventDialog = false;
 
             } else {
                 $scope.eventContainer = true;
@@ -94,9 +97,11 @@ eventCtrl.controller('eventCtrl', function ($scope, eventService, $rootScope) {
                 if (data[step] === null || data[step] === undefined || data[step].length <= 0) {
                     $scope.eventNavbar = true;
                     $scope.eventContainer = true;
+                    $scope.eventDialog = true;
                 } else {
                     $scope.eventNavbar = false;
                     $scope.eventContainer = false;
+                    $scope.eventDialog = false;
                     break;
                 }
             }
