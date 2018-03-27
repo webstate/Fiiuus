@@ -35,13 +35,9 @@ var Booking = require('../models/booking.js');
 var ClosedTimes = require('../models/closedTimes.js');
 // Event page routes ------------------
 router.post('/event/add', function(req, res){
-    console.log(req.body, "see on sisi body kuskilt");
     var date = moment(req.body.date, 'YYYY-MM-DD HH:mm:ss').format('YYYY-MM-DD');
     var time = moment(req.body.time, 'HH:mm:ss').format('HH:mm:ss');
-    console.log("This is the moment converted date: " + date);
-    console.log("This is the moment converted time: " +time);
     var dateTime = date +"T" + time;
-    console.log("This is the datetime: " , dateTime);
     Event.create({
         name: req.body.name,
         description: req.body.description,
@@ -67,10 +63,7 @@ router.post('/event/update', function(req, res){
     var date = moment(req.body.dateedited, 'YYYY-MM-DD HH:mm:ss').format('YYYY-MM-DD');
     var time = moment(req.body.timeedited, 'YYYY-MM-DD HH:mm:ss');
     var timeadd = moment(time).add(0, 'hours').format('HH:mm:ss');
-    console.log("This is the moment converted date: " + date);
-    console.log("This is the moment converted time: " + timeadd);
     var dateTime = date +"T" + timeadd;
-    console.log("This is the datetime: " + dateTime);
     Event.findOne({
         _id: req.body.id
     }, function(err, response){
@@ -114,7 +107,6 @@ router.post('/event/findbyid', function(req, res){
         _id: req.body.id
     }, function(err, response){
         if(err)res.send(err);
-        console.log(response.date);
         var perma = {};
         perma.id = response._id;
         perma.name = response.name;
@@ -156,7 +148,7 @@ router.get('/event/get', function(req, res){
             perma.imageFin = element.imageFin;
             perma.imageRus = element.imageRus;
             //perma.date = moment.tz(element.date, "YYYY-MM-DD HH:mm:ssZ", "Europe/Tallinn").format("YYYY-MM-DD HH:mm");
-            perma.date=moment(element.date).utcOffset(moment().tz('Europe/Tallinn').format('Z')).format('DD-MM-YYYY HH:mm');
+            perma.date=moment(element.date).utcOffset(moment().tz('Europe/Tallinn').format('Z')).format('YYYY-MM-DD HH:mm');
             response.push(perma);
         })
 
@@ -201,13 +193,11 @@ router.get('/event/delete', function(req, res){
         var response = [];
         events.forEach(function(element){
             perma = {};
-            console.log(moment(element.date).isBefore(moment().subtract('7', 'days')));
             if(moment(element.date).isBefore(moment().subtract('7', 'days'))){
                 Event.remove({
                     _id: element._id
                 }, function(err){
                     if(err) res.send(err);
-                    console.log("event was removed");
                     res.json({
                         msg: "event was removed"
                     })
@@ -377,17 +367,12 @@ router.post('/times/delete', function(req, res){
 })
 router.post('/times/add', function(req, res){
     var startDate = moment(req.body.date).format('YYYY-MM-DD');
-    console.log(startDate);
     var startTime = moment(req.body.start, 'HH:mm:ss').format('HH:mm:ss');
     var startDateTime = startDate+"T"+startTime;
 
     var endDate = moment(req.body.date).format('YYYY-MM-DD');
-    console.log(endDate);
     var endTime = moment(req.body.end, 'HH:mm:ss').format('HH:mm:ss');
     var endDateTime = endDate+"T"+endTime;
-
-    console.log(moment(startDateTime));
-    console.log(moment(endDateTime));
 
     ClosedTimes.create({
         start:  moment(startDateTime),
@@ -419,11 +404,9 @@ router.post('/times/validate', function(req, res){
     var date = moment(req.body.date, 'DD MMMM, YYYY').format('YYYY-MM-DD');
     var time = moment(req.body.time, 'HH:mm').format('HH:mm');
     var dateTime = moment(date+"T"+time);
-    console.log(dateTime," See on broneeringu aeg");
 
     ClosedTimes.find(function(err, times){
         if(err) res.send(err);
-        console.log(times);
         times.forEach(function(element){
             var o = moment().tz('Europe/Tallinn').format('Z');
             if(o.substring(0,1) === "+"){
@@ -458,9 +441,7 @@ router.post('/times/validate', function(req, res){
 
 
             if(moment(date).isSame(closedDate)){
-                console.log("sama kuupäev");
                 if(bookingTime < closedTimeEnd){
-                    console.log("broneerimisaeg on suletud aja sees");
                     if(bookingTime > closedTimeStart ||
                         bookingTime.getHours().toString() + bookingTime.getMinutes().toString() === closedTimeStart.getHours().toString() + closedTimeStart.getMinutes().toString()){
                         counter ++;
@@ -472,7 +453,6 @@ router.post('/times/validate', function(req, res){
                 }
             }
         })
-        console.log(counter);
         if(counter > 0){
             res.json({
                 error: "this date and time are closed"
@@ -649,11 +629,9 @@ router.post('/booking/add', function(req, res){
     }
 
     mailgun.messages().send(testData, function (error, body) {
-        console.log(body);
     });
     mailgun.messages().send(infoToResto, function(error, body){
-        console.log(body);
-    })
+    });
     var date = moment.tz(req.body.date, 'DD MMMM, YYYY', "Europe/Tallinn").format('YYYY-MM-DD');
     var time1 = req.body.time;
     var time2= parseInt(time1.split(":")[0])-3;
@@ -752,7 +730,6 @@ router.post('/design/add', function(req, res){
         block: req.body.menuPosition
     }, function(err, count){
         if(err) res.send(err);
-        console.log(count);
         if(count === 0){
             DesignPicture.create({
                 picturePath: req.body.path,
@@ -1142,7 +1119,6 @@ router.get('/worker/remove/:id', function(req, res){
 
 // Login routes ----------------------
 router.post('/register', function(req, res) {
-    console.log("We are here");
     User.register(new User({ username: req.body.username }),
         req.body.password, function(err, account) {
             if (err) {
