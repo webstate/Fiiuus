@@ -21,6 +21,7 @@ eventAdminCtrl.controller('eventAdminCtrl', function($scope, eventService, pictu
         })
 
         pictureService.saveImage(fd).then(function(file){
+            console.log(file);
             if (type == 'est') {
                 $scope.event.image = file;
             } else if (type == 'edit_est') {
