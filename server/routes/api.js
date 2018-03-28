@@ -147,8 +147,8 @@ router.get('/event/get', function(req, res){
             perma.imageEng = element.imageEng;
             perma.imageFin = element.imageFin;
             perma.imageRus = element.imageRus;
-            perma.date = moment.tz(element.date, "YYYY-MM-DD HH:mm:ssZ", "Europe/Tallinn").format("YYYY-MM-DD HH:mm");
-            //perma.date=moment(element.date).utcOffset(moment().tz('Europe/Tallinn').format('Z')).format('YYYY-MM-DD HH:mm');
+            //perma.date = moment.tz(element.date, "YYYY-MM-DD HH:mm:ssZ", "Europe/Tallinn").format("YYYY-MM-DD HH:mm");
+            perma.date=moment(element.date).utcOffset(moment().tz('Europe/Tallinn').format('Z')).format('YYYY-MM-DD HH:mm');
             response.push(perma);
         })
 
