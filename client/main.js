@@ -38,8 +38,15 @@ var myApp = angular.module('myApp', [
     'angularTrix',
     'ngSanitize',
     'slick',
-    'monospaced.elastic'
+    'monospaced.elastic',
+    'ui.bootstrap'
 ]);
+myApp.filter('startFrom', function() {
+    return function(data, start){
+        if (!data || !data.length){return;}
+        return data.slice(start);
+    }
+});
 
 myApp.config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
     $locationProvider.html5Mode({

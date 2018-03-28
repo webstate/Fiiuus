@@ -174,7 +174,7 @@
                 <th style="width:250px;">Tegevused</th>
                 <th style="width:250px;">Seisund</th>
             </thead>
-            <tbody ng-repeat="item in events">
+            <tbody ng-repeat="item in events | startFrom:(eventCurrentPage - 1) * eventPageSize | limitTo: eventPageSize">
                 <td style="padding-top:25px;">{{item.name}}</td>
                 <td style="padding-top:25px;" ng-bind-html="item.description"></td>
                 <td style="padding-top:25px;">{{item.date}}</td>
@@ -203,4 +203,5 @@
             </tbody>
         </table>
     </div>
+    <ul uib-pagination total-items="events.length" ng-model="eventCurrentPage" items-per-page="eventPageSize"></ul>
 </div>

@@ -41,7 +41,7 @@
     </div>
     <div class="row" style="padding-bottom: 100px;">
         <h2 style="font-family:spaceMono">Reserveeritud ajad</h2>
-        <table class="table" style="margin: 0 auto;margin-top: 100px;">
+        <table class="table" ng-table="" style="margin: 0 auto;margin-top: 100px;">
             <thead>
                 <th style="width:250px;">Inimeste arv</th>
                 <th style="width:250px;">Kellaeg ja kuupäev</th>
@@ -51,7 +51,7 @@
                 <th style="width:125px;">Lisainformatsioon</th>
                 <th style="width:125px;">Tegevused</th>
             </thead>
-            <tbody ng-repeat="item in bookings">
+            <tbody ng-repeat="item in bookings | startFrom:(currentPage - 1) * pageSize | limitTo:pageSize">
                 <td style="padding-top:25px;">{{item.people}}</td>
                 <td style="padding-top:25px;">{{item.date}}</td>
                 <td style="padding-top:25px;">{{item.name}}</td>
@@ -64,8 +64,10 @@
                     </ul>
                 </td>
             </tbody>
+
         </table>
     </div>
+    <ul uib-pagination total-items="bookings.length" ng-model="currentPage" items-per-page="pageSize"></ul>﻿
     <div class="row" style="padding-bottom: 100px;">
         <h2 style="font-family:spaceMono">Suletud ajad</h2>
         <table class="table" style="margin: 0 auto;margin-top: 100px;">
@@ -74,7 +76,7 @@
                 <th style="width:250px;">Algus Aeg</th>
                 <th style="width:250px;">Lõpu Aeg</th>
             </thead>
-            <tbody ng-repeat="item in closedTimes">
+            <tbody ng-repeat="item in closedTimes | startFrom:(closedCurrentPage - 1) * closedPageSize | limitTo:closedPageSize">
                 <td style="padding-top:25px;">{{item.reason}}</td>
                 <td style="padding-top:25px;">{{item.start}}</td>
                 <td style="padding-top:25px;">{{item.end}}</td>
@@ -86,4 +88,5 @@
             </tbody>
         </table>
     </div>
+    <ul uib-pagination total-items="closedTimes.length" ng-model="closedCurrentPage" items-per-page="closedPageSize"></ul>
 </div>

@@ -1,6 +1,8 @@
 var eventAdminCtrl = angular.module('eventAdminCtrl', []);
 
 eventAdminCtrl.controller('eventAdminCtrl', function($scope, eventService, pictureService){
+    $scope.eventCurrentPage = 1;
+    $scope.eventPageSize = 25;
     $scope.addEventModal = false;
     $scope.changeEventModal = false;
     $scope.event = {};
