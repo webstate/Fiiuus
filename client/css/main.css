@@ -809,13 +809,13 @@ th{
     width: 100%;
 }
 .event-picture {
-    /*background-image: url('img/mockup-worker.png');*/
     margin-top: 80px;;
     background-size: cover;
     max-width:100%;
     max-height:300px;
     padding-left: 15px;
-    background-repeat: no-repeat;
+    /*background-repeat: no-repeat;*/
+    background:url(http://via.placeholder.com/1920x1080) no-repeat scroll 0 0;
     display: block;
     /*width: 100%;*/
 }
