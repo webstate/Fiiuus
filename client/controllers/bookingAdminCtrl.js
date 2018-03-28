@@ -1,10 +1,12 @@
 var bookingAdminCtrl = angular.module('bookingAdminCtrl', []);
 
 bookingAdminCtrl.controller('bookingAdminCtrl', function($scope, bookingService){
-    $scope.pageSize=30;
+    $scope.pageSize=20;
     $scope.currentPage= 1;
-    $scope.closedPageSize=10;
+    $scope.maxSize=9;
+    $scope.closedPageSize=15;
     $scope.closedCurrentPage=1;
+    $scope.closedMaxSize=5;
     $scope.form = {
         showStartTime: false,
         showEndTime: false

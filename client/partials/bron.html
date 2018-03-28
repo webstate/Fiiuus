@@ -67,7 +67,7 @@
 
         </table>
     </div>
-    <ul uib-pagination total-items="bookings.length" ng-model="currentPage" items-per-page="pageSize"></ul>﻿
+    <ul uib-pagination total-items="bookings.length" ng-model="currentPage" items-per-page="pageSize" max-size="maxSize" boundary-link-numbers="true"></ul>﻿
     <div class="row" style="padding-bottom: 100px;">
         <h2 style="font-family:spaceMono">Suletud ajad</h2>
         <table class="table" style="margin: 0 auto;margin-top: 100px;">
@@ -88,5 +88,5 @@
             </tbody>
         </table>
     </div>
-    <ul uib-pagination total-items="closedTimes.length" ng-model="closedCurrentPage" items-per-page="closedPageSize"></ul>
+    <ul uib-pagination total-items="closedTimes.length" ng-model="closedCurrentPage" items-per-page="closedPageSize" max-size="closedMaxSize" boundary-link-numbers="true"></ul>
 </div>
