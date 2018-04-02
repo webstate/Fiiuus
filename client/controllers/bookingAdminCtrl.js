@@ -1,12 +1,29 @@
 var bookingAdminCtrl = angular.module('bookingAdminCtrl', []);
 
 bookingAdminCtrl.controller('bookingAdminCtrl', function($scope, bookingService){
-    $scope.pageSize=20;
-    $scope.currentPage= 1;
-    $scope.maxSize=9;
-    $scope.closedPageSize=15;
+    $scope.pageSize=20; // number of lines in a page
+    $scope.currentPage= 1; // starting page for  bron
+    $scope.maxSize=9; // How many page numbers is shown
+    $scope.closedPageSize=15; // these are same data as above just for closedTimes in bottom
     $scope.closedCurrentPage=1;
     $scope.closedMaxSize=5;
+
+    $scope.sortData = function (column) {
+        $scope.reverseSort = ($scope.sortColumn == column) ? !$scope.reverseSort : false;
+        $scope.sortColumn = column;
+    }
+
+    $scope.getSortClass = function (column) {
+
+        if ($scope.sortColumn == column) {
+            return $scope.reverseSort
+                ? 'sorting-arrow-down'
+                : 'sorting-arrow-up';
+        }
+
+        return '';
+    }
+
     $scope.form = {
         showStartTime: false,
         showEndTime: false

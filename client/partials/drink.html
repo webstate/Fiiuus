@@ -105,15 +105,15 @@
     <div class="row">
         <table class="table" style="margin: 0 auto;margin-top: 100px;">
             <thead>
-                <th style="width:250px;">Jook</th>
+                <th ng-click = "sortData('name')" style="width:250px; cursor:pointer;">Jook <div ng-class="getSortClass('name')"></div></th>
                 <th style="width:250px;">Kirjeldus</th>
                 <th style="width:250px;">Hind</th>
-                <th style="width:250px;">Tüüp</th>
+                <th ng-click = "sortData('type')" style="width:250px; cursor:pointer;">Tüüp <div ng-class="getSortClass('type')"></div></th>
                 <th>Alamkategooria</th>
                 <th style="width:250px;">Tegevused</th>
                 <th style="width:250px;">Seisund</th>
             </thead>
-            <tbody ng-repeat="item in drinks">
+            <tbody ng-repeat="item in drinks | orderBy:sortColumn:reverseSort">
                 <td style="padding-top:25px;">{{item.name}}</td>
                 <td style="padding-top:25px;">{{item.description}}</td>
                 <td style="padding-top:25px;">{{item.price}}</td>

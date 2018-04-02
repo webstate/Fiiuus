@@ -101,14 +101,14 @@
     <div class="row">
         <table class="table" style="margin: 0 auto;margin-top: 100px;">
             <thead>
-                <th style="width:250px;">Söök</th>
+                <th ng-click = "sortData('name')" style="width:250px; cursor:pointer;">Söök <div ng-class="getSortClass('name')"></div></th>
                 <th style="width:250px;">Kirjeldus</th>
                 <th style="width:250px;">Hind</th>
-                <th style="width:250px;">Käik</th>
+                <th ng-click = "sortData('course')" style="width:250px; cursor:pointer;">Käik <div ng-class="getSortClass('course')"></div></th>
                 <th style="width:250px;">Tegevused</th>
                 <th style="width:250px;">Seisund</th>
             </thead>
-            <tbody ng-repeat="item in foodList">
+            <tbody ng-repeat="item in foodList | orderBy:sortColumn:reverseSort">
                 <td style="padding-top:25px;">{{item.name}}</td>
                 <td style="padding-top:25px;">{{item.description}}</td>
                 <td style="padding-top:25px;">{{item.price}}</td>

@@ -5,6 +5,8 @@ drinkCtrl.controller('drinkCtrl', function($scope, drinkService, $rootScope){
     $rootScope.activeSubTab = "white";
     $rootScope.activeSubTabSpirit = "conac";
 
+
+
     drinkService.getWine().then(function(data){
         var holder = [];
         angular.forEach(data, function(value){

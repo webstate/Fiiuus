@@ -1,6 +1,22 @@
 var foodAdminController = angular.module('foodAdminController', []);
 
 foodAdminController.controller('foodAdminController', function($scope, $rootScope, foodService){
+    //Sorting stuff
+    $scope.sortData = function (column) {
+        $scope.reverseSort = ($scope.sortColumn == column) ? !$scope.reverseSort : false;
+        $scope.sortColumn = column;
+    }
+
+    $scope.getSortClass = function (column) {
+
+        if ($scope.sortColumn == column) {
+            return $scope.reverseSort
+                ? 'sorting-arrow-down'
+                : 'sorting-arrow-up';
+        }
+
+        return '';
+    }
     $scope.addFoodModal = false;
     $scope.estModal = true;
     $scope.engModal = false;
