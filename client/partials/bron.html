@@ -44,7 +44,7 @@
         <table class="table" ng-table="" style="margin: 0 auto;margin-top: 100px;">
             <thead>
                 <th style="width:250px;">Inimeste arv</th>
-                <th ng-click = "sortData('date | date: yyyy-MM-DD')" style="width:255px; cursor:pointer;">Kellaeg ja kuupäev <div ng-class="getSortClass('date | date: yyyy-MM-DD')"></div></th>
+                <th ng-click = "sortData('date')" style="width:270px; cursor:pointer;">Kellaeg ja kuupäev <div ng-class="getSortClass('date')"></div></th>
                 <th ng-click = "sortData('name')" style="width:250px; cursor:pointer;">Isiku nimi <div ng-class="getSortClass('name')"></div></th>
                 <th ng-click = "sortData('email')" style="width:250px; cursor:pointer;">Isiku email <div ng-class="getSortClass('email')"></div></th>
                 <th style="width:125px;">Isiku telefoninumber</th>
@@ -53,7 +53,7 @@
             </thead>
             <tbody ng-repeat="item in bookings | orderBy:sortColumn:reverseSort | startFrom:(currentPage - 1) * pageSize | limitTo:pageSize">
                 <td style="padding-top:25px;">{{item.people}}</td>
-                <td style="padding-top:25px;">{{item.date }}</td>
+                <td style="padding-top:25px;">{{item.date | date: "yyyy-MM-dd"}}</td>
                 <td style="padding-top:25px;">{{item.name}}</td>
                 <td style="padding-top:25px;">{{item.email}}</td>
                 <td style="padding-top:25px;">{{item.phone}}</td>
