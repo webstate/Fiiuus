@@ -53,7 +53,7 @@
             </thead>
             <tbody ng-repeat="item in bookings | orderBy:sortColumn:reverseSort | startFrom:(currentPage - 1) * pageSize | limitTo:pageSize">
                 <td style="padding-top:25px;">{{item.people}}</td>
-                <td style="padding-top:25px;">{{item.date}}</td>
+                <td style="padding-top:25px;">{{item.date | date: yyyy-MM-dd}}</td>
                 <td style="padding-top:25px;">{{item.name}}</td>
                 <td style="padding-top:25px;">{{item.email}}</td>
                 <td style="padding-top:25px;">{{item.phone}}</td>
