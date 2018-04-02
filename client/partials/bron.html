@@ -79,7 +79,7 @@
                 <th style="width:250px;">Algus Aeg</th>
                 <th style="width:250px;">Lõpu Aeg</th>
             </thead>
-            <tbody ng-repeat="item in closedTimes | startFrom:(closedCurrentPage - 1) * closedPageSize | limitTo:closedPageSize">
+            <tbody ng-repeat="item in closedTimes | orderBy : '-_id' | startFrom:(closedCurrentPage - 1) * closedPageSize | limitTo:closedPageSize ">
                 <td style="padding-top:25px;">{{item.reason}}</td>
                 <td style="padding-top:25px;">{{item.start}}</td>
                 <td style="padding-top:25px;">{{item.end}}</td>
