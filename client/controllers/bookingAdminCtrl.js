@@ -8,6 +8,8 @@ bookingAdminCtrl.controller('bookingAdminCtrl', function($scope, bookingService)
     $scope.closedCurrentPage=1;
     $scope.closedMaxSize=5;
 
+
+
     $scope.sortData = function (column) {
         $scope.reverseSort = ($scope.sortColumn == column) ? !$scope.reverseSort : false;
         $scope.sortColumn = column;
@@ -23,6 +25,8 @@ bookingAdminCtrl.controller('bookingAdminCtrl', function($scope, bookingService)
 
         return '';
     }
+
+
 
     $scope.form = {
         showStartTime: false,
@@ -51,7 +55,14 @@ bookingAdminCtrl.controller('bookingAdminCtrl', function($scope, bookingService)
     bookingService.getClosedTimes().then(function(data){
         $scope.closedTimes = data;
     })
+
     bookingService.getBookings().then(function(data){
+        for(var i = 0; i<data.length;i++) {
+            var date = data[i]['date'].split(" ")[0];
+            var time = data[i]['date'].split(" ")[1];
+            var datetime = new Date(date.split("-")[2], parseInt(date.split("-")[1])-1, date.split("-")[0],time.split(":")[0], time.split(":")[1]);
+            data[i]['date'] = datetime;
+        }
         $scope.bookings = data;
     })
     $scope.showModal = function(){
