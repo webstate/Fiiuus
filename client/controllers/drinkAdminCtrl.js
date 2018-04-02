@@ -1,6 +1,22 @@
 var drinkAdminCtrl = angular.module('drinkAdminCtrl', []);
 
 drinkAdminCtrl.controller('drinkAdminCtrl', function($scope, drinkService){
+    //Sorting stuff
+    $scope.sortData = function (column) {
+        $scope.reverseSort = ($scope.sortColumn == column) ? !$scope.reverseSort : false;
+        $scope.sortColumn = column;
+    }
+
+    $scope.getSortClass = function (column) {
+
+        if ($scope.sortColumn == column) {
+            return $scope.reverseSort
+                ? 'sorting-arrow-down'
+                : 'sorting-arrow-up';
+        }
+
+        return '';
+    }
     $scope.subDrinkWineShow = false;
     $scope.subDrinkSpiritShow = false;
 
