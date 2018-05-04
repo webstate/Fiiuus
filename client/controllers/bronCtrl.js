@@ -219,11 +219,11 @@ bronCtrl.controller('bronCtrl', function($rootScope, $scope, bookingService){
         
 
         var selectedDateEst = new Date ($scope.dateEst);
-        var SundayEst = selectedDateEst.getDay();
-        if(SundayEst === 0) {
+        // var SundayEst = selectedDateEst.getDay();
+        // if(SundayEst === 0) {
 
-            $scope.errorMsg2 = true;
-        }
+        //     $scope.errorMsg2 = true;
+        // }
 
         if($scope.dropDownPeopleEst === "Vali inimeste arv"){
             $scope.dropDownPeopleEstError = true;
@@ -299,12 +299,12 @@ bronCtrl.controller('bronCtrl', function($rootScope, $scope, bookingService){
         $scope.errorMsg2 = false;
 
         var selectedDateEng = new Date ($scope.dateEng);
-        var SundayEng = selectedDateEng.getDay();
+        // var SundayEng = selectedDateEng.getDay();
 
-        if(SundayEng === 0) {
+        // if(SundayEng === 0) {
 
-            $scope.errorMsg2 = true;
-        }
+        //     $scope.errorMsg2 = true;
+        // }
 
         if($scope.dropDownPeople === "Number of people"){
             $scope.dropDownPeopleEngError = true;
@@ -341,12 +341,12 @@ bronCtrl.controller('bronCtrl', function($rootScope, $scope, bookingService){
         $scope.errorMsg2 = false;
 
         var selectedDateFin = new Date ($scope.dateFin);
-        var SundayFin = selectedDateFin.getDay();
+        // var SundayFin = selectedDateFin.getDay();
 
-        if(SundayFin === 0) {
+        // if(SundayFin === 0) {
 
-            $scope.errorMsg2 = true;
-        }
+        //     $scope.errorMsg2 = true;
+        // }
 
         if($scope.dropDownPeopleFin === "Valitse joukko ihmisiä"){
             $scope.dropDownPeopleFinError = true;
@@ -418,12 +418,12 @@ bronCtrl.controller('bronCtrl', function($rootScope, $scope, bookingService){
         $scope.errorMsg2 = false;
 
         var selectedDateRus = new Date ($scope.dateRus);
-        var SundayRus = selectedDateRus.getDay();
+        // var SundayRus = selectedDateRus.getDay();
 
-        if(SundayRus === 0) {
+        // if(SundayRus === 0) {
 
-            $scope.errorMsg2 = true;
-        }
+        //     $scope.errorMsg2 = true;
+        // }
 
         if($scope.dropDownPeopleRus === "Выберите количество людей"){
             $scope.dropDownPeopleRusError = true;
