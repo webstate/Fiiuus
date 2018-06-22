@@ -125,8 +125,19 @@
         <div class="col-md-6" style="margin-top: 50px;">
             <div class="menu-mockup">
                 <p class="menu-course-mockup">
-                    STARTERS
-                </p>
+                    <div class="col-md-6" >
+                    <div class="row">
+                        
+                        <input value="{{editCourseTitleStarter}}" type="text" ng-model="courseTitleStarter" ng-initial/>
+                        <button class="timeBtn" ng-click="insertCourseTitleStarter()"><i class="fa fa-check" aria-hidden="true"></i></button>
+
+                        <!-- <p editable-text="contactVisitEst.text" class="contact-info-mockup">
+                            {{contactVisitEst.text}}
+                        </p>
+                        -->
+                    </div>
+                </div>
+                
                 <div class="menu-title-mockup"></div>
                 <div class="menu-desc-mockup"></div>
 
@@ -160,9 +171,18 @@
                 <label style="margin-top: 115px;margin-left: 10px;" for="file1"><i class="fa fa-pencil" aria-hidden="true"></i></label>
             </div>
             <div class="menu-mockup" style="margin-top: 15px;">
-                <p class="menu-course-mockup">
-                    MAIN COURSE
-                </p>
+                <div class="col-md-6" >
+                    <div class="row">
+                        
+                        <input value="{{editCourseTitleMain}}" type="text" ng-model="courseTitleMain" ng-initial/>
+                        <button class="timeBtn" ng-click="insertCourseTitleMain()"><i class="fa fa-check" aria-hidden="true"></i></button>
+
+                        <!-- <p editable-text="contactVisitEst.text" class="contact-info-mockup">
+                            {{contactVisitEst.text}}
+                        </p>
+                        -->
+                    </div>
+                </div>
                 <div class="menu-title-mockup"></div>
                 <div class="menu-desc-mockup"></div>
 
@@ -173,9 +193,18 @@
                 <div class="menu-desc-mockup"></div>
             </div>
             <div class="menu-mockup" style="margin-top: 15px;">
-                <p class="menu-course-mockup">
-                    DESSERTS
-                </p>
+                <div class="col-md-6" >
+                    <div class="row">
+                        
+                        <input value="{{editCourseTitleDessert}}" type="text" ng-model="courseTitleDessert" ng-initial/>
+                        <button class="timeBtn" ng-click="insertCourseTitleDessert()"><i class="fa fa-check" aria-hidden="true"></i></button>
+
+                        <!-- <p editable-text="contactVisitEst.text" class="contact-info-mockup">
+                            {{contactVisitEst.text}}
+                        </p>
+                        -->
+                    </div>
+                </div>
                 <div class="menu-title-mockup"></div>
                 <div class="menu-desc-mockup"></div>
 
@@ -305,6 +334,28 @@
                         <button class="timeBtn" ng-click="insertWeekend()"><i class="fa fa-check" aria-hidden="true"></i></button>
                     </div>
                 </div>
+                <!--Avatud päevade info-->
+                  <div class="col-md-6" >
+                    <div class="row">
+                        <p class="contact-title-mockup">
+                            Argipäevad:
+                        </p>
+                        <input value="{{editContactDays}}" type="text" ng-model="contactDays" ng-initial/>
+                        <button class="timeBtn" ng-click="insertContactDays()"><i class="fa fa-check" aria-hidden="true"></i></button>
+                    </div>
+                    <div class="row">
+                        
+                        <p class="contact-title-mockup">
+                            Nädalavahetus:
+                        </p>
+                        <input value="{{editContactWeekend}}" type="text" ng-model="contactWeekend" ng-initial/>
+                        <button class="timeBtn" ng-click="insertContactWeekend()"><i class="fa fa-check" aria-hidden="true"></i></button>
+                    </div>
+                    <!--
+                    <p editable-text="contactVisitEng.text" class="contact-info-mockup">
+                        {{contactVisitEng.text}}
+                    </p>-->
+                </div>
                 <div class="col-md-6" style="margin-top: 30px;">
                     <div class="row">
                         <p class="contact-title-mockup">
@@ -421,12 +472,24 @@
                     {{menuTextEng.text}}
                 </p>-->
             </div>
+            
         </div>
         <div class="col-md-6" style="margin-top: 50px;">
             <div class="menu-mockup">
-                <p class="menu-course-mockup">
-                    STARTERS
-                </p>
+                <div class="menu-course-mockup">
+                    <div class="col-md-6" >
+                    <div class="row">
+                        
+                        <input value="{{editCourseTitleStarterEng}}" type="text" ng-model="courseTitleStarterEng" ng-initial/>
+                        <button class="timeBtn" ng-click="insertCourseTitleStarterEng()"><i class="fa fa-check" aria-hidden="true"></i></button>
+
+                        <!-- <p editable-text="contactVisitEst.text" class="contact-info-mockup">
+                            {{contactVisitEst.text}}
+                        </p>
+                        -->
+                    </div>
+                </div>
+                </div>
                 <div class="menu-title-mockup"></div>
                 <div class="menu-desc-mockup"></div>
 
@@ -461,8 +524,19 @@
             </div>
             <div class="menu-mockup" style="margin-top: 15px;">
                 <p class="menu-course-mockup">
-                    MAIN COURSE
-                </p>
+                    <div class="col-md-6" >
+                    <div class="row">
+                        
+                        <input value="{{editCourseTitleMainEng}}" type="text" ng-model="courseTitleMainEng" ng-initial/>
+                        <button class="timeBtn" ng-click="insertCourseTitleMainEng()"><i class="fa fa-check" aria-hidden="true"></i></button>
+
+                        <!-- <p editable-text="contactVisitEst.text" class="contact-info-mockup">
+                            {{contactVisitEst.text}}
+                        </p>
+                        -->
+                    </div>
+                </div>
+                
                 <div class="menu-title-mockup"></div>
                 <div class="menu-desc-mockup"></div>
 
@@ -473,9 +547,18 @@
                 <div class="menu-desc-mockup"></div>
             </div>
             <div class="menu-mockup" style="margin-top: 15px;">
-                <p class="menu-course-mockup">
-                    DESSERTS
-                </p>
+                <div class="col-md-6" >
+                    <div class="row">
+                        
+                        <input value="{{editCourseTitleDessertEng}}" type="text" ng-model="courseTitleDessertEng" ng-initial/>
+                        <button class="timeBtn" ng-click="insertCourseTitleDessertEng()"><i class="fa fa-check" aria-hidden="true"></i></button>
+
+                        <!-- <p editable-text="contactVisitEst.text" class="contact-info-mockup">
+                            {{contactVisitEst.text}}
+                        </p>
+                        -->
+                    </div>
+                </div>
                 <div class="menu-title-mockup"></div>
                 <div class="menu-desc-mockup"></div>
 
@@ -605,6 +688,31 @@
                         <button class="timeBtn" ng-click="insertWeekendEng()"><i class="fa fa-check" aria-hidden="true"></i></button>
                     </div>
                 </div>
+                <!--Opening days-->
+                  <div class="col-md-6" >
+                    <div class="row">
+                        <p class="contact-title-mockup">
+                            Weekday hours:
+                        </p>
+                        <input value="{{editContactDaysEng}}" type="text" ng-model="contactDaysEng" ng-initial/>
+                        <button class="timeBtn" ng-click="insertContactDaysEng()"><i class="fa fa-check" aria-hidden="true"></i></button>
+                    </div>
+                    <div class="row">
+                        
+                        <p class="contact-title-mockup">
+                            Weekend hours:
+                        </p>
+                        <input value="{{editContactWeekendEng}}" type="text" ng-model="contactWeekendEng" ng-initial/>
+                        <button class="timeBtn" ng-click="insertContactWeekendEng()"><i class="fa fa-check" aria-hidden="true"></i></button>
+                    </div>
+                    <!--
+                    <p editable-text="contactVisitEng.text" class="contact-info-mockup">
+                        {{contactVisitEng.text}}
+                    </p>-->
+                </div>
+                 
+                 
+                
                 <div class="col-md-6" style="margin-top: 30px;">
                     <div class="row">
                     <p class="contact-title-mockup">
@@ -724,9 +832,13 @@
         </div>
         <div class="col-md-6" style="margin-top: 50px;">
             <div class="menu-mockup">
-                <p class="menu-course-mockup">
-                    STARTERS
-                </p>
+                <div class="col-md-6" >
+                    <div class="row">
+                        
+                        <input value="{{editCourseTitleStarterFin}}" type="text" ng-model="courseTitleStarterFin" ng-initial/>
+                        <button class="timeBtn" ng-click="insertCourseTitleStarterFin()"><i class="fa fa-check" aria-hidden="true"></i></button>
+                    </div>
+                </div>
                 <div class="menu-title-mockup"></div>
                 <div class="menu-desc-mockup"></div>
 
@@ -760,9 +872,15 @@
                 <label style="margin-top: 115px;margin-left: 10px;" for="file1"><i class="fa fa-pencil" aria-hidden="true"></i></label>
             </div>
             <div class="menu-mockup" style="margin-top: 15px;">
-                <p class="menu-course-mockup">
-                    MAIN COURSE
-                </p>
+                <div class="col-md-6" >
+                    <div class="row">
+                        
+                        <input value="{{editCourseTitleMainFin}}" type="text" ng-model="courseTitleMainFin" ng-initial/>
+                        <button class="timeBtn" ng-click="insertCourseTitleMainFin()"><i class="fa fa-check" aria-hidden="true"></i></button>
+
+
+                    </div>
+                </div>
                 <div class="menu-title-mockup"></div>
                 <div class="menu-desc-mockup"></div>
 
@@ -773,9 +891,12 @@
                 <div class="menu-desc-mockup"></div>
             </div>
             <div class="menu-mockup" style="margin-top: 15px;">
-                <p class="menu-course-mockup">
-                    DESSERTS
-                </p>
+                <div class="col-md-6" >
+                    <div class="row">
+                        <input value="{{editCourseTitleDessertFin}}" type="text" ng-model="courseTitleDessertFin" ng-initial/>
+                        <button class="timeBtn" ng-click="insertCourseTitleDessertFin()"><i class="fa fa-check" aria-hidden="true"></i></button>
+                    </div>
+                </div>
                 <div class="menu-title-mockup"></div>
                 <div class="menu-desc-mockup"></div>
 
@@ -904,6 +1025,29 @@
                         <button class="timeBtn" ng-click="insertWeekendFin()"><i class="fa fa-check" aria-hidden="true"></i></button>
                     </div>
                 </div>
+                <!--Opening days-->
+                  <div class="col-md-6" >
+                    <div class="row">
+                        <p class="contact-title-mockup">
+                            Weekday hours:
+                        </p>
+                        <input value="{{editContactDaysFin}}" type="text" ng-model="contactDaysFin" ng-initial/>
+                        <button class="timeBtn" ng-click="insertContactDaysFin()"><i class="fa fa-check" aria-hidden="true"></i></button>
+                    </div>
+                    <div class="row">
+                        
+                        <p class="contact-title-mockup">
+                            Weekend hours:
+                        </p>
+                        <input value="{{editContactWeekendFin}}" type="text" ng-model="contactWeekendFin" ng-initial/>
+                        <button class="timeBtn" ng-click="insertContactWeekendFin()"><i class="fa fa-check" aria-hidden="true"></i></button>
+                    </div>
+                    <!--
+                    <p editable-text="contactVisitEng.text" class="contact-info-mockup">
+                        {{contactVisitEng.text}}
+                    </p>-->
+                </div>
+                 
                 <div class="col-md-6" style="margin-top: 30px;">
                     <div class="row">
                     <p class="contact-title-mockup">
@@ -1022,9 +1166,12 @@
         </div>
         <div class="col-md-6" style="margin-top: 50px;">
             <div class="menu-mockup">
-                <p class="menu-course-mockup">
-                    STARTERS
-                </p>
+                <div class="col-md-6" >
+                    <div class="row">
+                        <input value="{{editCourseTitleStarterRus}}" type="text" ng-model="courseTitleStarterRus" ng-initial/>
+                        <button class="timeBtn" ng-click="insertCourseTitleStarterRus()"><i class="fa fa-check" aria-hidden="true"></i></button>
+                    </div>
+                </div>
                 <div class="menu-title-mockup"></div>
                 <div class="menu-desc-mockup"></div>
 
@@ -1059,8 +1206,13 @@
             </div>
             <div class="menu-mockup" style="margin-top: 15px;">
                 <p class="menu-course-mockup">
-                    MAIN COURSE
-                </p>
+                    <div class="col-md-6" >
+                    <div class="row">
+                        <input value="{{editCourseTitleMainRus}}" type="text" ng-model="courseTitleMainRus" ng-initial/>
+                        <button class="timeBtn" ng-click="insertCourseTitleMainRus()"><i class="fa fa-check" aria-hidden="true"></i></button>
+                    </div>
+                </div>
+                
                 <div class="menu-title-mockup"></div>
                 <div class="menu-desc-mockup"></div>
 
@@ -1071,9 +1223,12 @@
                 <div class="menu-desc-mockup"></div>
             </div>
             <div class="menu-mockup" style="margin-top: 15px;">
-                <p class="menu-course-mockup">
-                    DESSERTS
-                </p>
+                <div class="col-md-6" >
+                    <div class="row">
+                        <input value="{{editCourseTitleDessertRus}}" type="text" ng-model="courseTitleDessertRus" ng-initial/>
+                        <button class="timeBtn" ng-click="insertCourseTitleDessertRus()"><i class="fa fa-check" aria-hidden="true"></i></button>
+                    </div>
+                </div>
                 <div class="menu-title-mockup"></div>
                 <div class="menu-desc-mockup"></div>
 
@@ -1201,6 +1356,28 @@
                         <input value="{{editWeekendTimeRus}}" type="text" ng-model="weekendTimeRus" ng-initial/>
                         <button class="timeBtn" ng-click="insertWeekendRus()"><i class="fa fa-check" aria-hidden="true"></i></button>
                     </div>
+                </div>
+                <!--Opening days-->
+                  <div class="col-md-6" >
+                    <div class="row">
+                        <p class="contact-title-mockup">
+                            Weekday hours:
+                        </p>
+                        <input value="{{editContactDaysRus}}" type="text" ng-model="contactDaysRus" ng-initial/>
+                        <button class="timeBtn" ng-click="insertContactDaysRus()"><i class="fa fa-check" aria-hidden="true"></i></button>
+                    </div>
+                    <div class="row">
+                        
+                        <p class="contact-title-mockup">
+                            Weekend hours:
+                        </p>
+                        <input value="{{editContactWeekendRus}}" type="text" ng-model="contactWeekendRus" ng-initial/>
+                        <button class="timeBtn" ng-click="insertContactWeekendRus()"><i class="fa fa-check" aria-hidden="true"></i></button>
+                    </div>
+                    <!--
+                    <p editable-text="contactVisitEng.text" class="contact-info-mockup">
+                        {{contactVisitEng.text}}
+                    </p>-->
                 </div>
                 <div class="col-md-6" style="margin-top: 30px;">
                     <div class="row">
