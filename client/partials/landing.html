@@ -1,10 +1,8 @@
 <div ng-controller="sliderCtrl" >
     <div class="sliderTest" ng-hide="slider">
         <div class="banner-picture" ng-controller="bannerCtrl" style="background-image:url({{bannerImage}})">
-           <img id="whiteguidelogo" style="height:160px;" src="css/img/whiteguide.png" />
             <div class="col-sm-6 col-xs-6 hidden-lg hidden-md" style="z-index:1;">
-            <img id="logo" style="height:47px;" src="css/img/logo.png" />
-                
+                <img id="logo" style="height:47px;" src="css/img/logo.png" />
             </div>
             <div class="langmenu-mobile hidden-lg hidden-md">
                 <span ng-click="openLangMenuMobile();" style="text-transform:uppercase;">{{language}}<i style="margin-left:7px;"class="fa fa-caret-down" aria-hidden="true" ></i></span>
@@ -482,16 +480,16 @@
                         <div class="col-md-6 menu-container-padding">
                             <div class="menu-holder" ng-controller="foodCtrl">
                                 <p ng-if="$root.lang==='en'" class="menu-box-title">
-                                    {{courseTitleStarterEng}}
+                                    STARTERS
                                 </p>
                                 <p ng-if="$root.lang==='ee'"class="menu-box-title">
-                                    {{courseTitleStarter}}
+                                    EELROAD
                                 </p>
                                 <p ng-if="$root.lang==='fi'"class="menu-box-title">
-                                    {{courseTitleStarterFin}}
+                                    ALKURUOKIA
                                 </p>
                                 <p ng-if="$root.lang==='ru'"class="menu-box-title" style="text-transform: uppercase;font-family:Roboto;">
-                                    {{courseTitleStarterRus}}
+                                    Закуски
                                 </p>
                                 <p ng-if="starters.length === 0" class="empty-menu">
                                     There are currently no dishes in this menu
@@ -733,16 +731,16 @@
                             </div>
                             <div class="main-course-menu-holder" ng-controller="foodCtrl">
                                 <p ng-if="$root.lang ==='en'" class="menu-box-title">
-                                    {{courseTitleMainEng}}
+                                    MAIN COURSE
                                 </p>
                                 <p ng-if="$root.lang ==='ee'" class="menu-box-title">
-                                    {{courseTitleMain}}
+                                    PEAMENÜÜ
                                 </p>
                                 <p ng-if="$root.lang ==='fi'" class="menu-box-title">
-                                    {{courseTitleMainFin}}
+                                    PÄÄRUOKIA
                                 </p>
                                 <p ng-if="$root.lang ==='ru'" class="menu-box-title" style="text-transform: uppercase; font-family:Roboto;">
-                                    {{courseTitleMainRus}}
+                                    Основные блюдa
                                 </p>
                                 <p ng-if="maincourse.length === 0" class="empty-menu">
                                     There are currently no dishes in this menu
@@ -797,16 +795,16 @@
                             </div>
                             <div class="dessert-menu-holder" ng-controller="foodCtrl">
                                 <p ng-if="$root.lang ==='en'" class="menu-box-title">
-                                    {{courseTitleDessertEng}}
+                                    DESSERTS
                                 </p>
                                 <p ng-if="$root.lang ==='ee'" class="menu-box-title">
-                                    {{courseTitleDessert}}
+                                    MAGUSTOIDUD
                                 </p>
                                 <p ng-if="$root.lang ==='fi'" class="menu-box-title">
-                                    {{courseTitleDessertFin}}
+                                    JÄLKIRUOKIA
                                 </p>
                                 <p ng-if="$root.lang ==='ru'" class="menu-box-title" style="text-transform: uppercase; font-family:Roboto">
-                                    {{courseTitleDessertRus}}
+                                    Десерты
                                 </p>
                                 <p ng-if="dessert.length === 0" class="empty-menu">
                                     There are currently no dishes in this menu
@@ -1014,7 +1012,7 @@
                         top: 0px;
                         left: 90px;
                         font-family: spaceMono;">
-                                    Seltskonnamenüü
+                                    Grupimenüü
                                 </p>
                             </div>
                         </div>
@@ -1072,7 +1070,7 @@
                             </div>
                             <div class="col-md-6">
                                 <button ng-click="toUrlEng()" ng-if="$root.lang === 'en'" class="tasting-menu-btn" >Tasting Menu<img class="tasting-menu-arrow" src="css/img/arrow.png" /></button>
-                                <button ng-click="toUrlEst()" ng-if="$root.lang === 'ee'" class="tasting-menu-btn" >Seltskonnamenüü<img class="tasting-menu-arrow" src="css/img/arrow.png" /></button>
+                                <button ng-click="toUrlEst()" ng-if="$root.lang === 'ee'" class="tasting-menu-btn" >Grupimenüü<img class="tasting-menu-arrow" src="css/img/arrow.png" /></button>
                                 <button ng-click="toUrlEng()" ng-if="$root.lang === 'fi'" class="tasting-menu-btn" >Ryhmämenu<img class="tasting-menu-arrow" src="css/img/arrow.png" /></button>
                                 <button style="font-family:Roboto;" ng-click="toUrlEng()" ng-if="$root.lang === 'ru'" class="tasting-menu-btn" >Mеню группы<img class="tasting-menu-arrow" src="css/img/arrow.png" /></button>
 
@@ -1360,20 +1358,20 @@
                             Часы работы
                         </p>
                         <p  ng-if="$root.lang==='en'" class="contact-info">
-                            <span style="font-size:12px">{{contactTimeWorkWeekEng}}</span> {{contactDaysEng}}<br />
-                            <span style="font-size:12px">{{contactTimeWeekendEng}}</span> {{contactWeekendEng}}
+                            <span style="font-size:12px">Mon - Sat</span> {{contactTimeWorkWeekEng}}<br />
+                            <span style="font-size:12px">Sun</span> {{contactTimeWeekendEng}}
                         </p>
                         <p ng-if="$root.lang==='ee'" class="contact-info">
-                            <span style="font-size:12px">{{contactTimeWorkWeek}}</span> {{contactDays}}<br />
-                            <span style="font-size:12px">{{contactTimeWeekend}}</span> {{contactWeekend}} 
+                            <span style="font-size:12px">Esmasp - Laup</span> {{contactTimeWorkWeek}}<br />
+                            <span style="font-size:12px">Pühap</span> {{contactTimeWeekend}}
                         </p>
-                        <p  ng-if="$root.lang==='fi'" class="contact-info">
-                            <span style="font-size:12px">{{contactTimeWorkWeekFin}}</span> {{contactDaysFin}}<br />
-                            <span style="font-size:12px">{{contactTimeWeekendFin}}</span> {{contactWeekendFin}}
+                        <p ng-if="$root.lang==='fi'" class="contact-info">
+                            <span style="font-size:12px">MA-LA</span> {{contactTimeWorkWeekFin}}<br />
+                            <span style="font-size:12px">SU</span> {{contactTimeWeekendFin}}
                         </p>
-                        <p  ng-if="$root.lang==='ru'" class="contact-info">
-                            <span style="font-size:12px">{{contactTimeWorkWeekRus}}</span> {{contactDaysRus}}<br />
-                            <span style="font-size:12px">{{contactTimeWeekendRus}}</span> {{contactWeekendRus}}
+                        <p ng-if="$root.lang==='ru'" class="contact-info">
+                            <span style="font-size:12px; font-family:Roboto;">Пн.-Сб.</span> {{contactTimeWorkWeekRus}}<br />
+                            <span style="font-size:12px; font-family:Roboto;">Вс.</span> {{contactTimeWeekendRus}}
                         </p>
                     </div>
                     <div class="col-md-3 contact-padding-mobile">
