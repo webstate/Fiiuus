@@ -75,7 +75,7 @@ designViewController.controller('designViewController', function($scope, picture
 
     landingTextService.getLandingText("workerText", "ee").then(function(data){
         if(data.text == null){
-            $scope.workerText = "There is nothint yet inserted";
+            $scope.workerText = "There is nothing yet inserted";
         }else{
             $scope.workerText = data.text;
         }
@@ -103,7 +103,80 @@ designViewController.controller('designViewController', function($scope, picture
     })
     */
 
-
+    /*Controller for changing the course title*/
+    
+    landingTextService.getLandingText("courseTitleStarter", "ee").then(function(data){
+        if(data.text == null){
+            $scope.courseTitleStarter = "There is nothint yet inserted";
+        }else{
+            $scope.courseTitleStarter = data.text
+        }
+    }, function(err){
+        console.log(err);
+    })
+    $scope.insertCourseTitleStarter = function(){
+        var update = "";
+        update = $scope.courseTitleStarter;
+        if($scope.courseTitle === "{{editCourseTitleStarter}}"){
+            update = $scope.editCourseTitleStarter;
+        }
+        landingTextService.addOrUpdateLandingText("courseTitleStarter", update, "ee").then(function(data){
+            landingTextService.getLandingText("courseTitleStarter", "ee").then(function(data){
+                if(data.text == null){
+                    $scope.courseTitleStarter = "Nothing here";
+                }
+                $scope.courseTitleStarter = data.text;
+            })
+        });
+    }
+landingTextService.getLandingText("courseTitleMain", "ee").then(function(data){
+        if(data.text == null){
+            $scope.courseTitleMain = "There is nothint yet inserted";
+        }else{
+            $scope.courseTitleMain = data.text
+        }
+    }, function(err){
+        console.log(err);
+    })
+    $scope.insertCourseTitleMain = function(){
+        var update = "";
+        update = $scope.courseTitleMain;
+        if($scope.courseTitle === "{{editCourseTitleMain}}"){
+            update = $scope.editCourseTitleMain;
+        }
+        landingTextService.addOrUpdateLandingText("courseTitleMain", update, "ee").then(function(data){
+            landingTextService.getLandingText("courseTitleMain", "ee").then(function(data){
+                if(data.text == null){
+                    $scope.courseTitleMain = "Nothing here";
+                }
+                $scope.courseTitleMain = data.text;
+            })
+        });
+    }
+    landingTextService.getLandingText("courseTitleDessert", "ee").then(function(data){
+        if(data.text == null){
+            $scope.courseTitleDessert = "There is nothint yet inserted";
+        }else{
+            $scope.courseTitleDessert = data.text
+        }
+    }, function(err){
+        console.log(err);
+    })
+    $scope.insertCourseTitleDessert = function(){
+        var update = "";
+        update = $scope.courseTitleDessert;
+        if($scope.courseTitle === "{{editCourseTitleDessert}}"){
+            update = $scope.editCourseTitleDessert;
+        }
+        landingTextService.addOrUpdateLandingText("courseTitleDessert", update, "ee").then(function(data){
+            landingTextService.getLandingText("courseTitleDessert", "ee").then(function(data){
+                if(data.text == null){
+                    $scope.courseTitleDessert = "Nothing here";
+                }
+                $scope.courseTitleDessert = data.text;
+            })
+        });
+    }
     landingTextService.getLandingText("menuTitle", "ee").then(function(data){
         if(data.text == null){
             $scope.menuTitle = "There is nothint yet inserted";
@@ -329,6 +402,7 @@ designViewController.controller('designViewController', function($scope, picture
         landingTextService.addOrUpdateLandingText("contactEmailEst", val, "ee");
     })
     */
+    
 
     landingTextService.getLandingText("contactTimeWorkWeek", "ee").then(function(data){
         if(data.text == null){
@@ -373,7 +447,55 @@ designViewController.controller('designViewController', function($scope, picture
             })
         });
     }
-
+//
+landingTextService.getLandingText("contactWeekend", "ee").then(function(data){
+        if(data.text == null){
+            $scope.contactWeekend = "There is nothint yet inserted";
+        }else{
+            $scope.contactWeekend = data.text;
+        }
+    }, function(err){
+        console.log(err);
+    })
+    $scope.insertContactWeekend = function(){
+        var update = "";
+        update = $scope.contactWeekend;
+        if($scope.contactWeekend === "{{editContactWeekend}}"){
+            update = $scope.editContactWeekend;
+        }
+        landingTextService.addOrUpdateLandingText("contactWeekend", update, "ee").then(function(data){
+            landingTextService.getLandingText("contactWeekend", "ee").then(function(data){
+                if(data.text == null){
+                    $scope.contactWeekend = "Nothing here";
+                }
+                $scope.contactWeekend = data.text;
+            })
+        });
+    }
+    landingTextService.getLandingText("contactDays", "ee").then(function(data){
+        if(data.text == null){
+            $scope.contactDays = "There is nothint yet inserted";
+        }else{
+            $scope.contactDays = data.text;
+        }
+    }, function(err){
+        console.log(err);
+    })
+    $scope.insertContactDays = function(){
+        var update = "";
+        update = $scope.contactDays;
+        if($scope.contactDays === "{{editContactDays}}"){
+            update = $scope.editContactDays;
+        }
+        landingTextService.addOrUpdateLandingText("contactDays", update, "ee").then(function(data){
+            landingTextService.getLandingText("contactDays", "ee").then(function(data){
+                if(data.text == null){
+                    $scope.contactDays = "Nothing here";
+                }
+                $scope.contactDays = data.text;
+            })
+        });
+    }
 
     // LANDING PAGE ENGLISH VERSION
 
@@ -437,6 +559,79 @@ designViewController.controller('designViewController', function($scope, picture
         landingTextService.addOrUpdateLandingText("workerTextEng", val, "ee");
     })*/
 
+  landingTextService.getLandingText("courseTitleStarterEng", "ee").then(function(data){
+        if(data.text == null){
+            $scope.courseTitleStarterEng = "There is nothint yet inserted";
+        }else{
+            $scope.courseTitleStarterEng = data.text
+        }
+    }, function(err){
+        console.log(err);
+    })
+    $scope.insertCourseTitleStarterEng = function(){
+        var update = "";
+        update = $scope.courseTitleStarterEng;
+        if($scope.courseTitle === "{{editCourseTitleStarterEng}}"){
+            update = $scope.editCourseTitleStarterEng;
+        }
+        landingTextService.addOrUpdateLandingText("courseTitleStarterEng", update, "ee").then(function(data){
+            landingTextService.getLandingText("courseTitleStarterEng", "ee").then(function(data){
+                if(data.text == null){
+                    $scope.courseTitleStarterEng = "Nothing here";
+                }
+                $scope.courseTitleStarterEng = data.text;
+            })
+        });
+    }
+landingTextService.getLandingText("courseTitleMainEng", "ee").then(function(data){
+        if(data.text == null){
+            $scope.courseTitleMainEng = "There is nothint yet inserted";
+        }else{
+            $scope.courseTitleMainEng = data.text
+        }
+    }, function(err){
+        console.log(err);
+    })
+    $scope.insertCourseTitleMainEng = function(){
+        var update = "";
+        update = $scope.courseTitleMainEng;
+        if($scope.courseTitle === "{{editCourseTitleMainEng}}"){
+            update = $scope.editCourseTitleMainEng;
+        }
+        landingTextService.addOrUpdateLandingText("courseTitleMainEng", update, "ee").then(function(data){
+            landingTextService.getLandingText("courseTitleMainEng", "ee").then(function(data){
+                if(data.text == null){
+                    $scope.courseTitleMainEng = "Nothing here";
+                }
+                $scope.courseTitleMainEng = data.text;
+            })
+        });
+    }
+    landingTextService.getLandingText("courseTitleDessertEng", "ee").then(function(data){
+        if(data.text == null){
+            $scope.courseTitleDessertEng = "There is nothint yet inserted";
+        }else{
+            $scope.courseTitleDessertEng = data.text
+        }
+    }, function(err){
+        console.log(err);
+    })
+    $scope.insertCourseTitleDessertEng = function(){
+        var update = "";
+        update = $scope.courseTitleDessertEng;
+        if($scope.courseTitle === "{{editCourseTitleDessertEng}}"){
+            update = $scope.editCourseTitleDessertEng;
+        }
+        landingTextService.addOrUpdateLandingText("courseTitleDessertEng", update, "ee").then(function(data){
+            landingTextService.getLandingText("courseTitleDessertEng", "ee").then(function(data){
+                if(data.text == null){
+                    $scope.courseTitleDessertEng = "Nothing here";
+                }
+                $scope.courseTitleDessertEng = data.text;
+            })
+        });
+    }
+//
     landingTextService.getLandingText("menuTitleEng", "ee").then(function(data){
         if(data.text == null){
             $scope.menuTitleEng = "There is nothint yet inserted";
@@ -638,7 +833,7 @@ designViewController.controller('designViewController', function($scope, picture
     $scope.$watch('contactEmailEng.text', function(val){
         landingTextService.addOrUpdateLandingText("contactEmailEng", val, "ee");
     })*/
-
+    
     landingTextService.getLandingText("contactTimeWeekendEng", "ee").then(function(data){
         if(data.text == null){
             $scope.weekendTimeEng = "Nothing here";
@@ -679,6 +874,56 @@ designViewController.controller('designViewController', function($scope, picture
                     $scope.workWeekTimeEng = "Nothing here";
                 }
                 $scope.workWeekTimeEng = data.text;
+            })
+        });
+    }
+/**/
+landingTextService.getLandingText("contactDaysEng", "ee").then(function(data){
+        if(data.text == null){
+            $scope.contactDaysEng = "There is nothint yet inserted";
+        }else{
+            $scope.contactDaysEng = data.text;
+        }
+    }, function(err){
+        console.log(err);
+    })
+    $scope.insertContactDaysEng = function(){
+        var update = "";
+        update = $scope.contactDaysEng;
+        if($scope.contactDaysEng === "{{editContactDaysEng}}"){
+            update = $scope.editContactDaysEng;
+        }
+        landingTextService.addOrUpdateLandingText("contactDaysEng", update, "ee").then(function(data){
+            landingTextService.getLandingText("contactDaysEng", "ee").then(function(data){
+                if(data.text == null){
+                    $scope.contactDaysEng = "Nothing here";
+                }
+                $scope.contactDaysEng = data.text;
+            })
+        });
+    }
+    /**/
+landingTextService.getLandingText("contactWeekendEng", "ee").then(function(data){
+        if(data.text == null){
+            $scope.contactWeekendEng = "There is nothint yet inserted";
+        }else{
+            $scope.contactWeekendEng = data.text;
+        }
+    }, function(err){
+        console.log(err);
+    })
+    $scope.insertContactWeekendEng = function(){
+        var update = "";
+        update = $scope.contactWeekendEng;
+        if($scope.contactWeekendEng === "{{editContactWeekendEng}}"){
+            update = $scope.editContactWeekendEng;
+        }
+        landingTextService.addOrUpdateLandingText("contactWeekendEng", update, "ee").then(function(data){
+            landingTextService.getLandingText("contactWeekendEng", "ee").then(function(data){
+                if(data.text == null){
+                    $scope.contactWeekendEng = "Nothing here";
+                }
+                $scope.contactWeekendEng = data.text;
             })
         });
     }
@@ -745,6 +990,79 @@ designViewController.controller('designViewController', function($scope, picture
         landingTextService.addOrUpdateLandingText("workerTextFin", val, "ee");
     })*/
 
+      landingTextService.getLandingText("courseTitleStarterFin", "ee").then(function(data){
+        if(data.text == null){
+            $scope.courseTitleStarterFin = "There is nothint yet inserted";
+        }else{
+            $scope.courseTitleStarterFin = data.text
+        }
+    }, function(err){
+        console.log(err);
+    })
+    $scope.insertCourseTitleStarterFin = function(){
+        var update = "";
+        update = $scope.courseTitleStarterFin;
+        if($scope.courseTitle === "{{editCourseTitleStarterFin}}"){
+            update = $scope.editCourseTitleStarterFin;
+        }
+        landingTextService.addOrUpdateLandingText("courseTitleStarterFin", update, "ee").then(function(data){
+            landingTextService.getLandingText("courseTitleStarterFin", "ee").then(function(data){
+                if(data.text == null){
+                    $scope.courseTitleStarterFin = "Nothing here";
+                }
+                $scope.courseTitleStarterFin = data.text;
+            })
+        });
+    }
+landingTextService.getLandingText("courseTitleMainFin", "ee").then(function(data){
+        if(data.text == null){
+            $scope.courseTitleMainFin = "There is nothint yet inserted";
+        }else{
+            $scope.courseTitleMainFin = data.text
+        }
+    }, function(err){
+        console.log(err);
+    })
+    $scope.insertCourseTitleMainFin = function(){
+        var update = "";
+        update = $scope.courseTitleMainFin;
+        if($scope.courseTitle === "{{editCourseTitleMainFin}}"){
+            update = $scope.editCourseTitleMainFin;
+        }
+        landingTextService.addOrUpdateLandingText("courseTitleMainFin", update, "ee").then(function(data){
+            landingTextService.getLandingText("courseTitleMainFin", "ee").then(function(data){
+                if(data.text == null){
+                    $scope.courseTitleMainFin = "Nothing here";
+                }
+                $scope.courseTitleMainFin = data.text;
+            })
+        });
+    }
+    landingTextService.getLandingText("courseTitleDessertFin", "ee").then(function(data){
+        if(data.text == null){
+            $scope.courseTitleDessertFin = "There is nothint yet inserted";
+        }else{
+            $scope.courseTitleDessertFin = data.text
+        }
+    }, function(err){
+        console.log(err);
+    })
+    $scope.insertCourseTitleDessertFin = function(){
+        var update = "";
+        update = $scope.courseTitleDessertFin;
+        if($scope.courseTitle === "{{editCourseTitleDessertFin}}"){
+            update = $scope.editCourseTitleDessertFin;
+        }
+        landingTextService.addOrUpdateLandingText("courseTitleDessertFin", update, "ee").then(function(data){
+            landingTextService.getLandingText("courseTitleDessertFin", "ee").then(function(data){
+                if(data.text == null){
+                    $scope.courseTitleDessertFin = "Nothing here";
+                }
+                $scope.courseTitleDessertFin = data.text;
+            })
+        });
+    }
+    
     landingTextService.getLandingText("menuTitleFin", "ee").then(function(data){
         if(data.text == null){
             $scope.menuTitleFin = "There is nothint yet inserted";
@@ -949,6 +1267,54 @@ designViewController.controller('designViewController', function($scope, picture
         landingTextService.addOrUpdateLandingText("contactEmailFin", val, "ee");
     })*/
 
+    landingTextService.getLandingText("contactWeekendFin", "ee").then(function(data){
+        if(data.text == null){
+            $scope.contactWeekendFin = "There is nothint yet inserted";
+        }else{
+            $scope.contactWeekendFin = data.text;
+        }
+    }, function(err){
+        console.log(err);
+    })
+    $scope.insertContactWeekendFin = function(){
+        var update = "";
+        update = $scope.contactWeekendFin;
+        if($scope.contactWeekendFin === "{{editContactWeekendFin}}"){
+            update = $scope.editContactWeekendFin;
+        }
+        landingTextService.addOrUpdateLandingText("contactWeekendFin", update, "ee").then(function(data){
+            landingTextService.getLandingText("contactWeekendFin", "ee").then(function(data){
+                if(data.text == null){
+                    $scope.contactWeekendFin = "Nothing here";
+                }
+                $scope.contactWeekendFin = data.text;
+            })
+        });
+    }
+    landingTextService.getLandingText("contactDaysFin", "ee").then(function(data){
+        if(data.text == null){
+            $scope.contactDaysFin = "There is nothint yet inserted";
+        }else{
+            $scope.contactDaysFin = data.text;
+        }
+    }, function(err){
+        console.log(err);
+    })
+    $scope.insertContactDaysFin = function(){
+        var update = "";
+        update = $scope.contactDaysFin;
+        if($scope.contactDaysFin === "{{editContactDaysFin}}"){
+            update = $scope.editContactDaysFin;
+        }
+        landingTextService.addOrUpdateLandingText("contactDaysFin", update, "ee").then(function(data){
+            landingTextService.getLandingText("contactDaysFin", "ee").then(function(data){
+                if(data.text == null){
+                    $scope.contactDaysFin = "Nothing here";
+                }
+                $scope.contactDaysFin = data.text;
+            })
+        });
+    }
 
     landingTextService.getLandingText("contactTimeWorkWeekFin", "ee").then(function(data){
         if(data.text == null){
@@ -1057,6 +1423,78 @@ designViewController.controller('designViewController', function($scope, picture
         landingTextService.addOrUpdateLandingText("workerTextRus", val, "ee");
     })*/
 
+    landingTextService.getLandingText("courseTitleStarterRus", "ee").then(function(data){
+        if(data.text == null){
+            $scope.courseTitleStarterRus = "There is nothint yet inserted";
+        }else{
+            $scope.courseTitleStarterRus = data.text
+        }
+    }, function(err){
+        console.log(err);
+    })
+    $scope.insertCourseTitleStarterRus = function(){
+        var update = "";
+        update = $scope.courseTitleStarterRus;
+        if($scope.courseTitle === "{{editCourseTitleStarterRus}}"){
+            update = $scope.editCourseTitleStarterRus;
+        }
+        landingTextService.addOrUpdateLandingText("courseTitleStarterRus", update, "ee").then(function(data){
+            landingTextService.getLandingText("courseTitleStarterRus", "ee").then(function(data){
+                if(data.text == null){
+                    $scope.courseTitleStarterRus = "Nothing here";
+                }
+                $scope.courseTitleStarterRus = data.text;
+            })
+        });
+    }
+landingTextService.getLandingText("courseTitleMainRus", "ee").then(function(data){
+        if(data.text == null){
+            $scope.courseTitleMainRus = "There is nothint yet inserted";
+        }else{
+            $scope.courseTitleMainRus = data.text
+        }
+    }, function(err){
+        console.log(err);
+    })
+    $scope.insertCourseTitleMainRus = function(){
+        var update = "";
+        update = $scope.courseTitleMainRus;
+        if($scope.courseTitle === "{{editCourseTitleMainRus}}"){
+            update = $scope.editCourseTitleMainRus;
+        }
+        landingTextService.addOrUpdateLandingText("courseTitleMainRus", update, "ee").then(function(data){
+            landingTextService.getLandingText("courseTitleMainRus", "ee").then(function(data){
+                if(data.text == null){
+                    $scope.courseTitleMainRus = "Nothing here";
+                }
+                $scope.courseTitleMainRus = data.text;
+            })
+        });
+    }
+    landingTextService.getLandingText("courseTitleDessertRus", "ee").then(function(data){
+        if(data.text == null){
+            $scope.courseTitleDessertRus = "There is nothint yet inserted";
+        }else{
+            $scope.courseTitleDessertRus = data.text
+        }
+    }, function(err){
+        console.log(err);
+    })
+    $scope.insertCourseTitleDessertRus = function(){
+        var update = "";
+        update = $scope.courseTitleDessertRus;
+        if($scope.courseTitle === "{{editCourseTitleDessertRus}}"){
+            update = $scope.editCourseTitleDessertRus;
+        }
+        landingTextService.addOrUpdateLandingText("courseTitleDessertRus", update, "ee").then(function(data){
+            landingTextService.getLandingText("courseTitleDessertRus", "ee").then(function(data){
+                if(data.text == null){
+                    $scope.courseTitleDessertRus = "Nothing here";
+                }
+                $scope.courseTitleDessertRus = data.text;
+            })
+        });
+    }
     landingTextService.getLandingText("menuTitleRus", "ee").then(function(data){
         if(data.text == null){
             $scope.menuTitleRus = "There is nothint yet inserted";
@@ -1261,7 +1699,56 @@ designViewController.controller('designViewController', function($scope, picture
         landingTextService.addOrUpdateLandingText("contactEmailRus", val, "ee");
     })*/
 
-
+    /**/
+    landingTextService.getLandingText("contactWeekendRus", "ee").then(function(data){
+        if(data.text == null){
+            $scope.contactWeekendRus = "There is nothint yet inserted";
+        }else{
+            $scope.contactWeekendRus = data.text;
+        }
+    }, function(err){
+        console.log(err);
+    })
+    $scope.insertContactWeekendRus = function(){
+        var update = "";
+        update = $scope.contactWeekendRus;
+        if($scope.contactWeekendRus === "{{editContactWeekendRus}}"){
+            update = $scope.editContactWeekendRus;
+        }
+        landingTextService.addOrUpdateLandingText("contactWeekendRus", update, "ee").then(function(data){
+            landingTextService.getLandingText("contactWeekendRus", "ee").then(function(data){
+                if(data.text == null){
+                    $scope.contactWeekendRus = "Nothing here";
+                }
+                $scope.contactWeekendRus = data.text;
+            })
+        });
+    }
+    landingTextService.getLandingText("contactDaysRus", "ee").then(function(data){
+        if(data.text == null){
+            $scope.contactDaysRus = "There is nothint yet inserted";
+        }else{
+            $scope.contactDaysRus = data.text;
+        }
+    }, function(err){
+        console.log(err);
+    })
+    $scope.insertContactDaysRus = function(){
+        var update = "";
+        update = $scope.contactDaysRus;
+        if($scope.contactDaysRus === "{{editContactDaysRus}}"){
+            update = $scope.editContactDaysRus;
+        }
+        landingTextService.addOrUpdateLandingText("contactDaysRus", update, "ee").then(function(data){
+            landingTextService.getLandingText("contactDaysRus", "ee").then(function(data){
+                if(data.text == null){
+                    $scope.contactDaysRus = "Nothing here";
+                }
+                $scope.contactDaysRus = data.text;
+            })
+        });
+    }
+    
     landingTextService.getLandingText("contactTimeWorkWeekRus", "ee").then(function(data){ // This is a service. Once the program has the promice "getLandingText" it does the following function
         if(data.text == null){  //"ee" is a language, "contactTimeForWeekRus" is a place
             $scope.workWeekTimeRus = "Nothing here";
