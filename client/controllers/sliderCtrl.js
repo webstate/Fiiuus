@@ -73,15 +73,6 @@ sliderCtrl.controller('sliderCtrl', function($location,$rootScope, $scope, landi
     landingTextService.getLandingText("menuText", "ee").then(function(data){
         $scope.menuText = data.text;
     })
-    landingTextService.getLandingText("courseTitleStarter", "ee").then(function(data){
-        $scope.courseTitleStarter = data.text;
-    })
-    landingTextService.getLandingText("courseTitleMain", "ee").then(function(data){
-        $scope.courseTitleMain = data.text;
-    })
-    landingTextService.getLandingText("courseTitleDessert", "ee").then(function(data){
-        $scope.courseTitleDessert = data.text;
-    })
     landingTextService.getLandingText("tastingText", "ee").then(function(data){
         $scope.tastingText = data.text;
     })
@@ -102,12 +93,6 @@ sliderCtrl.controller('sliderCtrl', function($location,$rootScope, $scope, landi
     })
     landingTextService.getLandingText("contactTimeWorkWeek", "ee").then(function(data){
         $scope.contactTimeWorkWeek = data.text;
-    })
-    landingTextService.getLandingText("contactDays", "ee").then(function(data){
-        $scope.contactDays = data.text;
-    })
-    landingTextService.getLandingText("contactWeekend", "ee").then(function(data){
-        $scope.contactWeekend = data.text;
     })
     landingTextService.getLandingText("bannerTitleEst", "ee").then(function(data){
         $scope.bannerTitleEst = data.text;
@@ -138,21 +123,6 @@ sliderCtrl.controller('sliderCtrl', function($location,$rootScope, $scope, landi
     })
     landingTextService.getLandingText("contactTimeWorkWeekEng", "ee").then(function(data){
         $scope.contactTimeWorkWeekEng = data.text;
-    })
-    landingTextService.getLandingText("courseTitleStarterEng", "ee").then(function(data){
-        $scope.courseTitleStarterEng = data.text;
-    })
-    landingTextService.getLandingText("courseTitleMainEng", "ee").then(function(data){
-        $scope.courseTitleMainEng = data.text;
-    })
-    landingTextService.getLandingText("courseTitleDessertEng", "ee").then(function(data){
-        $scope.courseTitleDessertEng = data.text;
-    })
-    landingTextService.getLandingText("contactDaysEng", "ee").then(function(data){
-        $scope.contactDaysEng = data.text;
-    })
-    landingTextService.getLandingText("contactWeekendEng", "ee").then(function(data){
-        $scope.contactWeekendEng = data.text;
     })
     landingTextService.getLandingText("workerTitleEng", "ee").then(function(data){
         $scope.workerTitleEng = data.text;
@@ -190,21 +160,6 @@ sliderCtrl.controller('sliderCtrl', function($location,$rootScope, $scope, landi
     landingTextService.getLandingText("contactTimeWorkWeekFin", "ee").then(function(data){
         $scope.contactTimeWorkWeekFin = data.text;
     })
-    landingTextService.getLandingText("courseTitleStarterFin", "ee").then(function(data){
-        $scope.courseTitleStarterFin = data.text;
-    })
-    landingTextService.getLandingText("courseTitleMainFin", "ee").then(function(data){
-        $scope.courseTitleMainFin = data.text;
-    })
-    landingTextService.getLandingText("courseTitleDessertFin", "ee").then(function(data){
-        $scope.courseTitleDessertFin = data.text;
-    })
-    landingTextService.getLandingText("contactDaysFin", "ee").then(function(data){
-        $scope.contactDaysFin = data.text;
-    })
-    landingTextService.getLandingText("contactWeekendFin", "ee").then(function(data){
-        $scope.contactWeekendFin = data.text;
-    })
     landingTextService.getLandingText("workerTitleFin", "ee").then(function(data){
         $scope.workerTitleFin = data.text;
     })
@@ -240,21 +195,6 @@ sliderCtrl.controller('sliderCtrl', function($location,$rootScope, $scope, landi
     })
     landingTextService.getLandingText("contactTimeWorkWeekRus", "ee").then(function(data){
         $scope.contactTimeWorkWeekRus = data.text;
-    })
-    landingTextService.getLandingText("courseTitleStarterRus", "ee").then(function(data){
-        $scope.courseTitleStarterRus = data.text;
-    })
-    landingTextService.getLandingText("courseTitleMainRus", "ee").then(function(data){
-        $scope.courseTitleMainRus = data.text;
-    })
-    landingTextService.getLandingText("courseTitleDessertRus", "ee").then(function(data){
-        $scope.courseTitleDessertRus = data.text;
-    })
-    landingTextService.getLandingText("contactDaysRus", "ee").then(function(data){
-        $scope.contactDaysRus = data.text;
-    })
-    landingTextService.getLandingText("contactWeekendRus", "ee").then(function(data){
-        $scope.contactWeekendRus = data.text;
     })
     landingTextService.getLandingText("workerTitleRus", "ee").then(function(data){
         $scope.workerTitleRus = data.text;
