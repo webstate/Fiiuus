@@ -236,6 +236,7 @@ ul.nav > li > a:visited{
     margin-top: 20px;
     cursor: default;
 }
+
 #mockup-logo{
     height: 32px;
     position: absolute;
@@ -388,18 +389,6 @@ a.editable-click{
        margin-bottom: -8rem;
     } 
 }
-<<<<<<< HEAD
-
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-
->>>>>>> c4d206d7df4e9fc0d11822c2a15a0a85a1f98e20
-=======
-
->>>>>>> c4d206d7df4e9fc0d11822c2a15a0a85a1f98e20
->>>>>>> parandused, logo ja disain
 .worker-img-holder{
     height: 350px;
     background-size: cover;
@@ -875,6 +864,7 @@ th{
     background-repeat: no-repeat;
     display: block;
     /*width: 100%;*/
+    cursor: pointer;
 }
 .menu-pic-second-mockup{
     width: 100%;

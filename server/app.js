@@ -13,6 +13,7 @@ var localStrategy = require('passport-local' ).Strategy;
 // mongoose
 mongoose.connect('mongodb://localhost/fii');
 
+
 // user schema/model
 var User = require('./models/user.js');
 
