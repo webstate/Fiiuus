@@ -130,7 +130,7 @@ myApp.run(function ($rootScope, $location,$state, AuthService, editableOptions, 
         $rootScope.$broadcast("documentClicked", e.target); // $rootScope.$broadcast is a convenient way to raise a "global" event which all child scopes can listen for.
     });
   $window.ga('create', 'UA-98229169-1', 'auto'); // Google analytics tracking
-  $rootScope.$on('$stateChangeSuccess', function (event) { // listens to a particular event
+  $rootScope.$on('$stateChangeSuccess', function (event) { // listens to particular events
             $window.ga('send', 'pageview', $location.path());
         });
   editableOptions.theme = 'bs3';

@@ -16,7 +16,7 @@ mongoose.connect('mongodb://localhost/fii');
 // user schema/model
 var User = require('./models/user.js');
 
-// create instance of express
+// create instances of express
 var app = express();
 
 // require routes
