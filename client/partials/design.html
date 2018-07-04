@@ -287,93 +287,88 @@
                 <div class="map-mockup"></div>
             </div>
         </div>
-        <div class="row" style="margin-top: 50px;margin-bottom: 100px;">
+                <div class="row" style="margin-top: 50px;margin-bottom: 100px;">
+               <div class="col-md-6" >
+                   <div class="row">
+                        
+                        <p class="contact-title-mockup">
+                            Argipäevad:
+                        </p>
+                         <input value="{{editWorkWeekTime}}" type="text" ng-model="workWeekTime" ng-initial/>
+                        <button class="timeBtn" ng-click="insertWorkWeek()"><i class="fa fa-check" aria-hidden="true"></i></button>
+                    </div>
+                </div>
                 <div class="col-md-6">
                     <div class="row">
-                        <p class="contact-title-mockup">
+                    <p class="contact-title-mockup">
                         Helista meile
                     </p>
-                        <input value="{{editContactCallEst}}" type="text" ng-model="contactCallEst" ng-initial/>
-                        <button class="timeBtn" ng-click="insertContactCallEst()"><i class="fa fa-check" aria-hidden="true"></i></button>
-                        <!--
-                        <p editable-text="contactCallEst.text" class="contact-info-mockup">
-                            {{contactCallEst.text}}
-                        </p>-->
+                    <input value="{{editContactCallEst}}" type="text" ng-model="contactCallEst" ng-initial/>
+                    <button class="timeBtn" ng-click="insertContactCallEst()"><i class="fa fa-check" aria-hidden="true"></i></button>
+                    <!--
+                    <p editable-text="contactCallEst.text" class="contact-info-mockup">
+                        {{contactCallEst.text}}
+                    </p>-->
                     </div>
                 </div>
                 <div class="col-md-6" >
-                    <div class="row">
+                  <div class="row">
+                       
                         <p class="contact-title-mockup">
-                            Külasta meid
+                            Kell:
                         </p>
-                        <input value="{{editContactVisitEst}}" type="text" ng-model="contactVisitEst" ng-initial/>
-                        <button class="timeBtn" ng-click="insertContactVisitEst()"><i class="fa fa-check" aria-hidden="true"></i></button>
-
-                        <!-- <p editable-text="contactVisitEst.text" class="contact-info-mockup">
-                            {{contactVisitEst.text}}
-                        </p>
-                        -->
-                    </div>
+                        <input value="{{editContactDays}}" type="text" ng-model="contactDays" ng-initial/>
+                        <button class="timeBtn" ng-click="insertContactDays()"><i class="fa fa-check" aria-hidden="true"></i></button>
+                    </div> 
                 </div>
-                <div class="col-md-6" style="margin-top: 30px;">
+                <!--Opening days-->
+                  <div class="col-md-6" >
                     <div class="row">
-                        <p class="contact-title-mockup">
-                            Avatud
-                        </p>
-                        <p class="contact-title-mockup">
-                            Nädalapäevadel:
-                        </p>
-                        <input value="{{editWorkWeekTime}}" type="text" ng-model="workWeekTime" ng-initial/>
-                        <button class="timeBtn" ng-click="insertWorkWeek()"><i class="fa fa-check" aria-hidden="true"></i></button>
+                    <p class="contact-title-mockup">
+                        Külasta meid
+                    </p>
+                    <input value="{{editContactVisitEst}}" type="text" ng-model="contactVisitEst" ng-initial/>
+                    <button class="timeBtn" ng-click="insertContactVisitEst()"><i class="fa fa-check" aria-hidden="true"></i></button>
+                    <!--
+                    <p editable-text="contactVisitEst.text" class="contact-info-mockup">
+                        {{contactVisitEst.text}}
+                    </p>-->
                     </div>
                     <div class="row">
+                    <p class="contact-title-mockup">
+                        Kirjuta meile
+                    </p>
+                        <input value="{{editContactEmailEst}}" type="text" ng-model="contactEmailEst" ng-initial/>
+                        <button class="timeBtn" ng-click="insertContactEmailEst()"><i class="fa fa-check" aria-hidden="true"></i></button>
+                        <!--
+                    <p editable-text="contactEmailEst.text" class="contact-info-mockup">
+                        {{contactEmailFin.text}}
+                    </p>-->
+                    </div>
+                    <!--
+                    <p editable-text="contactVisitEst.text" class="contact-info-mockup">
+                        {{contactVisitFin.text}}
+                    </p>-->
+                </div>
+                <div class="col-md-6" style="margin-bottom: 30px">
+                    <div class="row">
                         <p class="contact-title-mockup">
-                            Nädalavahetusel:
+                            Nädalavahetus:
                         </p>
                         <input value="{{editWeekendTime}}" type="text" ng-model="weekendTime" ng-initial/>
                         <button class="timeBtn" ng-click="insertWeekend()"><i class="fa fa-check" aria-hidden="true"></i></button>
                     </div>
-                </div>
-                <!--Avatud päevade info-->
-                  <div class="col-md-6" >
                     <div class="row">
                         <p class="contact-title-mockup">
-                            Argipäevad:
-                        </p>
-                        <input value="{{editContactDays}}" type="text" ng-model="contactDays" ng-initial/>
-                        <button class="timeBtn" ng-click="insertContactDays()"><i class="fa fa-check" aria-hidden="true"></i></button>
-                    </div>
-                    <div class="row">
-                        
-                        <p class="contact-title-mockup">
-                            Nädalavahetus:
+                            Kell:
                         </p>
                         <input value="{{editContactWeekend}}" type="text" ng-model="contactWeekend" ng-initial/>
                         <button class="timeBtn" ng-click="insertContactWeekend()"><i class="fa fa-check" aria-hidden="true"></i></button>
-                    </div>
-                    <!--
-                    <p editable-text="contactVisitEng.text" class="contact-info-mockup">
-                        {{contactVisitEng.text}}
-                    </p>-->
-                </div>
-                <div class="col-md-6" style="margin-top: 30px;">
-                    <div class="row">
-                        <p class="contact-title-mockup">
-                            Kirjuta meile
-                        </p>
-                        <input value="{{editContactEmailEst}}" type="text" ng-model="contactEmailEst" ng-initial/>
-                        <button class="timeBtn" ng-click="insertContactEmailEst()"><i class="fa fa-check" aria-hidden="true"></i></button>
-
-                        <!--
-                        <p editable-text="contactEmailEst.text" class="contact-info-mockup">
-                        {{contactEmailEst.text}}
-                        </p>-->
                     </div>
                 </div>
         </div>
     </div>
 </div>
-
 <div class="container" ng-show="engDesign">
     <div class="row" style="margin-top: 50px;">
         <div class="banner-mockup" style="background-image:url({{bannerImage}})">
@@ -643,88 +638,82 @@
         </div>
 
         <div class="row" style="margin-top: 50px;margin-bottom: 100px;">
+               <div class="col-md-6" >
+                   <div class="row">
+                        
+                        <p class="contact-title-mockup">
+                            Argipäevad:
+                        </p>
+                         <input value="{{editWorkWeekTimeEng}}" type="text" ng-model="workWeekTimeEng" ng-initial/>
+                        <button class="timeBtn" ng-click="insertWorkWeekEng()"><i class="fa fa-check" aria-hidden="true"></i></button>
+                    </div>
+                </div>
                 <div class="col-md-6">
                     <div class="row">
-                        <p class="contact-title-mockup">
-                            Call us
-                        </p>
-                        <input value="{{editContactCallEng}}" type="text" ng-model="contactCallEng" ng-initial/>
-                        <button class="timeBtn" ng-click="insertContactCallEng()"><i class="fa fa-check" aria-hidden="true"></i></button>
-                    </div>
+                    <p class="contact-title-mockup">
+                        Helista meile
+                    </p>
+                    <input value="{{editContactCallEng}}" type="text" ng-model="contactCallEng" ng-initial/>
+                    <button class="timeBtn" ng-click="insertContactCallEng()"><i class="fa fa-check" aria-hidden="true"></i></button>
                     <!--
                     <p editable-text="contactCallEng.text" class="contact-info-mockup">
                         {{contactCallEng.text}}
                     </p>-->
+                    </div>
                 </div>
                 <div class="col-md-6" >
-                    <div class="row">
+                  <div class="row">
+                       
                         <p class="contact-title-mockup">
-                            Visit us
+                            Kell:
                         </p>
-                        <input value="{{editContactVisitEng}}" type="text" ng-model="contactVisitEng" ng-initial/>
-                        <button class="timeBtn" ng-click="insertContactVisitEng()"><i class="fa fa-check" aria-hidden="true"></i></button>
-                    </div>
-                    <!--
-                    <p editable-text="contactVisitEng.text" class="contact-info-mockup">
-                        {{contactVisitEng.text}}
-                    </p>-->
-                </div>
-                <div class="col-md-6" style="margin-top: 30px;">
-                    <div class="row">
-                        <p class="contact-title-mockup">
-                            Opening hours
-                        </p>
-                        <p class="contact-title-mockup">
-                            Nädalapäevadel:
-                        </p>
-                        <input value="{{editWorkWeekTimeEng}}" type="text" ng-model="workWeekTimeEng" ng-initial/>
-                        <button class="timeBtn" ng-click="insertWorkWeekEng()"><i class="fa fa-check" aria-hidden="true"></i></button>
-                    </div>
-                    <div class="row">
-                        <p class="contact-title-mockup">
-                            Nädalavahetusel:
-                        </p>
-                        <input value="{{editWeekendTimeEng}}" type="text" ng-model="weekendTimeEng" ng-initial/>
-                        <button class="timeBtn" ng-click="insertWeekendEng()"><i class="fa fa-check" aria-hidden="true"></i></button>
-                    </div>
+                        <input value="{{editContactDaysEng}}" type="text" ng-model="contactDaysEng" ng-initial/>
+                        <button class="timeBtn" ng-click="insertContactDaysEng()"><i class="fa fa-check" aria-hidden="true"></i></button>
+                    </div> 
                 </div>
                 <!--Opening days-->
                   <div class="col-md-6" >
                     <div class="row">
-                        <p class="contact-title-mockup">
-                            Weekday hours:
-                        </p>
-                        <input value="{{editContactDaysEng}}" type="text" ng-model="contactDaysEng" ng-initial/>
-                        <button class="timeBtn" ng-click="insertContactDaysEng()"><i class="fa fa-check" aria-hidden="true"></i></button>
+                    <p class="contact-title-mockup">
+                        Külasta meid
+                    </p>
+                    <input value="{{editContactVisitEng}}" type="text" ng-model="contactVisitEng" ng-initial/>
+                    <button class="timeBtn" ng-click="insertContactVisitEng()"><i class="fa fa-check" aria-hidden="true"></i></button>
+                    <!--
+                    <p editable-text="contactVisitEng.text" class="contact-info-mockup">
+                        {{contactVisitEng.text}}
+                    </p>-->
                     </div>
                     <div class="row">
-                        
-                        <p class="contact-title-mockup">
-                            Weekend hours:
-                        </p>
-                        <input value="{{editContactWeekendEng}}" type="text" ng-model="contactWeekendEng" ng-initial/>
-                        <button class="timeBtn" ng-click="insertContactWeekendEng()"><i class="fa fa-check" aria-hidden="true"></i></button>
+                    <p class="contact-title-mockup">
+                        Kirjuta meile
+                    </p>
+                        <input value="{{editContactEmailEng}}" type="text" ng-model="contactEmailEng" ng-initial/>
+                        <button class="timeBtn" ng-click="insertContactEmailEng()"><i class="fa fa-check" aria-hidden="true"></i></button>
+                        <!--
+                    <p editable-text="contactEmailEng.text" class="contact-info-mockup">
+                        {{contactEmailEng.text}}
+                    </p>-->
                     </div>
                     <!--
                     <p editable-text="contactVisitEng.text" class="contact-info-mockup">
                         {{contactVisitEng.text}}
                     </p>-->
                 </div>
-                 
-                 
-                
-                <div class="col-md-6" style="margin-top: 30px;">
+                <div class="col-md-6" style="margin-bottom: 30px">
                     <div class="row">
-                    <p class="contact-title-mockup">
-                        Write us
-                    </p>
-                    <input value="{{editContactEmailEng}}" type="text" ng-model="contactEmailEng" ng-initial/>
-                    <button class="timeBtn" ng-click="insertContactEmailEng()"><i class="fa fa-check" aria-hidden="true"></i></button>
-                    <!--
-                    <p editable-text="contactEmailEng.text" class="contact-info-mockup">
-                        {{contactEmailEng.text}}
-                    </p>
-                    -->
+                        <p class="contact-title-mockup">
+                            Nädalavahetus:
+                        </p>
+                        <input value="{{editWeekendTimeEng}}" type="text" ng-model="weekendTimeEng" ng-initial/>
+                        <button class="timeBtn" ng-click="insertWeekendEng()"><i class="fa fa-check" aria-hidden="true"></i></button>
+                    </div>
+                    <div class="row">
+                        <p class="contact-title-mockup">
+                            Kell:
+                        </p>
+                        <input value="{{editContactWeekendEng}}" type="text" ng-model="contactWeekendEng" ng-initial/>
+                        <button class="timeBtn" ng-click="insertContactWeekendEng()"><i class="fa fa-check" aria-hidden="true"></i></button>
                     </div>
                 </div>
         </div>
@@ -980,6 +969,16 @@
             </div>
         </div>
         <div class="row" style="margin-top: 50px;margin-bottom: 100px;">
+               <div class="col-md-6" >
+                   <div class="row">
+                        
+                        <p class="contact-title-mockup">
+                            Argipäevad:
+                        </p>
+                         <input value="{{editWorkWeekTimeFin}}" type="text" ng-model="workWeekTimeFin" ng-initial/>
+                        <button class="timeBtn" ng-click="insertWorkWeekFin()"><i class="fa fa-check" aria-hidden="true"></i></button>
+                    </div>
+                </div>
                 <div class="col-md-6">
                     <div class="row">
                     <p class="contact-title-mockup">
@@ -994,6 +993,17 @@
                     </div>
                 </div>
                 <div class="col-md-6" >
+                  <div class="row">
+                       
+                        <p class="contact-title-mockup">
+                            Kell:
+                        </p>
+                        <input value="{{editContactDaysFin}}" type="text" ng-model="contactDaysFin" ng-initial/>
+                        <button class="timeBtn" ng-click="insertContactDaysFin()"><i class="fa fa-check" aria-hidden="true"></i></button>
+                    </div> 
+                </div>
+                <!--Opening days-->
+                  <div class="col-md-6" >
                     <div class="row">
                     <p class="contact-title-mockup">
                         Külasta meid
@@ -1005,50 +1015,6 @@
                         {{contactVisitFin.text}}
                     </p>-->
                     </div>
-                </div>
-                <div class="col-md-6" style="margin-top: 30px;">
-                    <div class="row">
-                        <p class="contact-title-mockup">
-                            Avatud
-                        </p>
-                        <p class="contact-title-mockup">
-                            Nädalapäevadel:
-                        </p>
-                        <input value="{{editWorkWeekTimeFin}}" type="text" ng-model="workWeekTimeFin" ng-initial/>
-                        <button class="timeBtn" ng-click="insertWorkWeekFin()"><i class="fa fa-check" aria-hidden="true"></i></button>
-                    </div>
-                    <div class="row">
-                        <p class="contact-title-mockup">
-                            Nädalavahetusel:
-                        </p>
-                        <input value="{{editWeekendTimeFin}}" type="text" ng-model="weekendTimeFin" ng-initial/>
-                        <button class="timeBtn" ng-click="insertWeekendFin()"><i class="fa fa-check" aria-hidden="true"></i></button>
-                    </div>
-                </div>
-                <!--Opening days-->
-                  <div class="col-md-6" >
-                    <div class="row">
-                        <p class="contact-title-mockup">
-                            Weekday hours:
-                        </p>
-                        <input value="{{editContactDaysFin}}" type="text" ng-model="contactDaysFin" ng-initial/>
-                        <button class="timeBtn" ng-click="insertContactDaysFin()"><i class="fa fa-check" aria-hidden="true"></i></button>
-                    </div>
-                    <div class="row">
-                        
-                        <p class="contact-title-mockup">
-                            Weekend hours:
-                        </p>
-                        <input value="{{editContactWeekendFin}}" type="text" ng-model="contactWeekendFin" ng-initial/>
-                        <button class="timeBtn" ng-click="insertContactWeekendFin()"><i class="fa fa-check" aria-hidden="true"></i></button>
-                    </div>
-                    <!--
-                    <p editable-text="contactVisitEng.text" class="contact-info-mockup">
-                        {{contactVisitEng.text}}
-                    </p>-->
-                </div>
-                 
-                <div class="col-md-6" style="margin-top: 30px;">
                     <div class="row">
                     <p class="contact-title-mockup">
                         Kirjuta meile
@@ -1060,11 +1026,30 @@
                         {{contactEmailFin.text}}
                     </p>-->
                     </div>
+                    <!--
+                    <p editable-text="contactVisitFin.text" class="contact-info-mockup">
+                        {{contactVisitFin.text}}
+                    </p>-->
+                </div>
+                <div class="col-md-6" style="margin-bottom: 30px">
+                    <div class="row">
+                        <p class="contact-title-mockup">
+                            Nädalavahetus:
+                        </p>
+                        <input value="{{editWeekendTimeFin}}" type="text" ng-model="weekendTimeFin" ng-initial/>
+                        <button class="timeBtn" ng-click="insertWeekendFin()"><i class="fa fa-check" aria-hidden="true"></i></button>
+                    </div>
+                    <div class="row">
+                        <p class="contact-title-mockup">
+                            Kell:
+                        </p>
+                        <input value="{{editContactWeekendFin}}" type="text" ng-model="contactWeekendFin" ng-initial/>
+                        <button class="timeBtn" ng-click="insertContactWeekendFin()"><i class="fa fa-check" aria-hidden="true"></i></button>
+                    </div>
                 </div>
         </div>
     </div>
 </div>
-
 <div class="container" ng-show="rusDesign">
     <div class="row" style="margin-top: 50px;">
         <div class="banner-mockup" style="background-image:url({{bannerImage}})">
@@ -1312,6 +1297,16 @@
             </div>
         </div>
         <div class="row" style="margin-top: 50px;margin-bottom: 100px;">
+               <div class="col-md-6" >
+                   <div class="row">
+                        
+                        <p class="contact-title-mockup">
+                            Argipäevad:
+                        </p>
+                         <input value="{{editWorkWeekTimeRus}}" type="text" ng-model="workWeekTimeRus" ng-initial/>
+                        <button class="timeBtn" ng-click="insertWorkWeekRus()"><i class="fa fa-check" aria-hidden="true"></i></button>
+                    </div>
+                </div>
                 <div class="col-md-6">
                     <div class="row">
                     <p class="contact-title-mockup">
@@ -1326,6 +1321,17 @@
                     </div>
                 </div>
                 <div class="col-md-6" >
+                  <div class="row">
+                       
+                        <p class="contact-title-mockup">
+                            Kell:
+                        </p>
+                        <input value="{{editContactDaysRus}}" type="text" ng-model="contactDaysRus" ng-initial/>
+                        <button class="timeBtn" ng-click="insertContactDaysRus()"><i class="fa fa-check" aria-hidden="true"></i></button>
+                    </div> 
+                </div>
+                <!--Opening days-->
+                  <div class="col-md-6" >
                     <div class="row">
                     <p class="contact-title-mockup">
                         Külasta meid
@@ -1337,59 +1343,36 @@
                         {{contactVisitRus.text}}
                     </p>-->
                     </div>
-                </div>
-                <div class="col-md-6" style="margin-top: 30px;">
-                    <div class="row">
-                        <p class="contact-title-mockup">
-                            Avatud
-                        </p>
-                        <p class="contact-title-mockup">
-                            Nädalapäevadel:
-                        </p>
-                        <input value="{{editWorkWeekTimeRus}}" type="text" ng-model="workWeekTimeRus" ng-initial/>
-                        <button class="timeBtn" ng-click="insertWorkWeekRus()"><i class="fa fa-check" aria-hidden="true"></i></button>
-                    </div>
-                    <div class="row">
-                        <p class="contact-title-mockup">
-                            Nädalavahetusel:
-                        </p>
-                        <input value="{{editWeekendTimeRus}}" type="text" ng-model="weekendTimeRus" ng-initial/>
-                        <button class="timeBtn" ng-click="insertWeekendRus()"><i class="fa fa-check" aria-hidden="true"></i></button>
-                    </div>
-                </div>
-                <!--Opening days-->
-                  <div class="col-md-6" >
-                    <div class="row">
-                        <p class="contact-title-mockup">
-                            Weekday hours:
-                        </p>
-                        <input value="{{editContactDaysRus}}" type="text" ng-model="contactDaysRus" ng-initial/>
-                        <button class="timeBtn" ng-click="insertContactDaysRus()"><i class="fa fa-check" aria-hidden="true"></i></button>
-                    </div>
-                    <div class="row">
-                        
-                        <p class="contact-title-mockup">
-                            Weekend hours:
-                        </p>
-                        <input value="{{editContactWeekendRus}}" type="text" ng-model="contactWeekendRus" ng-initial/>
-                        <button class="timeBtn" ng-click="insertContactWeekendRus()"><i class="fa fa-check" aria-hidden="true"></i></button>
-                    </div>
-                    <!--
-                    <p editable-text="contactVisitEng.text" class="contact-info-mockup">
-                        {{contactVisitEng.text}}
-                    </p>-->
-                </div>
-                <div class="col-md-6" style="margin-top: 30px;">
                     <div class="row">
                     <p class="contact-title-mockup">
                         Kirjuta meile
                     </p>
-                    <input value="{{editContactEmailRus}}" type="text" ng-model="contactEmailRus" ng-initial/>
-                    <button class="timeBtn" ng-click="insertContactEmailRus()"><i class="fa fa-check" aria-hidden="true"></i></button>
-                    <!--
+                        <input value="{{editContactEmailRus}}" type="text" ng-model="contactEmailRus" ng-initial/>
+                        <button class="timeBtn" ng-click="insertContactEmailRus()"><i class="fa fa-check" aria-hidden="true"></i></button>
+                        <!--
                     <p editable-text="contactEmailRus.text" class="contact-info-mockup">
                         {{contactEmailRus.text}}
                     </p>-->
+                    </div>
+                    <!--
+                    <p editable-text="contactVisitRu.text" class="contact-info-mockup">
+                        {{contactVisitRu.text}}
+                    </p>-->
+                </div>
+                <div class="col-md-6" style="margin-bottom: 30px">
+                    <div class="row">
+                        <p class="contact-title-mockup">
+                            Nädalavahetus:
+                        </p>
+                        <input value="{{editWeekendTimeRus}}" type="text" ng-model="weekendTimeRus" ng-initial/>
+                        <button class="timeBtn" ng-click="insertWeekendRus()"><i class="fa fa-check" aria-hidden="true"></i></button>
+                    </div>
+                    <div class="row">
+                        <p class="contact-title-mockup">
+                            Kell:
+                        </p>
+                        <input value="{{editContactWeekendRus}}" type="text" ng-model="contactWeekendRus" ng-initial/>
+                        <button class="timeBtn" ng-click="insertContactWeekendRus()"><i class="fa fa-check" aria-hidden="true"></i></button>
                     </div>
                 </div>
         </div>
