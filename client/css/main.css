@@ -236,6 +236,7 @@ ul.nav > li > a:visited{
     margin-top: 20px;
     cursor: default;
 }
+
 #mockup-logo{
     height: 32px;
     position: absolute;
@@ -415,7 +416,6 @@ a.editable-click{
        margin-bottom: -8rem;
     } 
 }
-
 
 .worker-img-holder{
     height: 350px;
@@ -892,6 +892,7 @@ th{
     background-repeat: no-repeat;
     display: block;
     /*width: 100%;*/
+    cursor: pointer;
 }
 .menu-pic-second-mockup{
     width: 100%;
