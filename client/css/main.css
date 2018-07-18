@@ -235,6 +235,7 @@ ul.nav > li > a:visited{
     height: 60px;
     margin-top: 20px;
     cursor: default;
+    
 }
 #mockup-logo{
     height: 32px;
@@ -356,71 +357,12 @@ a.editable-click{
     cursor: default;
     
 }
-@media only screen and (max-width: 1024px) {
-  
-.mobilelogo{
-        margin-left: -25rem;   
-    }
-}
-@media only screen and (min-width: 320px) and (max-width: 1024px) {
-  
-.mobilelogo{
-    display:inline-flex;
-    
-    margin-right: 13rem;
-    margin-bottom: -20rem;   
-    }
-}
-@media only screen and (min-width: 1720px) {
-  
-.mobilelogo{
-        margin-left: 25rem;
-        
-    }
-}
-@media only screen and (device-width: 768px) and (device-height: 1024px) and (orientation:portrait) {
-  .mobilelogo { 
-       display:inline-flex;
-       margin-left: -45em;
-       margin-top: 4em;
-    } /* css rules for ipad portrait mode */
-}
-@media only screen and (device-width: 480px) and (device-height: 854px) and (orientation:portrait) {
-    .mobilelogo { 
-         display:inline-flex;
-         margin-left: -35em;
-         margin-top: 4em;
-      } 
-  }
-  @media only screen and (device-width: 600px) and (device-height: 1024px) and (orientation:portrait) {
-    .mobilelogo { 
-        display:inline-flex;
-        margin-left: -39em;
-        margin-top: 4em;
-      } 
-  }
-
-@media only screen and (min-device-width : 800px) and (max-device-width: 1280px) {
-    .mobilelogo { 
-       display:inline-flex;
-       margin-left: -46em;
-       margin-top: 3em;
-    } 
-}
-
-@media only screen and (min-device-width : 950px) and (max-device-width: 1280px) {
-    .mobilelogo { 
-       display:block;
-       margin-left: -13.5em;
-       margin-bottom: -8rem;
-    } 
-}
-
 
 .worker-img-holder{
     height: 350px;
     background-size: cover;
     background-repeat: no-repeat;
+    
 }
 .worker-name{
     font-family: spaceMono-Bold;
@@ -602,6 +544,8 @@ th{
     padding-left: -10px;
     margin-right: 20px;
     cursor: default;
+    width: 65px;
+    margin-top: 10%;
 }
 .menu-description{
     margin-left: 50px;
@@ -1430,13 +1374,74 @@ ul.drink-menu-tabs li:hover {
     .navbar-landing{
         display: none;
     }
-
     .tasting-menu-btn{
         margin-top: 30px;
         width: inherit;
     }
 }
-@media screen and (max-width: 768px){
+.mobilelogo{
+    margin-left: -1rem;
+    margin-bottom: -1rem;
+}
+@media screen and (min-width: 320px) and (max-width: 768px){
+    .mobilelogo{
+        width: inherit;
+        margin-left: -25rem;
+    }
+}
+@media screen and (min-width: 769px)and (max-width: 800px) {
+    .mobilelogo{
+        width: inherit;
+        margin-left: -25rem;
+        margin-bottom: -1rem; 
+    }
+    #logo{
+        display: block;
+    } 
+}
+@media screen and (min-width: 801px)and (max-width: 1366px) {
+    .mobilelogo{
+        width: inherit;
+        margin-left: -25rem;
+        margin-bottom: -1rem; 
+    }
+    #logo{
+        display: block;
+        margin-left: 8rem;
+    }
+}
+@media screen and (min-width: 1440px)and (max-width: 1599px) {
+    .mobilelogo{
+        width: inherit;
+        margin-left: -13rem;
+        margin-bottom: -1rem;
+    }
+    #logo{
+        margin-left: 8rem; 
+    }
+}
+@media screen and (min-width: 1600px)and (max-width: 1680px) {
+    .mobilelogo{
+        width: inherit;
+        margin-left: -5rem;
+        margin-bottom: -1rem;  
+    }
+    #logo{
+        margin-left: 8rem;  
+    }
+}
+@media screen and (min-width: 1920px) {
+    .mobilelogo{
+        width: inherit;
+        margin-left: 10rem;
+        margin-bottom: -1rem;  
+    }
+    #logo{
+        display: block;
+        margin-left: 8rem;  
+    }
+}
+
     .mapPicture{
         background-size: contain !important;
         height: 250px;
