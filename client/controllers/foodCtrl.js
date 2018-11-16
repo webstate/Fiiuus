@@ -17,4 +17,9 @@ foodCtrl.controller('foodCtrl', function($scope, foodService){
     }, function(err){
         console.log(err);
     })
+    foodService.getKids().then(function(data){
+        $scope.kids = data;
+    }, function(err){
+        console.log(err);
+    })
 })
