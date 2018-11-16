@@ -881,6 +881,14 @@ router.get('/food/dessert', function(req, res){
         res.json(foods);
     })
 })
+router.get('/food/kids', function(req, res){
+    Food.find({
+        course: "Lastemenüü"
+    }, function(err, foods){
+        if(err) res.send(err);
+        res.json(foods);
+    })
+})
 router.post('/food/add', function(req, res){
     Food.create({
         name: req.body.name,
