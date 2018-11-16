@@ -591,6 +591,9 @@ th{
     background: white;
     margin-top: 100px;
 }
+.kids {
+    margin-top: 15px;
+}
 .menu-price{
     font-size: 18px;
     padding-left: -10px;
@@ -1086,10 +1089,10 @@ textarea:focus, input:focus{
 
 }
 
--/*.dropdown:hover .dropdown-content {
--    visibility: visible;
--    opacity: 1;
--}*/
+/*.dropdown:hover .dropdown-content {
+    visibility: visible;
+    opacity: 1;
+}*/
 
 .dropdown-content:hover {
     display: block;
@@ -1312,9 +1315,9 @@ datepicker._720kb-datepicker-calendar-body {
     background: hsla(0, 50%, 80%, 1);
 }
 
-.feedback-btn: focus,
-.feedback-btn: active,
-.feedback-btn: visited{
+.feedback-btn:focus,
+.feedback-btn:active,
+.feedback-btn:visited {
     outline:0 !important;
 }
 .newMargin{
