@@ -74,7 +74,7 @@ myApp.config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
       url:'/register',
       templateUrl: 'partials/register.html',
       controller: 'registerController',
-      access: {restricted: true}
+      access: {restricted: false} /* NB */
     })
     .state('admin', {
         url: '/admin',
