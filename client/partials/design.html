@@ -1,4 +1,3 @@
-
 <div class="container">
     <ul style="list-style:none; text-align: center; width: 400px;margin: 0 auto; margin-top: 50px;">
         <li style="cursor:pointer;float:left; font-family: spaceMono; margin-left: 20px;font-size: 24px;">
@@ -43,11 +42,12 @@
                     </li>
                 </ul>
             </div>
-            <input class="bannerTextField" value="{{editBannerTitleEst}}" type="text" ng-model="bannerTitleEst" ng-initial/>
+            <input class="bannerTextField" value="{{editBannerTitleEst}}" type="text" ng-model="bannerTitleEst"
+                ng-initial />
             <button class="Btn" ng-click="insertBannerTitleEst()"><i class="fa fa-check" aria-hidden="true"></i></button>
         </div>
         <div class="banner-mockup-shadow">
-            <input type="file" name="file" id="file" class="inputfile" onchange="angular.element(this).scope().filesChanged(this)"/>
+            <input type="file" name="file" id="file" class="inputfile" onchange="angular.element(this).scope().filesChanged(this)" />
             <label style="margin-top: 260px;margin-left: 40px;" for="file"><i class="fa fa-pencil" aria-hidden="true"></i></label>
         </div>
         <div class="worker-area-mockup">
@@ -58,7 +58,8 @@
             </div>
             <div class="row" style="margin-top: 30px;">
                 <div class="col-md-6">
-                    <textarea class="TextArea" value="{{editWorkerTitle}}" type="text" ng-model="workerTitle" ng-initial msd-elastic></textarea>
+                    <textarea class="TextArea" value="{{editWorkerTitle}}" type="text" ng-model="workerTitle"
+                        ng-initial msd-elastic></textarea>
                     <button class="Btn" ng-click="insertWorkerTitle()"><i class="fa fa-check" aria-hidden="true"></i></button>
                     <!-- <p editable-text="workerTitle.title" class="worker-section-title-mockup">
                         {{workerTitle.title}}
@@ -66,7 +67,8 @@
                     -->
                 </div>
                 <div class="col-md-6">
-                    <textarea class="TextArea" value="{{editWorkerText}}" type="text" ng-model="workerText" ng-initial msd-elastic></textarea>
+                    <textarea class="TextArea" value="{{editWorkerText}}" type="text" ng-model="workerText" ng-initial
+                        msd-elastic></textarea>
                     <button class="Btn" ng-click="insertWorkerText()"><i class="fa fa-check" aria-hidden="true"></i></button>
                     <!-- <p editable-text="worker.text" class="worker-section-text-mockup" style="margin-left: 20px;">
                         {{worker.text}}
@@ -105,7 +107,8 @@
         </div>
         <div class="row" style="margin-top: 30px;">
             <div class="col-md-6">
-                <textarea class="TextArea" value="{{editMenuTitle}}" type="text" ng-model="menuTitle" ng-initial msd-elastic></textarea>
+                <textarea class="TextArea" value="{{editMenuTitle}}" type="text" ng-model="menuTitle" ng-initial
+                    msd-elastic></textarea>
                 <button class="Btn" ng-click="insertMenuTitle()"><i class="fa fa-check" aria-hidden="true"></i></button>
                 <!-- <p editable-text="menuTitle.title" class="menu-section-title-mockup">
                     {{menuTitle.title}}
@@ -113,7 +116,8 @@
                 -->
             </div>
             <div class="col-md-6" style="margin-bottom: 50px;">
-                <textarea class="TextArea" value="{{editMenuText}}" type="text" ng-model="menuText" ng-initial msd-elastic></textarea>
+                <textarea class="TextArea" value="{{editMenuText}}" type="text" ng-model="menuText" ng-initial
+                    msd-elastic></textarea>
                 <button class="Btn" ng-click="insertMenuText()"><i class="fa fa-check" aria-hidden="true"></i></button>
                 <!--
                 <p editable-text="menuText.text" class="menu-section-text-mockup" style="margin-left: 20px;">
@@ -125,30 +129,32 @@
         <div class="col-md-6" style="margin-top: 50px;">
             <div class="menu-mockup">
                 <p class="menu-course-mockup">
-                    <div class="col-md-6" >
-                    <div class="row">
-                        
-                        <input value="{{editCourseTitleStarter}}" type="text" ng-model="courseTitleStarter" ng-initial/>
-                        <button class="timeBtn" ng-click="insertCourseTitleStarter()"><i class="fa fa-check" aria-hidden="true"></i></button>
+                    <div class="col-md-6">
+                        <div class="row">
 
-                        <!-- <p editable-text="contactVisitEst.text" class="contact-info-mockup">
+                            <input value="{{editCourseTitleStarter}}" type="text" ng-model="courseTitleStarter"
+                                ng-initial />
+                            <button class="timeBtn" ng-click="insertCourseTitleStarter()"><i class="fa fa-check"
+                                    aria-hidden="true"></i></button>
+
+                            <!-- <p editable-text="contactVisitEst.text" class="contact-info-mockup">
                             {{contactVisitEst.text}}
                         </p>
                         -->
+                        </div>
                     </div>
-                </div>
-                
-                <div class="menu-title-mockup"></div>
-                <div class="menu-desc-mockup"></div>
 
-                <div class="menu-title-mockup"></div>
-                <div class="menu-desc-mockup"></div>
+                    <div class="menu-title-mockup"></div>
+                    <div class="menu-desc-mockup"></div>
 
-                <div class="menu-title-mockup"></div>
-                <div class="menu-desc-mockup"></div>
+                    <div class="menu-title-mockup"></div>
+                    <div class="menu-desc-mockup"></div>
+
+                    <div class="menu-title-mockup"></div>
+                    <div class="menu-desc-mockup"></div>
             </div>
             <div class="menu-pic-second-mockup" style="background-image: url({{secondPicturePath}})">
-                <input type="file" name="file2" id="file2"class="inputfile" onchange="angular.element(this).scope().menuPicChanged(this, 'second')"/>
+                <input type="file" name="file2" id="file2" class="inputfile" onchange="angular.element(this).scope().menuPicChanged(this, 'second')" />
                 <label style="margin-top: 115px;margin-left: 10px;" for="file2"><i class="fa fa-pencil" aria-hidden="true"></i></label>
             </div>
             <div class="menu-mockup" style="margin-top: 15px;">
@@ -164,17 +170,30 @@
                 <div class="menu-title-mockup"></div>
                 <div class="menu-desc-mockup"></div>
             </div>
+            <div class="menu-mockup" style="margin-top: 15px;">
+                <p class="menu-course-mockup">
+                    LASTEMENÜÜ
+                </p>
+                <div class="menu-title-mockup"></div>
+                <div class="menu-desc-mockup"></div>
+
+                <div class="menu-title-mockup"></div>
+                <div class="menu-desc-mockup"></div>
+
+                <div class="menu-title-mockup"></div>
+                <div class="menu-desc-mockup"></div>
+            </div>
         </div>
         <div class="col-md-6">
             <div class="menu-pic-first-mockup" style="background-image:url({{firstPicturePath}}); margin-top: 100px;">
-                <input type="file" name="file2" id="file1"class="inputfile" onchange="angular.element(this).scope().menuPicChanged(this, 'first')"/>
+                <input type="file" name="file2" id="file1" class="inputfile" onchange="angular.element(this).scope().menuPicChanged(this, 'first')" />
                 <label style="margin-top: 115px;margin-left: 10px;" for="file1"><i class="fa fa-pencil" aria-hidden="true"></i></label>
             </div>
             <div class="menu-mockup" style="margin-top: 15px;">
-                <div class="col-md-6" >
+                <div class="col-md-6">
                     <div class="row">
-                        
-                        <input value="{{editCourseTitleMain}}" type="text" ng-model="courseTitleMain" ng-initial/>
+
+                        <input value="{{editCourseTitleMain}}" type="text" ng-model="courseTitleMain" ng-initial />
                         <button class="timeBtn" ng-click="insertCourseTitleMain()"><i class="fa fa-check" aria-hidden="true"></i></button>
 
                         <!-- <p editable-text="contactVisitEst.text" class="contact-info-mockup">
@@ -193,11 +212,12 @@
                 <div class="menu-desc-mockup"></div>
             </div>
             <div class="menu-mockup" style="margin-top: 15px;">
-                <div class="col-md-6" >
+                <div class="col-md-6">
                     <div class="row">
-                        
-                        <input value="{{editCourseTitleDessert}}" type="text" ng-model="courseTitleDessert" ng-initial/>
-                        <button class="timeBtn" ng-click="insertCourseTitleDessert()"><i class="fa fa-check" aria-hidden="true"></i></button>
+
+                        <input value="{{editCourseTitleDessert}}" type="text" ng-model="courseTitleDessert" ng-initial />
+                        <button class="timeBtn" ng-click="insertCourseTitleDessert()"><i class="fa fa-check"
+                                aria-hidden="true"></i></button>
 
                         <!-- <p editable-text="contactVisitEst.text" class="contact-info-mockup">
                             {{contactVisitEst.text}}
@@ -215,7 +235,7 @@
                 <div class="menu-desc-mockup"></div>
             </div>
             <div class="menu-pic-third-mockup" style="background-image:url({{thirdPicturePath}});">
-                <input type="file" name="file2" id="file3"class="inputfile" onchange="angular.element(this).scope().menuPicChanged(this, 'third')"/>
+                <input type="file" name="file2" id="file3" class="inputfile" onchange="angular.element(this).scope().menuPicChanged(this, 'third')" />
                 <label style="margin-top: 115px;margin-left: 10px;" for="file3"><i class="fa fa-pencil" aria-hidden="true"></i></label>
             </div>
         </div>
@@ -226,15 +246,24 @@
                 </div>
             </div>
             <div class="col-md-6" style="margin-top: 50px">
-                <textarea class="TextArea" value="{{editTastingText}}" type="text" ng-model="tastingText" ng-initial msd-elastic></textarea>
+                <textarea class="TextArea" value="{{editTastingText}}" type="text" ng-model="tastingText" ng-initial
+                    msd-elastic></textarea>
                 <button class="Btn" ng-click="insertTastingText()"><i class="fa fa-check" aria-hidden="true"></i></button>
                 <!--
                 <p editable-text="tastingText.text" class="menu-section-text-mockup" style="margin-left: 20px;">
                     {{tastingText.text}}
                 </p>-->
             </div>
+
+            <!-- GroupMenu Button -->
             <div class="col-md-6" style="margin-top: 40px;">
-                <div class="tasting-menu-btn-mockup"></div>
+                <div class="tasting-menu-btn-mockup">
+                    <input class="buttonTextField" value="{{editGroupMenuButtonEst}}" type="text" ng-model="groupMenuButtonEst"
+                        ng-initial />
+                    <button class="Btn" ng-click="insertGroupMenuButtonEst()">
+                        <i class="fa fa-check" aria-hidden="true"></i>
+                    </button>
+                </div>
             </div>
         </div>
     </div>
@@ -260,8 +289,9 @@
             </div>
             <div class="col-md-6">
                 <div class="event-pic-mockup" style="background-image:url({{eventPicturePathEst}});">
-                    <input type="file" name="file2" id="fileEst" class="inputfile" onchange="angular.element(this).scope().menuPicChanged(this, 'eventEst')"/>
-                    <label style="margin-top: 185px;margin-left: 10px;" for="fileEst"><i class="fa fa-pencil" aria-hidden="true"></i></label>
+                    <input type="file" name="file2" id="fileEst" class="inputfile" onchange="angular.element(this).scope().menuPicChanged(this, 'eventEst')" />
+                    <label style="margin-top: 185px;margin-left: 10px;" for="fileEst"><i class="fa fa-pencil"
+                            aria-hidden="true"></i></label>
                 </div>
             </div>
         </div>
@@ -279,7 +309,7 @@
         <div class="row">
             <div class="col-md-6" style="padding: 0; margin-top: 50px;">
                 <div class="map-picture" style="background-image: url({{mapPicturePath}})">
-                    <input type="file" name="file2" id="file5"class="inputfile" onchange="angular.element(this).scope().mapPicChanged(this, 'map')"/>
+                    <input type="file" name="file2" id="file5" class="inputfile" onchange="angular.element(this).scope().mapPicChanged(this, 'map')" />
                     <label style="margin-top: 135px;margin-left: 10px;" for="file5"><i class="fa fa-pencil" aria-hidden="true"></i></label>
                 </div>
             </div>
@@ -287,85 +317,85 @@
                 <div class="map-mockup"></div>
             </div>
         </div>
-                <div class="row" style="margin-top: 50px;margin-bottom: 100px;">
-               <div class="col-md-6" >
-                   <div class="row">
-                        
-                        <p class="contact-title-mockup">
-                            Argipäevad:
-                        </p>
-                         <input value="{{editWorkWeekTime}}" type="text" ng-model="workWeekTime" ng-initial/>
-                        <button class="timeBtn" ng-click="insertWorkWeek()"><i class="fa fa-check" aria-hidden="true"></i></button>
-                    </div>
+        <div class="row" style="margin-top: 50px;margin-bottom: 100px;">
+            <div class="col-md-6">
+                <div class="row">
+
+                    <p class="contact-title-mockup">
+                        Argipäevad:
+                    </p>
+                    <input value="{{editWorkWeekTime}}" type="text" ng-model="workWeekTime" ng-initial />
+                    <button class="timeBtn" ng-click="insertWorkWeek()"><i class="fa fa-check" aria-hidden="true"></i></button>
                 </div>
-                <div class="col-md-6">
-                    <div class="row">
+            </div>
+            <div class="col-md-6">
+                <div class="row">
                     <p class="contact-title-mockup">
                         Helista meile
                     </p>
-                    <input value="{{editContactCallEst}}" type="text" ng-model="contactCallEst" ng-initial/>
+                    <input value="{{editContactCallEst}}" type="text" ng-model="contactCallEst" ng-initial />
                     <button class="timeBtn" ng-click="insertContactCallEst()"><i class="fa fa-check" aria-hidden="true"></i></button>
                     <!--
                     <p editable-text="contactCallEst.text" class="contact-info-mockup">
                         {{contactCallEst.text}}
                     </p>-->
-                    </div>
                 </div>
-                <div class="col-md-6" >
-                  <div class="row">
-                       
-                        <p class="contact-title-mockup">
-                            Kell:
-                        </p>
-                        <input value="{{editContactDays}}" type="text" ng-model="contactDays" ng-initial/>
-                        <button class="timeBtn" ng-click="insertContactDays()"><i class="fa fa-check" aria-hidden="true"></i></button>
-                    </div> 
+            </div>
+            <div class="col-md-6">
+                <div class="row">
+
+                    <p class="contact-title-mockup">
+                        Kell:
+                    </p>
+                    <input value="{{editContactDays}}" type="text" ng-model="contactDays" ng-initial />
+                    <button class="timeBtn" ng-click="insertContactDays()"><i class="fa fa-check" aria-hidden="true"></i></button>
                 </div>
-                <!--Opening days-->
-                  <div class="col-md-6" >
-                    <div class="row">
+            </div>
+            <!--Opening days-->
+            <div class="col-md-6">
+                <div class="row">
                     <p class="contact-title-mockup">
                         Külasta meid
                     </p>
-                    <input value="{{editContactVisitEst}}" type="text" ng-model="contactVisitEst" ng-initial/>
+                    <input value="{{editContactVisitEst}}" type="text" ng-model="contactVisitEst" ng-initial />
                     <button class="timeBtn" ng-click="insertContactVisitEst()"><i class="fa fa-check" aria-hidden="true"></i></button>
                     <!--
                     <p editable-text="contactVisitEst.text" class="contact-info-mockup">
                         {{contactVisitEst.text}}
                     </p>-->
-                    </div>
-                    <div class="row">
+                </div>
+                <div class="row">
                     <p class="contact-title-mockup">
                         Kirjuta meile
                     </p>
-                        <input value="{{editContactEmailEst}}" type="text" ng-model="contactEmailEst" ng-initial/>
-                        <button class="timeBtn" ng-click="insertContactEmailEst()"><i class="fa fa-check" aria-hidden="true"></i></button>
-                        <!--
+                    <input value="{{editContactEmailEst}}" type="text" ng-model="contactEmailEst" ng-initial />
+                    <button class="timeBtn" ng-click="insertContactEmailEst()"><i class="fa fa-check" aria-hidden="true"></i></button>
+                    <!--
                     <p editable-text="contactEmailEst.text" class="contact-info-mockup">
                         {{contactEmailFin.text}}
                     </p>-->
-                    </div>
-                    <!--
+                </div>
+                <!--
                     <p editable-text="contactVisitEst.text" class="contact-info-mockup">
                         {{contactVisitFin.text}}
                     </p>-->
+            </div>
+            <div class="col-md-6" style="margin-bottom: 30px">
+                <div class="row">
+                    <p class="contact-title-mockup">
+                        Nädalavahetus:
+                    </p>
+                    <input value="{{editWeekendTime}}" type="text" ng-model="weekendTime" ng-initial />
+                    <button class="timeBtn" ng-click="insertWeekend()"><i class="fa fa-check" aria-hidden="true"></i></button>
                 </div>
-                <div class="col-md-6" style="margin-bottom: 30px">
-                    <div class="row">
-                        <p class="contact-title-mockup">
-                            Nädalavahetus:
-                        </p>
-                        <input value="{{editWeekendTime}}" type="text" ng-model="weekendTime" ng-initial/>
-                        <button class="timeBtn" ng-click="insertWeekend()"><i class="fa fa-check" aria-hidden="true"></i></button>
-                    </div>
-                    <div class="row">
-                        <p class="contact-title-mockup">
-                            Kell:
-                        </p>
-                        <input value="{{editContactWeekend}}" type="text" ng-model="contactWeekend" ng-initial/>
-                        <button class="timeBtn" ng-click="insertContactWeekend()"><i class="fa fa-check" aria-hidden="true"></i></button>
-                    </div>
+                <div class="row">
+                    <p class="contact-title-mockup">
+                        Kell:
+                    </p>
+                    <input value="{{editContactWeekend}}" type="text" ng-model="contactWeekend" ng-initial />
+                    <button class="timeBtn" ng-click="insertContactWeekend()"><i class="fa fa-check" aria-hidden="true"></i></button>
                 </div>
+            </div>
         </div>
     </div>
 </div>
@@ -389,11 +419,12 @@
                     </li>
                 </ul>
             </div>
-            <input class="bannerTextField" value="{{editBannerTitleEng}}" type="text" ng-model="bannerTitleEng" ng-initial/>
+            <input class="bannerTextField" value="{{editBannerTitleEng}}" type="text" ng-model="bannerTitleEng"
+                ng-initial />
             <button class="Btn" ng-click="insertBannerTitleEng()"><i class="fa fa-check" aria-hidden="true"></i></button>
         </div>
         <div class="banner-mockup-shadow">
-            <input type="file" name="file" id="file" class="inputfile" onchange="angular.element(this).scope().filesChanged(this)"/>
+            <input type="file" name="file" id="file" class="inputfile" onchange="angular.element(this).scope().filesChanged(this)" />
             <label style="margin-top: 260px;margin-left: 40px;" for="file"><i class="fa fa-pencil" aria-hidden="true"></i></label>
         </div>
         <div class="worker-area-mockup">
@@ -404,7 +435,8 @@
             </div>
             <div class="row" style="margin-top: 30px;">
                 <div class="col-md-6">
-                    <textarea class="TextArea" value="{{editWorkerTitleEng}}" type="text" ng-model="workerTitleEng" ng-initial msd-elastic></textarea>
+                    <textarea class="TextArea" value="{{editWorkerTitleEng}}" type="text" ng-model="workerTitleEng"
+                        ng-initial msd-elastic></textarea>
                     <button class="Btn" ng-click="insertWorkerTitleEng()"><i class="fa fa-check" aria-hidden="true"></i></button>
                     <!--
                     <p editable-text="workerTitleEng.title" class="worker-section-title-mockup">
@@ -412,7 +444,8 @@
                     </p>-->
                 </div>
                 <div class="col-md-6">
-                    <textarea class="TextArea" value="{{editWorkerTextEng}}" type="text" ng-model="workerTextEng" ng-initial msd-elastic></textarea>
+                    <textarea class="TextArea" value="{{editWorkerTextEng}}" type="text" ng-model="workerTextEng"
+                        ng-initial msd-elastic></textarea>
                     <button class="Btn" ng-click="insertWorkerTextEng()"><i class="fa fa-check" aria-hidden="true"></i></button>
                     <!--
                     <p editable-text="workerEng.text" class="worker-section-text-mockup" style="margin-left: 20px;">
@@ -452,7 +485,8 @@
         </div>
         <div class="row" style="margin-top: 30px;">
             <div class="col-md-6">
-                <textarea class="TextArea" value="{{editMenuTitleEng}}" type="text" ng-model="menuTitleEng" ng-initial msd-elastic></textarea>
+                <textarea class="TextArea" value="{{editMenuTitleEng}}" type="text" ng-model="menuTitleEng" ng-initial
+                    msd-elastic></textarea>
                 <button class="Btn" ng-click="insertMenuTitleEng()"><i class="fa fa-check" aria-hidden="true"></i></button>
                 <!--
                 <p editable-text="menuTitleEng.title" class="menu-section-title-mockup">
@@ -460,30 +494,33 @@
                 </p>-->
             </div>
             <div class="col-md-6" style="margin-bottom: 50px;">
-                <textarea class="TextArea" value="{{editMenuTextEng}}" type="text" ng-model="menuTextEng" ng-initial msd-elastic></textarea>
+                <textarea class="TextArea" value="{{editMenuTextEng}}" type="text" ng-model="menuTextEng" ng-initial
+                    msd-elastic></textarea>
                 <button class="Btn" ng-click="insertMenuTextEng()"><i class="fa fa-check" aria-hidden="true"></i></button>
                 <!--
                 <p editable-text="menuTextEng.text" class="menu-section-text-mockup" style="margin-left: 20px;">
                     {{menuTextEng.text}}
                 </p>-->
             </div>
-            
+
         </div>
         <div class="col-md-6" style="margin-top: 50px;">
             <div class="menu-mockup">
                 <div class="menu-course-mockup">
-                    <div class="col-md-6" >
-                    <div class="row">
-                        
-                        <input value="{{editCourseTitleStarterEng}}" type="text" ng-model="courseTitleStarterEng" ng-initial/>
-                        <button class="timeBtn" ng-click="insertCourseTitleStarterEng()"><i class="fa fa-check" aria-hidden="true"></i></button>
+                    <div class="col-md-6">
+                        <div class="row">
 
-                        <!-- <p editable-text="contactVisitEst.text" class="contact-info-mockup">
+                            <input value="{{editCourseTitleStarterEng}}" type="text" ng-model="courseTitleStarterEng"
+                                ng-initial />
+                            <button class="timeBtn" ng-click="insertCourseTitleStarterEng()"><i class="fa fa-check"
+                                    aria-hidden="true"></i></button>
+
+                            <!-- <p editable-text="contactVisitEst.text" class="contact-info-mockup">
                             {{contactVisitEst.text}}
                         </p>
                         -->
+                        </div>
                     </div>
-                </div>
                 </div>
                 <div class="menu-title-mockup"></div>
                 <div class="menu-desc-mockup"></div>
@@ -495,7 +532,7 @@
                 <div class="menu-desc-mockup"></div>
             </div>
             <div class="menu-pic-second-mockup" style="background-image: url({{secondPicturePath}})">
-                <input type="file" name="file2" id="file2"class="inputfile" onchange="angular.element(this).scope().menuPicChanged(this, 'second')"/>
+                <input type="file" name="file2" id="file2" class="inputfile" onchange="angular.element(this).scope().menuPicChanged(this, 'second')" />
                 <label style="margin-top: 115px;margin-left: 10px;" for="file2"><i class="fa fa-pencil" aria-hidden="true"></i></label>
             </div>
             <div class="menu-mockup" style="margin-top: 15px;">
@@ -511,42 +548,59 @@
                 <div class="menu-title-mockup"></div>
                 <div class="menu-desc-mockup"></div>
             </div>
+            <div class="menu-mockup" style="margin-top: 15px;">
+                <p class="menu-course-mockup">
+                    KIDS
+                </p>
+                <div class="menu-title-mockup"></div>
+                <div class="menu-desc-mockup"></div>
+
+                <div class="menu-title-mockup"></div>
+                <div class="menu-desc-mockup"></div>
+
+                <div class="menu-title-mockup"></div>
+                <div class="menu-desc-mockup"></div>
+            </div>
         </div>
         <div class="col-md-6">
             <div class="menu-pic-first-mockup" style="background-image:url({{firstPicturePath}}); margin-top: 100px;">
-                <input type="file" name="file2" id="file1"class="inputfile" onchange="angular.element(this).scope().menuPicChanged(this, 'first')"/>
+                <input type="file" name="file2" id="file1" class="inputfile" onchange="angular.element(this).scope().menuPicChanged(this, 'first')" />
                 <label style="margin-top: 115px;margin-left: 10px;" for="file1"><i class="fa fa-pencil" aria-hidden="true"></i></label>
             </div>
             <div class="menu-mockup" style="margin-top: 15px;">
                 <p class="menu-course-mockup">
-                    <div class="col-md-6" >
-                    <div class="row">
-                        
-                        <input value="{{editCourseTitleMainEng}}" type="text" ng-model="courseTitleMainEng" ng-initial/>
-                        <button class="timeBtn" ng-click="insertCourseTitleMainEng()"><i class="fa fa-check" aria-hidden="true"></i></button>
+                    <div class="col-md-6">
+                        <div class="row">
 
-                        <!-- <p editable-text="contactVisitEst.text" class="contact-info-mockup">
+                            <input value="{{editCourseTitleMainEng}}" type="text" ng-model="courseTitleMainEng"
+                                ng-initial />
+                            <button class="timeBtn" ng-click="insertCourseTitleMainEng()"><i class="fa fa-check"
+                                    aria-hidden="true"></i></button>
+
+                            <!-- <p editable-text="contactVisitEst.text" class="contact-info-mockup">
                             {{contactVisitEst.text}}
                         </p>
                         -->
+                        </div>
                     </div>
-                </div>
-                
-                <div class="menu-title-mockup"></div>
-                <div class="menu-desc-mockup"></div>
 
-                <div class="menu-title-mockup"></div>
-                <div class="menu-desc-mockup"></div>
+                    <div class="menu-title-mockup"></div>
+                    <div class="menu-desc-mockup"></div>
 
-                <div class="menu-title-mockup"></div>
-                <div class="menu-desc-mockup"></div>
+                    <div class="menu-title-mockup"></div>
+                    <div class="menu-desc-mockup"></div>
+
+                    <div class="menu-title-mockup"></div>
+                    <div class="menu-desc-mockup"></div>
             </div>
             <div class="menu-mockup" style="margin-top: 15px;">
-                <div class="col-md-6" >
+                <div class="col-md-6">
                     <div class="row">
-                        
-                        <input value="{{editCourseTitleDessertEng}}" type="text" ng-model="courseTitleDessertEng" ng-initial/>
-                        <button class="timeBtn" ng-click="insertCourseTitleDessertEng()"><i class="fa fa-check" aria-hidden="true"></i></button>
+
+                        <input value="{{editCourseTitleDessertEng}}" type="text" ng-model="courseTitleDessertEng"
+                            ng-initial />
+                        <button class="timeBtn" ng-click="insertCourseTitleDessertEng()"><i class="fa fa-check"
+                                aria-hidden="true"></i></button>
 
                         <!-- <p editable-text="contactVisitEst.text" class="contact-info-mockup">
                             {{contactVisitEst.text}}
@@ -564,7 +618,7 @@
                 <div class="menu-desc-mockup"></div>
             </div>
             <div class="menu-pic-third-mockup" style="background-image:url({{thirdPicturePath}});">
-                <input type="file" name="file2" id="file3"class="inputfile" onchange="angular.element(this).scope().menuPicChanged(this, 'third')"/>
+                <input type="file" name="file2" id="file3" class="inputfile" onchange="angular.element(this).scope().menuPicChanged(this, 'third')" />
                 <label style="margin-top: 115px;margin-left: 10px;" for="file3"><i class="fa fa-pencil" aria-hidden="true"></i></label>
             </div>
         </div>
@@ -575,15 +629,24 @@
                 </div>
             </div>
             <div class="col-md-6" style="margin-top: 50px">
-                <textarea class="TextArea" value="{{editTastingTextEng}}" type="text" ng-model="tastingTextEng" ng-initial msd-elastic></textarea>
+                <textarea class="TextArea" value="{{editTastingTextEng}}" type="text" ng-model="tastingTextEng"
+                    ng-initial msd-elastic></textarea>
                 <button class="Btn" ng-click="insertTastingTextEng()"><i class="fa fa-check" aria-hidden="true"></i></button>
                 <!--
                 <p editable-text="tastingTextEng.text" class="menu-section-text-mockup" style="margin-left: 20px;">
                     {{tastingTextEng.text}}
                 </p>-->
             </div>
+
+            <!-- GroupMenu Button -->
             <div class="col-md-6" style="margin-top: 40px;">
-                <div class="tasting-menu-btn-mockup"></div>
+                <div class="tasting-menu-btn-mockup">
+                    <input class="buttonTextField" value="{{editGroupMenuButtonEng}}" type="text" ng-model="groupMenuButtonEng"
+                        ng-initial />
+                    <button class="Btn" ng-click="insertGroupMenuButtonEng()">
+                        <i class="fa fa-check" aria-hidden="true"></i>
+                    </button>
+                </div>
             </div>
         </div>
     </div>
@@ -595,7 +658,7 @@
         </div>
         <div class="row" style="margin-top: 50px;">
             <div class="col-md-6">
-                <input class="TextField" value="{{editEventTitleEng}}" type="text" ng-model="eventTitleEng" ng-initial/>
+                <input class="TextField" value="{{editEventTitleEng}}" type="text" ng-model="eventTitleEng" ng-initial />
                 <button class="Btn" ng-click="insertEventTitleEng()"><i class="fa fa-check" aria-hidden="true"></i></button>
                 <!--
                 <p editable-text="eventTitleEng.title" class="event-section-title-mockup">
@@ -609,8 +672,9 @@
             </div>
             <div class="col-md-6">
                 <div class="event-pic-mockup" style="background-image:url({{eventPicturePathEng}});">
-                    <input type="file" name="file2" id="fileEng"class="inputfile" onchange="angular.element(this).scope().menuPicChanged(this, 'eventEng')"/>
-                    <label style="margin-top: 185px;margin-left: 10px;" for="fileEng"><i class="fa fa-pencil" aria-hidden="true"></i></label>
+                    <input type="file" name="file2" id="fileEng" class="inputfile" onchange="angular.element(this).scope().menuPicChanged(this, 'eventEng')" />
+                    <label style="margin-top: 185px;margin-left: 10px;" for="fileEng"><i class="fa fa-pencil"
+                            aria-hidden="true"></i></label>
                 </div>
             </div>
         </div>
@@ -628,7 +692,7 @@
         <div class="row">
             <div class="col-md-6" style="padding: 0; margin-top: 50px;">
                 <div class="map-picture" style="background-image: url({{mapPicturePath}})">
-                    <input type="file" name="file2" id="file5"class="inputfile" onchange="angular.element(this).scope().mapPicChanged(this, 'map')"/>
+                    <input type="file" name="file2" id="file5" class="inputfile" onchange="angular.element(this).scope().mapPicChanged(this, 'map')" />
                     <label style="margin-top: 135px;margin-left: 10px;" for="file5"><i class="fa fa-pencil" aria-hidden="true"></i></label>
                 </div>
             </div>
@@ -638,83 +702,83 @@
         </div>
         <div class="row" style="margin-top: 50px;margin-bottom: 100px;">
 
-               <div class="col-md-6" >
-                   <div class="row">
-                        
-                        <p class="contact-title-mockup">
-                            Argipäevad:
-                        </p>
-                         <input value="{{editWorkWeekTimeEng}}" type="text" ng-model="workWeekTimeEng" ng-initial/>
-                        <button class="timeBtn" ng-click="insertWorkWeekEng()"><i class="fa fa-check" aria-hidden="true"></i></button>
-                    </div>
+            <div class="col-md-6">
+                <div class="row">
+
+                    <p class="contact-title-mockup">
+                        Argipäevad:
+                    </p>
+                    <input value="{{editWorkWeekTimeEng}}" type="text" ng-model="workWeekTimeEng" ng-initial />
+                    <button class="timeBtn" ng-click="insertWorkWeekEng()"><i class="fa fa-check" aria-hidden="true"></i></button>
                 </div>
-                <div class="col-md-6">
-                    <div class="row">
+            </div>
+            <div class="col-md-6">
+                <div class="row">
                     <p class="contact-title-mockup">
                         Helista meile
                     </p>
-                    <input value="{{editContactCallEng}}" type="text" ng-model="contactCallEng" ng-initial/>
+                    <input value="{{editContactCallEng}}" type="text" ng-model="contactCallEng" ng-initial />
                     <button class="timeBtn" ng-click="insertContactCallEng()"><i class="fa fa-check" aria-hidden="true"></i></button>
                     <!--
                     <p editable-text="contactCallEng.text" class="contact-info-mockup">
                         {{contactCallEng.text}}
                     </p>-->
-                    </div>
                 </div>
-                <div class="col-md-6" >
-                  <div class="row">
-                        <p class="contact-title-mockup">
-                            Kell:
-                        </p>
-                        <input value="{{editContactDaysEng}}" type="text" ng-model="contactDaysEng" ng-initial/>
-                        <button class="timeBtn" ng-click="insertContactDaysEng()"><i class="fa fa-check" aria-hidden="true"></i></button>
-                    </div> 
+            </div>
+            <div class="col-md-6">
+                <div class="row">
+                    <p class="contact-title-mockup">
+                        Kell:
+                    </p>
+                    <input value="{{editContactDaysEng}}" type="text" ng-model="contactDaysEng" ng-initial />
+                    <button class="timeBtn" ng-click="insertContactDaysEng()"><i class="fa fa-check" aria-hidden="true"></i></button>
                 </div>
-                <!--Opening days-->
-                  <div class="col-md-6" >
-                    <div class="row">
+            </div>
+            <!--Opening days-->
+            <div class="col-md-6">
+                <div class="row">
                     <p class="contact-title-mockup">
                         Külasta meid
                     </p>
-                    <input value="{{editContactVisitEng}}" type="text" ng-model="contactVisitEng" ng-initial/>
+                    <input value="{{editContactVisitEng}}" type="text" ng-model="contactVisitEng" ng-initial />
                     <button class="timeBtn" ng-click="insertContactVisitEng()"><i class="fa fa-check" aria-hidden="true"></i></button>
                     <!--
                     <p editable-text="contactVisitEng.text" class="contact-info-mockup">
                         {{contactVisitEng.text}}
                     </p>-->
-                    </div>
-                    <div class="row">
+                </div>
+                <div class="row">
                     <p class="contact-title-mockup">
                         Kirjuta meile
                     </p>
-                        <input value="{{editContactEmailEng}}" type="text" ng-model="contactEmailEng" ng-initial/>
-                        <button class="timeBtn" ng-click="insertContactEmailEng()"><i class="fa fa-check" aria-hidden="true"></i></button>
-                        <!--
+                    <input value="{{editContactEmailEng}}" type="text" ng-model="contactEmailEng" ng-initial />
+                    <button class="timeBtn" ng-click="insertContactEmailEng()"><i class="fa fa-check" aria-hidden="true"></i></button>
+                    <!--
                     <p editable-text="contactEmailEng.text" class="contact-info-mockup">
                         {{contactEmailEng.text}}
                     </p>-->
-                    </div>
-                    <!--
+                </div>
+                <!--
                     <p editable-text="contactVisitEng.text" class="contact-info-mockup">
                         {{contactVisitEng.text}}
                     </p>-->
+            </div>
+            <div class="col-md-6" style="margin-bottom: 30px">
+                <div class="row">
+                    <p class="contact-title-mockup">
+                        Nädalavahetus:
+                    </p>
+                    <input value="{{editWeekendTimeEng}}" type="text" ng-model="weekendTimeEng" ng-initial />
+                    <button class="timeBtn" ng-click="insertWeekendEng()"><i class="fa fa-check" aria-hidden="true"></i></button>
                 </div>
-                <div class="col-md-6" style="margin-bottom: 30px">
-                    <div class="row">
-                        <p class="contact-title-mockup">
-                            Nädalavahetus:
-                        </p>
-                        <input value="{{editWeekendTimeEng}}" type="text" ng-model="weekendTimeEng" ng-initial/>
-                        <button class="timeBtn" ng-click="insertWeekendEng()"><i class="fa fa-check" aria-hidden="true"></i></button>
-                    </div>
-                    <div class="row">
-                        <p class="contact-title-mockup">
-                            Kell:
-                        </p>
-                        <input value="{{editContactWeekendEng}}" type="text" ng-model="contactWeekendEng" ng-initial/>
-                        <button class="timeBtn" ng-click="insertContactWeekendEng()"><i class="fa fa-check" aria-hidden="true"></i></button>
-                    </div>
+                <div class="row">
+                    <p class="contact-title-mockup">
+                        Kell:
+                    </p>
+                    <input value="{{editContactWeekendEng}}" type="text" ng-model="contactWeekendEng" ng-initial />
+                    <button class="timeBtn" ng-click="insertContactWeekendEng()"><i class="fa fa-check" aria-hidden="true"></i></button>
                 </div>
+            </div>
         </div>
     </div>
 </div>
@@ -739,11 +803,12 @@
                     </li>
                 </ul>
             </div>
-            <input class="bannerTextField" value="{{editBannerTitleFin}}" type="text" ng-model="bannerTitleFin" ng-initial/>
+            <input class="bannerTextField" value="{{editBannerTitleFin}}" type="text" ng-model="bannerTitleFin"
+                ng-initial />
             <button class="Btn" ng-click="insertBannerTitleFin()"><i class="fa fa-check" aria-hidden="true"></i></button>
         </div>
         <div class="banner-mockup-shadow">
-            <input type="file" name="file" id="file" class="inputfile" onchange="angular.element(this).scope().filesChanged(this)"/>
+            <input type="file" name="file" id="file" class="inputfile" onchange="angular.element(this).scope().filesChanged(this)" />
             <label style="margin-top: 260px;margin-left: 40px;" for="file"><i class="fa fa-pencil" aria-hidden="true"></i></label>
         </div>
         <div class="worker-area-mockup">
@@ -754,7 +819,8 @@
             </div>
             <div class="row" style="margin-top: 30px;">
                 <div class="col-md-6">
-                    <textarea class="TextArea" value="{{editWorkerTitleFin}}" type="text" ng-model="workerTitleFin" ng-initial msd-elastic></textarea>
+                    <textarea class="TextArea" value="{{editWorkerTitleFin}}" type="text" ng-model="workerTitleFin"
+                        ng-initial msd-elastic></textarea>
                     <button class="Btn" ng-click="insertWorkerTitleFin()"><i class="fa fa-check" aria-hidden="true"></i></button>
                     <!--
                     <p editable-text="workerTitleFin.title" class="worker-section-title-mockup">
@@ -762,7 +828,8 @@
                     </p>-->
                 </div>
                 <div class="col-md-6">
-                    <textarea class="TextArea" value="{{editWorkerTextFin}}" type="text" ng-model="workerTextFin" ng-initial msd-elastic></textarea>
+                    <textarea class="TextArea" value="{{editWorkerTextFin}}" type="text" ng-model="workerTextFin"
+                        ng-initial msd-elastic></textarea>
                     <button class="Btn" ng-click="insertWorkerTextFin()"><i class="fa fa-check" aria-hidden="true"></i></button>
                     <!--
                     <p editable-text="workerFin.text" class="worker-section-text-mockup" style="margin-left: 20px;">
@@ -802,7 +869,8 @@
         </div>
         <div class="row" style="margin-top: 30px;">
             <div class="col-md-6">
-                <textarea class="TextArea" value="{{editMenuTitleFin}}" type="text" ng-model="menuTitleFin" ng-initial msd-elastic></textarea>
+                <textarea class="TextArea" value="{{editMenuTitleFin}}" type="text" ng-model="menuTitleFin" ng-initial
+                    msd-elastic></textarea>
                 <button class="Btn" ng-click="insertMenuTitleFin()"><i class="fa fa-check" aria-hidden="true"></i></button>
                 <!--
                 <p editable-text="menuTitleFin.title" class="menu-section-title-mockup">
@@ -810,7 +878,8 @@
                 </p>-->
             </div>
             <div class="col-md-6" style="margin-bottom: 50px;">
-                <textarea class="TextArea" value="{{editMenuTextFin}}" type="text" ng-model="menuTextFin" ng-initial msd-elastic></textarea>
+                <textarea class="TextArea" value="{{editMenuTextFin}}" type="text" ng-model="menuTextFin" ng-initial
+                    msd-elastic></textarea>
                 <button class="Btn" ng-click="insertMenuTextFin()"><i class="fa fa-check" aria-hidden="true"></i></button>
                 <!--
                 <p editable-text="menuTextFin.text" class="menu-section-text-mockup" style="margin-left: 20px;">
@@ -820,11 +889,13 @@
         </div>
         <div class="col-md-6" style="margin-top: 50px;">
             <div class="menu-mockup">
-                <div class="col-md-6" >
+                <div class="col-md-6">
                     <div class="row">
-                        
-                        <input value="{{editCourseTitleStarterFin}}" type="text" ng-model="courseTitleStarterFin" ng-initial/>
-                        <button class="timeBtn" ng-click="insertCourseTitleStarterFin()"><i class="fa fa-check" aria-hidden="true"></i></button>
+
+                        <input value="{{editCourseTitleStarterFin}}" type="text" ng-model="courseTitleStarterFin"
+                            ng-initial />
+                        <button class="timeBtn" ng-click="insertCourseTitleStarterFin()"><i class="fa fa-check"
+                                aria-hidden="true"></i></button>
                     </div>
                 </div>
                 <div class="menu-title-mockup"></div>
@@ -837,7 +908,7 @@
                 <div class="menu-desc-mockup"></div>
             </div>
             <div class="menu-pic-second-mockup" style="background-image: url({{secondPicturePath}})">
-                <input type="file" name="file2" id="file2"class="inputfile" onchange="angular.element(this).scope().menuPicChanged(this, 'second')"/>
+                <input type="file" name="file2" id="file2" class="inputfile" onchange="angular.element(this).scope().menuPicChanged(this, 'second')" />
                 <label style="margin-top: 115px;margin-left: 10px;" for="file2"><i class="fa fa-pencil" aria-hidden="true"></i></label>
             </div>
             <div class="menu-mockup" style="margin-top: 15px;">
@@ -853,18 +924,32 @@
                 <div class="menu-title-mockup"></div>
                 <div class="menu-desc-mockup"></div>
             </div>
+            <div class="menu-mockup" style="margin-top: 15px;">
+                <p class="menu-course-mockup">
+                    LASTEN MENU
+                </p>
+                <div class="menu-title-mockup"></div>
+                <div class="menu-desc-mockup"></div>
+
+                <div class="menu-title-mockup"></div>
+                <div class="menu-desc-mockup"></div>
+
+                <div class="menu-title-mockup"></div>
+                <div class="menu-desc-mockup"></div>
+            </div>
         </div>
         <div class="col-md-6">
             <div class="menu-pic-first-mockup" style="background-image:url({{firstPicturePath}}); margin-top: 100px;">
-                <input type="file" name="file2" id="file1"class="inputfile" onchange="angular.element(this).scope().menuPicChanged(this, 'first')"/>
+                <input type="file" name="file2" id="file1" class="inputfile" onchange="angular.element(this).scope().menuPicChanged(this, 'first')" />
                 <label style="margin-top: 115px;margin-left: 10px;" for="file1"><i class="fa fa-pencil" aria-hidden="true"></i></label>
             </div>
             <div class="menu-mockup" style="margin-top: 15px;">
-                <div class="col-md-6" >
+                <div class="col-md-6">
                     <div class="row">
-                        
-                        <input value="{{editCourseTitleMainFin}}" type="text" ng-model="courseTitleMainFin" ng-initial/>
-                        <button class="timeBtn" ng-click="insertCourseTitleMainFin()"><i class="fa fa-check" aria-hidden="true"></i></button>
+
+                        <input value="{{editCourseTitleMainFin}}" type="text" ng-model="courseTitleMainFin" ng-initial />
+                        <button class="timeBtn" ng-click="insertCourseTitleMainFin()"><i class="fa fa-check"
+                                aria-hidden="true"></i></button>
 
 
                     </div>
@@ -879,10 +964,12 @@
                 <div class="menu-desc-mockup"></div>
             </div>
             <div class="menu-mockup" style="margin-top: 15px;">
-                <div class="col-md-6" >
+                <div class="col-md-6">
                     <div class="row">
-                        <input value="{{editCourseTitleDessertFin}}" type="text" ng-model="courseTitleDessertFin" ng-initial/>
-                        <button class="timeBtn" ng-click="insertCourseTitleDessertFin()"><i class="fa fa-check" aria-hidden="true"></i></button>
+                        <input value="{{editCourseTitleDessertFin}}" type="text" ng-model="courseTitleDessertFin"
+                            ng-initial />
+                        <button class="timeBtn" ng-click="insertCourseTitleDessertFin()"><i class="fa fa-check"
+                                aria-hidden="true"></i></button>
                     </div>
                 </div>
                 <div class="menu-title-mockup"></div>
@@ -895,7 +982,7 @@
                 <div class="menu-desc-mockup"></div>
             </div>
             <div class="menu-pic-third-mockup" style="background-image:url({{thirdPicturePath}});">
-                <input type="file" name="file2" id="file3"class="inputfile" onchange="angular.element(this).scope().menuPicChanged(this, 'third')"/>
+                <input type="file" name="file2" id="file3" class="inputfile" onchange="angular.element(this).scope().menuPicChanged(this, 'third')" />
                 <label style="margin-top: 115px;margin-left: 10px;" for="file3"><i class="fa fa-pencil" aria-hidden="true"></i></label>
             </div>
         </div>
@@ -906,15 +993,24 @@
                 </div>
             </div>
             <div class="col-md-6" style="margin-top: 50px">
-                <textarea class="TextArea" value="{{editTastingTextFin}}" type="text" ng-model="tastingTextFin" ng-initial msd-elastic></textarea>
+                <textarea class="TextArea" value="{{editTastingTextFin}}" type="text" ng-model="tastingTextFin"
+                    ng-initial msd-elastic></textarea>
                 <button class="Btn" ng-click="insertTastingTextFin()"><i class="fa fa-check" aria-hidden="true"></i></button>
                 <!--
                 <p editable-text="tastingTextFin.text" class="menu-section-text-mockup" style="margin-left: 20px;">
                     {{tastingTextFin.text}}
                 </p>-->
             </div>
+
+            <!-- GroupMenu Button -->
             <div class="col-md-6" style="margin-top: 40px;">
-                <div class="tasting-menu-btn-mockup"></div>
+                <div class="tasting-menu-btn-mockup">
+                    <input class="buttonTextField" value="{{editGroupMenuButtonFin}}" type="text" ng-model="groupMenuButtonFin"
+                        ng-initial />
+                    <button class="Btn" ng-click="insertGroupMenuButtonFin()">
+                        <i class="fa fa-check" aria-hidden="true"></i>
+                    </button>
+                </div>
             </div>
         </div>
     </div>
@@ -926,7 +1022,7 @@
         </div>
         <div class="row" style="margin-top: 50px;">
             <div class="col-md-6">
-                <input class="TextField" value="{{editEventTitleFin}}" type="text" ng-model="eventTitleFin" ng-initial/>
+                <input class="TextField" value="{{editEventTitleFin}}" type="text" ng-model="eventTitleFin" ng-initial />
                 <button class="Btn" ng-click="insertEventTitleFin()"><i class="fa fa-check" aria-hidden="true"></i></button>
                 <!--
                 <p editable-text="eventTitleFin.title" class="event-section-title-mockup">
@@ -940,8 +1036,9 @@
             </div>
             <div class="col-md-6">
                 <div class="event-pic-mockup" style="background-image:url({{eventPicturePathFin}});">
-                    <input type="file" name="file2" id="fileFin"class="inputfile" onchange="angular.element(this).scope().menuPicChanged(this, 'eventFin')"/>
-                    <label style="margin-top: 185px;margin-left: 10px;" for="fileFin"><i class="fa fa-pencil" aria-hidden="true"></i></label>
+                    <input type="file" name="file2" id="fileFin" class="inputfile" onchange="angular.element(this).scope().menuPicChanged(this, 'eventFin')" />
+                    <label style="margin-top: 185px;margin-left: 10px;" for="fileFin"><i class="fa fa-pencil"
+                            aria-hidden="true"></i></label>
                 </div>
             </div>
         </div>
@@ -959,7 +1056,7 @@
         <div class="row">
             <div class="col-md-6" style="padding: 0; margin-top: 50px;">
                 <div class="map-picture" style="background-image: url({{mapPicturePath}})">
-                    <input type="file" name="file2" id="file5"class="inputfile" onchange="angular.element(this).scope().mapPicChanged(this, 'map')"/>
+                    <input type="file" name="file2" id="file5" class="inputfile" onchange="angular.element(this).scope().mapPicChanged(this, 'map')" />
                     <label style="margin-top: 135px;margin-left: 10px;" for="file5"><i class="fa fa-pencil" aria-hidden="true"></i></label>
                 </div>
             </div>
@@ -968,84 +1065,84 @@
             </div>
         </div>
         <div class="row" style="margin-top: 50px;margin-bottom: 100px;">
-               <div class="col-md-6" >
-                   <div class="row">
-                        
-                        <p class="contact-title-mockup">
-                            Argipäevad:
-                        </p>
-                         <input value="{{editWorkWeekTimeFin}}" type="text" ng-model="workWeekTimeFin" ng-initial/>
-                        <button class="timeBtn" ng-click="insertWorkWeekFin()"><i class="fa fa-check" aria-hidden="true"></i></button>
-                    </div>
+            <div class="col-md-6">
+                <div class="row">
+
+                    <p class="contact-title-mockup">
+                        Argipäevad:
+                    </p>
+                    <input value="{{editWorkWeekTimeFin}}" type="text" ng-model="workWeekTimeFin" ng-initial />
+                    <button class="timeBtn" ng-click="insertWorkWeekFin()"><i class="fa fa-check" aria-hidden="true"></i></button>
                 </div>
-                <div class="col-md-6">
-                    <div class="row">
+            </div>
+            <div class="col-md-6">
+                <div class="row">
                     <p class="contact-title-mockup">
                         Helista meile
                     </p>
-                    <input value="{{editContactCallFin}}" type="text" ng-model="contactCallFin" ng-initial/>
+                    <input value="{{editContactCallFin}}" type="text" ng-model="contactCallFin" ng-initial />
                     <button class="timeBtn" ng-click="insertContactCallFin()"><i class="fa fa-check" aria-hidden="true"></i></button>
                     <!--
                     <p editable-text="contactCallFin.text" class="contact-info-mockup">
                         {{contactCallFin.text}}
                     </p>-->
-                    </div>
                 </div>
-                <div class="col-md-6" >
-                  <div class="row">
-                       
-                        <p class="contact-title-mockup">
-                            Kell:
-                        </p>
-                        <input value="{{editContactDaysFin}}" type="text" ng-model="contactDaysFin" ng-initial/>
-                        <button class="timeBtn" ng-click="insertContactDaysFin()"><i class="fa fa-check" aria-hidden="true"></i></button>
-                    </div> 
+            </div>
+            <div class="col-md-6">
+                <div class="row">
+
+                    <p class="contact-title-mockup">
+                        Kell:
+                    </p>
+                    <input value="{{editContactDaysFin}}" type="text" ng-model="contactDaysFin" ng-initial />
+                    <button class="timeBtn" ng-click="insertContactDaysFin()"><i class="fa fa-check" aria-hidden="true"></i></button>
                 </div>
-                <!--Opening days-->
-                  <div class="col-md-6" >
-                    <div class="row">
+            </div>
+            <!--Opening days-->
+            <div class="col-md-6">
+                <div class="row">
                     <p class="contact-title-mockup">
                         Külasta meid
                     </p>
-                    <input value="{{editContactVisitFin}}" type="text" ng-model="contactVisitFin" ng-initial/>
+                    <input value="{{editContactVisitFin}}" type="text" ng-model="contactVisitFin" ng-initial />
                     <button class="timeBtn" ng-click="insertContactVisitFin()"><i class="fa fa-check" aria-hidden="true"></i></button>
                     <!--
                     <p editable-text="contactVisitFin.text" class="contact-info-mockup">
                         {{contactVisitFin.text}}
                     </p>-->
-                    </div>
-                    <div class="row">
+                </div>
+                <div class="row">
                     <p class="contact-title-mockup">
                         Kirjuta meile
                     </p>
-                        <input value="{{editContactEmailFin}}" type="text" ng-model="contactEmailFin" ng-initial/>
-                        <button class="timeBtn" ng-click="insertContactEmailFin()"><i class="fa fa-check" aria-hidden="true"></i></button>
-                        <!--
+                    <input value="{{editContactEmailFin}}" type="text" ng-model="contactEmailFin" ng-initial />
+                    <button class="timeBtn" ng-click="insertContactEmailFin()"><i class="fa fa-check" aria-hidden="true"></i></button>
+                    <!--
                     <p editable-text="contactEmailFin.text" class="contact-info-mockup">
                         {{contactEmailFin.text}}
                     </p>-->
-                    </div>
-                    <!--
+                </div>
+                <!--
                     <p editable-text="contactVisitFin.text" class="contact-info-mockup">
                         {{contactVisitFin.text}}
                     </p>-->
+            </div>
+            <div class="col-md-6" style="margin-bottom: 30px">
+                <div class="row">
+                    <p class="contact-title-mockup">
+                        Nädalavahetus:
+                    </p>
+                    <input value="{{editWeekendTimeFin}}" type="text" ng-model="weekendTimeFin" ng-initial />
+                    <button class="timeBtn" ng-click="insertWeekendFin()"><i class="fa fa-check" aria-hidden="true"></i></button>
                 </div>
-                <div class="col-md-6" style="margin-bottom: 30px">
-                    <div class="row">
-                        <p class="contact-title-mockup">
-                            Nädalavahetus:
-                        </p>
-                        <input value="{{editWeekendTimeFin}}" type="text" ng-model="weekendTimeFin" ng-initial/>
-                        <button class="timeBtn" ng-click="insertWeekendFin()"><i class="fa fa-check" aria-hidden="true"></i></button>
-                    </div>
-                    <div class="row">
-                        <p class="contact-title-mockup">
-                            Kell:
-                        </p>
-                        <input value="{{editContactWeekendFin}}" type="text" ng-model="contactWeekendFin" ng-initial/>
-                        <button class="timeBtn" ng-click="insertContactWeekendFin()"><i class="fa fa-check" aria-hidden="true"></i></button>
-                    </div>
+                <div class="row">
+                    <p class="contact-title-mockup">
+                        Kell:
+                    </p>
+                    <input value="{{editContactWeekendFin}}" type="text" ng-model="contactWeekendFin" ng-initial />
+                    <button class="timeBtn" ng-click="insertContactWeekendFin()"><i class="fa fa-check" aria-hidden="true"></i></button>
                 </div>
+            </div>
         </div>
     </div>
 </div>
@@ -1069,11 +1166,12 @@
                     </li>
                 </ul>
             </div>
-            <input class="bannerTextField" value="{{editBannerTitleRus}}" type="text" ng-model="bannerTitleRus" ng-initial/>
+            <input class="bannerTextField" value="{{editBannerTitleRus}}" type="text" ng-model="bannerTitleRus"
+                ng-initial />
             <button class="Btn" ng-click="insertBannerTitleRus()"><i class="fa fa-check" aria-hidden="true"></i></button>
         </div>
         <div class="banner-mockup-shadow">
-            <input type="file" name="file" id="file" class="inputfile" onchange="angular.element(this).scope().filesChanged(this)"/>
+            <input type="file" name="file" id="file" class="inputfile" onchange="angular.element(this).scope().filesChanged(this)" />
             <label style="margin-top: 260px;margin-left: 40px;" for="file"><i class="fa fa-pencil" aria-hidden="true"></i></label>
         </div>
         <div class="worker-area-mockup">
@@ -1084,7 +1182,8 @@
             </div>
             <div class="row" style="margin-top: 30px;">
                 <div class="col-md-6">
-                    <textarea class="TextArea" value="{{editWorkerTitleRus}}" type="text" ng-model="workerTitleRus" ng-initial msd-elastic></textarea>
+                    <textarea class="TextArea" value="{{editWorkerTitleRus}}" type="text" ng-model="workerTitleRus"
+                        ng-initial msd-elastic></textarea>
                     <button class="Btn" ng-click="insertWorkerTitleRus()"><i class="fa fa-check" aria-hidden="true"></i></button>
                     <!--
                     <p editable-text="workerTitleRus.title" class="worker-section-title-mockup">
@@ -1092,7 +1191,8 @@
                     </p>-->
                 </div>
                 <div class="col-md-6">
-                    <textarea class="TextArea" value="{{editWorkerTextRus}}" type="text" ng-model="workerTextRus" ng-initial msd-elastic></textarea>
+                    <textarea class="TextArea" value="{{editWorkerTextRus}}" type="text" ng-model="workerTextRus"
+                        ng-initial msd-elastic></textarea>
                     <button class="Btn" ng-click="insertWorkerTextRus()"><i class="fa fa-check" aria-hidden="true"></i></button>
                     <!--
                     <p editable-text="workerRus.text" class="worker-section-text-mockup" style="margin-left: 20px;">
@@ -1132,7 +1232,8 @@
         </div>
         <div class="row" style="margin-top: 30px;">
             <div class="col-md-6">
-                <textarea class="TextArea" value="{{editMenuTitleRus}}" type="text" ng-model="menuTitleRus" ng-initial msd-elastic></textarea>
+                <textarea class="TextArea" value="{{editMenuTitleRus}}" type="text" ng-model="menuTitleRus" ng-initial
+                    msd-elastic></textarea>
                 <button class="Btn" ng-click="insertMenuTitleRus()"><i class="fa fa-check" aria-hidden="true"></i></button>
                 <!--
                 <p editable-text="menuTitleRus.title" class="menu-section-title-mockup">
@@ -1140,7 +1241,8 @@
                 </p>-->
             </div>
             <div class="col-md-6" style="margin-bottom: 50px;">
-                <textarea class="TextArea" value="{{editMenuTextRus}}" type="text" ng-model="menuTextRus" ng-initial msd-elastic></textarea>
+                <textarea class="TextArea" value="{{editMenuTextRus}}" type="text" ng-model="menuTextRus" ng-initial
+                    msd-elastic></textarea>
                 <button class="Btn" ng-click="insertMenuTextRus()"><i class="fa fa-check" aria-hidden="true"></i></button>
                 <!--
                 <p editable-text="menuTextRus.text" class="menu-section-text-mockup" style="margin-left: 20px;">
@@ -1150,10 +1252,12 @@
         </div>
         <div class="col-md-6" style="margin-top: 50px;">
             <div class="menu-mockup">
-                <div class="col-md-6" >
+                <div class="col-md-6">
                     <div class="row">
-                        <input value="{{editCourseTitleStarterRus}}" type="text" ng-model="courseTitleStarterRus" ng-initial/>
-                        <button class="timeBtn" ng-click="insertCourseTitleStarterRus()"><i class="fa fa-check" aria-hidden="true"></i></button>
+                        <input value="{{editCourseTitleStarterRus}}" type="text" ng-model="courseTitleStarterRus"
+                            ng-initial />
+                        <button class="timeBtn" ng-click="insertCourseTitleStarterRus()"><i class="fa fa-check"
+                                aria-hidden="true"></i></button>
                     </div>
                 </div>
                 <div class="menu-title-mockup"></div>
@@ -1166,7 +1270,7 @@
                 <div class="menu-desc-mockup"></div>
             </div>
             <div class="menu-pic-second-mockup" style="background-image: url({{secondPicturePath}})">
-                <input type="file" name="file2" id="file2"class="inputfile" onchange="angular.element(this).scope().menuPicChanged(this, 'second')"/>
+                <input type="file" name="file2" id="file2" class="inputfile" onchange="angular.element(this).scope().menuPicChanged(this, 'second')" />
                 <label style="margin-top: 115px;margin-left: 10px;" for="file2"><i class="fa fa-pencil" aria-hidden="true"></i></label>
             </div>
             <div class="menu-mockup" style="margin-top: 15px;">
@@ -1182,35 +1286,52 @@
                 <div class="menu-title-mockup"></div>
                 <div class="menu-desc-mockup"></div>
             </div>
+            <div class="menu-mockup" style="margin-top: 15px;">
+                <p class="menu-course-mockup">
+                    ДЕТСКОЕ МЕНЮ
+                </p>
+                <div class="menu-title-mockup"></div>
+                <div class="menu-desc-mockup"></div>
+
+                <div class="menu-title-mockup"></div>
+                <div class="menu-desc-mockup"></div>
+
+                <div class="menu-title-mockup"></div>
+                <div class="menu-desc-mockup"></div>
+            </div>
         </div>
         <div class="col-md-6">
             <div class="menu-pic-first-mockup" style="background-image:url({{firstPicturePath}}); margin-top: 100px;">
-                <input type="file" name="file2" id="file1"class="inputfile" onchange="angular.element(this).scope().menuPicChanged(this, 'first')"/>
+                <input type="file" name="file2" id="file1" class="inputfile" onchange="angular.element(this).scope().menuPicChanged(this, 'first')" />
                 <label style="margin-top: 115px;margin-left: 10px;" for="file1"><i class="fa fa-pencil" aria-hidden="true"></i></label>
             </div>
             <div class="menu-mockup" style="margin-top: 15px;">
                 <p class="menu-course-mockup">
-                    <div class="col-md-6" >
-                    <div class="row">
-                        <input value="{{editCourseTitleMainRus}}" type="text" ng-model="courseTitleMainRus" ng-initial/>
-                        <button class="timeBtn" ng-click="insertCourseTitleMainRus()"><i class="fa fa-check" aria-hidden="true"></i></button>
+                    <div class="col-md-6">
+                        <div class="row">
+                            <input value="{{editCourseTitleMainRus}}" type="text" ng-model="courseTitleMainRus"
+                                ng-initial />
+                            <button class="timeBtn" ng-click="insertCourseTitleMainRus()"><i class="fa fa-check"
+                                    aria-hidden="true"></i></button>
+                        </div>
                     </div>
-                </div>
-                
-                <div class="menu-title-mockup"></div>
-                <div class="menu-desc-mockup"></div>
 
-                <div class="menu-title-mockup"></div>
-                <div class="menu-desc-mockup"></div>
+                    <div class="menu-title-mockup"></div>
+                    <div class="menu-desc-mockup"></div>
 
-                <div class="menu-title-mockup"></div>
-                <div class="menu-desc-mockup"></div>
+                    <div class="menu-title-mockup"></div>
+                    <div class="menu-desc-mockup"></div>
+
+                    <div class="menu-title-mockup"></div>
+                    <div class="menu-desc-mockup"></div>
             </div>
             <div class="menu-mockup" style="margin-top: 15px;">
-                <div class="col-md-6" >
+                <div class="col-md-6">
                     <div class="row">
-                        <input value="{{editCourseTitleDessertRus}}" type="text" ng-model="courseTitleDessertRus" ng-initial/>
-                        <button class="timeBtn" ng-click="insertCourseTitleDessertRus()"><i class="fa fa-check" aria-hidden="true"></i></button>
+                        <input value="{{editCourseTitleDessertRus}}" type="text" ng-model="courseTitleDessertRus"
+                            ng-initial />
+                        <button class="timeBtn" ng-click="insertCourseTitleDessertRus()"><i class="fa fa-check"
+                                aria-hidden="true"></i></button>
                     </div>
                 </div>
                 <div class="menu-title-mockup"></div>
@@ -1223,7 +1344,7 @@
                 <div class="menu-desc-mockup"></div>
             </div>
             <div class="menu-pic-third-mockup" style="background-image:url({{thirdPicturePath}});">
-                <input type="file" name="file2" id="file3"class="inputfile" onchange="angular.element(this).scope().menuPicChanged(this, 'third')"/>
+                <input type="file" name="file2" id="file3" class="inputfile" onchange="angular.element(this).scope().menuPicChanged(this, 'third')" />
                 <label style="margin-top: 115px;margin-left: 10px;" for="file3"><i class="fa fa-pencil" aria-hidden="true"></i></label>
             </div>
         </div>
@@ -1234,15 +1355,24 @@
                 </div>
             </div>
             <div class="col-md-6" style="margin-top: 50px">
-                <textarea class="TextArea" value="{{editTastingTextRus}}" type="text" ng-model="tastingTextRus" ng-initial msd-elastic></textarea>
+                <textarea class="TextArea" value="{{editTastingTextRus}}" type="text" ng-model="tastingTextRus"
+                    ng-initial msd-elastic></textarea>
                 <button class="Btn" ng-click="insertTastingTextRus()"><i class="fa fa-check" aria-hidden="true"></i></button>
                 <!--
                 <p editable-text="tastingTextRus.text" class="menu-section-text-mockup" style="margin-left: 20px;">
                     {{tastingTextRus.text}}
                 </p>-->
             </div>
+
+            <!-- GroupMenu Button -->
             <div class="col-md-6" style="margin-top: 40px;">
-                <div class="tasting-menu-btn-mockup"></div>
+                <div class="tasting-menu-btn-mockup">
+                    <input class="buttonTextField" value="{{editGroupMenuButtonRus}}" type="text" ng-model="groupMenuButtonRus"
+                        ng-initial />
+                    <button class="Btn" ng-click="insertGroupMenuButtonRus()">
+                        <i class="fa fa-check" aria-hidden="true"></i>
+                    </button>
+                </div>
             </div>
         </div>
     </div>
@@ -1254,7 +1384,7 @@
         </div>
         <div class="row" style="margin-top: 50px;">
             <div class="col-md-6">
-                <input class="TextField" value="{{editEventTitleRus}}" type="text" ng-model="eventTitleRus" ng-initial/>
+                <input class="TextField" value="{{editEventTitleRus}}" type="text" ng-model="eventTitleRus" ng-initial />
                 <button class="Btn" ng-click="insertEventTitleRus()"><i class="fa fa-check" aria-hidden="true"></i></button>
                 <!--
                 <p editable-text="eventTitleRus.title" class="event-section-title-mockup">
@@ -1268,8 +1398,9 @@
             </div>
             <div class="col-md-6">
                 <div class="event-pic-mockup" style="background-image:url({{eventPicturePathRus}});">
-                    <input type="file" name="file2" id="fileRus" class="inputfile" onchange="angular.element(this).scope().menuPicChanged(this, 'eventRus')"/>
-                    <label style="margin-top: 185px;margin-left: 10px;" for="fileRus"><i class="fa fa-pencil" aria-hidden="true"></i></label>
+                    <input type="file" name="file2" id="fileRus" class="inputfile" onchange="angular.element(this).scope().menuPicChanged(this, 'eventRus')" />
+                    <label style="margin-top: 185px;margin-left: 10px;" for="fileRus"><i class="fa fa-pencil"
+                            aria-hidden="true"></i></label>
                 </div>
             </div>
         </div>
@@ -1287,7 +1418,7 @@
         <div class="row">
             <div class="col-md-6" style="padding: 0; margin-top: 50px;">
                 <div class="map-picture" style="background-image: url({{mapPicturePath}})">
-                    <input type="file" name="file2" id="file5"class="inputfile" onchange="angular.element(this).scope().mapPicChanged(this, 'map')"/>
+                    <input type="file" name="file2" id="file5" class="inputfile" onchange="angular.element(this).scope().mapPicChanged(this, 'map')" />
                     <label style="margin-top: 135px;margin-left: 10px;" for="file5"><i class="fa fa-pencil" aria-hidden="true"></i></label>
                 </div>
             </div>
@@ -1296,84 +1427,84 @@
             </div>
         </div>
         <div class="row" style="margin-top: 50px;margin-bottom: 100px;">
-               <div class="col-md-6" >
-                   <div class="row">
-                        
-                        <p class="contact-title-mockup">
-                            Argipäevad:
-                        </p>
-                         <input value="{{editWorkWeekTimeRus}}" type="text" ng-model="workWeekTimeRus" ng-initial/>
-                        <button class="timeBtn" ng-click="insertWorkWeekRus()"><i class="fa fa-check" aria-hidden="true"></i></button>
-                    </div>
+            <div class="col-md-6">
+                <div class="row">
+
+                    <p class="contact-title-mockup">
+                        Argipäevad:
+                    </p>
+                    <input value="{{editWorkWeekTimeRus}}" type="text" ng-model="workWeekTimeRus" ng-initial />
+                    <button class="timeBtn" ng-click="insertWorkWeekRus()"><i class="fa fa-check" aria-hidden="true"></i></button>
                 </div>
-                <div class="col-md-6">
-                    <div class="row">
+            </div>
+            <div class="col-md-6">
+                <div class="row">
                     <p class="contact-title-mockup">
                         Helista meile
                     </p>
-                    <input value="{{editContactCallRus}}" type="text" ng-model="contactCallRus" ng-initial/>
+                    <input value="{{editContactCallRus}}" type="text" ng-model="contactCallRus" ng-initial />
                     <button class="timeBtn" ng-click="insertContactCallRus()"><i class="fa fa-check" aria-hidden="true"></i></button>
                     <!--
                     <p editable-text="contactCallRus.text" class="contact-info-mockup">
                         {{contactCallRus.text}}
                     </p>-->
-                    </div>
                 </div>
-                <div class="col-md-6" >
-                  <div class="row">
-                       
-                        <p class="contact-title-mockup">
-                            Kell:
-                        </p>
-                        <input value="{{editContactDaysRus}}" type="text" ng-model="contactDaysRus" ng-initial/>
-                        <button class="timeBtn" ng-click="insertContactDaysRus()"><i class="fa fa-check" aria-hidden="true"></i></button>
-                    </div> 
+            </div>
+            <div class="col-md-6">
+                <div class="row">
+
+                    <p class="contact-title-mockup">
+                        Kell:
+                    </p>
+                    <input value="{{editContactDaysRus}}" type="text" ng-model="contactDaysRus" ng-initial />
+                    <button class="timeBtn" ng-click="insertContactDaysRus()"><i class="fa fa-check" aria-hidden="true"></i></button>
                 </div>
-                <!--Opening days-->
-                  <div class="col-md-6" >
-                    <div class="row">
+            </div>
+            <!--Opening days-->
+            <div class="col-md-6">
+                <div class="row">
                     <p class="contact-title-mockup">
                         Külasta meid
                     </p>
-                    <input value="{{editContactVisitRus}}" type="text" ng-model="contactVisitRus" ng-initial/>
+                    <input value="{{editContactVisitRus}}" type="text" ng-model="contactVisitRus" ng-initial />
                     <button class="timeBtn" ng-click="insertContactVisitRus()"><i class="fa fa-check" aria-hidden="true"></i></button>
                     <!--
                     <p editable-text="contactVisitRus.text" class="contact-info-mockup">
                         {{contactVisitRus.text}}
                     </p>-->
-                    </div>
-                    <div class="row">
+                </div>
+                <div class="row">
                     <p class="contact-title-mockup">
                         Kirjuta meile
                     </p>
-                        <input value="{{editContactEmailRus}}" type="text" ng-model="contactEmailRus" ng-initial/>
-                        <button class="timeBtn" ng-click="insertContactEmailRus()"><i class="fa fa-check" aria-hidden="true"></i></button>
-                        <!--
+                    <input value="{{editContactEmailRus}}" type="text" ng-model="contactEmailRus" ng-initial />
+                    <button class="timeBtn" ng-click="insertContactEmailRus()"><i class="fa fa-check" aria-hidden="true"></i></button>
+                    <!--
                     <p editable-text="contactEmailRus.text" class="contact-info-mockup">
                         {{contactEmailRus.text}}
                     </p>-->
-                    </div>
-                    <!--
+                </div>
+                <!--
                     <p editable-text="contactVisitRu.text" class="contact-info-mockup">
                         {{contactVisitRu.text}}
                     </p>-->
+            </div>
+            <div class="col-md-6" style="margin-bottom: 30px">
+                <div class="row">
+                    <p class="contact-title-mockup">
+                        Nädalavahetus:
+                    </p>
+                    <input value="{{editWeekendTimeRus}}" type="text" ng-model="weekendTimeRus" ng-initial />
+                    <button class="timeBtn" ng-click="insertWeekendRus()"><i class="fa fa-check" aria-hidden="true"></i></button>
                 </div>
-                <div class="col-md-6" style="margin-bottom: 30px">
-                    <div class="row">
-                        <p class="contact-title-mockup">
-                            Nädalavahetus:
-                        </p>
-                        <input value="{{editWeekendTimeRus}}" type="text" ng-model="weekendTimeRus" ng-initial/>
-                        <button class="timeBtn" ng-click="insertWeekendRus()"><i class="fa fa-check" aria-hidden="true"></i></button>
-                    </div>
-                    <div class="row">
-                        <p class="contact-title-mockup">
-                            Kell:
-                        </p>
-                        <input value="{{editContactWeekendRus}}" type="text" ng-model="contactWeekendRus" ng-initial/>
-                        <button class="timeBtn" ng-click="insertContactWeekendRus()"><i class="fa fa-check" aria-hidden="true"></i></button>
-                    </div>
+                <div class="row">
+                    <p class="contact-title-mockup">
+                        Kell:
+                    </p>
+                    <input value="{{editContactWeekendRus}}" type="text" ng-model="contactWeekendRus" ng-initial />
+                    <button class="timeBtn" ng-click="insertContactWeekendRus()"><i class="fa fa-check" aria-hidden="true"></i></button>
                 </div>
+            </div>
         </div>
     </div>
 </div>
