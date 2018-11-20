@@ -20,6 +20,10 @@ body{
     padding: 15px;
     width: 380px;
 }
+.buttonTextField {
+    padding: 15px;
+    text-align: center;
+}
 .TextField{
     margin-top: 30px;
     margin-left: 20px;
@@ -761,12 +765,14 @@ th{
     text-align: left;
 }
 .tasting-menu-btn-mockup{
-    background: #efb248;
+    text-align: center;
+    margin-top: 30px;
+    /* background: #efb248;
     height: 40px;
     width: 200px;
     position: absolute;
     right: 30px;
-    top: 50px;
+    top: 50px; */
 }
 .booking-btn{
     background: #63ada4;
