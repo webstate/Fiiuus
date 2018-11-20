@@ -112,15 +112,11 @@ sliderCtrl.controller('sliderCtrl', function($location,$rootScope, $scope, landi
     landingTextService.getLandingText("bannerTitleEst", "ee").then(function(data){
         $scope.bannerTitleEst = data.text;
     })
-    landingTextService.getLandingText("bannerTitleEng", "ee").then(function(data){
-        $scope.bannerTitleEng = data.text;
+    landingTextService.getLandingText("groupMenuButtonEst", "ee").then(function(data){
+        $scope.groupMenuButtonEst = data.text;
     })
-    landingTextService.getLandingText("bannerTitleFin", "ee").then(function(data){
-        $scope.bannerTitleFin = data.text;
-    })
-    landingTextService.getLandingText("bannerTitleRus", "ee").then(function(data){
-        $scope.bannerTitleRus = data.text;
-    })
+
+
 
 // ENGLISH LANDING TEXTS
 
@@ -172,6 +168,13 @@ sliderCtrl.controller('sliderCtrl', function($location,$rootScope, $scope, landi
     landingTextService.getLandingText("eventTitleEng", "ee").then(function(data){
         $scope.eventTitleEng = data.text;
     })
+    landingTextService.getLandingText("bannerTitleEng", "ee").then(function(data){
+        $scope.bannerTitleEng = data.text;
+    })
+    landingTextService.getLandingText("groupMenuButtonEng", "ee").then(function(data){
+        $scope.groupMenuButtonEng = data.text;
+    })
+
 
 // FINNISH LANDING TEXTS
 
@@ -223,6 +226,13 @@ sliderCtrl.controller('sliderCtrl', function($location,$rootScope, $scope, landi
     landingTextService.getLandingText("eventTitleFin", "ee").then(function(data){
         $scope.eventTitleFin = data.text;
     })
+    landingTextService.getLandingText("bannerTitleFin", "ee").then(function(data){
+        $scope.bannerTitleFin = data.text;
+    })
+    landingTextService.getLandingText("groupMenuButtonFin", "ee").then(function(data){
+        $scope.groupMenuButtonFin = data.text;
+    })
+
 
 // RUSSIAN LANDING TEXTS
 
@@ -274,8 +284,12 @@ sliderCtrl.controller('sliderCtrl', function($location,$rootScope, $scope, landi
     landingTextService.getLandingText("eventTitleRus", "ee").then(function(data){
         $scope.eventTitleRus = data.text;
     })
-
-
+    landingTextService.getLandingText("bannerTitleRus", "ee").then(function(data){
+        $scope.bannerTitleRus = data.text;
+    })
+    landingTextService.getLandingText("groupMenuButtonRus", "ee").then(function(data){
+        $scope.groupMenuButtonRus = data.text;
+    })
 
 
 
