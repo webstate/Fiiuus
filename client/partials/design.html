@@ -128,29 +128,28 @@
         </div>
         <div class="col-md-6" style="margin-top: 50px;">
             <div class="menu-mockup">
-                <!-- <div class="menu-course-mockup"> -->
-                    <div class="col-md-6">
-                        <div class="row">
-
+                <div class="menu-course-mockup">
+                    <div class="">
+                        <!-- col-md-6 -->
+                        <div class="">
+                            <!-- row -->
                             <input value="{{editCourseTitleStarter}}" type="text" ng-model="courseTitleStarter"
                                 ng-initial />
                             <button class="timeBtn" ng-click="insertCourseTitleStarter()"><i class="fa fa-check"
                                     aria-hidden="true"></i></button>
-
                             <!-- <p editable-text="contactVisitEst.text" class="contact-info-mockup">{{contactVisitEst.text}} </p> -->
-                        
                         </div>
                     </div>
 
-                    <div class="menu-title-mockup"></div>
-                    <div class="menu-desc-mockup"></div>
+                    <div class="menu-title-mockup ml-0 mt-15"></div>
+                    <div class="menu-desc-mockup ml-0"></div>
 
-                    <div class="menu-title-mockup"></div>
-                    <div class="menu-desc-mockup"></div>
+                    <div class="menu-title-mockup ml-0 mt-15"></div>
+                    <div class="menu-desc-mockup ml-0"></div>
 
-                    <div class="menu-title-mockup"></div>
-                    <div class="menu-desc-mockup"></div>
-                <!-- </div> -->
+                    <div class="menu-title-mockup ml-0 mt-15"></div>
+                    <div class="menu-desc-mockup ml-0"></div>
+                </div>
             </div>
             <div class="menu-pic-second-mockup" style="background-image: url({{secondPicturePath}})">
                 <input type="file" name="file2" id="file2" class="inputfile" onchange="angular.element(this).scope().menuPicChanged(this, 'second')" />
@@ -189,49 +188,59 @@
                 <label style="margin-top: 115px;margin-left: 10px;" for="file1"><i class="fa fa-pencil" aria-hidden="true"></i></label>
             </div>
             <div class="menu-mockup" style="margin-top: 15px;">
-                <div class="col-md-6">
-                    <div class="row">
+                <div class="menu-course-mockup">
+                    <div class="">
+                        <!--  col-md-6-->
+                        <div class="">
+                            <!-- row -->
 
-                        <input value="{{editCourseTitleMain}}" type="text" ng-model="courseTitleMain" ng-initial />
-                        <button class="timeBtn" ng-click="insertCourseTitleMain()"><i class="fa fa-check" aria-hidden="true"></i></button>
+                            <input value="{{editCourseTitleMain}}" type="text" ng-model="courseTitleMain" ng-initial />
+                            <button class="timeBtn" ng-click="insertCourseTitleMain()"><i class="fa fa-check"
+                                    aria-hidden="true"></i></button>
 
-                        <!-- <p editable-text="contactVisitEst.text" class="contact-info-mockup">
-                            {{contactVisitEst.text}}
-                        </p>
-                        -->
+                            <!-- <p editable-text="contactVisitEst.text" class="contact-info-mockup">
+                                {{contactVisitEst.text}}
+                            </p>
+                            -->
+                        </div>
                     </div>
+                    <div class="menu-title-mockup ml-0 mt-15"></div>
+                    <div class="menu-desc-mockup ml-0"></div>
+
+                    <div class="menu-title-mockup ml-0 mt-15"></div>
+                    <div class="menu-desc-mockup ml-0"></div>
+
+                    <div class="menu-title-mockup ml-0 mt-15"></div>
+                    <div class="menu-desc-mockup ml-0"></div>
                 </div>
-                <div class="menu-title-mockup"></div>
-                <div class="menu-desc-mockup"></div>
-
-                <div class="menu-title-mockup"></div>
-                <div class="menu-desc-mockup"></div>
-
-                <div class="menu-title-mockup"></div>
-                <div class="menu-desc-mockup"></div>
             </div>
             <div class="menu-mockup" style="margin-top: 15px;">
-                <div class="col-md-6">
-                    <div class="row">
+                <div class="menu-course-mockup">
+                    <div class="">
+                        <!-- col-md-6 -->
+                        <div class="">
+                            <!-- row -->
 
-                        <input value="{{editCourseTitleDessert}}" type="text" ng-model="courseTitleDessert" ng-initial />
-                        <button class="timeBtn" ng-click="insertCourseTitleDessert()"><i class="fa fa-check"
-                                aria-hidden="true"></i></button>
+                            <input value="{{editCourseTitleDessert}}" type="text" ng-model="courseTitleDessert"
+                                ng-initial />
+                            <button class="timeBtn" ng-click="insertCourseTitleDessert()"><i class="fa fa-check"
+                                    aria-hidden="true"></i></button>
 
-                        <!-- <p editable-text="contactVisitEst.text" class="contact-info-mockup">
-                            {{contactVisitEst.text}}
-                        </p>
-                        -->
+                            <!-- <p editable-text="contactVisitEst.text" class="contact-info-mockup">
+                                {{contactVisitEst.text}}
+                            </p>
+                            -->
+                        </div>
                     </div>
+                    <div class="menu-title-mockup ml-0 mt-15"></div>
+                    <div class="menu-desc-mockup ml-0"></div>
+
+                    <div class="menu-title-mockup ml-0 mt-15"></div>
+                    <div class="menu-desc-mockup ml-0"></div>
+
+                    <div class="menu-title-mockup ml-0 mt-15"></div>
+                    <div class="menu-desc-mockup ml-0"></div>
                 </div>
-                <div class="menu-title-mockup"></div>
-                <div class="menu-desc-mockup"></div>
-
-                <div class="menu-title-mockup"></div>
-                <div class="menu-desc-mockup"></div>
-
-                <div class="menu-title-mockup"></div>
-                <div class="menu-desc-mockup"></div>
             </div>
             <div class="menu-pic-third-mockup" style="background-image:url({{thirdPicturePath}});">
                 <input type="file" name="file2" id="file3" class="inputfile" onchange="angular.element(this).scope().menuPicChanged(this, 'third')" />
@@ -506,8 +515,10 @@
         <div class="col-md-6" style="margin-top: 50px;">
             <div class="menu-mockup">
                 <div class="menu-course-mockup">
-                    <div class="col-md-6">
-                        <div class="row">
+                    <div class="">
+                        <!-- col-md-6 -->
+                        <div class="">
+                            <!-- row -->
 
                             <input value="{{editCourseTitleStarterEng}}" type="text" ng-model="courseTitleStarterEng"
                                 ng-initial />
@@ -520,15 +531,15 @@
                         -->
                         </div>
                     </div>
+                    <div class="menu-title-mockup ml-0 mt-15"></div>
+                    <div class="menu-desc-mockup ml-0"></div>
+
+                    <div class="menu-title-mockup ml-0 mt-15"></div>
+                    <div class="menu-desc-mockup ml-0"></div>
+
+                    <div class="menu-title-mockup ml-0 mt-15"></div>
+                    <div class="menu-desc-mockup ml-0"></div>
                 </div>
-                <div class="menu-title-mockup"></div>
-                <div class="menu-desc-mockup"></div>
-
-                <div class="menu-title-mockup"></div>
-                <div class="menu-desc-mockup"></div>
-
-                <div class="menu-title-mockup"></div>
-                <div class="menu-desc-mockup"></div>
             </div>
             <div class="menu-pic-second-mockup" style="background-image: url({{secondPicturePath}})">
                 <input type="file" name="file2" id="file2" class="inputfile" onchange="angular.element(this).scope().menuPicChanged(this, 'second')" />
@@ -567,9 +578,11 @@
                 <label style="margin-top: 115px;margin-left: 10px;" for="file1"><i class="fa fa-pencil" aria-hidden="true"></i></label>
             </div>
             <div class="menu-mockup" style="margin-top: 15px;">
-                <p class="menu-course-mockup">
-                    <div class="col-md-6">
-                        <div class="row">
+                <div class="menu-course-mockup">
+                    <div class="">
+                        <!-- col-md-6 -->
+                        <div class="">
+                            <!-- row -->
 
                             <input value="{{editCourseTitleMainEng}}" type="text" ng-model="courseTitleMainEng"
                                 ng-initial />
@@ -577,44 +590,46 @@
                                     aria-hidden="true"></i></button>
 
                             <!-- <p editable-text="contactVisitEst.text" class="contact-info-mockup">
-                            {{contactVisitEst.text}}
-                        </p>
-                        -->
+                                    {{contactVisitEst.text}}
+                                 </p> -->
                         </div>
                     </div>
 
-                    <div class="menu-title-mockup"></div>
-                    <div class="menu-desc-mockup"></div>
+                    <div class="menu-title-mockup ml-0 mt-15"></div>
+                    <div class="menu-desc-mockup ml-0"></div>
 
-                    <div class="menu-title-mockup"></div>
-                    <div class="menu-desc-mockup"></div>
+                    <div class="menu-title-mockup ml-0 mt-15"></div>
+                    <div class="menu-desc-mockup ml-0"></div>
 
-                    <div class="menu-title-mockup"></div>
-                    <div class="menu-desc-mockup"></div>
+                    <div class="menu-title-mockup ml-0 mt-15"></div>
+                    <div class="menu-desc-mockup ml-0"></div>
+                </div>
             </div>
             <div class="menu-mockup" style="margin-top: 15px;">
-                <div class="col-md-6">
-                    <div class="row">
+                <div class="menu-course-mockup">
+                    <div class=""><!-- col-md-6 -->
+                        <div class=""><!-- row -->
 
-                        <input value="{{editCourseTitleDessertEng}}" type="text" ng-model="courseTitleDessertEng"
-                            ng-initial />
-                        <button class="timeBtn" ng-click="insertCourseTitleDessertEng()"><i class="fa fa-check"
-                                aria-hidden="true"></i></button>
+                            <input value="{{editCourseTitleDessertEng}}" type="text" ng-model="courseTitleDessertEng"
+                                ng-initial />
+                            <button class="timeBtn" ng-click="insertCourseTitleDessertEng()"><i class="fa fa-check"
+                                    aria-hidden="true"></i></button>
 
-                        <!-- <p editable-text="contactVisitEst.text" class="contact-info-mockup">
-                            {{contactVisitEst.text}}
-                        </p>
-                        -->
+                            <!-- <p editable-text="contactVisitEst.text" class="contact-info-mockup">
+                                {{contactVisitEst.text}}
+                            </p>
+                            -->
+                        </div>
                     </div>
+                    <div class="menu-title-mockup ml-0 mt-15"></div>
+                    <div class="menu-desc-mockup ml-0"></div>
+
+                    <div class="menu-title-mockup ml-0 mt-15"></div>
+                    <div class="menu-desc-mockup ml-0"></div>
+
+                    <div class="menu-title-mockup ml-0 mt-15"></div>
+                    <div class="menu-desc-mockup ml-0"></div>
                 </div>
-                <div class="menu-title-mockup"></div>
-                <div class="menu-desc-mockup"></div>
-
-                <div class="menu-title-mockup"></div>
-                <div class="menu-desc-mockup"></div>
-
-                <div class="menu-title-mockup"></div>
-                <div class="menu-desc-mockup"></div>
             </div>
             <div class="menu-pic-third-mockup" style="background-image:url({{thirdPicturePath}});">
                 <input type="file" name="file2" id="file3" class="inputfile" onchange="angular.element(this).scope().menuPicChanged(this, 'third')" />
@@ -888,23 +903,25 @@
         </div>
         <div class="col-md-6" style="margin-top: 50px;">
             <div class="menu-mockup">
-                <div class="col-md-6">
-                    <div class="row">
+                <div class="menu-course-mockup">
+                    <div class=""><!-- col-md-6 -->
+                        <div class=""><!-- row -->
 
                         <input value="{{editCourseTitleStarterFin}}" type="text" ng-model="courseTitleStarterFin"
                             ng-initial />
                         <button class="timeBtn" ng-click="insertCourseTitleStarterFin()"><i class="fa fa-check"
                                 aria-hidden="true"></i></button>
                     </div>
+                    </div>
+                    <div class="menu-title-mockup ml-0 mt-15"></div>
+                    <div class="menu-desc-mockup ml-0"></div>
+
+                    <div class="menu-title-mockup ml-0 mt-15"></div>
+                    <div class="menu-desc-mockup ml-0"></div>
+
+                    <div class="menu-title-mockup ml-0 mt-15"></div>
+                    <div class="menu-desc-mockup ml-0"></div>
                 </div>
-                <div class="menu-title-mockup"></div>
-                <div class="menu-desc-mockup"></div>
-
-                <div class="menu-title-mockup"></div>
-                <div class="menu-desc-mockup"></div>
-
-                <div class="menu-title-mockup"></div>
-                <div class="menu-desc-mockup"></div>
             </div>
             <div class="menu-pic-second-mockup" style="background-image: url({{secondPicturePath}})">
                 <input type="file" name="file2" id="file2" class="inputfile" onchange="angular.element(this).scope().menuPicChanged(this, 'second')" />
@@ -943,8 +960,9 @@
                 <label style="margin-top: 115px;margin-left: 10px;" for="file1"><i class="fa fa-pencil" aria-hidden="true"></i></label>
             </div>
             <div class="menu-mockup" style="margin-top: 15px;">
-                <div class="col-md-6">
-                    <div class="row">
+                <div class="menu-course-mockup">
+                    <div class=""><!-- col-md-6 -->
+                        <div class=""><!-- row -->
 
                         <input value="{{editCourseTitleMainFin}}" type="text" ng-model="courseTitleMainFin" ng-initial />
                         <button class="timeBtn" ng-click="insertCourseTitleMainFin()"><i class="fa fa-check"
@@ -952,33 +970,37 @@
 
 
                     </div>
+                    </div>
+                    <div class="menu-title-mockup ml-0 mt-15"></div>
+                    <div class="menu-desc-mockup ml-0"></div>
+
+                    <div class="menu-title-mockup ml-0 mt-15"></div>
+                    <div class="menu-desc-mockup ml-0"></div>
+
+                    <div class="menu-title-mockup ml-0 mt-15"></div>
+                    <div class="menu-desc-mockup ml-0"></div>
                 </div>
-                <div class="menu-title-mockup"></div>
-                <div class="menu-desc-mockup"></div>
-
-                <div class="menu-title-mockup"></div>
-                <div class="menu-desc-mockup"></div>
-
-                <div class="menu-title-mockup"></div>
-                <div class="menu-desc-mockup"></div>
             </div>
             <div class="menu-mockup" style="margin-top: 15px;">
-                <div class="col-md-6">
-                    <div class="row">
+                <div class="menu-course-mockup">
+                    <div class=""><!-- col-md-6 -->
+                        <div class=""><!-- row -->
+
                         <input value="{{editCourseTitleDessertFin}}" type="text" ng-model="courseTitleDessertFin"
                             ng-initial />
                         <button class="timeBtn" ng-click="insertCourseTitleDessertFin()"><i class="fa fa-check"
                                 aria-hidden="true"></i></button>
                     </div>
+                    </div>
+                    <div class="menu-title-mockup ml-0 mt-15"></div>
+                    <div class="menu-desc-mockup ml-0"></div>
+
+                    <div class="menu-title-mockup ml-0 mt-15"></div>
+                    <div class="menu-desc-mockup ml-0"></div>
+
+                    <div class="menu-title-mockup ml-0 mt-15"></div>
+                    <div class="menu-desc-mockup ml-0"></div>
                 </div>
-                <div class="menu-title-mockup"></div>
-                <div class="menu-desc-mockup"></div>
-
-                <div class="menu-title-mockup"></div>
-                <div class="menu-desc-mockup"></div>
-
-                <div class="menu-title-mockup"></div>
-                <div class="menu-desc-mockup"></div>
             </div>
             <div class="menu-pic-third-mockup" style="background-image:url({{thirdPicturePath}});">
                 <input type="file" name="file2" id="file3" class="inputfile" onchange="angular.element(this).scope().menuPicChanged(this, 'third')" />
@@ -1251,22 +1273,25 @@
         </div>
         <div class="col-md-6" style="margin-top: 50px;">
             <div class="menu-mockup">
-                <div class="col-md-6">
-                    <div class="row">
+                <div class="menu-course-mockup">
+                    <div class=""><!-- col-md-6 -->
+                        <div class=""><!-- row -->
+
                         <input value="{{editCourseTitleStarterRus}}" type="text" ng-model="courseTitleStarterRus"
                             ng-initial />
                         <button class="timeBtn" ng-click="insertCourseTitleStarterRus()"><i class="fa fa-check"
                                 aria-hidden="true"></i></button>
                     </div>
+                    </div>
+                    <div class="menu-title-mockup ml-0 mt-15"></div>
+                    <div class="menu-desc-mockup ml-0"></div>
+
+                    <div class="menu-title-mockup ml-0 mt-15"></div>
+                    <div class="menu-desc-mockup ml-0"></div>
+
+                    <div class="menu-title-mockup ml-0 mt-15"></div>
+                    <div class="menu-desc-mockup ml-0"></div>
                 </div>
-                <div class="menu-title-mockup"></div>
-                <div class="menu-desc-mockup"></div>
-
-                <div class="menu-title-mockup"></div>
-                <div class="menu-desc-mockup"></div>
-
-                <div class="menu-title-mockup"></div>
-                <div class="menu-desc-mockup"></div>
             </div>
             <div class="menu-pic-second-mockup" style="background-image: url({{secondPicturePath}})">
                 <input type="file" name="file2" id="file2" class="inputfile" onchange="angular.element(this).scope().menuPicChanged(this, 'second')" />
@@ -1305,42 +1330,46 @@
                 <label style="margin-top: 115px;margin-left: 10px;" for="file1"><i class="fa fa-pencil" aria-hidden="true"></i></label>
             </div>
             <div class="menu-mockup" style="margin-top: 15px;">
-                <p class="menu-course-mockup">
-                    <div class="col-md-6">
-                        <div class="row">
+                <div class="menu-course-mockup">
+                    <div class=""><!-- col-md-6 -->
+                        <div class=""><!-- row -->
+
                             <input value="{{editCourseTitleMainRus}}" type="text" ng-model="courseTitleMainRus"
                                 ng-initial />
                             <button class="timeBtn" ng-click="insertCourseTitleMainRus()"><i class="fa fa-check"
                                     aria-hidden="true"></i></button>
                         </div>
                     </div>
+                    <div class="menu-title-mockup ml-0 mt-15"></div>
+                    <div class="menu-desc-mockup ml-0"></div>
 
-                    <div class="menu-title-mockup"></div>
-                    <div class="menu-desc-mockup"></div>
+                    <div class="menu-title-mockup ml-0 mt-15"></div>
+                    <div class="menu-desc-mockup ml-0"></div>
 
-                    <div class="menu-title-mockup"></div>
-                    <div class="menu-desc-mockup"></div>
-
-                    <div class="menu-title-mockup"></div>
-                    <div class="menu-desc-mockup"></div>
+                    <div class="menu-title-mockup ml-0 mt-15"></div>
+                    <div class="menu-desc-mockup ml-0"></div>
+                </div>
             </div>
             <div class="menu-mockup" style="margin-top: 15px;">
-                <div class="col-md-6">
-                    <div class="row">
+                <div class="menu-course-mockup">
+                    <div class=""><!-- col-md-6 -->
+                        <div class=""><!-- row -->
+
                         <input value="{{editCourseTitleDessertRus}}" type="text" ng-model="courseTitleDessertRus"
                             ng-initial />
                         <button class="timeBtn" ng-click="insertCourseTitleDessertRus()"><i class="fa fa-check"
                                 aria-hidden="true"></i></button>
                     </div>
+                    </div>
+                    <div class="menu-title-mockup ml-0 mt-15"></div>
+                    <div class="menu-desc-mockup ml-0"></div>
+
+                    <div class="menu-title-mockup ml-0 mt-15"></div>
+                    <div class="menu-desc-mockup ml-0"></div>
+
+                    <div class="menu-title-mockup ml-0 mt-15"></div>
+                    <div class="menu-desc-mockup ml-0"></div>
                 </div>
-                <div class="menu-title-mockup"></div>
-                <div class="menu-desc-mockup"></div>
-
-                <div class="menu-title-mockup"></div>
-                <div class="menu-desc-mockup"></div>
-
-                <div class="menu-title-mockup"></div>
-                <div class="menu-desc-mockup"></div>
             </div>
             <div class="menu-pic-third-mockup" style="background-image:url({{thirdPicturePath}});">
                 <input type="file" name="file2" id="file3" class="inputfile" onchange="angular.element(this).scope().menuPicChanged(this, 'third')" />
