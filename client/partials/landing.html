@@ -837,93 +837,6 @@
                                 </p> -->
                                 <table style="width:100%;">
                                     <tbody>
-                                        <!-- Mock KidsMenu Data -->
-                                        <!-- <tr>
-                                            <td class="menu-padding">
-                                                <p ng-if="$root.lang==='ee'" class="menu-dish">
-                                                    LASTEPASTA KANAGA
-                                                </p>
-                                                <p ng-if="$root.lang==='en'" class="menu-dish">
-                                                    KIDS PASTA WITH CHICKEN
-                                                </p>
-                                                <p ng-if="$root.lang==='fi'" class="menu-dish">
-                                                    KANAPASTAA
-                                                </p>
-                                                <p ng-if="$root.lang==='ru'" class="menu-dish" style="font-family:Roboto">
-                                                    ПАСТА С КУРИЦЕЙ
-                                                </p>
-                                            </td>
-                                            <td class="menu-padding">
-                                                <p class="menu-price">
-                                                    3,5 €
-                                                </p>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="menu-padding">
-                                                <p ng-if="$root.lang==='ee'" class="menu-dish">
-                                                    KRÕBE KALA PRAEKARTULIGA
-                                                </p>
-                                                <p ng-if="$root.lang==='en'" class="menu-dish">
-                                                    FRIED FISH WITH FRIED POTATOS
-                                                </p>
-                                                <p ng-if="$root.lang==='fi'" class="menu-dish">
-                                                    RAPEAA KALAA JA PAISTINPERUNOITA
-                                                </p>
-                                                <p style="font-family:Roboto" ng-if="$root.lang==='ru'" class="menu-dish">
-                                                    ХРУСТЯЩАЯ РЫБА С ЖАРЕНЫМ КАРТОФЕЛЕМ
-                                                </p>
-                                            </td>
-                                            <td class="menu-padding">
-                                                <p class="menu-price">5 €</p>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="menu-padding">
-                                                <p ng-if="$root.lang==='ee'" class="menu-dish">
-                                                    FII-KARTUL
-                                                </p>
-                                                <p ng-if="$root.lang==='en'" class="menu-dish">
-                                                    FII-POTATOS
-                                                </p>
-                                                <p ng-if="$root.lang==='fi'" class="menu-dish">
-                                                    FIIN RANSKANPERUNOITA
-                                                </p>
-                                                <p style="font-family:Roboto" ng-if="$root.lang==='ru'" class="menu-dish">
-                                                    КАРТОФЕЛЬ «FII»
-                                                </p>
-                                            </td>
-                                            <td class="menu-padding">
-                                                <p class="menu-price">4 €</p>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="menu-padding">
-                                                <p ng-if="$root.lang==='ee'" class="menu-dish">
-                                                    JÄÄTISEVALIK
-                                                </p>
-                                                <p ng-if="$root.lang==='en'" class="menu-dish">
-                                                    ICE CREAM MIX
-                                                </p>
-                                                <p ng-if="$root.lang==='fi'" class="menu-dish">
-                                                    JÄÄTELÖÄ
-                                                </p>
-                                                <p style="font-family:Roboto" ng-if="$root.lang==='ru'" class="menu-dish">
-                                                    МОРОЖЕНОЕ В АССОРТИМЕНТЕ
-                                                </p>
-
-                                                <p ng-if="$root.lang==='ee'" class="menu-description">
-                                                    Valikut küsi teenindajalt!
-                                                </p>
-                                                <p ng-if="$root.lang==='en'" class="menu-description">
-                                                    Ask service for selection!
-                                                </p>
-                                            </td>
-                                            <td class="menu-padding">
-                                                <p class="menu-price">3 €</p>
-                                            </td>
-                                        </tr> -->
-
                                         <!-- Kids From DB -->
                                         <tr ng-repeat="item in kids">
                                             <td class="menu-padding">
@@ -956,14 +869,16 @@
                                                 </p>
                                             </td>
                                             <td class="menu-padding">
-                                                <p ng-if="$root.lang ==='en' && item.nameEng.length != 0"
-                                                    class="menu-price"><!--  && item.descEng.length != 0 -->
+                                                <p ng-if="$root.lang ==='en' && item.nameEng.length != 0" class="menu-price">
+                                                    <!--  && item.descEng.length != 0 -->
                                                     {{item.price}} €
                                                 </p>
-                                                <p ng-if="$root.lang ==='fi' && item.nameFin.length != 0" class="menu-price"><!--  && item.descFin.length != 0 -->
+                                                <p ng-if="$root.lang ==='fi' && item.nameFin.length != 0" class="menu-price">
+                                                    <!--  && item.descFin.length != 0 -->
                                                     {{item.price}} €
                                                 </p>
-                                                <p ng-if="$root.lang ==='ru' && item.nameRus.length != 0" class="menu-price"><!--  && item.descRus.length != 0 -->
+                                                <p ng-if="$root.lang ==='ru' && item.nameRus.length != 0" class="menu-price">
+                                                    <!--  && item.descRus.length != 0 -->
                                                     {{item.price}} €
                                                 </p>
                                                 <p ng-if="$root.lang ==='ee'" class="menu-price">
@@ -1153,7 +1068,9 @@
                                 <p ng-if="$root.lang ==='ru'" class="menu-box-title" style="text-transform: uppercase; font-family:Roboto;">
                                     Напитки
                                 </p> -->
-                                <ul ng-if="$root.lang==='en'" class="drink-menu-tabs">
+
+                                <!-- Old Version -->
+                                <!-- <ul ng-if="$root.lang==='en'" class="drink-menu-tabs">
                                     <li ng-class="{true: 'activeTab'}[$root.activeDrinkTab === 'wine']" ng-click="changeDrinks('wine')">WINE
                                         AND CHAMPAGNE</li>
                                     <li ng-class="{true: 'activeTab'}[$root.activeDrinkTab === 'beer']" ng-click="changeDrinks('beer')">BEER
@@ -1219,6 +1136,171 @@
                                     <li ng-class="{true: 'subActive'}[$root.activeSubTabSpirit === 'liq']" ng-click="sortBySubSpirit('liq')">Liqueur</li>
                                     <li ng-class="{true: 'subActive'}[$root.activeSubTabSpirit === 'ver']" ng-click="sortBySubSpirit('ver')">Vermut</li>
                                     <li ng-class="{true: 'subActive'}[$root.activeSubTabSpirit === 'bit']" ng-click="sortBySubSpirit('bit')">Bitter</li>
+                                </ul> -->
+
+                                <!-- New Version -->
+                                <ul ng-if="$root.lang==='en'" class="drink-menu-tabs">
+                                    <li ng-class="{true: 'activeTab'}[$root.activeDrinkTab === 'wine']" ng-click="changeDrinks('wine')">WINE
+                                        AND CHAMPAGNE</li>
+                                    <li ng-class="{true: 'activeTab'}[$root.activeDrinkTab === 'beer']" ng-click="changeDrinks('beer')">BEER
+                                        / CIDER</li>
+                                    <li ng-class="{true: 'activeTab'}[$root.activeDrinkTab === 'hardalco']" ng-click="changeDrinks('hardalco')">SPIRITS</li>
+                                    <li ng-class="{true: 'activeTab'}[$root.activeDrinkTab === 'cocktail']" ng-click="changeDrinks('cocktail')">COCKTAILS</li>
+                                    <li ng-class="{true: 'activeTab'}[$root.activeDrinkTab === 'nonalco']" ng-click="changeDrinks('nonalco')">SOFT
+                                        DRINKS</li>
+                                    <li ng-class="{true: 'activeTab'}[$root.activeDrinkTab === 'hotdrink']" ng-click="changeDrinks('hotdrink')">HOT
+                                        BEVERAGES</li>
+                                </ul>
+                                <ul ng-if="$root.lang==='ee'" class="drink-menu-tabs" style="list-style:none;">
+                                    <li ng-class="{true: 'activeTab'}[$root.activeDrinkTab === 'wine']" ng-click="changeDrinks('wine')">VEIN
+                                        JA MULL</li>
+                                    <li ng-class="{true: 'activeTab'}[$root.activeDrinkTab === 'beer']" ng-click="changeDrinks('beer')">LAHJA</li>
+                                    <li ng-class="{true: 'activeTab'}[$root.activeDrinkTab === 'hardalco']" ng-click="changeDrinks('hardalco')">KANGE</li>
+                                    <li ng-class="{true: 'activeTab'}[$root.activeDrinkTab === 'cocktail']" ng-click="changeDrinks('cocktail')">KOKTEILID</li>
+                                    <li ng-class="{true: 'activeTab'}[$root.activeDrinkTab === 'nonalco']" ng-click="changeDrinks('nonalco')">ALKOHOLIVABAD</li>
+                                    <li ng-class="{true: 'activeTab'}[$root.activeDrinkTab === 'hotdrink']" ng-click="changeDrinks('hotdrink')">KUUMAD
+                                        JOOGID</li>
+                                </ul>
+                                <ul ng-if="$root.lang==='fi'" class="drink-menu-tabs" style="list-style:none;">
+                                    <li ng-class="{true: 'activeTab'}[$root.activeDrinkTab === 'wine']" ng-click="changeDrinks('wine')">VIINI
+                                        JA SAMPPANJA</li>
+                                    <li ng-class="{true: 'activeTab'}[$root.activeDrinkTab === 'beer']" ng-click="changeDrinks('beer')">KEVYTJUOMAT</li>
+                                    <li ng-class="{true: 'activeTab'}[$root.activeDrinkTab === 'hardalco']" ng-click="changeDrinks('hardalco')">VÄKEVÄT
+                                        ALKOHOLIJUOMAT</li>
+                                    <li ng-class="{true: 'activeTab'}[$root.activeDrinkTab === 'cocktail']" ng-click="changeDrinks('cocktail')">KOKTEILIT</li>
+                                    <li ng-class="{true: 'activeTab'}[$root.activeDrinkTab === 'nonalco']" ng-click="changeDrinks('nonalco')">ALKOHOLITTOMAT</li>
+                                    <li ng-class="{true: 'activeTab'}[$root.activeDrinkTab === 'hotdrink']" ng-click="changeDrinks('hotdrink')">KUUMAT
+                                        JUOMAT</li>
+                                </ul>
+                                <ul ng-if="$root.lang==='ru'" class="drink-menu-tabs" style="list-style:none;">
+                                    <li style="font-family:Roboto; text-transform: uppercase;" ng-class="{true: 'activeTab'}[$root.activeDrinkTab === 'wine']"
+                                        ng-click="changeDrinks('wine')">Вино и шампанское</li>
+                                    <li style="font-family:Roboto; text-transform: uppercase;" ng-class="{true: 'activeTab'}[$root.activeDrinkTab === 'beer']"
+                                        ng-click="changeDrinks('beer')">Легкий алкоголь</li>
+                                    <li style="font-family:Roboto; text-transform: uppercase;" ng-class="{true: 'activeTab'}[$root.activeDrinkTab === 'hardalco']"
+                                        ng-click="changeDrinks('hardalco')">Крепкий алкоголь</li>
+                                    <li style="font-family:Roboto; text-transform: uppercase;" ng-class="{true: 'activeTab'}[$root.activeDrinkTab === 'cocktail']"
+                                        ng-click="changeDrinks('cocktail')">Коктейли</li>
+                                    <li style="font-family:Roboto; text-transform: uppercase;" ng-class="{true: 'activeTab'}[$root.activeDrinkTab === 'nonalco']"
+                                        ng-click="changeDrinks('nonalco')">Безалкогольные напитки</li>
+                                    <li style="font-family:Roboto; text-transform: uppercase;" ng-class="{true: 'activeTab'}[$root.activeDrinkTab === 'hotdrink']"
+                                        ng-click="changeDrinks('hotdrink')">Горячие напитки</li>
+                                </ul>
+
+
+                                <ul ng-if="$root.lang ==='ee'" class="drink-menu-tabs drink-mobile-padding" ng-show="wineSubEst">
+                                    <li ng-class="{true: 'subActive'}[$root.activeSubTab === 'white']" ng-click="sortBySub('white')">Valge</li>
+                                    <li ng-class="{true: 'subActive'}[$root.activeSubTab === 'red']" ng-click="sortBySub('red')">Punane</li>
+                                    <li ng-class="{true: 'subActive'}[$root.activeSubTab === 'rose']" ng-click="sortBySub('rose')">Roosa</li>
+                                    <li ng-class="{true: 'subActive'}[$root.activeSubTab === 'champ']" ng-click="sortBySub('champ')">Šampanja</li>
+                                    <li ng-class="{true: 'subActive'}[$root.activeSubTab === 'prose']" ng-click="sortBySub('prose')">Vahuvein</li>
+                                    <li ng-class="{true: 'subActive'}[$root.activeSubTab === 'port']" ng-click="sortBySub('port')">Portvein
+                                        ja šerri</li>
+                                </ul>
+                                <ul ng-if="$root.lang ==='en'" class="drink-menu-tabs drink-mobile-padding" ng-show="wineSubEng">
+                                    <li ng-class="{true: 'subActive'}[$root.activeSubTab === 'white']" ng-click="sortBySub('white')">White</li>
+                                    <li ng-class="{true: 'subActive'}[$root.activeSubTab === 'red']" ng-click="sortBySub('red')">Red</li>
+                                    <li ng-class="{true: 'subActive'}[$root.activeSubTab === 'rose']" ng-click="sortBySub('rose')">Rose</li>
+                                    <li ng-class="{true: 'subActive'}[$root.activeSubTab === 'champ']" ng-click="sortBySub('champ')">Champagne</li>
+                                    <li ng-class="{true: 'subActive'}[$root.activeSubTab === 'prose']" ng-click="sortBySub('prose')">Sparkling
+                                        wine</li>
+                                    <li ng-class="{true: 'subActive'}[$root.activeSubTab === 'port']" ng-click="sortBySub('port')">Port
+                                        and sherry</li>
+                                </ul>
+                                <ul style="margin-top: 20px;" ng-if="$root.lang ==='fi'" class="drink-menu-tabs drink-mobile-padding"
+                                    ng-show="wineSubFin">
+                                    <li ng-class="{true: 'subActive'}[$root.activeSubTab === 'white']" ng-click="sortBySub('white')">Valkoviinit</li>
+                                    <li ng-class="{true: 'subActive'}[$root.activeSubTab === 'red']" ng-click="sortBySub('red')">Punaviinit</li>
+                                    <li ng-class="{true: 'subActive'}[$root.activeSubTab === 'rose']" ng-click="sortBySub('rose')">Roseeviinit</li>
+                                    <li ng-class="{true: 'subActive'}[$root.activeSubTab === 'champ']" ng-click="sortBySub('champ')">Samppanja</li>
+                                    <li ng-class="{true: 'subActive'}[$root.activeSubTab === 'prose']" ng-click="sortBySub('prose')">Kuohuviini</li>
+                                    <li ng-class="{true: 'subActive'}[$root.activeSubTab === 'port']" ng-click="sortBySub('port')">Portviini
+                                        ja sherry</li>
+                                </ul>
+                                <ul style="margin-top: 20px;" ng-if="$root.lang ==='ru'" class="drink-menu-tabs drink-mobile-padding"
+                                    ng-show="wineSubRus">
+                                    <li style="font-family:Roboto;" ng-class="{true: 'subActive'}[$root.activeSubTab === 'white']"
+                                        ng-click="sortBySub('white')">Белое
+                                        вино</li>
+                                    <li style="font-family:Roboto;" ng-class="{true: 'subActive'}[$root.activeSubTab === 'red']"
+                                        ng-click="sortBySub('red')">Красное
+                                        вино</li>
+                                    <li style="font-family:Roboto;" ng-class="{true: 'subActive'}[$root.activeSubTab === 'rose']"
+                                        ng-click="sortBySub('rose')">Розовое
+                                        вино</li>
+                                    <li style="font-family:Roboto;" ng-class="{true: 'subActive'}[$root.activeSubTab === 'champ']"
+                                        ng-click="sortBySub('champ')">Шампанское</li>
+                                    <li style="font-family:Roboto;" ng-class="{true: 'subActive'}[$root.activeSubTab === 'prose']"
+                                        ng-click="sortBySub('prose')">Игристое
+                                        винo</li>
+                                    <li style="font-family:Roboto;" ng-class="{true: 'subActive'}[$root.activeSubTab === 'port']"
+                                        ng-click="sortBySub('port')">Портвейн
+                                        и херес</li>
+                                </ul>
+                                <ul ng-if="$root.lang==='ee'" class="drink-menu-tabs drink-mobile-padding" ng-show="spiritSubEst">
+                                    <li ng-class="{true: 'subActive'}[$root.activeSubTabSpirit === 'conac']" ng-click="sortBySubSpirit('conac')">Konjak</li>
+                                    <li ng-class="{true: 'subActive'}[$root.activeSubTabSpirit === 'calv']" ng-click="sortBySubSpirit('calv')">Kalvados</li>
+                                    <li ng-class="{true: 'subActive'}[$root.activeSubTabSpirit === 'brand']" ng-click="sortBySubSpirit('brand')">Brändi</li>
+                                    <li ng-class="{true: 'subActive'}[$root.activeSubTabSpirit === 'whisk']" ng-click="sortBySubSpirit('whisk')">Viski</li>
+                                    <li ng-class="{true: 'subActive'}[$root.activeSubTabSpirit === 'rum']" ng-click="sortBySubSpirit('rum')">Rumm</li>
+                                    <li ng-class="{true: 'subActive'}[$root.activeSubTabSpirit === 'gin']" ng-click="sortBySubSpirit('gin')">Džinn</li>
+                                    <li ng-class="{true: 'subActive'}[$root.activeSubTabSpirit === 'vod']" ng-click="sortBySubSpirit('vod')">Viin</li>
+                                    <li ng-class="{true: 'subActive'}[$root.activeSubTabSpirit === 'teq']" ng-click="sortBySubSpirit('teq')">Tekiila</li>
+                                    <li ng-class="{true: 'subActive'}[$root.activeSubTabSpirit === 'liq']" ng-click="sortBySubSpirit('liq')">Liköör</li>
+                                    <li ng-class="{true: 'subActive'}[$root.activeSubTabSpirit === 'ver']" ng-click="sortBySubSpirit('ver')">Vermut</li>
+                                    <li ng-class="{true: 'subActive'}[$root.activeSubTabSpirit === 'bit']" ng-click="sortBySubSpirit('bit')">Bitter</li>
+                                </ul>
+                                <ul ng-if="$root.lang==='en'" class="drink-menu-tabs drink-mobile-padding" ng-show="spiritSubEng">
+                                    <li ng-class="{true: 'subActive'}[$root.activeSubTabSpirit === 'conac']" ng-click="sortBySubSpirit('conac')">Cognac</li>
+                                    <li ng-class="{true: 'subActive'}[$root.activeSubTabSpirit === 'calv']" ng-click="sortBySubSpirit('calv')">Kalvados</li>
+                                    <li ng-class="{true: 'subActive'}[$root.activeSubTabSpirit === 'brand']" ng-click="sortBySubSpirit('brand')">Brandy</li>
+                                    <li ng-class="{true: 'subActive'}[$root.activeSubTabSpirit === 'whisk']" ng-click="sortBySubSpirit('whisk')">Whiskey</li>
+                                    <li ng-class="{true: 'subActive'}[$root.activeSubTabSpirit === 'rum']" ng-click="sortBySubSpirit('rum')">Rum</li>
+                                    <li ng-class="{true: 'subActive'}[$root.activeSubTabSpirit === 'gin']" ng-click="sortBySubSpirit('gin')">Gin</li>
+                                    <li ng-class="{true: 'subActive'}[$root.activeSubTabSpirit === 'vod']" ng-click="sortBySubSpirit('vod')">Vodka</li>
+                                    <li ng-class="{true: 'subActive'}[$root.activeSubTabSpirit === 'teq']" ng-click="sortBySubSpirit('teq')">Tequila</li>
+                                    <li ng-class="{true: 'subActive'}[$root.activeSubTabSpirit === 'liq']" ng-click="sortBySubSpirit('liq')">Liqueur</li>
+                                    <li ng-class="{true: 'subActive'}[$root.activeSubTabSpirit === 'ver']" ng-click="sortBySubSpirit('ver')">Vermut</li>
+                                    <li ng-class="{true: 'subActive'}[$root.activeSubTabSpirit === 'bit']" ng-click="sortBySubSpirit('bit')">Bitter</li>
+                                </ul>
+                                <ul style="margin-top: 20px;" ng-if="$root.lang==='fi'" class="drink-menu-tabs drink-mobile-padding"
+                                    ng-show="spiritSubFin">
+                                    <li ng-class="{true: 'subActive'}[$root.activeSubTabSpirit === 'conac']" ng-click="sortBySubSpirit('conac')">Konjakki</li>
+                                    <li ng-class="{true: 'subActive'}[$root.activeSubTabSpirit === 'calv']" ng-click="sortBySubSpirit('calv')">Calvados</li>
+                                    <li ng-class="{true: 'subActive'}[$root.activeSubTabSpirit === 'brand']" ng-click="sortBySubSpirit('brand')">Brandy</li>
+                                    <li ng-class="{true: 'subActive'}[$root.activeSubTabSpirit === 'whisk']" ng-click="sortBySubSpirit('whisk')">Viski</li>
+                                    <li ng-class="{true: 'subActive'}[$root.activeSubTabSpirit === 'rum']" ng-click="sortBySubSpirit('rum')">Rommi</li>
+                                    <li ng-class="{true: 'subActive'}[$root.activeSubTabSpirit === 'gin']" ng-click="sortBySubSpirit('gin')">Gin</li>
+                                    <li ng-class="{true: 'subActive'}[$root.activeSubTabSpirit === 'vod']" ng-click="sortBySubSpirit('vod')">Vodka</li>
+                                    <li ng-class="{true: 'subActive'}[$root.activeSubTabSpirit === 'teq']" ng-click="sortBySubSpirit('teq')">Tequila</li>
+                                    <li ng-class="{true: 'subActive'}[$root.activeSubTabSpirit === 'liq']" ng-click="sortBySubSpirit('liq')">Likööri</li>
+                                    <li ng-class="{true: 'subActive'}[$root.activeSubTabSpirit === 'ver']" ng-click="sortBySubSpirit('ver')">Vermutti</li>
+                                    <li ng-class="{true: 'subActive'}[$root.activeSubTabSpirit === 'bit']" ng-click="sortBySubSpirit('bit')">Bitter</li>
+                                </ul>
+                                <ul style="margin-top: 20px;" ng-if="$root.lang==='ru'" class="drink-menu-tabs drink-mobile-padding"
+                                    ng-show="spiritSubRus">
+                                    <li style="font-family:Roboto;" ng-class="{true: 'subActive'}[$root.activeSubTabSpirit === 'conac']"
+                                        ng-click="sortBySubSpirit('conac')">Коньяк</li>
+                                    <li style="font-family:Roboto;" ng-class="{true: 'subActive'}[$root.activeSubTabSpirit === 'calv']"
+                                        ng-click="sortBySubSpirit('calv')">Кальвадос</li>
+                                    <li style="font-family:Roboto;" ng-class="{true: 'subActive'}[$root.activeSubTabSpirit === 'brand']"
+                                        ng-click="sortBySubSpirit('brand')">Бренди</li>
+                                    <li style="font-family:Roboto;" ng-class="{true: 'subActive'}[$root.activeSubTabSpirit === 'whisk']"
+                                        ng-click="sortBySubSpirit('whisk')">Виски</li>
+                                    <li style="font-family:Roboto;" ng-class="{true: 'subActive'}[$root.activeSubTabSpirit === 'rum']"
+                                        ng-click="sortBySubSpirit('rum')">Ром</li>
+                                    <li style="font-family:Roboto;" ng-class="{true: 'subActive'}[$root.activeSubTabSpirit === 'gin']"
+                                        ng-click="sortBySubSpirit('gin')">Джин</li>
+                                    <li style="font-family:Roboto;" ng-class="{true: 'subActive'}[$root.activeSubTabSpirit === 'vod']"
+                                        ng-click="sortBySubSpirit('vod')">Водка</li>
+                                    <li style="font-family:Roboto;" ng-class="{true: 'subActive'}[$root.activeSubTabSpirit === 'teq']"
+                                        ng-click="sortBySubSpirit('teq')">Текила</li>
+                                    <li style="font-family:Roboto;" ng-class="{true: 'subActive'}[$root.activeSubTabSpirit === 'liq']"
+                                        ng-click="sortBySubSpirit('liq')">Ликер</li>
+                                    <li style="font-family:Roboto;" ng-class="{true: 'subActive'}[$root.activeSubTabSpirit === 'ver']"
+                                        ng-click="sortBySubSpirit('ver')">Вермут</li>
+                                    <li style="font-family:Roboto;" ng-class="{true: 'subActive'}[$root.activeSubTabSpirit === 'bit']"
+                                        ng-click="sortBySubSpirit('bit')">Bitter</li>
                                 </ul>
                                 <table style="width:100%;">
                                     <tbody>
@@ -1292,91 +1374,6 @@
                                 </p>
                                 <table style="width:100%;">
                                     <tbody>
-                                        <!-- Mock KidsMenu Data -->
-                                        <!-- <tr>
-                                            <td class="menu-padding">
-                                                <p ng-if="$root.lang==='ee'" class="menu-dish">
-                                                    LASTEPASTA KANAGA
-                                                </p>
-                                                <p ng-if="$root.lang==='en'" class="menu-dish">
-                                                    KIDS PASTA WITH CHICKEN
-                                                </p>
-                                                <p ng-if="$root.lang==='fi'" class="menu-dish">
-                                                    KANAPASTAA
-                                                </p>
-                                                <p ng-if="$root.lang==='ru'" class="menu-dish" style="font-family:Roboto">
-                                                    ПАСТА С КУРИЦЕЙ
-                                                </p>
-                                            </td>
-                                            <td class="menu-padding">
-                                                <p class="menu-price">3,5 €</p>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="menu-padding">
-                                                <p ng-if="$root.lang==='ee'" class="menu-dish">
-                                                    KRÕBE KALA PRAEKARTULIGA
-                                                </p>
-                                                <p ng-if="$root.lang==='en'" class="menu-dish">
-                                                    FRIED FISH WITH FRIED POTATOS
-                                                </p>
-                                                <p ng-if="$root.lang==='fi'" class="menu-dish">
-                                                    RAPEAA KALAA JA PAISTINPERUNOITA
-                                                </p>
-                                                <p style="font-family:Roboto" ng-if="$root.lang==='ru'" class="menu-dish">
-                                                    ХРУСТЯЩАЯ РЫБА С ЖАРЕНЫМ КАРТОФЕЛЕМ
-                                                </p>
-                                            </td>
-                                            <td class="menu-padding">
-                                                <p class="menu-price">5 €</p>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="menu-padding">
-                                                <p ng-if="$root.lang==='ee'" class="menu-dish">
-                                                    FII-KARTUL
-                                                </p>
-                                                <p ng-if="$root.lang==='en'" class="menu-dish">
-                                                    FII-POTATOS
-                                                </p>
-                                                <p ng-if="$root.lang==='fi'" class="menu-dish">
-                                                    FIIN RANSKANPERUNOITA
-                                                </p>
-                                                <p style="font-family:Roboto" ng-if="$root.lang==='ru'" class="menu-dish">
-                                                    КАРТОФЕЛЬ «FII»
-                                                </p>
-                                            </td>
-                                            <td class="menu-padding">
-                                                <p class="menu-price">4 €</p>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="menu-padding">
-                                                <p ng-if="$root.lang==='ee'" class="menu-dish">
-                                                    JÄÄTISEVALIK
-                                                </p>
-                                                <p ng-if="$root.lang==='en'" class="menu-dish">
-                                                    ICE CREAM MIX
-                                                </p>
-                                                <p ng-if="$root.lang==='fi'" class="menu-dish">
-                                                    JÄÄTELÖÄ
-                                                </p>
-                                                <p style="font-family:Roboto" ng-if="$root.lang==='ru'" class="menu-dish">
-                                                    МОРОЖЕНОЕ В АССОРТИМЕНТЕ
-                                                </p>
-
-                                                <p ng-if="$root.lang==='ee'" class="menu-description">
-                                                    Valikut küsi teenindajalt!
-                                                </p>
-                                                <p ng-if="$root.lang==='en'" class="menu-description">
-                                                    Ask service for selection!
-                                                </p>
-                                            </td>
-                                            <td class="menu-padding">
-                                                <p class="menu-price">3 €</p>
-                                            </td>
-                                        </tr> -->
-
                                         <!-- Kids From DB -->
                                         <tr ng-repeat="item in kids">
                                             <td class="menu-padding">
@@ -1409,16 +1406,16 @@
                                                 </p>
                                             </td>
                                             <td class="menu-padding">
-                                                <p ng-if="$root.lang ==='en' && item.nameEng.length != 0"
-                                                    class="menu-price mt-0"><!--  && item.descEng.length != 0 -->
+                                                <p ng-if="$root.lang ==='en' && item.nameEng.length != 0" class="menu-price mt-0">
+                                                    <!--  && item.descEng.length != 0 -->
                                                     {{item.price}} €
                                                 </p>
-                                                <p ng-if="$root.lang ==='fi' && item.nameFin.length != 0"
-                                                    class="menu-price mt-0"><!--  && item.descFin.length != 0 -->
+                                                <p ng-if="$root.lang ==='fi' && item.nameFin.length != 0" class="menu-price mt-0">
+                                                    <!--  && item.descFin.length != 0 -->
                                                     {{item.price}} €
                                                 </p>
-                                                <p ng-if="$root.lang ==='ru' && item.nameRus.length != 0"
-                                                    class="menu-price mt-0"><!--  && item.descRus.length != 0 -->
+                                                <p ng-if="$root.lang ==='ru' && item.nameRus.length != 0" class="menu-price mt-0">
+                                                    <!--  && item.descRus.length != 0 -->
                                                     {{item.price}} €
                                                 </p>
                                                 <p ng-if="$root.lang ==='ee'" class="menu-price mt-0">
