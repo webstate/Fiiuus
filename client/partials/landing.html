@@ -1069,76 +1069,7 @@
                                     Напитки
                                 </p> -->
 
-                                <!-- Old Version -->
-                                <!-- <ul ng-if="$root.lang==='en'" class="drink-menu-tabs">
-                                    <li ng-class="{true: 'activeTab'}[$root.activeDrinkTab === 'wine']" ng-click="changeDrinks('wine')">WINE
-                                        AND CHAMPAGNE</li>
-                                    <li ng-class="{true: 'activeTab'}[$root.activeDrinkTab === 'beer']" ng-click="changeDrinks('beer')">BEER
-                                        / CIDER</li>
-                                    <li ng-class="{true: 'activeTab'}[$root.activeDrinkTab === 'hardalco']" ng-click="changeDrinks('hardalco')">SPIRITS</li>
-                                    <li ng-class="{true: 'activeTab'}[$root.activeDrinkTab === 'cocktail']" ng-click="changeDrinks('cocktail')">COCKTAILS</li>
-                                    <li ng-class="{true: 'activeTab'}[$root.activeDrinkTab === 'nonalco']" ng-click="changeDrinks('nonalco')">SOFT
-                                        DRINKS</li>
-                                    <li ng-class="{true: 'activeTab'}[$root.activeDrinkTab === 'hotdrink']" ng-click="changeDrinks('hotdrink')">HOT
-                                        BEVERAGES</li>
-                                </ul>
-                                <ul ng-if="$root.lang==='ee'" class="drink-menu-tabs" style="list-style:none;">
-                                    <li ng-class="{true: 'activeTab'}[$root.activeDrinkTab === 'wine']" ng-click="changeDrinks('wine')">VEIN
-                                        JA MULL</li>
-                                    <li ng-class="{true: 'activeTab'}[$root.activeDrinkTab === 'beer']" ng-click="changeDrinks('beer')">LAHJA</li>
-                                    <li ng-class="{true: 'activeTab'}[$root.activeDrinkTab === 'hardalco']" ng-click="changeDrinks('hardalco')">KANGE</li>
-                                    <li ng-class="{true: 'activeTab'}[$root.activeDrinkTab === 'cocktail']" ng-click="changeDrinks('cocktail')">KOKTEILID</li>
-                                    <li ng-class="{true: 'activeTab'}[$root.activeDrinkTab === 'nonalco']" ng-click="changeDrinks('nonalco')">ALKOHOLIVABAD</li>
-                                    <li ng-class="{true: 'activeTab'}[$root.activeDrinkTab === 'hotdrink']" ng-click="changeDrinks('hotdrink')">KUUMAD
-                                        JOOGID</li>
-                                </ul>
-                                <ul ng-if="$root.lang ==='ee'" class="drink-menu-tabs drink-mobile-padding" ng-show="wineSubEst">
-                                    <li ng-class="{true: 'subActive'}[$root.activeSubTab === 'white']" ng-click="sortBySub('white')">Valge</li>
-                                    <li ng-class="{true: 'subActive'}[$root.activeSubTab === 'red']" ng-click="sortBySub('red')">Punane</li>
-                                    <li ng-class="{true: 'subActive'}[$root.activeSubTab === 'rose']" ng-click="sortBySub('rose')">Roosa</li>
-                                    <li ng-class="{true: 'subActive'}[$root.activeSubTab === 'champ']" ng-click="sortBySub('champ')">Šampanja</li>
-                                    <li ng-class="{true: 'subActive'}[$root.activeSubTab === 'prose']" ng-click="sortBySub('prose')">Vahuvein</li>
-                                    <li ng-class="{true: 'subActive'}[$root.activeSubTab === 'port']" ng-click="sortBySub('port')">Portvein
-                                        ja šerri</li>
-                                </ul>
-                                <ul ng-if="$root.lang ==='en'" class="drink-menu-tabs drink-mobile-padding" ng-show="wineSubEng">
-                                    <li ng-class="{true: 'subActive'}[$root.activeSubTab === 'white']" ng-click="sortBySub('white')">White</li>
-                                    <li ng-class="{true: 'subActive'}[$root.activeSubTab === 'red']" ng-click="sortBySub('red')">Red</li>
-                                    <li ng-class="{true: 'subActive'}[$root.activeSubTab === 'rose']" ng-click="sortBySub('rose')">Rose</li>
-                                    <li ng-class="{true: 'subActive'}[$root.activeSubTab === 'champ']" ng-click="sortBySub('champ')">Champagne</li>
-                                    <li ng-class="{true: 'subActive'}[$root.activeSubTab === 'prose']" ng-click="sortBySub('prose')">Sparkling
-                                        wine</li>
-                                    <li ng-class="{true: 'subActive'}[$root.activeSubTab === 'port']" ng-click="sortBySub('port')">Port
-                                        and sherry</li>
-                                </ul>
-                                <ul ng-if="$root.lang==='ee'" class="drink-menu-tabs drink-mobile-padding" ng-show="spiritSubEst">
-                                    <li ng-class="{true: 'subActive'}[$root.activeSubTabSpirit === 'conac']" ng-click="sortBySubSpirit('conac')">Konjak</li>
-                                    <li ng-class="{true: 'subActive'}[$root.activeSubTabSpirit === 'calv']" ng-click="sortBySubSpirit('calv')">Kalvados</li>
-                                    <li ng-class="{true: 'subActive'}[$root.activeSubTabSpirit === 'brand']" ng-click="sortBySubSpirit('brand')">Brändi</li>
-                                    <li ng-class="{true: 'subActive'}[$root.activeSubTabSpirit === 'whisk']" ng-click="sortBySubSpirit('whisk')">Viski</li>
-                                    <li ng-class="{true: 'subActive'}[$root.activeSubTabSpirit === 'rum']" ng-click="sortBySubSpirit('rum')">Rumm</li>
-                                    <li ng-class="{true: 'subActive'}[$root.activeSubTabSpirit === 'gin']" ng-click="sortBySubSpirit('gin')">Džinn</li>
-                                    <li ng-class="{true: 'subActive'}[$root.activeSubTabSpirit === 'vod']" ng-click="sortBySubSpirit('vod')">Viin</li>
-                                    <li ng-class="{true: 'subActive'}[$root.activeSubTabSpirit === 'teq']" ng-click="sortBySubSpirit('teq')">Tekiila</li>
-                                    <li ng-class="{true: 'subActive'}[$root.activeSubTabSpirit === 'liq']" ng-click="sortBySubSpirit('liq')">Liköör</li>
-                                    <li ng-class="{true: 'subActive'}[$root.activeSubTabSpirit === 'ver']" ng-click="sortBySubSpirit('ver')">Vermut</li>
-                                    <li ng-class="{true: 'subActive'}[$root.activeSubTabSpirit === 'bit']" ng-click="sortBySubSpirit('bit')">Bitter</li>
-                                </ul>
-                                <ul ng-if="$root.lang==='en'" class="drink-menu-tabs drink-mobile-padding" ng-show="spiritSubEng">
-                                    <li ng-class="{true: 'subActive'}[$root.activeSubTabSpirit === 'conac']" ng-click="sortBySubSpirit('conac')">Cognac</li>
-                                    <li ng-class="{true: 'subActive'}[$root.activeSubTabSpirit === 'calv']" ng-click="sortBySubSpirit('calv')">Kalvados</li>
-                                    <li ng-class="{true: 'subActive'}[$root.activeSubTabSpirit === 'brand']" ng-click="sortBySubSpirit('brand')">Brandy</li>
-                                    <li ng-class="{true: 'subActive'}[$root.activeSubTabSpirit === 'whisk']" ng-click="sortBySubSpirit('whisk')">Whiskey</li>
-                                    <li ng-class="{true: 'subActive'}[$root.activeSubTabSpirit === 'rum']" ng-click="sortBySubSpirit('rum')">Rum</li>
-                                    <li ng-class="{true: 'subActive'}[$root.activeSubTabSpirit === 'gin']" ng-click="sortBySubSpirit('gin')">Gin</li>
-                                    <li ng-class="{true: 'subActive'}[$root.activeSubTabSpirit === 'vod']" ng-click="sortBySubSpirit('vod')">Vodka</li>
-                                    <li ng-class="{true: 'subActive'}[$root.activeSubTabSpirit === 'teq']" ng-click="sortBySubSpirit('teq')">Tequila</li>
-                                    <li ng-class="{true: 'subActive'}[$root.activeSubTabSpirit === 'liq']" ng-click="sortBySubSpirit('liq')">Liqueur</li>
-                                    <li ng-class="{true: 'subActive'}[$root.activeSubTabSpirit === 'ver']" ng-click="sortBySubSpirit('ver')">Vermut</li>
-                                    <li ng-class="{true: 'subActive'}[$root.activeSubTabSpirit === 'bit']" ng-click="sortBySubSpirit('bit')">Bitter</li>
-                                </ul> -->
-
-                                <!-- New Version -->
+                                <!-- Drinks navigation v2 -->
                                 <ul ng-if="$root.lang==='en'" class="drink-menu-tabs">
                                     <li ng-class="{true: 'activeTab'}[$root.activeDrinkTab === 'wine']" ng-click="changeDrinks('wine')">WINE
                                         AND CHAMPAGNE</li>
