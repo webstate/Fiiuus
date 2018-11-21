@@ -576,19 +576,37 @@
                             <div class="menu-picture-second hidden-sm hidden-xs" style="background-image:url({{secondPicturePath}})">
 
                             </div>
+
+                            <!-- Drinks @desktop -->
                             <div class="menu-drink-holder hidden-sm hidden-xs" ng-controller="drinkCtrl">
-                                <p ng-if="$root.lang ==='en'" class="menu-box-title">
+                                <p ng-if="$root.lang==='en'" class="menu-box-title">
+                                    {{courseTitleDrinksEng}}
+                                </p>
+                                <p ng-if="$root.lang==='ee'" class="menu-box-title">
+                                    {{courseTitleDrinks}}
+                                </p>
+                                <p ng-if="$root.lang==='fi'" class="menu-box-title">
+                                    {{courseTitleDrinksFin}}
+                                </p>
+                                <p ng-if="$root.lang==='ru'" class="menu-box-title" style="text-transform: uppercase;font-family:Roboto;">
+                                    {{courseTitleDrinksRus}}
+                                </p>
+                                <!-- <p ng-if="drinks.length === 0" class="empty-menu">
+                                    There are currently no dishes in this menu
+                                </p> -->
+                                <!--  -->
+                                <!-- <p ng-if="$root.lang ==='en'" class="menu-box-title">
                                     DRINKS
                                 </p>
                                 <p ng-if="$root.lang ==='ee'" class="menu-box-title">
-                                    JOOGID
+                                    JOOGID {{ courseTitleDrinks }}
                                 </p>
                                 <p ng-if="$root.lang ==='fi'" class="menu-box-title">
                                     JUOMIA
                                 </p>
                                 <p ng-if="$root.lang ==='ru'" class="menu-box-title" style="text-transform: uppercase; font-family:Roboto;">
                                     Напитки
-                                </p>
+                                </p> -->
                                 <ul ng-if="$root.lang==='en'" class="drink-menu-tabs">
                                     <li ng-class="{true: 'activeTab'}[$root.activeDrinkTab === 'wine']" ng-click="changeDrinks('wine')">WINE
                                         AND CHAMPAGNE</li>
@@ -799,27 +817,28 @@
                             <!-- Children menu @desktop -->
                             <div class="menu-holder kids hidden-sm hidden-xs" ng-controller="foodCtrl">
                                 <p ng-if="$root.lang==='en'" class="menu-box-title">
-                                    <!-- {{courseTitleStarterEng}} -->
-                                    KID'S MENU
+                                    {{courseTitleKidsEng}}
+                                    <!-- KID'S MENU -->
                                 </p>
                                 <p ng-if="$root.lang==='ee'" class="menu-box-title">
-                                    <!-- {{courseTitleStarter}} -->
-                                    LASTEMENÜÜ
+                                    {{courseTitleKids}}
+                                    <!-- LASTEMENÜÜ -->
                                 </p>
                                 <p ng-if="$root.lang==='fi'" class="menu-box-title">
-                                    <!-- {{courseTitleStarterFin}} -->
-                                    LASTEN MENU
+                                    {{courseTitleKidsFin}}
+                                    <!-- LASTEN MENU -->
                                 </p>
                                 <p ng-if="$root.lang==='ru'" class="menu-box-title" style="text-transform: uppercase;font-family:Roboto;">
-                                    <!-- {{courseTitleStarterRus}} -->
-                                    ДЕТСКОЕ МЕНЮ
+                                    {{courseTitleKidsRus}}
+                                    <!-- ДЕТСКОЕ МЕНЮ -->
                                 </p>
-                                <!-- <p ng-if="starters.length === 0" class="empty-menu">
+                                <!-- <p ng-if="kids.length === 0" class="empty-menu">
                                     There are currently no dishes in this menu
                                 </p> -->
                                 <table style="width:100%;">
                                     <tbody>
-                                        <tr>
+                                        <!-- Mock KidsMenu Data -->
+                                        <!-- <tr>
                                             <td class="menu-padding">
                                                 <p ng-if="$root.lang==='ee'" class="menu-dish">
                                                     LASTEPASTA KANAGA
@@ -903,22 +922,21 @@
                                             <td class="menu-padding">
                                                 <p class="menu-price">3 €</p>
                                             </td>
-                                        </tr>
+                                        </tr> -->
 
-                                        <!-- From DB -->
-                                        <!-- Todo Kids -->
-                                        <tr ng-repeat="item in kids"><!-- // starters -->
+                                        <!-- Kids From DB -->
+                                        <tr ng-repeat="item in kids">
                                             <td class="menu-padding">
                                                 <p ng-if="$root.lang==='ee'" class="menu-dish">
                                                     {{item.name}}
                                                 </p>
-                                                <p ng-if="$root.lang==='en' && item.descEng.length != 0" class="menu-dish">
+                                                <p ng-if="$root.lang==='en' && item.nameEng.length != 0" class="menu-dish">
                                                     {{item.nameEng}}
                                                 </p>
-                                                <p ng-if="$root.lang==='fi' && item.descFin.length != 0" class="menu-dish">
+                                                <p ng-if="$root.lang==='fi' && item.nameFin.length != 0" class="menu-dish">
                                                     {{item.nameFin}}
                                                 </p>
-                                                <p style="font-family:Roboto" ng-if="$root.lang==='ru' && item.descRus.length != 0"
+                                                <p style="font-family:Roboto" ng-if="$root.lang==='ru' && item.nameRus.length != 0"
                                                     class="menu-dish">
                                                     {{item.nameRus}}
                                                 </p>
@@ -926,36 +944,33 @@
                                                 <p ng-if="$root.lang==='ee'" class="menu-description">
                                                     {{item.description}}
                                                 </p>
-                                                <p ng-if="$root.lang==='en' && item.nameEng.length != 0" class="menu-description">
+                                                <p ng-if="$root.lang==='en' && item.descEng.length != 0" class="menu-description">
                                                     {{item.descEng}}
                                                 </p>
-                                                <p ng-if="$root.lang==='fi' && item.nameFin.length != 0" class="menu-description">
+                                                <p ng-if="$root.lang==='fi' && item.descFin.length != 0" class="menu-description">
                                                     {{item.descFin}}
                                                 </p>
-                                                <p style="font-family:Roboto" ng-if="$root.lang==='ru' && item.nameRus.length != 0"
+                                                <p style="font-family:Roboto" ng-if="$root.lang==='ru' && item.descRus.length != 0"
                                                     class="menu-description">
                                                     {{item.descRus}}
                                                 </p>
                                             </td>
                                             <td class="menu-padding">
-                                                <p ng-if="$root.lang ==='en' && item.descEng.length != 0 && item.nameEng.length != 0"
-                                                    class="menu-price">
+                                                <p ng-if="$root.lang ==='en' && item.nameEng.length != 0"
+                                                    class="menu-price"><!--  && item.descEng.length != 0 -->
                                                     {{item.price}} €
                                                 </p>
-                                                <p ng-if="$root.lang ==='fi' && item.descFin.length != 0 && item.nameFin.length != 0"
-                                                    class="menu-price">
+                                                <p ng-if="$root.lang ==='fi' && item.nameFin.length != 0" class="menu-price"><!--  && item.descFin.length != 0 -->
                                                     {{item.price}} €
                                                 </p>
-                                                <p ng-if="$root.lang ==='ru' && item.descRus.length != 0 && item.nameRus.length != 0"
-                                                    class="menu-price">
+                                                <p ng-if="$root.lang ==='ru' && item.nameRus.length != 0" class="menu-price"><!--  && item.descRus.length != 0 -->
                                                     {{item.price}} €
                                                 </p>
                                                 <p ng-if="$root.lang ==='ee'" class="menu-price">
                                                     {{item.price}} €
                                                 </p>
                                             </td>
-                                        </tr>
-                                        <!-- End From DB -->
+                                        </tr><!-- End From DB -->
                                     </tbody>
                                 </table>
                             </div>
@@ -1104,11 +1119,29 @@
                                     </tbody>
                                 </table>
                             </div>
-                            <div class="menu-picture-third" style="background-image:url({{thirdPicturePath}})">
 
-                            </div>
+                            <div class="menu-picture-third" style="background-image:url({{thirdPicturePath}})"></div>
+
+                            <!-- Drinks @mobile -->
                             <div class="menu-drink-holder hidden-md hidden-lg" ng-controller="drinkCtrl">
-                                <p ng-if="$root.lang ==='en'" class="menu-box-title">
+                                <p ng-if="$root.lang==='en'" class="menu-box-title">
+                                    {{courseTitleDrinksEng}}
+                                </p>
+                                <p ng-if="$root.lang==='ee'" class="menu-box-title">
+                                    {{courseTitleDrinks}}
+                                </p>
+                                <p ng-if="$root.lang==='fi'" class="menu-box-title">
+                                    {{courseTitleDrinksFin}}
+                                </p>
+                                <p ng-if="$root.lang==='ru'" class="menu-box-title" style="text-transform: uppercase;font-family:Roboto;">
+                                    {{courseTitleDrinksRus}}
+                                </p>
+                                <!-- <p ng-if="drinks.length === 0" class="empty-menu">
+                                            There are currently no dishes in this menu
+                                        </p> -->
+
+                                <!-- Mock Drinks Headings -->
+                                <!-- <p ng-if="$root.lang ==='en'" class="menu-box-title">
                                     DRINKS
                                 </p>
                                 <p ng-if="$root.lang ==='ee'" class="menu-box-title">
@@ -1119,7 +1152,7 @@
                                 </p>
                                 <p ng-if="$root.lang ==='ru'" class="menu-box-title" style="text-transform: uppercase; font-family:Roboto;">
                                     Напитки
-                                </p>
+                                </p> -->
                                 <ul ng-if="$root.lang==='en'" class="drink-menu-tabs">
                                     <li ng-class="{true: 'activeTab'}[$root.activeDrinkTab === 'wine']" ng-click="changeDrinks('wine')">WINE
                                         AND CHAMPAGNE</li>
@@ -1239,27 +1272,28 @@
                             <!-- Children menu @mobile -->
                             <div class="menu-holder kids hidden-md hidden-lg" ng-controller="foodCtrl">
                                 <p ng-if="$root.lang==='en'" class="menu-box-title">
-                                    <!-- {{courseTitleStarterEng}} -->
-                                    KID'S MENU
+                                    {{courseTitleKidsEng}}
+                                    <!-- KID'S MENU -->
                                 </p>
                                 <p ng-if="$root.lang==='ee'" class="menu-box-title">
-                                    <!-- {{courseTitleStarter}} -->
-                                    LASTEMENÜÜ
+                                    {{courseTitleKids}}
+                                    <!-- LASTEMENÜÜ -->
                                 </p>
                                 <p ng-if="$root.lang==='fi'" class="menu-box-title">
-                                    <!-- {{courseTitleStarterFin}} -->
-                                    LASTEN MENU
+                                    {{courseTitleKidsFin}}
+                                    <!-- LASTEN MENU -->
                                 </p>
                                 <p ng-if="$root.lang==='ru'" class="menu-box-title" style="text-transform: uppercase;font-family:Roboto;">
-                                    <!-- {{courseTitleStarterRus}} -->
-                                    ДЕТСКОЕ МЕНЮ
+                                    {{courseTitleKidsRus}}
+                                    <!-- ДЕТСКОЕ МЕНЮ -->
                                 </p>
-                                <!-- <p ng-if="starters.length === 0" class="empty-menu">
+                                <p ng-if="kids.length === 0" class="empty-menu">
                                     There are currently no dishes in this menu
-                                </p> -->
+                                </p>
                                 <table style="width:100%;">
                                     <tbody>
-                                        <tr>
+                                        <!-- Mock KidsMenu Data -->
+                                        <!-- <tr>
                                             <td class="menu-padding">
                                                 <p ng-if="$root.lang==='ee'" class="menu-dish">
                                                     LASTEPASTA KANAGA
@@ -1341,59 +1375,57 @@
                                             <td class="menu-padding">
                                                 <p class="menu-price">3 €</p>
                                             </td>
-                                        </tr>
+                                        </tr> -->
 
-                                        <!-- From DB -->
-                                        <!-- Todo Kids -->
+                                        <!-- Kids From DB -->
                                         <tr ng-repeat="item in kids">
-                                                <td class="menu-padding">
-                                                    <p ng-if="$root.lang==='ee'" class="menu-dish">
-                                                        {{item.name}}
-                                                    </p>
-                                                    <p ng-if="$root.lang==='en' && item.descEng.length != 0" class="menu-dish">
-                                                        {{item.nameEng}}
-                                                    </p>
-                                                    <p ng-if="$root.lang==='fi' && item.descFin.length != 0" class="menu-dish">
-                                                        {{item.nameFin}}
-                                                    </p>
-                                                    <p style="font-family:Roboto" ng-if="$root.lang==='ru' && item.descRus.length != 0"
-                                                        class="menu-dish">
-                                                        {{item.nameRus}}
-                                                    </p>
+                                            <td class="menu-padding">
+                                                <p ng-if="$root.lang==='ee'" class="menu-dish">
+                                                    {{item.name}}
+                                                </p>
+                                                <p ng-if="$root.lang==='en' && item.nameEng.length != 0" class="menu-dish">
+                                                    {{item.nameEng}}
+                                                </p>
+                                                <p ng-if="$root.lang==='fi' && item.nameFin.length != 0" class="menu-dish">
+                                                    {{item.nameFin}}
+                                                </p>
+                                                <p style="font-family:Roboto" ng-if="$root.lang==='ru' && item.nameRus.length != 0"
+                                                    class="menu-dish">
+                                                    {{item.nameRus}}
+                                                </p>
 
-                                                    <p ng-if="$root.lang==='ee'" class="menu-description">
-                                                        {{item.description}}
-                                                    </p>
-                                                    <p ng-if="$root.lang==='en' && item.nameEng.length != 0" class="menu-description">
-                                                        {{item.descEng}}
-                                                    </p>
-                                                    <p ng-if="$root.lang==='fi' && item.nameFin.length != 0" class="menu-description">
-                                                        {{item.descFin}}
-                                                    </p>
-                                                    <p style="font-family:Roboto" ng-if="$root.lang==='ru' && item.nameRus.length != 0"
-                                                        class="menu-description">
-                                                        {{item.descRus}}
-                                                    </p>
-                                                </td>
-                                                <td class="menu-padding">
-                                                    <p ng-if="$root.lang ==='en' && item.descEng.length != 0 && item.nameEng.length != 0"
-                                                        class="menu-price">
-                                                        {{item.price}} €
-                                                    </p>
-                                                    <p ng-if="$root.lang ==='fi' && item.descFin.length != 0 && item.nameFin.length != 0"
-                                                        class="menu-price">
-                                                        {{item.price}} €
-                                                    </p>
-                                                    <p ng-if="$root.lang ==='ru' && item.descRus.length != 0 && item.nameRus.length != 0"
-                                                        class="menu-price">
-                                                        {{item.price}} €
-                                                    </p>
-                                                    <p ng-if="$root.lang ==='ee'" class="menu-price">
-                                                        {{item.price}} €
-                                                    </p>
-                                                </td>
-                                            </tr>
-                                        <!-- End From DB -->
+                                                <p ng-if="$root.lang==='ee'" class="menu-description">
+                                                    {{item.description}}
+                                                </p>
+                                                <p ng-if="$root.lang==='en' && item.descEng.length != 0" class="menu-description">
+                                                    {{item.descEng}}
+                                                </p>
+                                                <p ng-if="$root.lang==='fi' && item.descFin.length != 0" class="menu-description">
+                                                    {{item.descFin}}
+                                                </p>
+                                                <p style="font-family:Roboto" ng-if="$root.lang==='ru' && item.descRus.length != 0"
+                                                    class="menu-description">
+                                                    {{item.descRus}}
+                                                </p>
+                                            </td>
+                                            <td class="menu-padding">
+                                                <p ng-if="$root.lang ==='en' && item.nameEng.length != 0"
+                                                    class="menu-price mt-0"><!--  && item.descEng.length != 0 -->
+                                                    {{item.price}} €
+                                                </p>
+                                                <p ng-if="$root.lang ==='fi' && item.nameFin.length != 0"
+                                                    class="menu-price mt-0"><!--  && item.descFin.length != 0 -->
+                                                    {{item.price}} €
+                                                </p>
+                                                <p ng-if="$root.lang ==='ru' && item.nameRus.length != 0"
+                                                    class="menu-price mt-0"><!--  && item.descRus.length != 0 -->
+                                                    {{item.price}} €
+                                                </p>
+                                                <p ng-if="$root.lang ==='ee'" class="menu-price mt-0">
+                                                    {{item.price}} €
+                                                </p>
+                                            </td>
+                                        </tr><!-- End From DB -->
                                     </tbody>
                                 </table>
                             </div>
@@ -1504,8 +1536,9 @@
                                     <!-- Jouluvalikko -->
                                     {{ groupMenuButtonFin }}
                                     <img class="tasting-menu-arrow" src="css/img/arrow.png" />
-                                    </button>
-                                <button style="font-family:Roboto;" ng-click="toUrlEng()" ng-if="$root.lang === 'ru'" class="tasting-menu-btn">
+                                </button>
+                                <button style="font-family:Roboto;" ng-click="toUrlEng()" ng-if="$root.lang === 'ru'"
+                                    class="tasting-menu-btn">
                                     <!-- Рождественское меню -->
                                     {{ groupMenuButtonRus }}
                                     <img class="tasting-menu-arrow" src="css/img/arrow.png" />
