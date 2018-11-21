@@ -129,6 +129,57 @@ designViewController.controller('designViewController', function ($scope, pictur
             })
         });
     }
+
+    landingTextService.getLandingText("courseTitleDrinks", "ee").then(function (data) {
+        if (data.text == null) {
+            $scope.courseTitleDrinks = "There is nothint yet inserted";
+        } else {
+            $scope.courseTitleDrinks = data.text
+        }
+    }, function (err) {
+        console.log(err);
+    })
+    $scope.insertCourseTitleDrinks = function () {
+        var update = "";
+        update = $scope.courseTitleDrinks;
+        if ($scope.courseTitle === "{{editCourseTitleDrinks}}") {
+            update = $scope.editCourseTitleDrinks;
+        }
+        landingTextService.addOrUpdateLandingText("courseTitleDrinks", update, "ee").then(function (data) {
+            landingTextService.getLandingText("courseTitleDrinks", "ee").then(function (data) {
+                if (data.text == null) {
+                    $scope.courseTitleDrinks = "Nothing here";
+                }
+                $scope.courseTitleDrinks = data.text;
+            })
+        });
+    }
+
+    landingTextService.getLandingText("courseTitleKids", "ee").then(function (data) {
+        if (data.text == null) {
+            $scope.courseTitleKids = "There is nothint yet inserted";
+        } else {
+            $scope.courseTitleKids = data.text
+        }
+    }, function (err) {
+        console.log(err);
+    })
+    $scope.insertCourseTitleKids = function () {
+        var update = "";
+        update = $scope.courseTitleKids;
+        if ($scope.courseTitle === "{{editCourseTitleKids}}") {
+            update = $scope.editCourseTitleKids;
+        }
+        landingTextService.addOrUpdateLandingText("courseTitleKids", update, "ee").then(function (data) {
+            landingTextService.getLandingText("courseTitleKids", "ee").then(function (data) {
+                if (data.text == null) {
+                    $scope.courseTitleKids = "Nothing here";
+                }
+                $scope.courseTitleKids = data.text;
+            })
+        });
+    }
+
     landingTextService.getLandingText("courseTitleMain", "ee").then(function (data) {
         if (data.text == null) {
             $scope.courseTitleMain = "There is nothint yet inserted";
@@ -583,6 +634,58 @@ designViewController.controller('designViewController', function ($scope, pictur
             })
         });
     }
+    
+    landingTextService.getLandingText("courseTitleDrinksEng", "ee").then(function (data) {
+        if (data.text == null) {
+            $scope.courseTitleDrinksEng = "There is nothint yet inserted";
+        } else {
+            $scope.courseTitleDrinksEng = data.text
+        }
+    }, function (err) {
+        console.log(err);
+    })
+    $scope.insertCourseTitleDrinksEng = function () {
+        var update = "";
+        update = $scope.courseTitleDrinksEng;
+        if ($scope.courseTitle === "{{editCourseTitleDrinksEng}}") {
+            update = $scope.editCourseTitleDrinksEng;
+        }
+        landingTextService.addOrUpdateLandingText("courseTitleDrinksEng", update, "ee").then(function (data) {
+            landingTextService.getLandingText("courseTitleDrinksEng", "ee").then(function (data) {
+                if (data.text == null) {
+                    $scope.courseTitleDrinksEng = "Nothing here";
+                }
+                $scope.courseTitleDrinksEng = data.text;
+            })
+        });
+    }
+
+    landingTextService.getLandingText("courseTitleKidsEng", "ee").then(function (data) {
+        if (data.text == null) {
+            $scope.courseTitleKidsEng = "There is nothint yet inserted";
+        } else {
+            $scope.courseTitleKidsEng = data.text
+        }
+    }, function (err) {
+        console.log(err);
+    })
+    $scope.insertCourseTitleKidsEng = function () {
+        var update = "";
+        update = $scope.courseTitleKidsEng;
+        if ($scope.courseTitle === "{{editCourseTitleKidsEng}}") {
+            update = $scope.editCourseTitleKidsEng;
+        }
+        landingTextService.addOrUpdateLandingText("courseTitleKidsEng", update, "ee").then(function (data) {
+            landingTextService.getLandingText("courseTitleKidsEng", "ee").then(function (data) {
+                if (data.text == null) {
+                    $scope.courseTitleKidsEng = "Nothing here";
+                }
+                $scope.courseTitleKidsEng = data.text;
+            })
+        });
+    }
+
+
     landingTextService.getLandingText("courseTitleMainEng", "ee").then(function (data) {
         if (data.text == null) {
             $scope.courseTitleMainEng = "There is nothint yet inserted";
@@ -1014,6 +1117,58 @@ designViewController.controller('designViewController', function ($scope, pictur
             })
         });
     }
+    
+    landingTextService.getLandingText("courseTitleDrinksFin", "ee").then(function (data) {
+        if (data.text == null) {
+            $scope.courseTitleDrinksFin = "There is nothint yet inserted";
+        } else {
+            $scope.courseTitleDrinksFin = data.text
+        }
+    }, function (err) {
+        console.log(err);
+    })
+    $scope.insertCourseTitleDrinksFin = function () {
+        var update = "";
+        update = $scope.courseTitleDrinksFin;
+        if ($scope.courseTitle === "{{editCourseTitleDrinksFin}}") {
+            update = $scope.editCourseTitleDrinksFin;
+        }
+        landingTextService.addOrUpdateLandingText("courseTitleDrinksFin", update, "ee").then(function (data) {
+            landingTextService.getLandingText("courseTitleDrinksFin", "ee").then(function (data) {
+                if (data.text == null) {
+                    $scope.courseTitleDrinksFin = "Nothing here";
+                }
+                $scope.courseTitleDrinksFin = data.text;
+            })
+        });
+    }
+
+    landingTextService.getLandingText("courseTitleKidsFin", "ee").then(function (data) {
+        if (data.text == null) {
+            $scope.courseTitleKidsFin = "There is nothint yet inserted";
+        } else {
+            $scope.courseTitleKidsFin = data.text
+        }
+    }, function (err) {
+        console.log(err);
+    })
+    $scope.insertCourseTitleKidsFin = function () {
+        var update = "";
+        update = $scope.courseTitleKidsFin;
+        if ($scope.courseTitle === "{{editCourseTitleKidsFin}}") {
+            update = $scope.editCourseTitleKidsFin;
+        }
+        landingTextService.addOrUpdateLandingText("courseTitleKidsFin", update, "ee").then(function (data) {
+            landingTextService.getLandingText("courseTitleKidsFin", "ee").then(function (data) {
+                if (data.text == null) {
+                    $scope.courseTitleKidsFin = "Nothing here";
+                }
+                $scope.courseTitleKidsFin = data.text;
+            })
+        });
+    }
+
+
     landingTextService.getLandingText("courseTitleMainFin", "ee").then(function (data) {
         if (data.text == null) {
             $scope.courseTitleMainFin = "There is nothint yet inserted";
@@ -1447,6 +1602,58 @@ designViewController.controller('designViewController', function ($scope, pictur
             })
         });
     }
+    
+    landingTextService.getLandingText("courseTitleDrinksRus", "ee").then(function (data) {
+        if (data.text == null) {
+            $scope.courseTitleDrinksRus = "There is nothint yet inserted";
+        } else {
+            $scope.courseTitleDrinksRus = data.text
+        }
+    }, function (err) {
+        console.log(err);
+    })
+    $scope.insertCourseTitleDrinksRus = function () {
+        var update = "";
+        update = $scope.courseTitleDrinksRus;
+        if ($scope.courseTitle === "{{editCourseTitleDrinksRus}}") {
+            update = $scope.editCourseTitleDrinksRus;
+        }
+        landingTextService.addOrUpdateLandingText("courseTitleDrinksRus", update, "ee").then(function (data) {
+            landingTextService.getLandingText("courseTitleDrinksRus", "ee").then(function (data) {
+                if (data.text == null) {
+                    $scope.courseTitleDrinksRus = "Nothing here";
+                }
+                $scope.courseTitleDrinksRus = data.text;
+            })
+        });
+    }
+
+    landingTextService.getLandingText("courseTitleKidsRus", "ee").then(function (data) {
+        if (data.text == null) {
+            $scope.courseTitleKidsRus = "There is nothint yet inserted";
+        } else {
+            $scope.courseTitleKidsRus = data.text
+        }
+    }, function (err) {
+        console.log(err);
+    })
+    $scope.insertCourseTitleKidsRus = function () {
+        var update = "";
+        update = $scope.courseTitleKidsRus;
+        if ($scope.courseTitle === "{{editCourseTitleKidsRus}}") {
+            update = $scope.editCourseTitleKidsRus;
+        }
+        landingTextService.addOrUpdateLandingText("courseTitleKidsRus", update, "ee").then(function (data) {
+            landingTextService.getLandingText("courseTitleKidsRus", "ee").then(function (data) {
+                if (data.text == null) {
+                    $scope.courseTitleKidsRus = "Nothing here";
+                }
+                $scope.courseTitleKidsRus = data.text;
+            })
+        });
+    }
+
+
     landingTextService.getLandingText("courseTitleMainRus", "ee").then(function (data) {
         if (data.text == null) {
             $scope.courseTitleMainRus = "There is nothint yet inserted";
