@@ -76,6 +76,12 @@ sliderCtrl.controller('sliderCtrl', function($location,$rootScope, $scope, landi
     landingTextService.getLandingText("courseTitleStarter", "ee").then(function(data){
         $scope.courseTitleStarter = data.text;
     })
+    landingTextService.getLandingText("courseTitleDrinks", "ee").then(function(data){
+        $scope.courseTitleDrinks = data.text;
+    })
+    landingTextService.getLandingText("courseTitleKids", "ee").then(function(data){
+        $scope.courseTitleKids = data.text;
+    })
     landingTextService.getLandingText("courseTitleMain", "ee").then(function(data){
         $scope.courseTitleMain = data.text;
     })
@@ -138,6 +144,12 @@ sliderCtrl.controller('sliderCtrl', function($location,$rootScope, $scope, landi
     landingTextService.getLandingText("courseTitleStarterEng", "ee").then(function(data){
         $scope.courseTitleStarterEng = data.text;
     })
+    landingTextService.getLandingText("courseTitleDrinksEng", "ee").then(function(data){
+        $scope.courseTitleDrinksEng = data.text;
+    })
+    landingTextService.getLandingText("courseTitleKidsEng", "ee").then(function(data){
+        $scope.courseTitleKidsEng = data.text;
+    })
     landingTextService.getLandingText("courseTitleMainEng", "ee").then(function(data){
         $scope.courseTitleMainEng = data.text;
     })
@@ -196,6 +208,12 @@ sliderCtrl.controller('sliderCtrl', function($location,$rootScope, $scope, landi
     landingTextService.getLandingText("courseTitleStarterFin", "ee").then(function(data){
         $scope.courseTitleStarterFin = data.text;
     })
+    landingTextService.getLandingText("courseTitleDrinksFin", "ee").then(function(data){
+        $scope.courseTitleDrinksFin = data.text;
+    })
+    landingTextService.getLandingText("courseTitleKidsFin", "ee").then(function(data){
+        $scope.courseTitleKidsFin = data.text;
+    })
     landingTextService.getLandingText("courseTitleMainFin", "ee").then(function(data){
         $scope.courseTitleMainFin = data.text;
     })
@@ -253,6 +271,12 @@ sliderCtrl.controller('sliderCtrl', function($location,$rootScope, $scope, landi
     })
     landingTextService.getLandingText("courseTitleStarterRus", "ee").then(function(data){
         $scope.courseTitleStarterRus = data.text;
+    })
+    landingTextService.getLandingText("courseTitleDrinksRus", "ee").then(function(data){
+        $scope.courseTitleDrinksRus = data.text;
+    })
+    landingTextService.getLandingText("courseTitleKidsRus", "ee").then(function(data){
+        $scope.courseTitleKidsRus = data.text;
     })
     landingTextService.getLandingText("courseTitleMainRus", "ee").then(function(data){
         $scope.courseTitleMainRus = data.text;
