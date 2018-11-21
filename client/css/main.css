@@ -741,6 +741,9 @@ th{
 .mt-15 {
     margin-top: 15px;
 }
+.mt-0 {
+    margin-top: 0 !important;
+}
 .drink-menu-tabs{
     margin-left: 5px;
     padding-bottom: 30px;
