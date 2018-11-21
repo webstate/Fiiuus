@@ -735,6 +735,12 @@ th{
     padding-bottom: 10px;
     font-family: spaceMono;
 }
+.ml-0 {
+    margin-left: 0;
+}
+.mt-15 {
+    margin-top: 15px;
+}
 .drink-menu-tabs{
     margin-left: 5px;
     padding-bottom: 30px;
