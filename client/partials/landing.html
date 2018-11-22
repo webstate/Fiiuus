@@ -27,6 +27,8 @@
 
                 <img id="mobilelogo" style="height:160px;" src="css/img/whiteguide.png" />
             </div>
+
+            <!-- @mobile -->
             <div class="hidden-md hidden-lg" ng-controller="modalDemoCtrl">
 
                 <div class="nav_button" ng-click="showLeft($event)">
@@ -114,16 +116,21 @@
                         </ul>
                     </menu-item>
 
-                    <menu-item style="font-family:Roboto !important;" scroll-to-bookmark="about" ng-if="$root.lang==='ru'"
-                        hash="second-page">Наш ресторан</menu-item>
-                    <menu-item style="font-family:Roboto !important;" scroll-to-bookmark="menu" ng-if="$root.lang==='ru'"
-                        hash="third-page">Mеню</menu-item>
-                    <menu-item style="font-family:Roboto !important;" scroll-to-bookmark="events" ng-if="$root.lang==='ru'"
-                        hash="third-page">Cобытия</menu-item>
-                    <menu-item style="font-family:Roboto !important;" scroll-to-bookmark="contact" ng-if="$root.lang==='ru'"
-                        hash="third-page">Kонтакты</menu-item>
-                    <menu-item scroll-to-bookmark="contact" ng-if="$root.lang==='ru'" hash="third-page" style="margin-top: 50px;"><a
-                            class="hamburger-mobile" href="tel:+372 5885 5200">+372 5885 5200</a></menu-item>
+                    <menu-item style="font-family:Roboto !important;" scroll-to-bookmark="about" ng-if="$root.lang==='ru'" hash="second-page">
+                        Наш ресторан
+                    </menu-item>
+                    <menu-item style="font-family:Roboto !important;" scroll-to-bookmark="menu" ng-if="$root.lang==='ru'" hash="third-page">
+                        Mеню
+                    </menu-item>
+                    <menu-item style="font-family:Roboto !important;" scroll-to-bookmark="events" ng-if="$root.lang==='ru'" hash="third-page">
+                        Cобытия
+                    </menu-item>
+                    <menu-item style="font-family:Roboto !important;" scroll-to-bookmark="contact" ng-if="$root.lang==='ru'" hash="third-page">
+                        Kонтакты
+                    </menu-item>
+                    <menu-item scroll-to-bookmark="contact" ng-if="$root.lang==='ru'" hash="third-page" style="margin-top: 50px;">
+                        <a class="hamburger-mobile" href="tel:+372 5885 5200">+372 5885 5200</a>
+                    </menu-item>
                     <menu-item ng-if="$root.lang==='ru'">
                         <ul class="landing-social" style="list-style:none;">
                             <li>
@@ -276,36 +283,31 @@
         </div>
         <div class="container">
             <div class="row" scroll-bookmark="about">
-                <div ng-if="$root.lang === 'en'" class="col-md-12" style="margin-top: 30px;" id="#About">
-                    <span style="height: 1px;
-            width: 40px;
-            background: black;
-            display: block;
-            position: absolute;
-            top: 10px;
-            left: 40px;"></span>
-                    <p style="    position: absolute;
-            top: 0px;
-            left: 90px;
-            font-family: spaceMono;">
+                <div class="col-md-12" style="margin-top: 30px;" id="#About">
+                    <span class="landing-span-dark"></span>
+                    <p ng-if="$root.lang === 'ee'" class="about-title">
+                        Restoranist
+                        {{ aboutTitleEst }}
+                    </p>
+                    <p ng-if="$root.lang === 'en'" class="about-title">
                         About
+                        {{ aboutTitleEng }}
+                    </p>
+                    <p ng-if="$root.lang === 'fi'" class="about-title">
+                        Ravintolasta
+                        {{ aboutTitleFin }}
+                    </p>
+                    <p ng-if="$root.lang === 'ru'" class="about-title russian-font">
+                        Наш ресторан
+                        {{ aboutTitleRus }}
                     </p>
                 </div>
-                <div ng-if="$root.lang === 'ee'" class="col-md-12" style="margin-top: 30px;">
-                    <span style="height: 1px;
-            width: 40px;
-            background: black;
-            display: block;
-            position: absolute;
-            top: 10px;
-            left: 40px;"></span>
-                    <p style="    position: absolute;
-            top: 0px;
-            left: 90px;
-            font-family: spaceMono;">
+                <!-- <div ng-if="$root.lang === 'ee'" class="col-md-12" style="margin-top: 30px;">
+                    <span class="landing-span-dark"></span>
+                    <p class="about-title">
                         Restoranist
                     </p>
-                </div>
+                </div> -->
             </div>
             <div class="row" style="margin-top: 60px;">
                 <div class="col-md-6">
@@ -405,13 +407,7 @@
                     <div class="container">
                         <div class="row">
                             <div ng-if="$root.lang==='en'" class="col-md-12" style="margin-top: 60px;">
-                                <span style="height: 1px;
-                        width: 40px;
-                        background: white;
-                        display: block;
-                        position: absolute;
-                        top: 10px;
-                        left: 40px;"></span>
+                                <span class="landing-span-light"></span>
                                 <p style="    position: absolute;
                         color:white;
                         top: 0px;
@@ -421,13 +417,7 @@
                                 </p>
                             </div>
                             <div ng-if="$root.lang === 'ee'" class="col-md-12" style="margin-top: 60px;">
-                                <span style="height: 1px;
-                        width: 40px;
-                        background: white;
-                        display: block;
-                        position: absolute;
-                        top: 10px;
-                        left: 40px;"></span>
+                                <span class="landing-span-light"></span>
                                 <p style="    position: absolute;
                         color:white;
                         top: 0px;
@@ -437,13 +427,7 @@
                                 </p>
                             </div>
                             <div ng-if="$root.lang === 'fi'" class="col-md-12" style="margin-top: 30px;">
-                                <span style="height: 1px;
-                        width: 40px;
-                        background: white;
-                        display: block;
-                        position: absolute;
-                        top: 10px;
-                        left: 40px;"></span>
+                                <span class="landing-span-light"></span>
                                 <p style="    position: absolute;
                         color:white;
                         top: 0px;
@@ -453,13 +437,7 @@
                                 </p>
                             </div>
                             <div ng-if="$root.lang === 'ru'" class="col-md-12" style="margin-top: 30px;">
-                                <span style="height: 1px;
-                        width: 40px;
-                        background: white;
-                        display: block;
-                        position: absolute;
-                        top: 10px;
-                        left: 40px;"></span>
+                                <span class="landing-span-light"></span>
                                 <p style="    position: absolute;
                         color:white;
                         top: 0px;
@@ -1483,26 +1461,25 @@
                         <div class="container" ng-hide="eventContainer">
                             <div class="row">
                                 <div ng-if="$root.lang==='en'" class="col-md-12" style="margin-top: 60px;">
-                                    <span style="height: 1px;width: 40px;background: black;display: block;position: absolute;top: 10px;left: 40px;"></span>
+                                    <span class="landing-span-dark"></span>
                                     <p style="    position: absolute;top: 0px;left: 90px;font-family: spaceMono;">
                                         Events
                                     </p>
                                 </div>
                                 <div ng-if="$root.lang==='ee'" class="col-md-12" style="margin-top: 60px;">
-                                    <span style="height: 1px;width: 40px;background: black;display: block;position: absolute;top: 10px;left: 40px;"></span>
+                                    <span class="landing-span-dark"></span>
                                     <p style="    position: absolute;top: 0px;left: 90px;font-family: spaceMono;">
                                         Üritused
                                     </p>
                                 </div>
                                 <div ng-if="$root.lang==='fi'" class="col-md-12" style="margin-top: 60px;">
-                                    <span style="height: 1px;width: 40px;background: black;display: block;position: absolute;top: 10px;left: 40px;"></span>
+                                    <span class="landing-span-dark"></span>
                                     <p style="    position: absolute;top: 0px;left: 90px;font-family: spaceMono;">
                                         Tapahtumat
                                     </p>
                                 </div>
                                 <div ng-if="$root.lang==='ru'" class="col-md-12" style="margin-top: 60px;">
-                                    <span style="height: 1px;width: 40px;background: black;display: block;position: absolute;top: 10px;
-                                        left: 40px;"></span>
+                                    <span class="landing-span-dark"></span>
                                     <p style="    position: absolute;top: 0px;left: 90px;font-family: Roboto;">
                                         Cобытия
                                     </p>
@@ -1609,13 +1586,7 @@
         <div class="container">
             <div class="row">
                 <div ng-if="$root.lang==='en'" class="col-md-12" style="margin-top: 60px;">
-                    <span style="height: 1px;
-                width: 40px;
-                background: black;
-                display: block;
-                position: absolute;
-                top: 10px;
-                left: 40px;"></span>
+                    <span class="landing-span-dark"></span>
                     <p style="    position: absolute;
                 top: 0px;
                 left: 90px;
@@ -1624,13 +1595,7 @@
                     </p>
                 </div>
                 <div ng-if="$root.lang==='ee'" class="col-md-12" style="margin-top: 60px;">
-                    <span style="height: 1px;
-                width: 40px;
-                background: black;
-                display: block;
-                position: absolute;
-                top: 10px;
-                left: 40px;"></span>
+                    <span class="landing-span-dark"></span>
                     <p style="    position: absolute;
                 top: 0px;
                 left: 90px;
@@ -1639,13 +1604,7 @@
                     </p>
                 </div>
                 <div ng-if="$root.lang==='fi'" class="col-md-12" style="margin-top: 60px;">
-                    <span style="height: 1px;
-                width: 40px;
-                background: black;
-                display: block;
-                position: absolute;
-                top: 10px;
-                left: 40px;"></span>
+                    <span class="landing-span-dark"></span>
                     <p style="    position: absolute;
                 top: 0px;
                 left: 90px;
@@ -1654,13 +1613,7 @@
                     </p>
                 </div>
                 <div ng-if="$root.lang==='ru'" class="col-md-12" style="margin-top: 60px;">
-                    <span style="height: 1px;
-                width: 40px;
-                background: black;
-                display: block;
-                position: absolute;
-                top: 10px;
-                left: 40px;"></span>
+                    <span class="landing-span-dark"></span>
                     <p style="    position: absolute;
                 top: 0px;
                 left: 90px;
