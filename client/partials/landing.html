@@ -406,45 +406,62 @@
                 <div class="menu-bg" ng-controller="menuCtrl">
                     <div class="container">
                         <div class="row">
-                            <div ng-if="$root.lang==='en'" class="col-md-12" style="margin-top: 60px;">
+                            <div class="col-md-12" style="margin-top: 60px;"><!--  ng-if="$root.lang==='en'" -->
                                 <span class="landing-span-light"></span>
-                                <p style="    position: absolute;
-                        color:white;
-                        top: 0px;
-                        left: 90px;
-                        font-family: spaceMono;">
-                                    Menu
+                                <p ng-if="$root.lang === 'ee'" class="menu-section-subtitle">
+                                    <!-- Menüü -->
+                                    {{ menuSectionSubTitleEst }}
                                 </p>
-                            </div>
-                            <div ng-if="$root.lang === 'ee'" class="col-md-12" style="margin-top: 60px;">
-                                <span class="landing-span-light"></span>
-                                <p style="    position: absolute;
-                        color:white;
-                        top: 0px;
-                        left: 90px;
-                        font-family: spaceMono;">
-                                    Menüü
+                                <p ng-if="$root.lang === 'en'" class="menu-section-subtitle">
+                                    <!-- Menu -->
+                                    {{ menuSectionSubTitleEng }}
                                 </p>
-                            </div>
-                            <div ng-if="$root.lang === 'fi'" class="col-md-12" style="margin-top: 30px;">
-                                <span class="landing-span-light"></span>
-                                <p style="    position: absolute;
-                        color:white;
-                        top: 0px;
-                        left: 90px;
-                        font-family: spaceMono;">
-                                    Menu
+                                <p ng-if="$root.lang === 'fi'" class="menu-section-subtitle">
+                                    <!-- Menu -->
+                                    {{ menuSectionSubTitleFin }}
                                 </p>
-                            </div>
-                            <div ng-if="$root.lang === 'ru'" class="col-md-12" style="margin-top: 30px;">
-                                <span class="landing-span-light"></span>
-                                <p style="    position: absolute;
-                        color:white;
-                        top: 0px;
-                        left: 90px;
-                        font-family: Roboto;">
-                                    Mеню
+                                <p ng-if="$root.lang === 'ru'" class="menu-section-subtitle russian-font">
+                                    <!-- Mеню -->
+                                    {{ menuSectionSubTitleRus }}
                                 </p>
+
+                                <!-- <p style="    position: absolute;
+                                    color:white;
+                                    top: 0px;
+                                    left: 90px;
+                                    font-family: spaceMono;">
+                                                Menu
+                                            </p>
+                                        </div>
+                                        <div ng-if="$root.lang === 'ee'" class="col-md-12" style="margin-top: 60px;">
+                                            <span class="landing-span-light"></span>
+                                            <p style="    position: absolute;
+                                    color:white;
+                                    top: 0px;
+                                    left: 90px;
+                                    font-family: spaceMono;">
+                                                Menüü
+                                            </p>
+                                        </div>
+                                        <div ng-if="$root.lang === 'fi'" class="col-md-12" style="margin-top: 30px;">
+                                            <span class="landing-span-light"></span>
+                                            <p style="    position: absolute;
+                                    color:white;
+                                    top: 0px;
+                                    left: 90px;
+                                    font-family: spaceMono;">
+                                                Menu
+                                            </p>
+                                        </div>
+                                        <div ng-if="$root.lang === 'ru'" class="col-md-12" style="margin-top: 30px;">
+                                            <span class="landing-span-light"></span>
+                                            <p style="    position: absolute;
+                                    color:white;
+                                    top: 0px;
+                                    left: 90px;
+                                    font-family: Roboto;">
+                                                Mеню
+                                            </p> -->
                             </div>
                         </div>
                         <div class="row" style="margin-top: 60px;">
