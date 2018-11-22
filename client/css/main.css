@@ -359,66 +359,66 @@ a.editable-click{
     margin-top: 20px;
     margin-left: 25rem;
     cursor: default;
-    
+
 }
 @media only screen and (max-width: 1024px) {
-  
+
 .mobilelogo{
-        margin-left: -25rem;   
+        margin-left: -25rem;
     }
 }
 @media only screen and (min-width: 320px) and (max-width: 1024px) {
-  
+
 .mobilelogo{
     display:inline-flex;
-    
+
     margin-right: 13rem;
-    margin-bottom: -20rem;   
+    margin-bottom: -20rem;
     }
 }
 @media only screen and (min-width: 1720px) {
-  
+
 .mobilelogo{
         margin-left: 25rem;
-        
+
     }
 }
 @media only screen and (device-width: 768px) and (device-height: 1024px) and (orientation:portrait) {
-  .mobilelogo { 
+  .mobilelogo {
        display:inline-flex;
        margin-left: -45em;
        margin-top: 4em;
     } /* css rules for ipad portrait mode */
 }
 @media only screen and (device-width: 480px) and (device-height: 854px) and (orientation:portrait) {
-    .mobilelogo { 
+    .mobilelogo {
          display:inline-flex;
          margin-left: -35em;
          margin-top: 4em;
-      } 
+      }
   }
   @media only screen and (device-width: 600px) and (device-height: 1024px) and (orientation:portrait) {
-    .mobilelogo { 
+    .mobilelogo {
         display:inline-flex;
         margin-left: -39em;
         margin-top: 4em;
-      } 
+      }
   }
 
 @media only screen and (min-device-width : 800px) and (max-device-width: 1280px) {
-    .mobilelogo { 
+    .mobilelogo {
        display:inline-flex;
        margin-left: -46em;
        margin-top: 3em;
-    } 
+    }
 }
 
 @media only screen and (min-device-width : 950px) and (max-device-width: 1280px) {
-    .mobilelogo { 
+    .mobilelogo {
        display:block;
        margin-left: -13.5em;
        margin-bottom: -8rem;
-    } 
+    }
 }
 
 .worker-img-holder{
@@ -759,6 +759,27 @@ th{
     cursor: pointer;
     margin-bottom: 10px;
 }
+
+.landing-span-dark {
+    height: 1px;
+    width: 40px;
+    background: black;
+    display: block;
+    position: absolute;
+    top: 10px;
+    left: 40px;
+}
+
+.landing-span-light {
+    height: 1px;
+    width: 40px;
+    background: white;
+    display: block;
+    position: absolute;
+    top: 10px;
+    left: 40px;
+}
+
 .landing-tasting-span {
     height: 1px;
     width: 40px;
@@ -775,6 +796,9 @@ th{
     display: inline-block;
     margin: 0 10px 0 15px;
     vertical-align: middle;
+}
+.bg-dark {
+    background: black;
 }
 .tasting-heading {
     position: absolute;
@@ -807,6 +831,14 @@ th{
     right: 30px;
     top: 50px; */
 }
+
+.about-title {
+    position: absolute;
+    top: 0px;
+    left: 90px;
+    font-family: spaceMono;
+}
+
 .booking-btn{
     background: #63ada4;
     border: none;
@@ -2008,7 +2040,7 @@ datepicker.backend-date > input{
     -khtml-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
-    user-select: none;  
+    user-select: none;
 }
 
 .sorting-arrow-up {
