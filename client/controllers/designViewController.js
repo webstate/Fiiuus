@@ -107,7 +107,7 @@ designViewController.controller('designViewController', function ($scope, pictur
 
     landingTextService.getLandingText("courseTitleStarter", "ee").then(function (data) {
         if (data.text == null) {
-            $scope.courseTitleStarter = "There is nothint yet inserted";
+            $scope.courseTitleStarter = "There is nothing yet inserted";
         } else {
             $scope.courseTitleStarter = data.text
         }
@@ -132,7 +132,7 @@ designViewController.controller('designViewController', function ($scope, pictur
 
     landingTextService.getLandingText("courseTitleDrinks", "ee").then(function (data) {
         if (data.text == null) {
-            $scope.courseTitleDrinks = "There is nothint yet inserted";
+            $scope.courseTitleDrinks = "There is nothing yet inserted";
         } else {
             $scope.courseTitleDrinks = data.text
         }
@@ -157,7 +157,7 @@ designViewController.controller('designViewController', function ($scope, pictur
 
     landingTextService.getLandingText("courseTitleKids", "ee").then(function (data) {
         if (data.text == null) {
-            $scope.courseTitleKids = "There is nothint yet inserted";
+            $scope.courseTitleKids = "There is nothing yet inserted";
         } else {
             $scope.courseTitleKids = data.text
         }
@@ -182,7 +182,7 @@ designViewController.controller('designViewController', function ($scope, pictur
 
     landingTextService.getLandingText("courseTitleMain", "ee").then(function (data) {
         if (data.text == null) {
-            $scope.courseTitleMain = "There is nothint yet inserted";
+            $scope.courseTitleMain = "There is nothing yet inserted";
         } else {
             $scope.courseTitleMain = data.text
         }
@@ -206,7 +206,7 @@ designViewController.controller('designViewController', function ($scope, pictur
     }
     landingTextService.getLandingText("courseTitleDessert", "ee").then(function (data) {
         if (data.text == null) {
-            $scope.courseTitleDessert = "There is nothint yet inserted";
+            $scope.courseTitleDessert = "There is nothing yet inserted";
         } else {
             $scope.courseTitleDessert = data.text
         }
@@ -230,7 +230,7 @@ designViewController.controller('designViewController', function ($scope, pictur
     }
     landingTextService.getLandingText("menuTitle", "ee").then(function (data) {
         if (data.text == null) {
-            $scope.menuTitle = "There is nothint yet inserted";
+            $scope.menuTitle = "There is nothing yet inserted";
         } else {
             $scope.menuTitle = data.text
         }
@@ -259,7 +259,7 @@ designViewController.controller('designViewController', function ($scope, pictur
 
     landingTextService.getLandingText("menuText", "ee").then(function (data) {
         if (data.text == null) {
-            $scope.menuText = "There is nothint yet inserted";
+            $scope.menuText = "There is nothing yet inserted";
         } else {
             $scope.menuText = data.text;
         }
@@ -289,7 +289,7 @@ designViewController.controller('designViewController', function ($scope, pictur
 
     landingTextService.getLandingText("tastingText", "ee").then(function (data) {
         if (data.text == null) {
-            $scope.tastingText = "There is nothint yet inserted";
+            $scope.tastingText = "There is nothing yet inserted";
         } else {
             $scope.tastingText = data.text;
         }
@@ -319,7 +319,7 @@ designViewController.controller('designViewController', function ($scope, pictur
 
     landingTextService.getLandingText("eventTitle", "ee").then(function (data) {
         if (data.text == null) {
-            $scope.eventTitle = "There is nothint yet inserted";
+            $scope.eventTitle = "There is nothing yet inserted";
         } else {
             $scope.eventTitle = data.text;
         }
@@ -349,7 +349,7 @@ designViewController.controller('designViewController', function ($scope, pictur
     /*
     landingTextService.getLandingText("contactCall", "ee").then(function(data){
         if(data.text == null){
-            $scope.contactCall = "There is nothint yet inserted";
+            $scope.contactCall = "There is nothing yet inserted";
         }else{
             $scope.contactCall = {
                 text: data.text
@@ -361,7 +361,7 @@ designViewController.controller('designViewController', function ($scope, pictur
 
     landingTextService.getLandingText("contactCallEst", "ee").then(function (data) {
         if (data.text == null) {
-            $scope.contactCallEst = "There is nothint yet inserted";
+            $scope.contactCallEst = "There is nothing yet inserted";
         } else {
             $scope.contactCallEst = data.text;
         }
@@ -396,7 +396,7 @@ designViewController.controller('designViewController', function ($scope, pictur
 
     landingTextService.getLandingText("contactVisitEst", "ee").then(function (data) {
         if (data.text == null) {
-            $scope.contactVisitEst = "There is nothint yet inserted";
+            $scope.contactVisitEst = "There is nothing yet inserted";
         } else {
             $scope.contactVisitEst = data.text;
         }
@@ -426,7 +426,7 @@ designViewController.controller('designViewController', function ($scope, pictur
 
     landingTextService.getLandingText("contactEmailEst", "ee").then(function (data) {
         if (data.text == null) {
-            $scope.contactEmailEst = "There is nothint yet inserted";
+            $scope.contactEmailEst = "There is nothing yet inserted";
         } else {
             $scope.contactEmailEst = data.text;
         }
@@ -501,7 +501,7 @@ designViewController.controller('designViewController', function ($scope, pictur
     //
     landingTextService.getLandingText("contactWeekend", "ee").then(function (data) {
         if (data.text == null) {
-            $scope.contactWeekend = "There is nothint yet inserted";
+            $scope.contactWeekend = "There is nothing yet inserted";
         } else {
             $scope.contactWeekend = data.text;
         }
@@ -525,7 +525,7 @@ designViewController.controller('designViewController', function ($scope, pictur
     }
     landingTextService.getLandingText("contactDays", "ee").then(function (data) {
         if (data.text == null) {
-            $scope.contactDays = "There is nothint yet inserted";
+            $scope.contactDays = "There is nothing yet inserted";
         } else {
             $scope.contactDays = data.text;
         }
@@ -583,7 +583,7 @@ designViewController.controller('designViewController', function ($scope, pictur
 
     landingTextService.getLandingText("workerTextEng", "ee").then(function (data) {
         if (data.text == null) {
-            $scope.workerTextEng = "There is nothint yet inserted";
+            $scope.workerTextEng = "There is nothing yet inserted";
         } else {
             $scope.workerTextEng = data.text;
         }
@@ -612,7 +612,7 @@ designViewController.controller('designViewController', function ($scope, pictur
 
     landingTextService.getLandingText("courseTitleStarterEng", "ee").then(function (data) {
         if (data.text == null) {
-            $scope.courseTitleStarterEng = "There is nothint yet inserted";
+            $scope.courseTitleStarterEng = "There is nothing yet inserted";
         } else {
             $scope.courseTitleStarterEng = data.text
         }
@@ -637,7 +637,7 @@ designViewController.controller('designViewController', function ($scope, pictur
     
     landingTextService.getLandingText("courseTitleDrinksEng", "ee").then(function (data) {
         if (data.text == null) {
-            $scope.courseTitleDrinksEng = "There is nothint yet inserted";
+            $scope.courseTitleDrinksEng = "There is nothing yet inserted";
         } else {
             $scope.courseTitleDrinksEng = data.text
         }
@@ -662,7 +662,7 @@ designViewController.controller('designViewController', function ($scope, pictur
 
     landingTextService.getLandingText("courseTitleKidsEng", "ee").then(function (data) {
         if (data.text == null) {
-            $scope.courseTitleKidsEng = "There is nothint yet inserted";
+            $scope.courseTitleKidsEng = "There is nothing yet inserted";
         } else {
             $scope.courseTitleKidsEng = data.text
         }
@@ -688,7 +688,7 @@ designViewController.controller('designViewController', function ($scope, pictur
 
     landingTextService.getLandingText("courseTitleMainEng", "ee").then(function (data) {
         if (data.text == null) {
-            $scope.courseTitleMainEng = "There is nothint yet inserted";
+            $scope.courseTitleMainEng = "There is nothing yet inserted";
         } else {
             $scope.courseTitleMainEng = data.text
         }
@@ -712,7 +712,7 @@ designViewController.controller('designViewController', function ($scope, pictur
     }
     landingTextService.getLandingText("courseTitleDessertEng", "ee").then(function (data) {
         if (data.text == null) {
-            $scope.courseTitleDessertEng = "There is nothint yet inserted";
+            $scope.courseTitleDessertEng = "There is nothing yet inserted";
         } else {
             $scope.courseTitleDessertEng = data.text
         }
@@ -737,7 +737,7 @@ designViewController.controller('designViewController', function ($scope, pictur
     //
     landingTextService.getLandingText("menuTitleEng", "ee").then(function (data) {
         if (data.text == null) {
-            $scope.menuTitleEng = "There is nothint yet inserted";
+            $scope.menuTitleEng = "There is nothing yet inserted";
         } else {
             $scope.menuTitleEng = data.text;
         }
@@ -765,7 +765,7 @@ designViewController.controller('designViewController', function ($scope, pictur
 
     landingTextService.getLandingText("menuTextEng", "ee").then(function (data) {
         if (data.text == null) {
-            $scope.menuTextEng = "There is nothint yet inserted";
+            $scope.menuTextEng = "There is nothing yet inserted";
         } else {
             $scope.menuTextEng = data.text;
         }
@@ -794,7 +794,7 @@ designViewController.controller('designViewController', function ($scope, pictur
 
     landingTextService.getLandingText("tastingTextEng", "ee").then(function (data) {
         if (data.text == null) {
-            $scope.tastingTextEng = "There is nothint yet inserted";
+            $scope.tastingTextEng = "There is nothing yet inserted";
         } else {
             $scope.tastingTextEng = data.text;
         }
@@ -823,7 +823,7 @@ designViewController.controller('designViewController', function ($scope, pictur
 
     landingTextService.getLandingText("eventTitleEng", "ee").then(function (data) {
         if (data.text == null) {
-            $scope.eventTitleEng = "There is nothint yet inserted";
+            $scope.eventTitleEng = "There is nothing yet inserted";
         } else {
             $scope.eventTitleEng = data.text;
         }
@@ -852,7 +852,7 @@ designViewController.controller('designViewController', function ($scope, pictur
 
     landingTextService.getLandingText("contactCallEng", "ee").then(function (data) {
         if (data.text == null) {
-            $scope.contactCallEng = "There is nothint yet inserted";
+            $scope.contactCallEng = "There is nothing yet inserted";
         } else {
             $scope.contactCallEng = data.text;
         }
@@ -881,7 +881,7 @@ designViewController.controller('designViewController', function ($scope, pictur
 
     landingTextService.getLandingText("contactVisitEng", "ee").then(function (data) {
         if (data.text == null) {
-            $scope.contactVisitEng = "There is nothint yet inserted";
+            $scope.contactVisitEng = "There is nothing yet inserted";
         } else {
             $scope.contactVisitEng = data.text;
         }
@@ -910,7 +910,7 @@ designViewController.controller('designViewController', function ($scope, pictur
 
     landingTextService.getLandingText("contactEmailEng", "ee").then(function (data) {
         if (data.text == null) {
-            $scope.contactEmailEng = "There is nothint yet inserted";
+            $scope.contactEmailEng = "There is nothing yet inserted";
         } else {
             $scope.contactEmailEng = data.text;
         }
@@ -983,7 +983,7 @@ designViewController.controller('designViewController', function ($scope, pictur
     /**/
     landingTextService.getLandingText("contactDaysEng", "ee").then(function (data) {
         if (data.text == null) {
-            $scope.contactDaysEng = "There is nothint yet inserted";
+            $scope.contactDaysEng = "There is nothing yet inserted";
         } else {
             $scope.contactDaysEng = data.text;
         }
@@ -1008,7 +1008,7 @@ designViewController.controller('designViewController', function ($scope, pictur
     /**/
     landingTextService.getLandingText("contactWeekendEng", "ee").then(function (data) {
         if (data.text == null) {
-            $scope.contactWeekendEng = "There is nothint yet inserted";
+            $scope.contactWeekendEng = "There is nothing yet inserted";
         } else {
             $scope.contactWeekendEng = data.text;
         }
@@ -1066,7 +1066,7 @@ designViewController.controller('designViewController', function ($scope, pictur
 
     landingTextService.getLandingText("workerTextFin", "ee").then(function (data) {
         if (data.text == null) {
-            $scope.workerTextFin = "There is nothint yet inserted";
+            $scope.workerTextFin = "There is nothing yet inserted";
         } else {
             $scope.workerTextFin = data.text;
         }
@@ -1095,7 +1095,7 @@ designViewController.controller('designViewController', function ($scope, pictur
 
     landingTextService.getLandingText("courseTitleStarterFin", "ee").then(function (data) {
         if (data.text == null) {
-            $scope.courseTitleStarterFin = "There is nothint yet inserted";
+            $scope.courseTitleStarterFin = "There is nothing yet inserted";
         } else {
             $scope.courseTitleStarterFin = data.text
         }
@@ -1120,7 +1120,7 @@ designViewController.controller('designViewController', function ($scope, pictur
     
     landingTextService.getLandingText("courseTitleDrinksFin", "ee").then(function (data) {
         if (data.text == null) {
-            $scope.courseTitleDrinksFin = "There is nothint yet inserted";
+            $scope.courseTitleDrinksFin = "There is nothing yet inserted";
         } else {
             $scope.courseTitleDrinksFin = data.text
         }
@@ -1145,7 +1145,7 @@ designViewController.controller('designViewController', function ($scope, pictur
 
     landingTextService.getLandingText("courseTitleKidsFin", "ee").then(function (data) {
         if (data.text == null) {
-            $scope.courseTitleKidsFin = "There is nothint yet inserted";
+            $scope.courseTitleKidsFin = "There is nothing yet inserted";
         } else {
             $scope.courseTitleKidsFin = data.text
         }
@@ -1171,7 +1171,7 @@ designViewController.controller('designViewController', function ($scope, pictur
 
     landingTextService.getLandingText("courseTitleMainFin", "ee").then(function (data) {
         if (data.text == null) {
-            $scope.courseTitleMainFin = "There is nothint yet inserted";
+            $scope.courseTitleMainFin = "There is nothing yet inserted";
         } else {
             $scope.courseTitleMainFin = data.text
         }
@@ -1195,7 +1195,7 @@ designViewController.controller('designViewController', function ($scope, pictur
     }
     landingTextService.getLandingText("courseTitleDessertFin", "ee").then(function (data) {
         if (data.text == null) {
-            $scope.courseTitleDessertFin = "There is nothint yet inserted";
+            $scope.courseTitleDessertFin = "There is nothing yet inserted";
         } else {
             $scope.courseTitleDessertFin = data.text
         }
@@ -1220,7 +1220,7 @@ designViewController.controller('designViewController', function ($scope, pictur
 
     landingTextService.getLandingText("menuTitleFin", "ee").then(function (data) {
         if (data.text == null) {
-            $scope.menuTitleFin = "There is nothint yet inserted";
+            $scope.menuTitleFin = "There is nothing yet inserted";
         } else {
             $scope.menuTitleFin = data.text;
         }
@@ -1249,7 +1249,7 @@ designViewController.controller('designViewController', function ($scope, pictur
 
     landingTextService.getLandingText("menuTextFin", "ee").then(function (data) {
         if (data.text == null) {
-            $scope.menuTextFin = "There is nothint yet inserted";
+            $scope.menuTextFin = "There is nothing yet inserted";
         } else {
             $scope.menuTextFin = data.text;
         }
@@ -1278,7 +1278,7 @@ designViewController.controller('designViewController', function ($scope, pictur
 
     landingTextService.getLandingText("tastingTextFin", "ee").then(function (data) {
         if (data.text == null) {
-            $scope.tastingTextFin = "There is nothint yet inserted";
+            $scope.tastingTextFin = "There is nothing yet inserted";
         } else {
             $scope.tastingTextFin = data.text;
         }
@@ -1307,7 +1307,7 @@ designViewController.controller('designViewController', function ($scope, pictur
 
     landingTextService.getLandingText("eventTitleFin", "ee").then(function (data) {
         if (data.text == null) {
-            $scope.eventTitleFin = "There is nothint yet inserted";
+            $scope.eventTitleFin = "There is nothing yet inserted";
         } else {
             $scope.eventTitleFin = data.text;
         }
@@ -1336,7 +1336,7 @@ designViewController.controller('designViewController', function ($scope, pictur
 
     landingTextService.getLandingText("contactCallFin", "ee").then(function (data) {
         if (data.text == null) {
-            $scope.contactCallFin = "There is nothint yet inserted";
+            $scope.contactCallFin = "There is nothing yet inserted";
         } else {
             $scope.contactCallFin = data.text;
         }
@@ -1365,7 +1365,7 @@ designViewController.controller('designViewController', function ($scope, pictur
 
     landingTextService.getLandingText("contactVisitFin", "ee").then(function (data) {
         if (data.text == null) {
-            $scope.contactVisitFin = "There is nothint yet inserted";
+            $scope.contactVisitFin = "There is nothing yet inserted";
         } else {
             $scope.contactVisitFin = data.text;
         }
@@ -1395,7 +1395,7 @@ designViewController.controller('designViewController', function ($scope, pictur
 
     landingTextService.getLandingText("contactEmailFin", "ee").then(function (data) {
         if (data.text == null) {
-            $scope.contactEmailFin = "There is nothint yet inserted";
+            $scope.contactEmailFin = "There is nothing yet inserted";
         } else {
             $scope.contactEmailFin = data.text;
         }
@@ -1424,7 +1424,7 @@ designViewController.controller('designViewController', function ($scope, pictur
 
     landingTextService.getLandingText("contactWeekendFin", "ee").then(function (data) {
         if (data.text == null) {
-            $scope.contactWeekendFin = "There is nothint yet inserted";
+            $scope.contactWeekendFin = "There is nothing yet inserted";
         } else {
             $scope.contactWeekendFin = data.text;
         }
@@ -1448,7 +1448,7 @@ designViewController.controller('designViewController', function ($scope, pictur
     }
     landingTextService.getLandingText("contactDaysFin", "ee").then(function (data) {
         if (data.text == null) {
-            $scope.contactDaysFin = "There is nothint yet inserted";
+            $scope.contactDaysFin = "There is nothing yet inserted";
         } else {
             $scope.contactDaysFin = data.text;
         }
@@ -1551,7 +1551,7 @@ designViewController.controller('designViewController', function ($scope, pictur
 
     landingTextService.getLandingText("workerTextRus", "ee").then(function (data) {
         if (data.text == null) {
-            $scope.workerTextRus = "There is nothint yet inserted";
+            $scope.workerTextRus = "There is nothing yet inserted";
         } else {
             $scope.workerTextRus = data.text;
         }
@@ -1580,7 +1580,7 @@ designViewController.controller('designViewController', function ($scope, pictur
 
     landingTextService.getLandingText("courseTitleStarterRus", "ee").then(function (data) {
         if (data.text == null) {
-            $scope.courseTitleStarterRus = "There is nothint yet inserted";
+            $scope.courseTitleStarterRus = "There is nothing yet inserted";
         } else {
             $scope.courseTitleStarterRus = data.text
         }
@@ -1605,7 +1605,7 @@ designViewController.controller('designViewController', function ($scope, pictur
     
     landingTextService.getLandingText("courseTitleDrinksRus", "ee").then(function (data) {
         if (data.text == null) {
-            $scope.courseTitleDrinksRus = "There is nothint yet inserted";
+            $scope.courseTitleDrinksRus = "There is nothing yet inserted";
         } else {
             $scope.courseTitleDrinksRus = data.text
         }
@@ -1630,7 +1630,7 @@ designViewController.controller('designViewController', function ($scope, pictur
 
     landingTextService.getLandingText("courseTitleKidsRus", "ee").then(function (data) {
         if (data.text == null) {
-            $scope.courseTitleKidsRus = "There is nothint yet inserted";
+            $scope.courseTitleKidsRus = "There is nothing yet inserted";
         } else {
             $scope.courseTitleKidsRus = data.text
         }
@@ -1656,7 +1656,7 @@ designViewController.controller('designViewController', function ($scope, pictur
 
     landingTextService.getLandingText("courseTitleMainRus", "ee").then(function (data) {
         if (data.text == null) {
-            $scope.courseTitleMainRus = "There is nothint yet inserted";
+            $scope.courseTitleMainRus = "There is nothing yet inserted";
         } else {
             $scope.courseTitleMainRus = data.text
         }
@@ -1680,7 +1680,7 @@ designViewController.controller('designViewController', function ($scope, pictur
     }
     landingTextService.getLandingText("courseTitleDessertRus", "ee").then(function (data) {
         if (data.text == null) {
-            $scope.courseTitleDessertRus = "There is nothint yet inserted";
+            $scope.courseTitleDessertRus = "There is nothing yet inserted";
         } else {
             $scope.courseTitleDessertRus = data.text
         }
@@ -1704,7 +1704,7 @@ designViewController.controller('designViewController', function ($scope, pictur
     }
     landingTextService.getLandingText("menuTitleRus", "ee").then(function (data) {
         if (data.text == null) {
-            $scope.menuTitleRus = "There is nothint yet inserted";
+            $scope.menuTitleRus = "There is nothing yet inserted";
         } else {
             $scope.menuTitleRus = data.text;
         }
@@ -1733,7 +1733,7 @@ designViewController.controller('designViewController', function ($scope, pictur
 
     landingTextService.getLandingText("menuTextRus", "ee").then(function (data) {
         if (data.text == null) {
-            $scope.menuTextRus = "There is nothint yet inserted";
+            $scope.menuTextRus = "There is nothing yet inserted";
         } else {
             $scope.menuTextRus = data.text;
         }
@@ -1762,7 +1762,7 @@ designViewController.controller('designViewController', function ($scope, pictur
 
     landingTextService.getLandingText("tastingTextRus", "ee").then(function (data) {
         if (data.text == null) {
-            $scope.tastingTextRus = "There is nothint yet inserted";
+            $scope.tastingTextRus = "There is nothing yet inserted";
         } else {
             $scope.tastingTextRus = data.text;
         }
@@ -1791,7 +1791,7 @@ designViewController.controller('designViewController', function ($scope, pictur
 
     landingTextService.getLandingText("eventTitleRus", "ee").then(function (data) {
         if (data.text == null) {
-            $scope.eventTitleRus = "There is nothint yet inserted";
+            $scope.eventTitleRus = "There is nothing yet inserted";
         } else {
             $scope.eventTitleRus = data.text;
         }
@@ -1820,7 +1820,7 @@ designViewController.controller('designViewController', function ($scope, pictur
 
     landingTextService.getLandingText("contactCallRus", "ee").then(function (data) {
         if (data.text == null) {
-            $scope.contactCallRus = "There is nothint yet inserted";
+            $scope.contactCallRus = "There is nothing yet inserted";
         } else {
             $scope.contactCallRus = data.text;
         }
@@ -1849,7 +1849,7 @@ designViewController.controller('designViewController', function ($scope, pictur
 
     landingTextService.getLandingText("contactVisitRus", "ee").then(function (data) {
         if (data.text == null) {
-            $scope.contactVisitRus = "There is nothint yet inserted";
+            $scope.contactVisitRus = "There is nothing yet inserted";
         } else {
             $scope.contactVisitRus = data.text;
         }
@@ -1879,7 +1879,7 @@ designViewController.controller('designViewController', function ($scope, pictur
 
     landingTextService.getLandingText("contactEmailRus", "ee").then(function (data) {
         if (data.text == null) {
-            $scope.contactEmailRus = "There is nothint yet inserted";
+            $scope.contactEmailRus = "There is nothing yet inserted";
         } else {
             $scope.contactEmailRus = data.text;
         }
@@ -1909,7 +1909,7 @@ designViewController.controller('designViewController', function ($scope, pictur
     /**/
     landingTextService.getLandingText("contactWeekendRus", "ee").then(function (data) {
         if (data.text == null) {
-            $scope.contactWeekendRus = "There is nothint yet inserted";
+            $scope.contactWeekendRus = "There is nothing yet inserted";
         } else {
             $scope.contactWeekendRus = data.text;
         }
@@ -1933,7 +1933,7 @@ designViewController.controller('designViewController', function ($scope, pictur
     }
     landingTextService.getLandingText("contactDaysRus", "ee").then(function (data) {
         if (data.text == null) {
-            $scope.contactDaysRus = "There is nothint yet inserted";
+            $scope.contactDaysRus = "There is nothing yet inserted";
         } else {
             $scope.contactDaysRus = data.text;
         }
