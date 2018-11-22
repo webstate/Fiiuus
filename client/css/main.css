@@ -759,6 +759,23 @@ th{
     cursor: pointer;
     margin-bottom: 10px;
 }
+.landing-tasting-span {
+    height: 1px;
+    width: 40px;
+    background: white;
+    display: block;
+    position: absolute;
+    top: 10px;
+    left: 40px;
+}
+.admin-tasting-span {
+    height: 4px;
+    width: 40px;
+    background: white;
+    display: inline-block;
+    margin: 0 10px 0 15px;
+    vertical-align: middle;
+}
 .tasting-heading {
     position: absolute;
     color:white;
