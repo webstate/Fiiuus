@@ -22,6 +22,8 @@
         </li>
     </ul>
 </div>
+
+<!-- EST Design -->
 <div class="container" ng-show="estDesign">
     <div class="row" style="margin-top: 50px;">
         <div class="banner-mockup" style="background-image:url({{bannerImage}})">
@@ -52,8 +54,16 @@
         </div>
         <div class="worker-area-mockup">
             <div class="row" style="margin-top: 40px;">
+                <!-- Est About Title -->
                 <div class="col-md-12">
-                    <span class="section-mockup"></span>
+                    <!-- <div class="section-mockup"></div> -->
+                    <div>
+                        <span class="admin-tasting-span bg-dark"></span>
+                        <input value="{{ editAboutTitleEst }}" type="text" ng-model="aboutTitleEst" ng-initial />
+                        <button class="timeBtn" ng-click="insertAboutTitleEst()">
+                            <i class="fa fa-check" aria-hidden="true"></i>
+                        </button>
+                    </div>
                 </div>
             </div>
             <div class="row" style="margin-top: 30px;">
@@ -457,8 +467,16 @@
         </div>
         <div class="worker-area-mockup">
             <div class="row" style="margin-top: 40px;">
+                <!-- Eng About Title -->
                 <div class="col-md-12">
-                    <span class="section-mockup"></span>
+                    <!-- <div class="section-mockup"></div> -->
+                    <div>
+                        <span class="admin-tasting-span bg-dark"></span>
+                        <input value="{{ editAboutTitleEng }}" type="text" ng-model="aboutTitleEng" ng-initial />
+                        <button class="timeBtn" ng-click="insertAboutTitleEng()">
+                            <i class="fa fa-check" aria-hidden="true"></i>
+                        </button>
+                    </div>
                 </div>
             </div>
             <div class="row" style="margin-top: 30px;">
@@ -869,8 +887,16 @@
         </div>
         <div class="worker-area-mockup">
             <div class="row" style="margin-top: 40px;">
-                <div class="col-md-12">
-                    <span class="section-mockup"></span>
+            <!-- Fin About Title -->
+            <div class="col-md-12">
+                    <!-- <div class="section-mockup"></div> -->
+                    <div>
+                        <span class="admin-tasting-span bg-dark"></span>
+                        <input value="{{ editAboutTitleFin }}" type="text" ng-model="aboutTitleFin" ng-initial />
+                        <button class="timeBtn" ng-click="insertAboutTitleFin()">
+                            <i class="fa fa-check" aria-hidden="true"></i>
+                        </button>
+                    </div>
                 </div>
             </div>
             <div class="row" style="margin-top: 30px;">
@@ -1261,8 +1287,16 @@
         </div>
         <div class="worker-area-mockup">
             <div class="row" style="margin-top: 40px;">
-                <div class="col-md-12">
-                    <span class="section-mockup"></span>
+            <!-- Rus About Title -->
+            <div class="col-md-12">
+                    <!-- <div class="section-mockup"></div> -->
+                    <div>
+                        <span class="admin-tasting-span bg-dark"></span>
+                        <input value="{{ editAboutTitleRus }}" type="text" ng-model="aboutTitleRus" ng-initial />
+                        <button class="timeBtn" ng-click="insertAboutTitleRus()">
+                            <i class="fa fa-check" aria-hidden="true"></i>
+                        </button>
+                    </div>
                 </div>
             </div>
             <div class="row" style="margin-top: 30px;">
