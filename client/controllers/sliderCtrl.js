@@ -70,6 +70,9 @@ sliderCtrl.controller('sliderCtrl', function($location,$rootScope, $scope, landi
     landingTextService.getLandingText("workerText", "ee").then(function(data){
         $scope.workerText = data.text;
     })
+    landingTextService.getLandingText("menuSectionSubTitleEst", "ee").then(function(data){
+        $scope.menuSectionSubTitleEst = data.text;
+    })
     landingTextService.getLandingText("menuTitle", "ee").then(function(data){
         $scope.menuTitle = data.text;
     })
@@ -177,6 +180,9 @@ sliderCtrl.controller('sliderCtrl', function($location,$rootScope, $scope, landi
     landingTextService.getLandingText("workerTextEng", "ee").then(function(data){
         $scope.workerTextEng = data.text;
     })
+    landingTextService.getLandingText("menuSectionSubTitleEng", "ee").then(function(data){
+        $scope.menuSectionSubTitleEng = data.text;
+    })
     landingTextService.getLandingText("menuTitleEng", "ee").then(function(data){
         $scope.menuTitleEng = data.text;
     })
@@ -247,6 +253,9 @@ sliderCtrl.controller('sliderCtrl', function($location,$rootScope, $scope, landi
     landingTextService.getLandingText("workerTextFin", "ee").then(function(data){
         $scope.workerTextFin = data.text;
     })
+    landingTextService.getLandingText("menuSectionSubTitleFin", "ee").then(function(data){
+        $scope.menuSectionSubTitleFin = data.text;
+    })
     landingTextService.getLandingText("menuTitleFin", "ee").then(function(data){
         $scope.menuTitleFin = data.text;
     })
@@ -316,6 +325,9 @@ sliderCtrl.controller('sliderCtrl', function($location,$rootScope, $scope, landi
     })
     landingTextService.getLandingText("workerTextRus", "ee").then(function(data){
         $scope.workerTextRus = data.text;
+    })
+    landingTextService.getLandingText("menuSectionSubTitleRus", "ee").then(function(data){
+        $scope.menuSectionSubTitleRus = data.text;
     })
     landingTextService.getLandingText("menuTitleRus", "ee").then(function(data){
         $scope.menuTitleRus = data.text;

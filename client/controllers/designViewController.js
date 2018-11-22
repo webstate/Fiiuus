@@ -254,6 +254,33 @@ designViewController.controller('designViewController', function ($scope, pictur
             })
         });
     }
+
+    landingTextService.getLandingText("menuSectionSubTitleEst", "ee").then(function (data) {
+        if (data.text == null) {
+            $scope.menuSectionSubTitleEst = "There is nothing yet inserted";
+        } else {
+            $scope.menuSectionSubTitleEst = data.text
+        }
+    }, function (err) {
+        console.log(err);
+    })
+    $scope.insertMenuSectionSubTitleEst = function () {
+        var update = "";
+        update = $scope.menuSectionSubTitleEst;
+        if ($scope.menuSectionSubTitleEst === "{{editMenuSectionSubTitleEst}}") {
+            update = $scope.editMenuSectionSubTitleEst;
+        }
+        landingTextService.addOrUpdateLandingText("menuSectionSubTitleEst", update, "ee").then(function (data) {
+            landingTextService.getLandingText("menuSectionSubTitleEst", "ee").then(function (data) {
+                if (data.text == null) {
+                    $scope.menuSectionSubTitleEst = "Nothing here";
+                }
+                $scope.menuSectionSubTitleEst = data.text;
+            })
+        });
+    }
+
+
     landingTextService.getLandingText("menuTitle", "ee").then(function (data) {
         if (data.text == null) {
             $scope.menuTitle = "There is nothing yet inserted";
@@ -278,6 +305,7 @@ designViewController.controller('designViewController', function ($scope, pictur
             })
         });
     }
+    
     /* $scope.$watch('menuTitle.title', function(val){
         landingTextService.addOrUpdateLandingText("menuTitle", val, "ee");
     })
@@ -837,7 +865,33 @@ designViewController.controller('designViewController', function ($scope, pictur
             })
         });
     }
-    //
+    
+    landingTextService.getLandingText("menuSectionSubTitleEng", "ee").then(function (data) {
+        if (data.text == null) {
+            $scope.menuSectionSubTitleEng = "There is nothing yet inserted";
+        } else {
+            $scope.menuSectionSubTitleEng = data.text
+        }
+    }, function (err) {
+        console.log(err);
+    })
+    $scope.insertMenuSectionSubTitleEng = function () {
+        var update = "";
+        update = $scope.menuSectionSubTitleEng;
+        if ($scope.menuSectionSubTitleEng === "{{editMenuSectionSubTitleEng}}") {
+            update = $scope.editMenuSectionSubTitleEng;
+        }
+        landingTextService.addOrUpdateLandingText("menuSectionSubTitleEng", update, "ee").then(function (data) {
+            landingTextService.getLandingText("menuSectionSubTitleEng", "ee").then(function (data) {
+                if (data.text == null) {
+                    $scope.menuSectionSubTitleEng = "Nothing here";
+                }
+                $scope.menuSectionSubTitleEng = data.text;
+            })
+        });
+    }
+
+
     landingTextService.getLandingText("menuTitleEng", "ee").then(function (data) {
         if (data.text == null) {
             $scope.menuTitleEng = "There is nothing yet inserted";
@@ -1375,6 +1429,32 @@ designViewController.controller('designViewController', function ($scope, pictur
             })
         });
     }
+    
+    landingTextService.getLandingText("menuSectionSubTitleFin", "ee").then(function (data) {
+        if (data.text == null) {
+            $scope.menuSectionSubTitleFin = "There is nothing yet inserted";
+        } else {
+            $scope.menuSectionSubTitleFin = data.text
+        }
+    }, function (err) {
+        console.log(err);
+    })
+    $scope.insertMenuSectionSubTitleFin = function () {
+        var update = "";
+        update = $scope.menuSectionSubTitleFin;
+        if ($scope.menuSectionSubTitleFin === "{{editMenuSectionSubTitleFin}}") {
+            update = $scope.editMenuSectionSubTitleFin;
+        }
+        landingTextService.addOrUpdateLandingText("menuSectionSubTitleFin", update, "ee").then(function (data) {
+            landingTextService.getLandingText("menuSectionSubTitleFin", "ee").then(function (data) {
+                if (data.text == null) {
+                    $scope.menuSectionSubTitleFin = "Nothing here";
+                }
+                $scope.menuSectionSubTitleFin = data.text;
+            })
+        });
+    }
+
 
     landingTextService.getLandingText("menuTitleFin", "ee").then(function (data) {
         if (data.text == null) {
@@ -1915,6 +1995,33 @@ designViewController.controller('designViewController', function ($scope, pictur
             })
         });
     }
+    
+    landingTextService.getLandingText("menuSectionSubTitleRus", "ee").then(function (data) {
+        if (data.text == null) {
+            $scope.menuSectionSubTitleRus = "There is nothing yet inserted";
+        } else {
+            $scope.menuSectionSubTitleRus = data.text
+        }
+    }, function (err) {
+        console.log(err);
+    })
+    $scope.insertMenuSectionSubTitleRus = function () {
+        var update = "";
+        update = $scope.menuSectionSubTitleRus;
+        if ($scope.menuSectionSubTitleRus === "{{editMenuSectionSubTitleRus}}") {
+            update = $scope.editMenuSectionSubTitleRus;
+        }
+        landingTextService.addOrUpdateLandingText("menuSectionSubTitleRus", update, "ee").then(function (data) {
+            landingTextService.getLandingText("menuSectionSubTitleRus", "ee").then(function (data) {
+                if (data.text == null) {
+                    $scope.menuSectionSubTitleRus = "Nothing here";
+                }
+                $scope.menuSectionSubTitleRus = data.text;
+            })
+        });
+    }
+
+
     landingTextService.getLandingText("menuTitleRus", "ee").then(function (data) {
         if (data.text == null) {
             $scope.menuTitleRus = "There is nothing yet inserted";
