@@ -851,6 +851,13 @@ th{
     font-family: spaceMono;
 }
 
+.contact-subtitle {
+    position: absolute;
+    top: 0px;
+    left: 90px;
+    font-family: spaceMono;
+}
+
 .booking-btn{
     background: #63ada4;
     border: none;
