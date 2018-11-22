@@ -330,10 +330,10 @@
                     <p ng-if="$root.lang ==='en'" class="worker-section-text">
                         {{workerTextEng}}
                     </p>
-                    <p ng-if="$root.lang ==='fi' && workerTextFin != 'There is nothint yet inserted'" class="worker-section-text">
+                    <p ng-if="$root.lang ==='fi' && workerTextFin != 'There is nothing yet inserted'" class="worker-section-text">
                         {{workerTextFin}}
                     </p>
-                    <p style="font-family:Roboto;" ng-if="$root.lang ==='ru' && workerTextRus != 'There is nothint yet inserted'"
+                    <p style="font-family:Roboto;" ng-if="$root.lang ==='ru' && workerTextRus != 'There is nothing yet inserted'"
                         class="worker-section-text">
                         {{workerTextRus}}
                     </p>
@@ -477,10 +477,10 @@
                                 <p ng-if="$root.lang ==='en'" class="menu-section-title">
                                     {{menuTitleEng}}
                                 </p>
-                                <p ng-if="$root.lang ==='fi' && menuTitleFin != 'There is nothint yet inserted'" class="menu-section-title">
+                                <p ng-if="$root.lang ==='fi' && menuTitleFin != 'There is nothing yet inserted'" class="menu-section-title">
                                     {{menuTitleFin}}
                                 </p>
-                                <p style="font-family:Play;" ng-if="$root.lang ==='ru' && menuTitleRus != 'There is nothint yet inserted'"
+                                <p style="font-family:Play;" ng-if="$root.lang ==='ru' && menuTitleRus != 'There is nothing yet inserted'"
                                     class="menu-section-title">
                                     {{menuTitleRus}}
                                 </p>
@@ -492,10 +492,10 @@
                                 <p ng-if="$root.lang ==='en'" class="menu-section-text">
                                     {{menuTextEng}}
                                 </p>
-                                <p ng-if="$root.lang ==='fi' && menuTextFin != 'There is nothint yet inserted'" class="menu-section-text">
+                                <p ng-if="$root.lang ==='fi' && menuTextFin != 'There is nothing yet inserted'" class="menu-section-text">
                                     {{menuTextFin}}
                                 </p>
-                                <p style="font-family:Roboto;" ng-if="$root.lang ==='ru' && menuTextRus != 'There is nothint yet inserted'"
+                                <p style="font-family:Roboto;" ng-if="$root.lang ==='ru' && menuTextRus != 'There is nothing yet inserted'"
                                     class="menu-section-text">
                                     {{menuTextRus}}
                                 </p>
@@ -1358,79 +1358,80 @@
                                 </table>
                             </div>
                         </div>
-                        <div ng-if="$root.lang ==='en'" class="row">
+                        <div class="row"><!--  ng-if="$root.lang ==='en'" -->
                             <div class="col-md-12" style="margin-top: 60px;">
-                                <span style="height: 1px;
-                                            width: 40px;
-                                            background: white;
-                                            display: block;
-                                            position: absolute;
-                                            top: 10px;
-                                            left: 40px;">
+                                <span class="landing-tasting-span">
                                 </span>
-                                <p style="    position: absolute;
+                                <p ng-if="$root.lang ==='ee'" class="tasting-heading">
+                                    <!-- Jõulumenüü -->
+                                    {{ tastingHeadingEst }}
+                                </p>
+                                <p ng-if="$root.lang ==='en'" class="tasting-heading">
+                                    <!-- Christmas Menu -->
+                                    {{ tastingHeadingEng }}
+                                </p>
+                                <p ng-if="$root.lang ==='fi'" class="tasting-heading">
+                                    <!-- Jouluvalikko -->
+                                    {{ tastingHeadingFin }}
+                                </p>
+                                <p ng-if="$root.lang ==='ru'" class="tasting-heading" style="font-family: Roboto;">
+                                    <!-- Рождественское меню -->
+                                    {{ tastingHeadingRus }}
+                                </p>
+
+
+                                <!-- <p style="position: absolute;
                                         color:white;
                                         top: 0px;
                                         left: 90px;
                                         font-family: spaceMono;">
                                     Christmas Menu
-                                </p>
+                                    {{ tastingHeadingEng }}
+                                </p> -->
                             </div>
                         </div>
-                        <div ng-if="$root.lang ==='ee'" class="row">
+                        <!-- <div ng-if="$root.lang ==='ee'" class="row">
                             <div class="col-md-12" style="margin-top: 60px;">
-                                <span style="height: 1px;
-                        width: 40px;
-                        background: white;
-                        display: block;
-                        position: absolute;
-                        top: 10px;
-                        left: 40px;"></span>
-                                <p style="    position: absolute;
-                        color:white;
-                        top: 0px;
-                        left: 90px;
-                        font-family: spaceMono;">
+                                <span class="landing-tasting-span">
+                                </span>
+                                <p style="  position: absolute;
+                                            color:white;
+                                            top: 0px;
+                                            left: 90px;
+                                            font-family: spaceMono;">
                                     Jõulumenüü
+                                    {{ tastingHeadingEst }}
                                 </p>
                             </div>
                         </div>
                         <div ng-if="$root.lang ==='fi'" class="row">
                             <div class="col-md-12" style="margin-top: 60px;">
-                                <span style="height: 1px;
-                        width: 40px;
-                        background: white;
-                        display: block;
-                        position: absolute;
-                        top: 10px;
-                        left: 40px;"></span>
-                                <p style="    position: absolute;
-                        color:white;
-                        top: 0px;
-                        left: 90px;
-                        font-family: spaceMono;">
+                                <span class="landing-tasting-span">
+                                </span>
+                                <p style="  position: absolute;
+                                            color:white;
+                                            top: 0px;
+                                            left: 90px;
+                                            font-family: spaceMono;">
                                     Jouluvalikko
+                                    {{ tastingHeadingFin }}
                                 </p>
                             </div>
                         </div>
                         <div ng-if="$root.lang ==='ru'" class="row">
                             <div class="col-md-12" style="margin-top: 60px;">
-                                <span style="height: 1px;
-                        width: 40px;
-                        background: white;
-                        display: block;
-                        position: absolute;
-                        top: 10px;
-                        left: 40px;"></span>
-                                <p style="    position: absolute;
-                        color:white;
-                        top: 0px;
-                        left: 90px;
-                        font-family: Roboto;">
+                                <span class="landing-tasting-span">
+                                </span>
+                                <p style="  position: absolute;
+                                            color:white;
+                                            top: 0px;
+                                            left: 90px;
+                                            font-family: Roboto;">
                                     Рождественское меню
+                                    {{ tastingHeadingRus }}
                                 </p>
                             </div>
-                        </div>
+                        </div> -->
 
                         <div class="row">
                             <div class="col-md-6">
@@ -1440,11 +1441,11 @@
                                 <p ng-if="$root.lang ==='en'" class="menu-section-text">
                                     {{tastingTextEng}}
                                 </p>
-                                <p ng-if="$root.lang ==='fi' && tastingTextFin != 'There is nothint yet inserted'"
+                                <p ng-if="$root.lang ==='fi' && tastingTextFin != 'There is nothing yet inserted'"
                                     class="menu-section-text">
                                     {{tastingTextFin}}
                                 </p>
-                                <p style="font-family:Roboto" ng-if="$root.lang ==='ru' && tastingTextRus != 'There is nothint yet inserted'"
+                                <p style="font-family:Roboto" ng-if="$root.lang ==='ru' && tastingTextRus != 'There is nothing yet inserted'"
                                     class="menu-section-text">
                                     {{tastingTextRus}}
                                 </p>
