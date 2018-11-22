@@ -759,6 +759,13 @@ th{
     cursor: pointer;
     margin-bottom: 10px;
 }
+.tasting-heading {
+    position: absolute;
+    color:white;
+    top: 0px;
+    left: 90px;
+    font-family: spaceMono;
+}
 .tasting-menu-btn{
     background: #efb248;
     border: none;
