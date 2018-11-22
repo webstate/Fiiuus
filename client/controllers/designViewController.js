@@ -287,6 +287,33 @@ designViewController.controller('designViewController', function ($scope, pictur
     })
     */
 
+    /* Est Tasting Heading */
+    landingTextService.getLandingText("tastingHeadingEst", "ee").then(function (data) {
+        if (data.text == null) {
+            $scope.tastingHeadingEst = "Nothing here";
+        } else {
+            $scope.tastingHeadingEst = data.text;
+        }
+    }, function (err) {
+        console.log(err);
+    })
+
+    $scope.insertTastingHeadingEst = function () {
+        var update = "";
+        update = $scope.tastingHeadingEst;
+        if ($scope.tastingHeadingEst === "{{editTastingHeadingEst}}") {
+            update = $scope.editTastingHeadingEst;
+        }
+        landingTextService.addOrUpdateLandingText("tastingHeadingEst", update, "ee").then(function (data) {
+            landingTextService.getLandingText("tastingHeadingEst", "ee").then(function (data) {
+                if (data.text == null) {
+                    $scope.tastingHeadingEst = "Nothing here";
+                }
+                $scope.tastingHeadingEst = data.text;
+            })
+        });
+    }
+
     landingTextService.getLandingText("tastingText", "ee").then(function (data) {
         if (data.text == null) {
             $scope.tastingText = "There is nothing yet inserted";
@@ -316,6 +343,30 @@ designViewController.controller('designViewController', function ($scope, pictur
         landingTextService.addOrUpdateLandingText("tastingText", val, "ee");
     })
     */
+
+    /* Est groupMenuButton */
+    landingTextService.getLandingText("groupMenuButtonEst", "ee").then(function (data) { /* bannerTitleEst */
+        if (data.text == null) {
+            $scope.groupMenuButtonEst = "Nothing here"; /* bannerTitleEst */
+        }
+        $scope.groupMenuButtonEst = data.text; /* bannerTitleEst */
+    })
+
+    $scope.insertGroupMenuButtonEst = function () { /* insertBannerTitleEst */
+        var update = "";
+        update = $scope.groupMenuButtonEst; /* bannerTitleEst */
+        if ($scope.groupMenuButtonEst === "{{editGroupMenuButtonEst}}") { /* if($scope.bannerTitleEst === "{{editBannerTitleEst}}"){ */
+            update = $scope.editGroupMenuButtonEst; /* editBannerTitleEst */
+        }
+        landingTextService.addOrUpdateLandingText("groupMenuButtonEst", update, "ee").then(function (data) { /* addOrUpdateLandingText("bannerTitleEst", */
+            landingTextService.getLandingText("groupMenuButtonEst", "ee").then(function (data) { /* bannerTitleEst */
+                if (data.text == null) {
+                    $scope.groupMenuButtonEst = "Nothing here"; /* bannerTitleEst */
+                }
+                $scope.groupMenuButtonEst = data.text; /* bannerTitleEst */
+            })
+        });
+    }
 
     landingTextService.getLandingText("eventTitle", "ee").then(function (data) {
         if (data.text == null) {
@@ -634,7 +685,7 @@ designViewController.controller('designViewController', function ($scope, pictur
             })
         });
     }
-    
+
     landingTextService.getLandingText("courseTitleDrinksEng", "ee").then(function (data) {
         if (data.text == null) {
             $scope.courseTitleDrinksEng = "There is nothing yet inserted";
@@ -791,6 +842,35 @@ designViewController.controller('designViewController', function ($scope, pictur
     $scope.$watch('menuTextEng.text', function(val){
         landingTextService.addOrUpdateLandingText("menuTextEng", val, "ee");
     })*/
+
+
+    /* Eng Tasting Heading */
+    landingTextService.getLandingText("tastingHeadingEng", "ee").then(function (data) {
+        if (data.text == null) {
+            $scope.tastingHeadingEng = "Nothing here";
+        } else {
+            $scope.tastingHeadingEng = data.text;
+        }
+    }, function (err) {
+        console.log(err);
+    })
+
+    $scope.insertTastingHeadingEng = function () {
+        var update = "";
+        update = $scope.tastingHeadingEng;
+        if ($scope.tastingHeadingEng === "{{editTastingHeadingEng}}") {
+            update = $scope.editTastingHeadingEng;
+        }
+        landingTextService.addOrUpdateLandingText("tastingHeadingEng", update, "ee").then(function (data) {
+            landingTextService.getLandingText("tastingHeadingEng", "ee").then(function (data) {
+                if (data.text == null) {
+                    $scope.tastingHeadingEng = "Nothing here";
+                }
+                $scope.tastingHeadingEng = data.text;
+            })
+        });
+    }
+
 
     landingTextService.getLandingText("tastingTextEng", "ee").then(function (data) {
         if (data.text == null) {
@@ -1117,7 +1197,7 @@ designViewController.controller('designViewController', function ($scope, pictur
             })
         });
     }
-    
+
     landingTextService.getLandingText("courseTitleDrinksFin", "ee").then(function (data) {
         if (data.text == null) {
             $scope.courseTitleDrinksFin = "There is nothing yet inserted";
@@ -1275,6 +1355,35 @@ designViewController.controller('designViewController', function ($scope, pictur
     $scope.$watch('menuTextFin.text', function(val){
         landingTextService.addOrUpdateLandingText("menuTextFin", val, "ee");
     })*/
+
+
+    /* Fin Tasting Heading */
+    landingTextService.getLandingText("tastingHeadingFin", "ee").then(function (data) {
+        if (data.text == null) {
+            $scope.tastingHeadingFin = "Nothing here";
+        } else {
+            $scope.tastingHeadingFin = data.text;
+        }
+    }, function (err) {
+        console.log(err);
+    })
+
+    $scope.insertTastingHeadingFin = function () {
+        var update = "";
+        update = $scope.tastingHeadingFin;
+        if ($scope.tastingHeadingFin === "{{editTastingHeadingFin}}") {
+            update = $scope.editTastingHeadingFin;
+        }
+        landingTextService.addOrUpdateLandingText("tastingHeadingFin", update, "ee").then(function (data) {
+            landingTextService.getLandingText("tastingHeadingFin", "ee").then(function (data) {
+                if (data.text == null) {
+                    $scope.tastingHeadingFin = "Nothing here";
+                }
+                $scope.tastingHeadingFin = data.text;
+            })
+        });
+    }
+
 
     landingTextService.getLandingText("tastingTextFin", "ee").then(function (data) {
         if (data.text == null) {
@@ -1602,7 +1711,7 @@ designViewController.controller('designViewController', function ($scope, pictur
             })
         });
     }
-    
+
     landingTextService.getLandingText("courseTitleDrinksRus", "ee").then(function (data) {
         if (data.text == null) {
             $scope.courseTitleDrinksRus = "There is nothing yet inserted";
@@ -1759,6 +1868,35 @@ designViewController.controller('designViewController', function ($scope, pictur
     $scope.$watch('menuTextRus.text', function(val){
         landingTextService.addOrUpdateLandingText("menuTextRus", val, "ee");
     })*/
+
+
+    /* Rus Tasting Heading */
+    landingTextService.getLandingText("tastingHeadingRus", "ee").then(function (data) {
+        if (data.text == null) {
+            $scope.tastingHeadingRus = "Nothing here";
+        } else {
+            $scope.tastingHeadingRus = data.text;
+        }
+    }, function (err) {
+        console.log(err);
+    })
+
+    $scope.insertTastingHeadingRus = function () {
+        var update = "";
+        update = $scope.tastingHeadingRus;
+        if ($scope.tastingHeadingRus === "{{editTastingHeadingRus}}") {
+            update = $scope.editTastingHeadingRus;
+        }
+        landingTextService.addOrUpdateLandingText("tastingHeadingRus", update, "ee").then(function (data) {
+            landingTextService.getLandingText("tastingHeadingRus", "ee").then(function (data) {
+                if (data.text == null) {
+                    $scope.tastingHeadingRus = "Nothing here";
+                }
+                $scope.tastingHeadingRus = data.text;
+            })
+        });
+    }
+
 
     landingTextService.getLandingText("tastingTextRus", "ee").then(function (data) {
         if (data.text == null) {
@@ -2305,28 +2443,7 @@ designViewController.controller('designViewController', function ($scope, pictur
 
 
     /* Get 'GroupMenu' Button Text */
-    landingTextService.getLandingText("groupMenuButtonEst", "ee").then(function (data) { /* bannerTitleEst */
-        if (data.text == null) {
-            $scope.groupMenuButtonEst = "Nothing here"; /* bannerTitleEst */
-        }
-        $scope.groupMenuButtonEst = data.text; /* bannerTitleEst */
-    })
 
-    $scope.insertGroupMenuButtonEst = function () { /* insertBannerTitleEst */
-        var update = "";
-        update = $scope.groupMenuButtonEst; /* bannerTitleEst */
-        if ($scope.groupMenuButtonEst === "{{editGroupMenuButtonEst}}") { /* if($scope.bannerTitleEst === "{{editBannerTitleEst}}"){ */
-            update = $scope.editGroupMenuButtonEst; /* editBannerTitleEst */
-        }
-        landingTextService.addOrUpdateLandingText("groupMenuButtonEst", update, "ee").then(function (data) { /* addOrUpdateLandingText("bannerTitleEst", */
-            landingTextService.getLandingText("groupMenuButtonEst", "ee").then(function (data) { /* bannerTitleEst */
-                if (data.text == null) {
-                    $scope.groupMenuButtonEst = "Nothing here"; /* bannerTitleEst */
-                }
-                $scope.groupMenuButtonEst = data.text; /* bannerTitleEst */
-            })
-        });
-    }
 
 
     landingTextService.getLandingText("groupMenuButtonEng", "ee").then(function (data) {

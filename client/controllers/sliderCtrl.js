@@ -88,6 +88,9 @@ sliderCtrl.controller('sliderCtrl', function($location,$rootScope, $scope, landi
     landingTextService.getLandingText("courseTitleDessert", "ee").then(function(data){
         $scope.courseTitleDessert = data.text;
     })
+    landingTextService.getLandingText("tastingHeadingEst", "ee").then(function(data){
+        $scope.tastingHeadingEst = data.text;
+    })
     landingTextService.getLandingText("tastingText", "ee").then(function(data){
         $scope.tastingText = data.text;
     })
@@ -174,6 +177,9 @@ sliderCtrl.controller('sliderCtrl', function($location,$rootScope, $scope, landi
     landingTextService.getLandingText("menuTextEng", "ee").then(function(data){
         $scope.menuTextEng = data.text;
     })
+    landingTextService.getLandingText("tastingHeadingEng", "ee").then(function(data){
+        $scope.tastingHeadingEng = data.text;
+    })
     landingTextService.getLandingText("tastingTextEng", "ee").then(function(data){
         $scope.tastingTextEng = data.text;
     })
@@ -238,6 +244,9 @@ sliderCtrl.controller('sliderCtrl', function($location,$rootScope, $scope, landi
     landingTextService.getLandingText("menuTextFin", "ee").then(function(data){
         $scope.menuTextFin = data.text;
     })
+    landingTextService.getLandingText("tastingHeadingFin", "ee").then(function(data){
+        $scope.tastingHeadingFin = data.text;
+    })
     landingTextService.getLandingText("tastingTextFin", "ee").then(function(data){
         $scope.tastingTextFin = data.text;
     })
@@ -301,6 +310,9 @@ sliderCtrl.controller('sliderCtrl', function($location,$rootScope, $scope, landi
     })
     landingTextService.getLandingText("menuTextRus", "ee").then(function(data){
         $scope.menuTextRus = data.text;
+    })
+    landingTextService.getLandingText("tastingHeadingRus", "ee").then(function(data){
+        $scope.tastingHeadingRus = data.text;
     })
     landingTextService.getLandingText("tastingTextRus", "ee").then(function(data){
         $scope.tastingTextRus = data.text;
