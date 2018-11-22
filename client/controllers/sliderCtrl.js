@@ -103,6 +103,9 @@ sliderCtrl.controller('sliderCtrl', function($location,$rootScope, $scope, landi
     landingTextService.getLandingText("eventTitle", "ee").then(function(data){
         $scope.eventTitle = data.text;
     })
+    landingTextService.getLandingText("contactSubTitleEst", "ee").then(function(data){
+        $scope.contactSubTitleEst = data.text;
+    })
     landingTextService.getLandingText("contactCallEst", "ee").then(function(data){
         $scope.contactCallEst = data.text;
     })
@@ -140,6 +143,9 @@ sliderCtrl.controller('sliderCtrl', function($location,$rootScope, $scope, landi
     })
     landingTextService.getLandingText("contactCallEng", "ee").then(function(data){
         $scope.contactCallEng = data.text;
+    })
+    landingTextService.getLandingText("contactSubTitleEng", "ee").then(function(data){
+        $scope.contactSubTitleEng = data.text;
     })
     landingTextService.getLandingText("contactVisitEng", "ee").then(function(data){
         $scope.contactVisitEng = data.text;
@@ -214,6 +220,9 @@ sliderCtrl.controller('sliderCtrl', function($location,$rootScope, $scope, landi
     landingTextService.getLandingText("contactCallFin", "ee").then(function(data){
         $scope.contactCallFin = data.text;
     })
+    landingTextService.getLandingText("contactSubTitleFin", "ee").then(function(data){
+        $scope.contactSubTitleFin = data.text;
+    })
     landingTextService.getLandingText("contactVisitFin", "ee").then(function(data){
         $scope.contactVisitFin = data.text;
     })
@@ -286,6 +295,9 @@ sliderCtrl.controller('sliderCtrl', function($location,$rootScope, $scope, landi
     })
     landingTextService.getLandingText("contactCallRus", "ee").then(function(data){
         $scope.contactCallRus = data.text;
+    })
+    landingTextService.getLandingText("contactSubTitleRus", "ee").then(function(data){
+        $scope.contactSubTitleRus = data.text;
     })
     landingTextService.getLandingText("contactVisitRus", "ee").then(function(data){
         $scope.contactVisitRus = data.text;

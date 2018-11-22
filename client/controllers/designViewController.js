@@ -305,7 +305,7 @@ designViewController.controller('designViewController', function ($scope, pictur
             })
         });
     }
-    
+
     /* $scope.$watch('menuTitle.title', function(val){
         landingTextService.addOrUpdateLandingText("menuTitle", val, "ee");
     })
@@ -446,11 +446,38 @@ designViewController.controller('designViewController', function ($scope, pictur
             })
         });
     }
+
     /*
     $scope.$watch('eventTitle.title', function(val){
         landingTextService.addOrUpdateLandingText("eventTitle", val, "ee");
     })
     */
+
+    landingTextService.getLandingText("contactSubTitleEst", "ee").then(function (data) {
+        if (data.text == null) {
+            $scope.contactSubTitleEst = "There is nothing yet inserted";
+        } else {
+            $scope.contactSubTitleEst = data.text;
+        }
+    }, function (err) {
+        console.log(err);
+    })
+    $scope.insertContactSubTitleEst = function () {
+        var update = "";
+        update = $scope.contactSubTitleEst;
+        if ($scope.contactSubTitleEst === "{{editContactSubTitleEst}}") {
+            update = $scope.editContactSubTitleEst;
+        }
+        landingTextService.addOrUpdateLandingText("contactSubTitleEst", update, "ee").then(function (data) {
+            landingTextService.getLandingText("contactSubTitleEst", "ee").then(function (data) {
+                if (data.text == null) {
+                    $scope.contactSubTitleEst = "Nothing here";
+                }
+                $scope.contactSubTitleEst = data.text;
+            })
+        });
+    }
+
     /*
     landingTextService.getLandingText("contactCall", "ee").then(function(data){
         if(data.text == null){
@@ -865,7 +892,7 @@ designViewController.controller('designViewController', function ($scope, pictur
             })
         });
     }
-    
+
     landingTextService.getLandingText("menuSectionSubTitleEng", "ee").then(function (data) {
         if (data.text == null) {
             $scope.menuSectionSubTitleEng = "There is nothing yet inserted";
@@ -1031,10 +1058,36 @@ designViewController.controller('designViewController', function ($scope, pictur
             })
         });
     }
+
     /*
     $scope.$watch('eventTitleEng.title', function(val){
         landingTextService.addOrUpdateLandingText("eventTitleEng", val, "ee");
     })*/
+
+    landingTextService.getLandingText("contactSubTitleEng", "ee").then(function (data) {
+        if (data.text == null) {
+            $scope.contactSubTitleEng = "There is nothing yet inserted";
+        } else {
+            $scope.contactSubTitleEng = data.text;
+        }
+    }, function (err) {
+        console.log(err);
+    })
+    $scope.insertContactSubTitleEng = function () {
+        var update = "";
+        update = $scope.contactSubTitleEng;
+        if ($scope.contactSubTitleEng === "{{editContactSubTitleEng}}") {
+            update = $scope.editContactSubTitleEng;
+        }
+        landingTextService.addOrUpdateLandingText("contactSubTitleEng", update, "ee").then(function (data) {
+            landingTextService.getLandingText("contactSubTitleEng", "ee").then(function (data) {
+                if (data.text == null) {
+                    $scope.contactSubTitleEng = "Nothing here";
+                }
+                $scope.contactSubTitleEng = data.text;
+            })
+        });
+    }
 
     landingTextService.getLandingText("contactCallEng", "ee").then(function (data) {
         if (data.text == null) {
@@ -1429,7 +1482,7 @@ designViewController.controller('designViewController', function ($scope, pictur
             })
         });
     }
-    
+
     landingTextService.getLandingText("menuSectionSubTitleFin", "ee").then(function (data) {
         if (data.text == null) {
             $scope.menuSectionSubTitleFin = "There is nothing yet inserted";
@@ -1625,10 +1678,36 @@ designViewController.controller('designViewController', function ($scope, pictur
             })
         });
     }
+
     /*
     $scope.$watch('contactCallFin.text', function(val){
         landingTextService.addOrUpdateLandingText("contactCallFin", val, "ee");
     })*/
+
+    landingTextService.getLandingText("contactSubTitleFin", "ee").then(function (data) {
+        if (data.text == null) {
+            $scope.contactSubTitleFin = "There is nothing yet inserted";
+        } else {
+            $scope.contactSubTitleFin = data.text;
+        }
+    }, function (err) {
+        console.log(err);
+    })
+    $scope.insertContactSubTitleFin = function () {
+        var update = "";
+        update = $scope.contactSubTitleFin;
+        if ($scope.contactSubTitleFin === "{{editContactSubTitleFin}}") {
+            update = $scope.editContactSubTitleFin;
+        }
+        landingTextService.addOrUpdateLandingText("contactSubTitleFin", update, "ee").then(function (data) {
+            landingTextService.getLandingText("contactSubTitleFin", "ee").then(function (data) {
+                if (data.text == null) {
+                    $scope.contactSubTitleFin = "Nothing here";
+                }
+                $scope.contactSubTitleFin = data.text;
+            })
+        });
+    }
 
     landingTextService.getLandingText("contactVisitFin", "ee").then(function (data) {
         if (data.text == null) {
@@ -1995,7 +2074,7 @@ designViewController.controller('designViewController', function ($scope, pictur
             })
         });
     }
-    
+
     landingTextService.getLandingText("menuSectionSubTitleRus", "ee").then(function (data) {
         if (data.text == null) {
             $scope.menuSectionSubTitleRus = "There is nothing yet inserted";
@@ -2195,6 +2274,32 @@ designViewController.controller('designViewController', function ($scope, pictur
     $scope.$watch('contactCallRus.text', function(val){
         landingTextService.addOrUpdateLandingText("contactCallRus", val, "ee");
     })*/
+
+
+    landingTextService.getLandingText("contactSubTitleRus", "ee").then(function (data) {
+        if (data.text == null) {
+            $scope.contactSubTitleRus = "There is nothing yet inserted";
+        } else {
+            $scope.contactSubTitleRus = data.text;
+        }
+    }, function (err) {
+        console.log(err);
+    })
+    $scope.insertContactSubTitleRus = function () {
+        var update = "";
+        update = $scope.contactSubTitleRus;
+        if ($scope.contactSubTitleRus === "{{editContactSubTitleRus}}") {
+            update = $scope.editContactSubTitleRus;
+        }
+        landingTextService.addOrUpdateLandingText("contactSubTitleRus", update, "ee").then(function (data) {
+            landingTextService.getLandingText("contactSubTitleRus", "ee").then(function (data) {
+                if (data.text == null) {
+                    $scope.contactSubTitleRus = "Nothing here";
+                }
+                $scope.contactSubTitleRus = data.text;
+            })
+        });
+    }
 
     landingTextService.getLandingText("contactVisitRus", "ee").then(function (data) {
         if (data.text == null) {
