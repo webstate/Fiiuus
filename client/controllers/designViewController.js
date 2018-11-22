@@ -42,6 +42,32 @@ designViewController.controller('designViewController', function ($scope, pictur
 
     // LANDING PAGE ESTONIAN VERSION
 
+    landingTextService.getLandingText("aboutTitleEst", "ee").then(function (data) {
+        if (data.text == null) {
+            $scope.aboutTitleEst = "There is nothing yet inserted";
+
+        } else {
+            $scope.aboutTitleEst = data.text;
+        }
+    }, function (err) {
+        console.log(err);
+    })
+    $scope.insertAboutTitleEst = function () {
+        var update = "";
+        update = $scope.aboutTitleEst;
+        if ($scope.aboutTitleEst === "{{editAboutTitleEst}}") {
+            update = $scope.editAboutTitleEst;
+        }
+        landingTextService.addOrUpdateLandingText("aboutTitleEst", update, "ee").then(function (data) {
+            landingTextService.getLandingText("aboutTitleEst", "ee").then(function (data) {
+                if (data.text == null) {
+                    $scope.aboutTitleEst = "Nothing here";
+                }
+                $scope.aboutTitleEst = data.text;
+            })
+        });
+    }
+
     landingTextService.getLandingText("workerTitle", "ee").then(function (data) {
         if (data.text == null) {
             $scope.workerTitle = "There is nothing yet inserted";
@@ -602,6 +628,32 @@ designViewController.controller('designViewController', function ($scope, pictur
     // LANDING PAGE ENGLISH VERSION
 
 
+    landingTextService.getLandingText("aboutTitleEng", "ee").then(function (data) {
+        if (data.text == null) {
+            $scope.aboutTitleEng = "There is nothing yet inserted";
+
+        } else {
+            $scope.aboutTitleEng = data.text;
+        }
+    }, function (err) {
+        console.log(err);
+    })
+    $scope.insertAboutTitleEng = function () {
+        var update = "";
+        update = $scope.aboutTitleEng;
+        if ($scope.aboutTitleEng === "{{editAboutTitleEng}}") {
+            update = $scope.editAboutTitleEng;
+        }
+        landingTextService.addOrUpdateLandingText("aboutTitleEng", update, "ee").then(function (data) {
+            landingTextService.getLandingText("aboutTitleEng", "ee").then(function (data) {
+                if (data.text == null) {
+                    $scope.aboutTitleEng = "Nothing here";
+                }
+                $scope.aboutTitleEng = data.text;
+            })
+        });
+    }
+
     landingTextService.getLandingText("workerTitleEng", "ee").then(function (data) {
         if (data.text == null) {
             $scope.workerTitleEng = "There is nothing yet inserted";
@@ -1112,6 +1164,32 @@ designViewController.controller('designViewController', function ($scope, pictur
     }
 
     ////// FINNISH LANGUAGE DESIGN VIEW
+
+    landingTextService.getLandingText("aboutTitleFin", "ee").then(function (data) {
+        if (data.text == null) {
+            $scope.aboutTitleFin = "There is nothing yet inserted";
+
+        } else {
+            $scope.aboutTitleFin = data.text;
+        }
+    }, function (err) {
+        console.log(err);
+    })
+    $scope.insertAboutTitleFin = function () {
+        var update = "";
+        update = $scope.aboutTitleFin;
+        if ($scope.aboutTitleFin === "{{editAboutTitleFin}}") {
+            update = $scope.editAboutTitleFin;
+        }
+        landingTextService.addOrUpdateLandingText("aboutTitleFin", update, "ee").then(function (data) {
+            landingTextService.getLandingText("aboutTitleFin", "ee").then(function (data) {
+                if (data.text == null) {
+                    $scope.aboutTitleFin = "Nothing here";
+                }
+                $scope.aboutTitleFin = data.text;
+            })
+        });
+    }
 
     landingTextService.getLandingText("workerTitleFin", "ee").then(function (data) {
         if (data.text == null) {
@@ -1627,6 +1705,32 @@ designViewController.controller('designViewController', function ($scope, pictur
 
     //// RUSSIAN DESIGN VIEW
 
+
+    landingTextService.getLandingText("aboutTitleRus", "ee").then(function (data) {
+        if (data.text == null) {
+            $scope.aboutTitleRus = "There is nothing yet inserted";
+
+        } else {
+            $scope.aboutTitleRus = data.text;
+        }
+    }, function (err) {
+        console.log(err);
+    })
+    $scope.insertAboutTitleRus = function () {
+        var update = "";
+        update = $scope.aboutTitleRus;
+        if ($scope.aboutTitleRus === "{{editAboutTitleRus}}") {
+            update = $scope.editAboutTitleRus;
+        }
+        landingTextService.addOrUpdateLandingText("aboutTitleRus", update, "ee").then(function (data) {
+            landingTextService.getLandingText("aboutTitleRus", "ee").then(function (data) {
+                if (data.text == null) {
+                    $scope.aboutTitleRus = "Nothing here";
+                }
+                $scope.aboutTitleRus = data.text;
+            })
+        });
+    }
 
     landingTextService.getLandingText("workerTitleRus", "ee").then(function (data) {
         if (data.text == null) {

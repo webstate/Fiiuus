@@ -61,6 +61,9 @@ sliderCtrl.controller('sliderCtrl', function($location,$rootScope, $scope, landi
         );
     }
     // ESTONIAN LANDING TEXTS
+    landingTextService.getLandingText("aboutTitleEst", "ee").then(function(data){
+        $scope.aboutTitleEst = data.text;
+    })
     landingTextService.getLandingText("workerTitle", "ee").then(function(data){
         $scope.workerTitle = data.text;
     })
@@ -129,6 +132,9 @@ sliderCtrl.controller('sliderCtrl', function($location,$rootScope, $scope, landi
 
 // ENGLISH LANDING TEXTS
 
+    landingTextService.getLandingText("aboutTitleEng", "ee").then(function(data){
+        $scope.aboutTitleEng = data.text;
+    })
     landingTextService.getLandingText("contactCallEng", "ee").then(function(data){
         $scope.contactCallEng = data.text;
     })
@@ -196,6 +202,9 @@ sliderCtrl.controller('sliderCtrl', function($location,$rootScope, $scope, landi
 
 // FINNISH LANDING TEXTS
 
+    landingTextService.getLandingText("aboutTitleFin", "ee").then(function(data){
+        $scope.aboutTitleFin = data.text;
+    })
     landingTextService.getLandingText("contactCallFin", "ee").then(function(data){
         $scope.contactCallFin = data.text;
     })
@@ -263,6 +272,9 @@ sliderCtrl.controller('sliderCtrl', function($location,$rootScope, $scope, landi
 
 // RUSSIAN LANDING TEXTS
 
+    landingTextService.getLandingText("aboutTitleRus", "ee").then(function(data){
+        $scope.aboutTitleRus = data.text;
+    })
     landingTextService.getLandingText("contactCallRus", "ee").then(function(data){
         $scope.contactCallRus = data.text;
     })
