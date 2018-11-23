@@ -399,25 +399,25 @@ designViewController.controller('designViewController', function ($scope, pictur
     */
 
     /* Est groupMenuButton */
-    landingTextService.getLandingText("groupMenuButtonEst", "ee").then(function (data) { /* bannerTitleEst */
+    landingTextService.getLandingText("groupMenuButtonEst", "ee").then(function (data) {
         if (data.text == null) {
-            $scope.groupMenuButtonEst = "Nothing here"; /* bannerTitleEst */
+            $scope.groupMenuButtonEst = "Nothing here";
         }
-        $scope.groupMenuButtonEst = data.text; /* bannerTitleEst */
+        $scope.groupMenuButtonEst = data.text;
     })
 
-    $scope.insertGroupMenuButtonEst = function () { /* insertBannerTitleEst */
+    $scope.insertGroupMenuButtonEst = function () {
         var update = "";
-        update = $scope.groupMenuButtonEst; /* bannerTitleEst */
-        if ($scope.groupMenuButtonEst === "{{editGroupMenuButtonEst}}") { /* if($scope.bannerTitleEst === "{{editBannerTitleEst}}"){ */
-            update = $scope.editGroupMenuButtonEst; /* editBannerTitleEst */
+        update = $scope.groupMenuButtonEst;
+        if ($scope.groupMenuButtonEst === "{{editGroupMenuButtonEst}}") {
+            update = $scope.editGroupMenuButtonEst;
         }
-        landingTextService.addOrUpdateLandingText("groupMenuButtonEst", update, "ee").then(function (data) { /* addOrUpdateLandingText("bannerTitleEst", */
-            landingTextService.getLandingText("groupMenuButtonEst", "ee").then(function (data) { /* bannerTitleEst */
+        landingTextService.addOrUpdateLandingText("groupMenuButtonEst", update, "ee").then(function (data) {
+            landingTextService.getLandingText("groupMenuButtonEst", "ee").then(function (data) {
                 if (data.text == null) {
-                    $scope.groupMenuButtonEst = "Nothing here"; /* bannerTitleEst */
+                    $scope.groupMenuButtonEst = "Nothing here";
                 }
-                $scope.groupMenuButtonEst = data.text; /* bannerTitleEst */
+                $scope.groupMenuButtonEst = data.text;
             })
         });
     }
@@ -1034,6 +1034,29 @@ designViewController.controller('designViewController', function ($scope, pictur
         landingTextService.addOrUpdateLandingText("tastingTextEng", val, "ee");
     })*/
 
+    landingTextService.getLandingText("groupMenuButtonEng", "ee").then(function (data) {
+        if (data.text == null) {
+            $scope.groupMenuButtonEng = "Nothing here";
+        }
+        $scope.groupMenuButtonEng = data.text;
+    })
+
+    $scope.insertGroupMenuButtonEng = function () {
+        var update = "";
+        update = $scope.groupMenuButtonEng;
+        if ($scope.groupMenuButtonEng === "{{editGroupMenuButtonEng}}") {
+            update = $scope.editGroupMenuButtonEng;
+        }
+        landingTextService.addOrUpdateLandingText("groupMenuButtonEng", update, "ee").then(function (data) {
+            landingTextService.getLandingText("groupMenuButtonEng", "ee").then(function (data) {
+                if (data.text == null) {
+                    $scope.groupMenuButtonEng = "Nothing here";
+                }
+                $scope.groupMenuButtonEng = data.text;
+            })
+        });
+    }
+
     landingTextService.getLandingText("eventTitleEng", "ee").then(function (data) {
         if (data.text == null) {
             $scope.eventTitleEng = "There is nothing yet inserted";
@@ -1624,6 +1647,29 @@ designViewController.controller('designViewController', function ($scope, pictur
     $scope.$watch('tastingTextFin.text', function(val){
         landingTextService.addOrUpdateLandingText("tastingTextFin", val, "ee");
     })*/
+
+    landingTextService.getLandingText("groupMenuButtonFin", "ee").then(function (data) {
+        if (data.text == null) {
+            $scope.groupMenuButtonFin = "Nothing here";
+        }
+        $scope.groupMenuButtonFin = data.text;
+    })
+
+    $scope.insertGroupMenuButtonFin = function () {
+        var update = "";
+        update = $scope.groupMenuButtonFin;
+        if ($scope.groupMenuButtonFin === "{{editGroupMenuButtonFin}}") {
+            update = $scope.editGroupMenuButtonFin;
+        }
+        landingTextService.addOrUpdateLandingText("groupMenuButtonFin", update, "ee").then(function (data) {
+            landingTextService.getLandingText("groupMenuButtonFin", "ee").then(function (data) {
+                if (data.text == null) {
+                    $scope.groupMenuButtonFin = "Nothing here";
+                }
+                $scope.groupMenuButtonFin = data.text;
+            })
+        });
+    }
 
     landingTextService.getLandingText("eventTitleFin", "ee").then(function (data) {
         if (data.text == null) {
@@ -2217,6 +2263,29 @@ designViewController.controller('designViewController', function ($scope, pictur
         landingTextService.addOrUpdateLandingText("tastingTextRus", val, "ee");
     })*/
 
+    landingTextService.getLandingText("groupMenuButtonRus", "ee").then(function (data) {
+        if (data.text == null) {
+            $scope.groupMenuButtonRus = "Nothing here";
+        }
+        $scope.groupMenuButtonRus = data.text;
+    })
+
+    $scope.insertGroupMenuButtonRus = function () {
+        var update = "";
+        update = $scope.groupMenuButtonRus;
+        if ($scope.groupMenuButtonRus === "{{editGroupMenuButtonRus}}") {
+            update = $scope.editGroupMenuButtonRus;
+        }
+        landingTextService.addOrUpdateLandingText("groupMenuButtonRus", update, "ee").then(function (data) {
+            landingTextService.getLandingText("groupMenuButtonRus", "ee").then(function (data) {
+                if (data.text == null) {
+                    $scope.groupMenuButtonRus = "Nothing here";
+                }
+                $scope.groupMenuButtonRus = data.text;
+            })
+        });
+    }
+
     landingTextService.getLandingText("eventTitleRus", "ee").then(function (data) {
         if (data.text == null) {
             $scope.eventTitleRus = "There is nothing yet inserted";
@@ -2758,70 +2827,4 @@ designViewController.controller('designViewController', function ($scope, pictur
     }
 
 
-    /* Get 'GroupMenu' Button Text */
-
-
-
-    landingTextService.getLandingText("groupMenuButtonEng", "ee").then(function (data) {
-        if (data.text == null) {
-            $scope.groupMenuButtonEng = "Nothing here";
-        }
-        $scope.groupMenuButtonEng = data.text;
-    })
-
-    $scope.insertGroupMenuButtonEng = function () {
-        var update = "";
-        update = $scope.groupMenuButtonEng;
-        if ($scope.groupMenuButtonEng === "{{editGroupMenuButtonEng}}") {
-            update = $scope.editGroupMenuButtonEng;
-        }
-        landingTextService.addOrUpdateLandingText("groupMenuButtonEng", update, "ee").then(function (data) {
-            landingTextService.getLandingText("groupMenuButtonEng", "ee").then(function (data) {
-                if (data.text == null) {
-                    $scope.groupMenuButtonEng = "Nothing here";
-                }
-                $scope.groupMenuButtonEng = data.text;
-            })
-        });
-    }
-
-
-    landingTextService.getLandingText("groupMenuButtonFin", "ee").then(function (data) {
-        if (data.text == null) {
-            $scope.groupMenuButtonFin = "Nothing here";
-        }
-        $scope.groupMenuButtonFin = data.text;
-    })
-
-    $scope.insertGroupMenuButtonFin = function () {
-        var update = "";
-        update = $scope.groupMenuButtonFin;
-        if ($scope.groupMenuButtonFin === "{{editGroupMenuButtonFin}}") {
-            update = $scope.editGroupMenuButtonFin;
-        }
-        landingTextService.addOrUpdateLandingText("groupMenuButtonFin", update, "ee").then(function (data) {
-            landingTextService.getLandingText("groupMenuButtonFin", "ee").then(function (data) {
-                if (data.text == null) {
-                    $scope.groupMenuButtonFin = "Nothing here";
-                }
-                $scope.groupMenuButtonFin = data.text;
-            })
-        });
-    }
-
-    $scope.insertGroupMenuButtonRus = function () {
-        var update = "";
-        update = $scope.groupMenuButtonRus;
-        if ($scope.groupMenuButtonRus === "{{editGroupMenuButtonRus}}") {
-            update = $scope.editGroupMenuButtonRus;
-        }
-        landingTextService.addOrUpdateLandingText("groupMenuButtonRus", update, "ee").then(function (data) {
-            landingTextService.getLandingText("groupMenuButtonRus", "ee").then(function (data) {
-                if (data.text == null) {
-                    $scope.groupMenuButtonRus = "Nothing here";
-                }
-                $scope.groupMenuButtonRus = data.text;
-            })
-        });
-    }
 })
