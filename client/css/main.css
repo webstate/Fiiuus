@@ -163,12 +163,14 @@ ul.nav > li > a:visited{
 
 }
 .menu-area-mockup{
-    height: 1500px;
+    /* height: 1500px; */
     width: 800px;
     margin: 0 auto;
     background-image: url('img/sea.png');
     background-size: cover;
     margin-top: 50px;
+    padding-bottom: 20px;
+    height: auto;
 }
 .event-block-mockup{
     height: auto;
