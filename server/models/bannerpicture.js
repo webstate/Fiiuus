@@ -1,8 +1,9 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
-var BannerPicture = new Schema({
-    picturePath:String
+var bannerPicture = new Schema({
+    picturePath:String,
+    block: String,
 })
 
-module.exports = mongoose.model('bannerpictures', BannerPicture);
+module.exports = mongoose.model('bannerpicture', bannerPicture);

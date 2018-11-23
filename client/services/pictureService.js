@@ -15,9 +15,9 @@ pictureService.factory('pictureService', function($q, $timeout, $http){
         })
         return d.promise;
     }
-    function addBannerPicture(path){
+    function getBannerPicture(menuPosition){/* Was empty */
         var d = $q.defer();
-        $http.post('user/bannerpicture/add', {picturePath: path}
+        $http.get('user/bannerpicture/get', {menuPosition:menuPosition}
         ).then(function(response){
             var data = response.data;
             d.resolve(data);
@@ -27,9 +27,9 @@ pictureService.factory('pictureService', function($q, $timeout, $http){
         })
         return d.promise;
     }
-    function getBannerPicture(){
+    function addBannerPicture(menuPosition, path){/* (path) */
         var d = $q.defer();
-        $http.get('user/bannerpicture/get'
+        $http.post('user/bannerpicture/add', {menuPosition:menuPosition, path: path}/* {picturePath: path} */
         ).then(function(response){
             var data = response.data;
             d.resolve(data);
