@@ -309,8 +309,7 @@
     </div>
     <div class="event-block-mockup">
         <div class="row" style="margin-top: 50px;">
-
-            <div class="col-md-6" style="margin-top: 50px;">
+            <div class="col-md-6">
                 <!--
                 <p editable-text="eventTitle.title" class="event-section-title-mockup">
                     {{eventTitle.title}}
@@ -333,7 +332,6 @@
         <div class="row">
             <!-- Est Contact Section subTitle -->
             <div class="col-md-12" style="margin-top: 40px;">
-                <!-- <div class="section-mockup"></div> -->
                 <div>
                     <span class="admin-tasting-span bg-dark"></span>
                     <input value="{{ editContactSubTitleEst }}" type="text" ng-model="contactSubTitleEst" ng-initial />
@@ -348,12 +346,6 @@
                 <button class="Btn" ng-click="insertEventTitle()"><i class="fa fa-check" aria-hidden="true"></i></button>
             </div>
 
-            <!-- <div class="col-md-12">
-                <span class="section-mockup"></span>
-            </div> -->
-            <!-- <div class="col-md-6">
-                <div class="come-visit-mockup"></div>
-            </div> -->
             <div class="col-md-6">
                 <div class="booking-btn-mockup"></div>
             </div>
@@ -745,7 +737,7 @@
 
     <div class="event-block-mockup">
         <div class="row">
-            <div class="col-md-6" style="margin-top: 50px;">
+            <div class="col-md-6">
                 <div class="event-title-mockup"></div>
                 <div class="event-date-mockup"></div>
                 <div class="event-detail-mockup"></div>
@@ -1151,34 +1143,17 @@
             </div>
         </div>
     </div>
+
     <div class="event-block-mockup">
-        <div class="row">
-            <!-- Fin Contact Section subTitle -->
-            <div class="col-md-12" style="margin-top: 40px;">
-                <!-- <div class="section-mockup"></div> -->
-                <div>
-                    <span class="admin-tasting-span bg-dark"></span>
-                    <input value="{{ editContactSubTitleFin }}" type="text" ng-model="contactSubTitleFin" ng-initial />
-                    <button class="timeBtn" ng-click="insertContactSubTitleFin()">
-                        <i class="fa fa-check" aria-hidden="true"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
         <div class="row" style="margin-top: 50px;">
             <div class="col-md-6">
-                <input class="TextField" value="{{editEventTitleFin}}" type="text" ng-model="eventTitleFin" ng-initial />
-                <button class="Btn" ng-click="insertEventTitleFin()"><i class="fa fa-check" aria-hidden="true"></i></button>
-                <!--
-                <p editable-text="eventTitleFin.title" class="event-section-title-mockup">
-                    {{eventTitleFin.title}}
-                </p>-->
                 <div class="event-title-mockup"></div>
                 <div class="event-date-mockup"></div>
                 <div class="event-detail-mockup"></div>
                 <div class="event-detail-mockup"></div>
                 <div class="event-detail-mockup"></div>
             </div>
+
             <div class="col-md-6">
                 <div class="event-pic-mockup" style="background-image:url({{eventPicturePathFin}});">
                     <input type="file" name="file2" id="fileFin" class="inputfile" onchange="angular.element(this).scope().menuPicChanged(this, 'eventFin')" />
@@ -1187,17 +1162,29 @@
                 </div>
             </div>
         </div>
-        <div class="row" style="margin-top: 50px;">
-            <div class="col-md-12">
-                <span class="section-mockup"></span>
+
+        <div class="row">
+            <!-- Fin Contact Section subTitle -->
+            <div class="col-md-12" style="margin-top: 40px;">
+                <div>
+                    <span class="admin-tasting-span bg-dark"></span>
+                    <input value="{{ editContactSubTitleFin }}" type="text" ng-model="contactSubTitleFin" ng-initial />
+                    <button class="timeBtn" ng-click="insertContactSubTitleFin()">
+                        <i class="fa fa-check" aria-hidden="true"></i>
+                    </button>
+                </div>
             </div>
+
             <div class="col-md-6">
-                <div class="come-visit-mockup"></div>
+                <input class="TextField" value="{{editEventTitleFin}}" type="text" ng-model="eventTitleFin" ng-initial />
+                <button class="Btn" ng-click="insertEventTitleFin()"><i class="fa fa-check" aria-hidden="true"></i></button>
             </div>
+
             <div class="col-md-6">
                 <div class="booking-btn-mockup"></div>
             </div>
         </div>
+
         <div class="row">
             <div class="col-md-6" style="padding: 0; margin-top: 50px;">
                 <div class="map-picture" style="background-image: url({{mapPicturePath}})">
@@ -1565,33 +1552,15 @@
         </div>
     </div>
     <div class="event-block-mockup">
-        <div class="row">
-            <!-- Rus Contact Section subTitle -->
-            <div class="col-md-12" style="margin-top: 40px;">
-                <!-- <div class="section-mockup"></div> -->
-                <div>
-                    <span class="admin-tasting-span bg-dark"></span>
-                    <input value="{{ editContactSubTitleRus }}" type="text" ng-model="contactSubTitleRus" ng-initial />
-                    <button class="timeBtn" ng-click="insertContactSubTitleRus()">
-                        <i class="fa fa-check" aria-hidden="true"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
         <div class="row" style="margin-top: 50px;">
             <div class="col-md-6">
-                <input class="TextField" value="{{editEventTitleRus}}" type="text" ng-model="eventTitleRus" ng-initial />
-                <button class="Btn" ng-click="insertEventTitleRus()"><i class="fa fa-check" aria-hidden="true"></i></button>
-                <!--
-                <p editable-text="eventTitleRus.title" class="event-section-title-mockup">
-                    {{eventTitleRus.title}}
-                </p>-->
                 <div class="event-title-mockup"></div>
                 <div class="event-date-mockup"></div>
                 <div class="event-detail-mockup"></div>
                 <div class="event-detail-mockup"></div>
                 <div class="event-detail-mockup"></div>
             </div>
+
             <div class="col-md-6">
                 <div class="event-pic-mockup" style="background-image:url({{eventPicturePathRus}});">
                     <input type="file" name="file2" id="fileRus" class="inputfile" onchange="angular.element(this).scope().menuPicChanged(this, 'eventRus')" />
@@ -1600,17 +1569,29 @@
                 </div>
             </div>
         </div>
-        <div class="row" style="margin-top: 50px;">
-            <div class="col-md-12">
-                <span class="section-mockup"></span>
+
+        <div class="row">
+            <!-- Rus Contact Section subTitle -->
+            <div class="col-md-12" style="margin-top: 40px;">
+                <div>
+                    <span class="admin-tasting-span bg-dark"></span>
+                    <input value="{{ editContactSubTitleRus }}" type="text" ng-model="contactSubTitleRus" ng-initial />
+                    <button class="timeBtn" ng-click="insertContactSubTitleRus()">
+                        <i class="fa fa-check" aria-hidden="true"></i>
+                    </button>
+                </div>
             </div>
+
             <div class="col-md-6">
-                <div class="come-visit-mockup"></div>
+                <input class="TextField" value="{{editEventTitleRus}}" type="text" ng-model="eventTitleRus" ng-initial />
+                <button class="Btn" ng-click="insertEventTitleRus()"><i class="fa fa-check" aria-hidden="true"></i></button>
             </div>
+
             <div class="col-md-6">
                 <div class="booking-btn-mockup"></div>
             </div>
         </div>
+
         <div class="row">
             <div class="col-md-6" style="padding: 0; margin-top: 50px;">
                 <div class="map-picture" style="background-image: url({{mapPicturePath}})">
