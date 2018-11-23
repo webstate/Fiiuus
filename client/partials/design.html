@@ -131,7 +131,7 @@
                 </p>
                 -->
             </div>
-            <div class="col-md-6" style="margin-bottom: 50px;">
+            <div class="col-md-6">
                 <textarea class="TextArea" value="{{editMenuText}}" type="text" ng-model="menuText" ng-initial
                     msd-elastic></textarea>
                 <button class="Btn" ng-click="insertMenuText()"><i class="fa fa-check" aria-hidden="true"></i></button>
@@ -308,23 +308,9 @@
         </div>
     </div>
     <div class="event-block-mockup">
-        <div class="row">
-            <!-- Est Contact Section subTitle -->
-            <div class="col-md-12" style="margin-top: 40px;">
-                <!-- <div class="section-mockup"></div> -->
-                <div>
-                    <span class="admin-tasting-span bg-dark"></span>
-                    <input value="{{ editContactSubTitleEst }}" type="text" ng-model="contactSubTitleEst" ng-initial />
-                    <button class="timeBtn" ng-click="insertContactSubTitleEst()">
-                        <i class="fa fa-check" aria-hidden="true"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
         <div class="row" style="margin-top: 50px;">
-            <div class="col-md-6">
-                <input class="TextField" value="{{editEventTitle}}" type="text" ng-model="eventTitle" ng-initial />
-                <button class="Btn" ng-click="insertEventTitle()"><i class="fa fa-check" aria-hidden="true"></i></button>
+
+            <div class="col-md-6" style="margin-top: 50px;">
                 <!--
                 <p editable-text="eventTitle.title" class="event-section-title-mockup">
                     {{eventTitle.title}}
@@ -343,13 +329,31 @@
                 </div>
             </div>
         </div>
-        <div class="row" style="margin-top: 50px;">
-            <div class="col-md-12">
-                <span class="section-mockup"></span>
+
+        <div class="row">
+            <!-- Est Contact Section subTitle -->
+            <div class="col-md-12" style="margin-top: 40px;">
+                <!-- <div class="section-mockup"></div> -->
+                <div>
+                    <span class="admin-tasting-span bg-dark"></span>
+                    <input value="{{ editContactSubTitleEst }}" type="text" ng-model="contactSubTitleEst" ng-initial />
+                    <button class="timeBtn" ng-click="insertContactSubTitleEst()">
+                        <i class="fa fa-check" aria-hidden="true"></i>
+                    </button>
+                </div>
             </div>
+
             <div class="col-md-6">
-                <div class="come-visit-mockup"></div>
+                <input class="TextField" value="{{editEventTitle}}" type="text" ng-model="eventTitle" ng-initial />
+                <button class="Btn" ng-click="insertEventTitle()"><i class="fa fa-check" aria-hidden="true"></i></button>
             </div>
+
+            <!-- <div class="col-md-12">
+                <span class="section-mockup"></span>
+            </div> -->
+            <!-- <div class="col-md-6">
+                <div class="come-visit-mockup"></div>
+            </div> -->
             <div class="col-md-6">
                 <div class="booking-btn-mockup"></div>
             </div>
@@ -557,7 +561,7 @@
                     {{menuTitleEng.title}}
                 </p>-->
             </div>
-            <div class="col-md-6" style="margin-bottom: 50px;">
+            <div class="col-md-6">
                 <textarea class="TextArea" value="{{editMenuTextEng}}" type="text" ng-model="menuTextEng" ng-initial
                     msd-elastic></textarea>
                 <button class="Btn" ng-click="insertMenuTextEng()"><i class="fa fa-check" aria-hidden="true"></i></button>
@@ -738,28 +742,10 @@
             </div>
         </div>
     </div>
+
     <div class="event-block-mockup">
         <div class="row">
-            <!-- Eng Contact Section subTitle -->
-            <div class="col-md-12" style="margin-top: 40px;">
-                <!-- <div class="section-mockup"></div> -->
-                <div>
-                    <span class="admin-tasting-span bg-dark"></span>
-                    <input value="{{ editContactSubTitleEng }}" type="text" ng-model="contactSubTitleEng" ng-initial />
-                    <button class="timeBtn" ng-click="insertContactSubTitleEng()">
-                        <i class="fa fa-check" aria-hidden="true"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
-        <div class="row" style="margin-top: 50px;">
-            <div class="col-md-6">
-                <input class="TextField" value="{{editEventTitleEng}}" type="text" ng-model="eventTitleEng" ng-initial />
-                <button class="Btn" ng-click="insertEventTitleEng()"><i class="fa fa-check" aria-hidden="true"></i></button>
-                <!--
-                <p editable-text="eventTitleEng.title" class="event-section-title-mockup">
-                    {{eventTitleEng.title}}
-                </p>-->
+            <div class="col-md-6" style="margin-top: 50px;">
                 <div class="event-title-mockup"></div>
                 <div class="event-date-mockup"></div>
                 <div class="event-detail-mockup"></div>
@@ -774,17 +760,29 @@
                 </div>
             </div>
         </div>
-        <div class="row" style="margin-top: 50px;">
-            <div class="col-md-12">
-                <span class="section-mockup"></span>
+
+        <div class="row">
+            <!-- Eng Contact Section subTitle -->
+            <div class="col-md-12" style="margin-top: 40px;">
+                <div>
+                    <span class="admin-tasting-span bg-dark"></span>
+                    <input value="{{ editContactSubTitleEng }}" type="text" ng-model="contactSubTitleEng" ng-initial />
+                    <button class="timeBtn" ng-click="insertContactSubTitleEng()">
+                        <i class="fa fa-check" aria-hidden="true"></i>
+                    </button>
+                </div>
             </div>
+
             <div class="col-md-6">
-                <div class="come-visit-mockup"></div>
+                <input class="TextField" value="{{editEventTitleEng}}" type="text" ng-model="eventTitleEng" ng-initial />
+                <button class="Btn" ng-click="insertEventTitleEng()"><i class="fa fa-check" aria-hidden="true"></i></button>
             </div>
+
             <div class="col-md-6">
                 <div class="booking-btn-mockup"></div>
             </div>
         </div>
+
         <div class="row">
             <div class="col-md-6" style="padding: 0; margin-top: 50px;">
                 <div class="map-picture" style="background-image: url({{mapPicturePath}})">
@@ -987,7 +985,7 @@
                     {{menuTitleFin.title}}
                 </p>-->
             </div>
-            <div class="col-md-6" style="margin-bottom: 50px;">
+            <div class="col-md-6">
                 <textarea class="TextArea" value="{{editMenuTextFin}}" type="text" ng-model="menuTextFin" ng-initial
                     msd-elastic></textarea>
                 <button class="Btn" ng-click="insertMenuTextFin()"><i class="fa fa-check" aria-hidden="true"></i></button>
@@ -1401,7 +1399,7 @@
                     {{menuTitleRus.title}}
                 </p>-->
             </div>
-            <div class="col-md-6" style="margin-bottom: 50px;">
+            <div class="col-md-6">
                 <textarea class="TextArea" value="{{editMenuTextRus}}" type="text" ng-model="menuTextRus" ng-initial
                     msd-elastic></textarea>
                 <button class="Btn" ng-click="insertMenuTextRus()"><i class="fa fa-check" aria-hidden="true"></i></button>
