@@ -2650,6 +2650,8 @@ designViewController.controller('designViewController', function ($scope, pictur
         if (data == null) {
             $scope.firstPicturePath = "";
         } else {
+            // console.log('DATA @first', data); // REMOVE
+            // console.log('first - data.picturePath', data.picturePath); // REMOVE
             $scope.firstPicturePath = data.picturePath;
         }
     })
@@ -2668,33 +2670,35 @@ designViewController.controller('designViewController', function ($scope, pictur
         }
     })
 
-    /* Banners */
-    pictureService.getBannerPicture('bannerEst').then(function (data) {/* getMenuPicture */
-        if (data == null) {
+    /* Banners @admin */
+    pictureService.getBannerPicture('bannerEst').then(function (data) {
+        if (data === null || data.picturePath === undefined) {
             $scope.bannerPicturePathEst = "";
         } else {
+            // console.log('DATA', data); // REMOVE
+            // console.log('bannerEst - data.picturePath', data.picturePath); // REMOVE
             $scope.bannerPicturePathEst = data.picturePath;
         }
     })
 
-    pictureService.getBannerPicture('bannerEng').then(function (data) {/* getMenuPicture */
-        if (data == null) {
+    pictureService.getBannerPicture('bannerEng').then(function (data) {
+        if (data === null || data.picturePath === undefined) {
             $scope.bannerPicturePathEng = "";
         } else {
             $scope.bannerPicturePathEng = data.picturePath;
         }
     })
 
-    pictureService.getBannerPicture('bannerFin').then(function (data) {/* getMenuPicture */
-        if (data == null) {
+    pictureService.getBannerPicture('bannerFin').then(function (data) {
+        if (data === null || data.picturePath === undefined) {
             $scope.bannerPicturePathFin = "";
         } else {
             $scope.bannerPicturePathFin = data.picturePath;
         }
     })
 
-    pictureService.getBannerPicture('bannerRus').then(function (data) {/* getMenuPicture */
-        if (data == null) {
+    pictureService.getBannerPicture('bannerRus').then(function (data) {
+        if (data === null || data.picturePath === undefined) {
             $scope.bannerPicturePathRus = "";
         } else {
             $scope.bannerPicturePathRus = data.picturePath;
