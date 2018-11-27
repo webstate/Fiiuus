@@ -26,7 +26,7 @@ var Worker = require('../models/worker.js');
 var Food = require('../models/food.js');
 var Drink = require('../models/drink.js');
 var Picture = require('../models/pictures.js');
-var BannerPicture = require('../models/bannerpicture.js');
+var BannerPicture = require('../models/bannerpictures.js');
 var Texts = require('../models/texts.js');
 var Event = require('../models/event.js');
 var DesignPicture = require('../models/designPics.js');
@@ -806,23 +806,68 @@ router.post('/picture/add', upload.single('file'),function(req, res){
     })
     res.json(correctPath);
 })
-//Banner picture routes ----------------------------
+// //Banner picture routes ----------------------------
+// router.post('/bannerpicture/add', function(req, res){
+//     BannerPicture.create({
+//         picturePath: req.body.picturePath
+//     }, function(err){
+//         if(err) res.send(err);
+//     })
+//     res.json({
+//         msg: "Banner picture was added"
+//     })
+// })
+// router.get('/bannerpicture/get', function(req, res){
+//     BannerPicture.find(function(err, pictures){
+//         if(err) res.send(err);
+//         res.send(pictures);
+//     });
+// })
+
+/* BannerPicture v2 */
 router.post('/bannerpicture/add', function(req, res){
-    BannerPicture.create({
-        picturePath: req.body.picturePath
-    }, function(err){
+    BannerPicture.count({
+        block: req.body.menuPosition
+    }, function(err, count){
         if(err) res.send(err);
+        if(count === 0){
+            BannerPicture.create({
+                picturePath: req.body.path,
+                block: req.body.menuPosition
+            }, function(err){
+                if(err) res.send(err);
+                res.json({
+                    path: req.body.path
+                })
+            })
+        }else{
+            BannerPicture.findOne({
+                block: req.body.menuPosition
+            }, function(err, picture){
+                if(err)res.send(err);
+                picture.update({
+                    picturePath: req.body.path
+                }, function(err){
+                    if(err)res.send(err);
+                    res.json({
+                        msg:"Picture was updated"
+                    })
+                })
+            })
+        }
     })
-    res.json({
-        msg: "Banner picture was added"
+
+})
+router.post('/bannerpicture/get', function(req, res){
+    BannerPicture.findOne({
+        block: req.body.menuPosition
+    }, function(err, picture){
+        if(err) res.send(err);
+        res.json(picture);
     })
 })
-router.get('/bannerpicture/get', function(req, res){
-    BannerPicture.find(function(err, pictures){
-        if(err) res.send(err);
-        res.send(pictures);
-    });
-})
+
+
 // Food routes -----------------------
 router.get('/food/starters', function(req, res){
     Food.find({

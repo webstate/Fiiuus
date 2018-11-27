@@ -2263,29 +2263,6 @@ designViewController.controller('designViewController', function ($scope, pictur
         landingTextService.addOrUpdateLandingText("tastingTextRus", val, "ee");
     })*/
 
-    landingTextService.getLandingText("groupMenuButtonRus", "ee").then(function (data) {
-        if (data.text == null) {
-            $scope.groupMenuButtonRus = "Nothing here";
-        }
-        $scope.groupMenuButtonRus = data.text;
-    })
-
-    $scope.insertGroupMenuButtonRus = function () {
-        var update = "";
-        update = $scope.groupMenuButtonRus;
-        if ($scope.groupMenuButtonRus === "{{editGroupMenuButtonRus}}") {
-            update = $scope.editGroupMenuButtonRus;
-        }
-        landingTextService.addOrUpdateLandingText("groupMenuButtonRus", update, "ee").then(function (data) {
-            landingTextService.getLandingText("groupMenuButtonRus", "ee").then(function (data) {
-                if (data.text == null) {
-                    $scope.groupMenuButtonRus = "Nothing here";
-                }
-                $scope.groupMenuButtonRus = data.text;
-            })
-        });
-    }
-
     landingTextService.getLandingText("eventTitleRus", "ee").then(function (data) {
         if (data.text == null) {
             $scope.eventTitleRus = "There is nothing yet inserted";
@@ -2522,8 +2499,10 @@ designViewController.controller('designViewController', function ($scope, pictur
             })
         });
     }
+    /* End of Russian design view */
 
 
+    /* Additional functions */
     landingTextService.getLandingText("bannerTitleEst", "ee").then(function (data) {
         if (data.text == null) {
             $scope.bannerTitleEst = "Nothing here";
@@ -2619,7 +2598,7 @@ designViewController.controller('designViewController', function ($scope, pictur
     }
 
 
-
+    /* Map image */
     pictureService.getMenuPicture('map').then(function (data) {
         if (data == null) {
             $scope.mapPicturePath = "";
@@ -2628,6 +2607,8 @@ designViewController.controller('designViewController', function ($scope, pictur
             $scope.mapPicturePath = data.picturePath;
         }
     })
+
+    /* Event images */
     pictureService.getMenuPicture('event').then(function (data) {
         if (data == null) {
             $scope.eventPicturePath = "";
@@ -2663,18 +2644,22 @@ designViewController.controller('designViewController', function ($scope, pictur
             $scope.eventPicturePathRus = data.picturePath;
         }
     })
+
+    /* Menu pics */
+    pictureService.getMenuPicture('first').then(function (data) {
+        if (data == null) {
+            $scope.firstPicturePath = "";
+        } else {
+            // console.log('DATA @first', data); // REMOVE
+            // console.log('first - data.picturePath', data.picturePath); // REMOVE
+            $scope.firstPicturePath = data.picturePath;
+        }
+    })
     pictureService.getMenuPicture('second').then(function (data) {
         if (data == null) {
             $scope.secondPicturePath = "";
         } else {
             $scope.secondPicturePath = data.picturePath;
-        }
-    })
-    pictureService.getMenuPicture('first').then(function (data) {
-        if (data == null) {
-            $scope.firstPicturePath = "";
-        } else {
-            $scope.firstPicturePath = data.picturePath;
         }
     })
     pictureService.getMenuPicture('third').then(function (data) {
@@ -2684,31 +2669,102 @@ designViewController.controller('designViewController', function ($scope, pictur
             $scope.thirdPicturePath = data.picturePath;
         }
     })
+
+    /* Banners @admin */
+    pictureService.getBannerPicture('bannerEst').then(function (data) {
+        if (data === null || data.picturePath === undefined) {
+            $scope.bannerPicturePathEst = "";
+        } else {
+            // console.log('DATA', data); // REMOVE
+            // console.log('bannerEst - data.picturePath', data.picturePath); // REMOVE
+            $scope.bannerPicturePathEst = data.picturePath;
+        }
+    })
+
+    pictureService.getBannerPicture('bannerEng').then(function (data) {
+        if (data === null || data.picturePath === undefined) {
+            $scope.bannerPicturePathEng = "";
+        } else {
+            $scope.bannerPicturePathEng = data.picturePath;
+        }
+    })
+
+    pictureService.getBannerPicture('bannerFin').then(function (data) {
+        if (data === null || data.picturePath === undefined) {
+            $scope.bannerPicturePathFin = "";
+        } else {
+            $scope.bannerPicturePathFin = data.picturePath;
+        }
+    })
+
+    pictureService.getBannerPicture('bannerRus').then(function (data) {
+        if (data === null || data.picturePath === undefined) {
+            $scope.bannerPicturePathRus = "";
+        } else {
+            $scope.bannerPicturePathRus = data.picturePath;
+        }
+    })
+
+
+
     $scope.user = {
         name: 'awesome user'
     };
     $scope.$watch('user.name', function (val) {})
-    pictureService.getBannerPicture().then(function (data) {
-        var item = data.length - 1;
-        $scope.bannerImage = data[item].picturePath;
-    }, function (err) {
-        console.log(err);
-    })
-    $scope.filesChanged = function (elm) {
+
+    /* v1 */
+    // pictureService.getBannerPicture().then(function (data) {
+    //     var item = data.length - 1;
+    //     $scope.bannerImage = data[item].picturePath;
+    // }, function (err) {
+    //     console.log(err);
+    // })
+    // $scope.filesChanged = function (elm) {
+    //     var fd = new FormData();
+    //     $scope.files = elm.files;
+    //     angular.forEach($scope.files, function (file) {
+    //         fd.append('file', file);
+    //     })
+    //     pictureService.saveImage(fd).then(function (file) {
+    //         $scope.bannerImage = file;
+    //         pictureService.addBannerPicture(file).then(function (data) {}, function (err) {
+    //             console.log(err);
+    //         })
+    //     }, function (err) {
+    //         console.log(err);
+    //     })
+    // }
+
+    /* v2 */
+    $scope.bannerPicChanged = function (elm, type) { /* menuPicChanged */
         var fd = new FormData();
         $scope.files = elm.files;
         angular.forEach($scope.files, function (file) {
             fd.append('file', file);
         })
         pictureService.saveImage(fd).then(function (file) {
-            $scope.bannerImage = file;
-            pictureService.addBannerPicture(file).then(function (data) {}, function (err) {
+            if (type === "bannerEst") {
+                $scope.bannerPicturePathEst = file;
+            }
+            if (type === "bannerEng") {
+                $scope.bannerPicturePathEng = file;
+            }
+            if (type === "bannerFin") {
+                $scope.bannerPicturePathFin = file;
+            }
+            if (type === "bannerRus") {
+                $scope.bannerPicturePathRus = file;
+            }
+            pictureService.addBannerPicture(type, file).then(function (data) { /* pictureService.addMenuPicture(type, file).then(function (data) { */
+                elm.parentNode.style.backgroundImage = "url(" + data + ")";
+            }, function (err) {
                 console.log(err);
             })
         }, function (err) {
             console.log(err);
         })
     }
+
     $scope.menuPicChanged = function (elm, type) {
         var fd = new FormData();
         $scope.files = elm.files;
@@ -2746,6 +2802,7 @@ designViewController.controller('designViewController', function ($scope, pictur
             console.log(err);
         })
     }
+
     $scope.eventPicChanged = function (elm, type) {
 
         var fd = new FormData();

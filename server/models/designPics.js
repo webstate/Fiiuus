@@ -3,7 +3,7 @@ var Schema = mongoose.Schema;
 
 var designPicture = new Schema({
     picturePath:String,
-    block: String, 
+    block: String
 })
 
 module.exports = mongoose.model('designpicture', designPicture);

@@ -22,4 +22,5 @@ menuCtrl.controller('menuCtrl', function($scope, pictureService){
             $scope.thirdPicturePath = data.picturePath;
         }
     })
+
 })
