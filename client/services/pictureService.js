@@ -15,18 +15,7 @@ pictureService.factory('pictureService', function($q, $timeout, $http){
         })
         return d.promise;
     }
-    function getBannerPicture(menuPosition){/* Was empty */
-        var d = $q.defer();
-        $http.get('user/bannerpicture/get', {menuPosition:menuPosition}
-        ).then(function(response){
-            var data = response.data;
-            d.resolve(data);
-        }).catch(function(response){
-            var err = response.data;
-            d.reject(err);
-        })
-        return d.promise;
-    }
+
     function addBannerPicture(menuPosition, path){/* (path) */
         var d = $q.defer();
         $http.post('user/bannerpicture/add', {menuPosition:menuPosition, path: path}/* {picturePath: path} */
@@ -39,6 +28,21 @@ pictureService.factory('pictureService', function($q, $timeout, $http){
         })
         return d.promise;
     }
+
+    function getBannerPicture(menuPosition){/* Was empty */
+        var d = $q.defer();
+        $http.post('user/bannerpicture/get', {menuPosition:menuPosition}
+        ).then(function(response){
+            var data = response.data;
+            // console.log('DATA/get', data); // REMOVE
+            d.resolve(data);
+        }).catch(function(response){
+            var err = response.data;
+            d.reject(err);
+        })
+        return d.promise;
+    }
+
     function addMenuPicture(menuPosition, path){
         var d = $q.defer();
         $http.post('user/design/add', {menuPosition:menuPosition, path: path})
@@ -51,6 +55,7 @@ pictureService.factory('pictureService', function($q, $timeout, $http){
         })
         return d.promise;
     }
+
     function getMenuPicture(menuPosition){
         var d = $q.defer();
         $http.post('user/design/get', {menuPosition:menuPosition})
@@ -63,6 +68,7 @@ pictureService.factory('pictureService', function($q, $timeout, $http){
         })
         return d.promise;
     }
+
     return({
         saveImage:saveImage,
         addBannerPicture:addBannerPicture,
