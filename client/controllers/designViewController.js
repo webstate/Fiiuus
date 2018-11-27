@@ -42,6 +42,29 @@ designViewController.controller('designViewController', function ($scope, pictur
 
     // LANDING PAGE ESTONIAN VERSION
 
+    landingTextService.getLandingText("bannerTitleEst", "ee").then(function (data) {
+        if (data.text == null) {
+            $scope.bannerTitleEst = "Nothing here";
+        }
+        $scope.bannerTitleEst = data.text;
+    })
+
+    $scope.insertBannerTitleEst = function () {
+        var update = "";
+        update = $scope.bannerTitleEst;
+        if ($scope.bannerTitleEst === "{{editBannerTitleEst}}") {
+            update = $scope.editBannerTitleEst;
+        }
+        landingTextService.addOrUpdateLandingText("bannerTitleEst", update, "ee").then(function (data) {
+            landingTextService.getLandingText("bannerTitleEst", "ee").then(function (data) {
+                if (data.text == null) {
+                    $scope.bannerTitleEst = "Nothing here";
+                }
+                $scope.bannerTitleEst = data.text;
+            })
+        });
+    }
+
     landingTextService.getLandingText("aboutTitleEst", "ee").then(function (data) {
         if (data.text == null) {
             $scope.aboutTitleEst = "There is nothing yet inserted";
@@ -682,6 +705,28 @@ designViewController.controller('designViewController', function ($scope, pictur
 
     // LANDING PAGE ENGLISH VERSION
 
+    landingTextService.getLandingText("bannerTitleEng", "ee").then(function (data) {
+        if (data.text == null) {
+            $scope.bannerTitleEng = "Nothing here";
+        }
+        $scope.bannerTitleEng = data.text;
+    })
+
+    $scope.insertBannerTitleEng = function () {
+        var update = "";
+        update = $scope.bannerTitleEng;
+        if ($scope.bannerTitleEng === "{{editBannerTitleEng}}") {
+            update = $scope.editBannerTitleEng;
+        }
+        landingTextService.addOrUpdateLandingText("bannerTitleEng", update, "ee").then(function (data) {
+            landingTextService.getLandingText("bannerTitleEng", "ee").then(function (data) {
+                if (data.text == null) {
+                    $scope.bannerTitleEng = "Nothing here";
+                }
+                $scope.bannerTitleEng = data.text;
+            })
+        });
+    }
 
     landingTextService.getLandingText("aboutTitleEng", "ee").then(function (data) {
         if (data.text == null) {
@@ -1294,6 +1339,29 @@ designViewController.controller('designViewController', function ($scope, pictur
     }
 
     ////// FINNISH LANGUAGE DESIGN VIEW
+
+    landingTextService.getLandingText("bannerTitleFin", "ee").then(function (data) {
+        if (data.text == null) {
+            $scope.bannerTitleFin = "Nothing here";
+        }
+        $scope.bannerTitleFin = data.text;
+    })
+
+    $scope.insertBannerTitleFin = function () {
+        var update = "";
+        update = $scope.bannerTitleFin;
+        if ($scope.bannerTitleFin === "{{editBannerTitleFin}}") {
+            update = $scope.editBannerTitleFin;
+        }
+        landingTextService.addOrUpdateLandingText("bannerTitleFin", update, "ee").then(function (data) {
+            landingTextService.getLandingText("bannerTitleFin", "ee").then(function (data) {
+                if (data.text == null) {
+                    $scope.bannerTitleFin = "Nothing here";
+                }
+                $scope.bannerTitleFin = data.text;
+            })
+        });
+    }
 
     landingTextService.getLandingText("aboutTitleFin", "ee").then(function (data) {
         if (data.text == null) {
@@ -1910,6 +1978,29 @@ designViewController.controller('designViewController', function ($scope, pictur
 
     //// RUSSIAN DESIGN VIEW
 
+    landingTextService.getLandingText("bannerTitleRus", "ee").then(function (data) {
+        if (data.text == null) {
+            $scope.bannerTitleRus = "Nothing here";
+        }
+        $scope.bannerTitleRus = data.text;
+    })
+
+    $scope.insertBannerTitleRus = function () {
+        var update = "";
+        update = $scope.bannerTitleRus;
+        if ($scope.bannerTitleFin === "{{editBannerTitleRus}}") {
+            update = $scope.editBannerTitleRus;
+        }
+        landingTextService.addOrUpdateLandingText("bannerTitleRus", update, "ee").then(function (data) {
+            landingTextService.getLandingText("bannerTitleRus", "ee").then(function (data) {
+                if (data.text == null) {
+                    $scope.bannerTitleRus = "Nothing here";
+                }
+                $scope.bannerTitleRus = data.text;
+            })
+        });
+    }
+
 
     landingTextService.getLandingText("aboutTitleRus", "ee").then(function (data) {
         if (data.text == null) {
@@ -2502,101 +2593,8 @@ designViewController.controller('designViewController', function ($scope, pictur
     /* End of Russian design view */
 
 
+
     /* Additional functions */
-    landingTextService.getLandingText("bannerTitleEst", "ee").then(function (data) {
-        if (data.text == null) {
-            $scope.bannerTitleEst = "Nothing here";
-        }
-        $scope.bannerTitleEst = data.text;
-    })
-
-    $scope.insertBannerTitleEst = function () {
-        var update = "";
-        update = $scope.bannerTitleEst;
-        if ($scope.bannerTitleEst === "{{editBannerTitleEst}}") {
-            update = $scope.editBannerTitleEst;
-        }
-        landingTextService.addOrUpdateLandingText("bannerTitleEst", update, "ee").then(function (data) {
-            landingTextService.getLandingText("bannerTitleEst", "ee").then(function (data) {
-                if (data.text == null) {
-                    $scope.bannerTitleEst = "Nothing here";
-                }
-                $scope.bannerTitleEst = data.text;
-            })
-        });
-    }
-
-
-
-    landingTextService.getLandingText("bannerTitleEng", "ee").then(function (data) {
-        if (data.text == null) {
-            $scope.bannerTitleEng = "Nothing here";
-        }
-        $scope.bannerTitleEng = data.text;
-    })
-
-    $scope.insertBannerTitleEng = function () {
-        var update = "";
-        update = $scope.bannerTitleEng;
-        if ($scope.bannerTitleEng === "{{editBannerTitleEng}}") {
-            update = $scope.editBannerTitleEng;
-        }
-        landingTextService.addOrUpdateLandingText("bannerTitleEng", update, "ee").then(function (data) {
-            landingTextService.getLandingText("bannerTitleEng", "ee").then(function (data) {
-                if (data.text == null) {
-                    $scope.bannerTitleEng = "Nothing here";
-                }
-                $scope.bannerTitleEng = data.text;
-            })
-        });
-    }
-
-    landingTextService.getLandingText("bannerTitleFin", "ee").then(function (data) {
-        if (data.text == null) {
-            $scope.bannerTitleFin = "Nothing here";
-        }
-        $scope.bannerTitleFin = data.text;
-    })
-
-    $scope.insertBannerTitleFin = function () {
-        var update = "";
-        update = $scope.bannerTitleFin;
-        if ($scope.bannerTitleFin === "{{editBannerTitleFin}}") {
-            update = $scope.editBannerTitleFin;
-        }
-        landingTextService.addOrUpdateLandingText("bannerTitleFin", update, "ee").then(function (data) {
-            landingTextService.getLandingText("bannerTitleFin", "ee").then(function (data) {
-                if (data.text == null) {
-                    $scope.bannerTitleFin = "Nothing here";
-                }
-                $scope.bannerTitleFin = data.text;
-            })
-        });
-    }
-
-    landingTextService.getLandingText("bannerTitleRus", "ee").then(function (data) {
-        if (data.text == null) {
-            $scope.bannerTitleRus = "Nothing here";
-        }
-        $scope.bannerTitleRus = data.text;
-    })
-
-    $scope.insertBannerTitleRus = function () {
-        var update = "";
-        update = $scope.bannerTitleRus;
-        if ($scope.bannerTitleFin === "{{editBannerTitleRus}}") {
-            update = $scope.editBannerTitleRus;
-        }
-        landingTextService.addOrUpdateLandingText("bannerTitleRus", update, "ee").then(function (data) {
-            landingTextService.getLandingText("bannerTitleRus", "ee").then(function (data) {
-                if (data.text == null) {
-                    $scope.bannerTitleRus = "Nothing here";
-                }
-                $scope.bannerTitleRus = data.text;
-            })
-        });
-    }
-
 
     /* Map image */
     pictureService.getMenuPicture('map').then(function (data) {
@@ -2650,8 +2648,6 @@ designViewController.controller('designViewController', function ($scope, pictur
         if (data == null) {
             $scope.firstPicturePath = "";
         } else {
-            // console.log('DATA @first', data); // REMOVE
-            // console.log('first - data.picturePath', data.picturePath); // REMOVE
             $scope.firstPicturePath = data.picturePath;
         }
     })
@@ -2675,8 +2671,6 @@ designViewController.controller('designViewController', function ($scope, pictur
         if (data === null || data.picturePath === undefined) {
             $scope.bannerPicturePathEst = "";
         } else {
-            // console.log('DATA', data); // REMOVE
-            // console.log('bannerEst - data.picturePath', data.picturePath); // REMOVE
             $scope.bannerPicturePathEst = data.picturePath;
         }
     })
@@ -2736,7 +2730,7 @@ designViewController.controller('designViewController', function ($scope, pictur
     // }
 
     /* v2 */
-    $scope.bannerPicChanged = function (elm, type) { /* menuPicChanged */
+    $scope.bannerPicChanged = function (elm, type) {
         var fd = new FormData();
         $scope.files = elm.files;
         angular.forEach($scope.files, function (file) {
@@ -2755,7 +2749,7 @@ designViewController.controller('designViewController', function ($scope, pictur
             if (type === "bannerRus") {
                 $scope.bannerPicturePathRus = file;
             }
-            pictureService.addBannerPicture(type, file).then(function (data) { /* pictureService.addMenuPicture(type, file).then(function (data) { */
+            pictureService.addBannerPicture(type, file).then(function (data) {
                 elm.parentNode.style.backgroundImage = "url(" + data + ")";
             }, function (err) {
                 console.log(err);

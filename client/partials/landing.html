@@ -1,6 +1,6 @@
 <div ng-controller="sliderCtrl">
-    <div class="sliderTest" ng-hide="slider"><!-- url({{bannerPicturePathEst}}) -->
-        <div class="banner-picture" ng-controller="bannerCtrl" style="background-image:url({{bannerPicture}})"><!-- url({{bannerImage}}) // ng-controller="menuCtrl" -->
+    <div class="sliderTest" ng-hide="slider">
+        <div class="banner-picture" ng-controller="bannerCtrl" style="background-image:url({{bannerPicture}})">
             <div class="col-sm-6 col-xs-6 hidden-lg hidden-md" style="z-index:1;">
 
                 <img id="logo" style="height:47px;" src="css/img/logo.png" />
@@ -406,7 +406,7 @@
                 <div class="menu-bg" ng-controller="menuCtrl">
                     <div class="container">
                         <div class="row">
-                            <div class="col-md-12" style="margin-top: 60px;"><!--  ng-if="$root.lang==='en'" -->
+                            <div class="col-md-12" style="margin-top: 60px;">
                                 <span class="landing-span-light"></span>
                                 <p ng-if="$root.lang === 'ee'" class="menu-section-subtitle">
                                     <!-- Menüü -->
@@ -1315,7 +1315,7 @@
                                 </table>
                             </div>
                         </div>
-                        <div class="row"><!--  ng-if="$root.lang ==='en'" -->
+                        <div class="row">
                             <div class="col-md-12" style="margin-top: 60px;">
                                 <span class="landing-tasting-span">
                                 </span>
@@ -1335,14 +1335,6 @@
                                     <!-- Рождественское меню -->
                                     {{ tastingHeadingRus }}
                                 </p>
-                                <!-- <p style="position: absolute;
-                                        color:white;
-                                        top: 0px;
-                                        left: 90px;
-                                        font-family: spaceMono;">
-                                    Christmas Menu
-                                    {{ tastingHeadingEng }}
-                                </p> -->
                             </div>
                         </div>
                         <div class="row">
@@ -1519,7 +1511,7 @@
     <div class="row" scroll-bookmark="contact">
         <div class="container">
             <div class="row">
-                <div class="col-md-12" style="margin-top: 60px;"><!--  ng-if="$root.lang==='en'" -->
+                <div class="col-md-12" style="margin-top: 60px;">
                     <span class="landing-span-dark"></span>
                     <p ng-if="$root.lang === 'ee'" class="contact-subtitle">
                         <!-- Kontakt -->
