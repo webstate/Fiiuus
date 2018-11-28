@@ -14,6 +14,7 @@ var mailgun = require('mailgun-js')({apiKey: api_key, domain: domain});
 var storage = multer.diskStorage({
     destination: path.join(__dirname, '../../client/uploads'),
     filename: function(req, file, cb){
+        console.log('file @api:17', file); // REMOVE
         var extArray = file.mimetype.split('/');
         var extension = extArray[extArray.length - 1];
         cb(null, file.fieldname + Date.now()+ '.' + extension);
@@ -731,8 +732,21 @@ router.post('/design/add', function(req, res){
     }, function(err, count){
         if(err) res.send(err);
         if(count === 0){
+            // console.log('REQ if', req); // REMOVE
+            console.log('req.body.path in if @api:736', req.body.path); // REMOVE
+            // console.log('req.file.path', req.file.path); // REMOVE
+
+            var str = req.body.path;
+            if(str.indexOf('/')>=0 && str.indexOf('/') != -1){
+                var splitstr = str.split("/");
+            } else {
+                var splitstr = str.split(/(\u005C)/g);
+            }
+            var correctPath = 'uploads/'+ splitstr[splitstr.length - 1];/*  */
+            console.log('correctPath @api:746', correctPath); // REMOVE
+
             DesignPicture.create({
-                picturePath: req.body.path,
+                picturePath: correctPath,/* req.body.path */
                 block: req.body.menuPosition
             }, function(err){
                 if(err) res.send(err);
@@ -740,13 +754,26 @@ router.post('/design/add', function(req, res){
                     path: req.body.path
                 })
             })
-        }else{
+        } else {
+            // console.log('REQ else', req); // REMOVE
+            console.log('req.body.path in else @api:759', req.body.path); // REMOVE
+            // console.log('req.file.path in else', req.file.path); // REMOVE
+
+            var str = req.body.path;
+            if(str.indexOf('/')>=0 && str.indexOf('/') != -1){
+                var splitstr = str.split("/");
+            } else {
+                var splitstr = str.split(/(\u005C)/g);
+            }
+            var correctPath = 'uploads/'+ splitstr[splitstr.length - 1];/*  */
+            console.log('correctPath @api:769', correctPath); // REMOVE
+
             DesignPicture.findOne({
                 block: req.body.menuPosition
             }, function(err, picture){
                 if(err)res.send(err);
                 picture.update({
-                    picturePath: req.body.path
+                    picturePath: correctPath/* req.body.path */
                 }, function(err){
                     if(err)res.send(err);
                     res.json({
@@ -797,8 +824,23 @@ router.post('/texts/update', function(req, res){
 })
 // Picture routes ---------------------
 router.post('/picture/add', upload.single('file'),function(req, res){
+    // var str = req.file.path;
+    // // console.log('STR', str); // REMOVE
+    // var correctPath = str.replace(/\/opt\/bitnami\/apps\/Fii\/client\//, '../');
+    // console.log('correctPath in picture/add', correctPath); // REMOVE
+
+
     var str = req.file.path;
-    var correctPath = str.replace(/\/opt\/bitnami\/apps\/Fii\/client\//, '../');
+    if (str != null || str != undefined) {
+        if(str.indexOf('/')>=0 && str.indexOf('/') != -1){
+            var splitstr = str.split("/");
+        } else {
+            var splitstr = str.split(/(\u005C)/g);
+        }
+        var correctPath = 'uploads/'+ splitstr[splitstr.length - 1];/*  */
+        console.log('correctPath @api:841', correctPath); // REMOVE
+    }
+
     Picture.create({
         picture:correctPath
     }, function(err){
@@ -831,6 +873,19 @@ router.post('/bannerpicture/add', function(req, res){
     }, function(err, count){
         if(err) res.send(err);
         if(count === 0){
+            // console.log('REQ if', req); // REMOVE
+            console.log('req.body.path in if -/bannerpicture/add- @api:877', req.body.path); // REMOVE
+            // console.log('req.file.path', req.file.path); // REMOVE
+
+            var str = req.body.path;
+            if(str.indexOf('/')>=0 && str.indexOf('/') != -1){
+                var splitstr = str.split("/");
+            } else {
+                var splitstr = str.split(/(\u005C)/g);
+            }
+            var correctPath = 'uploads/'+ splitstr[splitstr.length - 1];/*  */
+            console.log('correctPath @api:887', correctPath); // REMOVE
+
             BannerPicture.create({
                 picturePath: req.body.path,
                 block: req.body.menuPosition
@@ -840,7 +895,20 @@ router.post('/bannerpicture/add', function(req, res){
                     path: req.body.path
                 })
             })
-        }else{
+        } else {
+            // console.log('REQ else', req); // REMOVE
+            console.log('req.body.path in else -/bannerpicture/add-  @api:900', req.body.path); // REMOVE
+            // console.log('req.file.path in else', req.file.path); // REMOVE
+
+            var str = req.body.path;
+            if(str.indexOf('/')>=0 && str.indexOf('/') != -1){
+                var splitstr = str.split("/");
+            } else {
+                var splitstr = str.split(/(\u005C)/g);
+            }
+            var correctPath = 'uploads/'+ splitstr[splitstr.length - 1];/*  */
+            console.log('correctPath @api:910', correctPath); // REMOVE
+
             BannerPicture.findOne({
                 block: req.body.menuPosition
             }, function(err, picture){
