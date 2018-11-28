@@ -159,12 +159,14 @@ ul.nav > li > a:visited{
 
 }
 .menu-area-mockup{
-    height: 1500px;
+    /* height: 1500px; */
+    height: auto;
     width: 800px;
     margin: 0 auto;
     background-image: url('img/sea.png');
     background-size: cover;
     margin-top: 50px;
+    padding-bottom: 20px;
 }
 .event-block-mockup{
     height: auto;
@@ -357,12 +359,33 @@ a.editable-click{
     cursor: default;
     
 }
+
+img.whiteguide {
+    height: auto;
+    margin-top: 10px;
+}
+
+/* Up to Tablet-max */
+@media only screen and (max-width: 991px) {
+    img.whiteguide {
+        width: 47px;
+    }
+}
+
+/* Desktop-min & up */
+@media only screen and (min-width: 992px) {
+    img.whiteguide {
+        width: 60px;
+    }
+}
+
 @media only screen and (max-width: 1024px) {
   
 .mobilelogo{
         margin-left: -25rem;   
     }
 }
+
 @media only screen and (min-width: 320px) and (max-width: 1024px) {
   
 .mobilelogo{
