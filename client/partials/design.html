@@ -26,7 +26,7 @@
 <!-- EST Design -->
 <div class="container" ng-show="estDesign">
     <div class="row" style="margin-top: 50px;">
-        <div class="banner-mockup" style="background-image:url({{bannerPicturePathEst}})">
+        <div class="banner-mockup" ng-style="{'background-image': 'url(' + bannerPicturePathEst + ')'}"><!--  style="background-image:url({{bannerPicturePathEst}})" -->
             <div class="col-md-12">
                 <img id="mockup-logo" src="css/img/logo.png" />
                 <ul style="list-style:none;" class="banner-menu-mockup">
@@ -49,8 +49,8 @@
             <button class="Btn" ng-click="insertBannerTitleEst()"><i class="fa fa-check" aria-hidden="true"></i></button>
         </div>
         <div class="banner-mockup-shadow">
-            <input type="file" name="file" id="fileEst" class="inputfile" onchange="angular.element(this).scope().bannerPicChanged(this, 'bannerEst')" />
-            <label style="margin-top: 260px;margin-left: 40px;" for="fileEst"><i class="fa fa-pencil" aria-hidden="true"></i></label>
+            <input type="file" name="file" id="fileBannerEst" class="inputfile" onchange="angular.element(this).scope().bannerPicChanged(this, 'bannerEst')" />
+            <label style="margin-top: 260px;margin-left: 40px;" for="fileBannerEst"><i class="fa fa-pencil" aria-hidden="true"></i></label>
         </div>
 
         <div class="worker-area-mockup">
@@ -353,7 +353,7 @@
         </div>
         <div class="row">
             <div class="col-md-6" style="padding: 0; margin-top: 50px;">
-                <div class="map-picture" style="background-image: url({{mapPicturePath}})">
+                <div class="map-picture" ng-style="{'background-image': 'url(' + mapPicturePath + ')'}"><!--  style="background-image: url({{mapPicturePath}})" -->
                     <input type="file" name="file2" id="file5" class="inputfile" onchange="angular.element(this).scope().mapPicChanged(this, 'map')" />
                     <label style="margin-top: 135px;margin-left: 10px;" for="file5"><i class="fa fa-pencil" aria-hidden="true"></i></label>
                 </div>
@@ -449,7 +449,7 @@
 <!-- Eng Design -->
 <div class="container" ng-show="engDesign">
     <div class="row" style="margin-top: 50px;">
-        <div class="banner-mockup" style="background-image:url({{bannerPicturePathEng}})">
+        <div class="banner-mockup" ng-style="{'background-image': 'url(' + bannerPicturePathEng + ')'}"><!--  style="background-image:url({{bannerPicturePathEng}})" -->
             <div class="col-md-12">
                 <img id="mockup-logo" src="css/img/logo.png" />
                 <ul style="list-style:none;" class="banner-menu-mockup">
@@ -472,8 +472,8 @@
             <button class="Btn" ng-click="insertBannerTitleEng()"><i class="fa fa-check" aria-hidden="true"></i></button>
         </div>
         <div class="banner-mockup-shadow">
-            <input type="file" name="file" id="fileEng" class="inputfile" onchange="angular.element(this).scope().bannerPicChanged(this, 'bannerEng')" />
-            <label style="margin-top: 260px;margin-left: 40px;" for="fileEng"><i class="fa fa-pencil" aria-hidden="true"></i></label>
+            <input type="file" name="file" id="fileBannerEng" class="inputfile" onchange="angular.element(this).scope().bannerPicChanged(this, 'bannerEng')" />
+            <label style="margin-top: 260px;margin-left: 40px;" for="fileBannerEng"><i class="fa fa-pencil" aria-hidden="true"></i></label>
         </div>
         <div class="worker-area-mockup">
             <div class="row" style="margin-top: 40px;">
@@ -779,7 +779,7 @@
 
         <div class="row">
             <div class="col-md-6" style="padding: 0; margin-top: 50px;">
-                <div class="map-picture" style="background-image: url({{mapPicturePath}})">
+                <div class="map-picture" ng-style="{'background-image': 'url(' + mapPicturePath + ')'}"><!--  style="background-image: url({{mapPicturePath}})" -->
                     <input type="file" name="file2" id="file5" class="inputfile" onchange="angular.element(this).scope().mapPicChanged(this, 'map')" />
                     <label style="margin-top: 135px;margin-left: 10px;" for="file5"><i class="fa fa-pencil" aria-hidden="true"></i></label>
                 </div>
@@ -873,7 +873,7 @@
 
 <div class="container" ng-show="finDesign">
     <div class="row" style="margin-top: 50px;">
-        <div class="banner-mockup" style="background-image:url({{bannerPicturePathFin}})">
+        <div class="banner-mockup" ng-style="{'background-image': 'url(' + bannerPicturePathFin + ')'}"><!--  style="background-image:url({{bannerPicturePathFin}})" -->
             <div class="col-md-12">
                 <img id="mockup-logo" src="css/img/logo.png" />
                 <ul style="list-style:none;" class="banner-menu-mockup">
@@ -896,8 +896,8 @@
             <button class="Btn" ng-click="insertBannerTitleFin()"><i class="fa fa-check" aria-hidden="true"></i></button>
         </div>
         <div class="banner-mockup-shadow">
-            <input type="file" name="file" id="fileFin" class="inputfile" onchange="angular.element(this).scope().bannerPicChanged(this, 'bannerFin')" />
-            <label style="margin-top: 260px;margin-left: 40px;" for="fileFin"><i class="fa fa-pencil" aria-hidden="true"></i></label>
+            <input type="file" name="file" id="fileBannerFin" class="inputfile" onchange="angular.element(this).scope().bannerPicChanged(this, 'bannerFin')" />
+            <label style="margin-top: 260px;margin-left: 40px;" for="fileBannerFin"><i class="fa fa-pencil" aria-hidden="true"></i></label>
         </div>
         <div class="worker-area-mockup">
             <div class="row" style="margin-top: 40px;">
@@ -1189,7 +1189,7 @@
 
         <div class="row">
             <div class="col-md-6" style="padding: 0; margin-top: 50px;">
-                <div class="map-picture" style="background-image: url({{mapPicturePath}})">
+                <div class="map-picture" ng-style="{'background-image': 'url(' + mapPicturePath + ')'}"><!--  style="background-image: url({{mapPicturePath}})" -->
                     <input type="file" name="file2" id="file5" class="inputfile" onchange="angular.element(this).scope().mapPicChanged(this, 'map')" />
                     <label style="margin-top: 135px;margin-left: 10px;" for="file5"><i class="fa fa-pencil" aria-hidden="true"></i></label>
                 </div>
@@ -1282,7 +1282,7 @@
 </div>
 <div class="container" ng-show="rusDesign">
     <div class="row" style="margin-top: 50px;">
-        <div class="banner-mockup" style="background-image:url({{bannerPicturePathRus}})">
+        <div class="banner-mockup" ng-style="{'background-image': 'url(' + bannerPicturePathRus + ')'}"><!-- style="background-image: url({{bannerPicturePathRus}})" -->
             <div class="col-md-12">
                 <img id="mockup-logo" src="css/img/logo.png" />
                 <ul style="list-style:none;" class="banner-menu-mockup">
@@ -1305,8 +1305,8 @@
             <button class="Btn" ng-click="insertBannerTitleRus()"><i class="fa fa-check" aria-hidden="true"></i></button>
         </div>
         <div class="banner-mockup-shadow">
-            <input type="file" name="file" id="fileRus" class="inputfile" onchange="angular.element(this).scope().bannerPicChanged(this, 'bannerRus')" />
-            <label style="margin-top: 260px;margin-left: 40px;" for="fileRus"><i class="fa fa-pencil" aria-hidden="true"></i></label>
+            <input type="file" name="file" id="fileBannerRus" class="inputfile" onchange="angular.element(this).scope().bannerPicChanged(this, 'bannerRus')" />
+            <label style="margin-top: 260px;margin-left: 40px;" for="fileBannerRus"><i class="fa fa-pencil" aria-hidden="true"></i></label>
         </div>
         <div class="worker-area-mockup">
             <div class="row" style="margin-top: 40px;">
@@ -1596,7 +1596,7 @@
 
         <div class="row">
             <div class="col-md-6" style="padding: 0; margin-top: 50px;">
-                <div class="map-picture" style="background-image: url({{mapPicturePath}})">
+                <div class="map-picture" ng-style="{'background-image': 'url(' + mapPicturePath + ')'}"><!--  style="background-image: url({{mapPicturePath}})" -->
                     <input type="file" name="file2" id="file5" class="inputfile" onchange="angular.element(this).scope().mapPicChanged(this, 'map')" />
                     <label style="margin-top: 135px;margin-left: 10px;" for="file5"><i class="fa fa-pencil" aria-hidden="true"></i></label>
                 </div>
