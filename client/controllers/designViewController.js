@@ -2878,4 +2878,68 @@ designViewController.controller('designViewController', function ($scope, pictur
     }
 
 
+
+    /* test */
+    angular.module('getterSetterExample', [])
+    .controller('ExampleController', ['$scope', function($scope) {
+    var _text = 'TEST';
+    $scope.block = {
+        text: function(newText) {
+        // Note that newText can be undefined for two reasons:
+        // 1. Because it is called as a getter and thus called with no arguments
+        // 2. Because the property should actually be set to undefined. This happens e.g. if the
+        //    input is invalid
+        return arguments.length ? (_text = newText) : _text;
+        }
+    };
+    }]);
+
+    $(document).ready( function() {
+
+        // Make the DIV element draggable:
+        dragElement(document.getElementById("mydiv"));
+
+        function dragElement(elmnt) {
+            var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+            console.log('elmnt', elmnt); // REMOVE
+            if (document.getElementById(elmnt.id + "header")) {
+                // if present, the header is where you move the DIV from:
+                document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
+            } else {
+                // otherwise, move the DIV from anywhere inside the DIV:
+                elmnt.onmousedown = dragMouseDown;
+            }
+
+            function dragMouseDown(e) {
+                e = e || window.event;
+                e.preventDefault();
+                // get the mouse cursor position at startup:
+                pos3 = e.clientX;
+                pos4 = e.clientY;
+                document.onmouseup = closeDragElement;
+                // call a function whenever the cursor moves:
+                document.onmousemove = elementDrag;
+            }
+
+            function elementDrag(e) {
+                e = e || window.event;
+                e.preventDefault();
+                // calculate the new cursor position:
+                pos1 = pos3 - e.clientX;
+                pos2 = pos4 - e.clientY;
+                pos3 = e.clientX;
+                pos4 = e.clientY;
+                // set the element's new position:
+                elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+                elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+            }
+
+            function closeDragElement() {
+                // stop moving when mouse button is released:
+                document.onmouseup = null;
+                document.onmousemove = null;
+            }
+        }
+    });
+
 })
