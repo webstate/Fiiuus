@@ -61,6 +61,29 @@ sliderCtrl.controller('sliderCtrl', function($location,$rootScope, $scope, landi
         );
     }
     // ESTONIAN LANDING TEXTS
+
+    pictureService.getBannerTitlePosition('bannerTitlePositionEst').then(function (data) {/* bannerRus */
+        // // console.log('data in getBannerTitlePositionEst', data); // REMOVE
+        // if (data === null) {/*  || data.picturePath === undefined */
+        //     // $scope.bannerTitleEst = ""; // @the moment it changes existing to ""
+        //     // console.log('data = ', data); // REMOVE
+        //     $scope.bannerTitlePositionTopEst = "";
+        //     $scope.bannerTitlePositionLeftEst = "";
+        //     console.log('$scope.bannerTitlePositionEstTop @null', $scope.bannerTitlePositionEstTop); // REMOVE
+        // } else {
+            $scope.bannerTitlePositionTopEst = data.top;
+            $scope.bannerTitlePositionLeftEst = data.left;
+        //     // console.log('$scope.bannerTitlePositionEstTop @not null', $scope.bannerTitlePositionEstTop); // REMOVE
+        //     console.log('scope in GET pos O', $scope); // REMOVE
+        //     // console.log('d a t a @d2748', data); // REMOVE
+        //     // $scope.bannerTitlePositionEst = data.bannerTitlePositionEst;
+        // }
+    })
+
+    landingTextService.getLandingText("bannerTitleEst", "ee").then(function(data){
+        $scope.bannerTitleEst = data.text;
+        console.log('$scope.mydivOffsetTop @slider - ', $scope); // REMOVE
+    })
     landingTextService.getLandingText("aboutTitleEst", "ee").then(function(data){
         $scope.aboutTitleEst = data.text;
     })
@@ -127,9 +150,6 @@ sliderCtrl.controller('sliderCtrl', function($location,$rootScope, $scope, landi
     landingTextService.getLandingText("contactWeekend", "ee").then(function(data){
         $scope.contactWeekend = data.text;
     })
-    landingTextService.getLandingText("bannerTitleEst", "ee").then(function(data){
-        $scope.bannerTitleEst = data.text;
-    })
     landingTextService.getLandingText("groupMenuButtonEst", "ee").then(function(data){
         $scope.groupMenuButtonEst = data.text;
     })
@@ -137,6 +157,28 @@ sliderCtrl.controller('sliderCtrl', function($location,$rootScope, $scope, landi
 
 
 // ENGLISH LANDING TEXTS
+
+    pictureService.getBannerTitlePosition('bannerTitlePositionEng').then(function (data) {
+        console.log('data in getBannerTitlePositionEng = ', data); // REMOVE
+        if (data === null) {/*  || data.picturePath === undefined */
+        //     // $scope.bannerTitleEng = ""; // @the moment it changes existing to ""
+            console.log('data = ', data); // REMOVE
+        //     $scope.bannerTitlePositionTopEng = "";
+        //     $scope.bannerTitlePositionLeftEng = "";
+            console.log('$scope.bannerTitlePositionEngTop @null', $scope.bannerTitlePositionEngTop); // REMOVE
+        } else {
+            $scope.bannerTitlePositionTopEng = data.top;
+            $scope.bannerTitlePositionLeftEng = data.left;
+            console.log('$scope.bannerTitlePositionEngTop @not null', $scope.bannerTitlePositionEngTop); // REMOVE
+        //     console.log('scope in GET pos O', $scope); // REMOVE
+        //     // console.log('d a t a @s175', data); // REMOVE
+        //     // $scope.bannerTitlePositionEng = data.bannerTitlePositionEng;
+        }
+    })
+
+    landingTextService.getLandingText("bannerTitleEng", "ee").then(function(data){
+        $scope.bannerTitleEng = data.text;
+    })
 
     landingTextService.getLandingText("aboutTitleEng", "ee").then(function(data){
         $scope.aboutTitleEng = data.text;
@@ -204,9 +246,6 @@ sliderCtrl.controller('sliderCtrl', function($location,$rootScope, $scope, landi
     landingTextService.getLandingText("eventTitleEng", "ee").then(function(data){
         $scope.eventTitleEng = data.text;
     })
-    landingTextService.getLandingText("bannerTitleEng", "ee").then(function(data){
-        $scope.bannerTitleEng = data.text;
-    })
     landingTextService.getLandingText("groupMenuButtonEng", "ee").then(function(data){
         $scope.groupMenuButtonEng = data.text;
     })
@@ -214,6 +253,9 @@ sliderCtrl.controller('sliderCtrl', function($location,$rootScope, $scope, landi
 
 // FINNISH LANDING TEXTS
 
+    landingTextService.getLandingText("bannerTitleFin", "ee").then(function(data){
+        $scope.bannerTitleFin = data.text;
+    })
     landingTextService.getLandingText("aboutTitleFin", "ee").then(function(data){
         $scope.aboutTitleFin = data.text;
     })
@@ -280,9 +322,6 @@ sliderCtrl.controller('sliderCtrl', function($location,$rootScope, $scope, landi
     landingTextService.getLandingText("eventTitleFin", "ee").then(function(data){
         $scope.eventTitleFin = data.text;
     })
-    landingTextService.getLandingText("bannerTitleFin", "ee").then(function(data){
-        $scope.bannerTitleFin = data.text;
-    })
     landingTextService.getLandingText("groupMenuButtonFin", "ee").then(function(data){
         $scope.groupMenuButtonFin = data.text;
     })
@@ -290,6 +329,9 @@ sliderCtrl.controller('sliderCtrl', function($location,$rootScope, $scope, landi
 
 // RUSSIAN LANDING TEXTS
 
+    landingTextService.getLandingText("bannerTitleRus", "ee").then(function(data){
+        $scope.bannerTitleRus = data.text;
+    })
     landingTextService.getLandingText("aboutTitleRus", "ee").then(function(data){
         $scope.aboutTitleRus = data.text;
     })
@@ -355,9 +397,6 @@ sliderCtrl.controller('sliderCtrl', function($location,$rootScope, $scope, landi
     })
     landingTextService.getLandingText("eventTitleRus", "ee").then(function(data){
         $scope.eventTitleRus = data.text;
-    })
-    landingTextService.getLandingText("bannerTitleRus", "ee").then(function(data){
-        $scope.bannerTitleRus = data.text;
     })
     landingTextService.getLandingText("groupMenuButtonRus", "ee").then(function(data){
         $scope.groupMenuButtonRus = data.text;
