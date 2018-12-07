@@ -144,6 +144,24 @@ ul.nav > li > a:visited{
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=1 ); /* IE6-9 */
 }
 
+.admin-banner {
+    height: 700px;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    overflow: hidden;
+    position: relative;
+}
+
+.mt-50 {
+    margin-top: 50px;
+}
+
+.fs-80 {
+    font-size: 80px !important;
+}
+
 .book-table-btn{
     width: 225px;
     height: 50px;
@@ -166,7 +184,7 @@ ul.nav > li > a:visited{
     background-repeat: no-repeat;
 }
 .worker-area-mockup{
-    height: 400px;
+    /* height: 400px; */
     width: 800px;
     margin: 0 auto;
 
@@ -1532,11 +1550,14 @@ ul.drink-menu-tabs li:hover {
     right: 40px;
     margin-top: 3px;
 }
+
+/* Banner Title */
 .event-name-banner{
     font-family:Play;
     font-size: 55px;
     color: white;
-    max-width: 710px
+    /* max-width: 710px; */
+    max-width: 65vw;
 }
 .menu-container-padding{
     padding-left: 0;
