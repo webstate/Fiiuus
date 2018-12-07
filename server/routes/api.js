@@ -921,7 +921,6 @@ router.post('/bannerpicture/title/add', function(req, res){
         if(err) res.send(err);
         if(count === 0){
             BannerTitlePosition.create({
-                // picturePath: req.body.path,
                 top: req.body.top,
                 left: req.body.left,
                 block: req.body.dbPosition
@@ -930,7 +929,6 @@ router.post('/bannerpicture/title/add', function(req, res){
                 res.json({
                     top: req.body.top,
                     left: req.body.left
-                    // path: req.body.path
                 })
             })
         } else {
@@ -939,7 +937,6 @@ router.post('/bannerpicture/title/add', function(req, res){
             }, function(err, BannerTitlePosition){
                 if(err)res.send(err);
                 BannerTitlePosition.update({
-                    // picturePath: req.body.path
                     top: req.body.top,
                     left: req.body.left
                 }, function(err){
