@@ -27,6 +27,7 @@ var Food = require('../models/food.js');
 var Drink = require('../models/drink.js');
 var Picture = require('../models/pictures.js');
 var BannerPicture = require('../models/bannerpictures.js');
+var BannerTitlePosition = require('../models/bannertitleposition.js');
 var Texts = require('../models/texts.js');
 var Event = require('../models/event.js');
 var DesignPicture = require('../models/designPics.js');
@@ -910,6 +911,55 @@ router.post('/bannerpicture/get', function(req, res){
         res.json(picture);
     })
 })
+
+
+/* Banner Title Pos */
+router.post('/bannerpicture/title/add', function(req, res){
+    BannerTitlePosition.count({
+        block: req.body.dbPosition
+    }, function(err, count){
+        if(err) res.send(err);
+        if(count === 0){
+            BannerTitlePosition.create({
+                // picturePath: req.body.path,
+                top: req.body.top,
+                left: req.body.left,
+                block: req.body.dbPosition
+            }, function(err){
+                if(err) res.send(err);
+                res.json({
+                    top: req.body.top,
+                    left: req.body.left
+                    // path: req.body.path
+                })
+            })
+        } else {
+            BannerTitlePosition.findOne({
+                block: req.body.dbPosition
+            }, function(err, BannerTitlePosition){
+                if(err)res.send(err);
+                BannerTitlePosition.update({
+                    // picturePath: req.body.path
+                    top: req.body.top,
+                    left: req.body.left
+                }, function(err){
+                    if(err)res.send(err);
+                    res.json({
+                        msg:"Position was updated"
+                    })
+                })
+            })
+        }
+    })
+})
+router.post('/bannerpicture/title/get', function(req, res){
+    BannerTitlePosition.findOne({
+        block: req.body.dbPosition
+    }, function(err, BannerTitlePosition){
+        if(err) res.send(err);
+        res.json(BannerTitlePosition);
+    })
+})/* End of Title pos */
 
 
 // Food routes -----------------------
