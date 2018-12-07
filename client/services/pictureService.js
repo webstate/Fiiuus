@@ -42,6 +42,33 @@ pictureService.factory('pictureService', function($q, $timeout, $http){
         return d.promise;
     }
 
+    /* BannerTitle Position */
+    function addBannerTitlePosition(dbPosition, top, left){
+        var d = $q.defer();
+        $http.post('user/bannerpicture/title/add', {dbPosition: dbPosition, top: top, left: left}
+        ).then(function(response){
+            var data = response.data;
+            d.resolve(data);
+        }).catch(function(response){
+            var err = response.data;
+            d.reject(err);
+        })
+        return d.promise;
+    }
+
+    function getBannerTitlePosition(dbPosition){
+        var d = $q.defer();
+        $http.post('user/bannerpicture/title/get', {dbPosition: dbPosition}
+        ).then(function(response){
+            var data = response.data;
+            d.resolve(data);
+        }).catch(function(response){
+            var err = response.data;
+            d.reject(err);
+        })
+        return d.promise;
+    } /* End of bannerTitle */
+
     function addMenuPicture(menuPosition, path){
         var d = $q.defer();
         $http.post('user/design/add', {menuPosition:menuPosition, path: path})
@@ -73,6 +100,8 @@ pictureService.factory('pictureService', function($q, $timeout, $http){
         addBannerPicture:addBannerPicture,
         getBannerPicture: getBannerPicture,
         addMenuPicture: addMenuPicture,
-        getMenuPicture: getMenuPicture
+        getMenuPicture: getMenuPicture,
+        getBannerTitlePosition: getBannerTitlePosition,
+        addBannerTitlePosition: addBannerTitlePosition
     })
 })
