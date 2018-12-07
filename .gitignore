@@ -1,8 +1,15 @@
 server/node_modules
 client/uploads
 server/email
-server/
 .idea/
-server/routes
-server/server.js
-server/app.js
+server/package-lock.json
+
+## Put Back @live
+#server/
+#server/routes
+#server/server.js
+#server/app.js
+
+#Unignore these if changes made there:
+#!*/server/routes/api.js
+#!*/server/models/*
