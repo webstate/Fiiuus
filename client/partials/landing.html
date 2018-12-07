@@ -5,7 +5,7 @@
                 <img id="logo" style="height:47px;" src="css/img/logo.png" />
                 <div class="row">
                     <div class="col-xs-12">
-                        <img class="whiteguide" src="css/img/whiteguide.png" /><!-- id="mobilelogo" -->
+                        <img class="whiteguide" src="css/img/whiteguide.png" />
                     </div>
                 </div>
             </div>
@@ -275,25 +275,49 @@
             </nav>
 
         </div>
-        <div class="banner-shadow">
-            <div class="row" style="padding-top:220px;">
-                <div class="container">
-                    <div class="col-md-12">
-                        <p class="event-name-banner" ng-if="$root.lang ==='en' && bannerTitleEng != 'There is nothing yet inserted'">
-                            {{bannerTitleEng}}
-                        </p>
-                        <p class="event-name-banner" ng-if="$root.lang ==='ee' && bannerTitleEst != 'There is nothing yet inserted'">
-                            {{bannerTitleEst}}
-                        </p>
-                        <p class="event-name-banner" ng-if="$root.lang ==='fi' && bannerTitleFin != 'There is nothing yet inserted'">
-                            {{bannerTitleFin}}
-                        </p>
-                        <p style="font-family:Play;" class="event-name-banner" ng-if="$root.lang ==='ru' && bannerTitleRus != 'There is nothing yet inserted'">
-                            {{bannerTitleRus}}
-                        </p>
-                    </div>
-                </div>
-            </div>
+        <div class="banner-shadow" ><!-- ToDo - Remove from @mobile -->
+            <!-- style="position: relative;
+                    height: 700px;
+                    transform: translateY(-100%);" -->
+            <!-- <div class="row" style="padding-top:220px;"> -->
+                <!-- <div class="container"> -->
+                    <!-- <div class=""> --><!-- col-md-12 -->
+                            <!-- <pre>bannerTitleEst = <span ng-bind="bannerTitlePositionTopEst"></span></pre> // REMOVE -->
+                        <!-- <pre>{{ $scope.bannerTitlePositionTopEst | json }}</pre>// REMOVE -->
+
+                        <!-- @Desktop --><!-- TODO - Ask about font-size (55vs80) // REMOVE -->
+                        <div class="hidden-xs hidden-sm visible-md visible-lg"><!-- fs-80 -->
+                            <div class="event-name-banner "
+                                ng-if="$root.lang ==='ee' && bannerTitleEst != 'There is nothing yet inserted'"
+                                ng-style="{'top': bannerTitlePositionTopEst +'%', 'left': bannerTitlePositionLeftEst +'%', 'position': 'absolute'}">
+                                {{bannerTitleEst}}
+                            </div>
+                            <div class="event-name-banner"
+                                ng-if="$root.lang ==='en' && bannerTitleEng != 'There is nothing yet inserted'"
+                                ng-style="{'top': bannerTitlePositionTopEng +'%', 'left': bannerTitlePositionLeftEng +'%', 'position': 'absolute'}"
+                            ><!--  fs-80 -->
+                                {{bannerTitleEng}}
+                            </div>
+                        </div>
+
+                        <!-- @mobile -->
+                        <div class="visible-xs visible-sm hidden-md hidden-lg container" style="padding-top: 220px;">
+                            <p class="event-name-banner" ng-if="$root.lang ==='ee' && bannerTitleEst != 'There is nothing yet inserted'">
+                                {{bannerTitleEst}}
+                            </p>
+                            <p class="event-name-banner" ng-if="$root.lang ==='en' && bannerTitleEng != 'There is nothing yet inserted'">
+                                {{bannerTitleEng}}
+                            </p>
+                            <p class="event-name-banner" ng-if="$root.lang ==='fi' && bannerTitleFin != 'There is nothing yet inserted'">
+                                {{bannerTitleFin}}
+                            </p>
+                            <p style="font-family:Play;" class="event-name-banner" ng-if="$root.lang ==='ru' && bannerTitleRus != 'There is nothing yet inserted'">
+                                {{bannerTitleRus}}
+                            </p>
+                        </div>
+                    <!-- </div> -->
+                <!-- </div> -->
+            <!-- </div> -->
         </div>
         <div class="container">
             <div class="row" scroll-bookmark="about">

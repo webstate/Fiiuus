@@ -67,7 +67,7 @@ pictureService.factory('pictureService', function($q, $timeout, $http){
             d.reject(err);
         })
         return d.promise;
-    } /* End of bannerTitle */
+    } /* End of BannerTitle Pos */
 
     function addMenuPicture(menuPosition, path){
         var d = $q.defer();
