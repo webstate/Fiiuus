@@ -251,11 +251,31 @@ sliderCtrl.controller('sliderCtrl', function($location,$rootScope, $scope, landi
     })
 
 
-// FINNISH LANDING TEXTS
+    // FINNISH LANDING TEXTS
+
+    pictureService.getBannerTitlePosition('bannerTitlePositionFin').then(function (data) {
+        console.log('data in getBannerTitlePositionFin = ', data); // REMOVE
+        if (data === null) {/*  || data.picturePath === undefined */
+        //     // $scope.bannerTitleFin = ""; // @the moment it changes existing to ""
+            console.log('data = ', data); // REMOVE
+        //     $scope.bannerTitlePositionTopFin = "";
+        //     $scope.bannerTitlePositionLeftFin = "";
+            console.log('$scope.bannerTitlePositionFinTop @null', $scope.bannerTitlePositionFinTop); // REMOVE
+        } else {
+            $scope.bannerTitlePositionTopFin = data.top;
+            $scope.bannerTitlePositionLeftFin = data.left;
+            console.log('$scope.bannerTitlePositionFinTop @not null', $scope.bannerTitlePositionFinTop); // REMOVE
+        //     console.log('scope in GET pos O', $scope); // REMOVE
+        //     // console.log('d a t a @s175', data); // REMOVE
+        //     // $scope.bannerTitlePositionFin = data.bannerTitlePositionFin;
+        }
+    })
 
     landingTextService.getLandingText("bannerTitleFin", "ee").then(function(data){
+        console.log('FIN-data initial', data); // REMOVE
         $scope.bannerTitleFin = data.text;
     })
+
     landingTextService.getLandingText("aboutTitleFin", "ee").then(function(data){
         $scope.aboutTitleFin = data.text;
     })
@@ -329,9 +349,30 @@ sliderCtrl.controller('sliderCtrl', function($location,$rootScope, $scope, landi
 
 // RUSSIAN LANDING TEXTS
 
-    landingTextService.getLandingText("bannerTitleRus", "ee").then(function(data){
-        $scope.bannerTitleRus = data.text;
-    })
+pictureService.getBannerTitlePosition('bannerTitlePositionRus').then(function (data) {
+    console.log('data in getBannerTitlePositionRus = ', data); // REMOVE
+    if (data === null) {
+        // $scope.bannerTitleRus = ""; // @the moment it changes existing to ""
+        console.log('data @null = ', data); // REMOVE
+    //     $scope.bannerTitlePositionTopRus = "";
+    //     $scope.bannerTitlePositionLeftRus = "";
+        console.log('$scope.bannerTitlePositionRusTop @null', $scope.bannerTitlePositionRusTop); // REMOVE
+    } else {
+        $scope.bannerTitlePositionTopRus = data.top;
+        $scope.bannerTitlePositionLeftRus = data.left;
+        console.log('$scope.bannerTitlePositionRusTop @not null', $scope.bannerTitlePositionRusTop); // REMOVE
+    //     console.log('scope in GET pos O', $scope); // REMOVE
+    //     // console.log('d a t a @s175', data); // REMOVE
+    //     // $scope.bannerTitlePositionRus = data.bannerTitlePositionRus;
+    }
+})
+
+landingTextService.getLandingText("bannerTitleRus", "ee").then(function(data){
+    console.log('Rus-data initial', data); // REMOVE
+    $scope.bannerTitleRus = data.text;
+})
+
+
     landingTextService.getLandingText("aboutTitleRus", "ee").then(function(data){
         $scope.aboutTitleRus = data.text;
     })
