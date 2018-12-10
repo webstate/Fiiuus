@@ -286,7 +286,7 @@
                         <!-- <pre>{{ $scope.bannerTitlePositionTopEst | json }}</pre>// REMOVE -->
 
                         <!-- @Desktop --><!-- TODO - Ask about font-size (55vs80) // REMOVE -->
-                        <div class="hidden-xs hidden-sm visible-md visible-lg"><!-- fs-80 -->
+                        <div class="hidden-xs hidden-sm visible-md visible-lg">
                             <div class="event-name-banner "
                                 ng-if="$root.lang ==='ee' && bannerTitleEst != 'There is nothing yet inserted'"
                                 ng-style="{'top': bannerTitlePositionTopEst +'%', 'left': bannerTitlePositionLeftEst +'%', 'position': 'absolute'}">
@@ -294,9 +294,18 @@
                             </div>
                             <div class="event-name-banner"
                                 ng-if="$root.lang ==='en' && bannerTitleEng != 'There is nothing yet inserted'"
-                                ng-style="{'top': bannerTitlePositionTopEng +'%', 'left': bannerTitlePositionLeftEng +'%', 'position': 'absolute'}"
-                            ><!--  fs-80 -->
+                                ng-style="{'top': bannerTitlePositionTopEng +'%', 'left': bannerTitlePositionLeftEng +'%', 'position': 'absolute'}">
                                 {{bannerTitleEng}}
+                            </div>
+                            <div class="event-name-banner"
+                                ng-if="$root.lang ==='fi' && bannerTitleFin != 'There is nothing yet inserted'"
+                                ng-style="{'top': bannerTitlePositionTopFin +'%', 'left': bannerTitlePositionLeftFin +'%', 'position': 'absolute'}">
+                                {{bannerTitleFin}}
+                            </div>
+                            <div class="event-name-banner"
+                                ng-if="$root.lang ==='ru' && bannerTitleRus != 'There is nothing yet inserted'"
+                                ng-style="{'top': bannerTitlePositionTopRus +'%', 'left': bannerTitlePositionLeftRus +'%', 'position': 'absolute'}">
+                                {{bannerTitleRus}}
                             </div>
                         </div>
 
