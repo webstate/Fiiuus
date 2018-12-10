@@ -391,7 +391,18 @@ a.editable-click{
 
 }
 
+.admin-logo {
+    height: 60px;
+    margin-top: 20px;
+    cursor: default;
+}
+
 img.whiteguide {
+    height: auto;
+    margin-top: 10px;
+}
+
+.admin-whiteguide {
     height: auto;
     margin-top: 10px;
 }
@@ -401,11 +412,27 @@ img.whiteguide {
     img.whiteguide {
         width: 47px;
     }
+
+    .admin-logo {
+        width: 47px;
+        height: 47px;
+    }
+
+    img.admin-whiteguide {
+        height: auto;
+        margin-top: 0;
+        width: 47px;
+    }
 }
 
 /* Desktop-min & up */
 @media only screen and (min-width: 992px) {
     img.whiteguide {
+        width: 60px;
+    }
+    img.admin-whiteguide {
+        height: auto;
+        /* margin-top: 0; */
         width: 60px;
     }
 }

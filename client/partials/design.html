@@ -32,18 +32,36 @@
         <!-- <pre>{{ bannerTitleForm.editBannerTitleEst.$viewValue | json }}</pre>// REMOVE -->
         <div class="admin-banner" ng-style="{'background-image': 'url(' + bannerPicturePathEst + ')'}">
             <div class="col-md-12">
-                <img id="mockup-logo" src="css/img/logo.png" style="z-index: 1;" />
-                <ul style="list-style:none;
-                            z-index: 1;
+                <!-- <img id="mockup-logo" src="css/img/logo.png" style="z-index: 1;" /> -->
+                <!-- id="logo" -->
+                <img class="admin-logo" src="css/img/logo.png"
+                    style="z-index: 1;
+                        position: absolute;
+                        left: 25px;" />
+                <!-- <div style="z-index: 1;
+                    position: absolute;
+                    top: 80px;
+                    left: 25px;"> -->
+                    <img class="admin-whiteguide" src="css/img/whiteguide.png"
+                        style="z-index: 1;
                             position: absolute;
-                            right: 250px;
-                            margin-left: 0;"
-                        class="banner-menu-mockup">
-                    <li class="mockup-menu"></li>
-                    <li class="mockup-menu"></li>
-                    <li class="mockup-menu"></li>
-                    <li class="mockup-menu"></li>
-                </ul>
+                            top: 80px;
+                            left: 25px;" />
+                <!-- </div> -->
+
+                <div class="xs-hidden sm-hidden visible-md visible-lg">
+                    <ul style="list-style:none;
+                                z-index: 1;
+                                position: absolute;
+                                right: 250px;
+                                margin-left: 0;"
+                            class="banner-menu-mockup">
+                        <li class="mockup-menu"></li>
+                        <li class="mockup-menu"></li>
+                        <li class="mockup-menu"></li>
+                        <li class="mockup-menu"></li>
+                    </ul>
+                </div>
                 <ul style="list-style:none;" class="banner-menu-btns">
                     <li class="mockup-btn">
 
@@ -590,11 +608,27 @@
     <div class="mt-50"><!-- row -->
         <!--  style="background-image:url({{bannerPicturePathEng}})" --><!-- NOT -->
         <!-- banner-mockup -->
-        <pre>{{ bannerTitleForm.editBannerTitleEng | json }}</pre><!-- // REMOVE -->
+        <!-- <pre>{{ bannerTitleForm.editBannerTitleEng | json }}</pre>// REMOVE -->
         <!-- <pre>{{ bannerTitleForm.editBannerTitleEng.$viewValue | json }}</pre>// REMOVE -->
         <div class="admin-banner" ng-style="{'background-image': 'url(' + bannerPicturePathEng + ')'}">
             <div class="col-md-12">
-                <img id="mockup-logo" src="css/img/logo.png" style="z-index: 1;" />
+                <!-- <img id="mockup-logo" src="css/img/logo.png" style="z-index: 1;" /> -->
+                <!-- id="logo" -->
+                <img class="admin-logo" src="css/img/logo.png"
+                    style="z-index: 1;
+                        position: absolute;
+                        left: 25px;" />
+                <!-- <div style="z-index: 1;
+                    position: absolute;
+                    top: 80px;
+                    left: 25px;"> -->
+                    <img class="admin-whiteguide" src="css/img/whiteguide.png"
+                        style="z-index: 1;
+                            position: absolute;
+                            top: 80px;
+                            left: 25px;" />
+                <!-- </div> -->
+
                 <ul style="list-style:none;
                             z-index: 1;
                             position: absolute;
@@ -1128,10 +1162,146 @@
     </div>
 </div>
 
-<div class="container" ng-show="finDesign">
-    <div class="row" style="margin-top: 50px;">
-        <div class="banner-mockup" ng-style="{'background-image': 'url(' + bannerPicturePathFin + ')'}"><!--  style="background-image:url({{bannerPicturePathFin}})" -->
+
+<!-- Fin Design -->
+<!-- Refactor -->
+<div class="" ng-show="finDesign"><!-- container -->
+    <div class="mt-50"><!-- row -->
+        <!--  style="background-image:url({{bannerPicturePathFin}})" --><!-- NOT -->
+        <!-- banner-mockup -->
+        <pre>{{ bannerTitleForm.editBannerTitleFin | json }}</pre><!-- // REMOVE -->
+        <!-- <pre>{{ bannerTitleForm.editBannerTitleFin.$viewValue | json }}</pre>// REMOVE -->
+        <div class="admin-banner" ng-style="{'background-image': 'url(' + bannerPicturePathFin + ')'}">
             <div class="col-md-12">
+                <!-- <img id="mockup-logo" src="css/img/logo.png" style="z-index: 1;" /> -->
+                <!-- id="logo" -->
+                <img class="admin-logo" src="css/img/logo.png"
+                    style="z-index: 1;
+                        position: absolute;
+                        left: 25px;" />
+                <!-- <div style="z-index: 1;
+                    position: absolute;
+                    top: 80px;
+                    left: 25px;"> -->
+                    <img class="admin-whiteguide" src="css/img/whiteguide.png"
+                        style="z-index: 1;
+                            position: absolute;
+                            top: 80px;
+                            left: 25px;" />
+                <!-- </div> -->
+
+                <ul style="list-style:none;
+                            z-index: 1;
+                            position: absolute;
+                            right: 250px;
+                            margin-left: 0;"
+                        class="banner-menu-mockup">
+                    <li class="mockup-menu"></li>
+                    <li class="mockup-menu"></li>
+                    <li class="mockup-menu"></li>
+                    <li class="mockup-menu"></li>
+                </ul>
+                <ul style="list-style:none;" class="banner-menu-btns">
+                    <li class="mockup-btn">
+
+                    </li>
+                    <li class="mockup-btn-2">
+
+                    </li>
+                </ul>
+            </div>
+            <div class="" id="mydivFin" style="position: absolute;
+                                            z-index: 1;
+                                            max-width: 65vw;"
+                                            ng-style="{'top': bannerTitlePositionTopFin +'%', 'left': bannerTitlePositionLeftFin +'%'}"
+                                            ><!-- col-md-10 -->
+                                            <!-- max-width: 710px; -->
+                                            <!-- ng-style="{{  }}" -->
+                                            <!-- top: 400px; // left: 50px; -->
+                                            <!-- mydiv -->
+                <div id="mydivheader"
+                    style="
+                    font-size: 55px;
+                    cursor: move;
+                    font-family: Play;
+                    color: white;
+                    ">
+                            <!-- font-size: 80px; -->
+                            <!-- color: orange; -->
+                            <!-- font-weight: 800; -->
+                    {{ bannerTitleFin }}
+                </div>
+            </div>
+        </div>
+        <!-- banner-mockup-shadow -->
+        <div class="shadow"
+            style="height: 700px;
+                    width: 100%;
+                    position: absolute;
+                    transform: translateY(-100%);">
+            <input type="file" name="file" id="fileBannerFin" class="inputfile" onchange="angular.element(this).scope().bannerPicChanged(this, 'bannerFin')" />
+            <label style="  bottom: 15px;
+                            left: 15px;
+                            position: fixed;"
+                    for="fileBannerFin">
+                <i class="fa fa-pencil" aria-hidden="true"></i>
+            </label>
+        </div>
+        <div class="container" style="margin: 40px auto; width: 800px;">
+            <!-- <div ng-controller="ExampleController"> -->
+                <form name="bannerTitleForm">
+                    <div class="row">
+                        <div class="col-md-11">
+                            <!-- <label>Text: </label> -->
+                            <textarea type="text" rows=4 style="resize: both; height: 90px; width: 100%;"
+                                    ng-model="bannerTitleFin"
+                                    ng-initial
+                                    name="editBannerTitleFin"
+                                    id="editBannerTitleFin"
+                                    value="editBannerTitleFin"
+                                    >
+                                </textarea>
+                                <!-- value="{{editBannerTitleFin}}" -->
+                                <!-- ng-maxlength="20" -->
+                                <!-- placeholder="{{ bannerTitleFin }}" -->
+                                <!-- min="0" max="20" -->
+                                <!-- placeholder="{{ finb }}" -->
+                                <!-- editBannerTitleFin -->
+                                <!-- ng-init="bannerTitleFin" -->
+                                $viewValue = {{ bannerTitleForm.editBannerTitleFin.$viewValue }}<br>
+                                bannerTitleFin = {{ bannerTitleFin }}
+                                <!-- ng-model-options="{ getterSetter: true }" -->
+                                <!-- ng-initial // name="userText" -->
+                        </div>
+                        <div class="col-md-1">
+                            <button class="Btn" ng-click="insertBannerTitleFin()" style="margin: 0 -15px;"><i class="fa fa-check" aria-hidden="true"></i></button>
+                        </div>
+
+                        <!-- v2 -->
+                        <!-- <div> -->
+                        <!-- <input class="bannerTextField" value="{{editBannerTitleFin}}" type="text" ng-model="bannerTitleFin" ng-initial > -->
+                        <!-- <textarea class="bannerTextField" rows=4 value="{{editBannerTitleFin}}" type="text" ng-model="bannerTitleFin" ng-initial></textarea> -->
+                        <!-- <button class="Btn" ng-click="insertBannerTitleFin()"><i class="fa fa-check" aria-hidden="true"></i></button> -->
+                        <!-- </div> -->
+
+                    </div>
+                </form>
+                <!-- <pre>{{ finb | json }}</pre>// REMOVE -->
+                <pre>bannerTitleFin = <span ng-bind="bannerTitleFin"></span></pre>
+                <!-- block.text // finb -->
+                <!-- <pre>data = <span ng-bind="{{bannerTitleFin}}"></span></pre> -->
+            <!-- </div> -->
+        </div>
+
+
+
+
+
+<!-- <div class="container" ng-show="finDesign">
+    <div class="row" style="margin-top: 50px;">
+        <div class="banner-mockup" ng-style="{'background-image': 'url(' + bannerPicturePathFin + ')'}"> -->
+            <!--  style="background-image:url({{bannerPicturePathFin}})" -->
+            <!-- <div class="col-md-12">
                 <img id="mockup-logo" src="css/img/logo.png" />
                 <ul style="list-style:none;" class="banner-menu-mockup">
                     <li class="mockup-menu"></li>
@@ -1155,7 +1325,10 @@
         <div class="banner-mockup-shadow">
             <input type="file" name="file" id="fileBannerFin" class="inputfile" onchange="angular.element(this).scope().bannerPicChanged(this, 'bannerFin')" />
             <label style="margin-top: 260px;margin-left: 40px;" for="fileBannerFin"><i class="fa fa-pencil" aria-hidden="true"></i></label>
-        </div>
+        </div> -->
+
+
+
         <div class="worker-area-mockup">
             <div class="row" style="margin-top: 40px;">
             <!-- Fin About Title -->
@@ -1537,12 +1710,42 @@
         </div>
     </div>
 </div>
-<div class="container" ng-show="rusDesign">
-    <div class="row" style="margin-top: 50px;">
-        <div class="banner-mockup" ng-style="{'background-image': 'url(' + bannerPicturePathRus + ')'}"><!-- style="background-image: url({{bannerPicturePathRus}})" -->
+
+
+<!-- Russian design -->
+
+<!-- Refactor -->
+<div class="" ng-show="rusDesign"><!-- container -->
+    <div class="mt-50"><!-- row -->
+        <!--  style="background-image:url({{bannerPicturePathRus}})" --><!-- NOT -->
+        <!-- banner-mockup -->
+        <!-- <pre>{{ bannerTitleForm.editBannerTitleRus | json }}</pre>// REMOVE -->
+        <!-- <pre>{{ bannerTitleForm.editBannerTitleRus.$viewValue | json }}</pre>// REMOVE -->
+        <div class="admin-banner" ng-style="{'background-image': 'url(' + bannerPicturePathRus + ')'}">
             <div class="col-md-12">
-                <img id="mockup-logo" src="css/img/logo.png" />
-                <ul style="list-style:none;" class="banner-menu-mockup">
+                <!-- <img id="mockup-logo" src="css/img/logo.png" style="z-index: 1;" /> -->
+                <!-- id="logo" -->
+                <img class="admin-logo" src="css/img/logo.png"
+                    style="z-index: 1;
+                        position: absolute;
+                        left: 25px;" />
+                <!-- <div style="z-index: 1;
+                    position: absolute;
+                    top: 80px;
+                    left: 25px;"> -->
+                    <img class="admin-whiteguide" src="css/img/whiteguide.png"
+                        style="z-index: 1;
+                            position: absolute;
+                            top: 80px;
+                            left: 25px;" />
+                <!-- </div> -->
+
+                <ul style="list-style:none;
+                            z-index: 1;
+                            position: absolute;
+                            right: 250px;
+                            margin-left: 0;"
+                        class="banner-menu-mockup">
                     <li class="mockup-menu"></li>
                     <li class="mockup-menu"></li>
                     <li class="mockup-menu"></li>
@@ -1557,14 +1760,124 @@
                     </li>
                 </ul>
             </div>
-            <input class="bannerTextField" value="{{editBannerTitleRus}}" type="text" ng-model="bannerTitleRus"
-                ng-initial />
-            <button class="Btn" ng-click="insertBannerTitleRus()"><i class="fa fa-check" aria-hidden="true"></i></button>
+            <div class="" id="mydivRus" style="position: absolute;
+                                            z-index: 1;
+                                            max-width: 65vw;"
+                                            ng-style="{'top': bannerTitlePositionTopRus +'%', 'left': bannerTitlePositionLeftRus +'%'}"
+                                            ><!-- col-md-10 -->
+                                            <!-- max-width: 710px; -->
+                                            <!-- ng-style="{{  }}" -->
+                                            <!-- top: 400px; // left: 50px; -->
+                                            <!-- mydiv -->
+                <div id="mydivheader"
+                    style="
+                    font-size: 55px;
+                    cursor: move;
+                    font-family: Play;
+                    color: white;
+                    ">
+                            <!-- font-size: 80px; -->
+                            <!-- color: orange; -->
+                            <!-- font-weight: 800; -->
+                    {{ bannerTitleRus }}
+                </div>
+            </div>
         </div>
-        <div class="banner-mockup-shadow">
+        <!-- banner-mockup-shadow -->
+        <div class="shadow"
+            style="height: 700px;
+                    width: 100%;
+                    position: absolute;
+                    transform: translateY(-100%);">
             <input type="file" name="file" id="fileBannerRus" class="inputfile" onchange="angular.element(this).scope().bannerPicChanged(this, 'bannerRus')" />
-            <label style="margin-top: 260px;margin-left: 40px;" for="fileBannerRus"><i class="fa fa-pencil" aria-hidden="true"></i></label>
+            <label style="  bottom: 15px;
+                            left: 15px;
+                            position: fixed;"
+                    for="fileBannerRus">
+                <i class="fa fa-pencil" aria-hidden="true"></i>
+            </label>
         </div>
+        <div class="container" style="margin: 40px auto; width: 800px;">
+            <!-- <div ng-controller="ExampleController"> -->
+                <form name="bannerTitleForm">
+                    <div class="row">
+                        <div class="col-md-11">
+                            <!-- <label>Text: </label> -->
+                            <textarea type="text" rows=4 style="resize: both; height: 90px; width: 100%;"
+                                    ng-model="bannerTitleRus"
+                                    ng-initial
+                                    name="editBannerTitleRus"
+                                    id="editBannerTitleRus"
+                                    value="editBannerTitleRus"
+                                    >
+                                </textarea>
+                                <!-- value="{{editBannerTitleRus}}" -->
+                                <!-- ng-maxlength="20" -->
+                                <!-- placeholder="{{ bannerTitleRus }}" -->
+                                <!-- min="0" max="20" -->
+                                <!-- placeholder="{{ rusb }}" -->
+                                <!-- editBannerTitleRus -->
+                                <!-- ng-init="bannerTitleRus" -->
+                                $viewValue = {{ bannerTitleForm.editBannerTitleRus.$viewValue }}<br>
+                                bannerTitleRus = {{ bannerTitleRus }}
+                                <!-- ng-model-options="{ getterSetter: true }" -->
+                                <!-- ng-initial // name="userText" -->
+                        </div>
+                        <div class="col-md-1">
+                            <button class="Btn" ng-click="insertBannerTitleRus()" style="margin: 0 -15px;"><i class="fa fa-check" aria-hidden="true"></i></button>
+                        </div>
+
+                        <!-- v2 -->
+                        <!-- <div> -->
+                        <!-- <input class="bannerTextField" value="{{editBannerTitleRus}}" type="text" ng-model="bannerTitleRus" ng-initial > -->
+                        <!-- <textarea class="bannerTextField" rows=4 value="{{editBannerTitleRus}}" type="text" ng-model="bannerTitleRus" ng-initial></textarea> -->
+                        <!-- <button class="Btn" ng-click="insertBannerTitleRus()"><i class="fa fa-check" aria-hidden="true"></i></button> -->
+                        <!-- </div> -->
+
+                    </div>
+                </form>
+                <!-- <pre>{{ rusb | json }}</pre>// REMOVE -->
+                <pre>bannerTitleRus = <span ng-bind="bannerTitleRus"></span></pre>
+                <!-- block.text // rusb -->
+                <!-- <pre>data = <span ng-bind="{{bannerTitleRus}}"></span></pre> -->
+            <!-- </div> -->
+        </div>
+
+
+        <!-- V1 -->
+        <!-- <div class="container" ng-show="rusDesign">
+            <div class="row" style="margin-top: 50px;">
+                <div class="banner-mockup" ng-style="{'background-image': 'url(' + bannerPicturePathRus + ')'}"> -->
+                    <!-- style="background-image: url({{bannerPicturePathRus}})" -->
+                    <!-- <div class="col-md-12">
+                        <img id="mockup-logo" src="css/img/logo.png" />
+                        <ul style="list-style:none;" class="banner-menu-mockup">
+                            <li class="mockup-menu"></li>
+                            <li class="mockup-menu"></li>
+                            <li class="mockup-menu"></li>
+                            <li class="mockup-menu"></li>
+                        </ul>
+                        <ul style="list-style:none;" class="banner-menu-btns">
+                            <li class="mockup-btn">
+
+                            </li>
+                            <li class="mockup-btn-2">
+
+                            </li>
+                        </ul>
+                    </div>
+                    <input class="bannerTextField" value="{{editBannerTitleRus}}" type="text" ng-model="bannerTitleRus"
+                        ng-initial />
+                    <button class="Btn" ng-click="insertBannerTitleRus()"><i class="fa fa-check" aria-hidden="true"></i></button>
+                </div>
+                <div class="banner-mockup-shadow">
+                    <input type="file" name="file" id="fileBannerRus" class="inputfile" onchange="angular.element(this).scope().bannerPicChanged(this, 'bannerRus')" />
+                    <label style="margin-top: 260px;margin-left: 40px;" for="fileBannerRus"><i class="fa fa-pencil" aria-hidden="true"></i></label>
+                </div> -->
+                <!-- End of V1 -->
+
+
+
         <div class="worker-area-mockup">
             <div class="row" style="margin-top: 40px;">
             <!-- Rus About Title -->
