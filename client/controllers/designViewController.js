@@ -1445,27 +1445,89 @@ designViewController.controller('designViewController', function ($scope, pictur
     ////// FINNISH LANGUAGE DESIGN VIEW
 
     landingTextService.getLandingText("bannerTitleFin", "ee").then(function (data) {
-        if (data.text == null) {
+        console.log('then-fn-data!!!', data); // REMOVE
+        if (data.text == null || data.text == undefined) {
             $scope.bannerTitleFin = "Nothing here";
         }
-        $scope.bannerTitleFin = data.text;
+        $timeout(function() {
+            $scope.bannerTitleFin = data.text;
+        }, 200);
+        // bannerTitleForm.editBannerTitleFin.$viewValue = data.text;
+        // console.log('bannerTitleForm.editBannerTitleFin.$viewValue', bannerTitleForm.editBannerTitleFin.$viewValue); // REMOVE
+        console.log('$scope.bannerTitleFin', $scope.bannerTitleFin); // REMOVE
+        console.log('d-a-t-a @d50', data); // REMOVE // It has data & text
+        console.log('$scope.bannerTitleFin @get', $scope); // REMOVE // bannerTitleFin is undefined
+        console.log('data AGAIN', data); // REMOVE // It has data & text
+        var finb = data.text;
+        $scope.finb = finb;
+        // this.finb = finb;
+        // console.log('this', this); // REMOVE
+        console.log('finb', finb); // REMOVE
     })
 
     $scope.insertBannerTitleFin = function () {
         var update = "";
         update = $scope.bannerTitleFin;
-        if ($scope.bannerTitleFin === "{{editBannerTitleFin}}") {
+        if ($scope.bannerTitleFin === "editBannerTitleFin") {
             update = $scope.editBannerTitleFin;
         }
         landingTextService.addOrUpdateLandingText("bannerTitleFin", update, "ee").then(function (data) {
+            console.log('data @d60', data); // REMOVE
+            console.log('update @d61', update); // REMOVE
+            console.log('$scope @d62', $scope); // REMOVE
             landingTextService.getLandingText("bannerTitleFin", "ee").then(function (data) {
-                if (data.text == null) {
+                if (data.text == null || data.text == undefined) {
                     $scope.bannerTitleFin = "Nothing here";
                 }
                 $scope.bannerTitleFin = data.text;
+                console.log('data second get title from landingtext', data); // REMOVE
+            }, function (err) {
+                console.log(err);
             })
         });
+
+        if ($scope.mydiv) {
+            // console.log('$scope.mydiv in if', $scope.mydiv); // REMOVE
+            var top;
+            var left;
+            top = $scope.mydiv.top;
+            left = $scope.mydiv.left;
+            console.log('T & L', top, left); // REMOVE
+            pictureService.addBannerTitlePosition("bannerTitlePositionFin", top, left).then(function (data) {
+                console.log('data in addBanner...', data); // REMOVE
+            }), function (err) {
+                console.log(err);
+            }
+            // pictureService.getBannerTitlePosition();
+        } else {
+            console.log('There is no myDiv', ); // REMOVE
+        }
+
     }
+
+    /* V1 */
+    // landingTextService.getLandingText("bannerTitleFin", "ee").then(function (data) {
+    //     if (data.text == null) {
+    //         $scope.bannerTitleFin = "Nothing here";
+    //     }
+    //     $scope.bannerTitleFin = data.text;
+    // })
+
+    // $scope.insertBannerTitleFin = function () {
+    //     var update = "";
+    //     update = $scope.bannerTitleFin;
+    //     if ($scope.bannerTitleFin === "{{editBannerTitleFin}}") {
+    //         update = $scope.editBannerTitleFin;
+    //     }
+    //     landingTextService.addOrUpdateLandingText("bannerTitleFin", update, "ee").then(function (data) {
+    //         landingTextService.getLandingText("bannerTitleFin", "ee").then(function (data) {
+    //             if (data.text == null) {
+    //                 $scope.bannerTitleFin = "Nothing here";
+    //             }
+    //             $scope.bannerTitleFin = data.text;
+    //         })
+    //     });
+    // }
 
     landingTextService.getLandingText("aboutTitleFin", "ee").then(function (data) {
         if (data.text == null) {
@@ -2083,27 +2145,89 @@ designViewController.controller('designViewController', function ($scope, pictur
     //// RUSSIAN DESIGN VIEW
 
     landingTextService.getLandingText("bannerTitleRus", "ee").then(function (data) {
-        if (data.text == null) {
+        console.log('then-fn-data!!!', data); // REMOVE
+        if (data.text == null || data.text == undefined) {
             $scope.bannerTitleRus = "Nothing here";
         }
-        $scope.bannerTitleRus = data.text;
+        $timeout(function() {
+            $scope.bannerTitleRus = data.text;
+        }, 200);
+        // bannerTitleForm.editBannerTitleRus.$viewValue = data.text;
+        // console.log('bannerTitleForm.editBannerTitleRus.$viewValue', bannerTitleForm.editBannerTitleRus.$viewValue); // REMOVE
+        console.log('$scope.bannerTitleRus', $scope.bannerTitleRus); // REMOVE
+        console.log('d-a-t-a @d50', data); // REMOVE // It has data & text
+        console.log('$scope.bannerTitleRus @get', $scope); // REMOVE // bannerTitleRus is undefined
+        console.log('data AGAIN', data); // REMOVE // It has data & text
+        var rusb = data.text;
+        $scope.rusb = rusb;
+        // this.rusb = rusb;
+        // console.log('this', this); // REMOVE
+        console.log('rusb', rusb); // REMOVE
     })
 
     $scope.insertBannerTitleRus = function () {
         var update = "";
         update = $scope.bannerTitleRus;
-        if ($scope.bannerTitleFin === "{{editBannerTitleRus}}") {
+        if ($scope.bannerTitleRus === "editBannerTitleRus") {
             update = $scope.editBannerTitleRus;
         }
         landingTextService.addOrUpdateLandingText("bannerTitleRus", update, "ee").then(function (data) {
+            console.log('data @d60', data); // REMOVE
+            console.log('update @d61', update); // REMOVE
+            console.log('$scope @d62', $scope); // REMOVE
             landingTextService.getLandingText("bannerTitleRus", "ee").then(function (data) {
-                if (data.text == null) {
+                if (data.text == null || data.text == undefined) {
                     $scope.bannerTitleRus = "Nothing here";
                 }
                 $scope.bannerTitleRus = data.text;
+                console.log('data second get title from landingtext', data); // REMOVE
+            }, function (err) {
+                console.log(err);
             })
         });
+
+        if ($scope.mydiv) {
+            // console.log('$scope.mydiv in if', $scope.mydiv); // REMOVE
+            var top;
+            var left;
+            top = $scope.mydiv.top;
+            left = $scope.mydiv.left;
+            console.log('T & L', top, left); // REMOVE
+            pictureService.addBannerTitlePosition("bannerTitlePositionRus", top, left).then(function (data) {
+                console.log('data in addBanner...', data); // REMOVE
+            }), function (err) {
+                console.log(err);
+            }
+            // pictureService.getBannerTitlePosition();
+        } else {
+            console.log('There is no myDiv', ); // REMOVE
+        }
+
     }
+
+    /* V1 */
+    // landingTextService.getLandingText("bannerTitleRus", "ee").then(function (data) {
+    //     if (data.text == null) {
+    //         $scope.bannerTitleRus = "Nothing here";
+    //     }
+    //     $scope.bannerTitleRus = data.text;
+    // })
+
+    // $scope.insertBannerTitleRus = function () {
+    //     var update = "";
+    //     update = $scope.bannerTitleRus;
+    //     if ($scope.bannerTitleFin === "{{editBannerTitleRus}}") {
+    //         update = $scope.editBannerTitleRus;
+    //     }
+    //     landingTextService.addOrUpdateLandingText("bannerTitleRus", update, "ee").then(function (data) {
+    //         landingTextService.getLandingText("bannerTitleRus", "ee").then(function (data) {
+    //             if (data.text == null) {
+    //                 $scope.bannerTitleRus = "Nothing here";
+    //             }
+    //             $scope.bannerTitleRus = data.text;
+    //         })
+    //     });
+    // }
 
 
     landingTextService.getLandingText("aboutTitleRus", "ee").then(function (data) {
@@ -2803,6 +2927,7 @@ designViewController.controller('designViewController', function ($scope, pictur
         }
     })
 
+
     /* Get BannerTitle Position */
     pictureService.getBannerTitlePosition('bannerTitlePositionEst').then(function (data) {/* bannerRus */
         console.log('data in getBannerTitlePositionEst', data); // REMOVE
@@ -2837,6 +2962,42 @@ designViewController.controller('designViewController', function ($scope, pictur
             console.log('last scope in picSer GET', $scope); // REMOVE
             // console.log('d a t a @d2748', data); // REMOVE
             // $scope.bannerTitlePositionEng = data.bannerTitlePositionEng;
+        }
+    })
+
+    pictureService.getBannerTitlePosition('bannerTitlePositionFin').then(function (data) {/* bannerRus */
+        console.log('data in getBannerTitlePositionFin', data); // REMOVE
+        if (data === null) {/*  || data.picturePath === undefined */
+            // $scope.bannerTitleFin = ""; // @the moment it changes existing to ""
+            // console.log('data = ', data); // REMOVE
+            $scope.bannerTitlePositionTopFin = "";
+            $scope.bannerTitlePositionLeftFin = "";
+            console.log('$scope.bannerTitlePositionFinTop @null', $scope.bannerTitlePositionFinTop); // REMOVE
+        } else {
+            $scope.bannerTitlePositionTopFin = data.top;
+            $scope.bannerTitlePositionLeftFin = data.left;
+            // console.log('$scope.bannerTitlePositionFinTop @not null', $scope.bannerTitlePositionFinTop); // REMOVE
+            console.log('last scope in picSer GET', $scope); // REMOVE
+            // console.log('d a t a @d2748', data); // REMOVE
+            // $scope.bannerTitlePositionFin = data.bannerTitlePositionFin;
+        }
+    })
+
+    pictureService.getBannerTitlePosition('bannerTitlePositionRus').then(function (data) {/* bannerRus */
+        console.log('data in getBannerTitlePositionRus', data); // REMOVE
+        if (data === null) {/*  || data.picturePath === undefined */
+            // $scope.bannerTitleRus = ""; // @the moment it changes existing to ""
+            // console.log('data = ', data); // REMOVE
+            $scope.bannerTitlePositionTopRus = "";
+            $scope.bannerTitlePositionLeftRus = "";
+            console.log('$scope.bannerTitlePositionRusTop @null', $scope.bannerTitlePositionRusTop); // REMOVE
+        } else {
+            $scope.bannerTitlePositionTopRus = data.top;
+            $scope.bannerTitlePositionLeftRus = data.left;
+            // console.log('$scope.bannerTitlePositionRusTop @not null', $scope.bannerTitlePositionRusTop); // REMOVE
+            console.log('last scope in picSer GET', $scope); // REMOVE
+            // console.log('d a t a @d2748', data); // REMOVE
+            // $scope.bannerTitlePositionRus = data.bannerTitlePositionRus;
         }
     })
 
@@ -3044,6 +3205,8 @@ designViewController.controller('designViewController', function ($scope, pictur
                 // Make the DIV element draggable:
                 dragElement(document.getElementById("mydiv"));
                 dragElement(document.getElementById("mydivEng"));
+                dragElement(document.getElementById("mydivFin"));
+                dragElement(document.getElementById("mydivRus"));
 
                 function dragElement(elmnt) {
                     var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
@@ -3144,9 +3307,9 @@ designViewController.controller('designViewController', function ($scope, pictur
                             console.log('$scope.mydiv.top', $scope.mydiv.top); // REMOVE
                         }
 
-                        var titleDivH = document.querySelector('#mydiv').getBoundingClientRect();
-                        console.log('titleDivH', titleDivH); // REMOVE
-                        // console.log('elmnt.height', $(elmnt).height()); // REMOVE
+                        // var titleDivH = document.querySelector('#mydiv').getBoundingClientRect();
+                        // console.log('titleDivH', titleDivH); // REMOVE
+                        // // console.log('elmnt.height', $(elmnt).height()); // REMOVE
 
                     }
                 }
