@@ -2894,12 +2894,22 @@ designViewController.controller('designViewController', function ($scope, pictur
         }
     })
 
+    console.log('$SCOPE b4 Banner', $scope); // REMOVE
+
     /* Banners @admin */
     pictureService.getBannerPicture('bannerEst').then(function (data) {
         if (data === null || data.picturePath === undefined) {
             $scope.bannerPicturePathEst = "";
         } else {
             $scope.bannerPicturePathEst = data.picturePath;
+        }
+    })
+
+    pictureService.getBannerPicture('bannerEstMobile').then(function (data) {
+        if (data === null || data.picturePath === undefined) {
+            $scope.bannerPicturePathEstMobile = "";
+        } else {
+            $scope.bannerPicturePathEstMobile = data.picturePath;
         }
     })
 
@@ -2911,11 +2921,27 @@ designViewController.controller('designViewController', function ($scope, pictur
         }
     })
 
+    pictureService.getBannerPicture('bannerEngMobile').then(function (data) {
+        if (data === null || data.picturePath === undefined) {
+            $scope.bannerPicturePathEngMobile = "";
+        } else {
+            $scope.bannerPicturePathEngMobile = data.picturePath;
+        }
+    })
+
     pictureService.getBannerPicture('bannerFin').then(function (data) {
         if (data === null || data.picturePath === undefined) {
             $scope.bannerPicturePathFin = "";
         } else {
             $scope.bannerPicturePathFin = data.picturePath;
+        }
+    })
+
+    pictureService.getBannerPicture('bannerFinMobile').then(function (data) {
+        if (data === null || data.picturePath === undefined) {
+            $scope.bannerPicturePathFinMobile = "";
+        } else {
+            $scope.bannerPicturePathFinMobile = data.picturePath;
         }
     })
 
@@ -2926,6 +2952,15 @@ designViewController.controller('designViewController', function ($scope, pictur
             $scope.bannerPicturePathRus = data.picturePath;
         }
     })
+
+    pictureService.getBannerPicture('bannerRusMobile').then(function (data) {
+        if (data === null || data.picturePath === undefined) {
+            $scope.bannerPicturePathRusMobile = "";
+        } else {
+            $scope.bannerPicturePathRusMobile = data.picturePath;
+        }
+    })
+
 
 
     /* Get BannerTitle Position */
@@ -3042,15 +3077,31 @@ designViewController.controller('designViewController', function ($scope, pictur
             if (type === "bannerEst") {
                 $scope.bannerPicturePathEst = file;
             }
+            /* TODO - Mobile banner @admin preview */
+            // if (type === "bannerEstMobile") {
+            //     $scope.bannerPicturePathEst = file;
+            // }
             if (type === "bannerEng") {
                 $scope.bannerPicturePathEng = file;
             }
+            /* TODO - Mobile banner @admin preview */
+            // if (type === "bannerEngMobile") {
+            //     $scope.bannerPicturePathEng = file;
+            // }
             if (type === "bannerFin") {
                 $scope.bannerPicturePathFin = file;
             }
+            /* TODO - Mobile banner @admin preview */
+            // if (type === "bannerFinMobile") {
+            //     $scope.bannerPicturePathFin = file;
+            // }
             if (type === "bannerRus") {
                 $scope.bannerPicturePathRus = file;
             }
+            /* TODO - Mobile banner @admin preview */
+            // if (type === "bannerRusMobile") {
+            //     $scope.bannerPicturePathRus = file;
+            // }
             pictureService.addBannerPicture(type, file).then(function (data) {
                 elm.parentNode.style.backgroundImage = "url(" + data + ")";
             }, function (err) {
@@ -3306,11 +3357,6 @@ designViewController.controller('designViewController', function ($scope, pictur
                             $scope.mydiv.top = ((banner.height() - $(elmnt).height()) * 100) / banner.height();
                             console.log('$scope.mydiv.top', $scope.mydiv.top); // REMOVE
                         }
-
-                        // var titleDivH = document.querySelector('#mydiv').getBoundingClientRect();
-                        // console.log('titleDivH', titleDivH); // REMOVE
-                        // // console.log('elmnt.height', $(elmnt).height()); // REMOVE
-
                     }
                 }
             // }
