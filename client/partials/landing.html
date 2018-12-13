@@ -1,6 +1,35 @@
 <div ng-controller="sliderCtrl">
     <div class="sliderTest" ng-hide="slider">
-        <div class="banner-picture" ng-controller="bannerCtrl" style="background-image:url({{bannerPicture}})">
+        <div class="banner-picture" ng-controller="bannerCtrl" 
+        ng-style="windowWidth > 991 && {'background-image':'url(' + bannerPicture + ')'} || {'background-image': 'url(' + bannerPictureMobile + ')'}"
+        >
+        <!-- <pre>{{ bannerPictureMobile | json }}</pre>// REMOVE -->
+        <!-- ng-style="background-image:url({{bannerPicture}})" -->
+        
+        
+        
+        <!-- test div // REMOVE -->
+            <!-- <div class="bannertest"
+                    style="width: 400px; height: 400px; position: absolute; z-index: 10; top: 200px;"
+                    ng-style="windowWidth > 991 && {'background-color':'green'} || {'background-color': 'red'}"
+                    > -->
+
+                    <!-- ng-class="{largeWidth: windowWidth > 991, smallWidth: windowWidth < 991}" -->
+                    <!-- ng-class="windowWidth > 991  ? 'MORE' : 'LESS'" -->
+                        <!-- ng-style="{ 'background-color' : (windowWidth > 991) ? 'green' : 'red' }" -->
+                        <!-- ng-style="{'background-color': {true:'green',false:'red'}[$scope.windowWidth > 991]}" -->
+
+                    <!-- {{ background-color }}
+                    {{ windowWidth }}
+                </div> -->
+
+            <!-- ng-style="{ 'background-image' : (windowWidth > 991) ? 'url({{bannerPicture}})' : 'url({{bannerPictureMobile}})' }" -->
+
+
+            <!-- ng-style="{ 'width' : (myObject.value == 'ok') ? '100%' : '0%' }" -->
+            <!-- ng-style="{ width: myObject.value == 'ok' ? '100%' : '0%' }" -->
+            <!-- <div class="banner-picture" ng-controller="bannerCtrl" style="background-image:url({{bannerPictureMobile}})"> -->
+
             <div class="col-sm-6 col-xs-6 hidden-lg hidden-md" style="z-index:1;">
                 <img id="logo" style="height:47px;" src="css/img/logo.png" />
                 <div class="row">
