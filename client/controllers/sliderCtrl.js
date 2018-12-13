@@ -2,6 +2,18 @@ var sliderCtrl = angular.module('sliderCtrl', []);
 
 sliderCtrl.controller('sliderCtrl', function($location,$rootScope, $scope, landingTextService, pictureService, eventService, bookingService, emailService, $window){
 
+    // $scope.$watch('$window', function() {
+        // $(document).ready(function() {
+            $scope.windowWidth = $( window ).width();
+            console.log('$scope.windowWidth@@@sliderLOAD', $scope.windowWidth); // REMOVE
+        // });
+
+        // $(window).resize(function() {
+        //     $scope.windowWidth = $( window ).width();
+        //     console.log('$scope.windowWidth@@@slider', $scope.windowWidth); // REMOVE
+        // });
+    // })
+
     if($location.url() === "/"){
         $rootScope.lang = "ee";
         $rootScope.bookingModal = false;
@@ -60,6 +72,8 @@ sliderCtrl.controller('sliderCtrl', function($location,$rootScope, $scope, landi
             "_blank"
         );
     }
+
+
     // ESTONIAN LANDING TEXTS
 
     pictureService.getBannerTitlePosition('bannerTitlePositionEst').then(function (data) {/* bannerRus */
