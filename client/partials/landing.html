@@ -1,34 +1,7 @@
 <div ng-controller="sliderCtrl">
     <div class="sliderTest" ng-hide="slider">
-        <div class="banner-picture" ng-controller="bannerCtrl" 
-        ng-style="windowWidth > 991 && {'background-image':'url(' + bannerPicture + ')'} || {'background-image': 'url(' + bannerPictureMobile + ')'}"
-        >
-        <!-- <pre>{{ bannerPictureMobile | json }}</pre>// REMOVE -->
-        <!-- ng-style="background-image:url({{bannerPicture}})" -->
-        
-        
-        
-        <!-- test div // REMOVE -->
-            <!-- <div class="bannertest"
-                    style="width: 400px; height: 400px; position: absolute; z-index: 10; top: 200px;"
-                    ng-style="windowWidth > 991 && {'background-color':'green'} || {'background-color': 'red'}"
-                    > -->
-
-                    <!-- ng-class="{largeWidth: windowWidth > 991, smallWidth: windowWidth < 991}" -->
-                    <!-- ng-class="windowWidth > 991  ? 'MORE' : 'LESS'" -->
-                        <!-- ng-style="{ 'background-color' : (windowWidth > 991) ? 'green' : 'red' }" -->
-                        <!-- ng-style="{'background-color': {true:'green',false:'red'}[$scope.windowWidth > 991]}" -->
-
-                    <!-- {{ background-color }}
-                    {{ windowWidth }}
-                </div> -->
-
-            <!-- ng-style="{ 'background-image' : (windowWidth > 991) ? 'url({{bannerPicture}})' : 'url({{bannerPictureMobile}})' }" -->
-
-
-            <!-- ng-style="{ 'width' : (myObject.value == 'ok') ? '100%' : '0%' }" -->
-            <!-- ng-style="{ width: myObject.value == 'ok' ? '100%' : '0%' }" -->
-            <!-- <div class="banner-picture" ng-controller="bannerCtrl" style="background-image:url({{bannerPictureMobile}})"> -->
+        <div class="banner-picture" ng-controller="bannerCtrl"
+        ng-style="windowWidth > 991 && {'background-image':'url(' + bannerPicture + ')'} || {'background-image': 'url(' + bannerPictureMobile + ')'}">
 
             <div class="col-sm-6 col-xs-6 hidden-lg hidden-md" style="z-index:1;">
                 <img id="logo" style="height:47px;" src="css/img/logo.png" />
@@ -56,9 +29,6 @@
                     </p>
                 </div>
             </div>
-            <!-- <div class="mobilelogo">
-                <img id="mobilelogo" style="height:160px;" src="css/img/whiteguide.png" />
-            </div> -->
 
             <!-- @mobile -->
             <div class="hidden-md hidden-lg" ng-controller="modalDemoCtrl">
@@ -327,7 +297,7 @@
             </div>
 
             <!-- @mobile -->
-            <div class="visible-xs visible-sm hidden-md hidden-lg container" style="padding-top: 220px;">
+            <div class="visible-xs visible-sm hidden-md hidden-lg container pt-220">
                 <p class="event-name-banner" ng-if="$root.lang ==='ee' && bannerTitleEst != 'There is nothing yet inserted'">
                     {{bannerTitleEst}}
                 </p>
@@ -344,7 +314,7 @@
         </div>
         <div class="container">
             <div class="row" scroll-bookmark="about">
-                <div class="col-md-12" style="margin-top: 30px;" id="#About">
+                <div class="col-md-12 mt-30" id="#About">
                     <span class="landing-span-dark"></span>
                     <p ng-if="$root.lang === 'ee'" class="about-title">
                         <!-- Restoranist -->
@@ -370,7 +340,7 @@
                     </p>
                 </div> -->
             </div>
-            <div class="row" style="margin-top: 60px;">
+            <div class="row mt-60">
                 <div class="col-md-6">
                     <p ng-if="$root.lang ==='ee'" class="worker-section-title">
                         {{workerTitle}}
@@ -402,7 +372,7 @@
                     </p>
                 </div>
             </div>
-            <div class="row" style="margin-top: 75px;" ng-controller="workerCtrl">
+            <div class="row mt-75" ng-controller="workerCtrl">
                 <div ng-repeat="item in workers" ng-if="$root.lang ==='ee'" class="col-md-6">
                     <div class="worker-img-holder" style="background-image:url({{item.picture}})">
 
@@ -467,7 +437,7 @@
                 <div class="menu-bg" ng-controller="menuCtrl">
                     <div class="container">
                         <div class="row">
-                            <div class="col-md-12" style="margin-top: 60px;">
+                            <div class="col-md-12 mt-60">
                                 <span class="landing-span-light"></span>
                                 <p ng-if="$root.lang === 'ee'" class="menu-section-subtitle">
                                     <!-- Menüü -->
@@ -487,7 +457,7 @@
                                 </p>
                             </div>
                         </div>
-                        <div class="row" style="margin-top: 60px;">
+                        <div class="row mt-60">
                             <div class="col-md-6">
                                 <p ng-if="$root.lang ==='ee'" class="menu-section-title">
                                     {{menuTitle}}
@@ -538,7 +508,7 @@
                                 <p ng-if="starters.length === 0" class="empty-menu">
                                     There are currently no dishes in this menu
                                 </p>
-                                <table style="width:100%;">
+                                <table class="w-100">
                                     <tbody>
                                         <tr ng-repeat="item in starters">
                                             <td class="menu-padding">
@@ -853,7 +823,7 @@
                                 <!-- <p ng-if="kids.length === 0" class="empty-menu">
                                     There are currently no dishes in this menu
                                 </p> -->
-                                <table style="width:100%;">
+                                <table class="w-100">
                                     <tbody>
                                         <!-- Kids From DB -->
                                         <tr ng-repeat="item in kids">
@@ -930,7 +900,7 @@
                                 <p ng-if="maincourse.length === 0" class="empty-menu">
                                     There are currently no dishes in this menu
                                 </p>
-                                <table style="width:100%;">
+                                <table class="w-100">
                                     <tbody>
                                         <tr ng-repeat="item in maincourse">
                                             <td class="menu-padding">
@@ -999,7 +969,7 @@
                                 <p ng-if="dessert.length === 0" class="empty-menu">
                                     There are currently no dishes in this menu
                                 </p>
-                                <table style="width:100%;">
+                                <table class="w-100">
                                     <tbody>
                                         <tr ng-repeat="item in dessert">
                                             <td class="menu-padding">
@@ -1321,7 +1291,7 @@
                                 <p ng-if="kids.length === 0" class="empty-menu">
                                     There are currently no dishes in this menu
                                 </p>
-                                <table style="width:100%;">
+                                <table class="w-100">
                                     <tbody>
                                         <!-- Kids From DB -->
                                         <tr ng-repeat="item in kids">
@@ -1377,7 +1347,7 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-md-12" style="margin-top: 60px;">
+                            <div class="col-md-12 mt-60">
                                 <span class="landing-tasting-span">
                                 </span>
                                 <p ng-if="$root.lang ==='ee'" class="tasting-heading">
@@ -1447,25 +1417,25 @@
                     <div>
                         <div class="container" ng-hide="eventContainer">
                             <div class="row">
-                                <div ng-if="$root.lang==='en'" class="col-md-12" style="margin-top: 60px;">
+                                <div ng-if="$root.lang==='en'" class="col-md-12 mt-60">
                                     <span class="landing-span-dark"></span>
                                     <p style="    position: absolute;top: 0px;left: 90px;font-family: spaceMono;">
                                         Events
                                     </p>
                                 </div>
-                                <div ng-if="$root.lang==='ee'" class="col-md-12" style="margin-top: 60px;">
+                                <div ng-if="$root.lang==='ee'" class="col-md-12 mt-60">
                                     <span class="landing-span-dark"></span>
                                     <p style="    position: absolute;top: 0px;left: 90px;font-family: spaceMono;">
                                         Üritused
                                     </p>
                                 </div>
-                                <div ng-if="$root.lang==='fi'" class="col-md-12" style="margin-top: 60px;">
+                                <div ng-if="$root.lang==='fi'" class="col-md-12 mt-60">
                                     <span class="landing-span-dark"></span>
                                     <p style="    position: absolute;top: 0px;left: 90px;font-family: spaceMono;">
                                         Tapahtumat
                                     </p>
                                 </div>
-                                <div ng-if="$root.lang==='ru'" class="col-md-12" style="margin-top: 60px;">
+                                <div ng-if="$root.lang==='ru'" class="col-md-12 mt-60">
                                     <span class="landing-span-dark"></span>
                                     <p style="    position: absolute;top: 0px;left: 90px;font-family: Roboto;">
                                         Cобытия
@@ -1473,7 +1443,7 @@
                                 </div>
                             </div>
 
-                            <div class="row" style="padding-bottom: 100px; border-bottom: 1px solid #CCCCCC;">
+                            <div class="row pb-100 border-bottom-white">
                                 <div ng-controller="eventCtrl">
                                     <!--slickinit class is located in eventService.js-->
                                     <div class="slickinit">
@@ -1562,7 +1532,7 @@
                         <div class="modal-body">
                             <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span
                                     class="sr-only">Close</span></button>
-                            <img src="" class="imagepreview" style="width: 100%;">
+                            <img src="" class="imagepreview w-100">
                         </div>
                     </div>
                 </div>
@@ -1572,7 +1542,7 @@
     <div class="row" scroll-bookmark="contact">
         <div class="container">
             <div class="row">
-                <div class="col-md-12" style="margin-top: 60px;">
+                <div class="col-md-12 mt-60">
                     <span class="landing-span-dark"></span>
                     <p ng-if="$root.lang === 'ee'" class="contact-subtitle">
                         <!-- Kontakt -->
@@ -1620,19 +1590,19 @@
             </div>
         </div>
     </div>
-    <div class="row" style="margin-top: 75px">
-        <div class="col-md-6" style="margin:0; padding:0">
+    <div class="row mt-75">
+        <div class="col-md-6 m-0 p-0">
             <div class="mapPicture" style="background-image: url({{mapPicture}})">
 
             </div>
         </div>
-        <div class="col-md-6" style="margin:0; padding:0">
+        <div class="col-md-6 m-0 p-0">
             <div ng-controller="mapCtrl" ng-init="initMap()">
                 <div id="map" style="height: 400px;"></div>
             </div>
         </div>
     </div>
-    <div class="row" style="margin-top: 100px;">
+    <div class="row mt-100">
         <div class="container">
             <div class="col-md-3 contact-padding-mobile">
                 <p ng-if="$root.lang==='en'" class="contact-title">
@@ -1846,7 +1816,7 @@
                     <input style="font-family:Roboto;" ng-if="$root.lang==='ru'" type="text" class="feedback-form"
                         ng-model="$root.nameRus" placeholder="Полное имя" />
                 </div>
-                <div class="col-md-12" style="margin-top:20px;">
+                <div class="col-md-12 mt-20">
                     <textarea ng-if="$root.lang==='en'" class="feedback-form" ng-model="$root.messageEng" placeholder="Message"></textarea>
                     <textarea ng-if="$root.lang==='ee'" class="feedback-form" ng-model="$root.messageEst" placeholder="Sõnum"></textarea>
                     <textarea ng-if="$root.lang==='fi'" class="feedback-form" ng-model="$root.messageFin" placeholder="Viesti"></textarea>
@@ -2225,17 +2195,17 @@
                 <div class="container">
 
                     <p ng-click="openInfoModal()" class="add-info-btn" data-togglr="collapse" ng-if="$root.lang === 'en'">
-                        <i class="fa fa-plus" aria-hidden="true" style="margin-right: 10px;margin-top: 10px;"></i>Add
+                        <i class="fa fa-plus mr-10 mt-10" aria-hidden="true"></i>Add
                         additional info
                     </p>
                     <p ng-click="openInfoModal()" class="add-info-btn" ng-if="$root.lang === 'ee'">
-                        <i class="fa fa-plus" aria-hidden="true" style="margin-right: 10px;margin-top: 10px;"></i>Lisainfo
+                        <i class="fa fa-plus mr-10 mt-10" aria-hidden="true"></i>Lisainfo
                     </p>
                     <p ng-click="openInfoModal()" class="add-info-btn" ng-if="$root.lang === 'fi'">
-                        <i class="fa fa-plus" aria-hidden="true" style="margin-right: 10px;margin-top: 10px;"></i>Lisätietoja
+                        <i class="fa fa-plus mr-10 mt-10" aria-hidden="true"></i>Lisätietoja
                     </p>
                     <p ng-click="openInfoModal()" class="add-info-btn" ng-if="$root.lang === 'ru'" style="font-family: Roboto;">
-                        <i class="fa fa-plus" aria-hidden="true" style="margin-right: 10px;margin-top: 10px;"></i>Дополнительные
+                        <i class="fa fa-plus mr-10 mt-10" aria-hidden="true"></i>Дополнительные
                         сведения
                     </p>
                     <div class="col-md-12" style="color:white;font-family:spaceMono;">
