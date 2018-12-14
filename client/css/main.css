@@ -144,6 +144,13 @@ ul.nav > li > a:visited{
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=1 ); /* IE6-9 */
 }
 
+.admin-shadow {
+    height: 700px;
+    width: 100%;
+    position: absolute;
+    transform: translateY(-100%);
+}
+
 .admin-banner {
     height: 700px;
     width: 100%;
@@ -152,6 +159,18 @@ ul.nav > li > a:visited{
     background-size: cover;
     overflow: hidden;
     position: relative;
+}
+
+.admin-desktop-label {
+    bottom: 15px;
+    left: 15px;
+    position: fixed;
+}
+
+.admin-mobile-label {
+    bottom: 15px;
+    left: 80px;
+    position: fixed;
 }
 
 .fs-80 {
@@ -230,12 +249,14 @@ ul.nav > li > a:visited{
 .banner-menu-mockup{
     list-style: none;
     border-right: 1px solid white;
-    /* background-color: white; */
     border-left: 1px solid white;
     width: 280px;
     padding: 5px;
-    margin-left: 340px;
     margin-top: 10px;
+    z-index: 1;
+    position: absolute;
+    right: 250px;
+    margin-left: 0;
 }
 .mockup-btn{
 
@@ -391,6 +412,9 @@ a.editable-click{
     height: 60px;
     margin-top: 20px;
     cursor: default;
+    z-index: 1;
+    position: absolute;
+    left: 25px;
 }
 
 img.whiteguide {
@@ -401,6 +425,10 @@ img.whiteguide {
 .admin-whiteguide {
     height: auto;
     margin-top: 10px;
+    z-index: 1;
+    position: absolute;
+    top: 80px;
+    left: 25px;
 }
 
 /* Up to Tablet-max */
@@ -412,6 +440,9 @@ img.whiteguide {
     .admin-logo {
         width: 47px;
         height: 47px;
+        z-index: 1;
+        position: absolute;
+        left: 25px;
     }
 
     img.admin-whiteguide {
@@ -2169,6 +2200,24 @@ datepicker.backend-date > input{
     -moz-appearance: none;
 }
 
+/* Draggable title */
+#mydiv,
+#mydivEng,
+#mydivFin,
+#mydivRus {
+    position: absolute;
+    z-index: 1;
+    max-width: 65vw;
+}
+
+#mydivheader {
+    font-size: 55px;
+    cursor: move;
+    font-family: Play;
+    color: white;
+}
+
+/* Paddings */
 .pt-220 {
     padding-top: 220px;
 }
@@ -2181,12 +2230,17 @@ datepicker.backend-date > input{
     padding: 0;
 }
 
+/* Margins */
 .m-0 {
     margin:0;
 }
 
 .ml-0 {
     margin-left: 0;
+}
+
+.ml-10 {
+    margin-left: 10px;
 }
 
 .mr-10 {
@@ -2209,8 +2263,16 @@ datepicker.backend-date > input{
     margin-top:20px;
 }
 
+.mt-25 {
+    margin-top:25px;
+}
+
 .mt-30 {
     margin-top: 30px;
+}
+
+.mt-40 {
+    margin-top: 40px;
 }
 
 .mt-50 {
@@ -2229,11 +2291,57 @@ datepicker.backend-date > input{
     margin-top: 100px;
 }
 
+.mt-135 {
+    margin-top: 135px;
+}
+
+.mt-185 {
+    margin-top: 185px;
+}
+
+.mb-30 {
+    margin-bottom: 30px;
+}
+
+.mb-100 {
+    margin-bottom: 100px;
+}
+
+.m-40a {
+    margin: 40px auto;
+}
+
+/* Widths */
 .w-100 {
     width:100%;
 }
 
+.w-800 {
+    width: 800px;
+}
 
+/* Heights */
+.h-90 {
+    height: 90px;
+}
+
+
+/* Borders */
 .border-bottom-white {
     border-bottom: 1px solid #CCCCCC;
+}
+
+
+/* Misc */
+.l1-t4 {
+    left: 1px;
+    top: 4px;
+}
+
+.resize-y {
+    resize: vertical;
+}
+
+.m0-15 {
+    margin: 0 -15px;
 }

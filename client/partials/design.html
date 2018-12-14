@@ -28,22 +28,10 @@
     <div class="mt-50">
         <div class="admin-banner" ng-style="{'background-image': 'url(' + bannerPicturePathEst + ')'}">
             <div class="col-md-12">
-                <img class="admin-logo" src="css/img/logo.png"
-                    style="z-index: 1;
-                        position: absolute;
-                        left: 25px;" />
-                    <img class="admin-whiteguide" src="css/img/whiteguide.png"
-                        style="z-index: 1;
-                            position: absolute;
-                            top: 80px;
-                            left: 25px;" />
+                <img class="admin-logo" src="css/img/logo.png" />
+                <img class="admin-whiteguide" src="css/img/whiteguide.png" />
                 <div class="xs-hidden sm-hidden visible-md visible-lg">
-                    <ul style="list-style:none;
-                                z-index: 1;
-                                position: absolute;
-                                right: 250px;
-                                margin-left: 0;"
-                            class="banner-menu-mockup">
+                    <ul class="banner-menu-mockup">
                         <li class="mockup-menu"></li>
                         <li class="mockup-menu"></li>
                         <li class="mockup-menu"></li>
@@ -59,48 +47,31 @@
                     </li>
                 </ul>
             </div>
-            <div class="" id="mydiv" style="position: absolute;
-                                            z-index: 1;
-                                            max-width: 65vw;"
-                                            ng-style="{'top': bannerTitlePositionTopEst +'%', 'left': bannerTitlePositionLeftEst +'%'}">
-                <div id="mydivheader"
-                    style=" font-size: 55px;
-                            cursor: move;
-                            font-family: Play;
-                            color: white;">
+            <div class="" id="mydiv" ng-style="{'top': bannerTitlePositionTopEst +'%', 'left': bannerTitlePositionLeftEst +'%'}">
+                <div id="mydivheader">
                     {{ bannerTitleEst }}
                 </div>
             </div>
         </div>
-        <div class="shadow"
-            style="height: 700px;
-                    width: 100%;
-                    position: absolute;
-                    transform: translateY(-100%);">
+        <div class="shadow admin-shadow">
             <input type="file" name="file" id="fileBannerEst" class="inputfile" onchange="angular.element(this).scope().bannerPicChanged(this, 'bannerEst')" />
-            <label style="  bottom: 15px;
-                            left: 15px;
-                            position: fixed;"
-                    for="fileBannerEst">
-                    <i class="fa fa-laptop"></i>
-                <!-- <i class="fa fa-pencil" aria-hidden="true"></i> -->
+            <label class="admin-desktop-label" for="fileBannerEst">
+                <i class="fa fa-laptop"></i>
             </label>
 
             <!-- Mobile -->
             <input type="file" name="file" id="fileBannerEstMobile" class="inputfile" onchange="angular.element(this).scope().bannerPicChanged(this, 'bannerEstMobile')" />
-            <label style="  bottom: 15px;
-                            left: 80px;
-                            position: fixed;"
-                    for="fileBannerEstMobile">
-                <i class="glyphicon glyphicon-phone" style="left: 1px; top: 4px;"></i>
+            <label class="admin-mobile-label" for="fileBannerEstMobile">
+                <i class="glyphicon glyphicon-phone l1-t4"></i>
             </label>
         </div>
-        <div class="container" style="margin: 40px auto; width: 800px;">
+        <div class="container m-40a w-800">
             <!-- <div ng-controller="ExampleController"> -->
                 <form name="bannerTitleForm">
                     <div class="row">
                         <div class="col-md-11">
-                            <textarea type="text" rows=4 style="resize: both; height: 90px; width: 100%;"
+                            <textarea type="text" rows=4
+                                    class="h-90 w-100 resize-y"
                                     ng-model="bannerTitleEst"
                                     ng-initial
                                     name="editBannerTitleEst"
@@ -109,7 +80,7 @@
                             </textarea>
                         </div>
                         <div class="col-md-1">
-                            <button class="Btn" ng-click="insertBannerTitleEst()" style="margin: 0 -15px;"><i class="fa fa-check" aria-hidden="true"></i></button>
+                            <button class="Btn m0-15" ng-click="insertBannerTitleEst()"><i class="fa fa-check" aria-hidden="true"></i></button>
                         </div>
                     </div>
                 </form>
@@ -117,7 +88,7 @@
         </div>
 
         <div class="worker-area-mockup">
-            <div class="row" style="margin-top: 40px;">
+            <div class="row mt-40">
                 <!-- Est About Title -->
                 <div class="col-md-12">
                     <div>
@@ -129,24 +100,30 @@
                     </div>
                 </div>
             </div>
-            <div class="row" style="margin-top: 30px;">
+            <div class="row mt-30">
                 <div class="col-md-6">
                     <textarea class="TextArea" value="{{editWorkerTitle}}" type="text" ng-model="workerTitle"
-                        ng-initial msd-elastic></textarea>
-                    <button class="Btn" ng-click="insertWorkerTitle()"><i class="fa fa-check" aria-hidden="true"></i></button>
+                        ng-initial msd-elastic>
+                    </textarea>
+                    <button class="Btn" ng-click="insertWorkerTitle()">
+                        <i class="fa fa-check" aria-hidden="true"></i>
+                    </button>
                 </div>
                 <div class="col-md-6">
                     <textarea class="TextArea" value="{{editWorkerText}}" type="text" ng-model="workerText" ng-initial
-                        msd-elastic></textarea>
-                    <button class="Btn" ng-click="insertWorkerText()"><i class="fa fa-check" aria-hidden="true"></i></button>
+                        msd-elastic>
+                    </textarea>
+                    <button class="Btn" ng-click="insertWorkerText()">
+                        <i class="fa fa-check" aria-hidden="true"></i>
+                    </button>
                 </div>
             </div>
-            <div class="row" style="margin-top: 60px;">
+            <div class="row mt-60">
                 <div class="col-md-6">
                     <div class="worker-img-mockup"></div>
                     <div class="worker-name-mockup"></div>
                     <div class="worker-occupation-mockup"></div>
-                    <div class="worker-info-mockup" style="margin-top:25px;"></div>
+                    <div class="worker-info-mockup mt-25"></div>
                     <div class="worker-info-mockup"></div>
                     <div class="worker-info-mockup"></div>
                     <div class="worker-info-mockup"></div>
@@ -155,7 +132,7 @@
                     <div class="worker-img-mockup"></div>
                     <div class="worker-name-mockup"></div>
                     <div class="worker-occupation-mockup"></div>
-                    <div class="worker-info-mockup" style="margin-top:25px;"></div>
+                    <div class="worker-info-mockup mt-25"></div>
                     <div class="worker-info-mockup"></div>
                     <div class="worker-info-mockup"></div>
                     <div class="worker-info-mockup"></div>
@@ -166,7 +143,7 @@
     <div class="menu-area-mockup">
         <div class="row">
             <!-- Est Menu Section subTitle -->
-            <div class="col-md-12" style="margin-top: 40px;">
+            <div class="col-md-12 mt-40">
                 <div>
                     <span class="admin-tasting-span"></span>
                     <input value="{{ editMenuSectionSubTitleEst }}" type="text" ng-model="menuSectionSubTitleEst" ng-initial />
@@ -176,7 +153,7 @@
                 </div>
             </div>
         </div>
-        <div class="row" style="margin-top: 30px;">
+        <div class="row mt-30">
             <div class="col-md-6">
                 <textarea class="TextArea" value="{{editMenuTitle}}" type="text" ng-model="menuTitle" ng-initial
                     msd-elastic></textarea>
@@ -188,7 +165,7 @@
                 <button class="Btn" ng-click="insertMenuText()"><i class="fa fa-check" aria-hidden="true"></i></button>
             </div>
         </div>
-        <div class="col-md-6" style="margin-top: 50px;">
+        <div class="col-md-6 mt-50">
             <div class="menu-mockup">
                 <div class="menu-course-mockup">
                     <div>
@@ -212,9 +189,11 @@
             </div>
             <div class="menu-pic-second-mockup" style="background-image: url({{secondPicturePath}})">
                 <input type="file" name="file2" id="file2" class="inputfile" onchange="angular.element(this).scope().menuPicChanged(this, 'second')" />
-                <label style="margin-top: 115px;margin-left: 10px;" for="file2"><i class="fa fa-pencil" aria-hidden="true"></i></label>
+                <label class="mt-115 ml-10" for="file2">
+                    <i class="fa fa-pencil" aria-hidden="true"></i>
+                </label>
             </div>
-            <div class="menu-mockup" style="margin-top: 15px;">
+            <div class="menu-mockup mt-15">
                 <div class="menu-course-mockup">
                     <div>
                         <div>
@@ -235,7 +214,7 @@
                     <div class="menu-desc-mockup ml-0"></div>
                 </div>
             </div>
-            <div class="menu-mockup" style="margin-top: 15px;">
+            <div class="menu-mockup mt-15">
                 <div class="menu-course-mockup">
                     <div>
                         <div>
@@ -258,11 +237,13 @@
             </div>
         </div>
         <div class="col-md-6">
-            <div class="menu-pic-first-mockup" style="background-image:url({{firstPicturePath}}); margin-top: 100px;">
+            <div class="menu-pic-first-mockup mt-100" style="background-image:url({{firstPicturePath}});">
                 <input type="file" name="file2" id="file1" class="inputfile" onchange="angular.element(this).scope().menuPicChanged(this, 'first')" />
-                <label style="margin-top: 115px;margin-left: 10px;" for="file1"><i class="fa fa-pencil" aria-hidden="true"></i></label>
+                <label class="mt-115 ml-10" for="file1">
+                    <i class="fa fa-pencil" aria-hidden="true"></i>
+                </label>
             </div>
-            <div class="menu-mockup" style="margin-top: 15px;">
+            <div class="menu-mockup mt-15">
                 <div class="menu-course-mockup">
                     <div>
                         <div>
@@ -283,7 +264,7 @@
                     <div class="menu-desc-mockup ml-0"></div>
                 </div>
             </div>
-            <div class="menu-mockup" style="margin-top: 15px;">
+            <div class="menu-mockup mt-15">
                 <div class="menu-course-mockup">
                     <div>
                         <div>
@@ -307,7 +288,9 @@
             </div>
             <div class="menu-pic-third-mockup" style="background-image:url({{thirdPicturePath}});">
                 <input type="file" name="file2" id="file3" class="inputfile" onchange="angular.element(this).scope().menuPicChanged(this, 'third')" />
-                <label style="margin-top: 115px;margin-left: 10px;" for="file3"><i class="fa fa-pencil" aria-hidden="true"></i></label>
+                <label class="mt-115 ml-10" for="file3">
+                    <i class="fa fa-pencil" aria-hidden="true"></i>
+                </label>
             </div>
         </div>
         <div class="row">
@@ -321,14 +304,14 @@
                     </button>
                 </div>
             </div>
-            <div class="col-md-6" style="margin-top: 50px">
+            <div class="col-md-6 mt-50">
                 <textarea class="TextArea" value="{{editTastingText}}" type="text" ng-model="tastingText" ng-initial
                     msd-elastic></textarea>
                 <button class="Btn" ng-click="insertTastingText()"><i class="fa fa-check" aria-hidden="true"></i></button>
             </div>
 
             <!-- GroupMenu Button -->
-            <div class="col-md-6" style="margin-top: 40px;">
+            <div class="col-md-6 mt-40">
                 <div class="tasting-menu-btn-mockup">
                     <input class="buttonTextField" value="{{editGroupMenuButtonEst}}" type="text" ng-model="groupMenuButtonEst"
                         ng-initial />
@@ -340,7 +323,7 @@
         </div>
     </div>
     <div class="event-block-mockup">
-        <div class="row" style="margin-top: 50px;">
+        <div class="row mt-50">
             <div class="col-md-6">
                 <div class="event-title-mockup"></div>
                 <div class="event-date-mockup"></div>
@@ -351,15 +334,16 @@
             <div class="col-md-6">
                 <div class="event-pic-mockup" style="background-image:url({{eventPicturePathEst}});">
                     <input type="file" name="file2" id="fileEst" class="inputfile" onchange="angular.element(this).scope().menuPicChanged(this, 'eventEst')" />
-                    <label style="margin-top: 185px;margin-left: 10px;" for="fileEst"><i class="fa fa-pencil"
-                            aria-hidden="true"></i></label>
+                    <label class="mt-185 ml-10" for="fileEst">
+                        <i class="fa fa-pencil" aria-hidden="true"></i>
+                    </label>
                 </div>
             </div>
         </div>
 
         <div class="row">
             <!-- Est Contact Section subTitle -->
-            <div class="col-md-12" style="margin-top: 40px;">
+            <div class="col-md-12 mt-40">
                 <div>
                     <span class="admin-tasting-span bg-dark"></span>
                     <input value="{{ editContactSubTitleEst }}" type="text" ng-model="contactSubTitleEst" ng-initial />
@@ -379,17 +363,19 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-6" style="padding: 0; margin-top: 50px;">
+            <div class="col-md-6 p-0 mt-50">
                 <div class="map-picture" ng-style="{'background-image': 'url(' + mapPicturePath + ')'}"><!--  style="background-image: url({{mapPicturePath}})" -->
                     <input type="file" name="file2" id="file5" class="inputfile" onchange="angular.element(this).scope().mapPicChanged(this, 'map')" />
-                    <label style="margin-top: 135px;margin-left: 10px;" for="file5"><i class="fa fa-pencil" aria-hidden="true"></i></label>
+                    <label class="mt-135 ml-10" for="file5">
+                        <i class="fa fa-pencil" aria-hidden="true"></i>
+                    </label>
                 </div>
             </div>
-            <div class="col-md-6" style="padding: 0; margin-top: 50px;">
+            <div class="col-md-6 p-0 mt-50">
                 <div class="map-mockup"></div>
             </div>
         </div>
-        <div class="row" style="margin-top: 50px;margin-bottom: 100px;">
+        <div class="row mt-50 mb-100">
             <div class="col-md-6">
                 <div class="row">
 
@@ -437,7 +423,7 @@
                     <button class="timeBtn" ng-click="insertContactEmailEst()"><i class="fa fa-check" aria-hidden="true"></i></button>
                 </div>
             </div>
-            <div class="col-md-6" style="margin-bottom: 30px">
+            <div class="col-md-6 mb-30">
                 <div class="row">
                     <p class="contact-title-mockup">
                         Nädalavahetus:
@@ -463,23 +449,10 @@
     <div class="mt-50">
         <div class="admin-banner" ng-style="{'background-image': 'url(' + bannerPicturePathEng + ')'}">
             <div class="col-md-12">
-                <img class="admin-logo" src="css/img/logo.png"
-                    style="z-index: 1;
-                        position: absolute;
-                        left: 25px;" />
-                    <img class="admin-whiteguide" src="css/img/whiteguide.png"
-                        style="z-index: 1;
-                            position: absolute;
-                            top: 80px;
-                            left: 25px;" />
-
+                <img class="admin-logo" src="css/img/logo.png" />
+                <img class="admin-whiteguide" src="css/img/whiteguide.png" />
                 <div class="xs-hidden sm-hidden visible-md visible-lg">
-                    <ul style="list-style:none;
-                                z-index: 1;
-                                position: absolute;
-                                right: 250px;
-                                margin-left: 0;"
-                            class="banner-menu-mockup">
+                    <ul class="banner-menu-mockup">
                         <li class="mockup-menu"></li>
                         <li class="mockup-menu"></li>
                         <li class="mockup-menu"></li>
@@ -495,49 +468,31 @@
                     </li>
                 </ul>
             </div>
-            <div class="" id="mydivEng" style="position: absolute;
-                                            z-index: 1;
-                                            max-width: 65vw;"
-                                            ng-style="{'top': bannerTitlePositionTopEng +'%', 'left': bannerTitlePositionLeftEng +'%'}">
-                <div id="mydivheader"
-                    style="
-                    font-size: 55px;
-                    cursor: move;
-                    font-family: Play;
-                    color: white;">
+            <div class="" id="mydivEng" ng-style="{'top': bannerTitlePositionTopEng +'%', 'left': bannerTitlePositionLeftEng +'%'}">
+                <div id="mydivheader">
                     {{ bannerTitleEng }}
                 </div>
             </div>
         </div>
 
-        <div class="shadow"
-            style="height: 700px;
-                    width: 100%;
-                    position: absolute;
-                    transform: translateY(-100%);">
+        <div class="shadow admin-shadow">
             <input type="file" name="file" id="fileBannerEng" class="inputfile" onchange="angular.element(this).scope().bannerPicChanged(this, 'bannerEng')" />
-            <label style="  bottom: 15px;
-                            left: 15px;
-                            position: fixed;"
-                    for="fileBannerEng">
-                    <i class="fa fa-laptop"></i>
-                <!-- <i class="fa fa-pencil" aria-hidden="true"></i> -->
+            <label class="admin-desktop-label" for="fileBannerEng">
+                <i class="fa fa-laptop"></i>
             </label>
 
             <!-- Mobile -->
             <input type="file" name="file" id="fileBannerEngMobile" class="inputfile" onchange="angular.element(this).scope().bannerPicChanged(this, 'bannerEngMobile')" />
-            <label style="  bottom: 15px;
-                            left: 80px;
-                            position: fixed;"
-                    for="fileBannerEngMobile">
-                <i class="glyphicon glyphicon-phone" style="left: 1px; top: 4px;"></i>
+            <label class="admin-mobile-label" for="fileBannerEngMobile">
+                <i class="glyphicon glyphicon-phone l1-t4"></i>
             </label>
         </div>
-        <div class="container" style="margin: 40px auto; width: 800px;">
+        <div class="container m-40a w-800">
                 <form name="bannerTitleForm">
                     <div class="row">
                         <div class="col-md-11">
-                            <textarea type="text" rows=4 style="resize: both; height: 90px; width: 100%;"
+                            <textarea type="text" rows=4
+                                    class="h-90 w-100 resize-y"
                                     ng-model="bannerTitleEng"
                                     ng-initial
                                     name="editBannerTitleEng"
@@ -546,7 +501,7 @@
                             </textarea>
                         </div>
                         <div class="col-md-1">
-                            <button class="Btn" ng-click="insertBannerTitleEng()" style="margin: 0 -15px;"><i class="fa fa-check" aria-hidden="true"></i></button>
+                            <button class="Btn m0-15" ng-click="insertBannerTitleEng()"><i class="fa fa-check" aria-hidden="true"></i></button>
                         </div>
                     </div>
                 </form>
@@ -554,7 +509,7 @@
 
 
         <div class="worker-area-mockup">
-            <div class="row" style="margin-top: 40px;">
+            <div class="row mt-40">
                 <!-- Eng About Title -->
                 <div class="col-md-12">
                     <div>
@@ -566,7 +521,7 @@
                     </div>
                 </div>
             </div>
-            <div class="row" style="margin-top: 30px;">
+            <div class="row mt-30">
                 <div class="col-md-6">
                     <textarea class="TextArea" value="{{editWorkerTitleEng}}" type="text" ng-model="workerTitleEng"
                         ng-initial msd-elastic></textarea>
@@ -578,12 +533,12 @@
                     <button class="Btn" ng-click="insertWorkerTextEng()"><i class="fa fa-check" aria-hidden="true"></i></button>
                 </div>
             </div>
-            <div class="row" style="margin-top: 60px;">
+            <div class="row mt-60">
                 <div class="col-md-6">
                     <div class="worker-img-mockup"></div>
                     <div class="worker-name-mockup"></div>
                     <div class="worker-occupation-mockup"></div>
-                    <div class="worker-info-mockup" style="margin-top:25px;"></div>
+                    <div class="worker-info-mockup mt-25"></div>
                     <div class="worker-info-mockup"></div>
                     <div class="worker-info-mockup"></div>
                     <div class="worker-info-mockup"></div>
@@ -592,7 +547,7 @@
                     <div class="worker-img-mockup"></div>
                     <div class="worker-name-mockup"></div>
                     <div class="worker-occupation-mockup"></div>
-                    <div class="worker-info-mockup" style="margin-top:25px;"></div>
+                    <div class="worker-info-mockup mt-25"></div>
                     <div class="worker-info-mockup"></div>
                     <div class="worker-info-mockup"></div>
                     <div class="worker-info-mockup"></div>
@@ -603,7 +558,7 @@
     <div class="menu-area-mockup">
         <div class="row">
             <!-- Eng Menu Section subTitle -->
-            <div class="col-md-12" style="margin-top: 40px;">
+            <div class="col-md-12 mt-40">
                 <div>
                     <span class="admin-tasting-span"></span>
                     <input value="{{ editMenuSectionSubTitleEng }}" type="text" ng-model="menuSectionSubTitleEng" ng-initial />
@@ -613,7 +568,7 @@
                 </div>
             </div>
         </div>
-        <div class="row" style="margin-top: 30px;">
+        <div class="row mt-30">
             <div class="col-md-6">
                 <textarea class="TextArea" value="{{editMenuTitleEng}}" type="text" ng-model="menuTitleEng" ng-initial
                     msd-elastic></textarea>
@@ -626,7 +581,7 @@
             </div>
 
         </div>
-        <div class="col-md-6" style="margin-top: 50px;">
+        <div class="col-md-6 mt-50">
             <div class="menu-mockup">
                 <div class="menu-course-mockup">
                     <div>
@@ -650,9 +605,11 @@
             </div>
             <div class="menu-pic-second-mockup" style="background-image: url({{secondPicturePath}})">
                 <input type="file" name="file2" id="file2" class="inputfile" onchange="angular.element(this).scope().menuPicChanged(this, 'second')" />
-                <label style="margin-top: 115px;margin-left: 10px;" for="file2"><i class="fa fa-pencil" aria-hidden="true"></i></label>
+                <label class="mt-115 ml-10" for="file2">
+                    <i class="fa fa-pencil" aria-hidden="true"></i>
+                </label>
             </div>
-            <div class="menu-mockup" style="margin-top: 15px;">
+            <div class="menu-mockup mt-15">
                 <div class="menu-course-mockup">
                     <div>
                         <div>
@@ -673,7 +630,7 @@
                     <div class="menu-desc-mockup ml-0"></div>
                 </div>
             </div>
-            <div class="menu-mockup" style="margin-top: 15px;">
+            <div class="menu-mockup mt-15">
                 <div class="menu-course-mockup">
                     <div>
                         <div>
@@ -696,11 +653,13 @@
             </div>
         </div>
         <div class="col-md-6">
-            <div class="menu-pic-first-mockup" style="background-image:url({{firstPicturePath}}); margin-top: 100px;">
+            <div class="menu-pic-first-mockup mt-100" style="background-image:url({{firstPicturePath}});">
                 <input type="file" name="file2" id="file1" class="inputfile" onchange="angular.element(this).scope().menuPicChanged(this, 'first')" />
-                <label style="margin-top: 115px;margin-left: 10px;" for="file1"><i class="fa fa-pencil" aria-hidden="true"></i></label>
+                <label class="mt-115 ml-10" for="file1">
+                    <i class="fa fa-pencil" aria-hidden="true"></i>
+                </label>
             </div>
-            <div class="menu-mockup" style="margin-top: 15px;">
+            <div class="menu-mockup mt-15">
                 <div class="menu-course-mockup">
                     <div>
                         <div>
@@ -722,7 +681,7 @@
                     <div class="menu-desc-mockup ml-0"></div>
                 </div>
             </div>
-            <div class="menu-mockup" style="margin-top: 15px;">
+            <div class="menu-mockup mt-15">
                 <div class="menu-course-mockup">
                     <div>
                         <div>
@@ -745,7 +704,9 @@
             </div>
             <div class="menu-pic-third-mockup" style="background-image:url({{thirdPicturePath}});">
                 <input type="file" name="file2" id="file3" class="inputfile" onchange="angular.element(this).scope().menuPicChanged(this, 'third')" />
-                <label style="margin-top: 115px;margin-left: 10px;" for="file3"><i class="fa fa-pencil" aria-hidden="true"></i></label>
+                <label class="mt-115 ml-10" for="file3">
+                    <i class="fa fa-pencil" aria-hidden="true"></i>
+                </label>
             </div>
         </div>
         <div class="row">
@@ -759,14 +720,14 @@
                     </button>
                 </div>
             </div>
-            <div class="col-md-6" style="margin-top: 50px">
+            <div class="col-md-6 mt-50">
                 <textarea class="TextArea" value="{{editTastingTextEng}}" type="text" ng-model="tastingTextEng"
                     ng-initial msd-elastic></textarea>
                 <button class="Btn" ng-click="insertTastingTextEng()"><i class="fa fa-check" aria-hidden="true"></i></button>
             </div>
 
             <!-- GroupMenu Button -->
-            <div class="col-md-6" style="margin-top: 40px;">
+            <div class="col-md-6 mt-40">
                 <div class="tasting-menu-btn-mockup">
                     <input class="buttonTextField" value="{{editGroupMenuButtonEng}}" type="text" ng-model="groupMenuButtonEng"
                         ng-initial />
@@ -790,7 +751,7 @@
             <div class="col-md-6">
                 <div class="event-pic-mockup" style="background-image:url({{eventPicturePathEng}});">
                     <input type="file" name="file2" id="fileEng" class="inputfile" onchange="angular.element(this).scope().menuPicChanged(this, 'eventEng')" />
-                    <label style="margin-top: 185px;margin-left: 10px;" for="fileEng"><i class="fa fa-pencil"
+                    <label class="mt-185 ml-10" for="fileEng"><i class="fa fa-pencil"
                             aria-hidden="true"></i></label>
                 </div>
             </div>
@@ -798,7 +759,7 @@
 
         <div class="row">
             <!-- Eng Contact Section subTitle -->
-            <div class="col-md-12" style="margin-top: 40px;">
+            <div class="col-md-12 mt-40">
                 <div>
                     <span class="admin-tasting-span bg-dark"></span>
                     <input value="{{ editContactSubTitleEng }}" type="text" ng-model="contactSubTitleEng" ng-initial />
@@ -819,18 +780,17 @@
         </div>
 
         <div class="row">
-            <div class="col-md-6" style="padding: 0; margin-top: 50px;">
+            <div class="col-md-6 p-0 mt-50">
                 <div class="map-picture" ng-style="{'background-image': 'url(' + mapPicturePath + ')'}"><!--  style="background-image: url({{mapPicturePath}})" -->
                     <input type="file" name="file2" id="file5" class="inputfile" onchange="angular.element(this).scope().mapPicChanged(this, 'map')" />
-                    <label style="margin-top: 135px;margin-left: 10px;" for="file5"><i class="fa fa-pencil" aria-hidden="true"></i></label>
+                    <label class="mt-135 ml-10" for="file5"><i class="fa fa-pencil" aria-hidden="true"></i></label>
                 </div>
             </div>
-            <div class="col-md-6" style="padding: 0; margin-top: 50px;">
+            <div class="col-md-6 p-0 mt-50">
                 <div class="map-mockup"></div>
             </div>
         </div>
-        <div class="row" style="margin-top: 50px;margin-bottom: 100px;">
-
+        <div class="row mt-50 mb-100">
             <div class="col-md-6">
                 <div class="row">
 
@@ -876,7 +836,7 @@
                     <button class="timeBtn" ng-click="insertContactEmailEng()"><i class="fa fa-check" aria-hidden="true"></i></button>
                 </div>
             </div>
-            <div class="col-md-6" style="margin-bottom: 30px">
+            <div class="col-md-6 mb-30">
                 <div class="row">
                     <p class="contact-title-mockup">
                         Nädalavahetus:
@@ -902,22 +862,10 @@
     <div class="mt-50">
         <div class="admin-banner" ng-style="{'background-image': 'url(' + bannerPicturePathFin + ')'}">
             <div class="col-md-12">
-                <img class="admin-logo" src="css/img/logo.png"
-                    style="z-index: 1;
-                        position: absolute;
-                        left: 25px;" />
-                <img class="admin-whiteguide" src="css/img/whiteguide.png"
-                        style="z-index: 1;
-                            position: absolute;
-                            top: 80px;
-                            left: 25px;" />
+                <img class="admin-logo" src="css/img/logo.png" />
+                <img class="admin-whiteguide" src="css/img/whiteguide.png" />
                 <div class="xs-hidden sm-hidden visible-md visible-lg">
-                    <ul style="list-style:none;
-                                z-index: 1;
-                                position: absolute;
-                                right: 250px;
-                                margin-left: 0;"
-                            class="banner-menu-mockup">
+                    <ul class="banner-menu-mockup">
                         <li class="mockup-menu"></li>
                         <li class="mockup-menu"></li>
                         <li class="mockup-menu"></li>
@@ -933,51 +881,33 @@
                     </li>
                 </ul>
             </div>
-            <div class="" id="mydivFin" style="position: absolute;
-                                            z-index: 1;
-                                            max-width: 65vw;"
-                                            ng-style="{'top': bannerTitlePositionTopFin +'%', 'left': bannerTitlePositionLeftFin +'%'}">
-                <div id="mydivheader"
-                    style="
-                    font-size: 55px;
-                    cursor: move;
-                    font-family: Play;
-                    color: white;">
+            <div class="" id="mydivFin" ng-style="{'top': bannerTitlePositionTopFin +'%', 'left': bannerTitlePositionLeftFin +'%'}">
+                <div id="mydivheader">
                     {{ bannerTitleFin }}
                 </div>
             </div>
         </div>
 
-        <div class="shadow"
-            style="height: 700px;
-                    width: 100%;
-                    position: absolute;
-                    transform: translateY(-100%);">
+        <div class="shadow admin-shadow">
             <input type="file" name="file" id="fileBannerFin" class="inputfile" onchange="angular.element(this).scope().bannerPicChanged(this, 'bannerFin')" />
-            <label style="  bottom: 15px;
-                            left: 15px;
-                            position: fixed;"
-                    for="fileBannerFin">
-                    <i class="fa fa-laptop"></i>
-                <!-- <i class="fa fa-pencil" aria-hidden="true"></i> -->
+            <label class="admin-desktop-label" for="fileBannerFin">
+                <i class="fa fa-laptop"></i>
             </label>
 
             <!-- Mobile -->
             <input type="file" name="file" id="fileBannerFinMobile" class="inputfile" onchange="angular.element(this).scope().bannerPicChanged(this, 'bannerFinMobile')" />
-            <label style="  bottom: 15px;
-                            left: 80px;
-                            position: fixed;"
-                    for="fileBannerFinMobile">
-                <i class="glyphicon glyphicon-phone" style="left: 1px; top: 4px;"></i>
+            <label class="admin-mobile-label" for="fileBannerFinMobile">
+                <i class="glyphicon glyphicon-phone l1-t4"></i>
             </label>
         </div>
-        <div class="container" style="margin: 40px auto; width: 800px;">
+        <div class="container m-40a w-800">
             <!-- <div ng-controller="ExampleController"> -->
                 <form name="bannerTitleForm">
                     <div class="row">
                         <div class="col-md-11">
 
-                            <textarea type="text" rows=4 style="resize: both; height: 90px; width: 100%;"
+                            <textarea type="text" rows=4
+                                    class="h-90 w-100 resize-y"
                                     ng-model="bannerTitleFin"
                                     ng-initial
                                     name="editBannerTitleFin"
@@ -986,7 +916,7 @@
                             </textarea>
                         </div>
                         <div class="col-md-1">
-                            <button class="Btn" ng-click="insertBannerTitleFin()" style="margin: 0 -15px;"><i class="fa fa-check" aria-hidden="true"></i></button>
+                            <button class="Btn m0-15" ng-click="insertBannerTitleFin()"><i class="fa fa-check" aria-hidden="true"></i></button>
                         </div>
                     </div>
                 </form>
@@ -995,7 +925,7 @@
 
 
         <div class="worker-area-mockup">
-            <div class="row" style="margin-top: 40px;">
+            <div class="row mt-40">
             <!-- Fin About Title -->
             <div class="col-md-12">
                     <div>
@@ -1007,7 +937,7 @@
                     </div>
                 </div>
             </div>
-            <div class="row" style="margin-top: 30px;">
+            <div class="row mt-30">
                 <div class="col-md-6">
                     <textarea class="TextArea" value="{{editWorkerTitleFin}}" type="text" ng-model="workerTitleFin"
                         ng-initial msd-elastic></textarea>
@@ -1019,12 +949,12 @@
                     <button class="Btn" ng-click="insertWorkerTextFin()"><i class="fa fa-check" aria-hidden="true"></i></button>
                 </div>
             </div>
-            <div class="row" style="margin-top: 60px;">
+            <div class="row mt-60">
                 <div class="col-md-6">
                     <div class="worker-img-mockup"></div>
                     <div class="worker-name-mockup"></div>
                     <div class="worker-occupation-mockup"></div>
-                    <div class="worker-info-mockup" style="margin-top:25px;"></div>
+                    <div class="worker-info-mockup mt-25"></div>
                     <div class="worker-info-mockup"></div>
                     <div class="worker-info-mockup"></div>
                     <div class="worker-info-mockup"></div>
@@ -1033,7 +963,7 @@
                     <div class="worker-img-mockup"></div>
                     <div class="worker-name-mockup"></div>
                     <div class="worker-occupation-mockup"></div>
-                    <div class="worker-info-mockup" style="margin-top:25px;"></div>
+                    <div class="worker-info-mockup mt-25"></div>
                     <div class="worker-info-mockup"></div>
                     <div class="worker-info-mockup"></div>
                     <div class="worker-info-mockup"></div>
@@ -1044,7 +974,7 @@
     <div class="menu-area-mockup">
         <div class="row">
             <!-- Fin Menu Section subTitle -->
-            <div class="col-md-12" style="margin-top: 40px;">
+            <div class="col-md-12 mt-40">
                 <div>
                     <span class="admin-tasting-span"></span>
                     <input value="{{ editMenuSectionSubTitleFin }}" type="text" ng-model="menuSectionSubTitleFin" ng-initial />
@@ -1054,7 +984,7 @@
                 </div>
             </div>
         </div>
-        <div class="row" style="margin-top: 30px;">
+        <div class="row mt-30">
             <div class="col-md-6">
                 <textarea class="TextArea" value="{{editMenuTitleFin}}" type="text" ng-model="menuTitleFin" ng-initial
                     msd-elastic></textarea>
@@ -1066,7 +996,7 @@
                 <button class="Btn" ng-click="insertMenuTextFin()"><i class="fa fa-check" aria-hidden="true"></i></button>
             </div>
         </div>
-        <div class="col-md-6" style="margin-top: 50px;">
+        <div class="col-md-6 mt-50">
             <div class="menu-mockup">
                 <div class="menu-course-mockup">
                     <div>
@@ -1090,9 +1020,11 @@
             </div>
             <div class="menu-pic-second-mockup" style="background-image: url({{secondPicturePath}})">
                 <input type="file" name="file2" id="file2" class="inputfile" onchange="angular.element(this).scope().menuPicChanged(this, 'second')" />
-                <label style="margin-top: 115px;margin-left: 10px;" for="file2"><i class="fa fa-pencil" aria-hidden="true"></i></label>
+                <label class="mt-115 ml-10" for="file2">
+                    <i class="fa fa-pencil" aria-hidden="true"></i>
+                </label>
             </div>
-            <div class="menu-mockup" style="margin-top: 15px;">
+            <div class="menu-mockup mt-15">
                 <div class="menu-course-mockup">
                     <div>
                         <div>
@@ -1113,7 +1045,7 @@
                     <div class="menu-desc-mockup ml-0"></div>
                 </div>
             </div>
-            <div class="menu-mockup" style="margin-top: 15px;">
+            <div class="menu-mockup mt-15">
                 <div class="menu-course-mockup">
                     <div>
                         <div>
@@ -1136,11 +1068,13 @@
             </div>
         </div>
         <div class="col-md-6">
-            <div class="menu-pic-first-mockup" style="background-image:url({{firstPicturePath}}); margin-top: 100px;">
+            <div class="menu-pic-first-mockup mt-100" style="background-image:url({{firstPicturePath}});">
                 <input type="file" name="file2" id="file1" class="inputfile" onchange="angular.element(this).scope().menuPicChanged(this, 'first')" />
-                <label style="margin-top: 115px;margin-left: 10px;" for="file1"><i class="fa fa-pencil" aria-hidden="true"></i></label>
+                <label class="mt-115 ml-10" for="file1">
+                    <i class="fa fa-pencil" aria-hidden="true"></i>
+                </label>
             </div>
-            <div class="menu-mockup" style="margin-top: 15px;">
+            <div class="menu-mockup mt-15">
                 <div class="menu-course-mockup">
                     <div>
                         <div>
@@ -1162,7 +1096,7 @@
                     <div class="menu-desc-mockup ml-0"></div>
                 </div>
             </div>
-            <div class="menu-mockup" style="margin-top: 15px;">
+            <div class="menu-mockup mt-15">
                 <div class="menu-course-mockup">
                     <div>
                         <div>
@@ -1185,7 +1119,9 @@
             </div>
             <div class="menu-pic-third-mockup" style="background-image:url({{thirdPicturePath}});">
                 <input type="file" name="file2" id="file3" class="inputfile" onchange="angular.element(this).scope().menuPicChanged(this, 'third')" />
-                <label style="margin-top: 115px;margin-left: 10px;" for="file3"><i class="fa fa-pencil" aria-hidden="true"></i></label>
+                <label class="mt-115 ml-10" for="file3">
+                    <i class="fa fa-pencil" aria-hidden="true"></i>
+                </label>
             </div>
         </div>
         <div class="row">
@@ -1199,14 +1135,14 @@
                     </button>
                 </div>
             </div>
-            <div class="col-md-6" style="margin-top: 50px">
+            <div class="col-md-6 mt-50">
                 <textarea class="TextArea" value="{{editTastingTextFin}}" type="text" ng-model="tastingTextFin"
                     ng-initial msd-elastic></textarea>
                 <button class="Btn" ng-click="insertTastingTextFin()"><i class="fa fa-check" aria-hidden="true"></i></button>
             </div>
 
             <!-- GroupMenu Button -->
-            <div class="col-md-6" style="margin-top: 40px;">
+            <div class="col-md-6 mt-40">
                 <div class="tasting-menu-btn-mockup">
                     <input class="buttonTextField" value="{{editGroupMenuButtonFin}}" type="text" ng-model="groupMenuButtonFin"
                         ng-initial />
@@ -1219,7 +1155,7 @@
     </div>
 
     <div class="event-block-mockup">
-        <div class="row" style="margin-top: 50px;">
+        <div class="row mt-50">
             <div class="col-md-6">
                 <div class="event-title-mockup"></div>
                 <div class="event-date-mockup"></div>
@@ -1231,7 +1167,7 @@
             <div class="col-md-6">
                 <div class="event-pic-mockup" style="background-image:url({{eventPicturePathFin}});">
                     <input type="file" name="file2" id="fileFin" class="inputfile" onchange="angular.element(this).scope().menuPicChanged(this, 'eventFin')" />
-                    <label style="margin-top: 185px;margin-left: 10px;" for="fileFin"><i class="fa fa-pencil"
+                    <label class="mt-185 ml-10" for="fileFin"><i class="fa fa-pencil"
                             aria-hidden="true"></i></label>
                 </div>
             </div>
@@ -1239,7 +1175,7 @@
 
         <div class="row">
             <!-- Fin Contact Section subTitle -->
-            <div class="col-md-12" style="margin-top: 40px;">
+            <div class="col-md-12 mt-40">
                 <div>
                     <span class="admin-tasting-span bg-dark"></span>
                     <input value="{{ editContactSubTitleFin }}" type="text" ng-model="contactSubTitleFin" ng-initial />
@@ -1260,17 +1196,17 @@
         </div>
 
         <div class="row">
-            <div class="col-md-6" style="padding: 0; margin-top: 50px;">
+            <div class="col-md-6 p-0 mt-50">
                 <div class="map-picture" ng-style="{'background-image': 'url(' + mapPicturePath + ')'}"><!--  style="background-image: url({{mapPicturePath}})" -->
                     <input type="file" name="file2" id="file5" class="inputfile" onchange="angular.element(this).scope().mapPicChanged(this, 'map')" />
-                    <label style="margin-top: 135px;margin-left: 10px;" for="file5"><i class="fa fa-pencil" aria-hidden="true"></i></label>
+                    <label class="mt-135 ml-10" for="file5"><i class="fa fa-pencil" aria-hidden="true"></i></label>
                 </div>
             </div>
-            <div class="col-md-6" style="padding: 0; margin-top: 50px;">
+            <div class="col-md-6 p-0 mt-50">
                 <div class="map-mockup"></div>
             </div>
         </div>
-        <div class="row" style="margin-top: 50px;margin-bottom: 100px;">
+        <div class="row mt-50 mb-100">
             <div class="col-md-6">
                 <div class="row">
 
@@ -1317,7 +1253,7 @@
                     <button class="timeBtn" ng-click="insertContactEmailFin()"><i class="fa fa-check" aria-hidden="true"></i></button>
                 </div>
             </div>
-            <div class="col-md-6" style="margin-bottom: 30px">
+            <div class="col-md-6 mb-30">
                 <div class="row">
                     <p class="contact-title-mockup">
                         Nädalavahetus:
@@ -1343,23 +1279,10 @@
     <div class="mt-50">
         <div class="admin-banner" ng-style="{'background-image': 'url(' + bannerPicturePathRus + ')'}">
             <div class="col-md-12">
-                <img class="admin-logo" src="css/img/logo.png"
-                    style="z-index: 1;
-                        position: absolute;
-                        left: 25px;" />
-                    <img class="admin-whiteguide" src="css/img/whiteguide.png"
-                        style="z-index: 1;
-                            position: absolute;
-                            top: 80px;
-                            left: 25px;" />
-
+                <img class="admin-logo" src="css/img/logo.png" />
+                <img class="admin-whiteguide" src="css/img/whiteguide.png" />
                 <div class="xs-hidden sm-hidden visible-md visible-lg">
-                    <ul style="list-style:none;
-                                z-index: 1;
-                                position: absolute;
-                                right: 250px;
-                                margin-left: 0;"
-                            class="banner-menu-mockup">
+                    <ul class="banner-menu-mockup">
                         <li class="mockup-menu"></li>
                         <li class="mockup-menu"></li>
                         <li class="mockup-menu"></li>
@@ -1375,50 +1298,32 @@
                     </li>
                 </ul>
             </div>
-            <div class="" id="mydivRus" style="position: absolute;
-                                            z-index: 1;
-                                            max-width: 65vw;"
-                                            ng-style="{'top': bannerTitlePositionTopRus +'%', 'left': bannerTitlePositionLeftRus +'%'}">
-                <div id="mydivheader"
-                    style="
-                    font-size: 55px;
-                    cursor: move;
-                    font-family: Play;
-                    color: white;">
+            <div class="" id="mydivRus" ng-style="{'top': bannerTitlePositionTopRus +'%', 'left': bannerTitlePositionLeftRus +'%'}">
+                <div id="mydivheader">
                     {{ bannerTitleRus }}
                 </div>
             </div>
         </div>
 
-        <div class="shadow"
-            style="height: 700px;
-                    width: 100%;
-                    position: absolute;
-                    transform: translateY(-100%);">
+        <div class="shadow admin-shadow">
             <input type="file" name="file" id="fileBannerRus" class="inputfile" onchange="angular.element(this).scope().bannerPicChanged(this, 'bannerRus')" />
-            <label style="  bottom: 15px;
-                            left: 15px;
-                            position: fixed;"
-                    for="fileBannerRus">
-                    <i class="fa fa-laptop"></i>
-                <!-- <i class="fa fa-pencil" aria-hidden="true"></i> -->
+            <label class="admin-desktop-label" for="fileBannerRus">
+                <i class="fa fa-laptop"></i>
             </label>
 
             <!-- Mobile -->
             <input type="file" name="file" id="fileBannerRusMobile" class="inputfile" onchange="angular.element(this).scope().bannerPicChanged(this, 'bannerRusMobile')" />
-            <label style="  bottom: 15px;
-                            left: 80px;
-                            position: fixed;"
-                    for="fileBannerRusMobile">
-                <i class="glyphicon glyphicon-phone" style="left: 1px; top: 4px;"></i>
+            <label class="admin-mobile-label" for="fileBannerRusMobile">
+                <i class="glyphicon glyphicon-phone l1-t4"></i>
             </label>
         </div>
-        <div class="container" style="margin: 40px auto; width: 800px;">
+        <div class="container m-40a w-800">
             <form name="bannerTitleForm">
                 <div class="row">
                     <div class="col-md-11">
 
-                        <textarea type="text" rows=4 style="resize: both; height: 90px; width: 100%;"
+                        <textarea type="text" rows=4
+                                class="h-90 w-100 resize-y"
                                 ng-model="bannerTitleRus"
                                 ng-initial
                                 name="editBannerTitleRus"
@@ -1427,14 +1332,14 @@
                         </textarea>
                     </div>
                     <div class="col-md-1">
-                        <button class="Btn" ng-click="insertBannerTitleRus()" style="margin: 0 -15px;"><i class="fa fa-check" aria-hidden="true"></i></button>
+                        <button class="Btn m0-15" ng-click="insertBannerTitleRus()"><i class="fa fa-check" aria-hidden="true"></i></button>
                     </div>
                 </div>
             </form>
         </div>
 
         <div class="worker-area-mockup">
-            <div class="row" style="margin-top: 40px;">
+            <div class="row mt-40">
             <!-- Rus About Title -->
             <div class="col-md-12">
                     <div>
@@ -1446,7 +1351,7 @@
                     </div>
                 </div>
             </div>
-            <div class="row" style="margin-top: 30px;">
+            <div class="row mt-30">
                 <div class="col-md-6">
                     <textarea class="TextArea" value="{{editWorkerTitleRus}}" type="text" ng-model="workerTitleRus"
                         ng-initial msd-elastic></textarea>
@@ -1458,12 +1363,12 @@
                     <button class="Btn" ng-click="insertWorkerTextRus()"><i class="fa fa-check" aria-hidden="true"></i></button>
                 </div>
             </div>
-            <div class="row" style="margin-top: 60px;">
+            <div class="row mt-60">
                 <div class="col-md-6">
                     <div class="worker-img-mockup"></div>
                     <div class="worker-name-mockup"></div>
                     <div class="worker-occupation-mockup"></div>
-                    <div class="worker-info-mockup" style="margin-top:25px;"></div>
+                    <div class="worker-info-mockup mt-25"></div>
                     <div class="worker-info-mockup"></div>
                     <div class="worker-info-mockup"></div>
                     <div class="worker-info-mockup"></div>
@@ -1472,7 +1377,7 @@
                     <div class="worker-img-mockup"></div>
                     <div class="worker-name-mockup"></div>
                     <div class="worker-occupation-mockup"></div>
-                    <div class="worker-info-mockup" style="margin-top:25px;"></div>
+                    <div class="worker-info-mockup mt-25"></div>
                     <div class="worker-info-mockup"></div>
                     <div class="worker-info-mockup"></div>
                     <div class="worker-info-mockup"></div>
@@ -1483,7 +1388,7 @@
     <div class="menu-area-mockup">
         <div class="row">
             <!-- Rus Menu Section subTitle -->
-            <div class="col-md-12" style="margin-top: 40px;">
+            <div class="col-md-12 mt-40">
                 <div>
                     <span class="admin-tasting-span"></span>
                     <input value="{{ editMenuSectionSubTitleRus }}" type="text" ng-model="menuSectionSubTitleRus" ng-initial />
@@ -1493,7 +1398,7 @@
                 </div>
             </div>
         </div>
-        <div class="row" style="margin-top: 30px;">
+        <div class="row mt-30">
             <div class="col-md-6">
                 <textarea class="TextArea" value="{{editMenuTitleRus}}" type="text" ng-model="menuTitleRus" ng-initial
                     msd-elastic></textarea>
@@ -1505,7 +1410,7 @@
                 <button class="Btn" ng-click="insertMenuTextRus()"><i class="fa fa-check" aria-hidden="true"></i></button>
             </div>
         </div>
-        <div class="col-md-6" style="margin-top: 50px;">
+        <div class="col-md-6 mt-50">
             <div class="menu-mockup">
                 <div class="menu-course-mockup">
                     <div>
@@ -1529,9 +1434,11 @@
             </div>
             <div class="menu-pic-second-mockup" style="background-image: url({{secondPicturePath}})">
                 <input type="file" name="file2" id="file2" class="inputfile" onchange="angular.element(this).scope().menuPicChanged(this, 'second')" />
-                <label style="margin-top: 115px;margin-left: 10px;" for="file2"><i class="fa fa-pencil" aria-hidden="true"></i></label>
+                <label class="mt-115 ml-10" for="file2">
+                    <i class="fa fa-pencil" aria-hidden="true"></i>
+                </label>
             </div>
-            <div class="menu-mockup" style="margin-top: 15px;">
+            <div class="menu-mockup mt-15">
                 <div class="menu-course-mockup">
                     <div>
                         <div>
@@ -1552,7 +1459,7 @@
                     <div class="menu-desc-mockup ml-0"></div>
                 </div>
             </div>
-            <div class="menu-mockup" style="margin-top: 15px;">
+            <div class="menu-mockup mt-15">
                 <div class="menu-course-mockup">
                     <div>
                         <div>
@@ -1575,11 +1482,13 @@
             </div>
         </div>
         <div class="col-md-6">
-            <div class="menu-pic-first-mockup" style="background-image:url({{firstPicturePath}}); margin-top: 100px;">
+            <div class="menu-pic-first-mockup mt-100" style="background-image:url({{firstPicturePath}});">
                 <input type="file" name="file2" id="file1" class="inputfile" onchange="angular.element(this).scope().menuPicChanged(this, 'first')" />
-                <label style="margin-top: 115px;margin-left: 10px;" for="file1"><i class="fa fa-pencil" aria-hidden="true"></i></label>
+                <label class="mt-115 ml-10" for="file1">
+                    <i class="fa fa-pencil" aria-hidden="true"></i>
+                </label>
             </div>
-            <div class="menu-mockup" style="margin-top: 15px;">
+            <div class="menu-mockup mt-15">
                 <div class="menu-course-mockup">
                     <div>
                         <div>
@@ -1600,7 +1509,7 @@
                     <div class="menu-desc-mockup ml-0"></div>
                 </div>
             </div>
-            <div class="menu-mockup" style="margin-top: 15px;">
+            <div class="menu-mockup mt-15">
                 <div class="menu-course-mockup">
                     <div>
                         <div>
@@ -1623,7 +1532,9 @@
             </div>
             <div class="menu-pic-third-mockup" style="background-image:url({{thirdPicturePath}});">
                 <input type="file" name="file2" id="file3" class="inputfile" onchange="angular.element(this).scope().menuPicChanged(this, 'third')" />
-                <label style="margin-top: 115px;margin-left: 10px;" for="file3"><i class="fa fa-pencil" aria-hidden="true"></i></label>
+                <label class="mt-115 ml-10" for="file3">
+                    <i class="fa fa-pencil" aria-hidden="true"></i>
+                </label>
             </div>
         </div>
         <div class="row">
@@ -1637,14 +1548,14 @@
                     </button>
                 </div>
             </div>
-            <div class="col-md-6" style="margin-top: 50px">
+            <div class="col-md-6 mt-50">
                 <textarea class="TextArea" value="{{editTastingTextRus}}" type="text" ng-model="tastingTextRus"
                     ng-initial msd-elastic></textarea>
                 <button class="Btn" ng-click="insertTastingTextRus()"><i class="fa fa-check" aria-hidden="true"></i></button>
             </div>
 
             <!-- GroupMenu Button -->
-            <div class="col-md-6" style="margin-top: 40px;">
+            <div class="col-md-6 mt-40">
                 <div class="tasting-menu-btn-mockup">
                     <input class="buttonTextField" value="{{editGroupMenuButtonRus}}" type="text" ng-model="groupMenuButtonRus"
                         ng-initial />
@@ -1656,7 +1567,7 @@
         </div>
     </div>
     <div class="event-block-mockup">
-        <div class="row" style="margin-top: 50px;">
+        <div class="row mt-50">
             <div class="col-md-6">
                 <div class="event-title-mockup"></div>
                 <div class="event-date-mockup"></div>
@@ -1668,7 +1579,7 @@
             <div class="col-md-6">
                 <div class="event-pic-mockup" style="background-image:url({{eventPicturePathRus}});">
                     <input type="file" name="file2" id="fileRus" class="inputfile" onchange="angular.element(this).scope().menuPicChanged(this, 'eventRus')" />
-                    <label style="margin-top: 185px;margin-left: 10px;" for="fileRus"><i class="fa fa-pencil"
+                    <label class="mt-185 ml-10" for="fileRus"><i class="fa fa-pencil"
                             aria-hidden="true"></i></label>
                 </div>
             </div>
@@ -1676,7 +1587,7 @@
 
         <div class="row">
             <!-- Rus Contact Section subTitle -->
-            <div class="col-md-12" style="margin-top: 40px;">
+            <div class="col-md-12 mt-40">
                 <div>
                     <span class="admin-tasting-span bg-dark"></span>
                     <input value="{{ editContactSubTitleRus }}" type="text" ng-model="contactSubTitleRus" ng-initial />
@@ -1697,17 +1608,17 @@
         </div>
 
         <div class="row">
-            <div class="col-md-6" style="padding: 0; margin-top: 50px;">
+            <div class="col-md-6 p-0 mt-50">
                 <div class="map-picture" ng-style="{'background-image': 'url(' + mapPicturePath + ')'}"><!--  style="background-image: url({{mapPicturePath}})" -->
                     <input type="file" name="file2" id="file5" class="inputfile" onchange="angular.element(this).scope().mapPicChanged(this, 'map')" />
-                    <label style="margin-top: 135px;margin-left: 10px;" for="file5"><i class="fa fa-pencil" aria-hidden="true"></i></label>
+                    <label class="mt-135 ml-10" for="file5"><i class="fa fa-pencil" aria-hidden="true"></i></label>
                 </div>
             </div>
-            <div class="col-md-6" style="padding: 0; margin-top: 50px;">
+            <div class="col-md-6 p-0 mt-50">
                 <div class="map-mockup"></div>
             </div>
         </div>
-        <div class="row" style="margin-top: 50px;margin-bottom: 100px;">
+        <div class="row mt-50 mb-100">
             <div class="col-md-6">
                 <div class="row">
 
@@ -1754,7 +1665,7 @@
                     <button class="timeBtn" ng-click="insertContactEmailRus()"><i class="fa fa-check" aria-hidden="true"></i></button>
                 </div>
             </div>
-            <div class="col-md-6" style="margin-bottom: 30px">
+            <div class="col-md-6 mb-30">
                 <div class="row">
                     <p class="contact-title-mockup">
                         Nädalavahetus:
