@@ -1747,6 +1747,7 @@ ul.drink-menu-tabs li:hover {
         position: static;
         margin-top: 5px;
         width: inherit;
+        margin-left: 15px;
     }
     a.signout-btn {
         cursor: pointer !important;
@@ -2106,6 +2107,12 @@ menu > div > menu-item > div > span {
     }
     menu > div > menu-item > div > span {
         font-size: 14px;
+    }
+}
+@media screen and (min-width: 769px) and (max-width: 991px) {
+    .booking-btn {
+        position: static;
+        margin-top: 0;
     }
 }
 .activeDesign{
