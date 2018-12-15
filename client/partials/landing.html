@@ -1804,22 +1804,18 @@
                 <p style="font-family:Roboto" ng-if="$root.lang==='ru'" class="contact-title">
                     Часы работы
                 </p>
-                <p ng-if="$root.lang==='en'" class="contact-info">
-                    <span style="font-size:12px">{{contactTimeWorkWeekEng}}</span> {{contactDaysEng}}<br />
-                    <span style="font-size:12px">{{contactTimeWeekendEng}}</span> {{contactWeekendEng}}
-                </p>
-                <p ng-if="$root.lang==='ee'" class="contact-info">
-                    <span style="font-size:12px">{{contactTimeWorkWeek}}</span> {{contactDays}}<br />
-                    <span style="font-size:12px">{{contactTimeWeekend}}</span> {{contactWeekend}}
-                </p>
-                <p ng-if="$root.lang==='fi'" class="contact-info">
-                    <span style="font-size:12px">{{contactTimeWorkWeekFin}}</span> {{contactDaysFin}}<br />
-                    <span style="font-size:12px">{{contactTimeWeekendFin}}</span> {{contactWeekendFin}}
-                </p>
-                <p ng-if="$root.lang==='ru'" class="contact-info">
-                    <span style="font-size:12px">{{contactTimeWorkWeekRus}}</span> {{contactDaysRus}}<br />
-                    <span style="font-size:12px">{{contactTimeWeekendRus}}</span> {{contactWeekendRus}}
-                </p>
+                <pre class="contact-info" ng-if="$root.lang==='ee'">
+                    {{contactTimeWorkWeek}}                  
+</pre>
+                <pre class="contact-info" ng-if="$root.lang==='en'">
+                    {{contactTimeWorkWeekEng}}                  
+</pre>
+                <pre class="contact-info" ng-if="$root.lang==='fi'">
+                    {{contactTimeWorkWeekFin}}                   
+</pre>
+                <pre class="contact-info" ng-if="$root.lang==='ru'">
+                    {{contactTimeWorkWeekRus}}                  
+</pre>
             </div>
             <div class="col-md-3 contact-padding-mobile">
                 <p ng-if="$root.lang==='en'" class="contact-title">
