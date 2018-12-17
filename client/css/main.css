@@ -431,6 +431,16 @@ img.whiteguide {
     left: 25px;
 }
 
+.admin-whiteguide-button {
+    margin-top: 135px;
+    position: absolute;
+    margin-left: 85px;
+    z-index: 1;
+}
+.admin-whiteguide-button i {
+    margin-left: 3px;
+}
+
 /* Up to Tablet-max */
 @media only screen and (max-width: 991px) {
     img.whiteguide {
@@ -449,6 +459,13 @@ img.whiteguide {
         height: auto;
         margin-top: 0;
         width: 47px;
+    }
+
+    .admin-whiteguide-button {
+        margin-top: 105px;
+        position: absolute;
+        margin-left: 70px;
+        z-index: 1;
     }
 }
 
@@ -1132,7 +1149,8 @@ th{
     background: white;
     margin-top: 15px;
     background-size: cover;
-    background-repeat: none;
+    background-repeat: no-repeat;
+    background-position: center;
     background-image: url('img/mockup-worker.png');
 }
 .mapPicture{
