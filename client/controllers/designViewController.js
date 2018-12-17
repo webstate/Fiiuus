@@ -2969,9 +2969,9 @@ designViewController.controller('designViewController', function ($scope, pictur
         if (data === null) {/*  || data.picturePath === undefined */
             // $scope.bannerTitleEst = ""; // @the moment it changes existing to ""
             // console.log('data = ', data); // REMOVE
-            $scope.bannerTitlePositionTopEst = "";
-            $scope.bannerTitlePositionLeftEst = "";
-            console.log('$scope.bannerTitlePositionEstTop @null', $scope.bannerTitlePositionEstTop); // REMOVE
+            $scope.bannerTitlePositionTopEst = 35;
+            $scope.bannerTitlePositionLeftEst = 1;
+            // console.log('$scope.bannerTitlePositionEstTop @null', $scope.bannerTitlePositionEstTop); // REMOVE
         } else {
             $scope.bannerTitlePositionTopEst = data.top;
             $scope.bannerTitlePositionLeftEst = data.left;
@@ -2987,8 +2987,8 @@ designViewController.controller('designViewController', function ($scope, pictur
         if (data === null) {/*  || data.picturePath === undefined */
             // $scope.bannerTitleEng = ""; // @the moment it changes existing to ""
             // console.log('data = ', data); // REMOVE
-            $scope.bannerTitlePositionTopEng = "";
-            $scope.bannerTitlePositionLeftEng = "";
+            $scope.bannerTitlePositionTopEng = 35;
+            $scope.bannerTitlePositionLeftEng = 1;
             console.log('$scope.bannerTitlePositionEngTop @null', $scope.bannerTitlePositionEngTop); // REMOVE
         } else {
             $scope.bannerTitlePositionTopEng = data.top;
@@ -3005,9 +3005,9 @@ designViewController.controller('designViewController', function ($scope, pictur
         if (data === null) {/*  || data.picturePath === undefined */
             // $scope.bannerTitleFin = ""; // @the moment it changes existing to ""
             // console.log('data = ', data); // REMOVE
-            $scope.bannerTitlePositionTopFin = "";
-            $scope.bannerTitlePositionLeftFin = "";
-            console.log('$scope.bannerTitlePositionFinTop @null', $scope.bannerTitlePositionFinTop); // REMOVE
+            $scope.bannerTitlePositionTopFin = 35;
+            $scope.bannerTitlePositionLeftFin = 1;
+            // console.log('$scope.bannerTitlePositionFinTop @null', $scope.bannerTitlePositionFinTop); // REMOVE
         } else {
             $scope.bannerTitlePositionTopFin = data.top;
             $scope.bannerTitlePositionLeftFin = data.left;
@@ -3023,8 +3023,8 @@ designViewController.controller('designViewController', function ($scope, pictur
         if (data === null) {/*  || data.picturePath === undefined */
             // $scope.bannerTitleRus = ""; // @the moment it changes existing to ""
             // console.log('data = ', data); // REMOVE
-            $scope.bannerTitlePositionTopRus = "";
-            $scope.bannerTitlePositionLeftRus = "";
+            $scope.bannerTitlePositionTopRus = 35;
+            $scope.bannerTitlePositionLeftRus = 1;
             console.log('$scope.bannerTitlePositionRusTop @null', $scope.bannerTitlePositionRusTop); // REMOVE
         } else {
             $scope.bannerTitlePositionTopRus = data.top;
