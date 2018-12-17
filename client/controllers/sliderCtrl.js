@@ -433,6 +433,13 @@ sliderCtrl.controller('sliderCtrl', function($location,$rootScope, $scope, landi
 
 
 
+    pictureService.getMenuPicture('whiteguide').then(function(data){
+        if (data == null) {
+            $scope.whiteguidePicturePath = "css/img/whiteguide2019.png";
+        } else {
+            $scope.whiteguidePicturePath = data.picturePath;
+        }
+    })
     pictureService.getMenuPicture('event').then(function(data){
         if(data == null){
             $scope.eventPicturePath = "";
