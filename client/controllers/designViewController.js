@@ -2834,6 +2834,15 @@ designViewController.controller('designViewController', function ($scope, pictur
         }
     })
 
+    /* Whiteguide logo */
+    pictureService.getMenuPicture('whiteguide').then(function (data) {
+        if (data == null) {
+            $scope.whiteguidePicturePath = "css/img/whiteguide2019.png";
+        } else {
+            $scope.whiteguidePicturePath = data.picturePath;
+        }
+    })
+
     /* Event images */
     pictureService.getMenuPicture('event').then(function (data) {
         if (data == null) {
@@ -3195,6 +3204,9 @@ designViewController.controller('designViewController', function ($scope, pictur
         pictureService.saveImage(fd).then(function (file) {
             if (type === "map") {
                 $scope.mapPicturePath = file;
+            }
+            if (type === "whiteguide") {
+                $scope.whiteguidePicturePath = file;
             }
             if (type === "event") {
                 $scope.eventPicturePath = file;
