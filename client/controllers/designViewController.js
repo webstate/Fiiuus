@@ -2834,6 +2834,15 @@ designViewController.controller('designViewController', function ($scope, pictur
         }
     })
 
+    /* Whiteguide logo */
+    pictureService.getMenuPicture('whiteguide').then(function (data) {
+        if (data == null) {
+            $scope.whiteguidePicturePath = "css/img/whiteguide2019.png";
+        } else {
+            $scope.whiteguidePicturePath = data.picturePath;
+        }
+    })
+
     /* Event images */
     pictureService.getMenuPicture('event').then(function (data) {
         if (data == null) {
@@ -2964,75 +2973,47 @@ designViewController.controller('designViewController', function ($scope, pictur
 
 
     /* Get BannerTitle Position */
-    pictureService.getBannerTitlePosition('bannerTitlePositionEst').then(function (data) {/* bannerRus */
-        console.log('data in getBannerTitlePositionEst', data); // REMOVE
-        if (data === null) {/*  || data.picturePath === undefined */
-            // $scope.bannerTitleEst = ""; // @the moment it changes existing to ""
-            // console.log('data = ', data); // REMOVE
+    pictureService.getBannerTitlePosition('bannerTitlePositionEst').then(function (data) {
+        // console.log('data in getBannerTitlePositionEst', data); // REMOVE
+        if (data === null) {
             $scope.bannerTitlePositionTopEst = 35;
             $scope.bannerTitlePositionLeftEst = 1;
-            // console.log('$scope.bannerTitlePositionEstTop @null', $scope.bannerTitlePositionEstTop); // REMOVE
         } else {
             $scope.bannerTitlePositionTopEst = data.top;
             $scope.bannerTitlePositionLeftEst = data.left;
-            // console.log('$scope.bannerTitlePositionEstTop @not null', $scope.bannerTitlePositionEstTop); // REMOVE
-            console.log('Last scope in PicSer GET', $scope); // REMOVE
-            // console.log('d a t a @d2748', data); // REMOVE
-            // $scope.bannerTitlePositionEst = data.bannerTitlePositionEst;
         }
     })
 
-    pictureService.getBannerTitlePosition('bannerTitlePositionEng').then(function (data) {/* bannerRus */
-        console.log('data in getBannerTitlePositionEng', data); // REMOVE
-        if (data === null) {/*  || data.picturePath === undefined */
-            // $scope.bannerTitleEng = ""; // @the moment it changes existing to ""
-            // console.log('data = ', data); // REMOVE
+    pictureService.getBannerTitlePosition('bannerTitlePositionEng').then(function (data) {
+        // console.log('data in getBannerTitlePositionEng', data); // REMOVE
+        if (data === null) {
             $scope.bannerTitlePositionTopEng = 35;
             $scope.bannerTitlePositionLeftEng = 1;
-            console.log('$scope.bannerTitlePositionEngTop @null', $scope.bannerTitlePositionEngTop); // REMOVE
         } else {
             $scope.bannerTitlePositionTopEng = data.top;
             $scope.bannerTitlePositionLeftEng = data.left;
-            // console.log('$scope.bannerTitlePositionEngTop @not null', $scope.bannerTitlePositionEngTop); // REMOVE
-            console.log('last scope in picSer GET', $scope); // REMOVE
-            // console.log('d a t a @d2748', data); // REMOVE
-            // $scope.bannerTitlePositionEng = data.bannerTitlePositionEng;
         }
     })
 
-    pictureService.getBannerTitlePosition('bannerTitlePositionFin').then(function (data) {/* bannerRus */
-        console.log('data in getBannerTitlePositionFin', data); // REMOVE
-        if (data === null) {/*  || data.picturePath === undefined */
-            // $scope.bannerTitleFin = ""; // @the moment it changes existing to ""
-            // console.log('data = ', data); // REMOVE
+    pictureService.getBannerTitlePosition('bannerTitlePositionFin').then(function (data) {
+        // console.log('data in getBannerTitlePositionFin', data); // REMOVE
+        if (data === null) {
             $scope.bannerTitlePositionTopFin = 35;
             $scope.bannerTitlePositionLeftFin = 1;
-            // console.log('$scope.bannerTitlePositionFinTop @null', $scope.bannerTitlePositionFinTop); // REMOVE
         } else {
             $scope.bannerTitlePositionTopFin = data.top;
             $scope.bannerTitlePositionLeftFin = data.left;
-            // console.log('$scope.bannerTitlePositionFinTop @not null', $scope.bannerTitlePositionFinTop); // REMOVE
-            console.log('last scope in picSer GET', $scope); // REMOVE
-            // console.log('d a t a @d2748', data); // REMOVE
-            // $scope.bannerTitlePositionFin = data.bannerTitlePositionFin;
         }
     })
 
-    pictureService.getBannerTitlePosition('bannerTitlePositionRus').then(function (data) {/* bannerRus */
-        console.log('data in getBannerTitlePositionRus', data); // REMOVE
-        if (data === null) {/*  || data.picturePath === undefined */
-            // $scope.bannerTitleRus = ""; // @the moment it changes existing to ""
-            // console.log('data = ', data); // REMOVE
+    pictureService.getBannerTitlePosition('bannerTitlePositionRus').then(function (data) {
+        // console.log('data in getBannerTitlePositionRus', data); // REMOVE
+        if (data === null) {
             $scope.bannerTitlePositionTopRus = 35;
             $scope.bannerTitlePositionLeftRus = 1;
-            console.log('$scope.bannerTitlePositionRusTop @null', $scope.bannerTitlePositionRusTop); // REMOVE
         } else {
             $scope.bannerTitlePositionTopRus = data.top;
             $scope.bannerTitlePositionLeftRus = data.left;
-            // console.log('$scope.bannerTitlePositionRusTop @not null', $scope.bannerTitlePositionRusTop); // REMOVE
-            console.log('last scope in picSer GET', $scope); // REMOVE
-            // console.log('d a t a @d2748', data); // REMOVE
-            // $scope.bannerTitlePositionRus = data.bannerTitlePositionRus;
         }
     })
 
@@ -3196,6 +3177,9 @@ designViewController.controller('designViewController', function ($scope, pictur
             if (type === "map") {
                 $scope.mapPicturePath = file;
             }
+            if (type === "whiteguide") {
+                $scope.whiteguidePicturePath = file;
+            }
             if (type === "event") {
                 $scope.eventPicturePath = file;
             }
@@ -3248,119 +3232,101 @@ designViewController.controller('designViewController', function ($scope, pictur
     }]);
 
     $(document).ready( function() {
-        // $scope.$watch('$root.lang', function(){
 
-            // if($rootScope.lang ==="ee"){
+        // Make the DIV element draggable:
+        dragElement(document.getElementById("mydiv"));
+        dragElement(document.getElementById("mydivEng"));
+        dragElement(document.getElementById("mydivFin"));
+        dragElement(document.getElementById("mydivRus"));
 
+        function dragElement(elmnt) {
+            var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+            console.log('elmnt', elmnt); // REMOVE
+            if (document.getElementById(elmnt.id + "header")) {
+                // if present, the header is where you move the DIV from:
+                document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
+            } else {
+                // otherwise, move the DIV from anywhere inside the DIV:
+                elmnt.onmousedown = dragMouseDown;
+            }
 
-                // Make the DIV element draggable:
-                dragElement(document.getElementById("mydiv"));
-                dragElement(document.getElementById("mydivEng"));
-                dragElement(document.getElementById("mydivFin"));
-                dragElement(document.getElementById("mydivRus"));
+            function dragMouseDown(e) {
+                e = e || window.event;
+                e.preventDefault();
+                // get the mouse cursor position at startup:
+                pos3 = e.clientX;
+                pos4 = e.clientY;
+                document.onmouseup = closeDragElement;
+                // call a function whenever the cursor moves:
+                document.onmousemove = elementDrag;
+            }
 
-                function dragElement(elmnt) {
-                    var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
-                    console.log('elmnt', elmnt); // REMOVE
-                    if (document.getElementById(elmnt.id + "header")) {
-                        // if present, the header is where you move the DIV from:
-                        document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
-                    } else {
-                        // otherwise, move the DIV from anywhere inside the DIV:
-                        elmnt.onmousedown = dragMouseDown;
-                    }
+            function elementDrag(e) {
+                e = e || window.event;
+                e.preventDefault();
+                // calculate the new cursor position:
+                pos1 = pos3 - e.clientX;
+                pos2 = pos4 - e.clientY;
+                pos3 = e.clientX;
+                pos4 = e.clientY;
+                // set the element's new position:
+                elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+                elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+            }
 
-                    function dragMouseDown(e) {
-                        e = e || window.event;
-                        e.preventDefault();
-                        // get the mouse cursor position at startup:
-                        pos3 = e.clientX;
-                        pos4 = e.clientY;
-                        document.onmouseup = closeDragElement;
-                        // call a function whenever the cursor moves:
-                        document.onmousemove = elementDrag;
-                    }
+            function closeDragElement() {
+                // stop moving when mouse button is released:
+                document.onmouseup = null;
+                document.onmousemove = null;
 
-                    function elementDrag(e) {
-                        e = e || window.event;
-                        e.preventDefault();
-                        // calculate the new cursor position:
-                        pos1 = pos3 - e.clientX;
-                        pos2 = pos4 - e.clientY;
-                        pos3 = e.clientX;
-                        pos4 = e.clientY;
-                        // set the element's new position:
-                        elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
-                        elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
-
-                        // $scope.mydiv = {
-                        //     top : (elmnt.offsetTop - pos2),
-                        //     left : (elmnt.offsetLeft - pos1)
-                        // }
-                    }
-
-                    function closeDragElement() {
-                        // stop moving when mouse button is released:
-                        document.onmouseup = null;
-                        document.onmousemove = null;
-
-                        console.log('elmnt', elmnt); // .offsetTop // REMOVE
-                        $scope.mydiv = {
-                            top: (elmnt.offsetTop - pos2),
-                            left: (elmnt.offsetLeft - pos1)
-                        }
-                        console.log('$scope mydiv', $scope.mydiv); // REMOVE
-                        console.log('$scope', $scope); // REMOVE
-
-                        console.log('window.innerWidth', window.innerWidth); // REMOVE
-                        console.log('window.innerHeight', window.innerHeight); // REMOVE
-
-                        // var selector = "[scroll-bookmark="+value+"]";
-                        // var selector = elmnt.parentNode;
-                        var banner = $(elmnt.parentNode);
-                        // var element = $(selector);
-                        console.log('banner.height', banner.height()); // REMOVE
-
-                        var leftP, topP;
-                        leftP = ($scope.mydiv.left * 100) / window.innerWidth;
-                        topP = ($scope.mydiv.top * 100) / banner.height();
-                        console.log('leftP = ', leftP); // REMOVE
-                        console.log('topP = ', topP); // REMOVE
-
-                        $scope.mydiv = {
-                            /* Top & Left in 'px' */
-                            // top: (elmnt.offsetTop - pos2),
-                            // left: (elmnt.offsetLeft - pos1),
-
-                            /* Top & Left in '%' */
-                            left: ($scope.mydiv.left * 100) / window.innerWidth,/* leftP */
-                            top: ($scope.mydiv.top * 100) / banner.height()/* topP */
-                        }
-                        console.log('$scope AF%', $scope); // REMOVE
-
-                        /* If element is outside from the left */
-                        if ($scope.mydiv.left < 0) {
-                            $scope.mydiv.left = 1;
-                            elmnt.style.left = 1 + "%";
-                        } else {
-                            $scope.mydiv.left = $scope.mydiv.left;
-                        }
-
-                        /* If element bottom is lower than banner bottom */
-                        var offsetBottom = (elmnt.offsetTop - pos2) + ($(elmnt).height());
-                        if (offsetBottom > banner.height()) {
-                            // console.log('HIGHER!', ); // REMOVE
-                            elmnt.style.top = "auto";
-                            elmnt.style.bottom = 0 + "px";
-
-                            /* Recalculate & reassign element top position percentage */
-                            $scope.mydiv.top = ((banner.height() - $(elmnt).height()) * 100) / banner.height();
-                            console.log('$scope.mydiv.top', $scope.mydiv.top); // REMOVE
-                        }
-                    }
+                console.log('elmnt', elmnt); // .offsetTop // REMOVE
+                $scope.mydiv = {
+                    top: (elmnt.offsetTop - pos2),
+                    left: (elmnt.offsetLeft - pos1)
                 }
-            // }
-        // });
+                console.log('$scope mydiv', $scope.mydiv); // REMOVE
+                console.log('$scope', $scope); // REMOVE
+
+                console.log('window.innerWidth', window.innerWidth); // REMOVE
+                console.log('window.innerHeight', window.innerHeight); // REMOVE
+
+                var banner = $(elmnt.parentNode);
+                console.log('banner.height', banner.height()); // REMOVE
+
+                var leftP, topP;
+                leftP = ($scope.mydiv.left * 100) / window.innerWidth;
+                topP = ($scope.mydiv.top * 100) / banner.height();
+                console.log('leftP = ', leftP); // REMOVE
+                console.log('topP = ', topP); // REMOVE
+
+                $scope.mydiv = {
+
+                    /* Top & Left in '%' */
+                    left: ($scope.mydiv.left * 100) / window.innerWidth,/* leftP */
+                    top: ($scope.mydiv.top * 100) / banner.height()/* topP */
+                }
+                console.log('$scope AF%', $scope); // REMOVE
+
+                /* If element is outside from the left */
+                if ($scope.mydiv.left < 0) {
+                    $scope.mydiv.left = 1;
+                    elmnt.style.left = 1 + "%";
+                } else {
+                    $scope.mydiv.left = $scope.mydiv.left;
+                }
+
+                /* If element bottom is lower than banner bottom */
+                var offsetBottom = (elmnt.offsetTop - pos2) + ($(elmnt).height());
+                if (offsetBottom > banner.height()) {
+                    elmnt.style.top = "auto";
+                    elmnt.style.bottom = 0 + "px";
+
+                    /* Recalculate & reassign element top position percentage */
+                    $scope.mydiv.top = ((banner.height() - $(elmnt).height()) * 100) / banner.height();
+                    console.log('$scope.mydiv.top', $scope.mydiv.top); // REMOVE
+                }
+            }
+        }
     })
 
 })
