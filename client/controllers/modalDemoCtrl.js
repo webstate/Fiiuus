@@ -33,7 +33,7 @@ modalDemoCtrl.controller('modalDemoCtrl', function($scope, $rootScope, $timeout)
 
     $(document)
     .on("click", "menu-item", function(){
-        $('body').css('overflow', 'scroll');
+        $('body').css({'overflow-x': 'hidden;', 'overflow-y': 'scroll'});
     })
 
 
