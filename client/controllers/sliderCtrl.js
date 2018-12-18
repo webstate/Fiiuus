@@ -1,6 +1,6 @@
 var sliderCtrl = angular.module('sliderCtrl', []);
 
-sliderCtrl.controller('sliderCtrl', function($location,$rootScope, $scope, landingTextService, pictureService, eventService, bookingService, emailService, $window){
+sliderCtrl.controller('sliderCtrl', function($location,$rootScope, $scope, landingTextService, pictureService, eventService, bookingService, emailService, $window, $timeout){
 
     /* Set initial windowWidth variable */
     $scope.windowWidth = $( window ).width();
@@ -25,6 +25,70 @@ sliderCtrl.controller('sliderCtrl', function($location,$rootScope, $scope, landi
     if($location.url() === "/broneerilaud"){
         $rootScope.lang = "ee";
         $rootScope.bookingModal = true;
+    }
+
+    /* MENU URL EE */
+    if($location.url() === "/menu/ee"){
+        $rootScope.lang = "ee";
+        $rootScope.bookingModal = false;
+
+        $(document).ready(function(scope, element, attrs){
+            var element = $("[scroll-bookmark=menu]");
+            if(element.length){
+                $timeout(function(){
+                    $('body, html').animate({scrollTop: element.offset().top}, "slow");
+                    return false;
+                }, 100);
+            }
+        })
+    }
+
+    /* MENU URL EN */
+    if($location.url() === "/menu/en"){
+        $rootScope.lang = "en";
+        $rootScope.bookingModal = false;
+
+        $(document).ready(function(scope, element, attrs){
+            var element = $("[scroll-bookmark=menu]");
+            if(element.length){
+                $timeout(function(){
+                    $('body, html').animate({scrollTop: element.offset().top}, "slow");
+                    return false;
+                }, 100);
+            }
+        })
+    }
+
+    /* MENU URL FI */
+    if($location.url() === "/menu/fi"){
+        $rootScope.lang = "fi";
+        $rootScope.bookingModal = false;
+
+        $(document).ready(function(scope, element, attrs){
+            var element = $("[scroll-bookmark=menu]");
+            if(element.length){
+                $timeout(function(){
+                    $('body, html').animate({scrollTop: element.offset().top}, "slow");
+                    return false;
+                }, 100);
+            }
+        })
+    }
+
+    /* MENU URL RU */
+    if($location.url() === "/menu/ru"){
+        $rootScope.lang = "ru";
+        $rootScope.bookingModal = false;
+
+        $(document).ready(function(scope, element, attrs){
+            var element = $("[scroll-bookmark=menu]");
+            if(element.length){
+                $timeout(function(){
+                    $('body, html').animate({scrollTop: element.offset().top}, "slow");
+                    return false;
+                }, 100);
+            }
+        })
     }
 
     $scope.language = $rootScope.lang;
