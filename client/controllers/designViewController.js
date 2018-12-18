@@ -43,21 +43,14 @@ designViewController.controller('designViewController', function ($scope, pictur
     // LANDING PAGE ESTONIAN VERSION
 
     landingTextService.getLandingText("bannerTitleEst", "ee").then(function (data) {
-        console.log('then-fn-data!!!', data); // REMOVE
         if (data.text == null || data.text == undefined) {
             $scope.bannerTitleEst = "Nothing here";
         }
         $timeout(function() {
             $scope.bannerTitleEst = data.text;
         }, 200);
-        // bannerTitleForm.editBannerTitleEst.$viewValue = data.text;
-        // console.log('bannerTitleForm.editBannerTitleEst.$viewValue', bannerTitleForm.editBannerTitleEst.$viewValue); // REMOVE
-        console.log('$scope.bannerTitleEst', $scope.bannerTitleEst); // REMOVE
-        console.log('d-a-t-a @d50', data); // REMOVE // It has data & text
-        console.log('$scope.bannerTitleEst @get', $scope); // REMOVE // bannerTitleEst is undefined
         var estb = data.text;
         $scope.estb = estb;
-        console.log('estb', estb); // REMOVE
     })
 
     $scope.insertBannerTitleEst = function () {
@@ -67,29 +60,22 @@ designViewController.controller('designViewController', function ($scope, pictur
             update = $scope.editBannerTitleEst;
         }
         landingTextService.addOrUpdateLandingText("bannerTitleEst", update, "ee").then(function (data) {
-            console.log('data @d60', data); // REMOVE
-            console.log('update @d61', update); // REMOVE
-            console.log('$scope @d62', $scope); // REMOVE
             landingTextService.getLandingText("bannerTitleEst", "ee").then(function (data) {
                 if (data.text == null || data.text == undefined) {
                     $scope.bannerTitleEst = "Nothing here";
                 }
                 $scope.bannerTitleEst = data.text;
-                console.log('data second get title from landingtext', data); // REMOVE
             }, function (err) {
                 console.log(err);
             })
         });
 
         if ($scope.mydiv) {
-            // console.log('$scope.mydiv in if', $scope.mydiv); // REMOVE
             var top;
             var left;
             top = $scope.mydiv.top;
             left = $scope.mydiv.left;
-            console.log('T & L', top, left); // REMOVE
             pictureService.addBannerTitlePosition("bannerTitlePositionEst", top, left).then(function (data) {
-                console.log('data in addBanner...', data); // REMOVE
             }), function (err) {
                 console.log(err);
             }
@@ -745,21 +731,14 @@ designViewController.controller('designViewController', function ($scope, pictur
     // LANDING PAGE ENGLISH VERSION
 
     landingTextService.getLandingText("bannerTitleEng", "ee").then(function (data) {
-        console.log('then-fn-data!!!', data); // REMOVE
         if (data.text == null || data.text == undefined) {
             $scope.bannerTitleEng = "Nothing here";
         }
         $timeout(function() {
             $scope.bannerTitleEng = data.text;
         }, 200);
-        // bannerTitleForm.editBannerTitleEng.$viewValue = data.text;
-        // console.log('bannerTitleForm.editBannerTitleEng.$viewValue', bannerTitleForm.editBannerTitleEng.$viewValue); // REMOVE
-        console.log('$scope.bannerTitleEng', $scope.bannerTitleEng); // REMOVE
-        console.log('d-a-t-a @d50', data); // REMOVE // It has data & text
-        console.log('$scope.bannerTitleEng @get', $scope); // REMOVE // bannerTitleEng is undefined
         var engb = data.text;
         $scope.engb = engb;
-        console.log('engb', engb); // REMOVE
     })
 
     $scope.insertBannerTitleEng = function () {
@@ -769,29 +748,22 @@ designViewController.controller('designViewController', function ($scope, pictur
             update = $scope.editBannerTitleEng;
         }
         landingTextService.addOrUpdateLandingText("bannerTitleEng", update, "ee").then(function (data) {
-            console.log('data @d60', data); // REMOVE
-            console.log('update @d61', update); // REMOVE
-            console.log('$scope @d62', $scope); // REMOVE
             landingTextService.getLandingText("bannerTitleEng", "ee").then(function (data) {
                 if (data.text == null || data.text == undefined) {
                     $scope.bannerTitleEng = "Nothing here";
                 }
                 $scope.bannerTitleEng = data.text;
-                console.log('data second get title from landingtext', data); // REMOVE
             }, function (err) {
                 console.log(err);
             })
         });
 
         if ($scope.mydiv) {
-            // console.log('$scope.mydiv in if', $scope.mydiv); // REMOVE
             var top;
             var left;
             top = $scope.mydiv.top;
             left = $scope.mydiv.left;
-            console.log('T & L', top, left); // REMOVE
             pictureService.addBannerTitlePosition("bannerTitlePositionEng", top, left).then(function (data) {
-                console.log('data in addBanner...', data); // REMOVE
             }), function (err) {
                 console.log(err);
             }
@@ -1414,23 +1386,15 @@ designViewController.controller('designViewController', function ($scope, pictur
     }
 
     ////// FINNISH LANGUAGE DESIGN VIEW
-
     landingTextService.getLandingText("bannerTitleFin", "ee").then(function (data) {
-        console.log('then-fn-data!!!', data); // REMOVE
         if (data.text == null || data.text == undefined) {
             $scope.bannerTitleFin = "Nothing here";
         }
         $timeout(function() {
             $scope.bannerTitleFin = data.text;
         }, 200);
-        // bannerTitleForm.editBannerTitleFin.$viewValue = data.text;
-        // console.log('bannerTitleForm.editBannerTitleFin.$viewValue', bannerTitleForm.editBannerTitleFin.$viewValue); // REMOVE
-        console.log('$scope.bannerTitleFin', $scope.bannerTitleFin); // REMOVE
-        console.log('d-a-t-a @d50', data); // REMOVE // It has data & text
-        console.log('$scope.bannerTitleFin @get', $scope); // REMOVE // bannerTitleFin is undefined
         var finb = data.text;
         $scope.finb = finb;
-        console.log('finb', finb); // REMOVE
     })
 
     $scope.insertBannerTitleFin = function () {
@@ -1440,33 +1404,25 @@ designViewController.controller('designViewController', function ($scope, pictur
             update = $scope.editBannerTitleFin;
         }
         landingTextService.addOrUpdateLandingText("bannerTitleFin", update, "ee").then(function (data) {
-            console.log('data @d60', data); // REMOVE
-            console.log('update @d61', update); // REMOVE
-            console.log('$scope @d62', $scope); // REMOVE
             landingTextService.getLandingText("bannerTitleFin", "ee").then(function (data) {
                 if (data.text == null || data.text == undefined) {
                     $scope.bannerTitleFin = "Nothing here";
                 }
                 $scope.bannerTitleFin = data.text;
-                console.log('data second get title from landingtext', data); // REMOVE
             }, function (err) {
                 console.log(err);
             })
         });
 
         if ($scope.mydiv) {
-            // console.log('$scope.mydiv in if', $scope.mydiv); // REMOVE
             var top;
             var left;
             top = $scope.mydiv.top;
             left = $scope.mydiv.left;
-            console.log('T & L', top, left); // REMOVE
             pictureService.addBannerTitlePosition("bannerTitlePositionFin", top, left).then(function (data) {
-                console.log('data in addBanner...', data); // REMOVE
             }), function (err) {
                 console.log(err);
             }
-            // pictureService.getBannerTitlePosition();
         } else {
             console.log('There is no myDiv', ); // REMOVE
         }
@@ -2090,21 +2046,14 @@ designViewController.controller('designViewController', function ($scope, pictur
     //// RUSSIAN DESIGN VIEW
 
     landingTextService.getLandingText("bannerTitleRus", "ee").then(function (data) {
-        console.log('then-fn-data!!!', data); // REMOVE
         if (data.text == null || data.text == undefined) {
             $scope.bannerTitleRus = "Nothing here";
         }
         $timeout(function() {
             $scope.bannerTitleRus = data.text;
         }, 200);
-        // bannerTitleForm.editBannerTitleRus.$viewValue = data.text;
-        // console.log('bannerTitleForm.editBannerTitleRus.$viewValue', bannerTitleForm.editBannerTitleRus.$viewValue); // REMOVE
-        console.log('$scope.bannerTitleRus', $scope.bannerTitleRus); // REMOVE
-        console.log('d-a-t-a @d50', data); // REMOVE // It has data & text
-        console.log('$scope.bannerTitleRus @get', $scope); // REMOVE // bannerTitleRus is undefined
         var rusb = data.text;
         $scope.rusb = rusb;
-        console.log('rusb', rusb); // REMOVE
     })
 
     $scope.insertBannerTitleRus = function () {
@@ -2114,29 +2063,22 @@ designViewController.controller('designViewController', function ($scope, pictur
             update = $scope.editBannerTitleRus;
         }
         landingTextService.addOrUpdateLandingText("bannerTitleRus", update, "ee").then(function (data) {
-            console.log('data @d60', data); // REMOVE
-            console.log('update @d61', update); // REMOVE
-            console.log('$scope @d62', $scope); // REMOVE
             landingTextService.getLandingText("bannerTitleRus", "ee").then(function (data) {
                 if (data.text == null || data.text == undefined) {
                     $scope.bannerTitleRus = "Nothing here";
                 }
                 $scope.bannerTitleRus = data.text;
-                console.log('data second get title from landingtext', data); // REMOVE
             }, function (err) {
                 console.log(err);
             })
         });
 
         if ($scope.mydiv) {
-            // console.log('$scope.mydiv in if', $scope.mydiv); // REMOVE
             var top;
             var left;
             top = $scope.mydiv.top;
             left = $scope.mydiv.left;
-            console.log('T & L', top, left); // REMOVE
             pictureService.addBannerTitlePosition("bannerTitlePositionRus", top, left).then(function (data) {
-                console.log('data in addBanner...', data); // REMOVE
             }), function (err) {
                 console.log(err);
             }
@@ -2891,7 +2833,6 @@ designViewController.controller('designViewController', function ($scope, pictur
 
     /* Get BannerTitle Position */
     pictureService.getBannerTitlePosition('bannerTitlePositionEst').then(function (data) {
-        // console.log('data in getBannerTitlePositionEst', data); // REMOVE
         if (data === null) {
             $scope.bannerTitlePositionTopEst = 35;
             $scope.bannerTitlePositionLeftEst = 1;
@@ -2902,7 +2843,6 @@ designViewController.controller('designViewController', function ($scope, pictur
     })
 
     pictureService.getBannerTitlePosition('bannerTitlePositionEng').then(function (data) {
-        // console.log('data in getBannerTitlePositionEng', data); // REMOVE
         if (data === null) {
             $scope.bannerTitlePositionTopEng = 35;
             $scope.bannerTitlePositionLeftEng = 1;
@@ -2913,7 +2853,6 @@ designViewController.controller('designViewController', function ($scope, pictur
     })
 
     pictureService.getBannerTitlePosition('bannerTitlePositionFin').then(function (data) {
-        // console.log('data in getBannerTitlePositionFin', data); // REMOVE
         if (data === null) {
             $scope.bannerTitlePositionTopFin = 35;
             $scope.bannerTitlePositionLeftFin = 1;
@@ -2924,7 +2863,6 @@ designViewController.controller('designViewController', function ($scope, pictur
     })
 
     pictureService.getBannerTitlePosition('bannerTitlePositionRus').then(function (data) {
-        // console.log('data in getBannerTitlePositionRus', data); // REMOVE
         if (data === null) {
             $scope.bannerTitlePositionTopRus = 35;
             $scope.bannerTitlePositionLeftRus = 1;
@@ -3134,7 +3072,6 @@ designViewController.controller('designViewController', function ($scope, pictur
 
         function dragElement(elmnt) {
             var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
-            console.log('elmnt', elmnt); // REMOVE
             if (document.getElementById(elmnt.id + "header")) {
                 // if present, the header is where you move the DIV from:
                 document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
@@ -3172,25 +3109,17 @@ designViewController.controller('designViewController', function ($scope, pictur
                 document.onmouseup = null;
                 document.onmousemove = null;
 
-                console.log('elmnt', elmnt); // .offsetTop // REMOVE
                 $scope.mydiv = {
                     top: (elmnt.offsetTop - pos2),
                     left: (elmnt.offsetLeft - pos1)
                 }
-                console.log('$scope mydiv', $scope.mydiv); // REMOVE
-                console.log('$scope', $scope); // REMOVE
 
-                console.log('window.innerWidth', window.innerWidth); // REMOVE
-                console.log('window.innerHeight', window.innerHeight); // REMOVE
 
                 var banner = $(elmnt.parentNode);
-                console.log('banner.height', banner.height()); // REMOVE
 
                 var leftP, topP;
                 leftP = ($scope.mydiv.left * 100) / window.innerWidth;
                 topP = ($scope.mydiv.top * 100) / banner.height();
-                console.log('leftP = ', leftP); // REMOVE
-                console.log('topP = ', topP); // REMOVE
 
                 $scope.mydiv = {
 
@@ -3198,7 +3127,6 @@ designViewController.controller('designViewController', function ($scope, pictur
                     left: ($scope.mydiv.left * 100) / window.innerWidth,/* leftP */
                     top: ($scope.mydiv.top * 100) / banner.height()/* topP */
                 }
-                console.log('$scope AF%', $scope); // REMOVE
 
                 /* If element is outside from the left */
                 if ($scope.mydiv.left < 0) {
@@ -3216,7 +3144,6 @@ designViewController.controller('designViewController', function ($scope, pictur
 
                     /* Recalculate & reassign element top position percentage */
                     $scope.mydiv.top = ((banner.height() - $(elmnt).height()) * 100) / banner.height();
-                    console.log('$scope.mydiv.top', $scope.mydiv.top); // REMOVE
                 }
             }
         }
