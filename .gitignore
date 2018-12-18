@@ -1,8 +1,9 @@
 server/node_modules
 client/uploads
 server/email
-server/
 .idea/
-server/routes
-server/server.js
+package-lock.json
 server/app.js
+server/server.js
+#server/routes
+#server/
