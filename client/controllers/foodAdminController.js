@@ -99,7 +99,7 @@ foodAdminController.controller('foodAdminController', function($scope, $rootScop
         $scope.addFoodModal = false;
     }
 
-    $scope.courses = ["Vali käik","Eelroog", "Pearoog", "Magustoit"];
+    $scope.courses = ["Vali käik","Eelroog", "Pearoog", "Magustoit", "Lastemenüü"];
     $scope.selected = $scope.courses[0];
 
     foodService.getFood().then(function(data){

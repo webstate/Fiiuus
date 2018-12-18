@@ -1,6 +1,10 @@
 var sliderCtrl = angular.module('sliderCtrl', []);
 
-sliderCtrl.controller('sliderCtrl', function($location,$rootScope, $scope, landingTextService, pictureService, eventService, bookingService, emailService, $window){
+sliderCtrl.controller('sliderCtrl', function($location,$rootScope, $scope, landingTextService, pictureService, eventService, bookingService, emailService, $window, $timeout){
+
+    /* Set initial windowWidth variable */
+    $scope.windowWidth = $( window ).width();
+
 
     if($location.url() === "/"){
         $rootScope.lang = "ee";
@@ -21,6 +25,70 @@ sliderCtrl.controller('sliderCtrl', function($location,$rootScope, $scope, landi
     if($location.url() === "/broneerilaud"){
         $rootScope.lang = "ee";
         $rootScope.bookingModal = true;
+    }
+
+    /* MENU URL EE */
+    if($location.url() === "/menu/ee"){
+        $rootScope.lang = "ee";
+        $rootScope.bookingModal = false;
+
+        $(document).ready(function(scope, element, attrs){
+            var element = $("[scroll-bookmark=menu]");
+            if(element.length){
+                $timeout(function(){
+                    $('body, html').animate({scrollTop: element.offset().top}, "slow");
+                    return false;
+                }, 100);
+            }
+        })
+    }
+
+    /* MENU URL EN */
+    if($location.url() === "/menu/en"){
+        $rootScope.lang = "en";
+        $rootScope.bookingModal = false;
+
+        $(document).ready(function(scope, element, attrs){
+            var element = $("[scroll-bookmark=menu]");
+            if(element.length){
+                $timeout(function(){
+                    $('body, html').animate({scrollTop: element.offset().top}, "slow");
+                    return false;
+                }, 100);
+            }
+        })
+    }
+
+    /* MENU URL FI */
+    if($location.url() === "/menu/fi"){
+        $rootScope.lang = "fi";
+        $rootScope.bookingModal = false;
+
+        $(document).ready(function(scope, element, attrs){
+            var element = $("[scroll-bookmark=menu]");
+            if(element.length){
+                $timeout(function(){
+                    $('body, html').animate({scrollTop: element.offset().top}, "slow");
+                    return false;
+                }, 100);
+            }
+        })
+    }
+
+    /* MENU URL RU */
+    if($location.url() === "/menu/ru"){
+        $rootScope.lang = "ru";
+        $rootScope.bookingModal = false;
+
+        $(document).ready(function(scope, element, attrs){
+            var element = $("[scroll-bookmark=menu]");
+            if(element.length){
+                $timeout(function(){
+                    $('body, html').animate({scrollTop: element.offset().top}, "slow");
+                    return false;
+                }, 100);
+            }
+        })
     }
 
     $scope.language = $rootScope.lang;
@@ -60,12 +128,38 @@ sliderCtrl.controller('sliderCtrl', function($location,$rootScope, $scope, landi
             "_blank"
         );
     }
+
+
     // ESTONIAN LANDING TEXTS
+
+    pictureService.getBannerTitlePosition('bannerTitlePositionEst').then(function (data) {
+        // // console.log('data in getBannerTitlePositionEst', data); // REMOVE
+        if (data === null) {
+            $scope.bannerTitlePositionTopEst = 35;
+            $scope.bannerTitlePositionLeftEst = 1;
+        //     console.log('$scope.bannerTitlePositionEstTop @null', $scope.bannerTitlePositionEstTop); // REMOVE
+        } else {
+            $scope.bannerTitlePositionTopEst = data.top;
+            $scope.bannerTitlePositionLeftEst = data.left;
+        //     // console.log('$scope.bannerTitlePositionEstTop @not null', $scope.bannerTitlePositionEstTop); // REMOVE
+        }
+    })
+
+    landingTextService.getLandingText("bannerTitleEst", "ee").then(function(data){
+        $scope.bannerTitleEst = data.text;
+        console.log('$scope.mydivOffsetTop @slider - ', $scope); // REMOVE
+    })
+    landingTextService.getLandingText("aboutTitleEst", "ee").then(function(data){
+        $scope.aboutTitleEst = data.text;
+    })
     landingTextService.getLandingText("workerTitle", "ee").then(function(data){
         $scope.workerTitle = data.text;
     })
     landingTextService.getLandingText("workerText", "ee").then(function(data){
         $scope.workerText = data.text;
+    })
+    landingTextService.getLandingText("menuSectionSubTitleEst", "ee").then(function(data){
+        $scope.menuSectionSubTitleEst = data.text;
     })
     landingTextService.getLandingText("menuTitle", "ee").then(function(data){
         $scope.menuTitle = data.text;
@@ -76,17 +170,29 @@ sliderCtrl.controller('sliderCtrl', function($location,$rootScope, $scope, landi
     landingTextService.getLandingText("courseTitleStarter", "ee").then(function(data){
         $scope.courseTitleStarter = data.text;
     })
+    landingTextService.getLandingText("courseTitleDrinks", "ee").then(function(data){
+        $scope.courseTitleDrinks = data.text;
+    })
+    landingTextService.getLandingText("courseTitleKids", "ee").then(function(data){
+        $scope.courseTitleKids = data.text;
+    })
     landingTextService.getLandingText("courseTitleMain", "ee").then(function(data){
         $scope.courseTitleMain = data.text;
     })
     landingTextService.getLandingText("courseTitleDessert", "ee").then(function(data){
         $scope.courseTitleDessert = data.text;
     })
+    landingTextService.getLandingText("tastingHeadingEst", "ee").then(function(data){
+        $scope.tastingHeadingEst = data.text;
+    })
     landingTextService.getLandingText("tastingText", "ee").then(function(data){
         $scope.tastingText = data.text;
     })
     landingTextService.getLandingText("eventTitle", "ee").then(function(data){
         $scope.eventTitle = data.text;
+    })
+    landingTextService.getLandingText("contactSubTitleEst", "ee").then(function(data){
+        $scope.contactSubTitleEst = data.text;
     })
     landingTextService.getLandingText("contactCallEst", "ee").then(function(data){
         $scope.contactCallEst = data.text;
@@ -109,23 +215,39 @@ sliderCtrl.controller('sliderCtrl', function($location,$rootScope, $scope, landi
     landingTextService.getLandingText("contactWeekend", "ee").then(function(data){
         $scope.contactWeekend = data.text;
     })
-    landingTextService.getLandingText("bannerTitleEst", "ee").then(function(data){
-        $scope.bannerTitleEst = data.text;
+    landingTextService.getLandingText("groupMenuButtonEst", "ee").then(function(data){
+        $scope.groupMenuButtonEst = data.text;
     })
+
+
+
+    // ENGLISH LANDING TEXTS
+
+    pictureService.getBannerTitlePosition('bannerTitlePositionEng').then(function (data) {
+        console.log('data in getBannerTitlePositionEng = ', data); // REMOVE
+        if (data === null) {
+            $scope.bannerTitlePositionTopEng = 35;
+            $scope.bannerTitlePositionLeftEng = 1;
+            // console.log('$scope.bannerTitlePositionEngTop @null', $scope.bannerTitlePositionEngTop); // REMOVE
+        } else {
+            $scope.bannerTitlePositionTopEng = data.top;
+            $scope.bannerTitlePositionLeftEng = data.left;
+            // console.log('$scope.bannerTitlePositionEngTop @not null', $scope.bannerTitlePositionEngTop); // REMOVE
+        }
+    })
+
     landingTextService.getLandingText("bannerTitleEng", "ee").then(function(data){
         $scope.bannerTitleEng = data.text;
     })
-    landingTextService.getLandingText("bannerTitleFin", "ee").then(function(data){
-        $scope.bannerTitleFin = data.text;
-    })
-    landingTextService.getLandingText("bannerTitleRus", "ee").then(function(data){
-        $scope.bannerTitleRus = data.text;
-    })
 
-// ENGLISH LANDING TEXTS
-
+    landingTextService.getLandingText("aboutTitleEng", "ee").then(function(data){
+        $scope.aboutTitleEng = data.text;
+    })
     landingTextService.getLandingText("contactCallEng", "ee").then(function(data){
         $scope.contactCallEng = data.text;
+    })
+    landingTextService.getLandingText("contactSubTitleEng", "ee").then(function(data){
+        $scope.contactSubTitleEng = data.text;
     })
     landingTextService.getLandingText("contactVisitEng", "ee").then(function(data){
         $scope.contactVisitEng = data.text;
@@ -141,6 +263,12 @@ sliderCtrl.controller('sliderCtrl', function($location,$rootScope, $scope, landi
     })
     landingTextService.getLandingText("courseTitleStarterEng", "ee").then(function(data){
         $scope.courseTitleStarterEng = data.text;
+    })
+    landingTextService.getLandingText("courseTitleDrinksEng", "ee").then(function(data){
+        $scope.courseTitleDrinksEng = data.text;
+    })
+    landingTextService.getLandingText("courseTitleKidsEng", "ee").then(function(data){
+        $scope.courseTitleKidsEng = data.text;
     })
     landingTextService.getLandingText("courseTitleMainEng", "ee").then(function(data){
         $scope.courseTitleMainEng = data.text;
@@ -160,11 +288,17 @@ sliderCtrl.controller('sliderCtrl', function($location,$rootScope, $scope, landi
     landingTextService.getLandingText("workerTextEng", "ee").then(function(data){
         $scope.workerTextEng = data.text;
     })
+    landingTextService.getLandingText("menuSectionSubTitleEng", "ee").then(function(data){
+        $scope.menuSectionSubTitleEng = data.text;
+    })
     landingTextService.getLandingText("menuTitleEng", "ee").then(function(data){
         $scope.menuTitleEng = data.text;
     })
     landingTextService.getLandingText("menuTextEng", "ee").then(function(data){
         $scope.menuTextEng = data.text;
+    })
+    landingTextService.getLandingText("tastingHeadingEng", "ee").then(function(data){
+        $scope.tastingHeadingEng = data.text;
     })
     landingTextService.getLandingText("tastingTextEng", "ee").then(function(data){
         $scope.tastingTextEng = data.text;
@@ -172,11 +306,39 @@ sliderCtrl.controller('sliderCtrl', function($location,$rootScope, $scope, landi
     landingTextService.getLandingText("eventTitleEng", "ee").then(function(data){
         $scope.eventTitleEng = data.text;
     })
+    landingTextService.getLandingText("groupMenuButtonEng", "ee").then(function(data){
+        $scope.groupMenuButtonEng = data.text;
+    })
 
-// FINNISH LANDING TEXTS
 
+    // FINNISH LANDING TEXTS
+
+    pictureService.getBannerTitlePosition('bannerTitlePositionFin').then(function (data) {
+        // console.log('data in getBannerTitlePositionFin = ', data); // REMOVE
+        if (data === null) {
+            $scope.bannerTitlePositionTopFin = 35;
+            $scope.bannerTitlePositionLeftFin = 1;
+            // console.log('$scope.bannerTitlePositionFinTop @null', $scope.bannerTitlePositionFinTop); // REMOVE
+        } else {
+            $scope.bannerTitlePositionTopFin = data.top;
+            $scope.bannerTitlePositionLeftFin = data.left;
+            // console.log('$scope.bannerTitlePositionFinTop @not null', $scope.bannerTitlePositionFinTop); // REMOVE
+        }
+    })
+
+    landingTextService.getLandingText("bannerTitleFin", "ee").then(function(data){
+        console.log('FIN-data initial', data); // REMOVE
+        $scope.bannerTitleFin = data.text;
+    })
+
+    landingTextService.getLandingText("aboutTitleFin", "ee").then(function(data){
+        $scope.aboutTitleFin = data.text;
+    })
     landingTextService.getLandingText("contactCallFin", "ee").then(function(data){
         $scope.contactCallFin = data.text;
+    })
+    landingTextService.getLandingText("contactSubTitleFin", "ee").then(function(data){
+        $scope.contactSubTitleFin = data.text;
     })
     landingTextService.getLandingText("contactVisitFin", "ee").then(function(data){
         $scope.contactVisitFin = data.text;
@@ -192,6 +354,12 @@ sliderCtrl.controller('sliderCtrl', function($location,$rootScope, $scope, landi
     })
     landingTextService.getLandingText("courseTitleStarterFin", "ee").then(function(data){
         $scope.courseTitleStarterFin = data.text;
+    })
+    landingTextService.getLandingText("courseTitleDrinksFin", "ee").then(function(data){
+        $scope.courseTitleDrinksFin = data.text;
+    })
+    landingTextService.getLandingText("courseTitleKidsFin", "ee").then(function(data){
+        $scope.courseTitleKidsFin = data.text;
     })
     landingTextService.getLandingText("courseTitleMainFin", "ee").then(function(data){
         $scope.courseTitleMainFin = data.text;
@@ -211,11 +379,17 @@ sliderCtrl.controller('sliderCtrl', function($location,$rootScope, $scope, landi
     landingTextService.getLandingText("workerTextFin", "ee").then(function(data){
         $scope.workerTextFin = data.text;
     })
+    landingTextService.getLandingText("menuSectionSubTitleFin", "ee").then(function(data){
+        $scope.menuSectionSubTitleFin = data.text;
+    })
     landingTextService.getLandingText("menuTitleFin", "ee").then(function(data){
         $scope.menuTitleFin = data.text;
     })
     landingTextService.getLandingText("menuTextFin", "ee").then(function(data){
         $scope.menuTextFin = data.text;
+    })
+    landingTextService.getLandingText("tastingHeadingFin", "ee").then(function(data){
+        $scope.tastingHeadingFin = data.text;
     })
     landingTextService.getLandingText("tastingTextFin", "ee").then(function(data){
         $scope.tastingTextFin = data.text;
@@ -223,11 +397,40 @@ sliderCtrl.controller('sliderCtrl', function($location,$rootScope, $scope, landi
     landingTextService.getLandingText("eventTitleFin", "ee").then(function(data){
         $scope.eventTitleFin = data.text;
     })
+    landingTextService.getLandingText("groupMenuButtonFin", "ee").then(function(data){
+        $scope.groupMenuButtonFin = data.text;
+    })
 
-// RUSSIAN LANDING TEXTS
 
+    // RUSSIAN LANDING TEXTS
+
+    pictureService.getBannerTitlePosition('bannerTitlePositionRus').then(function (data) {
+        // console.log('data in getBannerTitlePositionRus = ', data); // REMOVE
+        if (data === null) {
+            $scope.bannerTitlePositionTopRus = 35;
+            $scope.bannerTitlePositionLeftRus = 1;
+            // console.log('$scope.bannerTitlePositionRusTop @null', $scope.bannerTitlePositionRusTop); // REMOVE
+        } else {
+            $scope.bannerTitlePositionTopRus = data.top;
+            $scope.bannerTitlePositionLeftRus = data.left;
+            // console.log('$scope.bannerTitlePositionRusTop @not null', $scope.bannerTitlePositionRusTop); // REMOVE
+        }
+    })
+
+    landingTextService.getLandingText("bannerTitleRus", "ee").then(function(data){
+        console.log('Rus-data initial', data); // REMOVE
+        $scope.bannerTitleRus = data.text;
+    })
+
+
+    landingTextService.getLandingText("aboutTitleRus", "ee").then(function(data){
+        $scope.aboutTitleRus = data.text;
+    })
     landingTextService.getLandingText("contactCallRus", "ee").then(function(data){
         $scope.contactCallRus = data.text;
+    })
+    landingTextService.getLandingText("contactSubTitleRus", "ee").then(function(data){
+        $scope.contactSubTitleRus = data.text;
     })
     landingTextService.getLandingText("contactVisitRus", "ee").then(function(data){
         $scope.contactVisitRus = data.text;
@@ -243,6 +446,12 @@ sliderCtrl.controller('sliderCtrl', function($location,$rootScope, $scope, landi
     })
     landingTextService.getLandingText("courseTitleStarterRus", "ee").then(function(data){
         $scope.courseTitleStarterRus = data.text;
+    })
+    landingTextService.getLandingText("courseTitleDrinksRus", "ee").then(function(data){
+        $scope.courseTitleDrinksRus = data.text;
+    })
+    landingTextService.getLandingText("courseTitleKidsRus", "ee").then(function(data){
+        $scope.courseTitleKidsRus = data.text;
     })
     landingTextService.getLandingText("courseTitleMainRus", "ee").then(function(data){
         $scope.courseTitleMainRus = data.text;
@@ -262,11 +471,17 @@ sliderCtrl.controller('sliderCtrl', function($location,$rootScope, $scope, landi
     landingTextService.getLandingText("workerTextRus", "ee").then(function(data){
         $scope.workerTextRus = data.text;
     })
+    landingTextService.getLandingText("menuSectionSubTitleRus", "ee").then(function(data){
+        $scope.menuSectionSubTitleRus = data.text;
+    })
     landingTextService.getLandingText("menuTitleRus", "ee").then(function(data){
         $scope.menuTitleRus = data.text;
     })
     landingTextService.getLandingText("menuTextRus", "ee").then(function(data){
         $scope.menuTextRus = data.text;
+    })
+    landingTextService.getLandingText("tastingHeadingRus", "ee").then(function(data){
+        $scope.tastingHeadingRus = data.text;
     })
     landingTextService.getLandingText("tastingTextRus", "ee").then(function(data){
         $scope.tastingTextRus = data.text;
@@ -274,13 +489,21 @@ sliderCtrl.controller('sliderCtrl', function($location,$rootScope, $scope, landi
     landingTextService.getLandingText("eventTitleRus", "ee").then(function(data){
         $scope.eventTitleRus = data.text;
     })
+    landingTextService.getLandingText("groupMenuButtonRus", "ee").then(function(data){
+        $scope.groupMenuButtonRus = data.text;
+    })
 
 
 
 
 
-
-
+    pictureService.getMenuPicture('whiteguide').then(function(data){
+        if (data == null) {
+            $scope.whiteguidePicturePath = "css/img/whiteguide2019.png";
+        } else {
+            $scope.whiteguidePicturePath = data.picturePath;
+        }
+    })
     pictureService.getMenuPicture('event').then(function(data){
         if(data == null){
             $scope.eventPicturePath = "";

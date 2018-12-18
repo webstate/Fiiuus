@@ -26,7 +26,8 @@ var Worker = require('../models/worker.js');
 var Food = require('../models/food.js');
 var Drink = require('../models/drink.js');
 var Picture = require('../models/pictures.js');
-var BannerPicture = require('../models/bannerpicture.js');
+var BannerPicture = require('../models/bannerpictures.js');
+var BannerTitlePosition = require('../models/bannertitleposition.js');
 var Texts = require('../models/texts.js');
 var Event = require('../models/event.js');
 var DesignPicture = require('../models/designPics.js');
@@ -731,8 +732,16 @@ router.post('/design/add', function(req, res){
     }, function(err, count){
         if(err) res.send(err);
         if(count === 0){
+            var str = req.body.path;
+            if(str.indexOf('/')>=0 && str.indexOf('/') != -1){
+                var splitstr = str.split("/");
+            } else {
+                var splitstr = str.split(/(\u005C)/g);
+            }
+            var correctPath = 'uploads/'+ splitstr[splitstr.length - 1];
+
             DesignPicture.create({
-                picturePath: req.body.path,
+                picturePath: correctPath,/* req.body.path */
                 block: req.body.menuPosition
             }, function(err){
                 if(err) res.send(err);
@@ -740,13 +749,21 @@ router.post('/design/add', function(req, res){
                     path: req.body.path
                 })
             })
-        }else{
+        } else {
+            var str = req.body.path;
+            if(str.indexOf('/')>=0 && str.indexOf('/') != -1){
+                var splitstr = str.split("/");
+            } else {
+                var splitstr = str.split(/(\u005C)/g);
+            }
+            var correctPath = 'uploads/'+ splitstr[splitstr.length - 1];
+
             DesignPicture.findOne({
                 block: req.body.menuPosition
             }, function(err, picture){
                 if(err)res.send(err);
                 picture.update({
-                    picturePath: req.body.path
+                    picturePath: correctPath/* req.body.path */
                 }, function(err){
                     if(err)res.send(err);
                     res.json({
@@ -797,8 +814,20 @@ router.post('/texts/update', function(req, res){
 })
 // Picture routes ---------------------
 router.post('/picture/add', upload.single('file'),function(req, res){
+    /* Live db version */
+    // var correctPath = str.replace(/\/opt\/bitnami\/apps\/Fii\/client\//, '../');
+
+    /* New version */
     var str = req.file.path;
-    var correctPath = str.replace(/\/opt\/bitnami\/apps\/Fii\/client\//, '../');
+    if (str != null || str != undefined) {
+        if(str.indexOf('/')>=0 && str.indexOf('/') != -1){
+            var splitstr = str.split("/");
+        } else {
+            var splitstr = str.split(/(\u005C)/g);
+        }
+        var correctPath = 'uploads/'+ splitstr[splitstr.length - 1];
+    }
+
     Picture.create({
         picture:correctPath
     }, function(err){
@@ -806,23 +835,130 @@ router.post('/picture/add', upload.single('file'),function(req, res){
     })
     res.json(correctPath);
 })
-//Banner picture routes ----------------------------
+// //Banner picture routes ----------------------------
+// router.post('/bannerpicture/add', function(req, res){
+//     BannerPicture.create({
+//         picturePath: req.body.picturePath
+//     }, function(err){
+//         if(err) res.send(err);
+//     })
+//     res.json({
+//         msg: "Banner picture was added"
+//     })
+// })
+// router.get('/bannerpicture/get', function(req, res){
+//     BannerPicture.find(function(err, pictures){
+//         if(err) res.send(err);
+//         res.send(pictures);
+//     });
+// })
+
+/* BannerPicture v2 */
 router.post('/bannerpicture/add', function(req, res){
-    BannerPicture.create({
-        picturePath: req.body.picturePath
-    }, function(err){
+    BannerPicture.count({
+        block: req.body.menuPosition
+    }, function(err, count){
         if(err) res.send(err);
+        if(count === 0){
+            var str = req.body.path;
+            if(str.indexOf('/')>=0 && str.indexOf('/') != -1){
+                var splitstr = str.split("/");
+            } else {
+                var splitstr = str.split(/(\u005C)/g);
+            }
+            var correctPath = 'uploads/'+ splitstr[splitstr.length - 1];
+
+            BannerPicture.create({
+                picturePath: req.body.path,
+                block: req.body.menuPosition
+            }, function(err){
+                if(err) res.send(err);
+                res.json({
+                    path: req.body.path
+                })
+            })
+        } else {
+            var str = req.body.path;
+            if(str.indexOf('/')>=0 && str.indexOf('/') != -1){
+                var splitstr = str.split("/");
+            } else {
+                var splitstr = str.split(/(\u005C)/g);
+            }
+            var correctPath = 'uploads/'+ splitstr[splitstr.length - 1];
+
+            BannerPicture.findOne({
+                block: req.body.menuPosition
+            }, function(err, picture){
+                if(err)res.send(err);
+                picture.update({
+                    picturePath: req.body.path
+                }, function(err){
+                    if(err)res.send(err);
+                    res.json({
+                        msg:"Picture was updated"
+                    })
+                })
+            })
+        }
     })
-    res.json({
-        msg: "Banner picture was added"
+
+})
+router.post('/bannerpicture/get', function(req, res){
+    BannerPicture.findOne({
+        block: req.body.menuPosition
+    }, function(err, picture){
+        if(err) res.send(err);
+        res.json(picture);
     })
 })
-router.get('/bannerpicture/get', function(req, res){
-    BannerPicture.find(function(err, pictures){
+
+
+/* Banner Title Pos */
+router.post('/bannerpicture/title/add', function(req, res){
+    BannerTitlePosition.count({
+        block: req.body.dbPosition
+    }, function(err, count){
         if(err) res.send(err);
-        res.send(pictures);
-    });
+        if(count === 0){
+            BannerTitlePosition.create({
+                top: req.body.top,
+                left: req.body.left,
+                block: req.body.dbPosition
+            }, function(err){
+                if(err) res.send(err);
+                res.json({
+                    top: req.body.top,
+                    left: req.body.left
+                })
+            })
+        } else {
+            BannerTitlePosition.findOne({
+                block: req.body.dbPosition
+            }, function(err, BannerTitlePosition){
+                if(err)res.send(err);
+                BannerTitlePosition.update({
+                    top: req.body.top,
+                    left: req.body.left
+                }, function(err){
+                    if(err)res.send(err);
+                    res.json({
+                        msg:"Position was updated"
+                    })
+                })
+            })
+        }
+    })
 })
+router.post('/bannerpicture/title/get', function(req, res){
+    BannerTitlePosition.findOne({
+        block: req.body.dbPosition
+    }, function(err, BannerTitlePosition){
+        if(err) res.send(err);
+        res.json(BannerTitlePosition);
+    })
+})/* End of Title pos */
+
+
 // Food routes -----------------------
 router.get('/food/starters', function(req, res){
     Food.find({
@@ -876,6 +1012,14 @@ router.get('/food/main', function(req, res){
 router.get('/food/dessert', function(req, res){
     Food.find({
         course: "Magustoit"
+    }, function(err, foods){
+        if(err) res.send(err);
+        res.json(foods);
+    })
+})
+router.get('/food/kids', function(req, res){
+    Food.find({
+        course: "Lastemenüü"
     }, function(err, foods){
         if(err) res.send(err);
         res.json(foods);

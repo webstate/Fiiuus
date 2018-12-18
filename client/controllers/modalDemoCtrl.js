@@ -31,6 +31,12 @@ modalDemoCtrl.controller('modalDemoCtrl', function($scope, $rootScope, $timeout)
         e.stopPropagation();
     };
 
+    $(document)
+    .on("click", "menu-item", function(){
+        $('body').css({'overflow-x': 'hidden;', 'overflow-y': 'scroll'});
+    })
+
+
     $scope.showRight = function(e) {
         $scope.rightVisible = true;
         e.stopPropagation();

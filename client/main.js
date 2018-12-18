@@ -56,15 +56,15 @@ myApp.config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
   $urlRouterProvider.otherwise('/');
   $stateProvider
     .state('landing', {
-      url: '/{id:(?:ru|fi|en|broneerilaud|)}',
+      url: '/{id:(?:ru|fi|en|menu/ee|menu/en|menu/fi|menu/ru|broneerilaud|)}',
       templateUrl: 'partials/landing.html',
       access: {restricted: false}
     })
     .state('login', {
-      url: '/login',
-      templateUrl: 'partials/login.html',
-      controller: 'loginController',
-      access: {restricted: false}
+        url: '/login',
+        templateUrl: 'partials/login.html',
+        controller: 'loginController',
+        access: {restricted: false}
     })
     .state('logout', {
       controller: 'logoutController',

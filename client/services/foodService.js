@@ -5,6 +5,7 @@ foodService.factory('foodService', function($q, $http){
         addFood: addFood,
         getFood: getFood,
         getStarters: getStarters,
+        getKids: getKids,
         getMain: getMain,
         getDessert: getDessert,
         removeFood: removeFood,
@@ -51,6 +52,18 @@ foodService.factory('foodService', function($q, $http){
     function getDessert(){
         var d = $q.defer();
         $http.get('food/food/dessert')
+        .then(function(response){
+            var data = response.data;
+            d.resolve(data);
+        }).catch(function(response){
+            var err = response.data;
+            d.reject(err);
+        })
+        return d.promise;
+    }
+    function getKids(){
+        var d = $q.defer();
+        $http.get('food/food/kids')
         .then(function(response){
             var data = response.data;
             d.resolve(data);
