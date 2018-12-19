@@ -835,25 +835,8 @@ router.post('/picture/add', upload.single('file'),function(req, res){
     })
     res.json(correctPath);
 })
-// //Banner picture routes ----------------------------
-// router.post('/bannerpicture/add', function(req, res){
-//     BannerPicture.create({
-//         picturePath: req.body.picturePath
-//     }, function(err){
-//         if(err) res.send(err);
-//     })
-//     res.json({
-//         msg: "Banner picture was added"
-//     })
-// })
-// router.get('/bannerpicture/get', function(req, res){
-//     BannerPicture.find(function(err, pictures){
-//         if(err) res.send(err);
-//         res.send(pictures);
-//     });
-// })
 
-/* BannerPicture v2 */
+// //Banner picture routes ----------------------------
 router.post('/bannerpicture/add', function(req, res){
     BannerPicture.count({
         block: req.body.menuPosition
