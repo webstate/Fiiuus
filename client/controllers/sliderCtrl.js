@@ -22,8 +22,20 @@ sliderCtrl.controller('sliderCtrl', function($location,$rootScope, $scope, landi
         $rootScope.lang = "ru";
         $rootScope.bookingModal = false;
     }
-    if($location.url() === "/broneerilaud"){
+    if($location.url() === "/broneerilaud/ee"){
         $rootScope.lang = "ee";
+        $rootScope.bookingModal = true;
+    }
+    if($location.url() === "/broneerilaud/en"){
+        $rootScope.lang = "en";
+        $rootScope.bookingModal = true;
+    }
+    if($location.url() === "/broneerilaud/fi"){
+        $rootScope.lang = "fi";
+        $rootScope.bookingModal = true;
+    }
+    if($location.url() === "/broneerilaud/ru"){
+        $rootScope.lang = "ru";
         $rootScope.bookingModal = true;
     }
 
