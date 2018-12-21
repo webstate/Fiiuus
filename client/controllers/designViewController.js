@@ -654,52 +654,52 @@ designViewController.controller('designViewController', function ($scope, pictur
         });
     }
 
-    landingTextService.getLandingText("contactTimeWeekend", "ee").then(function (data) {
-        if (data.text == null) {
-            $scope.weekendTime = "Nothing here";
-        }
-        $scope.weekendTime = data.text;
-    })
-    $scope.insertWeekend = function () {
-        var update = "";
-        update = $scope.weekendTime;
-        if ($scope.weekendTime === "{{editWeekendTime}}") {
-            update = $scope.editWeekendTime;
-        }
-        landingTextService.addOrUpdateLandingText("contactTimeWeekend", update, "ee").then(function (data) {
-            landingTextService.getLandingText("contactTimeWeekend", "ee").then(function (data) {
-                if (data.text == null) {
-                    $scope.weekendTime = "Nothing here";
-                }
-                $scope.weekendTime = data.text;
-            })
-        });
-    }
-    //
-    landingTextService.getLandingText("contactWeekend", "ee").then(function (data) {
-        if (data.text == null) {
-            $scope.contactWeekend = "There is nothing yet inserted";
-        } else {
-            $scope.contactWeekend = data.text;
-        }
-    }, function (err) {
-        console.log(err);
-    })
-    $scope.insertContactWeekend = function () {
-        var update = "";
-        update = $scope.contactWeekend;
-        if ($scope.contactWeekend === "{{editContactWeekend}}") {
-            update = $scope.editContactWeekend;
-        }
-        landingTextService.addOrUpdateLandingText("contactWeekend", update, "ee").then(function (data) {
-            landingTextService.getLandingText("contactWeekend", "ee").then(function (data) {
-                if (data.text == null) {
-                    $scope.contactWeekend = "Nothing here";
-                }
-                $scope.contactWeekend = data.text;
-            })
-        });
-    }
+    // landingTextService.getLandingText("contactTimeWeekend", "ee").then(function (data) {
+    //     if (data.text == null) {
+    //         $scope.weekendTime = "Nothing here";
+    //     }
+    //     $scope.weekendTime = data.text;
+    // })
+    // $scope.insertWeekend = function () {
+    //     var update = "";
+    //     update = $scope.weekendTime;
+    //     if ($scope.weekendTime === "{{editWeekendTime}}") {
+    //         update = $scope.editWeekendTime;
+    //     }
+    //     landingTextService.addOrUpdateLandingText("contactTimeWeekend", update, "ee").then(function (data) {
+    //         landingTextService.getLandingText("contactTimeWeekend", "ee").then(function (data) {
+    //             if (data.text == null) {
+    //                 $scope.weekendTime = "Nothing here";
+    //             }
+    //             $scope.weekendTime = data.text;
+    //         })
+    //     });
+    // }
+    // //
+    // landingTextService.getLandingText("contactWeekend", "ee").then(function (data) {
+    //     if (data.text == null) {
+    //         $scope.contactWeekend = "There is nothing yet inserted";
+    //     } else {
+    //         $scope.contactWeekend = data.text;
+    //     }
+    // }, function (err) {
+    //     console.log(err);
+    // })
+    // $scope.insertContactWeekend = function () {
+    //     var update = "";
+    //     update = $scope.contactWeekend;
+    //     if ($scope.contactWeekend === "{{editContactWeekend}}") {
+    //         update = $scope.editContactWeekend;
+    //     }
+    //     landingTextService.addOrUpdateLandingText("contactWeekend", update, "ee").then(function (data) {
+    //         landingTextService.getLandingText("contactWeekend", "ee").then(function (data) {
+    //             if (data.text == null) {
+    //                 $scope.contactWeekend = "Nothing here";
+    //             }
+    //             $scope.contactWeekend = data.text;
+    //         })
+    //     });
+    // }
     landingTextService.getLandingText("contactDays", "ee").then(function (data) {
         if (data.text == null) {
             $scope.contactDays = "There is nothing yet inserted";
@@ -1291,34 +1291,35 @@ designViewController.controller('designViewController', function ($scope, pictur
         landingTextService.addOrUpdateLandingText("contactEmailEng", val, "ee");
     })*/
 
-    landingTextService.getLandingText("contactTimeWeekendEng", "ee").then(function (data) {
-        if (data.text == null) {
-            $scope.weekendTimeEng = "Nothing here";
-        }
-        $scope.weekendTimeEng = data.text;
-    })
-    $scope.insertWeekendEng = function () {
-        var update = "";
-        update = $scope.weekendTimeEng;
-        if ($scope.weekendTimeEng === "{{editWeekendTimeEng}}") {
-            update = $scope.editWeekendTimeEng;
-        }
-        landingTextService.addOrUpdateLandingText("contactTimeWeekendEng", update, "ee").then(function (data) {
-            landingTextService.getLandingText("contactTimeWeekendEng", "ee").then(function (data) {
-                if (data.text == null) {
-                    $scope.weekendTimeEng = "Nothing here";
-                }
-                $scope.weekendTimeEng = data.text;
-            })
-        });
-    }
+    // landingTextService.getLandingText("contactTimeWeekendEng", "ee").then(function (data) {
+    //     if (data.text == null) {
+    //         $scope.weekendTimeEng = "Nothing here";
+    //     }
+    //     $scope.weekendTimeEng = data.text;
+    // })
+    // $scope.insertWeekendEng = function () {
+    //     var update = "";
+    //     update = $scope.weekendTimeEng;
+    //     if ($scope.weekendTimeEng === "{{editWeekendTimeEng}}") {
+    //         update = $scope.editWeekendTimeEng;
+    //     }
+    //     landingTextService.addOrUpdateLandingText("contactTimeWeekendEng", update, "ee").then(function (data) {
+    //         landingTextService.getLandingText("contactTimeWeekendEng", "ee").then(function (data) {
+    //             if (data.text == null) {
+    //                 $scope.weekendTimeEng = "Nothing here";
+    //             }
+    //             $scope.weekendTimeEng = data.text;
+    //         })
+    //     });
+    // }
 
-    landingTextService.getLandingText("contactTimeWorkWeekEng", "ee").then(function (data) {
-        if (data.text == null) {
-            $scope.workWeekTimeEng = "Nothing here";
-        }
-        $scope.workWeekTimeEng = data.text;
-    })
+    // landingTextService.getLandingText("contactTimeWorkWeekEng", "ee").then(function (data) {
+    //     if (data.text == null) {
+    //         $scope.workWeekTimeEng = "Nothing here";
+    //     }
+    //     $scope.workWeekTimeEng = data.text;
+    // })
+
     $scope.insertWorkWeekEng = function () {
         var update = "";
         update = $scope.workWeekTimeEng;
@@ -1360,30 +1361,30 @@ designViewController.controller('designViewController', function ($scope, pictur
         });
     }
     /**/
-    landingTextService.getLandingText("contactWeekendEng", "ee").then(function (data) {
-        if (data.text == null) {
-            $scope.contactWeekendEng = "There is nothing yet inserted";
-        } else {
-            $scope.contactWeekendEng = data.text;
-        }
-    }, function (err) {
-        console.log(err);
-    })
-    $scope.insertContactWeekendEng = function () {
-        var update = "";
-        update = $scope.contactWeekendEng;
-        if ($scope.contactWeekendEng === "{{editContactWeekendEng}}") {
-            update = $scope.editContactWeekendEng;
-        }
-        landingTextService.addOrUpdateLandingText("contactWeekendEng", update, "ee").then(function (data) {
-            landingTextService.getLandingText("contactWeekendEng", "ee").then(function (data) {
-                if (data.text == null) {
-                    $scope.contactWeekendEng = "Nothing here";
-                }
-                $scope.contactWeekendEng = data.text;
-            })
-        });
-    }
+    // landingTextService.getLandingText("contactWeekendEng", "ee").then(function (data) {
+    //     if (data.text == null) {
+    //         $scope.contactWeekendEng = "There is nothing yet inserted";
+    //     } else {
+    //         $scope.contactWeekendEng = data.text;
+    //     }
+    // }, function (err) {
+    //     console.log(err);
+    // })
+    // $scope.insertContactWeekendEng = function () {
+    //     var update = "";
+    //     update = $scope.contactWeekendEng;
+    //     if ($scope.contactWeekendEng === "{{editContactWeekendEng}}") {
+    //         update = $scope.editContactWeekendEng;
+    //     }
+    //     landingTextService.addOrUpdateLandingText("contactWeekendEng", update, "ee").then(function (data) {
+    //         landingTextService.getLandingText("contactWeekendEng", "ee").then(function (data) {
+    //             if (data.text == null) {
+    //                 $scope.contactWeekendEng = "Nothing here";
+    //             }
+    //             $scope.contactWeekendEng = data.text;
+    //         })
+    //     });
+    // }
 
     ////// FINNISH LANGUAGE DESIGN VIEW
     landingTextService.getLandingText("bannerTitleFin", "ee").then(function (data) {
@@ -1949,30 +1950,30 @@ designViewController.controller('designViewController', function ($scope, pictur
         landingTextService.addOrUpdateLandingText("contactEmailFin", val, "ee");
     })*/
 
-    landingTextService.getLandingText("contactWeekendFin", "ee").then(function (data) {
-        if (data.text == null) {
-            $scope.contactWeekendFin = "There is nothing yet inserted";
-        } else {
-            $scope.contactWeekendFin = data.text;
-        }
-    }, function (err) {
-        console.log(err);
-    })
-    $scope.insertContactWeekendFin = function () {
-        var update = "";
-        update = $scope.contactWeekendFin;
-        if ($scope.contactWeekendFin === "{{editContactWeekendFin}}") {
-            update = $scope.editContactWeekendFin;
-        }
-        landingTextService.addOrUpdateLandingText("contactWeekendFin", update, "ee").then(function (data) {
-            landingTextService.getLandingText("contactWeekendFin", "ee").then(function (data) {
-                if (data.text == null) {
-                    $scope.contactWeekendFin = "Nothing here";
-                }
-                $scope.contactWeekendFin = data.text;
-            })
-        });
-    }
+    // landingTextService.getLandingText("contactWeekendFin", "ee").then(function (data) {
+    //     if (data.text == null) {
+    //         $scope.contactWeekendFin = "There is nothing yet inserted";
+    //     } else {
+    //         $scope.contactWeekendFin = data.text;
+    //     }
+    // }, function (err) {
+    //     console.log(err);
+    // })
+    // $scope.insertContactWeekendFin = function () {
+    //     var update = "";
+    //     update = $scope.contactWeekendFin;
+    //     if ($scope.contactWeekendFin === "{{editContactWeekendFin}}") {
+    //         update = $scope.editContactWeekendFin;
+    //     }
+    //     landingTextService.addOrUpdateLandingText("contactWeekendFin", update, "ee").then(function (data) {
+    //         landingTextService.getLandingText("contactWeekendFin", "ee").then(function (data) {
+    //             if (data.text == null) {
+    //                 $scope.contactWeekendFin = "Nothing here";
+    //             }
+    //             $scope.contactWeekendFin = data.text;
+    //         })
+    //     });
+    // }
     landingTextService.getLandingText("contactDaysFin", "ee").then(function (data) {
         if (data.text == null) {
             $scope.contactDaysFin = "There is nothing yet inserted";
@@ -2020,27 +2021,27 @@ designViewController.controller('designViewController', function ($scope, pictur
         });
     }
 
-    landingTextService.getLandingText("contactTimeWeekendFin", "ee").then(function (data) {
-        if (data.text == null) {
-            $scope.weekendTimeFin = "Nothing here";
-        }
-        $scope.weekendTimeFin = data.text;
-    })
-    $scope.insertWeekendFin = function () {
-        var update = "";
-        update = $scope.weekendTimeFin;
-        if ($scope.weekendTimeFin === "{{editWeekendTimeFin}}") {
-            update = $scope.editWeekendTimeFin;
-        }
-        landingTextService.addOrUpdateLandingText("contactTimeWeekendFin", update, "ee").then(function (data) {
-            landingTextService.getLandingText("contactTimeWeekendFin", "ee").then(function (data) {
-                if (data.text == null) {
-                    $scope.weekendTimeFin = "Nothing here";
-                }
-                $scope.weekendTimeFin = data.text;
-            })
-        });
-    }
+    // landingTextService.getLandingText("contactTimeWeekendFin", "ee").then(function (data) {
+    //     if (data.text == null) {
+    //         $scope.weekendTimeFin = "Nothing here";
+    //     }
+    //     $scope.weekendTimeFin = data.text;
+    // })
+    // $scope.insertWeekendFin = function () {
+    //     var update = "";
+    //     update = $scope.weekendTimeFin;
+    //     if ($scope.weekendTimeFin === "{{editWeekendTimeFin}}") {
+    //         update = $scope.editWeekendTimeFin;
+    //     }
+    //     landingTextService.addOrUpdateLandingText("contactTimeWeekendFin", update, "ee").then(function (data) {
+    //         landingTextService.getLandingText("contactTimeWeekendFin", "ee").then(function (data) {
+    //             if (data.text == null) {
+    //                 $scope.weekendTimeFin = "Nothing here";
+    //             }
+    //             $scope.weekendTimeFin = data.text;
+    //         })
+    //     });
+    // }
 
 
     //// RUSSIAN DESIGN VIEW
@@ -2585,31 +2586,31 @@ designViewController.controller('designViewController', function ($scope, pictur
         landingTextService.addOrUpdateLandingText("contactEmailRus", val, "ee");
     })*/
 
-    /**/
-    landingTextService.getLandingText("contactWeekendRus", "ee").then(function (data) {
-        if (data.text == null) {
-            $scope.contactWeekendRus = "There is nothing yet inserted";
-        } else {
-            $scope.contactWeekendRus = data.text;
-        }
-    }, function (err) {
-        console.log(err);
-    })
-    $scope.insertContactWeekendRus = function () {
-        var update = "";
-        update = $scope.contactWeekendRus;
-        if ($scope.contactWeekendRus === "{{editContactWeekendRus}}") {
-            update = $scope.editContactWeekendRus;
-        }
-        landingTextService.addOrUpdateLandingText("contactWeekendRus", update, "ee").then(function (data) {
-            landingTextService.getLandingText("contactWeekendRus", "ee").then(function (data) {
-                if (data.text == null) {
-                    $scope.contactWeekendRus = "Nothing here";
-                }
-                $scope.contactWeekendRus = data.text;
-            })
-        });
-    }
+    // /**/
+    // landingTextService.getLandingText("contactWeekendRus", "ee").then(function (data) {
+    //     if (data.text == null) {
+    //         $scope.contactWeekendRus = "There is nothing yet inserted";
+    //     } else {
+    //         $scope.contactWeekendRus = data.text;
+    //     }
+    // }, function (err) {
+    //     console.log(err);
+    // })
+    // $scope.insertContactWeekendRus = function () {
+    //     var update = "";
+    //     update = $scope.contactWeekendRus;
+    //     if ($scope.contactWeekendRus === "{{editContactWeekendRus}}") {
+    //         update = $scope.editContactWeekendRus;
+    //     }
+    //     landingTextService.addOrUpdateLandingText("contactWeekendRus", update, "ee").then(function (data) {
+    //         landingTextService.getLandingText("contactWeekendRus", "ee").then(function (data) {
+    //             if (data.text == null) {
+    //                 $scope.contactWeekendRus = "Nothing here";
+    //             }
+    //             $scope.contactWeekendRus = data.text;
+    //         })
+    //     });
+    // }
     landingTextService.getLandingText("contactDaysRus", "ee").then(function (data) {
         if (data.text == null) {
             $scope.contactDaysRus = "There is nothing yet inserted";
@@ -2635,12 +2636,12 @@ designViewController.controller('designViewController', function ($scope, pictur
         });
     }
 
-    landingTextService.getLandingText("contactTimeWorkWeekRus", "ee").then(function (data) { // This is a service. Once the program has the promice "getLandingText" it does the following function
-        if (data.text == null) { //"ee" is a language, "contactTimeForWeekRus" is a place
-            $scope.workWeekTimeRus = "Nothing here";
-        }
-        $scope.workWeekTimeRus = data.text;
-    })
+    // landingTextService.getLandingText("contactTimeWorkWeekRus", "ee").then(function (data) { // This is a service. Once the program has the promice "getLandingText" it does the following function
+    //     if (data.text == null) { //"ee" is a language, "contactTimeForWeekRus" is a place
+    //         $scope.workWeekTimeRus = "Nothing here";
+    //     }
+    //     $scope.workWeekTimeRus = data.text;
+    // })
     $scope.insertWorkWeekRus = function () {
         var update = "";
         update = $scope.workWeekTimeRus;
@@ -2657,27 +2658,27 @@ designViewController.controller('designViewController', function ($scope, pictur
         });
     }
 
-    landingTextService.getLandingText("contactTimeWeekendRus", "ee").then(function (data) {
-        if (data.text == null) {
-            $scope.weekendTimeRus = "Nothing here";
-        }
-        $scope.weekendTimeRus = data.text;
-    })
-    $scope.insertWeekendRus = function () {
-        var update = "";
-        update = $scope.weekendTimeRus;
-        if ($scope.weekendTimeRus === "{{editWeekendTimeRus}}") {
-            update = $scope.editWeekendTimeRus;
-        }
-        landingTextService.addOrUpdateLandingText("contactTimeWeekendRus", update, "ee").then(function (data) {
-            landingTextService.getLandingText("contactTimeWeekendRus", "ee").then(function (data) {
-                if (data.text == null) {
-                    $scope.weekendTimeRus = "Nothing here";
-                }
-                $scope.weekendTimeRus = data.text;
-            })
-        });
-    }
+    // landingTextService.getLandingText("contactTimeWeekendRus", "ee").then(function (data) {
+    //     if (data.text == null) {
+    //         $scope.weekendTimeRus = "Nothing here";
+    //     }
+    //     $scope.weekendTimeRus = data.text;
+    // })
+    // $scope.insertWeekendRus = function () {
+    //     var update = "";
+    //     update = $scope.weekendTimeRus;
+    //     if ($scope.weekendTimeRus === "{{editWeekendTimeRus}}") {
+    //         update = $scope.editWeekendTimeRus;
+    //     }
+    //     landingTextService.addOrUpdateLandingText("contactTimeWeekendRus", update, "ee").then(function (data) {
+    //         landingTextService.getLandingText("contactTimeWeekendRus", "ee").then(function (data) {
+    //             if (data.text == null) {
+    //                 $scope.weekendTimeRus = "Nothing here";
+    //             }
+    //             $scope.weekendTimeRus = data.text;
+    //         })
+    //     });
+    // }
     /* End of Russian design view */
 
 
