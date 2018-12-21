@@ -56,7 +56,7 @@ myApp.config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
   $urlRouterProvider.otherwise('/');
   $stateProvider
     .state('landing', {
-      url: '/{id:(?:ru|fi|en|menu/ee|menu/en|menu/fi|menu/ru|broneerilaud/ee|broneerilaud/en|broneerilaud/fi|broneerilaud/ru|)}',
+      url: '/{id:(?:ru|fi|en|menu/ee|menu/en|menu/fi|menu/ru|broneerilaud/ee|booking/en|booking/fi|booking/ru|)}',
       templateUrl: 'partials/landing.html',
       access: {restricted: false}
     })

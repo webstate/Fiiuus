@@ -26,15 +26,15 @@ sliderCtrl.controller('sliderCtrl', function($location,$rootScope, $scope, landi
         $rootScope.lang = "ee";
         $rootScope.bookingModal = true;
     }
-    if($location.url() === "/broneerilaud/en"){
+    if($location.url() === "/booking/en"){
         $rootScope.lang = "en";
         $rootScope.bookingModal = true;
     }
-    if($location.url() === "/broneerilaud/fi"){
+    if($location.url() === "/booking/fi"){
         $rootScope.lang = "fi";
         $rootScope.bookingModal = true;
     }
-    if($location.url() === "/broneerilaud/ru"){
+    if($location.url() === "/booking/ru"){
         $rootScope.lang = "ru";
         $rootScope.bookingModal = true;
     }
