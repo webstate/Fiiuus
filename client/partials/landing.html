@@ -1,7 +1,7 @@
 <div ng-controller="sliderCtrl">
     <div class="sliderTest" ng-hide="slider">
         <div class="banner-picture" ng-controller="bannerCtrl"
-        ng-style="windowWidth > 991 && {'background-image':'url(' + bannerPicture + ')'} || {'background-image': 'url(' + bannerPictureMobile + ')'}">
+            ng-style="windowWidth > 991 && {'background-image':'url(' + bannerPicture + ')'} || {'background-image': 'url(' + bannerPictureMobile + ')'}">
 
             <div class="col-sm-6 col-xs-6 hidden-lg hidden-md" style="z-index:1;">
                 <img id="logo" style="height:47px;" src="css/img/logo.png" />
@@ -71,6 +71,11 @@
                                     <img style="height:25px;" src="css/img/instagram.png" />
                                 </a>
                             </li>
+                            <li>
+                                <a href="https://www.tripadvisor.com/Restaurant_Review-g274959-d12367619-Reviews-Fii_Restaurant-Tartu_Tartu_County.html" target="_blank">
+                                    <img style="height:25px;" src="css/img/TA_brand_logo.png" />
+                                </a>
+                            </li>
 
                         </ul>
                     </menu-item>
@@ -93,6 +98,11 @@
                                     <img style="height:25px;" src="css/img/instagram.png" />
                                 </a>
                             </li>
+                            <li>
+                                <a href="https://www.tripadvisor.com/Restaurant_Review-g274959-d12367619-Reviews-Fii_Restaurant-Tartu_Tartu_County.html" target="_blank">
+                                    <img style="height:25px;" src="css/img/TA_brand_logo.png" />
+                                </a>
+                            </li>
 
                         </ul>
                     </menu-item>
@@ -113,6 +123,11 @@
                             <li>
                                 <a href="https://www.instagram.com/fiiresto/" target="_blank">
                                     <img style="height:25px;" src="css/img/instagram.png" />
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.tripadvisor.com/Restaurant_Review-g274959-d12367619-Reviews-Fii_Restaurant-Tartu_Tartu_County.html" target="_blank">
+                                    <img style="height:25px;" src="css/img/TA_brand_logo.png" />
                                 </a>
                             </li>
 
@@ -146,6 +161,11 @@
                                     <img style="height:25px;" src="css/img/instagram.png" />
                                 </a>
                             </li>
+                            <li>
+                                <a href="https://www.tripadvisor.com/Restaurant_Review-g274959-d12367619-Reviews-Fii_Restaurant-Tartu_Tartu_County.html" target="_blank">
+                                    <img style="height:25px;" src="css/img/TA_brand_logo.png" />
+                                </a>
+                            </li>
 
                         </ul>
                     </menu-item>
@@ -154,7 +174,7 @@
 
             <!-- Desktop nav -->
             <nav class="navbar-landing">
-                <div class="container">
+                <div class="container-fluid">
                     <div class="navbar-header">
                         <div class="row">
                             <div class="col-md-12 col-lg-12">
@@ -236,12 +256,17 @@
                             <ul class="landing-social" style="list-style:none">
                                 <li>
                                     <a href="https://www.facebook.com/fiiresto/?fref=ts" target="_blank">
-                                        <img style="height:25px;" src="css/img/facebook.png" />
+                                        <img style="height:30px;" src="css/img/facebook.png" />
                                     </a>
                                 </li>
                                 <li>
                                     <a href="https://www.instagram.com/fiiresto/" target="_blank">
-                                        <img style="height:25px;" src="css/img/instagram.png" />
+                                        <img style="height:30px;" src="css/img/instagram.png" />
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://www.tripadvisor.com/Restaurant_Review-g274959-d12367619-Reviews-Fii_Restaurant-Tartu_Tartu_County.html" target="_blank">
+                                        <img style="height:30px;" src="css/img/TA_brand_logo.png" />
                                     </a>
                                 </li>
 
@@ -270,7 +295,14 @@
                     </div>
                 </div>
             </nav>
-
+            <!-- <div class="visible-xs visible-sm hidden-md hidden-lg"
+                style=" position: absolute;
+                        bottom: 0px;
+                        ">
+                <a href="https://www.tripadvisor.com/Restaurant_Review-g274959-d12367619-Reviews-Fii_Restaurant-Tartu_Tartu_County.html" target="_blank">
+                    <img style="height:30px;" src="css/img/TA_brand_logo.png" />
+                </a>
+            </div> -->
         </div>
         <div class="banner-shadow" >
             <!-- @Desktop -->
@@ -311,6 +343,11 @@
                 <p style="font-family:Play;" class="event-name-banner" ng-if="$root.lang ==='ru' && bannerTitleRus != 'There is nothing yet inserted'">
                     {{bannerTitleRus}}
                 </p>
+            </div>
+            <div class="visible-xs visible-sm hidden-md hidden-lg mobile-banner-tripadvisor">
+                <a href="https://www.tripadvisor.com/Restaurant_Review-g274959-d12367619-Reviews-Fii_Restaurant-Tartu_Tartu_County.html" target="_blank">
+                    <img style="height:30px;" src="css/img/TA_brand_logo.png" />
+                </a>
             </div>
         </div>
         <div class="container">
@@ -1797,9 +1834,14 @@
                                 <img style="height:25px;" src="css/img/facebook.png" />
                             </a>
                         </li>
-                        <li>
+                        <li style=" margin-right: 25px;">
                             <a href="https://www.instagram.com/fiiresto/" target="_blank">
                                 <img style="height:25px;" src="css/img/instagram.png" />
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.tripadvisor.com/Restaurant_Review-g274959-d12367619-Reviews-Fii_Restaurant-Tartu_Tartu_County.html" target="_blank">
+                                <img style="height:30px;" src="css/img/TA_brand_logo.png" />
                             </a>
                         </li>
                     </ul>
@@ -1898,9 +1940,14 @@
                                 <img style="height:25px;" src="css/img/facebook.png" />
                             </a>
                         </li>
-                        <li>
+                        <li style="margin-right: 30px;">
                             <a href="https://www.instagram.com/fiiresto/" target="_blank">
                                 <img style="height:25px;" src="css/img/instagram.png" />
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.tripadvisor.com/Restaurant_Review-g274959-d12367619-Reviews-Fii_Restaurant-Tartu_Tartu_County.html" target="_blank">
+                                <img style="height:30px;" src="css/img/TA_brand_logo.png" />
                             </a>
                         </li>
                     </ul>

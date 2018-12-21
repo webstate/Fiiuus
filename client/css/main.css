@@ -125,6 +125,13 @@ ul.nav > li > a:visited{
     background-size:cover;
 
 }
+
+.mobile-banner-tripadvisor {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+}
+
 .banner-shadow{
     position: absolute;
     top: 0;
@@ -1406,7 +1413,8 @@ datepicker._720kb-datepicker-calendar-body {
 .footer-menu{
     list-style: none;
     margin-left: -40px;
-    margin-top: 200px;
+    /* margin-top: 200px; */
+    margin-top: 170px;
 }
 .footer-menu > li{
     float: left;
