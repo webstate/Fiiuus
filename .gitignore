@@ -5,5 +5,5 @@ server/email
 package-lock.json
 server/app.js
 server/server.js
-#server/routes
-#server/
+server/routes
+server/
