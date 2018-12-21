@@ -44,15 +44,39 @@ sliderCtrl.controller('sliderCtrl', function($location,$rootScope, $scope, landi
         $rootScope.lang = "ee";
         $rootScope.bookingModal = false;
 
-        $(document).ready(function(scope, element, attrs){
-            var element = $("[scroll-bookmark=menu]");
-            if(element.length){
-                $timeout(function(){
-                    $('body, html').animate({scrollTop: element.offset().top}, "slow");
-                    return false;
-                }, 100);
-            }
-        })
+        /* V1 */
+        // $(document).ready(function(scope, element, attrs){
+        //     var element = $("[scroll-bookmark=menu]");
+        //     if(element.length){
+        //         $timeout(function(){
+        //             $('body, html').animate({scrollTop: element.offset().top}, "slow");
+        //             return false;
+        //         }, 100);
+        //     }
+        // })
+
+        /* V2 */
+        $(document).ready(function() {
+            var w = $( window ).width();
+            $timeout(function(){
+                if (w > 991) {
+                    var element = document.getElementById("linkMenuEst");
+                } else {
+                    var element = document.getElementById("linkMenuEstMob");
+                }
+                element.click(function(){
+                    console.log(value);
+                    scope.$apply(function(){
+                        var selector = "[scroll-bookmark="+value+"]";
+                        var element = $(selector);
+                        if(element.length){
+                            $('body, html').animate({scrollTop: element.offset().top}, "slow");
+                            return false;
+                        }
+                    });
+                });
+            },500)
+        });
     }
 
     /* MENU URL EN */
@@ -60,15 +84,39 @@ sliderCtrl.controller('sliderCtrl', function($location,$rootScope, $scope, landi
         $rootScope.lang = "en";
         $rootScope.bookingModal = false;
 
-        $(document).ready(function(scope, element, attrs){
-            var element = $("[scroll-bookmark=menu]");
-            if(element.length){
-                $timeout(function(){
-                    $('body, html').animate({scrollTop: element.offset().top}, "slow");
-                    return false;
-                }, 100);
-            }
-        })
+        /* V1 */
+        // $(document).ready(function(scope, element, attrs){
+        //     var element = $("[scroll-bookmark=menu]");
+        //     if(element.length){
+        //         $timeout(function(){
+        //             $('body, html').animate({scrollTop: element.offset().top}, "slow");
+        //             return false;
+        //         }, 100);
+        //     }
+        // })
+
+        /* V2 */
+        $(document).ready(function() {
+            var w = $( window ).width();
+            $timeout(function(){
+                if (w > 991) {
+                    var element = document.getElementById("linkMenuEng");
+                } else {
+                    var element = document.getElementById("linkMenuEngMob");
+                }
+                element.click(function(){
+                    console.log(value);
+                    scope.$apply(function(){
+                        var selector = "[scroll-bookmark="+value+"]";
+                        var element = $(selector);
+                        if(element.length){
+                            $('body, html').animate({scrollTop: element.offset().top}, "slow");
+                            return false;
+                        }
+                    });
+                });
+            },500)
+        });
     }
 
     /* MENU URL FI */
@@ -76,15 +124,39 @@ sliderCtrl.controller('sliderCtrl', function($location,$rootScope, $scope, landi
         $rootScope.lang = "fi";
         $rootScope.bookingModal = false;
 
-        $(document).ready(function(scope, element, attrs){
-            var element = $("[scroll-bookmark=menu]");
-            if(element.length){
-                $timeout(function(){
-                    $('body, html').animate({scrollTop: element.offset().top}, "slow");
-                    return false;
-                }, 100);
-            }
-        })
+        /* V1 */
+        // $(document).ready(function(scope, element, attrs){
+        //     var element = $("[scroll-bookmark=menu]");
+        //     if(element.length){
+        //         $timeout(function(){
+        //             $('body, html').animate({scrollTop: element.offset().top}, "slow");
+        //             return false;
+        //         }, 100);
+        //     }
+        // })
+
+        /* V2 */
+        $(document).ready(function() {
+            var w = $( window ).width();
+            $timeout(function(){
+                if (w > 991) {
+                    var element = document.getElementById("linkMenuFin");
+                } else {
+                    var element = document.getElementById("linkMenuFinMob");
+                }
+                element.click(function(){
+                    console.log(value);
+                    scope.$apply(function(){
+                        var selector = "[scroll-bookmark="+value+"]";
+                        var element = $(selector);
+                        if(element.length){
+                            $('body, html').animate({scrollTop: element.offset().top}, "slow");
+                            return false;
+                        }
+                    });
+                });
+            },500)
+        });
     }
 
     /* MENU URL RU */
@@ -92,15 +164,39 @@ sliderCtrl.controller('sliderCtrl', function($location,$rootScope, $scope, landi
         $rootScope.lang = "ru";
         $rootScope.bookingModal = false;
 
-        $(document).ready(function(scope, element, attrs){
-            var element = $("[scroll-bookmark=menu]");
-            if(element.length){
-                $timeout(function(){
-                    $('body, html').animate({scrollTop: element.offset().top}, "slow");
-                    return false;
-                }, 100);
-            }
-        })
+        /* V1 */
+        // $(document).ready(function(scope, element, attrs){
+        //     var element = $("[scroll-bookmark=menu]");
+        //     if(element.length){
+        //         $timeout(function(){
+        //             $('body, html').animate({scrollTop: element.offset().top}, "slow");
+        //             return false;
+        //         }, 100);
+        //     }
+        // })
+
+        /* V2 */
+        $(document).ready(function() {
+            var w = $( window ).width();
+            $timeout(function(){
+                if (w > 991) {
+                    var element = document.getElementById("linkMenuRus");
+                } else {
+                    var element = document.getElementById("linkMenuRusMob");
+                }
+                element.click(function(){
+                    console.log(value);
+                    scope.$apply(function(){
+                        var selector = "[scroll-bookmark="+value+"]";
+                        var element = $(selector);
+                        if(element.length){
+                            $('body, html').animate({scrollTop: element.offset().top}, "slow");
+                            return false;
+                        }
+                    });
+                });
+            },500)
+        });
     }
 
     $scope.language = $rootScope.lang;

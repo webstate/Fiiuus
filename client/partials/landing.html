@@ -54,7 +54,7 @@
                            <p class="sideNavNumber">+372 5885 5200</p><img style="margin-left:200px;" class="booking-arrow" src="css/img/phone.png" />
                     </div>-->
                     <menu-item scroll-to-bookmark="about" ng-if="$root.lang==='en'" hash="second-page">About</menu-item>
-                    <menu-item scroll-to-bookmark="menu" ng-if="$root.lang==='en'" hash="third-page">Menu</menu-item>
+                    <menu-item id="linkMenuEngMob" scroll-to-bookmark="menu" ng-if="$root.lang==='en'" hash="third-page">Menu</menu-item>
                     <menu-item scroll-to-bookmark="events" ng-if="$root.lang==='en'" hash="third-page">Events</menu-item>
                     <menu-item scroll-to-bookmark="contact" ng-if="$root.lang==='en'" hash="third-page">Contact</menu-item>
                     <menu-item scroll-to-bookmark="contact" ng-if="$root.lang==='en'" hash="third-page" style="margin-top: 50px;"><a
@@ -80,7 +80,7 @@
                         </ul>
                     </menu-item>
                     <menu-item scroll-to-bookmark="about" ng-if="$root.lang==='ee'" hash="second-page">Restoranist</menu-item>
-                    <menu-item scroll-to-bookmark="menu" ng-if="$root.lang==='ee'" hash="third-page">Menüü</menu-item>
+                    <menu-item id="linkMenuEstMob" scroll-to-bookmark="menu" ng-if="$root.lang==='ee'" hash="third-page">Menüü</menu-item>
                     <menu-item scroll-to-bookmark="events" ng-if="$root.lang==='ee'" hash="third-page">Üritused</menu-item>
                     <menu-item scroll-to-bookmark="contact" ng-if="$root.lang==='ee'" hash="third-page">Kontakt</menu-item>
                     <menu-item scroll-to-bookmark="contact" ng-if="$root.lang==='ee'" hash="third-page" style="margin-top: 50px;">
@@ -108,7 +108,7 @@
                     </menu-item>
 
                     <menu-item scroll-to-bookmark="about" ng-if="$root.lang==='fi'" hash="second-page">Ravintolasta</menu-item>
-                    <menu-item scroll-to-bookmark="menu" ng-if="$root.lang==='fi'" hash="third-page">Menu</menu-item>
+                    <menu-item id="linkMenuFinMob" scroll-to-bookmark="menu" ng-if="$root.lang==='fi'" hash="third-page">Menu</menu-item>
                     <menu-item scroll-to-bookmark="events" ng-if="$root.lang==='fi'" hash="third-page">Tapahtumat</menu-item>
                     <menu-item scroll-to-bookmark="contact" ng-if="$root.lang==='fi'" hash="third-page">Yhteystiedot</menu-item>
                     <menu-item scroll-to-bookmark="contact" ng-if="$root.lang==='fi'" hash="third-page" style="margin-top: 50px;"><a
@@ -137,7 +137,7 @@
                     <menu-item style="font-family:Roboto !important;" scroll-to-bookmark="about" ng-if="$root.lang==='ru'" hash="second-page">
                         Наш ресторан
                     </menu-item>
-                    <menu-item style="font-family:Roboto !important;" scroll-to-bookmark="menu" ng-if="$root.lang==='ru'" hash="third-page">
+                    <menu-item style="font-family:Roboto !important;" id="linkMenuRusMob" scroll-to-bookmark="menu" ng-if="$root.lang==='ru'" hash="third-page">
                         Mеню
                     </menu-item>
                     <menu-item style="font-family:Roboto !important;" scroll-to-bookmark="events" ng-if="$root.lang==='ru'" hash="third-page">
@@ -227,25 +227,25 @@
                             <ul class="landing-menu" style="list-style:none">
                                 <li ng-if="$root.lang === 'en'">
                                     <a scroll-to-bookmark="about">About</a>
-                                    <a scroll-to-bookmark="menu">Menu</a>
+                                    <a id="linkMenuEng" scroll-to-bookmark="menu">Menu</a>
                                     <a ng-hide="eventNavbar" ng-controller="eventCtrl" scroll-to-bookmark="events">Events</a>
                                     <a scroll-to-bookmark="contact">Contact</a>
                                 </li>
                                 <li ng-if="$root.lang === 'ee'">
                                     <a scroll-to-bookmark="about">Restoranist</a>
-                                    <a scroll-to-bookmark="menu">Menüü</a>
+                                    <a id="linkMenuEst" scroll-to-bookmark="menu">Menüü</a>
                                     <a ng-hide="eventNavbar" ng-controller="eventCtrl" scroll-to-bookmark="events">Üritused</a>
                                     <a scroll-to-bookmark="contact">Kontakt</a>
                                 </li>
                                 <li ng-if="$root.lang === 'fi'">
                                     <a scroll-to-bookmark="about">Ravintolasta</a>
-                                    <a scroll-to-bookmark="menu">Menu</a>
+                                    <a id="linkMenuFin" scroll-to-bookmark="menu">Menu</a>
                                     <a ng-hide="eventNavbar" ng-controller="eventCtrl" scroll-to-bookmark="events">Tapahtumat</a>
                                     <a scroll-to-bookmark="contact">Yhteystiedot</a>
                                 </li>
                                 <li ng-if="$root.lang === 'ru'">
                                     <a style="font-family:Roboto;" scroll-to-bookmark="about">Наш ресторан</a>
-                                    <a style="font-family:Roboto;" scroll-to-bookmark="menu">Mеню</a>
+                                    <a id="linkMenuRus" style="font-family:Roboto;" scroll-to-bookmark="menu">Mеню</a>
                                     <a style="font-family:Roboto;" ng-hide="eventNavbar" ng-controller="eventCtrl"
                                         scroll-to-bookmark="events">Cобытия</a>
                                     <a style="font-family:Roboto;" scroll-to-bookmark="contact">Kонтакты</a>
