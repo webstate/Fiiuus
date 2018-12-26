@@ -55,13 +55,6 @@
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBlAMX_L5qge4gAQCmykycZbBf9_EV_Bmg"
     async defer></script>
 
-  <script>
-      $(document).ready(function(){
-          setTimeout(function(){
-              $('.slickinit').slick('unslick');
-          },10);
-      });
-  </script>
   <script src="./main.js"></script>
   <script src="./services.js"></script>
   <script src="./controllers.js"></script>
@@ -70,6 +63,13 @@
   <script src="./controllers/bannerCtrl.js"></script>
   <script src="bower_components/slick-carousel/slick/slick.js"></script>
   <script src="bower_components/angular-slick/dist/slick.js"></script>
+  <!-- <script>
+      $(document).ready(function(){
+          setTimeout(function(){
+              $('.slickinit').not('.slick-initialized').slick('unslick');
+          },500);
+      });
+  </script> -->
   <script src="./controllers/eventCtrl.js"></script>
   <script src="./services/textService.js"></script>
   <script src="./controllers/workerAdminController.js"></script>

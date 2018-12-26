@@ -79,7 +79,7 @@ eventService.factory('eventService', function($q, $http){
         })// initializes slick and its properties
             .then(function () {
             setTimeout(function(){
-                $('.slickinit').slick({
+                $('.slickinit').not('.slick-initialized').slick({
                     slidesToShow: 1,
                     adaptiveHeight: true,
                     arrows: true,
