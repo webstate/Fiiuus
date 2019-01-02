@@ -69,7 +69,7 @@ eventService.factory('eventService', function($q, $http){
     }
     function getEvents(){
         var d = $q.defer();
-        $http.get('food/event/get')
+        $http.get('food/event/get', { cache: true })
         .then(function(response){
             var data = response.data;
             d.resolve(data);
