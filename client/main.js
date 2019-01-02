@@ -58,6 +58,7 @@ myApp.config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
     .state('landing', {
       url: '/{id:(?:ru|fi|en|menu/ee|menu/en|menu/fi|menu/ru|broneerilaud/ee|booking/en|booking/fi|booking/ru|)}',
       templateUrl: 'partials/landing.html',
+      cache: true,
       access: {restricted: false}
     })
     .state('login', {
