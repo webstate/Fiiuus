@@ -27,7 +27,7 @@ foodService.factory('foodService', function($q, $http){
     }
     function getStarters(){
         var d = $q.defer();
-        $http.get('food/food/starters')
+        $http.get('food/food/starters', { cache: true })
         .then(function(response){
             var data = response.data;
             d.resolve(data);
@@ -39,7 +39,7 @@ foodService.factory('foodService', function($q, $http){
     }
     function getMain(){
         var d = $q.defer();
-        $http.get('food/food/main')
+        $http.get('food/food/main', { cache: true })
         .then(function(response){
             var data = response.data;
             d.resolve(data);
@@ -51,7 +51,7 @@ foodService.factory('foodService', function($q, $http){
     }
     function getDessert(){
         var d = $q.defer();
-        $http.get('food/food/dessert')
+        $http.get('food/food/dessert', { cache: true })
         .then(function(response){
             var data = response.data;
             d.resolve(data);
@@ -63,7 +63,7 @@ foodService.factory('foodService', function($q, $http){
     }
     function getKids(){
         var d = $q.defer();
-        $http.get('food/food/kids')
+        $http.get('food/food/kids', { cache: true })
         .then(function(response){
             var data = response.data;
             d.resolve(data);
@@ -122,7 +122,7 @@ foodService.factory('foodService', function($q, $http){
     }
     function getFood(){
         var d = $q.defer();
-        $http.get('food/food/all')
+        $http.get('food/food/all', { cache: true})
         .then(function(response){
             var data = response.data;
             d.resolve(data);
