@@ -51,7 +51,7 @@ sliderCtrl.controller('sliderCtrl', function($location,$rootScope, $scope, landi
         //         $timeout(function(){
         //             $('body, html').animate({scrollTop: element.offset().top}, "slow");
         //             return false;
-        //         }, 100);
+        //         }, 1000);
         //     }
         // })
 
@@ -77,7 +77,7 @@ sliderCtrl.controller('sliderCtrl', function($location,$rootScope, $scope, landi
                     });
                 });
                 // element.click();
-            },500)
+            },1000)
         });
     }
 
@@ -118,7 +118,7 @@ sliderCtrl.controller('sliderCtrl', function($location,$rootScope, $scope, landi
                         }
                     });
                 });
-            },500)
+            },1000)
         });
     }
 
@@ -159,7 +159,7 @@ sliderCtrl.controller('sliderCtrl', function($location,$rootScope, $scope, landi
                         }
                     });
                 });
-            },500)
+            },1000)
         });
     }
 
@@ -200,7 +200,7 @@ sliderCtrl.controller('sliderCtrl', function($location,$rootScope, $scope, landi
                         }
                     });
                 });
-            },500)
+            },1000)
         });
     }
 
