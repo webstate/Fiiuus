@@ -615,7 +615,7 @@
                                     </tbody>
                                 </table>
                             </div>
-                            <div class="menu-picture-second hidden-sm hidden-xs" style="background-image:url({{secondPicturePath}})">
+                            <div class="menu-picture-second hidden-sm hidden-xs" ng-style="{'background-image':'url(' + secondPicturePath + ')'}">
 
                             </div>
 
@@ -935,7 +935,7 @@
 
                         <!-- Right Main Column -->
                         <div class="col-md-6 menu-container-padding">
-                            <div class="menu-picture" style="background-image:url({{firstPicturePath}})">
+                            <div class="menu-picture" ng-style="{'background-image':'url(' + firstPicturePath + ')'}">
 
                             </div>
                             <div class="main-course-menu-holder" ng-controller="foodCtrl">
@@ -1077,7 +1077,7 @@
                                 </table>
                             </div>
 
-                            <div class="menu-picture-third" style="background-image:url({{thirdPicturePath}})"></div>
+                            <div class="menu-picture-third" ng-style="{'background-image':'url(' + thirdPicturePath + ')'}"></div>
 
                             <!-- Drinks @mobile -->
                             <div class="menu-drink-holder hidden-md hidden-lg" ng-controller="drinkCtrl">
@@ -1555,20 +1555,22 @@
                                                 <div class="col-md-6">
                                                     <div style="vertical-align: top; max-width: 100%">
                                                         <div href="#" ng-if="$root.lang === 'ee'" class="pop"
-                                                            data-toggle="modal" data-target="#myModal"><img class="event-picture"
-                                                                src="{{event.image}}" alt=""></div>
-                                                        <!--{{event.image}}-->
+                                                            data-toggle="modal" data-target="#myModal">
+                                                            <img class="event-picture" ng-src="{{event.image}}" alt="">
+                                                        </div>
                                                         <!--src="http://via.placeholder.com/1920x1080"-->
-                                                        <!--{{event.image}}-->
                                                         <div href="#" ng-if="$root.lang === 'en'" class="pop"
-                                                            data-toggle="modal" data-target="#myModal"><img class="event-picture"
-                                                                src="{{event.imageEng}}" alt=""></div>
+                                                            data-toggle="modal" data-target="#myModal">
+                                                            <img class="event-picture" ng-src="{{event.imageEng}}" alt="">
+                                                        </div>
                                                         <div href="#" ng-if="$root.lang === 'fi'" class="pop"
-                                                            data-toggle="modal" data-target="#myModal"><img class="event-picture"
-                                                                src="{{event.imageFin}}" alt=""></div>
+                                                            data-toggle="modal" data-target="#myModal">
+                                                            <img class="event-picture" ng-src="{{event.imageFin}}" alt="">
+                                                        </div>
                                                         <div href="#" ng-if="$root.lang === 'ru'" class="pop"
-                                                            data-toggle="modal" data-target="#myModal"><img class="event-picture"
-                                                                src="{{event.imageRus}}" alt=""></div>
+                                                            data-toggle="modal" data-target="#myModal">
+                                                            <img class="event-picture" ng-src="{{event.imageRus}}" alt="">
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -1774,8 +1776,9 @@
 
     <div class="row mt-75">
         <div class="col-md-6 m-0 p-0">
-            <div class="mapPicture" style="background-image: url({{mapPicture}})">
-
+            <div class="mapPicture" ng-style="{'background-image': 'url(' + mapPicture + ')'}">
+                <!-- style="background-image: url({{mapPicture}})"  -->
+                <!-- ng-style="{'background-image': 'url(' + mapPicture + ')'}" -->
             </div>
         </div>
         <div class="col-md-6 m-0 p-0">
