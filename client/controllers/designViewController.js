@@ -2705,13 +2705,13 @@ designViewController.controller('designViewController', function ($scope, pictur
     })
 
     /* Event images */
-    pictureService.getMenuPicture('event').then(function (data) {
-        if (data == null) {
-            $scope.eventPicturePath = "";
-        } else {
-            $scope.eventPicturePath = data.picturePath;
-        }
-    })
+    // pictureService.getMenuPicture('event').then(function (data) {
+    //     if (data == null) {
+    //         $scope.eventPicturePath = "";
+    //     } else {
+    //         $scope.eventPicturePath = data.picturePath;
+    //     }
+    // })
     pictureService.getMenuPicture('eventEst').then(function (data) {
         if (data == null) {
             $scope.eventPicturePathEst = "";
@@ -2971,9 +2971,9 @@ designViewController.controller('designViewController', function ($scope, pictur
             fd.append('file', file);
         })
         pictureService.saveImage(fd).then(function (file) {
-            if (type === "event") {
-                $scope.eventPicturePath = file;
-            }
+            // if (type === "event") {
+            //     $scope.eventPicturePath = file;
+            // }
             if (type === "eventEst") {
                 $scope.eventPicturePathEst = file;
             }
@@ -3012,9 +3012,9 @@ designViewController.controller('designViewController', function ($scope, pictur
             if (type === "whiteguide") {
                 $scope.whiteguidePicturePath = file;
             }
-            if (type === "event") {
-                $scope.eventPicturePath = file;
-            }
+            // if (type === "event") {
+            //     $scope.eventPicturePath = file;
+            // }
             if (type === "eventEst") {
                 $scope.eventPicturePathEst = file;
             }
