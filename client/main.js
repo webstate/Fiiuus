@@ -61,6 +61,18 @@ myApp.config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
       cache: true,
       access: {restricted: false}
     })
+    .state('contacts', {
+      url: '/{id:(?:kontaktid|contacts/en|contacts/fi|contacts/ru|)}',
+      templateUrl: 'partials/landing.html',
+      cache: true,
+      access: {restricted: false}
+    })
+    .state('events', {
+      url: '/{id:(?:events/ee|events/en|events/fi|events/ru|)}',
+      templateUrl: 'partials/landing.html',
+      cache: true,
+      access: {restricted: false}
+    })
     .state('login', {
         url: '/login',
         templateUrl: 'partials/login.html',
