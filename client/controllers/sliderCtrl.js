@@ -229,7 +229,7 @@ sliderCtrl.controller('sliderCtrl', function($location,$rootScope, $scope, landi
                         }
                     });
                 });
-            },1000)
+            },1800)
         });
     }
 
@@ -258,7 +258,7 @@ sliderCtrl.controller('sliderCtrl', function($location,$rootScope, $scope, landi
                         }
                     });
                 });
-            },1000)
+            },1800)
         });
     }
 
@@ -287,7 +287,7 @@ sliderCtrl.controller('sliderCtrl', function($location,$rootScope, $scope, landi
                         }
                     });
                 });
-            },1000)
+            },1800)
         });
     }
 
@@ -316,7 +316,7 @@ sliderCtrl.controller('sliderCtrl', function($location,$rootScope, $scope, landi
                         }
                     });
                 });
-            },1000)
+            },1800)
         });
     }
 
@@ -345,7 +345,7 @@ sliderCtrl.controller('sliderCtrl', function($location,$rootScope, $scope, landi
                         }
                     });
                 });
-            },1000)
+            },1800)
         });
     }
 
@@ -374,7 +374,7 @@ sliderCtrl.controller('sliderCtrl', function($location,$rootScope, $scope, landi
                         }
                     });
                 });
-            },1000)
+            },1800)
         });
     }
 
@@ -403,7 +403,7 @@ sliderCtrl.controller('sliderCtrl', function($location,$rootScope, $scope, landi
                         }
                     });
                 });
-            },1000)
+            },1800)
         });
     }
 
@@ -432,7 +432,7 @@ sliderCtrl.controller('sliderCtrl', function($location,$rootScope, $scope, landi
                         }
                     });
                 });
-            },1000)
+            },1800)
         });
     }
 
