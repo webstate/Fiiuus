@@ -16,7 +16,7 @@ drinkService.factory('drinkService', function($q, $http){
     }
     function getWine(){
         var d = $q.defer();
-        $http.get('drink/drink/wine')
+        $http.get('drink/drink/wine', { cache: true })
         .then(function(response){
             var data = response.data;
             d.resolve(data);
@@ -28,7 +28,7 @@ drinkService.factory('drinkService', function($q, $http){
     }
     function getBeer(){
         var d = $q.defer();
-        $http.get('drink/drink/beer')
+        $http.get('drink/drink/beer', { cache: true })
         .then(function(response){
             var data = response.data;
             d.resolve(data);
@@ -40,7 +40,7 @@ drinkService.factory('drinkService', function($q, $http){
     }
     function getCokctails(){
         var d = $q.defer();
-        $http.get('drink/drink/cocktail')
+        $http.get('drink/drink/cocktail', { cache: true })
         .then(function(response){
             var data = response.data;
             d.resolve(data);
@@ -52,7 +52,7 @@ drinkService.factory('drinkService', function($q, $http){
     }
     function getNonAlco(){
         var d = $q.defer();
-        $http.get('drink/drink/nonalco')
+        $http.get('drink/drink/nonalco', { cache: true })
         .then(function(response){
             var data = response.data;
             d.resolve(data);
@@ -64,7 +64,7 @@ drinkService.factory('drinkService', function($q, $http){
     }
     function getHot(){
         var d = $q.defer();
-        $http.get('drink/drink/hot')
+        $http.get('drink/drink/hot', { cache: true })
         .then(function(response){
             var data = response.data;
             d.resolve(data);
@@ -76,7 +76,7 @@ drinkService.factory('drinkService', function($q, $http){
     }
     function getHard(){
         var d = $q.defer();
-        $http.get('drink/drink/hardalco')
+        $http.get('drink/drink/hardalco', { cache: true })
         .then(function(response){
             var data = response.data;
             d.resolve(data);
@@ -112,7 +112,7 @@ drinkService.factory('drinkService', function($q, $http){
     }
     function getDrink(){
         var d = $q.defer();
-        $http.get('drink/drink/all')
+        $http.get('drink/drink/all', { cache: true })
         .then(function(response){
             var data = response.data;
             d.resolve(data);
