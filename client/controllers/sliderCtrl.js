@@ -204,6 +204,238 @@ sliderCtrl.controller('sliderCtrl', function($location,$rootScope, $scope, landi
         });
     }
 
+    /* Events URL EE */
+    if($location.url() === "/events/ee"){
+        $rootScope.lang = "ee";
+        $rootScope.bookingModal = false;
+
+        $(document).ready(function() {
+            var w = $( window ).width();
+            $timeout(function(){
+                if (w > 991) {
+                    var element = document.getElementById("linkEventsEst");
+                } else {
+                    var element = document.getElementById("linkEventsEstMob");
+                }
+                element.click(function(){
+                    var value = "events";
+                    console.log(value);
+                    scope.$apply(function(){
+                        var selector = "[scroll-bookmark="+value+"]";
+                        var element = $(selector);
+                        if(element.length){
+                            $('body, html').animate({scrollTop: element.offset().top}, "slow");
+                            return false;
+                        }
+                    });
+                });
+            },1000)
+        });
+    }
+
+    /* Events URL EN */
+    if($location.url() === "/events/en"){
+        $rootScope.lang = "en";
+        $rootScope.bookingModal = false;
+
+        $(document).ready(function() {
+            var w = $( window ).width();
+            $timeout(function(){
+                if (w > 991) {
+                    var element = document.getElementById("linkEventsEng");
+                } else {
+                    var element = document.getElementById("linkEventsEngMob");
+                }
+                element.click(function(){
+                    var value = "events";
+                    console.log(value);
+                    scope.$apply(function(){
+                        var selector = "[scroll-bookmark="+value+"]";
+                        var element = $(selector);
+                        if(element.length){
+                            $('body, html').animate({scrollTop: element.offset().top}, "slow");
+                            return false;
+                        }
+                    });
+                });
+            },1000)
+        });
+    }
+
+    /* Events URL FI */
+    if($location.url() === "/events/fi"){
+        $rootScope.lang = "fi";
+        $rootScope.bookingModal = false;
+
+        $(document).ready(function() {
+            var w = $( window ).width();
+            $timeout(function(){
+                if (w > 991) {
+                    var element = document.getElementById("linkEventsFin");
+                } else {
+                    var element = document.getElementById("linkEventsFinMob");
+                }
+                element.click(function(){
+                    var value = "events";
+                    console.log(value);
+                    scope.$apply(function(){
+                        var selector = "[scroll-bookmark="+value+"]";
+                        var element = $(selector);
+                        if(element.length){
+                            $('body, html').animate({scrollTop: element.offset().top}, "slow");
+                            return false;
+                        }
+                    });
+                });
+            },1000)
+        });
+    }
+
+    /* Events URL RU */
+    if($location.url() === "/events/ru"){
+        $rootScope.lang = "ru";
+        $rootScope.bookingModal = false;
+
+        $(document).ready(function() {
+            var w = $( window ).width();
+            $timeout(function(){
+                if (w > 991) {
+                    var element = document.getElementById("linkEventsRus");
+                } else {
+                    var element = document.getElementById("linkEventsRusMob");
+                }
+                element.click(function(){
+                    var value = "events";
+                    console.log(value);
+                    scope.$apply(function(){
+                        var selector = "[scroll-bookmark="+value+"]";
+                        var element = $(selector);
+                        if(element.length){
+                            $('body, html').animate({scrollTop: element.offset().top}, "slow");
+                            return false;
+                        }
+                    });
+                });
+            },1000)
+        });
+    }
+
+    /* Contacts URL EE */
+    if($location.url() === "/kontaktid"){
+        $rootScope.lang = "ee";
+        $rootScope.bookingModal = false;
+
+        $(document).ready(function() {
+            var w = $( window ).width();
+            $timeout(function(){
+                if (w > 991) {
+                    var element = document.getElementById("linkContactsEst");
+                } else {
+                    var element = document.getElementById("linkContactsEstMob");
+                }
+                element.click(function(){
+                    var value = "contacts";
+                    console.log(value);
+                    scope.$apply(function(){
+                        var selector = "[scroll-bookmark="+value+"]";
+                        var element = $(selector);
+                        if(element.length){
+                            $('body, html').animate({scrollTop: element.offset().top}, "slow");
+                            return false;
+                        }
+                    });
+                });
+            },1000)
+        });
+    }
+
+    /* Contacts URL EN */
+    if($location.url() === "/contacts/en"){
+        $rootScope.lang = "en";
+        $rootScope.bookingModal = false;
+
+        $(document).ready(function() {
+            var w = $( window ).width();
+            $timeout(function(){
+                if (w > 991) {
+                    var element = document.getElementById("linkContactsEng");
+                } else {
+                    var element = document.getElementById("linkContactsEngMob");
+                }
+                element.click(function(){
+                    var value = "contacts";
+                    console.log(value);
+                    scope.$apply(function(){
+                        var selector = "[scroll-bookmark="+value+"]";
+                        var element = $(selector);
+                        if(element.length){
+                            $('body, html').animate({scrollTop: element.offset().top}, "slow");
+                            return false;
+                        }
+                    });
+                });
+            },1000)
+        });
+    }
+
+    /* Contacts URL FI */
+    if($location.url() === "/contacts/fi"){
+        $rootScope.lang = "fi";
+        $rootScope.bookingModal = false;
+
+        $(document).ready(function() {
+            var w = $( window ).width();
+            $timeout(function(){
+                if (w > 991) {
+                    var element = document.getElementById("linkContactsFin");
+                } else {
+                    var element = document.getElementById("linkContactsFinMob");
+                }
+                element.click(function(){
+                    var value = "contacts";
+                    console.log(value);
+                    scope.$apply(function(){
+                        var selector = "[scroll-bookmark="+value+"]";
+                        var element = $(selector);
+                        if(element.length){
+                            $('body, html').animate({scrollTop: element.offset().top}, "slow");
+                            return false;
+                        }
+                    });
+                });
+            },1000)
+        });
+    }
+
+    /* Contacts URL RU */
+    if($location.url() === "/contacts/ru"){
+        $rootScope.lang = "ru";
+        $rootScope.bookingModal = false;
+
+        $(document).ready(function() {
+            var w = $( window ).width();
+            $timeout(function(){
+                if (w > 991) {
+                    var element = document.getElementById("linkContactsRus");
+                } else {
+                    var element = document.getElementById("linkContactsRusMob");
+                }
+                element.click(function(){
+                    var value = "contacts";
+                    console.log(value);
+                    scope.$apply(function(){
+                        var selector = "[scroll-bookmark="+value+"]";
+                        var element = $(selector);
+                        if(element.length){
+                            $('body, html').animate({scrollTop: element.offset().top}, "slow");
+                            return false;
+                        }
+                    });
+                });
+            },1000)
+        });
+    }
+
     $scope.language = $rootScope.lang;
     $scope.langmenuMobile = {
         status: false
