@@ -56,23 +56,23 @@ myApp.config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
   $urlRouterProvider.otherwise('/');
   $stateProvider
     .state('landing', {
-      url: '/{id:(?:ru|fi|en|menu/ee|menu/en|menu/fi|menu/ru|broneerilaud/ee|booking/en|booking/fi|booking/ru|)}',
+      url: '/{id:(?:ru|fi|en|menu/ee|menu/en|menu/fi|menu/ru|broneerilaud/ee|booking/en|booking/fi|booking/ru|kontaktid|contacts/en|contacts/fi|contacts/ru|events/ee|events/en|events/fi|events/ru|)}',
       templateUrl: 'partials/landing.html',
       cache: true,
       access: {restricted: false}
     })
-    .state('contacts', {
-      url: '/{id:(?:kontaktid|contacts/en|contacts/fi|contacts/ru|)}',
-      templateUrl: 'partials/landing.html',
-      cache: true,
-      access: {restricted: false}
-    })
-    .state('events', {
-      url: '/{id:(?:events/ee|events/en|events/fi|events/ru|)}',
-      templateUrl: 'partials/landing.html',
-      cache: true,
-      access: {restricted: false}
-    })
+    /* .state('contacts', {
+    //   url: '/{id:(?:kontaktid|contacts/en|contacts/fi|contacts/ru|)}',
+    //   templateUrl: 'partials/landing.html',
+    //   cache: true,
+    //   access: {restricted: false}
+    // })
+    // .state('events', {
+    //   url: '/{id:(?:events/ee|events/en|events/fi|events/ru|)}',
+    //   templateUrl: 'partials/landing.html',
+    //   cache: true,
+    //   access: {restricted: false}
+    // }) */
     .state('login', {
         url: '/login',
         templateUrl: 'partials/login.html',
