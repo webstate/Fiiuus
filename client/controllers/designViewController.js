@@ -2356,6 +2356,7 @@ designViewController.controller('designViewController', function ($scope, pictur
         landingTextService.addOrUpdateLandingText("menuTitleRus", val, "ee");
     })*/
 
+
     landingTextService.getLandingText("menuTextRus", "ee").then(function (data) {
         if (data.text == null) {
             $scope.menuTextRus = "There is nothing yet inserted";
@@ -2442,6 +2443,29 @@ designViewController.controller('designViewController', function ($scope, pictur
     $scope.$watch('tastingTextRus.text', function(val){
         landingTextService.addOrUpdateLandingText("tastingTextRus", val, "ee");
     })*/
+
+    landingTextService.getLandingText("groupMenuButtonRus", "ee").then(function (data) {
+        if (data.text == null) {
+            $scope.groupMenuButtonRus = "Nothing here";
+        }
+        $scope.groupMenuButtonRus = data.text;
+    })
+
+    $scope.insertGroupMenuButtonRus = function () {
+        var update = "";
+        update = $scope.groupMenuButtonRus;
+        if ($scope.groupMenuButtonRus === "{{editGroupMenuButtonRus}}") {
+            update = $scope.editGroupMenuButtonRus;
+        }
+        landingTextService.addOrUpdateLandingText("groupMenuButtonRus", update, "ee").then(function (data) {
+            landingTextService.getLandingText("groupMenuButtonRus", "ee").then(function (data) {
+                if (data.text == null) {
+                    $scope.groupMenuButtonRus = "Nothing here";
+                }
+                $scope.groupMenuButtonRus = data.text;
+            })
+        });
+    }
 
     landingTextService.getLandingText("eventTitleRus", "ee").then(function (data) {
         if (data.text == null) {
