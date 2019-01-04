@@ -26,7 +26,7 @@ workerService.factory('workerService', function($q, $timeout, $http){
     }
     function getWorkers(){
         var d = $q.defer();
-        $http.get('worker/all')
+        $http.get('worker/all', { cache: true })
         .then(function(response){
             var data = response.data;
             d.resolve(data);
