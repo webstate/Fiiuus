@@ -573,7 +573,7 @@ img.whiteguide {
     font-family: spaceMono;
     text-transform: uppercase;
     color: #CCCCCC;
-    margin-top: -10px;
+    /* margin-top: -10px; */
     cursor: default;
 }
 .worker-info{
@@ -2342,6 +2342,10 @@ datepicker.backend-date > input{
 
 .mt-185 {
     margin-top: 185px;
+}
+
+.mb-5 {
+    margin-bottom: 5px;
 }
 
 .mb-30 {
