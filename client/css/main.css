@@ -1421,12 +1421,15 @@ datepicker._720kb-datepicker-calendar-body {
 }
 .footer-menu{
     list-style: none;
-    margin-left: -40px;
+    margin-bottom: 0;
+    padding-inline-start: 0;
+    /* margin-left: -40px; */
     /* margin-top: 200px; */
-    margin-top: 170px;
+    /* margin-top: 170px; */
 }
 .footer-menu > li{
-    float: left;
+    /* float: left; */
+    display: inline-block;
     margin-right: 40px;
 }
 .lang{
@@ -1683,9 +1686,9 @@ ul.drink-menu-tabs li:hover {
     .feedback-title{
         margin-top: 40px;
     }
-    .footer-menu{
+    /* .footer-menu{
         margin-top: 40px;
-    }
+    } */
     .mobile-margin-name-email{
         margin-top: 20px;
     }
@@ -1807,6 +1810,9 @@ ul.drink-menu-tabs li:hover {
     }
     .bron-second-margin{
         margin-top: 0px;
+    }
+    .mob-footer {
+        margin-bottom: 0 !important;
     }
 }
 .caret{
@@ -2278,6 +2284,10 @@ datepicker.backend-date > input{
 /* Margins */
 .m-0 {
     margin:0;
+}
+
+.m-30 {
+    margin:30px;
 }
 
 .ml-0 {

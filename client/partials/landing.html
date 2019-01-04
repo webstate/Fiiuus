@@ -1774,20 +1774,6 @@
         </div>
     </div>
 
-    <div class="row mt-75">
-        <div class="col-md-6 m-0 p-0">
-            <div class="mapPicture" ng-style="{'background-image': 'url(' + mapPicture + ')'}">
-                <!-- style="background-image: url({{mapPicture}})"  -->
-                <!-- ng-style="{'background-image': 'url(' + mapPicture + ')'}" -->
-            </div>
-        </div>
-        <div class="col-md-6 m-0 p-0">
-            <div ng-controller="mapCtrl" ng-init="initMap()">
-                <div id="map" style="height: 400px;"></div>
-            </div>
-        </div>
-    </div>
-
     <div class="row feedback-form-margin">
         <div class="container">
             <div class="col-md-6 hidden-sm hidden-xs">
@@ -1842,7 +1828,7 @@
                         </li>
                     </ul>
                 </div>
-                <div class="row">
+                <!-- <div class="row">
                     <div class="col-md-12">
                         <ul class="footer-menu">
                             <li>
@@ -1857,7 +1843,7 @@
                             </li>
                         </ul>
                     </div>
-                </div>
+                </div> -->
             </div>
             <div class="col-md-6 mobile-stretch" ng-controller="emailCtrl">
                 <div class="col-md-12">
@@ -1948,7 +1934,7 @@
                         </li>
                     </ul>
                 </div>
-                <div class="row">
+                <!-- <div class="row">
                     <div class="col-md-12">
                         <ul class="footer-menu">
                             <li>
@@ -1963,11 +1949,44 @@
                             </li>
                         </ul>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>
+
+    <div class="row mt-75">
+        <div class="col-md-6 m-0 p-0">
+            <div class="mapPicture" ng-style="{'background-image': 'url(' + mapPicture + ')'}">
+                <!-- style="background-image: url({{mapPicture}})"  -->
+                <!-- ng-style="{'background-image': 'url(' + mapPicture + ')'}" -->
+            </div>
+        </div>
+        <div class="col-md-6 m-0 p-0">
+            <div ng-controller="mapCtrl" ng-init="initMap()">
+                <div id="map" style="height: 400px;"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="row">
+        <div class="col-md-6 col-md-push-3 text-center m-30 mob-footer">
+            <ul class="footer-menu">
+                <li>
+                    <a href="http://sophia.tartuhotels.ee/" target="_blank">
+                        <img style="height: 25px;" src="css/img/hotell-logo.jpg" />
+                    </a>
+                </li>
+                <li>
+                    <p class="copyright-text">
+                        Copyright &copy 2018 Fii Restaurant
+                    </p>
+                </li>
+            </ul>
+        </div>
+    </div>
 </div>
+
 <div class="col-md-12 bron-modal" ng-controller="bronCtrl" ng-show="bookingModal">
     <div class="overlay">
         <div class="row">
