@@ -635,7 +635,7 @@ router.post('/booking/add', function(req, res){
     });
     var date = moment.tz(req.body.date, 'DD MMMM, YYYY', "Europe/Tallinn").format('YYYY-MM-DD');
     var time1 = req.body.time;
-    var time2= parseInt(time1.split(":")[0])-3;
+    var time2= parseInt(time1.split(":")[0])-2; /* -3 */
     var time3= time2+":"+time1.split(":")[1];
 
     var time = moment.tz(time3, 'HH:mm', "Europe/Tallinn").format('HH:mm:ss');
