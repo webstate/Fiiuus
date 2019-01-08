@@ -626,20 +626,30 @@ router.post('/booking/add', function(req, res){
                   </table>\
                 </body>\
                 </html>'
-
     }
 
     mailgun.messages().send(testData, function (error, body) {
     });
     mailgun.messages().send(infoToResto, function(error, body){
     });
+
+    /* Check if it is dst */
+    var isdst = moment.tz(req.body.date, 'DD MMMM, YYYY', "Europe/Tallinn").isDST();
+
     var date = moment.tz(req.body.date, 'DD MMMM, YYYY', "Europe/Tallinn").format('YYYY-MM-DD');
     var time1 = req.body.time;
-    var time2= parseInt(time1.split(":")[0])-2; /* -3 */
-    var time3= time2+":"+time1.split(":")[1];
 
+    /* Aws Server is returning opposite dst value */
+    if (isdst === true) {
+        var time2= parseInt(time1.split(":")[0])-3;
+    } else {
+        var time2= parseInt(time1.split(":")[0])-2;
+    }
+
+    var time3= time2+":"+time1.split(":")[1];
     var time = moment.tz(time3, 'HH:mm', "Europe/Tallinn").format('HH:mm:ss');
     var dateTime = date+"T"+time;
+
     Booking.create({
         people: req.body.people,
         date: moment(dateTime),
@@ -651,7 +661,6 @@ router.post('/booking/add', function(req, res){
         if(err) res.send(err);
         res.json(booking);
     })
-
 })
 router.get('/booking/getall', function(req, res){
     Booking.find(function(err, bookings){
