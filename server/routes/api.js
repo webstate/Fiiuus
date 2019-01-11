@@ -1191,9 +1191,10 @@ router.get('/drink/:id', function(req, res){
 router.post('/add', function(req, res){
     Worker.create({
         name: req.body.name,
-        position: req.body.occupation,
-        information: req.body.info,
+        occupationEst: req.body.occupationEst,
+        infoEst: req.body.infoEst,
         picture: req.body.picture,
+        email: req.body.email,
         occupationEng: req.body.occupationEng,
         infoEng: req.body.infoEng,
         occupationFin: req.body.occupationFin,
@@ -1220,14 +1221,16 @@ router.post('/worker/update', function(req, res){
         if(err)res.send(err);
         worker.update({
             name: req.body.name,
-            position: req.body.position,
-            information: req.body.info,
+            occupationEst: req.body.estPosition,
+            email: req.body.email,
+            infoEst: req.body.infoEst,
             infoEng: req.body.engInfo,
             occupationEng: req.body.engPosition,
             infoFin: req.body.finInfo,
             occupationFin: req.body.finPosition,
             infoRus: req.body.rusInfo,
-            occupationRus: req.body.rusPosition
+            occupationRus: req.body.rusPosition,
+            picture: req.body.picture
         }, function(err){
             if(err)res.send(err);
             res.json({
