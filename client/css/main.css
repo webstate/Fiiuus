@@ -406,8 +406,10 @@ a.editable-click{
 }
 
 .picture-holder{
-    height: 250px;
-    width: 250px;
+    /* height: 250px; */
+    /* width: 250px; */
+    width: 100%;
+    min-height: 300px;
     border: 1px dashed #CCCCCC;
     margin-top: 25px;
     background-size: cover;
