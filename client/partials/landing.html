@@ -411,16 +411,16 @@
                         {{item.name}}
                     </p>
                     <p class="worker-occupation mb-5">
-                        {{item.position}}
+                        <!-- {{item.position}} -->
+                        {{item.occupationEst}}
                     </p>
-                    <span ng-if="item.name=='Ken Trahv'" class="worker-name">
-                        ken.trahv@tartuhotels.ee
-                    </span>
-                    <span ng-if="item.name=='Ingrid Änilane'" class="worker-name">
-                        ingrid.anilane@tartuhotels.ee
+                    <span class="worker-name">
+                        <!-- ken.trahv@tartuhotels.ee -->
+                        <!-- ingrid.anilane@tartuhotels.ee -->
+                        {{ item.email }}
                     </span>
                     <p class="worker-info">
-                        {{item.information}}<br/>
+                        {{item.infoEst}}<br/>
                     </p>
                 </div>
                 <div ng-repeat="item in workers" ng-if="$root.lang ==='en' && item.infoEng && item.occupationEng" class="col-md-6">
@@ -433,11 +433,8 @@
                     <p class="worker-occupation mb-5">
                         {{item.occupationEng}}
                     </p>
-                    <span ng-if="item.name=='Ken Trahv'" class="worker-name">
-                        ken.trahv@tartuhotels.ee
-                    </span>
-                    <span ng-if="item.name=='Ingrid Änilane'" class="worker-name">
-                        ingrid.anilane@tartuhotels.ee
+                    <span class="worker-name">
+                        {{ item.email }}
                     </span>
                     <p class="worker-info">
                         {{item.infoEng}}<br/>
@@ -453,11 +450,8 @@
                     <p class="worker-occupation mb-5">
                         {{item.occupationFin}}
                     </p>
-                    <span ng-if="item.name=='Ken Trahv'" class="worker-name">
-                        ken.trahv@tartuhotels.ee
-                    </span>
-                    <span ng-if="item.name=='Ingrid Änilane'" class="worker-name">
-                        ingrid.anilane@tartuhotels.ee
+                    <span class="worker-name">
+                        {{ item.email }}
                     </span>
                     <p class="worker-info">
                         {{item.infoFin}}<br/>
@@ -473,11 +467,8 @@
                     <p style="font-family: Roboto;" class="worker-occupation mb-5">
                         {{item.occupationRus}}
                     </p>
-                    <span ng-if="item.name=='Ken Trahv'" class="worker-name">
-                        ken.trahv@tartuhotels.ee
-                    </span>
-                    <span ng-if="item.name=='Ingrid Änilane'" class="worker-name">
-                        ingrid.anilane@tartuhotels.ee
+                    <span class="worker-name">
+                        {{ item.email }}
                     </span>
                     <p style="font-family: Roboto;" class="worker-info">
                         {{item.infoRus}}<br/>
