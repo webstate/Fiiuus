@@ -822,20 +822,27 @@ router.post('/texts/update', function(req, res){
     })
 })
 // Picture routes ---------------------
-router.post('/picture/add', upload.single('file'),function(req, res){
+router.post('/picture/add', upload.single('file'),function(req, res, $scope){
     /* Live db version */
     // var correctPath = str.replace(/\/opt\/bitnami\/apps\/Fii\/client\//, '../');
 
     /* New version */
-    var str = req.file.path;
-    if (str != null || str != undefined) {
-        if(str.indexOf('/')>=0 && str.indexOf('/') != -1){
-            var splitstr = str.split("/");
-        } else {
-            var splitstr = str.split(/(\u005C)/g);
-        }
-        var correctPath = 'uploads/'+ splitstr[splitstr.length - 1];
-    }
+    console.log('REQ.BODY', req.body); // REMOVE
+    // console.log('$scope', $scope); // REMOVE // undefined
+   
+    // var str = req.file.path;
+    // if (str != null || str != undefined) {
+    //     if(str.indexOf('/')>=0 && str.indexOf('/') != -1){
+    //         var splitstr = str.split("/");
+    //     } else {
+    //         var splitstr = str.split(/(\u005C)/g);
+    //     }
+    //     var correctPath = 'uploads/'+ splitstr[splitstr.length - 1];
+    // }
+
+    // var correctPath = 'uploads/'+ $scope.Nfile.name; // undefined
+    var correctPath = 'uploads/'+ 'testing2.jpeg'; // undefined
+    // console.log('REQ.BODY', req.body); // REMOVE
 
     Picture.create({
         picture:correctPath
@@ -852,45 +859,56 @@ router.post('/bannerpicture/add', function(req, res){
     }, function(err, count){
         if(err) res.send(err);
         if(count === 0){
-            var str = req.body.path;
-            if(str.indexOf('/')>=0 && str.indexOf('/') != -1){
-                var splitstr = str.split("/");
-            } else {
-                var splitstr = str.split(/(\u005C)/g);
-            }
-            var correctPath = 'uploads/'+ splitstr[splitstr.length - 1];
-
-            BannerPicture.create({
-                picturePath: req.body.path,
-                block: req.body.menuPosition
-            }, function(err){
-                if(err) res.send(err);
-                res.json({
-                    path: req.body.path
-                })
-            })
-        } else {
-            var str = req.body.path;
-            if(str.indexOf('/')>=0 && str.indexOf('/') != -1){
-                var splitstr = str.split("/");
-            } else {
-                var splitstr = str.split(/(\u005C)/g);
-            }
-            var correctPath = 'uploads/'+ splitstr[splitstr.length - 1];
-
-            BannerPicture.findOne({
-                block: req.body.menuPosition
-            }, function(err, picture){
-                if(err)res.send(err);
-                picture.update({
-                    picturePath: req.body.path
-                }, function(err){
-                    if(err)res.send(err);
-                    res.json({
-                        msg:"Picture was updated"
+            // console.log('Req.body if', req.body); // REMOVE
+            // var str = req.body.path;
+            // if(str.indexOf('/')>=0 && str.indexOf('/') != -1){
+                //     var splitstr = str.split("/");
+                // } else {
+                    //     var splitstr = str.split(/(\u005C)/g);
+                    // }
+                    // var correctPath = 'uploads/'+ splitstr[splitstr.length - 1];
+                    // var correctPath = 'uploads/'+ $scope.Nfile.name; // scope is not defined
+                    var correctPath = 'uploads/'+ 'testing2.jpeg'
+                    
+                    BannerPicture.create({
+                        // picturePath: req.body.path,
+                        picturePath: correctPath,
+                        block: req.body.menuPosition
+                    }, function(err){
+                        if(err) res.send(err);
+                        res.json({
+                            // path: req.body.path
+                            path: correctPath
+                        })
                     })
-                })
-            })
+                    console.log('Req.body if', req.body); // REMOVE
+        } else {
+            // console.log('Req.body else', req.body); // REMOVE
+            // var str = req.body.path;
+            // if(str.indexOf('/')>=0 && str.indexOf('/') != -1){
+                //     var splitstr = str.split("/");
+                // } else {
+                    //     var splitstr = str.split(/(\u005C)/g);
+                    // }
+                    // var correctPath = 'uploads/'+ splitstr[splitstr.length - 1];
+                    // var correctPath = 'uploads/'+ $scope.Nfile.name; // scope is not defined
+                    var correctPath = 'uploads/'+ 'testing2.jpeg'
+                    
+                    BannerPicture.findOne({
+                        block: req.body.menuPosition
+                    }, function(err, picture){
+                        if(err)res.send(err);
+                        picture.update({
+                            // picturePath: req.body.path
+                            picturePath: correctPath
+                        }, function(err){
+                            if(err)res.send(err);
+                            res.json({
+                                msg:"Picture was updated"
+                            })
+                        })
+                    })
+                    console.log('Req.body else', req.body); // REMOVE
         }
     })
 

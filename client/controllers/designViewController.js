@@ -2898,6 +2898,10 @@ designViewController.controller('designViewController', function ($scope, pictur
     })
 
 
+    /* Compress test */
+    $scope.konsooli = function () {
+        console.log('scope.image yes', $scope.image1.compressed.dataURL); // REMOVE
+    }
 
     $scope.user = {
         name: 'awesome user'
@@ -2907,46 +2911,78 @@ designViewController.controller('designViewController', function ($scope, pictur
     $scope.bannerPicChanged = function (elm, type) {
         var fd = new FormData();
         $scope.files = elm.files;
-        angular.forEach($scope.files, function (file) {
-            fd.append('file', file);
-        })
-        pictureService.saveImage(fd).then(function (file) {
-            if (type === "bannerEst") {
-                $scope.bannerPicturePathEst = file;
-            }
-            /* TODO - Mobile banner @admin preview */
-            // if (type === "bannerEstMobile") {
-            //     $scope.bannerPicturePathEst = file;
-            // }
-            if (type === "bannerEng") {
-                $scope.bannerPicturePathEng = file;
-            }
-            /* TODO - Mobile banner @admin preview */
-            // if (type === "bannerEngMobile") {
-            //     $scope.bannerPicturePathEng = file;
-            // }
-            if (type === "bannerFin") {
-                $scope.bannerPicturePathFin = file;
-            }
-            /* TODO - Mobile banner @admin preview */
-            // if (type === "bannerFinMobile") {
-            //     $scope.bannerPicturePathFin = file;
-            // }
-            if (type === "bannerRus") {
-                $scope.bannerPicturePathRus = file;
-            }
-            /* TODO - Mobile banner @admin preview */
-            // if (type === "bannerRusMobile") {
-            //     $scope.bannerPicturePathRus = file;
-            // }
-            pictureService.addBannerPicture(type, file).then(function (data) {
-                elm.parentNode.style.backgroundImage = "url(" + data + ")";
+        console.log('ELM', elm); // REMOVE
+        console.log('Scope AF elm', $scope); // REMOVE
+        // angular.forEach($scope.files, function (file) {
+        //     fd.append('file', file);
+        //     console.log('FILE', file); // REMOVE
+        // })
+
+        $scope.Nfile = elm.files[0];
+        console.log('$scope.Nfile', $scope.Nfile); // REMOVE
+
+        // console.log('$scope', $scope); // REMOVE
+        // console.log('File name B4', file.Nfile); // REMOVE
+        var filename = $scope.Nfile.name;
+
+        $timeout(function() {
+            console.log('$scope.image1 B4 newF', $scope.image1); // REMOVE
+            // var newFile = new File([imageResult], filename, {type: 'image/jpeg', lastModified: Date.now()});
+            var newFile = new File([$scope.image1], filename, {type: 'image/jpeg', lastModified: Date.now()});
+            console.log('NEWFILE', newFile); // REMOVE
+            var newImage = new Image(newFile);
+            console.log('newImage', newImage); // REMOVE
+            fd.append('file', newFile);
+            file = newFile;
+
+            /* test */
+            $scope.newFile = newFile;
+            console.log('scope AF newfile', $scope); // REMOVE
+    
+            // file = $scope.image1.compressed.dataURL;
+                // fd.append('file', file);/* $scope.image1.compressed.dataURL */
+                // console.log('image1 as FILE', image1); // REMOVE
+                console.log('FILE B4 save', file); // REMOVE
+            pictureService.saveImage(fd).then(function (file) {/*  */
+                if (type === "bannerEst") {
+                    $scope.bannerPicturePathEst = file;
+                    // $scope.bannerPicturePathEst = $scope.image1.compressed.dataURL;
+                }
+                /* TODO - Mobile banner @admin preview */
+                // if (type === "bannerEstMobile") {
+                //     $scope.bannerPicturePathEst = file;
+                // }
+                if (type === "bannerEng") {
+                    $scope.bannerPicturePathEng = file;
+                }
+                /* TODO - Mobile banner @admin preview */
+                // if (type === "bannerEngMobile") {
+                //     $scope.bannerPicturePathEng = file;
+                // }
+                if (type === "bannerFin") {
+                    $scope.bannerPicturePathFin = file;
+                }
+                /* TODO - Mobile banner @admin preview */
+                // if (type === "bannerFinMobile") {
+                //     $scope.bannerPicturePathFin = file;
+                // }
+                if (type === "bannerRus") {
+                    $scope.bannerPicturePathRus = file;
+                }
+                /* TODO - Mobile banner @admin preview */
+                // if (type === "bannerRusMobile") {
+                //     $scope.bannerPicturePathRus = file;
+                // }
+                pictureService.addBannerPicture(type, file).then(function (data) {
+                    elm.parentNode.style.backgroundImage = "url(" + data + ")";
+                }, function (err) {
+                    console.log(err);
+                })
             }, function (err) {
                 console.log(err);
             })
-        }, function (err) {
-            console.log(err);
-        })
+        }, 1000)
+
     }
 
     $scope.menuPicChanged = function (elm, type) {

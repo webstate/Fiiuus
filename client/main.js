@@ -39,7 +39,8 @@ var myApp = angular.module('myApp', [
     'ngSanitize',
     'slick',
     'monospaced.elastic',
-    'ui.bootstrap'
+    'ui.bootstrap',
+    'ngImageCompress'
 ]);
 myApp.filter('startFrom', function() {
     return function(data, start){

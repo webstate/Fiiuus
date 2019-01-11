@@ -1,3 +1,6 @@
+
+<!-- <script src="bower_components/angular-image-compress/angular-image-compress.js"></script> -->
+
 <div class="container">
     <ul style="list-style:none; text-align: center; width: 400px;margin: 0 auto; margin-top: 50px;">
         <li style="cursor:pointer;float:left; font-family: spaceMono; margin-left: 20px;font-size: 24px;">
@@ -62,8 +65,16 @@
             </div>
         </div>
         <div class="shadow admin-shadow">
-            <input type="file" name="file" id="fileBannerEst" class="inputfile" onchange="angular.element(this).scope().bannerPicChanged(this, 'bannerEst')" />
-            <label class="admin-desktop-label" for="fileBannerEst">
+            <input type="file" 
+                    name="file" 
+                    id="fileBannerEst" 
+                    class="inputfile" 
+                    accept="image/*"
+                    ng-model="image1" 
+                    image="image1" 
+                    resize-max-height="800" resize-max-width="1366" resize-quality="0.7" resize-type="image/jpg" ng-image-compress
+                    onchange="angular.element(this).scope().bannerPicChanged(this, 'bannerEst')" />
+                    <label class="admin-desktop-label" for="fileBannerEst">
                 <i class="fa fa-laptop"></i>
             </label>
 
@@ -73,6 +84,23 @@
                 <i class="glyphicon glyphicon-phone l1-t4"></i>
             </label>
         </div>
+
+        <!-- TEST -->
+        <div class="col-md-12">
+            <img ng-src="{{newFile}}" alt="">
+        </div>
+        <div class="col-md-12">
+            <pre>{{ image1 | json }}</pre><!-- // REMOVE -->
+            <input type="file" 
+                    id="inputImage" 
+                    accept="image/*" 
+                    ng-model="image1" 
+                    image="image1" 
+                    resize-max-height="800" resize-max-width="1366" resize-quality="0.7" resize-type="image/jpg" ng-image-compress/>
+            <img style="width: 100%; height: 700px;" ng-src="{{image1.compressed.dataURL}}" />
+            <button class="btn btn-primary" ng-click="konsooli()">CON</button><!--  ng-controller="designViewController" -->
+        </div>
+
         <div class="container m-40a w-800">
             <!-- <div ng-controller="ExampleController"> -->
                 <form name="bannerTitleForm">
