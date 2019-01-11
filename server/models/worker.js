@@ -5,8 +5,9 @@ var Schema = mongoose.Schema;
 
 var Worker = new Schema({
   name: String,
-  position: String,
-  information: String,
+  occupationEst: String,
+  email: String,
+  infoEst: String,
   picture: String,
   infoEng: {type: String, default: ""},
   occupationEng: {type: String, default: ""},
