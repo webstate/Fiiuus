@@ -1,13 +1,15 @@
 var workerService = angular.module('workerService', []);
 
-workerService.factory('workerService', function($q, $timeout, $http){
-    function addWorker(name, occupation, info, picture, infoEng, occupationEng,
+workerService.factory('workerService', function($q, $timeout, $http, $location){
+    function addWorker(name, occupationEst, email, infoEst, picture, infoEng, occupationEng,
         infoFin, occupationFin, infoRus, occupationRus){
         var d = $q.defer();
         $http.post('worker/add', {
             name: name,
-            occupation: occupation,
-            info: info, picture: picture,
+            occupationEst: occupationEst,
+            email: email,
+            infoEst: infoEst,
+            picture: picture,
             infoEng: infoEng,
             occupationEng: occupationEng,
             infoFin: infoFin,
@@ -26,15 +28,27 @@ workerService.factory('workerService', function($q, $timeout, $http){
     }
     function getWorkers(){
         var d = $q.defer();
-        $http.get('worker/all', { cache: true })
-        .then(function(response){
-            var data = response.data;
-            d.resolve(data);
-        }).catch(function(response){
-            var err = response.data;
-            d.reject(err);
-        })
-        return d.promise;
+        if($location.url() === "/admin/workers") {
+            $http.get('worker/all', { cache: false })
+            .then(function(response){
+                var data = response.data;
+                d.resolve(data);
+            }).catch(function(response){
+                var err = response.data;
+                d.reject(err);
+            })
+            return d.promise;
+        } else {
+            $http.get('worker/all', { cache: true })
+            .then(function(response){
+                var data = response.data;
+                d.resolve(data);
+            }).catch(function(response){
+                var err = response.data;
+                d.reject(err);
+            })
+            return d.promise;
+        }
     }
     function removeWorker(id){
         var d = $q.defer();
@@ -60,19 +74,21 @@ workerService.factory('workerService', function($q, $timeout, $http){
         })
         return d.promise;
     }
-    function updateWorker(id, name, position, info, engPosition, engInfo, finPosition, finInfo, rusPosition, rusInfo){
+    function updateWorker(id, name, estPosition, email, infoEst, engPosition, engInfo, finPosition, finInfo, rusPosition, rusInfo, picture){
         var d = $q.defer();
         $http.post('worker/worker/update', {
             id:id,
             name:name,
-            position:position,
-            info:info,
+            estPosition:estPosition,
+            email: email,
+            infoEst:infoEst,
             engPosition:engPosition,
             engInfo:engInfo,
             finPosition:finPosition,
             finInfo:finInfo,
             rusPosition:rusPosition,
-            rusInfo:rusInfo
+            rusInfo:rusInfo,
+            picture:picture
         }
         ).then(function(response){
             var data = response.data;
