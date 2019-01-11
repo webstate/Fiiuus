@@ -26,19 +26,15 @@ workerAdminController.controller('workerAdminController', function($scope, worke
         })
         pictureService.saveImage(fd).then(function(file){
             $scope.picture = file;
-            elm.parentNode.childNodes[7].style.backgroundImage = "url("+file+")";
-            elm.parentNode.childNodes[7].style.border = "none";
+            $(".picture-holder").css({"background-image": "url("+file+")", "border": "none"});
         }, function(err){
             console.log(err);
         })
     }
     $scope.submitWorker = function(){
-        workerService.addWorker($scope.worker.name, $scope.worker.occupation, $scope.worker.info, $scope.picture,
+        workerService.addWorker($scope.worker.name, $scope.worker.occupationEst, $scope.worker.email, $scope.worker.infoEst, $scope.picture,
              $scope.worker.infoEng, $scope.worker.occupationEng, $scope.worker.infoFin, $scope.worker.occupationFin,
              $scope.worker.infoRus, $scope.worker.occupationRus).then(function(data){
-
-            $scope.pictureElm.parentNode.childNodes[7].style.backgroundImage = "none";
-            $scope.pictureElm.parentNode.childNodes[7].style.border = "1px dashed #CCCCCC";
             $scope.worker = {};
             workerService.getWorkers().then(function(data){
                 $scope.workers = data;
@@ -128,29 +124,34 @@ workerAdminController.controller('workerAdminController', function($scope, worke
         workerService.getWorkerById(id).then(function(data){
             $scope.workerId = data._id;
             $scope.editNameEst = data.name;
-            $scope.editOccupationEst = data.position;
-            $scope.editInfoEst = data.information;
+            $scope.editOccupationEst = data.occupationEst;
+            $scope.editEmail = data.email;
+            $scope.editInfoEst = data.infoEst;
             $scope.editOccupationEng = data.occupationEng;
             $scope.editInfoEng = data.infoEng;
             $scope.editOccupationFin = data.occupationFin;
             $scope.editInfoFin = data.infoFin;
             $scope.editOccupationRus = data.occupationRus;
             $scope.editInfoRus = data.infoRus;
+            $scope.picture = data.picture;
         })
     }
     $scope.updateWorker = function(){
         var name = "";
         var estOccupation = "";
-        var editInfo = "";
+        var email = "";
+        var estInfo = "";
         var engOccupation = "";
         var engInfo = "";
         var finOccupation = "";
         var finInfo = "";
         var rusOccupation = "";
         var rusInfo = "";
+        var picture = "";
 
         estName = $scope.editNameEst;
         estOccupation = $scope.editOccupationEst;
+        email = $scope.editEmail;
         estInfo = $scope.editInfoEst;
         engOccupation = $scope.editOccupationEng;
         engInfo = $scope.editInfoEng;
@@ -158,12 +159,16 @@ workerAdminController.controller('workerAdminController', function($scope, worke
         finInfo = $scope.editInfoFin;
         rusOccupation = $scope.editOccupationRus;
         rusInfo = $scope.editInfoRus;
+        picture = $scope.picture;
 
         if($scope.editNameEst === "{{nameEditEst}}"){
             estName = $scope.nameEditEst;
         }
         if($scope.editOccupationEst === "{{editOccupationEst}}"){
             estOccupation = $scope.editOccupationEst;
+        }
+        if($scope.editEmail === "{{editEmail}}"){
+            email = $scope.editEmail;
         }
         if($scope.editInfoEst === "{{infoEditEst}}"){
             estInfo = $scope.descEstEdit
@@ -187,8 +192,8 @@ workerAdminController.controller('workerAdminController', function($scope, worke
             rusInfo = $scope.infoEditRus;
         }
 
-        workerService.updateWorker($scope.workerId, estName, estOccupation, estInfo,
-            engOccupation, engInfo, finOccupation, finInfo, rusOccupation, rusInfo).then(function(data){
+        workerService.updateWorker($scope.workerId, estName, estOccupation, email, estInfo,
+            engOccupation, engInfo, finOccupation, finInfo, rusOccupation, rusInfo, picture).then(function(data){
             workerService.getWorkers().then(function(data){
                 $scope.workers = data;
             }, function(err){
