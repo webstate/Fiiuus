@@ -3,7 +3,7 @@ bronCtrl.controller('bronCtrl', function($rootScope, $scope, bookingService){
     $scope.newsLetter = {
         status:false
     };
-    
+
     $scope.bronFirst = true;
     $scope.bronSecond = false;
     $scope.dropDownTimeEst = "Vali kellaaeg";
@@ -207,16 +207,16 @@ bronCtrl.controller('bronCtrl', function($rootScope, $scope, bookingService){
         $scope.form.showDropDownTimeFin = false;
         $scope.dropDownTimeFin = item;
     }
-    
-    
+
+
     $scope.minDate = new Date().toDateString();
     $scope.validateDateEst = function(){
         $scope.dropDownPeopleEstError = false;
         $scope.dropDownTimeEstError = false;
         $scope.dateEstError = false;
         $scope.errorMsg2 = false;
-        
-        
+
+
 
         var selectedDateEst = new Date ($scope.dateEst);
         // var SundayEst = selectedDateEst.getDay();
@@ -233,7 +233,7 @@ bronCtrl.controller('bronCtrl', function($rootScope, $scope, bookingService){
         }
         if(typeof($scope.dateEst) === 'undefined' || ($scope.dateEst === "" )){
             $scope.dateEstError = true;
-            
+
         }
         if(!$scope.dropDownPeopleEstError && !$scope.dropDownTimeEstError && !$scope.dateEstError && !$scope.errorMsg2){
             bookingService.validateBooking($scope.dropDownTimeEst, $scope.dateEst).then(function(data){
@@ -241,8 +241,8 @@ bronCtrl.controller('bronCtrl', function($rootScope, $scope, bookingService){
                     $scope.bronFrist = true;
                     $scope.bronSecond = false;
                     $scope.errorMsg = true;
-                 
-                    
+
+
                 }else{
                     $scope.bronFirst = false;
                     $scope.bronSecond = true;
@@ -314,7 +314,7 @@ bronCtrl.controller('bronCtrl', function($rootScope, $scope, bookingService){
         }
         if(typeof($scope.dateEng) === 'undefined' || ($scope.dateEng === "" )){
             $scope.dateEngError = true;
-            
+
         }
         if(!$scope.dropDownPeopleEngError && !$scope.dropDownTimeEngError && !$scope.dateEngError){
             bookingService.validateBooking($scope.dropDownTime, $scope.dateEng).then(function(data){
@@ -322,7 +322,7 @@ bronCtrl.controller('bronCtrl', function($rootScope, $scope, bookingService){
                     $scope.bronFrist = true;
                     $scope.bronSecond = false;
                     $scope.errorMsg = true;
-                    
+
 
                 }else{
                     $scope.bronFirst = false;
@@ -363,7 +363,7 @@ bronCtrl.controller('bronCtrl', function($rootScope, $scope, bookingService){
                     $scope.bronFrist = true;
                     $scope.bronSecond = false;
                     $scope.errorMsg = true;
-                    
+
                 }else{
                     $scope.bronFirst = false;
                     $scope.bronSecond = true;
@@ -440,8 +440,6 @@ bronCtrl.controller('bronCtrl', function($rootScope, $scope, bookingService){
                     $scope.bronFrist = true;
                     $scope.bronSecond = false;
                     $scope.errorMsg = true;
-                   
-                    
                 }else{
                     $scope.bronFirst = false;
                     $scope.bronSecond = true;
@@ -525,13 +523,14 @@ bronCtrl.controller('bronCtrl', function($rootScope, $scope, bookingService){
                 $rootScope.nameEst = "";
                 $rootScope.emailEst = "";
                 $rootScope.phoneEst = "";
-
-
             });
         }
     }
+
     $scope.bookEng = function(){
         $('body').css('overflow', 'scroll');
+
+        var addInfoText = $scope.addInfo;
         $scope.nameEngError = false;
         $scope.emailEngError = false;
         $scope.phoneEngError = false;
@@ -545,9 +544,13 @@ bronCtrl.controller('bronCtrl', function($rootScope, $scope, bookingService){
         if(typeof($rootScope.phoneEng) === 'undefined' || !(/^[\+\d]?(?:[\d-.\s()]*)$/.test($scope.phoneEng)) || ($rootScope.phoneEng === "")){
             $scope.phoneEngError = true;
         }
+        if(typeof($scope.addInfo) === 'undefined'){
+            addInfoText = "";
+        }
+
         if(!$scope.nameEngError && !$scope.emailEngError && !$scope.phoneEngError){
             bookingService.addBooking($scope.validPeople, $scope.validTime,
-                $scope.validDate, $rootScope.nameEng, $rootScope.emailEng, $rootScope.phoneEng, "en").then(function(data){
+                $scope.validDate, $rootScope.nameEng, $rootScope.emailEng, $rootScope.phoneEng, "en", addInfoText).then(function(data){
                 $rootScope.bookingModal = false;
                 $scope.bronFirst = true;
                 $scope.bronSecond = false;
@@ -560,8 +563,11 @@ bronCtrl.controller('bronCtrl', function($rootScope, $scope, bookingService){
            });
         }
     }
+
     $scope.bookRus = function(){
         $('body').css('overflow', 'scroll');
+
+        var addInfoText = $scope.addInfo
         $scope.nameRusError = false;
         $scope.emailRusError = false;
         $scope.phoneRusError = false;
@@ -576,9 +582,13 @@ bronCtrl.controller('bronCtrl', function($rootScope, $scope, bookingService){
         if(typeof($rootScope.phoneRus) === 'undefined' || !(/^[\+\d]?(?:[\d-.\s()]*)$/.test($scope.phoneRus)) || ($rootScope.phoneRus === "") ){
             $scope.phoneRusError = true;
         }
+        if(typeof($scope.addInfo) === 'undefined'){
+            addInfoText = "";
+        }
+
         if(!$scope.nameRusError && !$scope.emailRusError && !$scope.phoneRusError){
             bookingService.addBooking($scope.validPeople, $scope.validTime,
-                $scope.validDate, $rootScope.nameRus, $rootScope.emailRus, $rootScope.phoneRus, "ru").then(function(data){
+                $scope.validDate, $rootScope.nameRus, $rootScope.emailRus, $rootScope.phoneRus, "ru", addInfoText).then(function(data){
                 $rootScope.bookingModal = false;
                 $scope.bronFirst = true;
                 $scope.bronSecond = false;
@@ -592,8 +602,11 @@ bronCtrl.controller('bronCtrl', function($rootScope, $scope, bookingService){
             });
         }
     }
+
     $scope.bookFin = function(){
         $('body').css('overflow', 'scroll');
+
+        var addInfoText = $scope.addInfo;
         $scope.nameFinError = false;
         $scope.emailFinError = false;
         $scope.phoneFinError = false;
@@ -608,9 +621,13 @@ bronCtrl.controller('bronCtrl', function($rootScope, $scope, bookingService){
         if(typeof($rootScope.phoneFin) === 'undefined' || !(/^[\+\d]?(?:[\d-.\s()]*)$/.test($scope.phoneFin)) || ($rootScope.phoneFin === "") ){
             $scope.phoneFinError = true;
         }
+        if(typeof($scope.addInfo) === 'undefined'){
+            addInfoText = "";
+        }
+
         if(!$scope.nameFinError && !$scope.emailFinError && !$scope.phoneFinError){
             bookingService.addBooking($scope.validPeople, $scope.validTime,
-                $scope.validDate, $rootScope.nameFin, $rootScope.emailFin, $rootScope.phoneFin, "fi").then(function(data){
+                $scope.validDate, $rootScope.nameFin, $rootScope.emailFin, $rootScope.phoneFin, "fi", addInfoText).then(function(data){
                 $rootScope.bookingModal = false;
                 $scope.bronFirst = true;
                 $scope.bronSecond = false;
@@ -624,6 +641,7 @@ bronCtrl.controller('bronCtrl', function($rootScope, $scope, bookingService){
             });
         }
     }
+
     $scope.showInfoModal = false;
     $scope.openInfoModal = function(){
         $scope.showInfoModal = !$scope.showInfoModal;
