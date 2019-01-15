@@ -2897,16 +2897,49 @@ designViewController.controller('designViewController', function ($scope, pictur
         }
     })
 
-
-    /* Compress test */
-    $scope.konsooli = function () {
-        console.log('scope.image yes', $scope.image1.compressed.dataURL); // REMOVE
-    }
-
     $scope.user = {
         name: 'awesome user'
     };
     $scope.$watch('user.name', function (val) {})
+
+
+    /* Compress test */
+    $scope.konsooli = function () {
+        // console.log('scope.image yes', $scope.image1.compressed.dataURL); // REMOVE
+        console.log('scope.image yes', $scope.image1.compressed.dataURL); // REMOVE
+
+        var base64string = $scope.image1.compressed.dataURL;
+        console.log('base64string', base64string, typeof(base64string)); // REMOVE
+        // function getBase64Image(base64string) {
+            // var test = base64string.replace(/^data:image\/(png|jpg);base64,/, "");
+            // console.log('test', test); // REMOVE
+            // console.log('NEW base64string!!!', base64string); // REMOVE
+            console.log('typeof(base64string)', typeof(base64string)); // REMOVE
+
+            // var time3= time2+":"+time1.split(":")[1];
+            var new64 = base64string.split(";base64,")[1];
+            console.log('new64', new64); // REMOVE
+            // return base64string.replace(/^data:image\/(png|jpg);base64,/, "");
+
+            // return base64string.toString().replace(/^data:image\/(png|jpg);base64,/, "");
+            // return base64string.replace(/base64,/, "");
+        // }
+        // var imgData = JSON.stringify(getBase64Image(/* base64string */));
+        // var imgData = JSON.stringify(base64string);
+        var imgData = JSON.stringify(new64);
+        console.log('imgData @getBase64Image', imgData); // REMOVE
+
+        // var imageBuffer = decodeBase64Image(imgData);
+        // console.log("imagebuffer", imageBuffer);
+
+        // var path = "css/img/compressed/new-test-image.jpg"
+        // fs.writeFile(path, imgData, 'base64', (err) => {
+        //     console.log(err);
+        // });
+        // fs.writeFile(path, base64Data, 'base64', (err) => {
+        //     console.log(err);
+        // });
+    }
 
     $scope.bannerPicChanged = function (elm, type) {
         var fd = new FormData();
@@ -2938,7 +2971,7 @@ designViewController.controller('designViewController', function ($scope, pictur
             /* test */
             $scope.newFile = newFile;
             console.log('scope AF newfile', $scope); // REMOVE
-    
+
             // file = $scope.image1.compressed.dataURL;
                 // fd.append('file', file);/* $scope.image1.compressed.dataURL */
                 // console.log('image1 as FILE', image1); // REMOVE

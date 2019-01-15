@@ -157,14 +157,16 @@
                             // };
                             imageResult.compressed = {
                                 dataURL: dataURLcompressed,
-                                type: dataURLcompressed.match(/:(.+\/.+);/)[1]
+                                type: dataURLcompressed.match(/:(.+\/.+);/)[1],
+                                first: dataURLcompressed.match(/:(.+\/.+);/)[0],
                             };
+                            console.log('Test imageResult.compressed', imageResult.compressed); // REMOVE
                             // var blob = new Blob([imageResult], { type: "text/plain;charset=utf-8" });/* , "newPic.jpg" */
                             // saveAs(blob, "hello world.txt");
                             // var newFile = new File([blob], filename, {type: 'image/jpeg', lastModified: Date.now()});
 
                             // console.log('$scope', $scope); // REMOVE
-                            var filename = "uploaded_file2.jpg"
+                            var filename = "uploaded_file" + Date.now() + ".jpg"
 
                             var newFile2 = new File([imageResult.compressed], filename, {type: 'image/jpeg', lastModified: Date.now()});
                             console.log('NEWFILE-2', newFile2); // REMOVE

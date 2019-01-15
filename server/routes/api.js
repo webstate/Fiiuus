@@ -829,19 +829,18 @@ router.post('/picture/add', upload.single('file'),function(req, res, $scope){
     /* New version */
     console.log('REQ.BODY', req.body); // REMOVE
     // console.log('$scope', $scope); // REMOVE // undefined
-   
-    // var str = req.file.path;
-    // if (str != null || str != undefined) {
-    //     if(str.indexOf('/')>=0 && str.indexOf('/') != -1){
-    //         var splitstr = str.split("/");
-    //     } else {
-    //         var splitstr = str.split(/(\u005C)/g);
-    //     }
-    //     var correctPath = 'uploads/'+ splitstr[splitstr.length - 1];
-    // }
+    var str = req.file.path;
+    if (str != null || str != undefined) {
+        if(str.indexOf('/')>=0 && str.indexOf('/') != -1){
+            var splitstr = str.split("/");
+        } else {
+            var splitstr = str.split(/(\u005C)/g);
+        }
+        var correctPath = 'uploads/'+ splitstr[splitstr.length - 1];
+    }
 
     // var correctPath = 'uploads/'+ $scope.Nfile.name; // undefined
-    var correctPath = 'uploads/'+ 'testing2.jpeg'; // undefined
+    // var correctPath = 'uploads/' + 'testing'+ Date.now() +'.jpeg'; // undefined
     // console.log('REQ.BODY', req.body); // REMOVE
 
     Picture.create({
