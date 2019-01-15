@@ -2958,6 +2958,31 @@ designViewController.controller('designViewController', function ($scope, pictur
         pictureService.saveImage(fd).then(function (file) {
             if (type === "first") {
                 $scope.firstPicturePath = file;
+
+
+            // /* Test new-compress */
+            // // var compress_images = require('compress-images');
+            // var compress_images;
+
+            // var correctPath = $scope.firstPicturePath;
+            // const INPUT = correctPath.toString();
+            // console.log('INPUT', typeof(INPUT), INPUT); // REMOVE
+            // const OUTPUT = 'uploads/compressed';
+
+            // // function MyFun(){
+            // compress_images(INPUT, OUTPUT, {compress_force: false, statistic: true, autoupdate: true}, false,
+            //                                             {jpg: {engine: 'mozjpeg', command: ['-quality', '80']}},
+            //                                             {png: {engine: 'pngquant', command: ['--quality=40-70']}},
+            //                                             {svg: {engine: 'svgo', command: '--multipass'}},
+            //                                             {gif: {engine: 'gifsicle', command: ['--colors', '64', '--use-col=web']}}, function(err, completed){
+            //     if(completed === true){
+            //         // Doing something.
+            //         console.log('Completed!', ); // REMOVE
+            //     } else {
+            //         console.log('Not completed!', ); // REMOVE
+            //     }
+            // });
+            // // }
             }
             if (type === "second") {
                 $scope.secondPicturePath = file;

@@ -34,6 +34,8 @@ var DesignPicture = require('../models/designPics.js');
 var LandingText = require('../models/landingText.js');
 var Booking = require('../models/booking.js');
 var ClosedTimes = require('../models/closedTimes.js');
+// var compress_images = require('compress-images');
+
 // Event page routes ------------------
 router.post('/event/add', function(req, res){
     var date = moment(req.body.date, 'YYYY-MM-DD HH:mm:ss').format('YYYY-MM-DD');
@@ -741,6 +743,7 @@ router.post('/design/add', function(req, res){
     }, function(err, count){
         if(err) res.send(err);
         if(count === 0){
+            console.log('NOT else', ); // REMOVE
             var str = req.body.path;
             if(str.indexOf('/')>=0 && str.indexOf('/') != -1){
                 var splitstr = str.split("/");
@@ -759,6 +762,7 @@ router.post('/design/add', function(req, res){
                 })
             })
         } else {
+            console.log('else', ); // REMOVE
             var str = req.body.path;
             if(str.indexOf('/')>=0 && str.indexOf('/') != -1){
                 var splitstr = str.split("/");
@@ -766,6 +770,7 @@ router.post('/design/add', function(req, res){
                 var splitstr = str.split(/(\u005C)/g);
             }
             var correctPath = 'uploads/'+ splitstr[splitstr.length - 1];
+
 
             DesignPicture.findOne({
                 block: req.body.menuPosition
@@ -779,7 +784,40 @@ router.post('/design/add', function(req, res){
                         msg:"Picture was updated"
                     })
                 })
-            })
+            });
+
+
+            /* Test new-compress */
+            // router.post('/design/get', function(req, res){
+            //     DesignPicture.findOne({
+            //         block: req.body.menuPosition
+            //     }, function(err, picture){
+            //         if(err) res.send(err);
+            //         res.json(picture);
+            //     })
+            // })
+            var compress_images = require('compress-images');
+
+            const INPUT = '../client/' + (correctPath.toString());
+            // const INPUT = '../client/uploads/test/**/*.{jpg,JPG,jpeg,JPEG,png,svg,gif}';
+            console.log('INPUT', typeof(INPUT), INPUT); // REMOVE
+            const OUTPUT = '../client/uploads/compressed/';
+            // const OUTPUT = '../client/uploads/test/';
+
+            // function MyFun(){
+            compress_images(INPUT, OUTPUT, {compress_force: false, statistic: true, autoupdate: true}, false,
+                                                        {jpg: {engine: 'mozjpeg', command: ['-quality', '80']}},
+                                                        {png: {engine: 'pngquant', command: ['--quality=40-70']}},
+                                                        {svg: {engine: 'svgo', command: '--multipass'}},
+                                                        {gif: {engine: 'gifsicle', command: ['--colors', '64', '--use-col=web']}}, function(err, completed){
+                if(completed === true){
+                    // Doing something.
+                    console.log('Completed!', ); // REMOVE
+                } else {
+                    console.log('Not completed!', ); // REMOVE
+                }
+            });
+            // }
         }
     })
 
