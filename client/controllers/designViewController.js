@@ -2767,10 +2767,13 @@ designViewController.controller('designViewController', function ($scope, pictur
 
     /* Menu pics */
     pictureService.getMenuPicture('first').then(function (data) {
+        console.log('Data @designCtrl', data); // REMOVE
         if (data == null) {
             $scope.firstPicturePath = "";
+            $scope.firstPictureOptPath = "";
         } else {
             $scope.firstPicturePath = data.picturePath;
+            $scope.firstPictureOptPath = data.optPath;
         }
     })
     pictureService.getMenuPicture('second').then(function (data) {
@@ -2957,7 +2960,11 @@ designViewController.controller('designViewController', function ($scope, pictur
         })
         pictureService.saveImage(fd).then(function (file) {
             if (type === "first") {
+                console.log('File @PS save first', file); // REMOVE
                 $scope.firstPicturePath = file;
+                console.log('Scope AF first menupic saveImage', $scope); // REMOVE
+                // $scope.firstPictureOptPath = file;
+                // console.log('Scope AF $scope.firstPictureOptPath = file', $scope); // REMOVE
 
 
             // /* Test new-compress */

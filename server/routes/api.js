@@ -34,7 +34,7 @@ var DesignPicture = require('../models/designPics.js');
 var LandingText = require('../models/landingText.js');
 var Booking = require('../models/booking.js');
 var ClosedTimes = require('../models/closedTimes.js');
-// var compress_images = require('compress-images');
+var compress_images = require('compress-images'); // uncommented
 
 // Event page routes ------------------
 router.post('/event/add', function(req, res){
@@ -740,46 +740,57 @@ router.post('/landingText/get', function(req, res){
 router.post('/design/add', function(req, res){
     DesignPicture.count({
         block: req.body.menuPosition
+        // , optPath = req.body.optPath
     }, function(err, count){
         if(err) res.send(err);
         if(count === 0){
-            console.log('NOT else', ); // REMOVE
+            console.log('NOT else @api:747', ); // REMOVE
             var str = req.body.path;
             if(str.indexOf('/')>=0 && str.indexOf('/') != -1){
                 var splitstr = str.split("/");
             } else {
                 var splitstr = str.split(/(\u005C)/g);
             }
-            var correctPath = 'uploads/'+ splitstr[splitstr.length - 1];
+            var correctPath = 'uploads/'+ splitstr[splitstr.length - 1]; // added /test
+            // var optPath = req.body.optPath;
+            var optPath = 'uploads/compressed/'+ splitstr[splitstr.length - 1];
 
             DesignPicture.create({
                 picturePath: correctPath,/* req.body.path */
+                optPath: optPath,
                 block: req.body.menuPosition
             }, function(err){
                 if(err) res.send(err);
+                console.log('req.body.path @api:764', req.body.path); // REMOVE
+                console.log('optPath @api:765', optPath); // REMOVE
                 res.json({
-                    path: req.body.path
+                    path: req.body.path,
+                    optPath: req.body.optPath
                 })
             })
         } else {
-            console.log('else', ); // REMOVE
+            console.log('else @api:772', ); // REMOVE
             var str = req.body.path;
             if(str.indexOf('/')>=0 && str.indexOf('/') != -1){
                 var splitstr = str.split("/");
             } else {
                 var splitstr = str.split(/(\u005C)/g);
             }
-            var correctPath = 'uploads/'+ splitstr[splitstr.length - 1];
-
+            var correctPath = 'uploads/'+ splitstr[splitstr.length - 1]; // added /test
+            var optPath = 'uploads/compressed/'+ splitstr[splitstr.length - 1];
 
             DesignPicture.findOne({
                 block: req.body.menuPosition
             }, function(err, picture){
                 if(err)res.send(err);
                 picture.update({
-                    picturePath: correctPath/* req.body.path */
+                    picturePath: correctPath, /* req.body.path */
+                    optPath: optPath
                 }, function(err){
                     if(err)res.send(err);
+                    console.log('req.body.path @api:791', req.body.path); // REMOVE
+                    // console.log('req.body.optPath', req.body.optPath); // REMOVE // undefined
+                    console.log('optPath @api:793', optPath); // REMOVE
                     res.json({
                         msg:"Picture was updated"
                     })
@@ -796,27 +807,35 @@ router.post('/design/add', function(req, res){
             //         res.json(picture);
             //     })
             // })
-            var compress_images = require('compress-images');
+            // var compress_images = require('compress-images'); // @ the top
 
             const INPUT = '../client/' + (correctPath.toString());
             // const INPUT = '../client/uploads/test/**/*.{jpg,JPG,jpeg,JPEG,png,svg,gif}';
-            console.log('INPUT', typeof(INPUT), INPUT); // REMOVE
+            console.log('INPUT & type @api:814', typeof(INPUT), INPUT); // REMOVE
             const OUTPUT = '../client/uploads/compressed/';
             // const OUTPUT = '../client/uploads/test/';
 
-            // function MyFun(){
-            compress_images(INPUT, OUTPUT, {compress_force: false, statistic: true, autoupdate: true}, false,
-                                                        {jpg: {engine: 'mozjpeg', command: ['-quality', '80']}},
-                                                        {png: {engine: 'pngquant', command: ['--quality=40-70']}},
-                                                        {svg: {engine: 'svgo', command: '--multipass'}},
-                                                        {gif: {engine: 'gifsicle', command: ['--colors', '64', '--use-col=web']}}, function(err, completed){
-                if(completed === true){
-                    // Doing something.
-                    console.log('Completed!', ); // REMOVE
-                } else {
-                    console.log('Not completed!', ); // REMOVE
+            // function MyFun(){ /* ng-class="{true: 'red', false: 'green'}[item.name.length == 0]" */
+            compress_images(INPUT, OUTPUT, { compress_force: false,
+                                             statistic: true,
+                                             autoupdate: false
+                                            }, false,
+                                            {jpg: {engine: 'mozjpeg', command: ['-quality', '80']}},
+                                            {png: {engine: 'pngquant', command: ['--quality=40-70']}},
+                                            {svg: {engine: 'svgo', command: '--multipass'}},
+                                            {gif: {engine: 'gifsicle', command: ['--colors', '64', '--use-col=web']}},
+
+                // function(){ console.log('statistics', statistics); }, // REMOVE
+                function(err, completed){
+                    // console.log('SIZE OUT', size_output); // REMOVE
+                    if(completed === true){
+                        // Doing something.
+                        console.log('Completed! @api', ); // REMOVE
+                    } else {
+                        console.log('Not completed! @api', ); // REMOVE
+                    }
                 }
-            });
+            );
             // }
         }
     })
@@ -863,6 +882,7 @@ router.post('/texts/update', function(req, res){
 router.post('/picture/add', upload.single('file'),function(req, res){
     /* Live db version */
     // var correctPath = str.replace(/\/opt\/bitnami\/apps\/Fii\/client\//, '../');
+    console.log('REQ.File', req.file); // REMOVE
 
     /* New version */
     var str = req.file.path;
@@ -873,10 +893,12 @@ router.post('/picture/add', upload.single('file'),function(req, res){
             var splitstr = str.split(/(\u005C)/g);
         }
         var correctPath = 'uploads/'+ splitstr[splitstr.length - 1];
+        var optPath = 'uploads/compressed/' + req.file.filename;
     }
 
     Picture.create({
-        picture:correctPath
+        picture:correctPath,
+        optPath: optPath
     }, function(err){
         if(err) res.send(err);
     })

@@ -1,6 +1,6 @@
 var pictureService = angular.module('pictureService', []);
 
-pictureService.factory('pictureService', function($q, $timeout, $http){
+pictureService.factory('pictureService', function($q, $timeout, $http, $location){
     function saveImage(fd){
         var d = $q.defer();
         $http.post('user/picture/add', fd, {
@@ -69,12 +69,13 @@ pictureService.factory('pictureService', function($q, $timeout, $http){
         return d.promise;
     } /* End of BannerTitle Pos */
 
-    function addMenuPicture(menuPosition, path){
+    function addMenuPicture(menuPosition, path, optPath){
         var d = $q.defer();
-        $http.post('user/design/add', {menuPosition:menuPosition, path: path})
+        $http.post('user/design/add', {menuPosition:menuPosition, path: path, optPath: optPath})
         .then(function(response){
             var data = response.data;
             d.resolve(data);
+            console.log('DATA @ d.resolve PS', data); // REMOVE
         }).catch(function(response){
             var err = response.data;
             d.reject(err);
@@ -84,15 +85,27 @@ pictureService.factory('pictureService', function($q, $timeout, $http){
 
     function getMenuPicture(menuPosition){
         var d = $q.defer();
-        $http.post('user/design/get', {menuPosition:menuPosition})
-        .then(function(response){
-            var data = response.data;
-            d.resolve(data);
-        }).catch(function(response){
-            var err = response.data;
-            d.reject(err);
-        })
-        return d.promise;
+        if($location.url() === "/admin/design") {
+            $http.post('user/design/get', { cache: false, menuPosition:menuPosition})
+                .then(function(response){
+                    var data = response.data;
+                    d.resolve(data);
+                }).catch(function(response){
+                    var err = response.data;
+                    d.reject(err);
+                })
+                return d.promise;
+        } else {
+            $http.post('user/design/get', { cache: true, menuPosition:menuPosition})
+                .then(function(response){
+                    var data = response.data;
+                    d.resolve(data);
+                }).catch(function(response){
+                    var err = response.data;
+                    d.reject(err);
+                })
+            return d.promise;
+        }
     }
 
     return({
