@@ -827,6 +827,7 @@ router.post('/design/add', function(req, res){
 
                 // function(){ console.log('statistics', statistics); }, // REMOVE
                 function(err, completed){
+                    if(err) res.send(err);
                     // console.log('SIZE OUT', size_output); // REMOVE
                     if(completed === true){
                         // Doing something.
