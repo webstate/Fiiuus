@@ -688,7 +688,8 @@ th{
 }
 .inputfile + label{
     font-size: 28px;
-    color: white;
+    /* color: white; */
+    color: darkgrey;
     width: 50px;
     height: 50px;
     background-color: rgba(255, 255, 255, 0.1);
@@ -2251,6 +2252,18 @@ datepicker.backend-date > input{
     font-size: 26px;
     -webkit-appearance: none;
     -moz-appearance: none;
+}
+
+/* Optimize-button */
+.optimize-button {
+    cursor: pointer;
+    font-family: spaceMono;
+    font-size: 14px;
+    display: inline-block;
+    background-color: #63ada4;
+    border-radius: 0;
+    float: right;
+    color: #fff;
 }
 
 /* Draggable title */
