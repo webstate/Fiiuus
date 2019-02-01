@@ -403,75 +403,76 @@
                 </div>
             </div>
             <div class="row mt-75" ng-controller="workerCtrl">
-                <div ng-repeat="item in workers" ng-if="$root.lang ==='ee'" class="col-md-6">
-                    <div class="worker-img-holder" style="background-image:url({{item.picture}})">
-
+                <div ng-repeat="worker in workers" ng-if="$root.lang ==='ee'" class="col-md-6">
+                    <div class="worker-img-holder"
+                         ng-style="worker.optPath && {'background-image':'url(' + worker.optPath + ')'} || {'background-image': 'url(' + worker.picture + ')'}">
+                        <!-- style="background-image:url({{worker.picture}})" -->
                     </div>
                     <p class="worker-name mb-5">
-                        {{item.name}}
+                        {{worker.name}}
                     </p>
                     <p class="worker-occupation mb-5">
-                        <!-- {{item.position}} -->
-                        {{item.occupationEst}}
+                        <!-- {{worker.position}} -->
+                        {{worker.occupationEst}}
                     </p>
                     <span class="worker-name">
                         <!-- ken.trahv@tartuhotels.ee -->
                         <!-- ingrid.anilane@tartuhotels.ee -->
-                        {{ item.email }}
+                        {{ worker.email }}
                     </span>
                     <p class="worker-info">
-                        {{item.infoEst}}<br/>
+                        {{worker.infoEst}}<br/>
                     </p>
                 </div>
-                <div ng-repeat="item in workers" ng-if="$root.lang ==='en' && item.infoEng && item.occupationEng" class="col-md-6">
-                    <div class="worker-img-holder" style="background-image:url({{item.picture}})">
-
+                <div ng-repeat="worker in workers" ng-if="$root.lang ==='en' && worker.infoEng && worker.occupationEng" class="col-md-6">
+                    <div class="worker-img-holder"
+                         ng-style="worker.optPath && {'background-image':'url(' + worker.optPath + ')'} || {'background-image': 'url(' + worker.picture + ')'}">
                     </div>
                     <p class="worker-name mb-5">
-                        {{item.name}}
+                        {{worker.name}}
                     </p>
                     <p class="worker-occupation mb-5">
-                        {{item.occupationEng}}
+                        {{worker.occupationEng}}
                     </p>
                     <span class="worker-name">
-                        {{ item.email }}
+                        {{ worker.email }}
                     </span>
                     <p class="worker-info">
-                        {{item.infoEng}}<br/>
+                        {{worker.infoEng}}<br/>
                     </p>
                 </div>
-                <div ng-repeat="item in workers" ng-if="$root.lang ==='fi' && item.infoFin && item.occupationFin" class="col-md-6">
-                    <div class="worker-img-holder" style="background-image:url({{item.picture}})">
-
+                <div ng-repeat="worker in workers" ng-if="$root.lang ==='fi' && worker.infoFin && worker.occupationFin" class="col-md-6">
+                    <div class="worker-img-holder"
+                         ng-style="worker.optPath && {'background-image':'url(' + worker.optPath + ')'} || {'background-image': 'url(' + worker.picture + ')'}">
                     </div>
                     <p class="worker-name mb-5">
-                        {{item.name}}
+                        {{worker.name}}
                     </p>
                     <p class="worker-occupation mb-5">
-                        {{item.occupationFin}}
+                        {{worker.occupationFin}}
                     </p>
                     <span class="worker-name">
-                        {{ item.email }}
+                        {{ worker.email }}
                     </span>
                     <p class="worker-info">
-                        {{item.infoFin}}<br/>
+                        {{worker.infoFin}}<br/>
                     </p>
                 </div>
-                <div ng-repeat="item in workers" ng-if="$root.lang ==='ru' && item.infoRus && item.occupationRus" class="col-md-6">
-                    <div class="worker-img-holder" style="background-image:url({{item.picture}})">
-
+                <div ng-repeat="worker in workers" ng-if="$root.lang ==='ru' && worker.infoRus && worker.occupationRus" class="col-md-6">
+                    <div class="worker-img-holder"
+                         ng-style="worker.optPath && {'background-image':'url(' + worker.optPath + ')'} || {'background-image': 'url(' + worker.picture + ')'}">
                     </div>
                     <p style="font-family: Roboto;" class="worker-name mb-5">
-                        {{item.name}}
+                        {{worker.name}}
                     </p>
                     <p style="font-family: Roboto;" class="worker-occupation mb-5">
-                        {{item.occupationRus}}
+                        {{worker.occupationRus}}
                     </p>
                     <span class="worker-name">
-                        {{ item.email }}
+                        {{ worker.email }}
                     </span>
                     <p style="font-family: Roboto;" class="worker-info">
-                        {{item.infoRus}}<br/>
+                        {{worker.infoRus}}<br/>
                     </p>
                 </div>
             </div>
@@ -927,7 +928,7 @@
                         <!-- Right Main Column -->
                         <div class="col-md-6 menu-container-padding">
                             <div class="menu-picture" ng-style="{'background-image':'url(' + firstPicturePath + ')'}">
-
+                                <!-- image -->
                             </div>
                             <div class="main-course-menu-holder" ng-controller="foodCtrl">
                                 <p ng-if="$root.lang ==='en'" class="menu-box-title">
