@@ -11,12 +11,15 @@ eventAdminCtrl.controller('eventAdminCtrl', function($scope, eventService, pictu
     $scope.showModal = function(){
         $scope.addEventModal = true;
     }
+
     $scope.hideModal = function(){
         $scope.addEventModal = false;
     }
+
     $scope.hideEditModal = function(){
         $scope.changeEventModal = false;
     }
+
     $scope.imageChanged = function(elm, type) {
         var fd = new FormData();
         angular.forEach(elm.files, function(file){
@@ -24,12 +27,11 @@ eventAdminCtrl.controller('eventAdminCtrl', function($scope, eventService, pictu
         })
 
         pictureService.saveImage(fd).then(function(file){
-            console.log(file);
+            console.log(file); // f.e. uploads/test/file1549011216057.png
             if (type == 'est') {
                 $scope.event.image = file;
             } else if (type == 'edit_est') {
                 $scope.editImageEst = file;
-                console.dir(file);
             } else if (type == 'eng') {
                 $scope.event.imageEng = file;
             } else if (type == 'edit_eng') {
@@ -43,8 +45,11 @@ eventAdminCtrl.controller('eventAdminCtrl', function($scope, eventService, pictu
             } else if (type == 'edit_rus') {
                 $scope.editImageRus = file;
             }
-
             console.dir($scope.event);
+
+            /* Automatically compress image */
+            pictureService.compress();
+
         }, function(err){
             console.log(err);
         })
@@ -84,6 +89,7 @@ eventAdminCtrl.controller('eventAdminCtrl', function($scope, eventService, pictu
         $scope.estModal = false;
         $scope.rusModal = false;
     }
+
     $scope.showRus = function(){
 
         $scope.rusModal = true;
@@ -123,11 +129,13 @@ eventAdminCtrl.controller('eventAdminCtrl', function($scope, eventService, pictu
         $scope.engEditModal = false;
         $scope.estEditModal = false;
     }
+
     eventService.getEvents().then(function(data){
         $scope.events = data;
     }, function(err){
         console.log(err);
     })
+
     $scope.submitEvent = function(){
         var date = new Date();
         var hours = $scope.event.time.getHours();
@@ -138,10 +146,14 @@ eventAdminCtrl.controller('eventAdminCtrl', function($scope, eventService, pictu
             minutes = "0" + $scope.event.time.getMinutes();
         }
         var newdate=$scope.event.date.setHours(12);
+
+        // var added = new Date(Date.now()).toLocaleString();
+        $scope.event.added = new Date(Date.now()).toLocaleString();
+
         eventService.addEvent($scope.event.name, $scope.event.description, $scope.event.image, $scope.event.date, hours+offset+":"+minutes+":00",
         $scope.event.nameEng, $scope.event.descEng, $scope.event.imageEng,
         $scope.event.nameFin, $scope.event.descFin, $scope.event.imageFin,
-        $scope.event.nameRus, $scope.event.descRus, $scope.event.imageRus).then(function(){
+        $scope.event.nameRus, $scope.event.descRus, $scope.event.imageRus, $scope.event.added).then(function(){
             eventService.getEvents().then(function(data){
                 $scope.events = data;
                 $scope.event = {};
@@ -153,6 +165,7 @@ eventAdminCtrl.controller('eventAdminCtrl', function($scope, eventService, pictu
             console.log(err);
         });
     }
+
     $scope.removeEvent = function(id){
         eventService.deleteEvent(id).then(function(data){
             eventService.getEvents().then(function(data){
@@ -164,9 +177,11 @@ eventAdminCtrl.controller('eventAdminCtrl', function($scope, eventService, pictu
             console.log(err);
         })
     }
+
     $scope.changeEvent = function(id){
         $scope.changeEventModal = true;
         $scope.event = {};
+
         eventService.findByIdEvent(id).then(function(data){
             $scope.dateEdit = new Date(data.date);
             $scope.timeEdit = new Date(data.time);
@@ -187,6 +202,7 @@ eventAdminCtrl.controller('eventAdminCtrl', function($scope, eventService, pictu
             console.dir(data);
         })
     }
+
     $scope.updateEvent  = function(){
         var estName = "";
         var estDesc = "";
@@ -253,6 +269,7 @@ eventAdminCtrl.controller('eventAdminCtrl', function($scope, eventService, pictu
 
         })
     }
+
     function toUTC(/*Date*/date) {
         return Date.UTC(
             date.getFullYear()
