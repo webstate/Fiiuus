@@ -95,6 +95,20 @@ pictureService.factory('pictureService', function($q, $timeout, $http){
         return d.promise;
     }
 
+    /* Compress */
+    function compress(){
+        var d = $q.defer();
+        $http.post('user/compress', {})
+        .then(function(response){
+            var data = response.data;
+            d.resolve(data);
+        }).catch(function(response){
+            var err = response.data;
+            d.reject(err);
+        })
+        return d.promise;
+    }
+
     return({
         saveImage:saveImage,
         addBannerPicture:addBannerPicture,
@@ -102,6 +116,7 @@ pictureService.factory('pictureService', function($q, $timeout, $http){
         addMenuPicture: addMenuPicture,
         getMenuPicture: getMenuPicture,
         getBannerTitlePosition: getBannerTitlePosition,
-        addBannerTitlePosition: addBannerTitlePosition
+        addBannerTitlePosition: addBannerTitlePosition,
+        compress: compress
     })
 })
