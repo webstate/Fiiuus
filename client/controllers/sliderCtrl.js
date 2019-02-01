@@ -445,11 +445,13 @@ sliderCtrl.controller('sliderCtrl', function($location,$rootScope, $scope, landi
         $scope.langmenuMobile.status = true;
     }
 
-    eventService.getNextEvents().then(function(data){
-        $scope.eventBanner = data[0];
-    }, function(err){
-        console.log(err);
-    })
+    /* Is it used at all? */
+    // eventService.getNextEvents().then(function(data){
+    //     $scope.eventBanner = data[0];
+    // }, function(err){
+    //     console.log(err);
+    // })
+
     $scope.changeLang = function(lang){
         if(lang ==="ee"){
             $location.path('/');
@@ -562,13 +564,15 @@ sliderCtrl.controller('sliderCtrl', function($location,$rootScope, $scope, landi
             landingTextService.getLandingText("groupMenuButtonEst", "ee").then(function(data){
                 $scope.groupMenuButtonEst = data.text;
             })
-            pictureService.getMenuPicture('eventEst').then(function(data){
-                if(data == null){
-                    $scope.eventPicturePathEst = "";
-                }else {
-                    $scope.eventPicturePathEst = data.picturePath;
-                }
-            })
+
+            /* Is it used at all? */
+            // pictureService.getMenuPicture('eventEst').then(function(data){
+            //     if(data == null){
+            //         $scope.eventPicturePathEst = "";
+            //     }else {
+            //         $scope.eventPicturePathEst = data.picturePath;
+            //     }
+            // })
         }
     });
 
@@ -661,13 +665,14 @@ sliderCtrl.controller('sliderCtrl', function($location,$rootScope, $scope, landi
                 $scope.groupMenuButtonEng = data.text;
             })
 
-            pictureService.getMenuPicture('eventEng').then(function(data){
-                if(data == null){
-                    $scope.eventPicturePathEng = "";
-                }else {
-                    $scope.eventPicturePathEng = data.picturePath;
-                }
-            })
+            /* Is it used at all? */
+            // pictureService.getMenuPicture('eventEng').then(function(data){
+            //     if(data == null){
+            //         $scope.eventPicturePathEng = "";
+            //     }else {
+            //         $scope.eventPicturePathEng = data.picturePath;
+            //     }
+            // })
         }
     });
 
@@ -761,13 +766,14 @@ sliderCtrl.controller('sliderCtrl', function($location,$rootScope, $scope, landi
                 $scope.groupMenuButtonFin = data.text;
             })
 
-            pictureService.getMenuPicture('eventFin').then(function(data){
-                if(data == null){
-                    $scope.eventPicturePathFin = "";
-                }else {
-                    $scope.eventPicturePathFin = data.picturePath;
-                }
-            })
+            /* Is it used at all? */
+            // pictureService.getMenuPicture('eventFin').then(function(data){
+            //     if(data == null){
+            //         $scope.eventPicturePathFin = "";
+            //     }else {
+            //         $scope.eventPicturePathFin = data.picturePath;
+            //     }
+            // })
         }
     });
 
@@ -861,13 +867,14 @@ sliderCtrl.controller('sliderCtrl', function($location,$rootScope, $scope, landi
                 $scope.groupMenuButtonRus = data.text;
             })
 
-            pictureService.getMenuPicture('eventRus').then(function(data){
-                if(data == null){
-                    $scope.eventPicturePathRus = "";
-                }else {
-                    $scope.eventPicturePathRus = data.picturePath;
-                }
-            })
+            /* Is it used at all? */
+            // pictureService.getMenuPicture('eventRus').then(function(data){
+            //     if(data == null){
+            //         $scope.eventPicturePathRus = "";
+            //     }else {
+            //         $scope.eventPicturePathRus = data.picturePath;
+            //     }
+            // })
         }
     });
 
@@ -881,6 +888,7 @@ sliderCtrl.controller('sliderCtrl', function($location,$rootScope, $scope, landi
             $scope.whiteguidePicturePath = data.picturePath;
         }
     })
+
     // pictureService.getMenuPicture('event').then(function(data){
     //     if(data == null){
     //         $scope.eventPicturePath = "";
@@ -888,11 +896,17 @@ sliderCtrl.controller('sliderCtrl', function($location,$rootScope, $scope, landi
     //         $scope.eventPicture = data.picturePath;
     //     }
     // })
+
     pictureService.getMenuPicture('map').then(function(data){
         if(data == null){
             $scope.mapPicturePath = "";
         }else {
-            $scope.mapPicture = data.picturePath;
+            /* If optimized image path exists */
+            if (data.optPath) {
+                $scope.mapPicture = data.optPath;
+            } else {
+                $scope.mapPicture = data.picturePath;
+            }
         }
     })
 
