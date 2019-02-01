@@ -5,7 +5,7 @@ eventService.factory('eventService', function($q, $http, $location){
         addEvent: addEvent,
         getEvents: getEvents,
         deleteEvent: deleteEvent,
-        getNextEvents:getNextEvents,
+        // getNextEvents:getNextEvents,
         findByIdEvent:findByIdEvent,
         updateEvent: updateEvent
 
@@ -124,18 +124,33 @@ eventService.factory('eventService', function($q, $http, $location){
         }
 
     }
-    function getNextEvents(){
-        var d = $q.defer();
-        $http.get('food/event/getnext')
-        .then(function(response){
-            var data = response.data;
-            d.resolve(data);
-        }).catch(function(response){
-            var err = response.data;
-            d.reject(err);
-        })
-        return d.promise;
-    }
+
+    /* Calls event banner - is it used at all? */
+    // function getNextEvents(){
+    //     var d = $q.defer();
+    //     if($location.url() === "/admin/event") {
+    //         $http.get('food/event/getnext', { cache: false })
+    //         .then(function(response){
+    //             var data = response.data;
+    //             d.resolve(data);
+    //         }).catch(function(response){
+    //             var err = response.data;
+    //             d.reject(err);
+    //         })
+    //         return d.promise;
+    //     } else {
+    //         $http.get('food/event/getnext', { cache: true })
+    //         .then(function(response){
+    //             var data = response.data;
+    //             d.resolve(data);
+    //         }).catch(function(response){
+    //             var err = response.data;
+    //             d.reject(err);
+    //         })
+    //         return d.promise;
+    //     }
+    // }
+
     function findByIdEvent(id){
         var d = $q.defer();
         $http.post('food/event/findbyid', {id:id})
@@ -150,7 +165,7 @@ eventService.factory('eventService', function($q, $http, $location){
     }
     function deleteEvent(id){
         var d = $q.defer();
-        $http.get('food/event/delete/'+id)
+        $http.post('food/event/delete/'+id, { cache: false })
         .then(function(response){
             var data  = response.data;
             d.resolve(data);
