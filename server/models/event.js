@@ -8,6 +8,7 @@ var Event = new Schema({
   description: String,
   image: {type: String, default: ""},
   date: Date,
+  added: String, // Added
   nameEng: {type:String, default: ""},
   descEng: {type:String, default: ""},
   imageEng: {type: String, default: ""},

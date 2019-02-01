@@ -9,6 +9,7 @@ var Worker = new Schema({
   email: String,
   infoEst: String,
   picture: String,
+  optPath:String,
   infoEng: {type: String, default: ""},
   occupationEng: {type: String, default: ""},
   infoFin: {type: String, default: ""},

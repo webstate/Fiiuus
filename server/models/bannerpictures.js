@@ -3,7 +3,9 @@ var Schema = mongoose.Schema;
 
 var bannerPicture = new Schema({
     picturePath:String,
-    block: String
+    optPath:String,
+    block: String,
+    added: String
 })
 
 module.exports = mongoose.model('bannerpicture', bannerPicture);
