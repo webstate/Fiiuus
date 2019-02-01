@@ -12,7 +12,7 @@ var domain = "domain";
 var mailgun = require('mailgun-js')({apiKey: api_key, domain: domain});
 
 var storage = multer.diskStorage({
-    destination: path.join(__dirname, '../../client/uploads'),
+    destination: path.join(__dirname, '../../client/uploads/test'),
     filename: function(req, file, cb){
         var extArray = file.mimetype.split('/');
         var extension = extArray[extArray.length - 1];
@@ -34,11 +34,76 @@ var DesignPicture = require('../models/designPics.js');
 var LandingText = require('../models/landingText.js');
 var Booking = require('../models/booking.js');
 var ClosedTimes = require('../models/closedTimes.js');
+var compress_images = require('compress-images');
+
+router.post('/compress', function (req, res) {
+    /* Compress */
+    // const INPUT = '../client/' + (correctPath.toString()); // Testing one file
+    const INPUT = '../client/uploads/test/**/*.{jpg,JPG,jpeg,JPEG,png,svg,gif}';
+    console.log('INPUT & type @api', typeof(INPUT), INPUT); // REMOVE
+    const OUTPUT = '../client/uploads/compressed/';
+    // const OUTPUT = '../client/uploads/test/';
+
+    compress_images(INPUT, OUTPUT, { compress_force: false,
+                                        statistic: true,
+                                        autoupdate: false
+                                    }, false,
+                                    {jpg: {engine: 'mozjpeg', command: ['-quality', '70']}},
+                                    {png: {engine: 'pngquant', command: ['--quality=40-70']}},
+                                    {svg: {engine: 'svgo', command: '--multipass'}},
+                                    {gif: {engine: 'gifsicle', command: ['--colors', '64', '--use-col=web']}},
+
+        // function(){ console.log('statistics', statistics); }, // REMOVE
+        function(err, completed, statistic){
+            if(err) res.send(err);
+            // console.log('SIZE OUT', size_output); // REMOVE
+            if(completed === true){
+                // Doing something.
+                // if(err)res.send(err);
+                console.log('Completed! @api', ); // REMOVE
+                res.json({
+                    msg:"Pictures were optimized"
+                })
+            } else {
+                console.log('Not completed yet... @api', ); // REMOVE
+                if(err)res.send(err);
+
+                // --------------------------------------------------------------------
+                /* If input folder is empty then statistic is undefined!!!
+                else it displays After EACH file its paths, size-in & out ... */
+                console.log('!!!statistic', statistic); // REMOVE
+                // --------------------------------------------------------------------
+
+                // res.json({
+                //     msg:"Not completed, please try again",
+                //     // data: null
+                // })
+                // return res.status(404).json({
+
+
+                    // return
+                // res.json({
+                //     msg:"Not completed, please try again",
+                //     status: 410
+                // });
+            }
+        }, function(err){
+            if(err) res.send(err);
+            res.json({
+                msg: "ERROR"
+            })
+        }
+    )
+    // }
+})
+
 // Event page routes ------------------
 router.post('/event/add', function(req, res){
     var date = moment(req.body.date, 'YYYY-MM-DD HH:mm:ss').format('YYYY-MM-DD');
     var time = moment(req.body.time, 'HH:mm:ss').format('HH:mm:ss');
     var dateTime = date +"T" + time;
+    var added = new Date(Date.now()).toLocaleString(); // not read
+
     Event.create({
         name: req.body.name,
         description: req.body.description,
@@ -52,7 +117,9 @@ router.post('/event/add', function(req, res){
         imageFin: req.body.imageFin,
         descRus: req.body.descRus,
         nameRus: req.body.nameRus,
-        imageRus: req.body.imageRus
+        imageRus: req.body.imageRus,
+        added: added,
+        // added: req.body.added
     }, function(err, ev){
         if(err) res.send(err);
         res.json(ev);
@@ -65,6 +132,8 @@ router.post('/event/update', function(req, res){
     var time = moment(req.body.timeedited, 'YYYY-MM-DD HH:mm:ss');
     var timeadd = moment(time).add(0, 'hours').format('HH:mm:ss');
     var dateTime = date +"T" + timeadd;
+    var added = new Date(Date.now()).toLocaleString();
+
     Event.findOne({
         _id: req.body.id
     }, function(err, response){
@@ -82,7 +151,9 @@ router.post('/event/update', function(req, res){
             imageFin: req.body.imageFin,
             descRus: req.body.descRus,
             nameRus: req.body.nameRus,
-            imageRus: req.body.imageRus
+            imageRus: req.body.imageRus,
+            added: added,
+            // added: req.body.added
 
         }, function(err){
             if(err)res.send(err);
@@ -93,7 +164,8 @@ router.post('/event/update', function(req, res){
     })
 })
 
-router.get('/event/delete/:id', function(req, res){
+// router.get('/event/delete/:id', function(req, res){
+router.post('/event/delete/:id', function(req, res){
     Event.remove({
         _id:req.params.id
     }, function(err){
@@ -103,6 +175,8 @@ router.get('/event/delete/:id', function(req, res){
         })
     })
 })
+
+/* Edit event @admin */
 router.post('/event/findbyid', function(req, res){
     Event.findOne({
         _id: req.body.id
@@ -124,10 +198,13 @@ router.post('/event/findbyid', function(req, res){
         perma.imageRus = response.imageRus;
         perma.date = moment.tz(response.date, "YYYY-MM-DD HH:mm:ssZ", "Europe/Tallinn").format("YYYY-MM-DD");
         perma.time = moment.tz(response.date, "YYYY-MM-DD HH:mm:ssZ", "Europe/Tallinn").format("YYYY-MM-DDTHH:mm:ss");
+        perma.added = response.added;
         res.json(perma);
+        // console.log("PERMA EDIT @post('/event/findbyid'", perma); // REMOVE
     })
 })
 
+/* Gets all events & builds an array */
 router.get('/event/get', function(req, res){
     Event.find(function(err, events){
         if(err) res.send(err);
@@ -144,49 +221,99 @@ router.get('/event/get', function(req, res){
             perma.descFin = element.descFin;
             perma.nameRus = element.nameRus;
             perma.descRus = element.descRus;
-            perma.image = element.image;
-            perma.imageEng = element.imageEng;
-            perma.imageFin = element.imageFin;
-            perma.imageRus = element.imageRus;
+
+            /* EE */
+            var str = element.image;
+            if(str.indexOf('/')>=0 && str.indexOf('/') != -1){
+                var splitstr = str.split("/");
+            } else {
+                var splitstr = str.split(/(\u005C)/g);
+            }
+            // var correctPath = 'uploads/test/'+ splitstr[splitstr.length - 1];
+            var optPath = 'uploads/compressed/'+ splitstr[splitstr.length - 1];
+            perma.image = optPath;
+
+            /* EN */
+            var strEn = element.imageEng;
+            if(strEn.indexOf('/')>=0 && strEn.indexOf('/') != -1){
+                var splitstr = strEn.split("/");
+            } else {
+                var splitstr = strEn.split(/(\u005C)/g);
+            }
+            // var correctPath = 'uploads/test/'+ splitstr[splitstr.length - 1];
+            var optPathEng = 'uploads/compressed/'+ splitstr[splitstr.length - 1];
+            // perma.imageEng = element.imageEng;
+            perma.imageEng = optPathEng;
+
+            /* FI */
+            var strFi = element.imageFin;
+            if(strFi.indexOf('/')>=0 && strFi.indexOf('/') != -1){
+                var splitstr = strFi.split("/");
+            } else {
+                var splitstr = strFi.split(/(\u005C)/g);
+            }
+            // var correctPath = 'uploads/test/'+ splitstr[splitstr.length - 1];
+            var optPathFin = 'uploads/compressed/'+ splitstr[splitstr.length - 1];
+            // perma.imageFin = element.imageFin;
+            perma.imageFin = optPathFin;
+
+            /* RU */
+            var strRu = element.imageRus;
+            if(strRu.indexOf('/')>=0 && strRu.indexOf('/') != -1){
+                var splitstr = strRu.split("/");
+            } else {
+                var splitstr = strRu.split(/(\u005C)/g);
+            }
+            // var correctPath = 'uploads/test/'+ splitstr[splitstr.length - 1];
+            var optPathRus = 'uploads/compressed/'+ splitstr[splitstr.length - 1];
+            // perma.imageRus = element.imageRus;
+            perma.imageRus = optPathRus;
+
             //perma.date = moment.tz(element.date, "YYYY-MM-DD HH:mm:ssZ", "Europe/Tallinn").format("YYYY-MM-DD HH:mm");
             perma.date=moment(element.date).utcOffset(moment().tz('Europe/Tallinn').format('Z')).format('YYYY-MM-DD HH:mm');
+            perma.added = element.added;
             response.push(perma);
         })
 
         res.send(response.reverse());
     })
 })
-router.get('/event/getnext', function(req, res){
-    Event.find(function(err, events){
-        if(err) res.send(err);
-        var perma = {}
-        var response = [];
-        events.forEach(function(element){
-            perma = {};
-            if(moment(element.date).isBetween(moment(), moment().add('7', 'days'))){
-                perma.id = element._id;
-                perma.name = element.name;
-                perma.description = element.description;
-                perma.descEng = element.descEng;
-                perma.nameEng = element.nameEng;
-                perma.nameFin = element.nameFin;
-                perma.descFin = element.descFin;
-                perma.nameRus = element.nameRus;
-                perma.descRus = element.descRus;
-                perma.image = element.image;
-                perma.imageEng = element.imageEng;
-                perma.imageRus = element.imageRus;
-                perma.imageFin = element.imageFin;
-                //perma.date = moment.tz(element.date, "YYYY-MM-DD HH:mm:ssZ", "Europe/Tallinn").format("DD-MM-YYYY HH:mm");
-                perma.date = moment(element.date).utcOffset(moment().tz('Europe/Tallinn').format('Z')).format('DD-MM-YYYY HH:mm');
-                response.push(perma);
-            }else{
-                return;
-            }
-        })
-        res.send(response);
-    })
-})
+
+/* Calls event banner - is it used at all? */
+// router.get('/event/getnext', function(req, res){
+//     Event.find(function(err, events){
+//         if(err) res.send(err);
+//         var perma = {}
+//         var response = [];
+//         events.forEach(function(element){
+//             perma = {};
+//             if(moment(element.date).isBetween(moment(), moment().add('7', 'days'))){
+//                 perma.id = element._id;
+//                 perma.name = element.name;
+//                 perma.description = element.description;
+//                 perma.descEng = element.descEng;
+//                 perma.nameEng = element.nameEng;
+//                 perma.nameFin = element.nameFin;
+//                 perma.descFin = element.descFin;
+//                 perma.nameRus = element.nameRus;
+//                 perma.descRus = element.descRus;
+//                 perma.image = element.image;
+//                 perma.imageEng = element.imageEng;
+//                 perma.imageRus = element.imageRus;
+//                 perma.imageFin = element.imageFin;
+
+//                 //perma.date = moment.tz(element.date, "YYYY-MM-DD HH:mm:ssZ", "Europe/Tallinn").format("DD-MM-YYYY HH:mm");
+//                 perma.date = moment(element.date).utcOffset(moment().tz('Europe/Tallinn').format('Z')).format('DD-MM-YYYY HH:mm');
+//                 perma.added = element.added; // Added
+//                 response.push(perma);
+//             }else{
+//                 return;
+//             }
+//         })
+//         res.send(response);
+//     })
+// })
+
 router.get('/event/delete', function(req, res){
     Event.find(function(err, events){
         if(err) res.send(err);
@@ -747,43 +874,117 @@ router.post('/design/add', function(req, res){
             } else {
                 var splitstr = str.split(/(\u005C)/g);
             }
-            var correctPath = 'uploads/'+ splitstr[splitstr.length - 1];
+            var correctPath = 'uploads/test/'+ splitstr[splitstr.length - 1];
+            var optPath = 'uploads/compressed/'+ splitstr[splitstr.length - 1];
+            var added = new Date(Date.now()).toLocaleString();
 
             DesignPicture.create({
                 picturePath: correctPath,/* req.body.path */
+                optPath: optPath,
+                added: added,
                 block: req.body.menuPosition
             }, function(err){
                 if(err) res.send(err);
                 res.json({
-                    path: req.body.path
+                    path: req.body.path,
+                    optPath: req.body.optPath,
+                    added: added
                 })
             })
+
+            // /* Compress */
+            // // const INPUT = '../client/' + (correctPath.toString());
+            // const INPUT = '../client/uploads/test/**/*.{jpg,JPG,jpeg,JPEG,png,svg,gif}';
+            // console.log('INPUT & type @api:795', typeof(INPUT), INPUT); // REMOVE
+            // const OUTPUT = '../client/uploads/compressed/';
+            // // const OUTPUT = '../client/uploads/test/';
+
+            // // function MyFun(){ /* ng-class="{true: 'red', false: 'green'}[item.name.length == 0]" */
+            // compress_images(INPUT, OUTPUT, { compress_force: false,
+            //                                  statistic: true,
+            //                                  autoupdate: false
+            //                                 }, false,
+            //                                 {jpg: {engine: 'mozjpeg', command: ['-quality', '70']}},
+            //                                 {png: {engine: 'pngquant', command: ['--quality=40-70']}},
+            //                                 {svg: {engine: 'svgo', command: '--multipass'}},
+            //                                 {gif: {engine: 'gifsicle', command: ['--colors', '64', '--use-col=web']}},
+
+            //     // function(){ console.log('statistics', statistics); }, // REMOVE
+            //     function(err, completed){
+            //         if(err) res.send(err);
+            //         // console.log('SIZE OUT', size_output); // REMOVE
+            //         if(completed === true){
+            //             // Doing something.
+            //             console.log('Completed! @api', ); // REMOVE
+            //         } else {
+            //             console.log('Not completed! @api', ); // REMOVE
+            //         }
+            //     }
+            // );
+            // // }
         } else {
             var str = req.body.path;
+            console.log('req.body.path @design/add!!!!!!!', req.body.path); // REMOVE
+            // console.log('REQ b4 design ADD', req); // REMOVE
             if(str.indexOf('/')>=0 && str.indexOf('/') != -1){
                 var splitstr = str.split("/");
             } else {
                 var splitstr = str.split(/(\u005C)/g);
             }
-            var correctPath = 'uploads/'+ splitstr[splitstr.length - 1];
+            var correctPath = 'uploads/test/'+ splitstr[splitstr.length - 1];
+            var optPath = 'uploads/compressed/'+ splitstr[splitstr.length - 1];
+            var added = new Date(Date.now()).toLocaleString();
 
             DesignPicture.findOne({
                 block: req.body.menuPosition
             }, function(err, picture){
                 if(err)res.send(err);
                 picture.update({
-                    picturePath: correctPath/* req.body.path */
+                    picturePath: correctPath, /* req.body.path */
+                    optPath: optPath,
+                    added: added
                 }, function(err){
                     if(err)res.send(err);
                     res.json({
                         msg:"Picture was updated"
                     })
                 })
-            })
+            });
+
+            /* Compress */
+            // // const INPUT = '../client/' + (correctPath.toString());
+            // const INPUT = '../client/uploads/test/**/*.{jpg,JPG,jpeg,JPEG,png,svg,gif}';
+            // console.log('INPUT & type @api:795', typeof(INPUT), INPUT); // REMOVE
+            // const OUTPUT = '../client/uploads/compressed/';
+            // // const OUTPUT = '../client/uploads/test/';
+
+            // // function MyFun(){ /* ng-class="{true: 'red', false: 'green'}[item.name.length == 0]" */
+            // compress_images(INPUT, OUTPUT, { compress_force: false,
+            //                                  statistic: true,
+            //                                  autoupdate: false
+            //                                 }, false,
+            //                                 {jpg: {engine: 'mozjpeg', command: ['-quality', '70']}},
+            //                                 {png: {engine: 'pngquant', command: ['--quality=40-70']}},
+            //                                 {svg: {engine: 'svgo', command: '--multipass'}},
+            //                                 {gif: {engine: 'gifsicle', command: ['--colors', '64', '--use-col=web']}},
+
+            //     // function(){ console.log('statistics', statistics); }, // REMOVE
+            //     function(err, completed){
+            //         if(err) res.send(err);
+            //         // console.log('SIZE OUT', size_output); // REMOVE
+            //         if(completed === true){
+            //             // Doing something.
+            //             console.log('Completed! @api', ); // REMOVE
+            //         } else {
+            //             console.log('Not completed! @api', ); // REMOVE
+            //         }
+            //     }
+            // );
+            // // }
         }
     })
-
 })
+
 router.post('/design/get', function(req, res){
     DesignPicture.findOne({
         block: req.body.menuPosition
@@ -828,17 +1029,22 @@ router.post('/picture/add', upload.single('file'),function(req, res){
 
     /* New version */
     var str = req.file.path;
+    // console.log('req.file.path @picture/add!!!!!!!', req.file.path); // REMOVE /* C:\Users\Kasutaja\Documents\FII\Fiiuus\client\uploads\test\file1548776441592.jpeg */
+    // console.log('REQ file b4 design ADD', req.file); // REMOVE
     if (str != null || str != undefined) {
         if(str.indexOf('/')>=0 && str.indexOf('/') != -1){
             var splitstr = str.split("/");
         } else {
             var splitstr = str.split(/(\u005C)/g);
         }
-        var correctPath = 'uploads/'+ splitstr[splitstr.length - 1];
+        var correctPath = 'uploads/test/'+ splitstr[splitstr.length - 1];
+        // var optPath = 'uploads/compressed'+ req.file.filename;
+        var added = new Date(Date.now()).toLocaleString();
     }
 
     Picture.create({
-        picture:correctPath
+        picture:correctPath,
+        added: added
     }, function(err){
         if(err) res.send(err);
     })
@@ -858,43 +1064,53 @@ router.post('/bannerpicture/add', function(req, res){
             } else {
                 var splitstr = str.split(/(\u005C)/g);
             }
-            var correctPath = 'uploads/'+ splitstr[splitstr.length - 1];
+            var correctPath = 'uploads/test/'+ splitstr[splitstr.length - 1];
+            var optPath = 'uploads/compressed/'+ splitstr[splitstr.length - 1];
+            var added = new Date(Date.now()).toLocaleString();
 
             BannerPicture.create({
-                picturePath: req.body.path,
-                block: req.body.menuPosition
+                picturePath: correctPath, /* req.body.path */
+                optPath: optPath,
+                block: req.body.menuPosition,
+                added: added
             }, function(err){
                 if(err) res.send(err);
                 res.json({
-                    path: req.body.path
+                    path: req.body.path,
+                    optPath: req.body.optPath
                 })
             })
         } else {
             var str = req.body.path;
+            console.log('req.body.path @bannerpicture/add!!!!!!!', req.body.path); // REMOVE
             if(str.indexOf('/')>=0 && str.indexOf('/') != -1){
                 var splitstr = str.split("/");
             } else {
                 var splitstr = str.split(/(\u005C)/g);
             }
-            var correctPath = 'uploads/'+ splitstr[splitstr.length - 1];
+            var correctPath = 'uploads/test/'+ splitstr[splitstr.length - 1];
+            var optPath = 'uploads/compressed/'+ splitstr[splitstr.length - 1];
+            var added = new Date(Date.now()).toLocaleString();
 
             BannerPicture.findOne({
                 block: req.body.menuPosition
             }, function(err, picture){
                 if(err)res.send(err);
                 picture.update({
-                    picturePath: req.body.path
+                    picturePath: correctPath, /* req.body.path */
+                    optPath: optPath,
+                    added: added
                 }, function(err){
                     if(err)res.send(err);
                     res.json({
                         msg:"Picture was updated"
                     })
                 })
-            })
+            });
         }
-    })
+    });
+});
 
-})
 router.post('/bannerpicture/get', function(req, res){
     BannerPicture.findOne({
         block: req.body.menuPosition
@@ -1194,6 +1410,7 @@ router.post('/add', function(req, res){
         occupationEst: req.body.occupationEst,
         infoEst: req.body.infoEst,
         picture: req.body.picture,
+        optPath: req.body.optPath,
         email: req.body.email,
         occupationEng: req.body.occupationEng,
         infoEng: req.body.infoEng,
@@ -1230,7 +1447,8 @@ router.post('/worker/update', function(req, res){
             occupationFin: req.body.finPosition,
             infoRus: req.body.rusInfo,
             occupationRus: req.body.rusPosition,
-            picture: req.body.picture
+            picture: req.body.picture,
+            optPath: req.body.optPath,
         }, function(err){
             if(err)res.send(err);
             res.json({
@@ -1296,7 +1514,8 @@ router.post('/login', function(req, res, next) {
     })(req, res, next);
 });
 
-router.get('/logout', function(req, res) {
+// router.get('/logout', function(req, res) {
+router.post('/logout', function(req, res) {
     req.logout();
     res.status(200).json({
         status: 'Bye!'
