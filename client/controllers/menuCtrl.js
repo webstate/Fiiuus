@@ -5,21 +5,36 @@ menuCtrl.controller('menuCtrl', function($scope, pictureService){
         if(data == null){
             $scope.secondPicturePath = "";
         }else {
-            $scope.secondPicturePath = data.picturePath;
+            /* If optimized image path exists */
+            if (data.optPath) {
+                $scope.secondPicturePath = data.optPath;
+            } else {
+                $scope.secondPicturePath = data.picturePath;
+            }
         }
     })
     pictureService.getMenuPicture('first').then(function(data){
         if(data == null){
             $scope.firstPicturePath = "";
         }else {
-            $scope.firstPicturePath = data.picturePath;
+            /* If optimized image path exists */
+            if (data.optPath) {
+                $scope.firstPicturePath = data.optPath;
+            } else {
+                $scope.firstPicturePath = data.picturePath;
+            }
         }
     })
     pictureService.getMenuPicture('third').then(function(data){
         if(data == null){
             $scope.thirdPicturePath = "";
         }else {
-            $scope.thirdPicturePath = data.picturePath;
+            /* If optimized image path exists */
+            if (data.optPath) {
+                $scope.thirdPicturePath = data.optPath;
+            } else {
+                $scope.thirdPicturePath = data.picturePath;
+            }
         }
     })
 
