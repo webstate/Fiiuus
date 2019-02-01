@@ -1,26 +1,37 @@
 <div class="container">
-    <ul style="list-style:none; text-align: center; width: 400px;margin: 0 auto; margin-top: 50px;">
-        <li style="cursor:pointer;float:left; font-family: spaceMono; margin-left: 20px;font-size: 24px;">
-            <p ng-click="changeEst();changeActiveTab('est')" ng-class="{true: 'activeDesign'}[activeTab ==='est']">
+    <ul style="list-style:none; text-align: center; margin: 0 auto; padding-inline-start: 0;"><!-- width: 400px;  margin-top: 50px; -->
+        <li style="cursor:pointer; font-family: spaceMono; margin-left: 20px;font-size: 24px; display: inline-block;"><!-- float:left; -->
+            <p style="margin-bottom: 0;" ng-click="changeEst();changeActiveTab('est')" ng-class="{true: 'activeDesign'}[activeTab ==='est']">
                 Est
             </p>
         </li>
-        <li style="cursor:pointer;float:left; font-family: spaceMono; margin-left: 20px;font-size: 24px;">
-            <p ng-click="changeEng();changeActiveTab('eng')" ng-class="{true: 'activeDesign'}[activeTab ==='eng']">
+        <li style="cursor:pointer; font-family: spaceMono; margin-left: 20px;font-size: 24px; display: inline-block;"><!-- float:left; -->
+            <p style="margin-bottom: 0;" ng-click="changeEng();changeActiveTab('eng')" ng-class="{true: 'activeDesign'}[activeTab ==='eng']">
                 Eng
             </p>
         </li>
-        <li style="cursor:pointer;float:left; font-family: spaceMono; margin-left: 20px;font-size: 24px;">
-            <p ng-click="changeFin();changeActiveTab('fin')" ng-class="{true: 'activeDesign'}[activeTab ==='fin']">
+        <li style="cursor:pointer; font-family: spaceMono; margin-left: 20px;font-size: 24px; display: inline-block;"><!-- float:left; -->
+            <p style="margin-bottom: 0;" ng-click="changeFin();changeActiveTab('fin')" ng-class="{true: 'activeDesign'}[activeTab ==='fin']">
                 Fin
             </p>
         </li>
-        <li style="cursor:pointer;float:left; font-family: spaceMono; margin-left: 20px;font-size: 24px;">
-            <p ng-click="changeRus();changeActiveTab('rus')" ng-class="{true: 'activeDesign'}[activeTab ==='rus']">
+        <li style="cursor:pointer; font-family: spaceMono; margin-left: 20px;font-size: 24px; display: inline-block;"><!-- float:left; -->
+            <p style="margin-bottom: 0;" ng-click="changeRus();changeActiveTab('rus')" ng-class="{true: 'activeDesign'}[activeTab ==='rus']">
                 Rus
             </p>
         </li>
+        <!-- Compress -->
+        <!-- <li style="cursor:pointer;float:left; font-family: spaceMono; margin-left: 20px;font-size: 24px;"></li> -->
+        <li ng-click="compressImages()" class="btn optimize-button">
+            Optimeeri pildid
+        </li>
     </ul>
+    <div class="col-lg-12 col-sm-12 col-xs-12 alert alert-success" ng-show="successMessagebool" style="margin: 40px auto 0 auto;">
+        <strong>{{successMessage }}</strong>
+    </div>
+    <div class="col-lg-12 col-sm-12 col-xs-12 alert alert-danger" ng-show="errorMessagebool" style="margin: 40px auto 0 auto;">
+        <strong>{{errorMessage }}</strong>
+    </div>
 </div>
 
 <!-- Estonian Design -->
@@ -340,6 +351,7 @@
                 <div class="event-detail-mockup"></div>
             </div>
             <div class="col-md-6">
+                <!-- This is only for mockup, real events can be updated under admin-events-tab -->
                 <div class="event-pic-mockup" style="background-image:url({{eventPicturePathEst}});">
                     <input type="file" name="file2" id="fileEst" class="inputfile" onchange="angular.element(this).scope().menuPicChanged(this, 'eventEst')" />
                     <label class="mt-185 ml-10" for="fileEst">
