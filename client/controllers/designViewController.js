@@ -1,6 +1,6 @@
 var designViewController = angular.module('designViewController', []);
 
-designViewController.controller('designViewController', function ($scope, pictureService, landingTextService, $timeout, $rootScope) {
+designViewController.controller('designViewController', function ($scope, pictureService, landingTextService, $timeout, $rootScope) {/* , compress_images */
     $scope.activeTab = 'est';
     $scope.changeActiveTab = function (item) {
         $scope.activeTab = item;
@@ -81,7 +81,7 @@ designViewController.controller('designViewController', function ($scope, pictur
             }
             // pictureService.getBannerTitlePosition();
         } else {
-            console.log('There is no myDiv', ); // REMOVE
+            console.log('There is no bannerTitle', ); // REMOVE
         }
 
     }
@@ -769,11 +769,10 @@ designViewController.controller('designViewController', function ($scope, pictur
             }
             // pictureService.getBannerTitlePosition();
         } else {
-            console.log('There is no myDiv', ); // REMOVE
+            console.log('There is no bannerTitle', ); // REMOVE
         }
 
     }
-
 
     landingTextService.getLandingText("aboutTitleEng", "ee").then(function (data) {
         if (data.text == null) {
@@ -1425,11 +1424,10 @@ designViewController.controller('designViewController', function ($scope, pictur
                 console.log(err);
             }
         } else {
-            console.log('There is no myDiv', ); // REMOVE
+            console.log('There is no bannerTitle', ); // REMOVE
         }
 
     }
-
 
     landingTextService.getLandingText("aboutTitleFin", "ee").then(function (data) {
         if (data.text == null) {
@@ -2085,11 +2083,10 @@ designViewController.controller('designViewController', function ($scope, pictur
             }
             // pictureService.getBannerTitlePosition();
         } else {
-            console.log('There is no myDiv', ); // REMOVE
+            console.log('There is no bannerTitle', ); // REMOVE
         }
 
     }
-
 
     landingTextService.getLandingText("aboutTitleRus", "ee").then(function (data) {
         if (data.text == null) {
@@ -2715,7 +2712,12 @@ designViewController.controller('designViewController', function ($scope, pictur
             $scope.mapPicturePath = "";
 
         } else {
-            $scope.mapPicturePath = data.picturePath;
+            /* If optimized image path exists */
+            if (data.optPath) {
+                $scope.mapPicturePath = data.optPath;
+            } else {
+                $scope.mapPicturePath = data.picturePath;
+            }
         }
     })
 
@@ -2724,6 +2726,7 @@ designViewController.controller('designViewController', function ($scope, pictur
         if (data == null) {
             $scope.whiteguidePicturePath = "css/img/whiteguide2019.png";
         } else {
+            /* Displaying non-optimized logo */
             $scope.whiteguidePicturePath = data.picturePath;
         }
     })
@@ -2736,32 +2739,54 @@ designViewController.controller('designViewController', function ($scope, pictur
     //         $scope.eventPicturePath = data.picturePath;
     //     }
     // })
+
+    /* Mockup events */ /* Not needed in diff langs in this version */
     pictureService.getMenuPicture('eventEst').then(function (data) {
         if (data == null) {
             $scope.eventPicturePathEst = "";
         } else {
-            $scope.eventPicturePathEst = data.picturePath;
+            /* If optimized image path exists */
+            if (data.optPath) {
+                $scope.eventPicturePathEst = data.optPath;
+            } else {
+                $scope.eventPicturePathEst = data.picturePath;
+            }
         }
     })
     pictureService.getMenuPicture('eventFin').then(function (data) {
         if (data == null) {
             $scope.eventPicturePathFin = "";
         } else {
-            $scope.eventPicturePathFin = data.picturePath;
+            /* If optimized image path exists */
+            if (data.optPath) {
+                $scope.eventPicturePathFin = data.optPath;
+            } else {
+                $scope.eventPicturePathFin = data.picturePath;
+            }
         }
     })
     pictureService.getMenuPicture('eventEng').then(function (data) {
         if (data == null) {
             $scope.eventPicturePathEng = "";
         } else {
-            $scope.eventPicturePathEng = data.picturePath;
+            /* If optimized image path exists */
+            if (data.optPath) {
+                $scope.eventPicturePathEng = data.optPath;
+            } else {
+                $scope.eventPicturePathEng = data.picturePath;
+            }
         }
     })
     pictureService.getMenuPicture('eventRus').then(function (data) {
         if (data == null) {
             $scope.eventPicturePathRus = "";
         } else {
-            $scope.eventPicturePathRus = data.picturePath;
+            /* If optimized image path exists */
+            if (data.optPath) {
+                $scope.eventPicturePathRus = data.optPath;
+            } else {
+                $scope.eventPicturePathRus = data.picturePath;
+            }
         }
     })
 
@@ -2770,21 +2795,36 @@ designViewController.controller('designViewController', function ($scope, pictur
         if (data == null) {
             $scope.firstPicturePath = "";
         } else {
-            $scope.firstPicturePath = data.picturePath;
+            // $scope.firstPicturePath = data.picturePath;
+            if (data.optPath) {
+                $scope.firstPicturePath = data.optPath;
+            } else {
+                $scope.firstPicturePath = data.picturePath;
+            }
         }
     })
     pictureService.getMenuPicture('second').then(function (data) {
         if (data == null) {
             $scope.secondPicturePath = "";
         } else {
-            $scope.secondPicturePath = data.picturePath;
+            /* If optimized image path exists */
+            if (data.optPath) {
+                $scope.secondPicturePath = data.optPath;
+            } else {
+                $scope.secondPicturePath = data.picturePath;
+            }
         }
     })
     pictureService.getMenuPicture('third').then(function (data) {
         if (data == null) {
             $scope.thirdPicturePath = "";
         } else {
-            $scope.thirdPicturePath = data.picturePath;
+            /* If optimized image path exists */
+            if (data.optPath) {
+                $scope.thirdPicturePath = data.optPath;
+            } else {
+                $scope.thirdPicturePath = data.picturePath;
+            }
         }
     })
 
@@ -2794,7 +2834,12 @@ designViewController.controller('designViewController', function ($scope, pictur
         if (data === null || data.picturePath === undefined) {
             $scope.bannerPicturePathEst = "";
         } else {
-            $scope.bannerPicturePathEst = data.picturePath;
+            /* If optimized image path exists */
+            if (data.optPath) {
+                $scope.bannerPicturePathEst = data.optPath;
+            } else {
+                $scope.bannerPicturePathEst = data.picturePath;
+            }
         }
     })
 
@@ -2802,7 +2847,12 @@ designViewController.controller('designViewController', function ($scope, pictur
         if (data === null || data.picturePath === undefined) {
             $scope.bannerPicturePathEstMobile = "";
         } else {
-            $scope.bannerPicturePathEstMobile = data.picturePath;
+            /* If optimized image path exists */
+            if (data.optPath) {
+                $scope.bannerPicturePathEstMobile = data.optPath;
+            } else {
+                $scope.bannerPicturePathEstMobile = data.picturePath;
+            }
         }
     })
 
@@ -2810,7 +2860,12 @@ designViewController.controller('designViewController', function ($scope, pictur
         if (data === null || data.picturePath === undefined) {
             $scope.bannerPicturePathEng = "";
         } else {
-            $scope.bannerPicturePathEng = data.picturePath;
+            /* If optimized image path exists */
+            if (data.optPath) {
+                $scope.bannerPicturePathEng = data.optPath;
+            } else {
+                $scope.bannerPicturePathEng = data.picturePath;
+            }
         }
     })
 
@@ -2818,7 +2873,12 @@ designViewController.controller('designViewController', function ($scope, pictur
         if (data === null || data.picturePath === undefined) {
             $scope.bannerPicturePathEngMobile = "";
         } else {
-            $scope.bannerPicturePathEngMobile = data.picturePath;
+            /* If optimized image path exists */
+            if (data.optPath) {
+                $scope.bannerPicturePathEngMobile = data.optPath;
+            } else {
+                $scope.bannerPicturePathEngMobile = data.picturePath;
+            }
         }
     })
 
@@ -2826,7 +2886,12 @@ designViewController.controller('designViewController', function ($scope, pictur
         if (data === null || data.picturePath === undefined) {
             $scope.bannerPicturePathFin = "";
         } else {
-            $scope.bannerPicturePathFin = data.picturePath;
+            /* If optimized image path exists */
+            if (data.optPath) {
+                $scope.bannerPicturePathFin = data.optPath;
+            } else {
+                $scope.bannerPicturePathFin = data.picturePath;
+            }
         }
     })
 
@@ -2834,7 +2899,12 @@ designViewController.controller('designViewController', function ($scope, pictur
         if (data === null || data.picturePath === undefined) {
             $scope.bannerPicturePathFinMobile = "";
         } else {
-            $scope.bannerPicturePathFinMobile = data.picturePath;
+            /* If optimized image path exists */
+            if (data.optPath) {
+                $scope.bannerPicturePathFinMobile = data.optPath;
+            } else {
+                $scope.bannerPicturePathFinMobile = data.picturePath;
+            }
         }
     })
 
@@ -2842,7 +2912,12 @@ designViewController.controller('designViewController', function ($scope, pictur
         if (data === null || data.picturePath === undefined) {
             $scope.bannerPicturePathRus = "";
         } else {
-            $scope.bannerPicturePathRus = data.picturePath;
+            /* If optimized image path exists */
+            if (data.optPath) {
+                $scope.bannerPicturePathRus = data.optPath;
+            } else {
+                $scope.bannerPicturePathRus = data.picturePath;
+            }
         }
     })
 
@@ -2850,10 +2925,25 @@ designViewController.controller('designViewController', function ($scope, pictur
         if (data === null || data.picturePath === undefined) {
             $scope.bannerPicturePathRusMobile = "";
         } else {
-            $scope.bannerPicturePathRusMobile = data.picturePath;
+            /* If optimized image path exists */
+            if (data.optPath) {
+                $scope.bannerPicturePathRusMobile = data.optPath;
+            } else {
+                $scope.bannerPicturePathRusMobile = data.picturePath;
+            }
         }
     })
 
+
+    // /* Testing mobile banner */ // REMOVE while not needed
+    // var w = $(window).width();
+
+    // if (w > 991) {
+    //     $('div.admin-banner').css({'background-image': 'url(' + $scope.bannerPicture + ')'});
+    // } else {
+    //     $('.admin-banner').css({'background-image': 'url(' + $scope.bannerPictureMobile + ')'});
+    // }
+    // /* End of testing mobile banner */
 
 
     /* Get BannerTitle Position */
@@ -2899,48 +2989,83 @@ designViewController.controller('designViewController', function ($scope, pictur
 
 
 
-    $scope.user = {
-        name: 'awesome user'
-    };
-    $scope.$watch('user.name', function (val) {})
+    // $scope.user = {
+    //     name: 'awesome user'
+    // };
+    // $scope.$watch('user.name', function (val) {})
 
     $scope.bannerPicChanged = function (elm, type) {
         var fd = new FormData();
         $scope.files = elm.files;
         angular.forEach($scope.files, function (file) {
             fd.append('file', file);
+            // console.log('FILE in append file', file); // REMOVE // Returns File object
         })
-        pictureService.saveImage(fd).then(function (file) {
-            if (type === "bannerEst") {
-                $scope.bannerPicturePathEst = file;
-            }
-            /* TODO - Mobile banner @admin preview */
-            // if (type === "bannerEstMobile") {
-            //     $scope.bannerPicturePathEst = file;
-            // }
-            if (type === "bannerEng") {
-                $scope.bannerPicturePathEng = file;
-            }
-            /* TODO - Mobile banner @admin preview */
-            // if (type === "bannerEngMobile") {
-            //     $scope.bannerPicturePathEng = file;
-            // }
-            if (type === "bannerFin") {
-                $scope.bannerPicturePathFin = file;
-            }
-            /* TODO - Mobile banner @admin preview */
-            // if (type === "bannerFinMobile") {
-            //     $scope.bannerPicturePathFin = file;
-            // }
-            if (type === "bannerRus") {
-                $scope.bannerPicturePathRus = file;
-            }
-            /* TODO - Mobile banner @admin preview */
-            // if (type === "bannerRusMobile") {
-            //     $scope.bannerPicturePathRus = file;
-            // }
-            pictureService.addBannerPicture(type, file).then(function (data) {
-                elm.parentNode.style.backgroundImage = "url(" + data + ")";
+        pictureService.saveImage(fd).then(function (path) {
+
+            pictureService.addBannerPicture(type, path).then(function () { /* data */
+                /* Automatically compress image */
+                pictureService.compress().then(function() {
+                    // $scope.compressImages();
+                    pictureService.getBannerPicture(type).then(function (data) {
+                        // console.log('TYPE', type); // REMOVE
+                        // console.log('PATH', path); // REMOVE
+                        // console.log('DATA', data); // REMOVE
+                        // console.log("type.indexOf('Mobile')", type.indexOf('Mobile')); // REMOVE
+                        if (type.indexOf('Mobile') == -1) {
+                            $(".admin-banner").css("backgroundImage", "url(" + data.optPath + ")");
+                            // elm.parentNode.style.backgroundImage = "url(" + data + ")";
+                        }
+                        // /* TODO */
+                        // else {
+                        // // Make admin mobile view
+                        // }
+
+                        /* Updating Admin Scope */
+                        if (type === "bannerEst") {
+                            // $scope.bannerPicturePathEst = path; /* Non-opt path */
+                            $scope.bannerPicturePathEst = data.optPath;
+                        }
+                        /* TODO - Mobile banner @admin preview */
+                        if (type === "bannerEstMobile") {
+                            // $scope.bannerPicturePathEst = path; /* @landing */
+                            // $scope.bannerPicturePathEstMobile = path; /* Non-opt path */
+                            $scope.bannerPicturePathEstMobile = data.optPath;
+                        }
+                        if (type === "bannerEng") {
+                            // $scope.bannerPicturePathEng = path; /* Non-opt path */
+                            $scope.bannerPicturePathEng = data.optPath;
+                        }
+                        /* TODO - Mobile banner @admin preview */
+                        if (type === "bannerEngMobile") {
+                            // $scope.bannerPicturePathEng = path; /* @landing */
+                            // $scope.bannerPicturePathEngMobile = path; /* Non-opt path */
+                            $scope.bannerPicturePathEngMobile = data.optPath;
+                        }
+                        if (type === "bannerFin") {
+                            // $scope.bannerPicturePathFin = path; /* Non-opt path */
+                            $scope.bannerPicturePathFin = data.optPath;
+                        }
+                        /* TODO - Mobile banner @admin preview */
+                        if (type === "bannerFinMobile") {
+                            // $scope.bannerPicturePathFin = path; /* @landing */
+                            // $scope.bannerPicturePathFinMobile = path; /* Non-opt path */
+                            $scope.bannerPicturePathFinMobile = data.optPath;
+                        }
+                        if (type === "bannerRus") {
+                            // $scope.bannerPicturePathRus = path; /* Non-opt path */
+                            $scope.bannerPicturePathRus = data.optPath;
+                        }
+                        /* TODO - Mobile banner @admin preview */
+                        if (type === "bannerRusMobile") {
+                            // $scope.bannerPicturePathRus = path; /* @landing */
+                            // $scope.bannerPicturePathRusMobile = path; /* Non-opt path */
+                            $scope.bannerPicturePathRusMobile = data.optPath;
+                        }
+                        // console.log('SCOPE @getBanner-end AF comp.', $scope); // REMOVE
+                    })
+                })
+
             }, function (err) {
                 console.log(err);
             })
@@ -2965,6 +3090,8 @@ designViewController.controller('designViewController', function ($scope, pictur
             if (type === "third") {
                 $scope.thirdPicturePath = file;
             }
+
+            /* Event mockup not events */
             if (type === "eventEst") {
                 $scope.eventPicturePathEst = file;
             }
@@ -2977,8 +3104,13 @@ designViewController.controller('designViewController', function ($scope, pictur
             if (type === "eventRus") {
                 $scope.eventPicturePathRus = file;
             }
+
             pictureService.addMenuPicture(type, file).then(function (data) {
                 elm.parentNode.style.backgroundImage = "url(" + data + ")";
+
+                /* Automatically compress image */
+                pictureService.compress();
+
             }, function (err) {
                 console.log(err);
             })
@@ -2987,17 +3119,52 @@ designViewController.controller('designViewController', function ($scope, pictur
         })
     }
 
-    $scope.eventPicChanged = function (elm, type) {
+    /* Compress button @admin */
+    $scope.compressImages = function (req, res) {
 
+        pictureService.compress().then(function (data) {
+            if (data === null) {
+                console.log('Data is NULL', data); // REMOVE
+                $scope.errorMessage = "Midagi läks valesti, palun proovige uuesti";
+                $scope.errorMessagebool = true;
+                $timeout(function () {
+                    $scope.errorMessagebool = false;
+                }, 3000);
+            } else {
+                if (data.status && data.status === 410) {
+                    $scope.errorMessage = "Midagi läks valesti, palun proovige uuesti";
+                    $scope.errorMessagebool = true;
+                    $timeout(function () {
+                        $scope.errorMessagebool = false;
+                    }, 3000);
+                } else {
+                    $scope.successMessage = "Piltide optimeerimine õnnestus";
+                    $scope.successMessagebool = true;
+                    $timeout(function () {
+                        $scope.successMessagebool = false;
+                    }, 3000);
+                }
+                // console.log('REQ', req); // REMOVE
+                // console.log('Data =', data); // REMOVE
+                // console.log('Data =', typeof(data), data); // REMOVE
+                // console.log('Data.length', data.length); // REMOVE
+                // console.log('Data.status', data.status); // REMOVE
+            }
+        }, function (err) {
+            console.log(err);
+        })
+    }
+    /* End of compress */
+
+
+    /* Just mockup image */
+    $scope.eventPicChanged = function (elm, type) {
         var fd = new FormData();
         $scope.files = elm.files;
         angular.forEach($scope.files, function (file) {
             fd.append('file', file);
         })
         pictureService.saveImage(fd).then(function (file) {
-            // if (type === "event") {
-            //     $scope.eventPicturePath = file;
-            // }
             if (type === "eventEst") {
                 $scope.eventPicturePathEst = file;
             }
@@ -3022,6 +3189,8 @@ designViewController.controller('designViewController', function ($scope, pictur
             console.log(err);
         })
     }
+
+
     $scope.mapPicChanged = function (elm, type) {
 
         var fd = new FormData();
@@ -3033,34 +3202,14 @@ designViewController.controller('designViewController', function ($scope, pictur
             if (type === "map") {
                 $scope.mapPicturePath = file;
             }
+
             if (type === "whiteguide") {
                 $scope.whiteguidePicturePath = file;
             }
-            // if (type === "event") {
-            //     $scope.eventPicturePath = file;
-            // }
-            if (type === "eventEst") {
-                $scope.eventPicturePathEst = file;
-            }
-            if (type === "eventEng") {
-                $scope.eventPicturePathEng = file;
-            }
-            if (type === "eventFin") {
-                $scope.eventPicturePathFin = file;
-            }
-            if (type === "eventRus") {
-                $scope.eventPicturePathRus = file;
-            }
-            if (type === "first") {
-                $scope.firstPicturePath = file;
-            }
-            if (type === "second") {
-                $scope.secondPicturePath = file;
-            }
-            if (type === "third") {
-                $scope.thirdPicturePath = file;
-            }
+
             pictureService.addMenuPicture(type, file).then(function (data) {
+                /* Automatically compress image */
+                pictureService.compress();
 
             }, function (err) {
                 console.log(err);
