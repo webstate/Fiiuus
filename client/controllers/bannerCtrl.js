@@ -17,14 +17,24 @@ bannerCtrl.controller('bannerCtrl', function($scope, $rootScope, pictureService,
                 if(data == null){
                     $scope.bannerPicture = "";
                 } else {
-                    $scope.bannerPicture = data.picturePath;
+                    /* If optimized image path exists */
+                    if (data.optPath) {
+                        $scope.bannerPicture = data.optPath;
+                    } else {
+                        $scope.bannerPicture = data.picturePath;
+                    }
                 }
             });
             pictureService.getBannerPicture('bannerEstMobile').then(function(data){
                 if(data == null){
                     $scope.bannerPictureMobile = $scope.bannerPicture;
                 } else {
-                    $scope.bannerPictureMobile = data.picturePath;
+                    /* If optimized image path exists */
+                    if (data.optPath) {
+                        $scope.bannerPictureMobile = data.optPath;
+                    } else {
+                        $scope.bannerPictureMobile = data.picturePath;
+                    }
                 }
             });
 
@@ -44,7 +54,12 @@ bannerCtrl.controller('bannerCtrl', function($scope, $rootScope, pictureService,
                 if(data == null){
                     $scope.bannerPicture = "";
                 } else {
-                    $scope.bannerPicture = data.picturePath;
+                    /* If optimized image path exists */
+                    if (data.optPath) {
+                        $scope.bannerPicture = data.optPath;
+                    } else {
+                        $scope.bannerPicture = data.picturePath;
+                    }
                 }
             })
 
@@ -53,7 +68,12 @@ bannerCtrl.controller('bannerCtrl', function($scope, $rootScope, pictureService,
                     /* If no mobile image then use desktop image */
                     $scope.bannerPictureMobile = $scope.bannerPicture;
                 } else {
-                    $scope.bannerPictureMobile = data.picturePath;
+                    /* If optimized image path exists */
+                    if (data.optPath) {
+                        $scope.bannerPictureMobile = data.optPath;
+                    } else {
+                        $scope.bannerPictureMobile = data.picturePath;
+                    }
                 }
             })
 
@@ -73,7 +93,12 @@ bannerCtrl.controller('bannerCtrl', function($scope, $rootScope, pictureService,
                 if(data == null){
                     $scope.bannerPicture = "";
                 } else {
-                    $scope.bannerPicture = data.picturePath;
+                    /* If optimized image path exists */
+                    if (data.optPath) {
+                        $scope.bannerPicture = data.optPath;
+                    } else {
+                        $scope.bannerPicture = data.picturePath;
+                    }
                 }
             })
 
@@ -82,7 +107,12 @@ bannerCtrl.controller('bannerCtrl', function($scope, $rootScope, pictureService,
                     /* If no mobile image then use desktop image */
                     $scope.bannerPictureMobile = $scope.bannerPicture;
                 } else {
-                    $scope.bannerPictureMobile = data.picturePath;
+                    /* If optimized image path exists */
+                    if (data.optPath) {
+                        $scope.bannerPictureMobile = data.optPath;
+                    } else {
+                        $scope.bannerPictureMobile = data.picturePath;
+                    }
                 }
             })
 
@@ -101,7 +131,12 @@ bannerCtrl.controller('bannerCtrl', function($scope, $rootScope, pictureService,
                 if(data == null){
                     $scope.bannerPicture = "";
                 } else {
-                    $scope.bannerPicture = data.picturePath;
+                    /* If optimized image path exists */
+                    if (data.optPath) {
+                        $scope.bannerPicture = data.optPath;
+                    } else {
+                        $scope.bannerPicture = data.picturePath;
+                    }
                 }
             })
 
@@ -110,7 +145,12 @@ bannerCtrl.controller('bannerCtrl', function($scope, $rootScope, pictureService,
                     /* If no mobile image then use desktop image */
                     $scope.bannerPictureMobile = $scope.bannerPicture;
                 } else {
-                    $scope.bannerPictureMobile = data.picturePath;
+                    /* If optimized image path exists */
+                    if (data.optPath) {
+                        $scope.bannerPictureMobile = data.optPath;
+                    } else {
+                        $scope.bannerPictureMobile = data.picturePath;
+                    }
                 }
             })
 
