@@ -28,6 +28,7 @@
     "passport": "^0.3.2",
     "passport-local": "^1.0.0",
     "passport-local-mongoose": "^4.5.0",
-    "path": "^0.12.7"
+    "path": "^0.12.7",
+    "compress-images": "^1.4.6"
   }
 }
