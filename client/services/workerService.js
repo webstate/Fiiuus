@@ -1,8 +1,20 @@
 var workerService = angular.module('workerService', []);
 
 workerService.factory('workerService', function($q, $timeout, $http, $location){
-    function addWorker(name, occupationEst, email, infoEst, picture, infoEng, occupationEng,
-        infoFin, occupationFin, infoRus, occupationRus){
+    function addWorker(
+        name,
+        occupationEst,
+        email,
+        infoEst,
+        picture,
+        optPath,
+        infoEng,
+        occupationEng,
+        infoFin,
+        occupationFin,
+        infoRus,
+        occupationRus)
+        {
         var d = $q.defer();
         $http.post('worker/add', {
             name: name,
@@ -10,6 +22,7 @@ workerService.factory('workerService', function($q, $timeout, $http, $location){
             email: email,
             infoEst: infoEst,
             picture: picture,
+            optPath: optPath,
             infoEng: infoEng,
             occupationEng: occupationEng,
             infoFin: infoFin,
@@ -39,7 +52,7 @@ workerService.factory('workerService', function($q, $timeout, $http, $location){
             })
             return d.promise;
         } else {
-            $http.get('worker/all', { cache: true })
+            $http.get('worker/all', { cache: true }) /* false */
             .then(function(response){
                 var data = response.data;
                 d.resolve(data);
@@ -74,7 +87,7 @@ workerService.factory('workerService', function($q, $timeout, $http, $location){
         })
         return d.promise;
     }
-    function updateWorker(id, name, estPosition, email, infoEst, engPosition, engInfo, finPosition, finInfo, rusPosition, rusInfo, picture){
+    function updateWorker(id, name, estPosition, email, infoEst, engPosition, engInfo, finPosition, finInfo, rusPosition, rusInfo, picture, optPath){
         var d = $q.defer();
         $http.post('worker/worker/update', {
             id:id,
@@ -88,7 +101,8 @@ workerService.factory('workerService', function($q, $timeout, $http, $location){
             finInfo:finInfo,
             rusPosition:rusPosition,
             rusInfo:rusInfo,
-            picture:picture
+            picture:picture,
+            optPath: optPath
         }
         ).then(function(response){
             var data = response.data;
