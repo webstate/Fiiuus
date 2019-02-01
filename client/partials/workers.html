@@ -4,6 +4,7 @@
             <button class="add-new-worker-btn" ng-click="showModal()">Lisa uus töötaja</button>
         </div>
     </div>
+    <!-- Add new worker -->
     <div class="row" ng-show="workerModal" style="margin-top:50px;">
         <div class="col-md-6" ng-show="estModal">
             <label>Töötaja nimi</label>
@@ -52,6 +53,8 @@
             <input type="file" onchange="angular.element(this).scope().filesChanged(this, 'picture')" />
         </div>
     </div>
+
+    <!-- Edit worker -->
     <div class="row" ng-show="workerModalEdit" style="margin-top:50px;">
         <div class="col-md-6" ng-show="estEditModal">
             <label>Töötaja nimi</label>
@@ -96,7 +99,10 @@
             <p ng-click="showRusEdit()"  style="font-family: spaceMono;font-size: 24px;cursor:pointer;">
                 Vene keeles
             </p>
-            <div class="picture-holder" ng-style="{'background-image': 'url(' + picture + ')'}"></div>
+            <!-- <div class="picture-holder" ng-style="{'background-image': 'url(' + picture + ')'}"></div> -->
+            <div class="picture-holder" ng-style="optPath && {'background-image':'url(' + optPath + ')'} || {'background-image': 'url(' + picture + ')'}">
+                <!-- ng-style="{'background-image': 'url(' + optPath + ')'}" -->
+            </div>
             <input type="file" onchange="angular.element(this).scope().filesChanged(this, 'picture')" />
         </div>
     </div>
@@ -112,7 +118,15 @@
                 </th>
             </thead>
             <tbody ng-repeat="worker in workers">
-                <td><div class="table-img" style="height: 50px; width: 50px; background-image:url({{worker.picture}}); background-size:cover;"></div></td>
+                <td>
+                    <div class="table-img"
+                         style="height: 50px;
+                                width: 50px;
+                                background-size:cover;"
+                         ng-style="worker.optPath && {'background-image':'url(' + worker.optPath + ')'} || {'background-image': 'url(' + worker.picture + ')'}">
+                        <!-- Avatar -->
+                    </div>
+                </td>
                 <td style="padding-top:25px;">{{worker.name}}</td>
                 <!-- <td style="padding-top:25px;">{{worker.position}}</td> -->
                 <td style="padding-top:25px;">{{worker.occupationEst}}</td>
