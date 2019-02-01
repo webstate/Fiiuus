@@ -38,10 +38,8 @@ angular.module('myApp').controller('logoutController',
       AuthService.logout()
         .then(function () {
           $location.path('/');
-        });
-
+        })
     };
-
 }]);
 
 angular.module('myApp').controller('registerController',
