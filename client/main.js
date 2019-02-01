@@ -59,6 +59,7 @@ myApp.config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
       url: '/{id:(?:ru|fi|en|menu/ee|menu/en|menu/fi|menu/ru|broneerilaud/ee|booking/en|booking/fi|booking/ru|kontaktid|contacts/en|contacts/fi|contacts/ru|events/ee|events/en|events/fi|events/ru|)}',
       templateUrl: 'partials/landing.html',
       cache: true,
+      reload: true,
       access: {restricted: false}
     })
     /* .state('contacts', {
@@ -81,7 +82,9 @@ myApp.config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
     })
     .state('logout', {
       controller: 'logoutController',
-      access: {restricted: false}
+      cache: false,
+      access: {restricted: false},
+      reload: true
     })
     .state('register', {
       url:'/register',
@@ -93,6 +96,7 @@ myApp.config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
         url: '/admin',
         abstract: true,
         templateUrl: 'partials/admin.html',
+        cache: false,
         access: {restricted: true}
     })
     .state('admin.products', {
@@ -127,6 +131,7 @@ myApp.config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
     .state('admin.event', {
         url:'/event',
         templateUrl: 'partials/event.html',
+        // cache: false,
         access: {restricted:true},
         controller: "eventAdminCtrl"
     })
