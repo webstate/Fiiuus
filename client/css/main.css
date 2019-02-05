@@ -570,6 +570,10 @@ img.whiteguide {
     margin-top: 60px;
     cursor: default;
 }
+.worker-name a {
+    color: #000000;
+    text-decoration: none;
+}
 .worker-occupation{
     font-size: 14px;
     font-family: spaceMono;
@@ -1685,6 +1689,10 @@ ul.drink-menu-tabs li:hover {
     .worker-name{
         margin-top: -50px;
         cursor: default;
+    }
+    .worker-name a {
+        color: #000000;
+        text-decoration: none;
     }
     .footer-menu > li {
         width: 100%;
