@@ -1654,16 +1654,24 @@
                     Позвоните нам
                 </p>
                 <p ng-if="$root.lang==='en'" class="contact-info">
-                    {{contactCallEng}}
+                    <a href="tel:{{contactCallEng}}">
+                        {{contactCallEng}}
+                    </a>
                 </p>
                 <p ng-if="$root.lang==='ee'" class="contact-info">
-                    {{contactCallEst}}
+                    <a href="tel:{{contactCallEst}}">
+                        {{contactCallEst}}
+                    </a>
                 </p>
                 <p ng-if="$root.lang==='fi'" class="contact-info">
-                    {{contactCallFin}}
+                    <a href="tel:{{contactCallFin}}">
+                        {{contactCallFin}}
+                    </a>
                 </p>
                 <p style="font-family:Roboto" ng-if="$root.lang==='ru'" class="contact-info">
-                    {{contactCallRus}}
+                    <a href="tel:{{contactCallRus}}">
+                        {{contactCallRus}}
+                    </a>
                 </p>
             </div>
             <div class="col-md-3 contact-padding-mobile">
