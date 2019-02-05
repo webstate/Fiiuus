@@ -1194,6 +1194,11 @@ th{
     font-family: spaceMono;
     font-size: 16px;
 }
+.contact-info a {
+    font-family: spaceMono;
+    font-size: 16px;
+    color: #000000;
+}
 .contact-info-email a{
     font-family: spaceMono-Bold;
     font-size: 16px;
