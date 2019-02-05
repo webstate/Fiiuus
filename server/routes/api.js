@@ -60,12 +60,12 @@ router.post('/compress', function (req, res) {
             if(completed === true){
                 // Doing something.
                 // if(err)res.send(err);
-                console.log('Completed! @api', ); // REMOVE
+                console.log('Completed! @api'); // REMOVE
                 res.json({
                     msg:"Pictures were optimized"
                 })
             } else {
-                console.log('Not completed yet... @api', ); // REMOVE
+                console.log('Not completed yet... @api'); // REMOVE
                 if(err)res.send(err);
 
                 // --------------------------------------------------------------------
