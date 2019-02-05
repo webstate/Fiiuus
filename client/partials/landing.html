@@ -1750,16 +1750,24 @@
                     Написать нам
                 </p>
                 <p ng-if="$root.lang==='en'" class="contact-info-email">
-                    {{contactEmailEng}}
+                    <a href="mailto:{{contactEmailEng}}">
+                        {{contactEmailEng}}
+                    </a>
                 </p>
                 <p ng-if="$root.lang==='ee'" class="contact-info-email">
-                    {{contactEmailEst}}
+                    <a href="mailto:{{contactEmailEst}}">
+                        {{contactEmailEst}}
+                    </a>
                 </p>
                 <p ng-if="$root.lang==='fi'" class="contact-info-email">
-                    {{contactEmailFin}}
+                    <a href="mailto:{{contactEmailFin}}">
+                        {{contactEmailFin}}
+                    </a>
                 </p>
                 <p style="font-family:Roboto;" ng-if="$root.lang==='ru'" class="contact-info-email">
-                    {{contactEmailRus}}
+                    <a href="mailto:{{contactEmailFin}}">
+                        {{contactEmailRus}}
+                    </a>
                 </p>
 
             </div>
