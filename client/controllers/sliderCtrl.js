@@ -553,6 +553,9 @@ sliderCtrl.controller('sliderCtrl', function($location,$rootScope, $scope, landi
             landingTextService.getLandingText("contactTimeWorkWeek", "ee").then(function(data){
                 $scope.contactTimeWorkWeek = data.text;
             })
+            landingTextService.getLandingText("breakfastTimeEst", "ee").then(function(data){
+                $scope.breakfastTimeEst = data.text;
+            })
             landingTextService.getLandingText("contactDays", "ee").then(function(data){
                 $scope.contactDays = data.text;
             })
@@ -611,6 +614,9 @@ sliderCtrl.controller('sliderCtrl', function($location,$rootScope, $scope, landi
             })
             landingTextService.getLandingText("contactTimeWorkWeekEng", "ee").then(function(data){
                 $scope.contactTimeWorkWeekEng = data.text;
+            })
+            landingTextService.getLandingText("breakfastTimeEng", "ee").then(function(data){
+                $scope.breakfastTimeEng = data.text;
             })
             landingTextService.getLandingText("courseTitleStarterEng", "ee").then(function(data){
                 $scope.courseTitleStarterEng = data.text;
@@ -712,6 +718,9 @@ sliderCtrl.controller('sliderCtrl', function($location,$rootScope, $scope, landi
             landingTextService.getLandingText("contactTimeWorkWeekFin", "ee").then(function(data){
                 $scope.contactTimeWorkWeekFin = data.text;
             })
+            landingTextService.getLandingText("breakfastTimeFin", "ee").then(function(data){
+                $scope.breakfastTimeFin = data.text;
+            })
             landingTextService.getLandingText("courseTitleStarterFin", "ee").then(function(data){
                 $scope.courseTitleStarterFin = data.text;
             })
@@ -811,6 +820,9 @@ sliderCtrl.controller('sliderCtrl', function($location,$rootScope, $scope, landi
             })
             landingTextService.getLandingText("contactTimeWorkWeekRus", "ee").then(function(data){
                 $scope.contactTimeWorkWeekRus = data.text;
+            })
+            landingTextService.getLandingText("breakfastTimeRus", "ee").then(function(data){
+                $scope.breakfastTimeRus = data.text;
             })
             landingTextService.getLandingText("courseTitleStarterRus", "ee").then(function(data){
                 $scope.courseTitleStarterRus = data.text;
