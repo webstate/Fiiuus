@@ -654,6 +654,29 @@ designViewController.controller('designViewController', function ($scope, pictur
         });
     }
 
+    /* Breakfast hours est */
+    landingTextService.getLandingText("breakfastTimeEst", "ee").then(function (data) {
+        if (data.text == null) {
+            $scope.breakfastTimeEst = "Nothing here";
+        }
+        $scope.breakfastTimeEst = data.text;
+    })
+    $scope.insertBreakfastTimeEst = function () {
+        var update = "";
+        update = $scope.breakfastTimeEst;
+        if ($scope.breakfastTimeEst === "{{editBreakfastTimeEst}}") {
+            update = $scope.editBreakfastTimeEst;
+        }
+        landingTextService.addOrUpdateLandingText("breakfastTimeEst", update, "ee").then(function (data) {
+            landingTextService.getLandingText("breakfastTimeEst", "ee").then(function (data) {
+                if (data.text == null) {
+                    $scope.breakfastTimeEst = "Nothing here";
+                }
+                $scope.breakfastTimeEst = data.text;
+            })
+        });
+    }
+
     // landingTextService.getLandingText("contactTimeWeekend", "ee").then(function (data) {
     //     if (data.text == null) {
     //         $scope.weekendTime = "Nothing here";
@@ -1312,12 +1335,12 @@ designViewController.controller('designViewController', function ($scope, pictur
     //     });
     // }
 
-    // landingTextService.getLandingText("contactTimeWorkWeekEng", "ee").then(function (data) {
-    //     if (data.text == null) {
-    //         $scope.workWeekTimeEng = "Nothing here";
-    //     }
-    //     $scope.workWeekTimeEng = data.text;
-    // })
+    landingTextService.getLandingText("contactTimeWorkWeekEng", "ee").then(function (data) {
+        if (data.text == null) {
+            $scope.workWeekTimeEng = "Nothing here";
+        }
+        $scope.workWeekTimeEng = data.text;
+    })
 
     $scope.insertWorkWeekEng = function () {
         var update = "";
@@ -1334,7 +1357,30 @@ designViewController.controller('designViewController', function ($scope, pictur
             })
         });
     }
-    /**/
+
+    /* Breakfast hours eng */
+    landingTextService.getLandingText("breakfastTimeEng", "ee").then(function (data) {
+        if (data.text == null) {
+            $scope.breakfastTimeEng = "Nothing here";
+        }
+        $scope.breakfastTimeEng = data.text;
+    })
+    $scope.insertBreakfastTimeEng = function () {
+        var update = "";
+        update = $scope.breakfastTimeEng;
+        if ($scope.breakfastTimeEng === "{{editBreakfastTimeEng}}") {
+            update = $scope.editBreakfastTimeEng;
+        }
+        landingTextService.addOrUpdateLandingText("breakfastTimeEng", update, "ee").then(function (data) {
+            landingTextService.getLandingText("breakfastTimeEng", "ee").then(function (data) {
+                if (data.text == null) {
+                    $scope.breakfastTimeEng = "Nothing here";
+                }
+                $scope.breakfastTimeEng = data.text;
+            })
+        });
+    }
+
     landingTextService.getLandingText("contactDaysEng", "ee").then(function (data) {
         if (data.text == null) {
             $scope.contactDaysEng = "There is nothing yet inserted";
@@ -2019,6 +2065,29 @@ designViewController.controller('designViewController', function ($scope, pictur
         });
     }
 
+    /* Breakfast hours fin */
+    landingTextService.getLandingText("breakfastTimeFin", "ee").then(function (data) {
+        if (data.text == null) {
+            $scope.breakfastTimeFin = "Nothing here";
+        }
+        $scope.breakfastTimeFin = data.text;
+    })
+    $scope.insertBreakfastTimeFin = function () {
+        var update = "";
+        update = $scope.breakfastTimeFin;
+        if ($scope.breakfastTimeFin === "{{editBreakfastTimeFin}}") {
+            update = $scope.editBreakfastTimeFin;
+        }
+        landingTextService.addOrUpdateLandingText("breakfastTimeFin", update, "ee").then(function (data) {
+            landingTextService.getLandingText("breakfastTimeFin", "ee").then(function (data) {
+                if (data.text == null) {
+                    $scope.breakfastTimeFin = "Nothing here";
+                }
+                $scope.breakfastTimeFin = data.text;
+            })
+        });
+    }
+
     // landingTextService.getLandingText("contactTimeWeekendFin", "ee").then(function (data) {
     //     if (data.text == null) {
     //         $scope.weekendTimeFin = "Nothing here";
@@ -2657,12 +2726,12 @@ designViewController.controller('designViewController', function ($scope, pictur
         });
     }
 
-    // landingTextService.getLandingText("contactTimeWorkWeekRus", "ee").then(function (data) { // This is a service. Once the program has the promice "getLandingText" it does the following function
-    //     if (data.text == null) { //"ee" is a language, "contactTimeForWeekRus" is a place
-    //         $scope.workWeekTimeRus = "Nothing here";
-    //     }
-    //     $scope.workWeekTimeRus = data.text;
-    // })
+    landingTextService.getLandingText("contactTimeWorkWeekRus", "ee").then(function (data) { // This is a service. Once the program has the promice "getLandingText" it does the following function
+        if (data.text == null) { //"ee" is a language, "contactTimeForWeekRus" is a place
+            $scope.workWeekTimeRus = "Nothing here";
+        }
+        $scope.workWeekTimeRus = data.text;
+    })
     $scope.insertWorkWeekRus = function () {
         var update = "";
         update = $scope.workWeekTimeRus;
@@ -2675,6 +2744,29 @@ designViewController.controller('designViewController', function ($scope, pictur
                     $scope.workWeekTimeRus = "Nothing here";
                 }
                 $scope.workWeekTimeRus = data.text;
+            })
+        });
+    }
+
+    /* Breakfast hours rus */
+    landingTextService.getLandingText("breakfastTimeRus", "ee").then(function (data) {
+        if (data.text == null) {
+            $scope.breakfastTimeRus = "Nothing here";
+        }
+        $scope.breakfastTimeRus = data.text;
+    })
+    $scope.insertBreakfastTimeRus = function () {
+        var update = "";
+        update = $scope.breakfastTimeRus;
+        if ($scope.breakfastTimeRus === "{{editBreakfastTimeRus}}") {
+            update = $scope.editBreakfastTimeRus;
+        }
+        landingTextService.addOrUpdateLandingText("breakfastTimeRus", update, "ee").then(function (data) {
+            landingTextService.getLandingText("breakfastTimeRus", "ee").then(function (data) {
+                if (data.text == null) {
+                    $scope.breakfastTimeRus = "Nothing here";
+                }
+                $scope.breakfastTimeRus = data.text;
             })
         });
     }
