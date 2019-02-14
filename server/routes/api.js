@@ -40,7 +40,7 @@ router.post('/compress', function (req, res) {
     /* Compress */
     // const INPUT = '../client/' + (correctPath.toString()); // Testing one file
     const INPUT = '../client/uploads/test/**/*.{jpg,JPG,jpeg,JPEG,png,svg,gif}';
-    console.log('INPUT & type @api', typeof(INPUT), INPUT); // REMOVE
+    console.log('INPUT & type @api', typeof(INPUT), INPUT); /* // REMOVE */
     const OUTPUT = '../client/uploads/compressed/';
     // const OUTPUT = '../client/uploads/test/';
 
@@ -53,25 +53,25 @@ router.post('/compress', function (req, res) {
                                     {svg: {engine: 'svgo', command: '--multipass'}},
                                     {gif: {engine: 'gifsicle', command: ['--colors', '64', '--use-col=web']}},
 
-        // function(){ console.log('statistics', statistics); }, // REMOVE
+        // function(){ console.log('statistics', statistics); }, /* // REMOVE */
         function(err, completed, statistic){
             if(err) res.send(err);
-            // console.log('SIZE OUT', size_output); // REMOVE
+            // console.log('SIZE OUT', size_output); /* // REMOVE */
             if(completed === true){
                 // Doing something.
                 // if(err)res.send(err);
-                console.log('Completed! @api'); // REMOVE
+                console.log('Completed! @api'); /* // REMOVE */
                 res.json({
                     msg:"Pictures were optimized"
                 })
             } else {
-                console.log('Not completed yet... @api'); // REMOVE
+                console.log('Not completed yet... @api'); /* // REMOVE */
                 if(err)res.send(err);
 
                 // --------------------------------------------------------------------
                 /* If input folder is empty then statistic is undefined!!!
                 else it displays After EACH file its paths, size-in & out ... */
-                console.log('!!!statistic', statistic); // REMOVE
+                console.log('!!!statistic', statistic); /* // REMOVE */
                 // --------------------------------------------------------------------
 
                 // res.json({
@@ -200,7 +200,7 @@ router.post('/event/findbyid', function(req, res){
         perma.time = moment.tz(response.date, "YYYY-MM-DD HH:mm:ssZ", "Europe/Tallinn").format("YYYY-MM-DDTHH:mm:ss");
         perma.added = response.added;
         res.json(perma);
-        // console.log("PERMA EDIT @post('/event/findbyid'", perma); // REMOVE
+        // console.log("PERMA EDIT @post('/event/findbyid'", perma); /* // REMOVE */
     })
 })
 
@@ -924,8 +924,8 @@ router.post('/design/add', function(req, res){
             // // }
         } else {
             var str = req.body.path;
-            console.log('req.body.path @design/add!!!!!!!', req.body.path); // REMOVE
-            // console.log('REQ b4 design ADD', req); // REMOVE
+            console.log('req.body.path @design/add!!!!!!!', req.body.path); /* // REMOVE */
+            // console.log('REQ b4 design ADD', req); /* // REMOVE */
             if(str.indexOf('/')>=0 && str.indexOf('/') != -1){
                 var splitstr = str.split("/");
             } else {
@@ -974,9 +974,9 @@ router.post('/design/add', function(req, res){
             //         // console.log('SIZE OUT', size_output); // REMOVE
             //         if(completed === true){
             //             // Doing something.
-            //             console.log('Completed! @api', ); // REMOVE
+            //             console.log('Completed! @api' ); // REMOVE
             //         } else {
-            //             console.log('Not completed! @api', ); // REMOVE
+            //             console.log('Not completed! @api' ); // REMOVE
             //         }
             //     }
             // );
@@ -1029,7 +1029,7 @@ router.post('/picture/add', upload.single('file'),function(req, res){
 
     /* New version */
     var str = req.file.path;
-    // console.log('req.file.path @picture/add!!!!!!!', req.file.path); // REMOVE /* C:\Users\Kasutaja\Documents\FII\Fiiuus\client\uploads\test\file1548776441592.jpeg */
+    // console.log('req.file.path @picture/add!!!!!!!', req.file.path); // REMOVE /* C:\...\Fiiuus\client\uploads\test\file1548776441592.jpeg */
     // console.log('REQ file b4 design ADD', req.file); // REMOVE
     if (str != null || str != undefined) {
         if(str.indexOf('/')>=0 && str.indexOf('/') != -1){
@@ -1082,7 +1082,7 @@ router.post('/bannerpicture/add', function(req, res){
             })
         } else {
             var str = req.body.path;
-            console.log('req.body.path @bannerpicture/add!!!!!!!', req.body.path); // REMOVE
+            console.log('req.body.path @bannerpicture/add!!!!!!!', req.body.path); /* // REMOVE */
             if(str.indexOf('/')>=0 && str.indexOf('/') != -1){
                 var splitstr = str.split("/");
             } else {
