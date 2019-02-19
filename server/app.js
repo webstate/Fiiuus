@@ -26,18 +26,10 @@ var routes = require('./routes/api.js');
 
 // define middleware
 app.use(express.static(path.join(__dirname, '../client')));
-// app.use(logger('dev'));
+
 // app.use(logger('[:date[web]] :method :url :status :response-time ms - :res[content-length]'));
 
 const moment = require('moment-timezone');
-// console.log('TZ!', moment().tz("Europe/Tallinn").format("DD/MM/YYYY HH:mm"));
-// logger.token('date', (req, res, tz) => {
-//     // var tz = moment().tz("Europe/Tallinn").format();
-//     return moment().tz(tz).format();/* "DD-MM-YYYYTHH:mm" */
-// })
-// logger.format('myformat', '[:date[Europe/Tallinn]] ":method :url" :status :res[content-length] - :response-time ms');
-// app.use(logger('myformat'));/* , { stream: accessLogStream } */
-
 app.use(logger(function (tokens, req, res) {
     var status = tokens.status(req, res)
     var color = status >= 500 ? 'red'
@@ -53,8 +45,6 @@ app.use(logger(function (tokens, req, res) {
       + ' - ' + chalk.blue(tokens['response-time'](req, res)) + 'ms'
 }))
 
-// app.use(logger('[:date[iso]]'));
-// app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
