@@ -2419,3 +2419,12 @@ datepicker.backend-date > input{
 .m0-15 {
     margin: 0 -15px;
 }
+
+
+/* Allow users to select text @events by overriding slick.css */
+.slick-slider {
+    -webkit-user-select: auto !important;
+       -moz-user-select: auto !important;
+        -ms-user-select: auto !important;
+            user-select: auto !important;
+}
