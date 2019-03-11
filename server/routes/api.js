@@ -36,6 +36,11 @@ var Booking = require('../models/booking.js');
 var ClosedTimes = require('../models/closedTimes.js');
 var compress_images = require('compress-images');
 
+// router.get('/', function(req, res){
+//     var timestamps = moment().format('HH:mm:ss')
+//     console.log(timestamps + ' From routes/api.js')
+// })
+
 router.post('/compress', function (req, res) {
     /* Compress */
     // const INPUT = '../client/' + (correctPath.toString()); // Testing one file
